@@ -515,7 +515,7 @@ tous rester au vert. Certaines modifications lourdes et pourtant
 importantes n'auraient jamais été réalisées en confiance sans cette
 garantie.
 
-Figure 04-01
+image:illustrations/04-01.png[align="center"]
 
 Développement piloté par les tests.
 
@@ -791,7 +791,7 @@ développement, qui ne propose une nouvelle version qu'après plusieurs
 mois, réduit sa capacité à proposer rapidement des évolutions à ses
 utilisateurs.
 
-Figure 04-02
+image:illustrations/04-02.png[align="center"]
 
 Continuum en train de surveiller les projets de Maven2.
 
@@ -822,7 +822,7 @@ réactivité de développement. Avec une nouvelle version chaque semaine et
 une armée de contributeurs sur son écosystème de plugins, Jenkins est un
 logiciel extrêmement réactif et porteur de nombreuses innovations.
 
-Figure 04-03
+image:illustrations/04-03.png[align="center"]
 
  
 
@@ -845,7 +845,7 @@ Techniquement parlant, les deux projets sont relativement identiques à
 l'heure ou nous écrivons ces lignes, mais ne suivront pas les mêmes
 choix techniques ou organisationnels à l'avenir.
 
-Figure 04-04
+image:illustrations/04-04.png[align="center"]
 
 Husdon, lui aussi en train de surveiller la construction de Maven2, dans
 la forge Sonatype, partenaire d'Oracle.

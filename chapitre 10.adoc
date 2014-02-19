@@ -233,7 +233,7 @@ de livraison.doc que vous aviez jusqu'ici et servez-vous-en pour caler
 votre armoire bancale. Et si votre responsable qualité vous réclame un
 document de procédure, faites-lui une photocopie de la Figure 10-01 !
 
-Figure 10-01
+image:illustrations/10-01.png[align="center"]
 
 Étapes réalisées par le plugin release_._
 
@@ -452,7 +452,7 @@ utilisée pour des besoins correctifs ou pour expérimenter à l'abri d'un
 petit coin tranquille une évolution complexe, qui impacterait trop le
 reste de l'équipe.
 
-Figure 10-02
+image:illustrations/10-02.png[align="center"]
 
 Utilisation d'une branche de développement parallèle.
 
@@ -633,7 +633,7 @@ appliquer à leurs développements informatiques pour échapper à un monde
 où règnent le bricolage et les manipulations manuelles hasardeuses. La
 Figure 10-03 présente le principe général de cette approche.
 
-Figure 10-03
+image:illustrations/10-03.png[align="center"]
 
 Production continue.
 

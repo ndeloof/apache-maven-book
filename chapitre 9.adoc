@@ -174,7 +174,7 @@ petite icône "M" ; quant à notre POM, il a droit à une icône dédiée qui
 permet de facilement le différencier des autres fichiers du projet (voir
 Figure 09-01).
 
-Figure 09-01
+image:illustrations/09-01.png[align="center"]
 
 Un projet Maven vu sous Eclipse au travers de m2eclipse.
 
@@ -207,7 +207,7 @@ onglet dédié permet de consulter les dépendances du projet et
 d'identifier le jeu de transitivité à travers lequel elles apparaissent
 dans le projet (voir Figure 09-02).
 
-Figure 09-02
+image:illustrations/09-02.png[align="center"]
 
 Gestion des dépendances.
 
@@ -232,7 +232,7 @@ devoir consulter la documentation et de faire une malheureuse faute de
 frappe dans leur nom. La figure 09-03 montre m2eclipse en action
 proposant cette assistance.
 
-Figure 09-03
+image:illustrations/09-03.png[align="center"]
 
 Édition de la configuration des plugins.
 
@@ -264,7 +264,7 @@ celle-ci peut devenir très gênante pour son utilisation quotidienne. Les
 choses devraient aller mieux avec la prochaine version du plugin
 m2eclipse…
 
-Figure 09-04
+image:illustrations/09-04.png[align="center"]
 
 Veuillez patienter…
 
@@ -288,7 +288,7 @@ qui définissent la classe considérée (voir Figure 09-05). Il n'est donc
 pas nécessaire de passer par l'édition du POM pour ajouter une
 dépendance suite au copier-coller d'un fragment de code intéressant.
 
-Figure 09-05
+image:illustrations/09-05.png[align="center"]
 
 Correction rapide par ajout d'une dépendance.
 
@@ -360,7 +360,7 @@ nous permettra de lancer depuis l'IDE les opérations gérées par Maven,
 par exemple une construction jusqu'à une phase précise du cycle de vie
 ou l'exécution d'un plugin particulier.
 
-Figure 09-06
+image:illustrations/09-06.png[align="center"]
 
 Le projet Maven après import dans Idea.
 
@@ -390,7 +390,7 @@ Figure 09-07). On y retrouve tous nos répertoires de code source (et de
 code généré), que nous pouvons au besoin compléter, mais dans ce cas la
 configuration Idea ne sera plus synchrone avec le projet Maven.
 
-Figure 09-07
+image:illustrations/09-07.png[align="center"]
 
 La configuration du module Idea à partir des métadonnées Maven.
 
@@ -402,7 +402,7 @@ seront pas visibles depuis un autre projet qui fait référence au module
 considéré. Pas de risque ainsi d'introduire involontairement des imports
 parasites.
 
-Figure 09-08
+image:illustrations/09-08.png[align="center"]
 
 Les dépendances Maven vues sous Idea.
 
@@ -515,7 +515,7 @@ Maven, et, comme le souligne avec insistance Raphaël, le POM n'est pas
 dans cet environnement un format annexe, mais bien un descripteur de
 projet à part entière qui se suffit complètement.
 
-Figure 09-09
+image:illustrations/09-09.png[align="center"]
 
 Ouverture native d'un projet Maven.
 
@@ -560,7 +560,7 @@ dépôt. Comme l'indique la Figure 09-10, Raphaël ne se prive pas de nous
 montrer cette fonctionnalité comme preuve de la première place qu'occupe
 Maven dans son environnement préféré.
 
-Figure 09-10
+image:illustrations/09-10.png[align="center"]
 
 Intégration de la gestion des dépendances au plus profond de NetBeans.
 

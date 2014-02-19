@@ -789,7 +789,7 @@ Les données de Sonar sont accessibles _via_ un frontal web synthétique,
 qui donne les grandes tendances du projet. C'est notre vue à
 30 000 pieds du projet (voir Figure 12-02).
 
-Figure 12-02
+image:illustrations/12-02.png[align="center"]
 
 Synthèse de nos indicateurs qualité dans Sonar.
 
@@ -804,7 +804,7 @@ détails. On va ainsi descendre de lien en lien jusqu'aux classes du
 projet puis ouvrir son code source pour constater la ligne de code qui a
 été identifiée par l'analyse de code (voir Figure 12-03).
 
-Figure 12-03
+image:illustrations/12-03.png[align="center"]
 
 Détail des violations constatées par Sonar dans notre code source.
 
@@ -857,7 +857,7 @@ l'équipe, par exemple en lui montrant cette simple courbe, sur
 l'influence que peut avoir un petit effort quotidien de clarification et
 de simplification du code.
 
-Figure 12-04
+image:illustrations/12-04.png[align="center"]
 
 Évolution de nos indicateurs qualité.
 
@@ -870,7 +870,7 @@ extrêmement puissant pour accompagner le travail d'une équipe et pointer
 du doigt ses dérives. Le développeur parfait n'existe pas, mais le
 développeur bien outillé peut tenter de s'améliorer.
 
-Figure 12-05
+image:illustrations/12-05.png[align="center"]
 
 Classement des violations les plus souvent identifiées
 

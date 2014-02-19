@@ -49,7 +49,7 @@ de temps que l'exécution du test lui-même. Ce problème, multiplié par de
 nombreux tests sur le même modèle, a des conséquences immédiates sur le
 temps de construction de notre projet.
 
-Figure 05-01
+image:illustrations/05-01.png[align="center"]
 
 La séquence d'opération déroulée par un test GWT.
 
@@ -645,7 +645,7 @@ programmation. La Figure 05-02 montre l'un de nos tests Fitnesse. Ses
 intentions sont compréhensibles par tous, loin de la syntaxe obscure
 d'un bout de code jUnit.
 
-Figure 05-02
+image:illustrations/05-02.png[align="center"]
 
 Un test fonctionnel écrit sous Fitnesse.
 
@@ -958,7 +958,7 @@ positionnement de chaque outil en fonction du niveau d'abstraction,
 proche du code ou bien du fonctionnel, et de la spécialisation d'un
 outil vis-à-vis d'une technologie donnée.
 
-Figure 05-03
+image:illustrations/05-03.png[align="center"]
 
 Positionnement de nos outils de test.
 

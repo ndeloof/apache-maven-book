@@ -558,7 +558,7 @@ que les utilisateurs de tous niveaux formulent, parfois dans un anglais
 assez approximatif (c'est un moyen simple pour reconnaître des collègues
 francophones).
 
-Figure 15-01
+image:illustrations/15-01.png[align="center"]
 
 Trafic de la liste users@maven.apache.org – en rouge le nombre de
 messages et en bleu le nombre d'inscrits.
@@ -572,15 +572,15 @@ de téléchargements de Maven au cours de l'année, toutes versions
 confondues. Ici encore, les chiffres démontrent une très large
 communauté.
 
-Figure 15-02
+image:illustrations/15-02.png[align="center"]
 
 Origine géographique des visiteurs de maven.apache.org.
 
-Figure 15-03
+image:illustrations/15-03.png[align="center"]
 
 Trafic sur le site web maven.apache.org.
 
-Figure 15-04
+image:illustrations/15-04.png[align="center"]
 
 Téléchargements mensuels de Maven sur un an, toutes versions confondues.
 
@@ -803,7 +803,7 @@ En résumé, Maven 3 c’est un peu un épisode spécial de Extreme makeover :
 Maven editionlink:#_ftn59[[59]].  On prend votre outillage existant,
 mais on refait tout de la cave au grenier !
 
-$$$ centré $$$Figure 15-05
+image:illustrations/15-05.png[align="center"]
 
 Quoi de neuf ?
 ++++++++++++++
@@ -845,7 +845,7 @@ propose une console avec coloration syntaxique, assistance à la saisie
 des mots clés, et maintien en mémoire des POM et des métadonnées de
 votre projet. Il en résulte un Maven plus réactif à vos commandes.
 
-Figure 15-06
+image:illustrations/15-06.png[align="center"]
 
 Sonatype MavenShell.
 
