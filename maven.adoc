@@ -550,34 +550,29 @@ Listing 1.4 : Seconde exécution de Maven… sans téléchargement cette fois
 
 	D:\noubliepaslalistedescourses>mvn package
 	[INFO] Scanning for projects...
-	[INFO]
-	------------------------------------------------------------------------
-	[INFO] Building Unnamed -
-	fr.maven:noubliepaslalistedescourses:jar:0.0.1-SNAPSHOT
+	[INFO] ------------------------------------------------------------------------
+	[INFO] Building Unnamed - fr.maven:noubliepaslalistedescourses:jar:0.0.1-SNAPSHOT
 	[INFO]    task-segment: [package]
-	[INFO]
-	------------------------------------------------------------------------
+	[INFO] ------------------------------------------------------------------------
 	[INFO] [resources:resources]
 	[INFO] Using default encoding to copy filtered resources.
 	[INFO] [compiler:compile]
-	[INFO] Compiling 3 source files to
-	D:\java\workspace\malistedecourses\target\classes
+	[INFO] Compiling 3 source files to D:\java\workspace\malistedecourses\target\classes
 	[INFO] [resources:testResources]
 	[INFO] Using default encoding to copy filtered resources.
 	[INFO] [compiler:testCompile]
 	[INFO] Nothing to compile - all classes are up to date
 	[INFO] [surefire:test]
-	[INFO] Surefire report directory:
-	D:\java\workspace\malistedecourses\target\surefire-reports
-
+	[INFO] Surefire report directory: D:\java\workspace\malistedecourses\target\surefire-reports
+	
 	-------------------------------------------------------
 	 T E S T S
 	-------------------------------------------------------
 	There are no tests to run.
-
+	
 	Results :
 	Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
-
+	
 	[INFO] [jar:jar]
 	[INFO] Building jar:
 	D:\java\workspace\malistedecourses\target\malistedecourses-0.0.1-SNAPSHOT.jar
@@ -724,10 +719,10 @@ La première partie du POM permet d'identifier le projet lui-même.
 
 Listing 1.5 : L'en-tête du fichier POM
 
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>fr.noubliepaslalistedescourses</groupId>
-    <artifactId>noubliepaslalistedescourses</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+	    <modelVersion>4.0.0</modelVersion>
+	    <groupId>fr.noubliepaslalistedescourses</groupId>
+	    <artifactId>noubliepaslalistedescourses</artifactId>
+	    <version>0.0.1-SNAPSHOT</version>
 
 
 L'élément modelVersion permet de savoir quelle version de la structure
