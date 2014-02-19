@@ -97,10 +97,6 @@ Nous espérons que les pages qui suivent vous aideront à prendre en main
 Maven et à en comprendre la richesse et la philosophie, qui en font un
 outil sans équivalent.
 
- 
-
- 
-
 Avant-propos
 ------------
 
@@ -516,24 +512,17 @@ Listing 1.3 : Première exécution de Maven
 
 	D:\noubliepaslalistedescourses>mvn package
 	[INFO] Scanning for projects...
-	[INFO]
-	------------------------------------------------------------------------
-	[INFO] Building Unnamed - fr.
-	noubliepaslalistedescourses:noubliepaslalistedescourses:jar:0.0.1-SNAPSHOT
+	[INFO] ------------------------------------------------------------------------
+	[INFO] Building Unnamed - fr.noubliepaslalistedescourses:noubliepaslalistedescourses:jar:0.0.1-SNAPSHOT
 	[INFO]    task-segment: [package]
-	[INFO]
-	------------------------------------------------------------------------
-	Downloading:
-	http://repo1.maven.org/maven2/org/apache/maven/plugins/maven-resources-plugin/2.2/maven-resources-plugin-2.2.pom
+	[INFO] ------------------------------------------------------------------------
+	Downloading: http://repo1.maven.org/maven2/org/apache/maven/plugins/maven-resources-plugin/2.2/maven-resources-plugin-2.2.pom
 	1K downloaded
-	Downloading:
-	http://repo1.maven.org/maven2/org/apache/maven/plugins/maven-plugins/1/maven-plugins-1.pom
+	Downloading: http://repo1.maven.org/maven2/org/apache/maven/plugins/maven-plugins/1/maven-plugins-1.pom
 	3K downloaded
-	Downloading:
-	http://repo1.maven.org/maven2/org/apache/maven/maven-parent/1/maven-parent-1.pom
+	Downloading: http://repo1.maven.org/maven2/org/apache/maven/maven-parent/1/maven-parent-1.pom
 	6K downloaded
-	Downloading:
-	http://repo1.maven.org/maven2/org/apache/apache/1/apache-1.pom
+	Downloading: http://repo1.maven.org/maven2/org/apache/apache/1/apache-1.pom
 	3K downloaded
 	...
 
@@ -1119,13 +1108,9 @@ nous référençons l'artefact mail de la bibliothèque standard javaMail
 dans sa version 1.4.
 
     <dependency>
-
       <groupId>javax.mail</groupId>
-
       <artifactId>mail</artifactId>
-
       <version>1.4</version>
-
     </dependency>
 
 Il n'y a ici aucune équivoque possible. Toute autre variante de JavaMail
@@ -1290,13 +1275,10 @@ utilisée ?
 Maven est autrement plus subtil : jetez un coup d'œil quelques pages en
 arrière, sur le contenu du répertoire lib de notre projet initial :
 
-\lib
-
-    \mail.jar
-
-    \activation.jar
-
-    \util.jar
+    \lib
+       \mail.jar
+       \activation.jar
+       \util.jar
 
 Nous utilisons trois bibliothèques, la première est l'API JavaMail, la
 deuxième le Bean Activation Framework, nécessaire au bon fonctionnement
@@ -1431,29 +1413,18 @@ Nous pouvons ainsi préciser que la bibliothèque jUnit n'est utilisée que
 durant la phase de test et que l'API servlet ne doit pas être intégrée
 dans notre archive web.
 
-<dependency>
-
+    <dependency>
       <groupId>javax.servlet</groupId>
-
       <artifactId>servlet</artifactId>
-
       <version>2.3</version>
-
       <scope>provided</scope>
-
-</dependency>
-
-<dependency>
-
+    </dependency>
+    <dependency>
       <groupId>junit</groupId>
-
       <artifactId>junit</artifactId>
-
       <version>4.7</version>
-
       <scope>test</scope>
-
-</dependency>
+    </dependency>
 
 Maven exploite ces données supplémentaires lorsqu'il exécute les
 commandes de construction du projet. Avec cette précision, jUnit ne sera
@@ -1503,29 +1474,18 @@ Le fichier POM de commons-logging déclare donc des dépendances vers
 toutes les bibliothèques de log qu'il supporte. La déclaration Maven
 correcte devrait être :
 
-<dependency>
-
+    <dependency>
       <groupId>log4j</groupId>
-
       <artifactId>log4j</artifactId>
-
       <version>1.2.12</version>
-
       <optional>true</optional>
-
-</dependency>
-
-<dependency>
-
+    </dependency>
+    <dependency>
       <groupId>logkit</groupId>
-
       <artifactId>logkit</artifactId>
-
       <version>1.0.1</version>
-
       <optional>true</optional>
-
-</dependency>
+    </dependency>
 
 ...
 
@@ -1561,27 +1521,17 @@ transitivité. Ainsi, si nous voulons empêcher Spring – qui utilise
 commons-logging – d'introduire sur notre projet ce fameux JAR
 avalon-framework, nous pouvons écrire :
 
-<dependency>
-
+    <dependency>
       <groupId>org.springframework</groupId>
-
       <artifactId>spring-beans</artifactId>
-
       <version>2.5.6</version>
-
       <exclusions>
-
           <exclusion>
-
               <groupId>avalon-framework</groupId>
-
               <artifactId>avalon-framework</artifactId>
-
           </exclusion>
-
       </exclusions>
-
-</dependency>
+    </dependency>
 
 Un autre problème que nous avons identifié est ce doublon
 commons-logging + commons-logging-api. Ce cas est plus subtil. Les
@@ -1640,43 +1590,23 @@ est une dépendance qui introduit par transitivité d'autres dépendances.
 
 Listing 2.1 : Exécution de mvn dependency:tree
 
-[INFO] [dependency:tree]
-
-[INFO] fr.noubliepaslalistedescourses:
-noubliepaslalistedescourses:war:1.0.0-SNAPSHOT
-
+    [INFO] [dependency:tree]
+[INFO] fr.noubliepaslalistedescourses:noubliepaslalistedescourses:war:1.0.0-SNAPSHOT
 [INFO] +- org.apache.cxf:cxf-rt-frontend-jaxws:jar:2.1.4:compile
-
-[INFO] |  +-
-org.apache.geronimo.specs:geronimo-jaxws_2.1_spec:jar:1.0:compile
-
-[INFO] |  +-
-org.apache.geronimo.specs:geronimo-ws-metadata_2.0_spec:jar:1.1.2:compile
-
+[INFO] |  +- org.apache.geronimo.specs:geronimo-jaxws_2.1_spec:jar:1.0:compile
+[INFO] |  +- org.apache.geronimo.specs:geronimo-ws-metadata_2.0_spec:jar:1.1.2:compile
 [INFO] |  +- asm:asm:jar:2.2.3:compile
-
 [INFO] |  +- org.apache.cxf:cxf-rt-bindings-xml:jar:2.1.4:compile
-
 [INFO] |  +- org.apache.cxf:cxf-rt-frontend-simple:jar:2.1.4:compile
-
 [INFO] |  +- org.apache.cxf:cxf-rt-ws-addr:jar:2.1.4:compile
-
 [INFO] |  +- javax.xml.soap:saaj-api:jar:1.3:compile
-
 [INFO] |  \- com.sun.xml.messaging.saaj:saaj-impl:jar:1.3.2:compile
-
 [INFO] |  \- javax.xml.ws:jaxws-api:jar:2.1:compile
-
 [INFO] |     +- javax.annotation:jsr250-api:jar:1.0:compile
-
 [INFO] |     \- javax.jws:jsr181-api:jar:1.0-MR1:compile
-
 [INFO] +- org.springframework:spring-aspects:jar:2.5.6:compile
-
 [INFO] |  \- org.aspectj:aspectjweaver:jar:1.6.2:compile
-
 [INFO] +- org.hibernate:hibernate-annotations:jar:3.4.0.GA:compile
-
 [INFO] |  \- org.hibernate:ejb3-persistence:jar:1.0.2.GA:compile
 
 ...
