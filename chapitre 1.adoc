@@ -58,7 +58,7 @@ fassent disparaître). Il envoie donc le trésor tant convoité à Arnaud.
 Pour vous faire une meilleure idée de cette exceptionnelle construction
 logicielle, voici les fichiers qui la constituent :
 
-Figure 01-01
+image:illustrations/01-01.png
 
 La structure originale du projet "noubliepaslalistedescourses".
 
@@ -91,39 +91,27 @@ $$$ 2 colonnes [mangaNicolas] + build.bat   [mangaArnaud] + build.sh $$$
 
 image:illustrations/MangaNicolas.png[float="left"]
 
-@echo off
+	@echo off
+	set JAVA_HOME=C:\jdk1.3
+	set PATH=%JAVA_HOME%\bin
+	set CLASSPATH=lib\mail.jar;lib\activation.jar
 
-set JAVA_HOME=C:\jdk1.3
+	mkdir build
+	javac -d build src\*.java
+	jar cf noubliepaslalistedescourses.jar build\*.class
 
-set PATH=%JAVA_HOME%\bin
 
-set CLASSPATH=lib\mail.jar;lib\activation.jar
+image:illustrations/MmangaArnaud.png[float="left"]
 
- 
+	#!/bin/bash
+	export JAVA_HOME=/opt/jdk1.3
+	export PATH=$JAVA_HOME/bin
+	export CLASSPATH=lib/mail.jar:lib/activation.jar
 
-mkdir build
+	mkdir build
+	javac -d build src/*.java
+	jar cf noubliepaslalistedescourses.jar build/*.class
 
-javac -d build src\*.java
-
-jar cf noubliepaslalistedescourses.jar build\*.class
-
-mangaArnaud
-
-#!/bin/bash
-
-export JAVA_HOME=/opt/jdk1.3
-
-export PATH=$JAVA_HOME/bin
-
-export CLASSPATH=lib/mail.jar:lib/activation.jar
-
- 
-
-mkdir build
-
-javac -d build src/*.java
-
-jar cf noubliepaslalistedescourses.jar build/*.class
 
 De nombreux projets industriels ou communautaires sont confrontés à ce
 même problème et sont obligés de maintenir deux versions (ou plus) du
@@ -238,47 +226,27 @@ Voici le fichier envoyé par Jason :
 
 Listing 1.2 : pom.xml
 
-<project>
-
-  <modelVersion>4.0.0</modelVersion>
-
-  <groupId>fr.noubliepaslalistedescourses</groupId>
-
-  <artifactId>noubliepaslalistedescourses</artifactId>
-
-  <version>0.0.1-SNAPSHOT</version>
-
-  <build>
-
-    <sourceDirectory>src</sourceDirectory>
-
-  </build>
-
-  <dependencies>
-
-    <dependency>
-
-      <groupId>javax.mail</groupId>
-
-      <artifactId>mail</artifactId>
-
-      <version>1.4</version>
-
-    </dependency>
-
-    <dependency>
-
-      <groupId>commons-io</groupId>
-
-      <artifactId>commons-io</artifactId>
-
-      <version>1.4</version>
-
-    </dependency>
-
-  </dependencies>
-
-</project>
+	<project>
+	  <modelVersion>4.0.0</modelVersion>
+	  <groupId>fr.noubliepaslalistedescourses</groupId>
+	  <artifactId>noubliepaslalistedescourses</artifactId>
+	  <version>0.0.1-SNAPSHOT</version>
+	  <build>
+	    <sourceDirectory>src</sourceDirectory>
+	  </build>
+	  <dependencies>
+	    <dependency>
+	      <groupId>javax.mail</groupId>
+	      <artifactId>mail</artifactId>
+	      <version>1.4</version>
+	    </dependency>
+	    <dependency>
+	      <groupId>commons-io</groupId>
+	      <artifactId>commons-io</artifactId>
+	      <version>1.4</version>
+	    </dependency>
+	  </dependencies>
+	</project>
 
 Comparé aux fichiers Ant testés jusqu'ici, ce fichier "pom.xml" – quel
 drôle de nom – ne ressemble à rien de connu. Pas de directive de
@@ -308,42 +276,29 @@ téléchargements divers :
 
 Listing 1.3 : Première exécution de Maven
 
-D:\noubliepaslalistedescourses>mvn package
+	D:\noubliepaslalistedescourses>mvn package
+	[INFO] Scanning for projects...
+	[INFO]
+	------------------------------------------------------------------------
+	[INFO] Building Unnamed - fr.
+	noubliepaslalistedescourses:noubliepaslalistedescourses:jar:0.0.1-SNAPSHOT
+	[INFO]    task-segment: [package]
+	[INFO]
+	------------------------------------------------------------------------
+	Downloading:
+	http://repo1.maven.org/maven2/org/apache/maven/plugins/maven-resources-plugin/2.2/maven-resources-plugin-2.2.pom
+	1K downloaded
+	Downloading:
+	http://repo1.maven.org/maven2/org/apache/maven/plugins/maven-plugins/1/maven-plugins-1.pom
+	3K downloaded
+	Downloading:
+	http://repo1.maven.org/maven2/org/apache/maven/maven-parent/1/maven-parent-1.pom
+	6K downloaded
+	Downloading:
+	http://repo1.maven.org/maven2/org/apache/apache/1/apache-1.pom
+	3K downloaded
+	...
 
-[INFO] Scanning for projects...
-
-[INFO]
-------------------------------------------------------------------------
-
-[INFO] Building Unnamed - fr.
-noubliepaslalistedescourses:noubliepaslalistedescourses:jar:0.0.1-SNAPSHOT
-
-[INFO]    task-segment: [package]
-
-[INFO]
-------------------------------------------------------------------------
-
-Downloading:
-http://repo1.maven.org/maven2/org/apache/maven/plugins/maven-resources-plugin/2.2/maven-resources-plugin-2.2.pom
-
-1K downloaded
-
-Downloading:
-http://repo1.maven.org/maven2/org/apache/maven/plugins/maven-plugins/1/maven-plugins-1.pom
-
-3K downloaded
-
-Downloading:
-http://repo1.maven.org/maven2/org/apache/maven/maven-parent/1/maven-parent-1.pom
-
-6K downloaded
-
-Downloading:
-http://repo1.maven.org/maven2/org/apache/apache/1/apache-1.pom
-
-3K downloaded
-
-...
 
 Cette liste de messages semble même interminable et avoir été conçue
 pour favoriser le développement d'Internet à haut débit. Tout ça pour
@@ -366,84 +321,50 @@ apparemment nécessaires :
 
 Listing 1.4 : Seconde exécution de Maven… sans téléchargement cette fois
 
-D:\noubliepaslalistedescourses>mvn package
+	D:\noubliepaslalistedescourses>mvn package
+	[INFO] Scanning for projects...
+	[INFO]
+	------------------------------------------------------------------------
+	[INFO] Building Unnamed -
+	fr.maven:noubliepaslalistedescourses:jar:0.0.1-SNAPSHOT
+	[INFO]    task-segment: [package]
+	[INFO]
+	------------------------------------------------------------------------
+	[INFO] [resources:resources]
+	[INFO] Using default encoding to copy filtered resources.
+	[INFO] [compiler:compile]
+	[INFO] Compiling 3 source files to
+	D:\java\workspace\malistedecourses\target\classes
+	[INFO] [resources:testResources]
+	[INFO] Using default encoding to copy filtered resources.
+	[INFO] [compiler:testCompile]
+	[INFO] Nothing to compile - all classes are up to date
+	[INFO] [surefire:test]
+	[INFO] Surefire report directory:
+	D:\java\workspace\malistedecourses\target\surefire-reports
 
-[INFO] Scanning for projects...
+	-------------------------------------------------------
+	 T E S T S
+	-------------------------------------------------------
+	There are no tests to run.
 
-[INFO]
-------------------------------------------------------------------------
+	Results :
+	Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
 
-[INFO] Building Unnamed -
-fr.maven:noubliepaslalistedescourses:jar:0.0.1-SNAPSHOT
+	[INFO] [jar:jar]
+	[INFO] Building jar:
+	D:\java\workspace\malistedecourses\target\malistedecourses-0.0.1-SNAPSHOT.jar
+	[INFO]
+	------------------------------------------------------------------------
+	[INFO] BUILD SUCCESSFUL
+	[INFO]
+	------------------------------------------------------------------------
+	[INFO] Total time: 15 seconds
+	[INFO] Finished at: Fri Jan 02 17:02:09 CET 2009
+	[INFO] Final Memory: 6M/13M
+	[INFO]
+	------------------------------------------------------------------------
 
-[INFO]    task-segment: [package]
-
-[INFO]
-------------------------------------------------------------------------
-
-[INFO] [resources:resources]
-
-[INFO] Using default encoding to copy filtered resources.
-
-[INFO] [compiler:compile]
-
-[INFO] Compiling 3 source files to
-D:\java\workspace\malistedecourses\target\classes
-
-[INFO] [resources:testResources]
-
-[INFO] Using default encoding to copy filtered resources.
-
-[INFO] [compiler:testCompile]
-
-[INFO] Nothing to compile - all classes are up to date
-
-[INFO] [surefire:test]
-
-[INFO] Surefire report directory:
-D:\java\workspace\malistedecourses\target\surefire-reports
-
- 
-
--------------------------------------------------------
-
- T E S T S
-
--------------------------------------------------------
-
-There are no tests to run.
-
- 
-
-Results :
-
- 
-
-Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
-
- 
-
-[INFO] [jar:jar]
-
-[INFO] Building jar:
-D:\java\workspace\malistedecourses\target\malistedecourses-0.0.1-SNAPSHOT.jar
-
-[INFO]
-------------------------------------------------------------------------
-
-[INFO] BUILD SUCCESSFUL
-
-[INFO]
-------------------------------------------------------------------------
-
-[INFO] Total time: 15 seconds
-
-[INFO] Finished at: Fri Jan 02 17:02:09 CET 2009
-
-[INFO] Final Memory: 6M/13M
-
-[INFO]
-------------------------------------------------------------------------
 
 Nous constatons que Maven a compilé nos trois fichiers sources et
 construit un fichier JAR, ce qu'on attendait de lui, mais il a également
@@ -460,18 +381,18 @@ construire le logiciel ou exécuter des tâches annexes. Cela se traduit
 donc par une suite de commandes, qui prendra d'une façon ou d'une autre
 la forme décrite à la Figure 01-02.
 
-Figure 01-02
+image:illustrations/01-02.png
 
 Les étapes élémentaires de construction d'un projet.
 
 Cette approche fonctionne très bien et permet de faire à peu près tout
 ce qu'on veut, mais elle nécessite :
 
-·     *de répéter pour chaque nouveau projet une liste de tâches très
+ * de répéter pour chaque nouveau projet une liste de tâches très
 similaires*, ce qui se traduit souvent par la copie d'un fichier de
 configuration considéré comme "faisant référence" ;
 
-·     *de gérer une liste de dépendances entre les étapes clés*, comme,
+ * de gérer une liste de dépendances entre les étapes clés*, comme,
 dans notre exemple, "compiler" lorsqu'on désire assembler le JAR.
 
 Maven choisit une approche différente, fondée sur le constat suivant :
@@ -576,13 +497,11 @@ La première partie du POM permet d'identifier le projet lui-même.
 
 Listing 1.5 : L'en-tête du fichier POM
 
-  <modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>fr.noubliepaslalistedescourses</groupId>
+    <artifactId>noubliepaslalistedescourses</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
 
-  <groupId>fr.noubliepaslalistedescourses</groupId>
-
-  <artifactId>noubliepaslalistedescourses</artifactId>
-
-  <version>0.0.1-SNAPSHOT</version>
 
 L'élément modelVersion permet de savoir quelle version de la structure
 de données "modèle de projet" est représentée dans le fichier XML.
@@ -595,12 +514,12 @@ Les futures versions de Maven 3 pourront exploiter des versions
 différentes de modèles et introduire des évolutions dans le format de ce
 fichier. Entre autre, sont envisagés :
 
-·      l’import partiel d’autres fichiers POM (« mixins ») permettant de
+  * l’import partiel d’autres fichiers POM (« mixins ») permettant de
 construire un projet par agrégation de bonnes pratiques,
 
-·      des mécanismes avancés de gestion de dépendance,
+  * des mécanismes avancés de gestion de dépendance,
 
-·      et tout ce qui pourra s’avérer utile pour rendre Maven 3.x plus
+  * et tout ce qui pourra s’avérer utile pour rendre Maven 3.x plus
 puissant et encore plus universel !
 
 L'identifiant de groupe (groupId) permet de connaître l'organisation,
@@ -646,11 +565,9 @@ La deuxième partie du POM concerne la construction du projet :
 
 Listing 1.6 : Le bloc build du fichier POM
 
-<build>
-
-    <sourceDirectory>src</sourceDirectory>
-
-</build>
+    <build>
+        <sourceDirectory>src</sourceDirectory>
+    </build>
 
 L'approche déclarative utilisée par Maven permet de définir
 l'emplacement de nos fichiers sources. Le projet étant à la fois très
@@ -663,29 +580,19 @@ projet :
 
 Listing 1.7 : Le bloc dependencies du fichier POM
 
-  <dependencies>
+    <dependencies>
+        <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>mail</artifactId>
+            <version>1.4</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>1.4</version>
+        </dependency>
+    <dependencies>
 
-    <dependency>
-
-      <groupId>javax.mail</groupId>
-
-      <artifactId>mail</artifactId>
-
-      <version>1.4</version>
-
-    </dependency>
-
-    <dependency>
-
-      <groupId>commons-io</groupId>
-
-      <artifactId>commons-io</artifactId>
-
-      <version>1.4</version>
-
-    </dependency>
-
-  <dependencies>
 
 Une nouvelle fois, l'approche déclarative prend le dessus : nous
 n'indiquons pas l'emplacement physique de ces bibliothèques, à savoir
