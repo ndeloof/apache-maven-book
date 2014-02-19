@@ -101,7 +101,7 @@ image:illustrations/MangaNicolas.png[float="left"]
 	jar cf noubliepaslalistedescourses.jar build\*.class
 
 
-image:illustrations/MmangaArnaud.png[float="left"]
+image:illustrations/MangaArnaud.png[float="left"]
 
 	#!/bin/bash
 	export JAVA_HOME=/opt/jdk1.3
