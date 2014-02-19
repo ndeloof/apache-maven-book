@@ -17,3 +17,17 @@ Build
 =======
 
 Pour produire les chapitres au format html, il suffit de lancer ```mvn clean compile```, le résultat est disponible sous ```target/html```, ou bien si vous n'aimez pas maven (mais alors que faites vous là ?) ```for f in *.adoc ; do asciidoc "$f"; done```
+
+Contribuer ?
+==============
+
+N'hésitez pas à contribuer ! Si en cours de lecture vous voyez un point à corriger / compléter, utiliser le bouton "edit" de giihub pour editer le fichier (format asciidoc) et proposer ainsi directement un changement (une pull-request en vocabulaire github).
+
+Si vous voulez contribuer de manière plus active, nous mettons à disposition un script pour éditer les fichiers avec un rendu en temps réel. Il vous faudra Ruby d'installé sur votre poste, puis lancez dans le répertoire du projet :
+
+    gem install bundler
+    bundle init
+    bundle install
+    bundle exec guard
+
+Ouvrez ensuite votre navigateur préféré avec un plugin LiveReload ou équivalent, et vous aurez en temps réel le rendu de vos modifications.
