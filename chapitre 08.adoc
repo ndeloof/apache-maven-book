@@ -37,7 +37,7 @@ vous voulez en avoir une description plus fine et moins biaisée que
 notre résumé de quelques lignes, nous vous recommandons l'introduction
 disponible sur le site de SUNlink:#_ftn31[[31]].
 
-Figure 08-01
+image:illustrations/08-01.png[align="center"]
 
 Structure d'une application selon le modèle JavaEE.
 
@@ -130,7 +130,7 @@ mesure de manipuler nos servlets parce que nous partageons avec lui les
 classes de cette API. La Figure 08-02 compare cependant ce modèle
 théorique et ce que nous observons.
 
-Figure 08-02
+image:illustrations/08-02.png[align="center"]
 
 Comparaison de la structure des chargeurs de classes : théorie _vs_
 pratique.
@@ -510,7 +510,7 @@ dépendances, notre projet application web ne contient alors que les
 bibliothèques spécifiquement web qu'il emploie. La Figure 08-03 indique
 la structure finale de notre projet Maven.
 
-Figure 08-03
+image:illustrations/08-03.png[align="center"]
 
 Multiprojet JavaEE avec mise en commun des dépendances _via_ l'EAR.
 

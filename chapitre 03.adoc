@@ -308,7 +308,7 @@ dans sa capacité à prendre en charge de manière automatisée le projet.
 En particulier, la structure type d'un projet Maven est la suivante
 (voir Figure 03-02).
 
-Figure 03-02 
+image:illustrations/03-02.png[align="center"] 
 
 La structure de base d'un projet Maven.
 
@@ -450,7 +450,7 @@ projet.
 Un élément <execution> permet de définir les tâches définies par le
 plugin considéré que Maven devra exécuter.
 
-Figure 03-03
+image:illustrations/03-03.png[align="center"]
 
 Le cycle de vie du projet et les plugins qui viennent s'y greffer.
 
@@ -482,7 +482,7 @@ blanc que nous utilisons pour griffonner nos dernières idées… et le
 tableau est rapidement noir de petits croquis, de flèches en tout genre
 et de notes sur le comportement idéal de notre site web.
 
-Figure 03-04
+image:illustrations/03-04.png[align="center"]
 
 Notre document officiel de spécifications pour l'application web.
 
@@ -691,7 +691,7 @@ vie d'un projet JAR
 Maven fournit un moyen pour venir greffer d'autres plugins à ce cycle,
 en plus de ceux qu'il aura associés par défaut.
 
-Figure 03-05
+image:illustrations/03-05.png[align="center"]
 
 Cycle de vie du projet et plugins exécutés pour chaque phase.
 

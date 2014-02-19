@@ -241,7 +241,7 @@ du sous-répertoire dédié à la bibliothèque indiquée :
 Pour notre dépendance à JavaMail, nous obtenons :
 http://repo1.maven.org/maven2/javax/mail/mail/1.4/.
 
-Figure 02-01
+image:illustrations/02-01.png[align="center"]
 
 Le sous-répertoire dédié à JavaMail 1.4 sur le dépôt de bibliothèques.
 
@@ -380,7 +380,7 @@ permet à Maven de construire l'arbre des dépendances du projet, chaque
 nouvelle feuille pouvant, par ses propres métadonnées, introduire de
 nouvelles branches.
 
-Figure 02-02
+image:illustrations/02-02.png[align="center"]
 
 Arbre de dépendances transitives.
 
@@ -743,7 +743,7 @@ la zone de droite, il nous indique tous les chemins de dépendance qui y
 mènent. Un simple clic permet de placer les exclusions qui s'imposent
 sans éditer manuellement le fichier POM.
 
-Figure 02-03
+image:illustrations/02-03.png[align="center"]
 
 Plugin Maven pour Eclipse.
 

@@ -171,7 +171,7 @@ Maven. Nous y faisons une recherche sur le mot "oracle", et nous
 obtenons rapidement la confirmation attendue sur l'identité de notre
 pilote JDBC (voir Figure 06-01).
 
-Figure 06-01
+image:illustrations/06-01.png[align="center"]
 
 Recherche d'un artefact _via_ un moteur de recherche spécialisé.
 
@@ -796,7 +796,7 @@ dépôt sans intervention humaine. La Figure 06-03 montre par exemple le
 rapport d'audit sur un dépôt administré par Archiva, et les différents
 problèmes qu'il a su y détecter.
 
-Figure 06-03
+image:illustrations/06-03.png[align="center"]
 
 Rapports d'audit d'Archiva.
 
@@ -810,7 +810,7 @@ environnements de développement (voir le Chapitre 9). Enfin, un espace
 de stockage permet la diffusion des développements au reste de l'équipe,
 servant de dépôt "public-privé".
 
-Figure 06-04
+image:illustrations/06-04.png[align="center"]
 
 Page de recherche d'Artifactory.
 

@@ -162,7 +162,7 @@ décomposé en de nombreux modules qui héritent d'un POM parent commun,
 qui lui-même hérite du POM parent Apache, commun à tous les projets de
 la fondation du même nom.
 
-Figure 07-01
+image:illustrations/07-01.png[align="center"]
 
 Hiérarchie des POM Apache Maven
 
@@ -501,7 +501,7 @@ impact sur un autre module apparaîtra en quelques instants, alors qu'une
 construction complète aurait pu prendre de longues minutes, impliquant
 de nombreux modules non concernés par la modification.
 
-Figure 07-02
+image:illustrations/07-02.png[align="center"]
 
 Réaction du serveur d'intégration continue à une modification.
 
