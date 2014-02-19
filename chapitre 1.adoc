@@ -15,11 +15,7 @@ existé ne serait que fortuite…
 Prologue
 ~~~~~~~~
 
-$$$ pictos côte à côte ou l'un sous l'autre$$$
-
-image:illustrations/MangaNicolas.png[float="left"]
-
-image:illustrations/MangaArnaud.png[float="left"]
+image:illustrations/MangaNicolas.png[float="left"] image:illustrations/MangaArnaud.png[float="right"]
 
 Nicolas et Arnaud se sont rencontrés au cours d'une conférence organisée
 par un Java User Group. Faisant connaissance autour d'un verre, ils
@@ -58,7 +54,7 @@ fassent disparaître). Il envoie donc le trésor tant convoité à Arnaud.
 Pour vous faire une meilleure idée de cette exceptionnelle construction
 logicielle, voici les fichiers qui la constituent :
 
-image:illustrations/01-01.png
+image:illustrations/01-01.png[float="left"]
 
 La structure originale du projet "noubliepaslalistedescourses".
 
@@ -381,7 +377,7 @@ construire le logiciel ou exécuter des tâches annexes. Cela se traduit
 donc par une suite de commandes, qui prendra d'une façon ou d'une autre
 la forme décrite à la Figure 01-02.
 
-image:illustrations/01-02.png
+image:illustrations/01-02.png[float="left"]
 
 Les étapes élémentaires de construction d'un projet.
 
