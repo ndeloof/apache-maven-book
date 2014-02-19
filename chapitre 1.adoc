@@ -14,7 +14,8 @@ Prologue
 image:illustrations/MangaNicolas.png[float="left"] image:illustrations/MangaArnaud.png[float="right"]
 
 Nicolas et Arnaud se sont rencontrés au cours d'une conférence organisée
-par un Java User Group. Faisant connaissance autour d'un verre, ils
+par un Java User Group (si vous ne participez pas à un JUG ... et bien vous avez tort).
+Faisant connaissance autour d'un verre, ils
 évoquent les souvenirs de leurs premiers pas avec Java, devenu depuis
 leur plateforme de prédilection. Un Java Development Kit dans une
 version qui fait sourire aujourd'hui, et les bons vieux "Hello World"
