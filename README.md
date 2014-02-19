@@ -8,3 +8,9 @@ Pearson ayant décidé d'arrêter l'exploitation de ce livre, Arnaud et moi-mêm
 ![cover](cover.jpg)
 
 License : [Creative-commons CC BY-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr)
+
+compile
+=======
+
+Pour produire les chapitres au format html, il suffit de lancer ```mvn clean compile```, le résultat est disponible sous ```target/html```
+

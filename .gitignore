@@ -6,3 +6,6 @@
 *.pdf
 *.htm
 *.html
+*.iml
+.idea
+target
