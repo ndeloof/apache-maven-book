@@ -627,7 +627,7 @@ sommes exigeants et en voulons encore plus !
 
  
 
-image:illustrations/MangaStephane**.png[float="left"]
+image:illustrations/MangaStephane.png[float="left"]
 
 Stéphane a gardé une carte dans sa manche. Face à un build qui enchaîne
 encore plusieurs modules, il nous propose d’ajouter une dernière option,

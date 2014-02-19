@@ -200,7 +200,7 @@ vingt premières années de ma vie à Limoges, c'est pour dire ;-).
 Bénévole WWF et ambassadeur de l'ONG Planète Urgence : ma vraie passion,
 c'est la protection de l'environnement et la solidarité internationale.
 
-image:illustrations/MangaHervé.png[float="left"]
+image:illustrations/MangaHerve.png[float="left"]
 
 Hervé Boutemy
 +++++++++++++
@@ -437,7 +437,7 @@ aussi partie de la bande des Cast Codeurs. Quoi ? Vous ne connaissez pas
 les Cast Codeurs ? Eh bien, retrouvez tout cela sur mon site personnel
 pour de plus amples informations : http://www.antoniogoncalves.org.
 
-image:illustrations/MangaFrançois.png[float="left"]
+image:illustrations/MangaFrancois.png[float="left"]
 
 François Le Droff
 +++++++++++++++++
@@ -533,7 +533,7 @@ version 1 m'avait paru intéressante comparée à Ant mais c'est surtout la
 version 2 et toutes ses conventions qui me semblent apporter énormément
 au développement !
 
-image:illustrations/MangaPascal**.png[float="left"]
+image:illustrations/MangaPascal.jpg[float="left"]
 
 Pascal Leclercq
 +++++++++++++++

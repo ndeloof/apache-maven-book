@@ -482,7 +482,7 @@ passer à notre troisième candidat.
 NetBeans
 ~~~~~~~~
 
-image:illustrations/MangaRapahel.png[float="left"]
+image:illustrations/MangaRaphael.png[float="left"]
 
 Notre dernier candidat est un farouche partisan de NetBeans et compte
 bien nous démontrer sa supériorité pour le mariage de Maven avec un
