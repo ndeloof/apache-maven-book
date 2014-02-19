@@ -11,4 +11,9 @@ Pearson ayant décidé d'arrêter l'exploitation de ce livre, Arnaud et moi-mêm
 
 License : [Creative-commons CC BY-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr)
 
-Commencez [ici](https://github.com/ndeloof/apache-maven-book/blob/master/chapitre%2001.adoc)
+Vous pouvez visualiser le contenu [directement sur GitHub](https://github.com/ndeloof/apache-maven-book/blob/master/chapitre%2001.adoc), ou consulter la [version HTML](https://apache-maven.ci.cloudbees.com/job/apache-maven-book/HTML/)
+
+Build
+=======
+
+Pour produire les chapitres au format html, il suffit de lancer ```mvn clean compile```, le résultat est disponible sous ```target/html```, ou bien si vous n'aimez pas maven (mais alors que faites vous là ?) ```for f in *.adoc ; do asciidoc "$f"; done```
