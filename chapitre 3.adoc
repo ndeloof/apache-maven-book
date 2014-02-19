@@ -839,7 +839,7 @@ sert de référence a été modifié.
 Produire autre chose qu'un JAR
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-image:illustrations/MangaFrançois.png[float="left"]
+image:illustrations/MangaFrancois.png[float="left"]
 
 Amusé par notre interface web en GWT, François se joint à notre équipe.
 La particularité de François est qu'il n'est pas seulement un

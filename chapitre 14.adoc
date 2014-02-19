@@ -513,7 +513,10 @@ Dernier élément, un tel projet peut être fédérateur au sein de
 l'entreprise, en démontrant un savoir-faire et en servant de point
 d'échange sur les technologies.
 
-image:illustrations/MangaNicolas MangaCarlos MangaVincentM  $$$ côte à cote$$$.png[float="left"]
+image:illustrations/MangaNicolas.png[float="left"]
+image:illustrations/MangaCarlos.png[float="left"]
+image:illustrations/MangaVincentM.png[float="left"]
+$$$ côte à cote$$$
 
 Au démarrage de notre projet, s'est posée la question du choix d'un
 framework web. Dans cette situation, chacun tente d'imposer son
@@ -542,7 +545,7 @@ de positif, nous pourrons ainsi proposer à chaque nouveau projet de
 faire son propre choix, en fonction des personnes disponibles, de leurs
 compétences, des exigences du projet, etc.
 
-image:illustrations/MangaFrançois.png[float="left"]
+image:illustrations/MangaFrancois.png[float="left"]
 
 Lorsque François revient nous voir pour nous féliciter du succès de
 noubliepaslalistedescourses, il ne peut s'empêcher de nous taquiner en

@@ -122,7 +122,7 @@ Listing 12.1 : Comparaison de nos conventions de formatage du code
 
 $$$ deux colonnes côte à côte$$$
 
-$$$ 1ere colonne $$$image:illustrations/MangaVincentS  .png[float="left"]
+$$$ 1ere colonne $$$image:illustrations/MangaVincentS.png[float="left"]
 
 public class ListeDesCourses implements Data \{
 
@@ -146,7 +146,7 @@ public class ListeDesCourses implements Data \{
 
 …
 
-$$$ 2^e^ colonne $$$image:illustrations/MangaHervé.png[float="left"]
+$$$ 2^e^ colonne $$$image:illustrations/MangaHerve.png[float="left"]
 
 public class ListeDesCourses
 

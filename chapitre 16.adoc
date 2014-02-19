@@ -28,7 +28,7 @@ application OSGi, c’est découvrir un monde très différent de ce que nous
 avons vu jusqu’ici avec Maven, et c’est ce que Pascal s’apprête à
 affronter.
 
-image:illustrations/MangaPascal.png[float="left"]
+image:illustrations/MangaPascal.jpg[float="left"]
 
 Pascal vient de rejoindre notre équipe, car nous ajoutons une nouvelle
 corde à notre arc : le petit projet n’oublie pas la liste des courses a
@@ -202,7 +202,7 @@ même bien compliqué pour un résultat sans grande plus-value.
 Tant pis pour Maven !
 ^^^^^^^^^^^^^^^^^^^^^
 
-image:illustrations/MangaPascal.png[float="left"]
+image:illustrations/MangaPascal.jpg[float="left"]
 
 La semaine suivante, Pascal prend part à notre stand-up hebdomadaire
 pour nous exposer ses progrès. Il lâche le morceau : la solution qu’il a
@@ -428,7 +428,7 @@ maven-osgi-test-plugin, Eclipse PDE nous imposant de séparer
 physiquement les tests dans un bundle dédié pour ne pas polluer le
 MANIFEST du bundle principal.
 
-image:illustrations/MangaPascal.png[float="left"]
+image:illustrations/MangaPascal.jpg[float="left"]
 
 Pascal nous a bluffé, et même si nous avons encore un peu de mal à
 admettre que notre magnifique gestion de dépendance Maven vient de se
@@ -521,7 +521,7 @@ Nous faisons ainsi la connaissance de Marklink:#_ftn66[[66]], ingénieur
 chez Oracle. Il travaille sur un projet qui vise à modulariser la
 plateforme Java, nom de code jigsaw.
 
-image:illustrations/MangaMark.png[float="left"]
+image:illustrations/MangaMark.jpg[float="left"]
 
 Depuis des années, Java évolue en ajoutant de nouvelles API,
 alourdissant toujours plus la plateforme. Malgré l’amélioration des
@@ -540,7 +540,8 @@ indiquer les briques qui lui sont nécessaires. Ce projet fait l’objet
 d’une spécification au sein du Java Community Process, qui standardisera
 le mécanisme de modularisation.
 
-image:illustrations/MangaPascal MangeArnaud.png[float="left"]
+image:illustrations/MangaPascal.jpg[float="left"]
+image:illustrations/MangaArnaud.png[float="left"]
 
 Pascal, s’étonne de l’enthousiasme de Mark à incorporer ce « nouveau
 concept » dans la plateforme Java. OSGi propose déjà cela depuis plus de
@@ -643,7 +644,7 @@ programmation parallèle.
 
  
 
-image:illustrations/MangaMark.png[float="left"]
+image:illustrations/MangaMark.jpg[float="left"]
 
 Mark a l’habitude de trouver un accueil un peu frais à ses explications,
 et a donc gardé pour la fin les éléments qui vont peut être nous faire

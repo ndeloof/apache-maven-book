@@ -481,7 +481,8 @@ en charge de manière totalement structurée et automatisée.
 Vis ma vie
 ~~~~~~~~~~
 
-image:illustrations/MangaEmmanuel + MangaVincentS.png[float="left"]
+image:illustrations/MangaEmmanuel.png[float="left"]
+image:illustrations/MangaVincentS.png[float="left"]
 
 Emmanuel est confronté à un problème : en tant que responsable du
 développement du portail web, il est soumis aux demandes répétées du

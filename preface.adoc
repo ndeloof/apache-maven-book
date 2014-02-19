@@ -38,7 +38,7 @@ et surtout de _l'open-sourcer_, sous license Creative Commons 4.0 afin que
 tout le monde en profite et que d'éventuels contributeurs puisse nous aider
 à corriger les boulettes inévitables qui s'y sont glissées.
 
-image:license.png[align="center"]
+image:illustrations/license.png[align="center"]
 "_Attribution - Pas d’Utilisation Commerciale - Partage dans les Mêmes Conditions_"
 
 _Nicolas de Loof_

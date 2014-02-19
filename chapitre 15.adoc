@@ -622,7 +622,7 @@ avec l'existant est suivie.
 L'adoption en entreprise
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-image:illustrations/MangaJérôme.png[float="left"]
+image:illustrations/MangaJerome.png[float="left"]
 
 Votre Honneur, j'appelle à la barre notre premier témoin : Jérôme.
 
