@@ -1,5 +1,5 @@
 
-Partie 3
+Partie 3
 
 Encore plus loin avec Maven
 
@@ -10,15 +10,15 @@ plier, quelles que soient ses habitudes.
 
 Après quelque temps de fonctionnement, notre start-up a atteint un joli
 succès. Les promesses de stock-options commencent à nous titiller, quand
-la nouvelle tombe : nous avons été contactés par le groupe Geegol pour
+la nouvelle tombe : nous avons été contactés par le groupe Geegol pour
 venir compléter son offre de services. C'est une reconnaissance
 inespérée pour notre travail, et nous préparons avec un mélange
 d'enthousiasme et d'anxiété le passage du statut de start-up à celui de
 filiale d'un géant international.
 
-Geegol-shopping-list.png[float="left"]
+image:illustrations/Geegol-Shopping-List.png[float="left"]
 
-Chapitre 11
+Chapitre 11
 
 Utiliser un outil non supporté
 ------------------------------
@@ -41,7 +41,7 @@ de l'application.
 
 $$$ Centré $$$
 
-GEA.png[float="left"]
+image:illustrations/GEA.png[float="center"]
 
 Pour s'assurer que ces contraintes sont respectées, plutôt que
 d'attendre les phases de validation du projet et un éventuel crash, le
@@ -78,137 +78,109 @@ disposition de celui-cila bibliothèque de notre outil gea-check sous
 forme d'artefact Maven. Nous devons donc le placer dans notre dépôt de
 bibliothèques, accompagné d'un fichier POM fournissant les métadonnées
 adéquates, en particulier la liste précise de ses dépendances. Nous
-avons déjà évoqué au Chapitre 2 l'identification des bibliothèques et de
+avons déjà évoqué au Chapitre 2 l'identification des bibliothèques et de
 leur version. Hervé prépare soigneusement un fichier POM et le
 télécharge avec l'archive JAR dans notre dépôt de bibliothèques.
 
 De nombreux projets utilisent Ant pour leur construction – ou l'ont
-utilisé avant de passer à Maven – avec les limites que nous avons déjà
+utilisé avant de passer à Maven – avec les limites que nous avons déjà
 vues. Le groupe a développé pour son outil une tâche Ant qui lance la
 génération documentaire, nous ne partons donc pas de rien.
 
 La solution la plus rapide consiste à utiliser la tâche Ant telle quelle
 dans notre projet Maven. Hervé pourra ainsi rassurer tout le monde en
 prouvant que le choix de Maven ne met pas des bâtons dans les roues.
-Cela est possible grâce à un plugin standard : antrun, lequel, comme son
+Cela est possible grâce à un plugin standard : antrun, lequel, comme son
 nom le suggère, va exécuter un script Ant lors de la construction du
-projet par Maven. Voilà qui pourrait bien nous sauver la mise ! Le
-Listing 11.1 montre la configuration que nous avons ajoutée au projet
+projet par Maven. Voilà qui pourrait bien nous sauver la mise ! Le
+Listing 11.1 montre la configuration que nous avons ajoutée au projet
 pour gérer cette étape.
 
-Listing 11.1 : Utilisation du plugin _AntRun_
+Listing 11.1 : Utilisation du plugin _AntRun_
 
+[source, xml]
+-----------------------------------------------------------------------
 <plugin>
-
-    <artifactId>maven-antrun-plugin</artifatcId>
-
-    <version>1.3</version>
-
-    <executions>
-
-        <execution>
-
-            <goals>
-
-                <goal>run</goal>
-
-            <goals>
-
-            <phase>site</phase>
-
-            <configuration>
-
-                <tasks>
-
-                  <classpath id="cp">
-
-                     <pathElement ref="$\{maven.plugin.dependencies}"/>
-
-                     <pathElement ref="$\{maven.compile.dependencies}"/>
-
-                  </classpath>
-
-                  <taskdef task="check"
-
-                         class="com.geegol.GeegolProjectPlatformCheck"
-
-                         classpathRef="cp"/>
-
-                  <check src="$\{project.build.sourceDirectory}"
-
-                         out="$\{project.build.directory}/check"/> 
-
-                </tasks>
-
-            </configuration>
-
-            <dependencies>
-
-                <dependency>
-
-                    <groupId>com.geegol.gea</groupId>
-
-                    <artifactId>geacheck</artifactId>
-
-                    <version>1.2.0</version>
-
-                </dependency>
-
-            </dependencies>
-
-        </execution>
-
-    </executions>
-
+    <artifactId>maven-antrun-plugin</artifatcId>
+    <version>1.3</version>
+    <executions>
+        <execution>
+            <goals>
+                <goal>run</goal>
+            <goals>
+            <phase>site</phase>
+            <configuration>
+                <tasks>
+                  <classpath id="cp">
+                     <pathElement ref="${maven.plugin.dependencies}"/>
+                     <pathElement ref="${maven.compile.dependencies}"/>
+                  </classpath>
+                  <taskdef task="check"
+                         class="com.geegol.GeegolProjectPlatformCheck"
+                         classpathRef="cp"/>
+                  <check src="${project.build.sourceDirectory}"
+                         out="${project.build.directory}/check"/> 
+                </tasks>
+            </configuration>
+            <dependencies>
+                <dependency>
+                    <groupId>com.geegol.gea</groupId>
+                    <artifactId>geacheck</artifactId>
+                    <version>1.2.0</version>
+                </dependency>
+            </dependencies>
+        </execution>
+    </executions>
 </plugin>
+-----------------------------------------------------------------------
 
 Ce fragment de script Ant réutilise des variables Maven pour pointer
 vers les répertoires du projet, conformément aux conventions de Maven,
 et manipuler les listes de dépendances du projet et du plugin. Par
 défaut, le plugin AntRun ne propose dans le ClassPath d'exécution du
 fragment de script que la bibliothèque Ant standard (la version d’Ant
-utilisée par défaut dépend de la version du plugin, Antrun 1.3 utilise
-par exemple Ant 1.7.1). Pour invoquer notre tâche spécifique, nous
+utilisée par défaut dépend de la version du plugin, Antrun 1.3 utilise
+par exemple Ant 1.7.1). Pour invoquer notre tâche spécifique, nous
 devons y ajouter la bibliothèque maison GEACheck (et ses dépendances)
 _via_ un bloc <dependency>, appliqué au plugin.
 
 Cette petite manipulation nous permet donc d'utiliser sans souci les
-outils en place. Fin du Chapitre 11 ? Non, bien sûr.
+outils en place. Fin du Chapitre 11 ? Non, bien sûr.
 
 Info
 
-Dans le Listing 11.1, nous n'avons pas indiqué d'identifiant de groupe
+Dans le Listing 11.1, nous n'avons pas indiqué d'identifiant de groupe
 pour déclarer le plugin. Maven utilise en effet une liste de groupes
 pour identifier les plugins lorsque cette information n'est pas fournie.
 Par défaut, cette liste inclut org.apache.maven.plugins et
 org.codehaus.mojo, soit les deux sources officielles de plugins de la
 communauté des développeurs Maven. Cette liste peut être enrichie de
 nouvelles entrées (_via_ leur identifiant de groupe) dans le fichier de
-configuration de Maven : settings.xml. Si votre entreprise utilise de
+configuration de Maven : settings.xml. Si votre entreprise utilise de
 nombreux plugins maison, ce mécanisme peut vous aider à alléger votre
 configuration, cependant cela suppose que chaque développeur dispose
 d'un fichier settings.xml correctement configuré.
 
-Retour dans un monde de scripts ?
+Retour dans un monde de scripts ?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Cette solution est très pratique car elle permet de réutiliser en peu de
 temps du code existant. Dans la même veine, nous pourrions exécuter un
-script Groovy ou BeanShell. Cependant, cette pratique n'est pas tout à
+script Groovy ou BeanShell. Cependant, cette pratique n'est pas tout à
 fait satisfaisante :
 
 image:illustrations/MangaHerve.png[float="left"]
 
 Hervé n'est pas prêt à se contenter de cette solution qui n'est, pour
-lui, qu'un pis-aller : d'une part, nous sacrifions l'idée phare de Maven
+lui, qu'un pis-aller : d'une part, nous sacrifions l'idée phare de Maven
 de ne pas devenir un nième langage de script. Où est l'approche
-déclarative dans ce que nous venons de faire ? D'autre part,
+déclarative dans ce que nous venons de faire ? D'autre part,
 l'intégration de notre bout de script Ant dans Maven est très
 imparfaite. Nous devons explicitement déclarer les dépendances de
 l'outil de génération dans notre fichier POM – ce qui signifie que nous
 devons les connaître, donc aller consulter sa documentation pour en
-extraire cette information. Cela ne vous rappelle rien ? Alors,
-retournez au Chapitre 2 !
+extraire cette information. Cela ne vous rappelle rien ? Alors,
+retournez au Chapitre 2 !
 
 AntRun a été conçu comme un outil de transition pour faciliter la vie
 des projets basés sur Ant. Les concepteurs de Maven, conscients qu'il
@@ -216,14 +188,14 @@ des projets basés sur Ant. Les concepteurs de Maven, conscients qu'il
 existantes, ont introduit ce plugin utilitaire, en insistant bien sur
 son rôle de roue de secours en attendant mieux. Nous l'utilisons donc
 provisoirement pour répondre aux exigences du groupe, mais lançons
-immédiatement une nouvelle tâche : l'écriture d'un plugin Maven pour
+immédiatement une nouvelle tâche : l'écriture d'un plugin Maven pour
 notre outil de génération documentaire. C'est donc à cette tâche
 qu'Hervé va s'attaquer à présent.
 
 Créer un plugin
 ~~~~~~~~~~~~~~~
 
-Pas de panique !
+Pas de panique !
 ^^^^^^^^^^^^^^^^
 
 Créer de toutes pièces un plugin peut faire peur _a priori_. Nous allons
@@ -238,28 +210,24 @@ de son type d'assemblage, qui est maven-plugin.
 Astuce
 
 Pour créer rapidement un plugin Maven, vous pouvez exploiter un
-archétype, mais nous en reparlerons au Chapitre 14, alors ne brûlons pas
+archétype, mais nous en reparlerons au Chapitre 14, alors ne brûlons pas
 les étapes…
 
-Listing 11.2 : En-tête POM du plugin documentaire
+Listing 11.2 : En-tête POM du plugin documentaire
 
-  <modelVersion>4.0.0</modelVersion>
-
-  <groupId>com.geegol.maven.plugins</groupId>
-
-  <artifactId>geegol-doc-maven-plugin</artifactId>
-
-  <version>1.0-SNAPSHOT</version>
-
-  <packaging>maven-plugin</packaging>
-
-  <name>Plugin de contrôle GEA</name>
-
- 
+[source, xml]
+---------------------------------------------------------------------------
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.geegol.maven.plugins</groupId>
+  <artifactId>geegol-doc-maven-plugin</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>maven-plugin</packaging>
+  <name>Plugin de contrôle GEA</name>
+---------------------------------------------------------------------------
 
 Le reste du projet est tout ce qu'il y a de plus classique. Répertoires
 de sources, de ressources et de tests, dépendances et compagnie. Pas de
-quoi fouetter un chat !
+quoi fouetter un chat !
 
 La tâche check que nous voulons créer dans notre plugin sera associée à
 une classe spécifique. Ces classes sont appelées dans le vocabulaire
@@ -268,54 +236,41 @@ POJOlink:#_ftn38[[38]] qui a fait le succès des bibliothèques Spring et
 Hibernate. Ce terme a aussi été choisi avec malice pour faire référence
 au nom donné au Cameroun à des amulettes – inutile de chercher un lien
 avec le personnage de super-vilain associé à ce nom dans le comics
-_X-Men_ ;-).
+_X-Men_ ;-).
 
 En fait, ce sont de simples classes qui implémentent l'interface
 org.apache.maven.plugin.Mojo, et, dans la très grande majorité des cas –
 dont le nôtre –, on se contente d'étendre la classe AbstractMojo. Le
-Listing 11.3 présente la structure générale de notre classe
+Listing 11.3 présente la structure générale de notre classe
 GEACheckMojo.
 
-Listing 11.3 : Notre classe _Mojo_ de base
+Listing 11.3 : Notre classe _Mojo_ de base
 
+[source, java]
+---------------------------------------------------------------------
 /**
-
- * Tâche de génération de la documentation au format Geegol.
-
- *
-
- * @goal check
-
- * @phase process-sources
-
- */
-
+ * Tâche de génération de la documentation au format Geegol.
+ *
+ * @goal check
+ * @phase process-sources
+ */
 public class GEACheckMojo
-
-    extends AbstractMojo
-
-\{
-
-    public void execute()
-
-        throws MojoExecutionException
-
-    \{
-
-        // ...
-
-    }
-
+    extends AbstractMojo
+{
+    public void execute()
+        throws MojoExecutionException
+    {
+        // ...
+    }
 }
-
- 
+---------------------------------------------------------------------
 
 Toutes les caractéristiques liées à Maven sont déclarées dans des
 balises Javadoc spéciales de notre classe Mojo. C'est ici qu'Hervé va
 indiquer le nom de la tâche et éventuellement des indications sur les
 contraintes que le projet doit respecter pour l'utiliser.
 
-Le Listing 11.3 montre le bloc de commentaires Javadoc de notre mojo.
+Le Listing 11.3 montre le bloc de commentaires Javadoc de notre mojo.
 L'annotation @goal indique le nom de la tâche. @phase indique la phase
 dans le cycle de vie pour laquelle notre mojo a été conçu, et à laquelle
 il sera greffé par défaut. Nous associons le plugin à la phase d'analyse
@@ -323,7 +278,7 @@ des sources, qui a lieu avant la compilation.
 
 Nous avons donc un projet Maven capable de produire un plugin qui
 exécutera notre code Java lors de la phase process-sources. On vous
-l'avait bien dit que ce n'était pas bien compliqué !
+l'avait bien dit que ce n'était pas bien compliqué !
 
 Des paramètres pour le plugin
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -337,15 +292,15 @@ compte-rendu. Hervé va dans un premier temps permettre à l'utilisateur
 de définir le nom et l'emplacement de ce fichier, tout en proposant une
 valeur par défaut qui devrait convenir à la majorité des cas.
 
+[source, java]
+---------------------------------------------------------
 /**
-
- * Emplacement du fichier de compte-rendu
-
- * @parameter default-value="$\{project.build.directory}/check.html"
-
- */
+ * Emplacement du fichier de compte-rendu
+ * @parameter default-value="${project.build.directory}/check.html"
+ */
 
 private File output;
+---------------------------------------------------------
 
 Comme la configuration générale du Mojo, les paramètres sont déclarés
 _via_ des annotations "à l'ancienne" dans le Javadoc (aussi connu sous
@@ -354,12 +309,12 @@ qui servira donc de convention pour l'utilisation du plugin. Cette
 valeur par défaut peut être une expression faisant référence à un
 élément du fichier POM. Dans l'exemple précédent, nous identifions par
 exemple le paramètre output où l'outil d'analyse va écrire son rapport.
-Les utilisateurs de notre plugin pourront modifier ce paramètre dans
+Les utilisateurs de notre plugin pourront modifier ce paramètre dans
 leur fichier POM en ajoutant dans la configuration un élément <output>
 avec le chemin de leur choix.
 
-L'expression délimitée par "$\{" et "}" permet d'identifier des nœuds du
-modèle objet du projet ; rappelez-vous que Maven charge les données XML
+L'expression délimitée par "${" et "}" permet d'identifier des nœuds du
+modèle objet du projet ; rappelez-vous que Maven charge les données XML
 de notre POM en mémoire sous forme d'un arbre d'objets, après fusion
 avec les parents dont il peut hériter et activation des profils.
 project.build.directory équivaut ainsi à l'élément
@@ -367,7 +322,7 @@ project.build.directory équivaut ainsi à l'élément
 ou de la valeur par défaut de cette propriété. Dans la très grande
 majorité des cas, il s'agira du répertoire target, mais ne présumons pas
 de la façon dont notre plugin sera utilisé et des contraintes que vont
-rencontrer nos projets. Conventions ne signifie pas obligations !
+rencontrer nos projets. Conventions ne signifie pas obligations !
 
 Info
 
@@ -389,8 +344,8 @@ project.build.sourceDirectory, qui renvoit pour un projet standard le
 chemin src/main/java. Hervé lance donc son plugin sur le projet devant
 nos yeux pleins d'impatience et il est fier de nous présenter le rapport
 généré quelques secondes plus tard dans le répertoire target.
-Applaudissements, puis désillusion : le code analysé est bien celui de
-notre projet, mais il en manque toute une partie !
+Applaudissements, puis désillusion : le code analysé est bien celui de
+notre projet, mais il en manque toute une partie !
 
 Notre projet utilise un plugin générateur de code, transformant un
 modèle UML en code source Java. Ce code est créé sous
@@ -408,21 +363,19 @@ liste dynamique de répertoires.
 Pour accéder au modèle objet du projet et consulter le moment voulu
 cette liste de répertoires, nous devons manipuler directement l'objet
 MavenProject que Maven met à notre disposition. Nous définissons donc un
-nouveau paramètre au plugin, bien que celui-ci soit un peu particulier :
+nouveau paramètre au plugin, bien que celui-ci soit un peu particulier :
 
+[source, java]
+---------------------------------------------------------------------
 /**
-
- * Modèle objet du projet Maven
-
- * @parameter expression=”$\{project}”
-
- * @required
-
- * @readonly
-
- */
+ * Modèle objet du projet Maven
+ * @parameter expression=”${project}”
+ * @required
+ * @readonly
+ */
 
 private MavenProject project;
+---------------------------------------------------------------------
 
 Nous découvrons en passant deux autres annotations qui peuvent
 s'appliquer aux paramètres. @required permet de stopper le build avec un
@@ -436,17 +389,16 @@ modélisation objet d'un projet. Selon la tâche à réaliser, cela pourra
 project.getCompileSourceRoots() donnera la liste courante de tous les
 répertoires de fichiers sources.
 
+[source, java]
+---------------------------------------------------------------------
 List<String> sources = project.getCompileSourceRoots();
-
-for ( String root : sources )
-
-\{
-
-   /// TODO analyser chaque fichier source de ce répertoire
-
+for (String root : sources)
+{
+    // TODO analyser chaque fichier source de ce répertoire
 }
+---------------------------------------------------------------------
 
- 
+ 
 
 Plexus
 ^^^^^^
@@ -462,11 +414,11 @@ technologie sur laquelle tourne une application.
 
 Maven utilise le conteneur Plexuslink:#_ftn39[[39]] pour l'exécution de
 ses composants. Vous êtes probablement familiarisé avec l'un de ses
-concurrents qui remporte un grand succès en entreprise :
+concurrents qui remporte un grand succès en entreprise :
 SpringFramework. Le fonctionnement de Plexus est relativement
 comparable, en dehors du mécanisme d'annotations qui jusqu'à peu de
 temps ne s’appuyait que sur des balises Javadoc à la place des
-annotations de Java 5.
+annotations de Java 5.
 
 Plexus et Maven mettent à disposition un large choix de composants
 utilitaires que vous pouvez référencer dans des plugins. Hervé a besoin
@@ -474,9 +426,9 @@ d'exploiter les capacités d'un outil d'archivage, il ajoute en
 dépendance à son projet Maven la bibliothèque plexus-archiver. Il lui
 reste à présent à y accéder depuis le plugin.
 
-Comme Spring, Plexus met en œuvre le patron d'injection de
+Comme Spring, Plexus met en œuvre le patron d'injection de
 dépendanceslink:#_ftn40[[40]] (eh oui, bien que méconnu, Plexus était
-très novateur en son temps !). Ce n'est donc pas le plugin qui va aller
+très novateur en son temps !). Ce n'est donc pas le plugin qui va aller
 chercher un composant mais le conteneur qui va initialiser le plugin
 avec les composants déclarés comme indispensables. Un composant est
 référencé _via_ l'annotation @component et sera injecté lors de
@@ -487,18 +439,18 @@ sont disponibles, Plexus propose soit de compléter l'identificateur par
 un qualificateur complémentaire identifié par le caractère "#", soit de
 préciser plus explicitement un attribut hint (voir l'exemple suivant).
 Pour faire appel à un composant de décompression d'archive ZIP par
-exemple, on ajoutera l'attribut suivant dans notre plugin :
+exemple, on ajoutera l'attribut suivant dans notre plugin :
 
-    /**
 
-     * Permet de manipuler des archives ZIP
+[source, java]
+---------------------------------------------------------------------
+/**
+ * Permet de manipuler des archives ZIP
+ * @component role="org.codehaus.plexus.archiver.Archiver" hint="zip"
+ */
 
-     * @component role="org.codehaus.plexus.archiver.Archiver"
-hint="zip"
-
-     */
-
-    private Archiver zipArchiver;
+ private Archiver zipArchiver;
+---------------------------------------------------------------------
 
 Il faudra évidemment ajouter à notre plugin une dépendance vers la
 bibliothèque plexus-archiver qui contient ce composant. L'écosystème
@@ -522,34 +474,27 @@ fichiers FileUtils ainsi qu'un DirectoryScanner, qui permet de
 sélectionner des fichiers à partir d'un répertoire en fonction de
 patrons Ant d'inclusion et d'exclusion.
 
-    private List<File> getJavaSources( File root )
+[source, java]
+---------------------------------------------------------------------
+private List<File> getJavaSources( File root )
+{
+    List<File> files = new ArrayList<File>();
 
-    \{
+    DirectoryScanner scanner = new DirectoryScanner();
+    scanner.setBasedir( root );
+    scanner.setIncludes( new String[] { "**/*.java" } );
+    scanner.scan();
 
-        List<File> files = new ArrayList<File>();
-
-        DirectoryScanner scanner = new DirectoryScanner();
-
-        scanner.setBasedir( root );
-
-        scanner.setIncludes( new String[] \{ "**/*.java" } );
-
-        scanner.scan();
-
-        for ( String relativeFilePath : scanner.getIncludedFiles() )
-
-        \{
-
-            files.add( new File( root, relativeFilePath ) );
-
-        }
-
-        return files;
-
-    }
+    for ( String relativeFilePath : scanner.getIncludedFiles() )
+    {
+        files.add( new File( root, relativeFilePath ) );
+    }
+    return files;
+}
+---------------------------------------------------------------------
 
 Nous avons donc une méthode qui retourne la liste complète des fichiers
-sources Java de notre projet, code généré inclus ! Reste à passer
+sources Java de notre projet, code généré inclus ! Reste à passer
 l'outil de contrôle Geegol dessus.
 
 Des classes et des royaumes…
@@ -569,7 +514,7 @@ ajouter des éléments de classpath et, éventuellement, exporter des
 packages. Maven met ainsi ses API à disposition des plugins sans exposer
 pour autant ses classes internes. Il est intéressant de voir que cette
 même problématique est relevée de manière indépendante par OSGi, sur
-lequel on aurait sans doute bâti Maven s'il avait été créé en 2009 !
+lequel on aurait sans doute bâti Maven s'il avait été créé en 2009 !
 
 Info
 
@@ -585,28 +530,28 @@ Vous avez sans doute déjà rencontré des problèmes de ClassLoaders, de
 sombres histoires de classes qui ne sont pas ce qu'elles disent être, ou
 encore des problèmes pour la configuration de la bibliothèque
 commons-logging. C'est un sujet complexe, aussi nous ne nous attarderons
-pas ;).
+pas ;).
 
 Pour notre plugin, nous allons construire un realm dédié à l'exécution
 de GEACheck, incluant ce dernier et ses dépendances ainsi que les
 chemins d'accès au code source. La figure 11-01 montre la structure que
 nous devons mettre en place.
 
-Figure 11-01
+Figure 11-01
 
 Arbre des royaumes ClassWorlds.
 
-Le Listing 11.4 montre le code du plugin pour :
+Le Listing 11.4 montre le code du plugin pour :
 
-·     construire un nouveau ClassLoader (chargeur de classe) ;
+·     construire un nouveau ClassLoader (chargeur de classe) ;
 
-·     lui associer les dépendances et répertoires du projet sur lequel
-il travaille ;
+·     lui associer les dépendances et répertoires du projet sur lequel
+il travaille ;
 
-·     lui associer la bibliothèque de l'outil que nous voulons
-exécuter ;
+·     lui associer la bibliothèque de l'outil que nous voulons
+exécuter ;
 
-·     exécuter l'outil GEACheck à l'intérieur de ce contexte.
+·     exécuter l'outil GEACheck à l'intérieur de ce contexte.
 
 Par souci de clarté, nous n’avons pas indiqué dans ce listing les
 diverses gestions d'exception qui sont rendues nécessaires par la
@@ -616,66 +561,45 @@ le commun des développeurs n'est pas suffisamment à l’aise avec le
 concept de ClassLoader, d'autre part parce que l'API Maven-project
 manque de documentation.
 
-Listing 11.4 : Construction d'un royaume ClassWorlds dédié à l'exécution
+Listing 11.4 : Construction d'un royaume ClassWorlds dédié à l'exécution
 de GEACheck
 
+[source, java]
+---------------------------------------------------------------------
 /**
-
- * Dépendances du projet Maven qui utilise le plugin
-
- * @parameter expression=”$\{project.compileArtifacts}”
-
- */
+ * Dépendances du projet Maven qui utilise le plugin
+ * @parameter expression=”${project.compileArtifacts}”
+ */
 
 private List<Artifact> projectArtifacts;
 
- 
-
 /**
-
- * Dépendances du plugin lui-même
-
- * @parameter expression=”$\{pluginArtifacts}”
-
- */
-
+ * Dépendances du plugin lui-même
+ * @parameter expression=”${pluginArtifacts}”
+ */
 private List<Artifact> pluginArtifacts;
 
- 
+    public ClassLoader createClassLoader()
+        throws MalformedURLException, DuplicateRealmException
+    {
+        ClassWorld world = new ClassWorld();
+        ClassRealm realm = world.newRealm( "gea-check" );
 
-    public ClassLoader createClassLoader()
+        // Ajout de tous les éléments du classpath "compile" du projet
+        for ( Artifact artifact : projectArtifacts )
+        {
+            realm.addConstituent( artifact.getFile().toURL() );
+        }
 
-        throws MalformedURLException, DuplicateRealmException
+        // Ajout des dépendances du plugin, comprenant l'outil GEACheck
+        for ( Artifact artifact : pluginArtifacts )
+        {
+            realm.addConstituent( artifact.getFile().toURL() );
+        }
 
-    \{
-
-        ClassWorld world = new ClassWorld();
-
-        ClassRealm realm = world.newRealm( "gea-check" );
-
-        // Ajout de tous les éléments du classpath "compile" du projet
-
-        for ( Artifact artifact : projectArtifacts )
-
-        \{
-
-            realm.addConstituent( artifact.getFile().toURL() );
-
-        }
-
-        // Ajout des dépendances du plugin, comprenant l'outil GEACheck
-
-        for ( Artifact artifact : pluginArtifacts )
-
-        \{
-
-            realm.addConstituent( artifact.getFile().toURL() );
-
-        }
-
-        return realm.getClassLoader();
-
-    }
+        return realm.getClassLoader();
+    }
+---------------------------------------------------------------------
 
 Astuce
 
@@ -691,91 +615,69 @@ Il ne reste plus à Hervé qu'à utiliser le ClassLoader que nous venons de
 construire pour charger l'outil GEACheck et à l'invoquer avec la liste
 de fichiers sources java que nous avons construite précédemment.
 L'invocation d'une classe depuis un classloader différent du nôtre nous
-oblige à passer par la réflexion Java (voir Listing 11.5).
+oblige à passer par la réflexion Java (voir Listing 11.5).
 
-Listing 11.5 : Invocation par réflexion de l'outil _GEACheck_
+Listing 11.5 : Invocation par réflexion de l'outil _GEACheck_
 
- 
-
-    public void execute()
-
-        throws MojoFailureException
-
-    \{
-
-        try
-
-        \{
-
-            ClassLoader cl = createClassLoader();
-
-            Class checker = Class.forName(
+[source, java]
+------------------------------------------------------------------------------
+    public void execute()
+        throws MojoFailureException
+    {
+        try
+        {
+            ClassLoader cl = createClassLoader();
+            Class checker = Class.forName(
 "com.geegol.projectplatform.Checker", true, cl );
-
-            Method main = checker.getMethod( "main", new Class[] \{
+            Method main = checker.getMethod( "main", new Class[] {
 String.class } );
 
- 
-
-            List<String> sources = (List<String>)
+            List<String> sources = (List<String>)
 project.getCompileSourceRoots();
 
-            for ( String root : sources )
+            for ( String root : sources )
+            {
+                List<File> files = getJavaSources( new File( root ) );
+                Object[] args = new Object[files.size()];
 
-            \{
+                int i = 0;
+                for ( File f : files )
+                {
+                    args[i++] = f.getAbsolutePath();
+                }
 
-                List<File> files = getJavaSources( new File( root ) );
-
-                Object[] args = new Object[files.size()];
-
-                int i = 0;
-
-                for ( File f : files )
-
-                \{
-
-                    args[i++] = f.getAbsolutePath();
-
-                }
-
-                main.invoke( checker, args );
-
-            }
-
-        }
-
-        catch ( Exception e )
-
-        \{
-
-            throw new MojoFailureException( "Erreur lors de la
+                main.invoke( checker, args );
+            }
+        }
+        catch ( Exception e )
+        {
+            throw new MojoFailureException( "Erreur lors de la
 génération du rapport", e );
-
-        }
-
-    }
+        }
+    }
+------------------------------------------------------------------------------
 
 Bye bye Maven 2
 ^^^^^^^^^^^^^^^
 
 Maven3
 
- 
+ 
 
 image:illustrations/MangaOlivier.png[float="left"]
 
 Olivier revient tout juste d’une conférence sur l’avenir de Java et les
 plans de développement de JavaEE 7, et nous trouve tous au chevet de
-notre plugin. Sa première réaction est la stupeur : nous sommes en train
+notre plugin. Sa première réaction est la stupeur : nous sommes en train
 de développer du code en injectant des dépendances via des annotations
 dans du JavaDoc, le genre de choses qu’on faisait … en 2004 avec Apache
-commons-attributes ! Nous avons mis dans notre projet le top du dernier
+commons-attributes ! Nous avons mis dans notre projet le top du dernier
 buzz en termes de technologies, et nous voilà ramenés une décennie en
 arrière
 
- 
+ 
 
-[MAVEN 3]
+\[MAVEN 3]
 
 La cause de ce choc technologique, c’est que nous utilisons l’API Maven
 2.0, qui date de la création de l’outil. Pour offrir une compatibilité
@@ -783,16 +685,17 @@ sans faille à ses utilisateurs, Maven 3 reste 100% compatible avec cette
 API historique, alors qu’en interne les choses ont beaucoup changées.
 
 Dans l’équipe, nous utilisons tous Maven3, Java7, JavaEE 6, pourquoi
-s’encombrer de ce passé obsolète ?
+s’encombrer de ce passé obsolète ?
 
 Olivier s’attaque donc à moderniser notre socle technique. Bye Bye
-Maven2, ce qui se traduit dans note POM par un prérequis sans appel :
+Maven2, ce qui se traduit dans note POM par un prérequis sans appel :
 
- <prerequisites>
-
-      <maven>3.0.0</maven>
-
-  </prerequisites>
+[source, xml]
+-------------------------------------------------------
+ 	<prerequisites>
+      		<maven>3.0.0</maven>
+  	</prerequisites>
+-------------------------------------------------------
 
 Voilà qui rappellera à l’ordre les éventuels distraits.
 
@@ -803,99 +706,63 @@ maven-plugin-toolss-java5 et de l’injection de dépendances @JSR-330.
 Attention
 
 Olivier se base sur du code qui n’est pas encore disponible en version
-finale. Sonatype est très actif sur ce chantier (projet Sisu :
+finale. Sonatype est très actif sur ce chantier (projet Sisu :
 https://github.com/sonatype/sisu) qui vise à homogénéiser son offre
 logicielle, aussi à l’heure où la seconde édition sortira des presses,
 nous espérons que ce code sera intégré dans la version courante de Maven
 3.x
 
-Listing 11.6 : Le mojo _GEACheck_ en version Maven3 / JSR-330
+Listing 11.6 : Le mojo _GEACheck_ en version Maven3 / JSR-330
 
+[source, java]
+----------------------------------------------------------------------
 /**
-
- * Tâche de génération de la documentation au format Geegol.
-
- */
-
+ * Tâche de génération de la documentation au format Geegol.
+ */
 @Goal( name="check" )
-
 @Phase( PROCESS-SOURCES )
-
 @ThreadSafe
+class GEACheckMojo extends SisuMavenMojo {
 
-class GEACheckMojo extends SisuMavenMojo \{
+    @Inject Logger logger;
 
- 
+    /**
+     * Emplacement du fichier de compte-rendu
+     */
+    @Inject @Named( "${ouput}" )
+    @DefaultsTo( "${project.build.directory}/check.html" )
+    private File output ;
 
-               @Inject Logger logger;
+    /**
+     * Modèle objet du projet Maven
+     */
+    @Inject @Named( "${projet}" )
+    private project
 
- 
+    @Inject @Named( "zip" )
+    private Archiver zipArchiver;
 
-    /**
+ 
+    /**
+     * Dépendances du projet Maven qui utilise le plugin
+     */
+    @Inject @Named( "${project.compileArtifacts}" )
+    private Set<Artifact> projectArtifacts;
 
-     * Emplacement du fichier de compte-rendu
+    /*
+     * Dépendances du plugin lui-même
+     */
+    @Inject @Named( "${pluginArtifacts}" )
+    private Set<Artifact> pluginArtifacts;
 
-     */
+    public void execute() throws Exception {
 
-    @Inject @Named( "$\{ouput}" )
+        …
 
-    @DefaultsTo( "$\{project.build.directory}/check.html" )
-
-    private File output ;
-
- 
-
-    /**
-
-     * Modèle objet du projet Maven
-
-     */
-
-    @Inject @Named( "$\{projet}" )
-
-    private project
-
- 
-
-    @Inject @Named( "zip" )
-
-    private Archiver zipArchiver;
-
- 
-
-    /**
-
-     * Dépendances du projet Maven qui utilise le plugin
-
-     */
-
-    @Inject @Named( "$\{project.compileArtifacts}" )
-
-    private Set<Artifact> projectArtifacts;
-
- 
-
-    /*
-
-     * Dépendances du plugin lui-même
-
-     */
-
-    @Inject @Named( "$\{pluginArtifacts}" )
-
-    private Set<Artifact> pluginArtifacts;
-
- 
-
- 
-
-    public void execute() throws Exception \{
-
-        …
-
-    }
-
+    }
 }
+----------------------------------------------------------------------
+
 
 Tester notre plugin
 ~~~~~~~~~~~~~~~~~~~
@@ -908,9 +775,9 @@ n'était finalement pas si compliqué que ça à développer, une fois ces
 bases acquises. Par contre, il garde un mauvais souvenir de sa première
 démo pour laquelle le résultat était incomplet. Il voudrait que son
 projet de plugin puisse être équipé de tests, comme tout bon projet
-Maven !
+Maven !
 
-Un moyen simple de tester le plugin est de l'assembler sous forme de JAR
+Un moyen simple de tester le plugin est de l'assembler sous forme de JAR
 et de l'invoquer manuellement depuis l'un de nos projets. Nous avons
 cependant pris l'habitude des tests automatisés et de leur intérêt pour
 assurer la stabilité de nos développements. L'écosystème Maven propose
@@ -927,7 +794,7 @@ n'est pas le cas de nombreux autres plugins indépendants.
 
 La plus grande difficulté pour tester un plugin Maven réside dans
 l’identification correcte de ce qu'on désire valider, en particulier
-lorsque le plugin sert à intégrer un autre outil : nous devons être en
+lorsque le plugin sert à intégrer un autre outil : nous devons être en
 mesure de valider le fait que l'outil a bien été exécuté avec le bon
 paramétrage et non pas que l'outil lui-même est exempt de bogues.
 
@@ -943,95 +810,66 @@ d'exécuter le plugin.
 La mise en œuvre est simple, puisqu'il s'agit d'écrire une classe de
 test jUnit très classique et de faire appel au plugin-testing-harness
 pour configurer le plugin que nous désirons tester à partir d'un
-pseudo-POM, limité à sa seule section <plugin>. Le Listing 11.7 montre
+pseudo-POM, limité à sa seule section <plugin>. Le Listing 11.7 montre
 le code de ce test, qui va exécuter le plugin et vérifier son
-fonctionnement. Le Listing 11.8 montre le pseudo-fichier POM qui lui
+fonctionnement. Le Listing 11.8 montre le pseudo-fichier POM qui lui
 sert de base pour construire et configurer le plugin testé.
 
-Listing 11.7 : Test unitaire pour un plugin, basé sur le
+Listing 11.7 : Test unitaire pour un plugin, basé sur le
 plugin-testing-harness
 
+[source, java]
+------------------------------------------------------------------
 public class GEACheckMojoTestCase
+    extends AbstractMojoTestCase
+{
+    public void testCheck()
+        throws Exception
+    {
+        File testPom = new File( getBasedir(),
+            "src/test/resources/testCheck.pom" );
+        Mojo mojo = (Mojo) lookupMojo( "check", testPom );
 
-    extends AbstractMojoTestCase
-
-\{
-
-    public void testCheck()
-
-        throws Exception
-
-    \{
-
-        File testPom = new File( getBasedir(),
-
-            "src/test/resources/testCheck.pom" );
-
-        Mojo mojo = (Mojo) lookupMojo( "check", testPom );
-
- 
-
-        MavenProject project = new MavenProjectStub();
-
-        setVariableValueToObject( project, "compileSourceRoots", new
+        MavenProject project = new MavenProjectStub();
+        setVariableValueToObject( project, "compileSourceRoots", new
 ArrayList() );
-
-        project.addCompileSourceRoot( new File( testRoot,
+        project.addCompileSourceRoot( new File( testRoot,
 "src/main/java" ).getAbsolutePath() );
+        setVariableValueToObject(mojo, "project", project );
 
-        setVariableValueToObject(mojo, "project", project );
+        assertNotNull( "Failed to configure the plugin", mojo );
 
- 
+        mojo.execute();
 
-        assertNotNull( "Failed to configure the plugin", mojo );
-
- 
-
-        mojo.execute();
-
- 
-
-        File expected = new File(getBasedir(),
-
-            "target/test-target/check/repport.html" );
-
-        assertTrue( "expected file not found", expected.exists() );
-
-    }
-
+        File expected = new File(getBasedir(),
+            "target/test-target/check/repport.html" );
+        assertTrue( "expected file not found", expected.exists() );
+    }
 }
+------------------------------------------------------------------
 
-Listing 11.8 : Pseudo-POM chargé lors du test
+Listing 11.8 : Pseudo-POM chargé lors du test
 
+[source, xml]
+------------------------------------------------------------------
 <project>
-
-  <build>
-
-    <plugins>
-
-      <plugin>
-
-        <groupId>com.geegol.maven.plugins</groupId>
-
-        <artifactId>geacheck-maven-plugin</artifactId>
-
-        <configuration>
-
-          <outputDirectory>target/test-target/check</outputDirectory>
-
-        </configuration>
-
-      </plugin>
-
-    </plugins>
-
-  </build>
-
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>com.geegol.maven.plugins</groupId>
+        <artifactId>geacheck-maven-plugin</artifactId>
+        <configuration>
+          <outputDirectory>target/test-target/check</outputDirectory>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>
+------------------------------------------------------------------
 
 Astuce
 
-Dans le Listing 11.7, nous utilisons un bouchon de la classe
+Dans le Listing 11.7, nous utilisons un bouchon de la classe
 MavenProject. Le plugin plugin-testing-harness propose également des
 objets bouchons pour de nombreuses autres classes de l'API Maven, ce qui
 permet de construire des tests unitaires qui nécessitent (par exemple)
@@ -1042,7 +880,7 @@ Plugin _invoker_
 
 Une seconde option consiste à exécuter la construction d'un projet Maven
 de test, mais dans un mode automatisé. C'est l'option retenue par le
-plugin invoker, qui va enchaîner un build Maven parallèle lors de la
+plugin invoker, qui va enchaîner un build Maven parallèle lors de la
 phase de test d'intégration de notre projet de plugin. Contrairement au
 plugin plugin-testing-harness, il ne s'agit pas d'exécuter le plugin
 dans un environnement de test "unitaire", mais de lancer une
@@ -1055,65 +893,53 @@ résultat de l'exécution. Ce script va typiquement s'assurer que des
 fichiers attendus en résultat de l'exécution sont présents et/ou
 correctement renseignés.
 
-Le Listing 11.9 présente la configuration du plugin invoker pour
+Le Listing 11.9 présente la configuration du plugin invoker pour
 exécuter un projet Maven de test. Le plugin recherche dans notre
 répertoire src/it tous les sous-répertoires contenant un fichier
 pom.xml, les recopie dans le répertoire de travail et y exécute un build
 Maven (jusqu'à la phase package). Nous pouvons donc organiser notre
 répertoire de tests d'intégration en ayant un sous-répertoire par test
 d'intégration, contenant le projet Maven d'intégration à tester. Le
-Listing 11.10, quant à lui, présente le fichier groovy que nous
+Listing 11.10, quant à lui, présente le fichier groovy que nous
 utilisons pour vérifier que l'exécution s'est déroulée comme prévu et
 que le fonctionnement du plugin est donc correct.
 
-Listing 11.9 : Configuration du plugin _invoker_
+Listing 11.9 : Configuration du plugin _invoker_
 
+[source, xml]
+------------------------------------------------------------------
 <plugin>
+  <groupId>org.apache.maven.plugins</groupId>
+  <artifactId>maven-invoker-plugin</artifactId>
+  <version>1.3</version>
+  <configuration>
+    <postBuildHookScript>verify</postBuildHookScript>
+    <localRepositoryPath>${project.build.directory}/it-repo</localRepositoryPath>
+    <settingsFile>src/it/settings.xml</settingsFile>
+    <cloneProjectsTo>${project.build.directory}/it</cloneProjectsTo>
+  </configuration>
 
-  <groupId>org.apache.maven.plugins</groupId>
-
-  <artifactId>maven-invoker-plugin</artifactId>
-
-  <version>1.3</version>
-
-  <configuration>
-
-    <postBuildHookScript>verify</postBuildHookScript>
-
-   
-<localRepositoryPath>$\{project.build.directory}/it-repo</localRepositoryPath>
-
-    <settingsFile>src/it/settings.xml</settingsFile>
-
-    <cloneProjectsTo>$\{project.build.directory}/it</cloneProjectsTo>
-
-  </configuration>
-
-  <executions>
-
-    <execution>
-
-      <goals>
-
-        <goal>install</goal>
-
-        <goal>run</goal>
-
-      </goals>
-
-    </execution>
-
-  </executions>
-
+  <executions>
+    <execution>
+      <goals>
+        <goal>install</goal>
+        <goal>run</goal>
+      </goals>
+    </execution>
+  </executions>
 </plugin>
+------------------------------------------------------------------
 
-Listing 11.10 : Script _Groovy_ de contrôle de l'exécution
+Listing 11.10 : Script _Groovy_ de contrôle de l'exécution
 
+[souce, groovy]
+------------------------------------------------------------------
 // GEACheck doit générer son rapport sous target/check
-
 assert new File( basedir, 'target/check/report.html' ).exists();
 
 return true;
+------------------------------------------------------------------
+
 
 image:illustrations/MangaHerve.png[float="left"]
 
@@ -1122,7 +948,7 @@ plus de notre projet, la bonne santé de son plugin, lequel, outillé de
 tests, est maintenant prêt pour vivre sa vie et répondre au besoin à des
 demandes d'évolution ou de nouvelles contraintes. Hervé n’a plus qu'à
 documenter ce plugin et son utilisation… mais pour cela il devra
-attendre le chapitre suivant !
+attendre le chapitre suivant !
 
 Conclusion
 ~~~~~~~~~~
