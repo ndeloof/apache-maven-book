@@ -11,11 +11,7 @@ existé ne serait que fortuite…
 Prologue
 ~~~~~~~~
 
-$$$ pictos côte à côte ou l'un sous l'autre$$$
-
-image:illustrations/MangaNicolas.png[float="left"]
-
-image:illustrations/MangaArnaud.png[float="left"]
+image:illustrations/MangaNicolas.png[float="left"] image:illustrations/MangaArnaud.png[float="right"]
 
 Nicolas et Arnaud se sont rencontrés au cours d'une conférence organisée
 par un Java User Group. Faisant connaissance autour d'un verre, ils
