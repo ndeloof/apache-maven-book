@@ -1,12 +1,8 @@
-Partie 1
---------
+Partie 1 - Premiers pas avec Maven
+================================== 
 
-Premiers pas avec Maven
-
-Chapitre 1
-
-Introduction
-------------
+Chapitre 1 : Introduction
+========================= 
 
 Commençons donc notre récit par l'inévitable mise en garde : toute
 ressemblance avec des personnes ou des situations existantes ou ayant
@@ -15,7 +11,11 @@ existé ne serait que fortuite…
 Prologue
 ~~~~~~~~
 
-image:illustrations/MangaNicolas.png[float="left"] image:illustrations/MangaArnaud.png[float="right"]
+$$$ pictos côte à côte ou l'un sous l'autre$$$
+
+image:illustrations/MangaNicolas.png[float="left"]
+
+image:illustrations/MangaArnaud.png[float="left"]
 
 Nicolas et Arnaud se sont rencontrés au cours d'une conférence organisée
 par un Java User Group. Faisant connaissance autour d'un verre, ils
@@ -54,7 +54,7 @@ fassent disparaître). Il envoie donc le trésor tant convoité à Arnaud.
 Pour vous faire une meilleure idée de cette exceptionnelle construction
 logicielle, voici les fichiers qui la constituent :
 
-image:illustrations/01-01.png[float="left"]
+image:illustrations/01-01.png[Figure 1]
 
 La structure originale du projet "noubliepaslalistedescourses".
 
@@ -97,7 +97,7 @@ image:illustrations/MangaNicolas.png[float="left"]
 	jar cf noubliepaslalistedescourses.jar build\*.class
 
 
-image:illustrations/MmangaArnaud.png[float="left"]
+image:illustrations/MangaArnaud.png[float="left"]
 
 	#!/bin/bash
 	export JAVA_HOME=/opt/jdk1.3
@@ -375,9 +375,9 @@ et bon nombre d'outils similaires s’appuient sur une approche
 procédurale, pour laquelle on décrit les opérations à accomplir pour
 construire le logiciel ou exécuter des tâches annexes. Cela se traduit
 donc par une suite de commandes, qui prendra d'une façon ou d'une autre
-la forme décrite à la Figure 01-02.
+la forme décrite à la Figure 2.
 
-image:illustrations/01-02.png[float="left"]
+image:illustrations/01-02.png[Figure 2]
 
 Les étapes élémentaires de construction d'un projet.
 
