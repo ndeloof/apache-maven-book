@@ -42,6 +42,7 @@
 						<goals>
 							<goal>process-asciidoc</goal>
 						</goals>
+						<configuration>
 							<outputDirectory>target/html</outputDirectory>
 							<backend>html</backend>
 							<doctype>book</doctype>
