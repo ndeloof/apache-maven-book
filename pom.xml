@@ -16,7 +16,6 @@
 				<executions>
 					<execution>
 						<id>copy-resources</id>
-						<!-- here the phase you need -->
 						<phase>validate</phase>
 						<goals>
 							<goal>copy-resources</goal>
@@ -39,18 +38,31 @@
 				<executions>
 					<execution>
 						<id>output-html</id>
-						<phase>compile</phase>
+						<phase>generate-resources</phase>
 						<goals>
 							<goal>process-asciidoc</goal>
 						</goals>
-						<configuration>
-							<sourceDirectory>${basedir}</sourceDirectory>
 							<outputDirectory>target/html</outputDirectory>
 							<backend>html</backend>
 							<doctype>book</doctype>
 						</configuration>
 					</execution>
+					<execution>
+						<id>output-docbook</id>
+						<phase>generate-resources</phase>
+						<goals>
+							<goal>process-asciidoc</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>target/docbook</outputDirectory>
+							<backend>docbook</backend>
+							<doctype>book</doctype>
+						</configuration>
+					</execution>
 				</executions>
+				<configuration>
+					<sourceDirectory>${basedir}</sourceDirectory>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
