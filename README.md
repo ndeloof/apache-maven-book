@@ -31,3 +31,22 @@ Si vous voulez contribuer de manière plus active, nous mettons à disposition u
     bundle exec guard
 
 Ouvrez ensuite votre navigateur préféré avec un plugin LiveReload ou équivalent, et vous aurez en temps réel le rendu de vos modifications.
+
+Générer d'autres formats ?
+==========================
+
+Developpez.com
+--------------
+
+
+Le projet [asciidoc-dvp-mavenbook](https://github.com/mickaelbaron/asciidoc-dvp-mavenbook) fournit un Backend Asciidoc pour générer le livre au format Developpez.com.
+
+Executer l'instructions suivante :
+
+    # asciidoc -a revdate=2014-02-20 -d book -f dvp.conf -o book-apachemaven.xml maven.adoc
+
+Cela va construire un fichier _book-apachemaven.xml_ à partir du fichier asciidoc _maven.adoc_. L'attribut _revdate_ permet d'indiquer la date de revision.
+
+Le format Developpez.com impose que l'encodage du contenu soit en ISO-8859-1. L'outil _recode_ sera utilisé pour réaliser cet encodage.
+
+    #recode -v -d utf8..latin1 book-apachemaven.xml
