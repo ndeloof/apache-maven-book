@@ -32,11 +32,14 @@ Si vous voulez contribuer de manière plus active, nous mettons à disposition u
 
 Ouvrez ensuite votre navigateur préféré avec un plugin LiveReload ou équivalent, et vous aurez en temps réel le rendu de vos modifications.
 
-=== Générer d'autres formats ?
+Générer d'autres formats ?
+==========================
 
-==== Developpez.com
+Developpez.com
+--------------
 
-Le projet [asciidoc-dvp-mavenbook](https://github.com/mickaelbaron/asciidoc-dvp-mavenbook) fournit un Backend Asciidoc pour générer le livre au format Developpez.com. La génération fournira un fichier XML.
+
+Le projet [asciidoc-dvp-mavenbook](https://github.com/mickaelbaron/asciidoc-dvp-mavenbook) fournit un Backend Asciidoc pour générer le livre au format Developpez.com.
 
 Executer l'instructions suivante :
 
