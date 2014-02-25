@@ -13,10 +13,16 @@ License : [Creative-commons CC BY-SA 4.0](http://creativecommons.org/licenses/by
 
 Vous pouvez visualiser le contenu [directement sur GitHub](https://github.com/ndeloof/apache-maven-book/blob/master/maven.adoc), ou consulter la [version HTML](https://apache-maven.ci.cloudbees.com/job/apache-maven-book/HTML/)
 
-Build
-=======
 
-Pour produire les chapitres au format html, il suffit de lancer ```mvn clean compile```, le résultat est disponible sous ```target/html```, ou bien si vous n'aimez pas maven (mais alors que faites vous là ?) ```asciidoc maven.adoc```
+Build
+=====
+
+Pour produire les chapitres au format html, utilisez la configuration par défaut d'AsciiDoc
+
+  asciidoc maven.adoc
+  
+Nous étudions la génération d'un PDF et d'un format ePub.
+Un build maven est également à votre disposition si vous y tennez vraiment :)  
 
 Contribuer ?
 ==============
