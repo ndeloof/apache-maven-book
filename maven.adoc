@@ -1680,8 +1680,8 @@ veut nous montrer le potentiel est bien dans son dépôt local, pourtant –
 rien à faire – Maven fait la sourde oreille. Il est temps de faire appel
 à nos experts…
 
-[LES EXPERTS]
-+++++++++++++
+LES EXPERTS
++++++++++++
 
 image:illustrations/MangaArnaud.png[float="left"]
 
@@ -1690,13 +1690,10 @@ inspiré Emmanuel pour sa démo. Il en extrait une déclaration de
 dépôthttp://repository.geek.org/[] qu’il place sous scellés pour la
 suite de l’enquête.
 
-<repository>
-
-  <id>geeks.org</id>
-
-  <url>http://repository.geeks.org</url>
-
-<repository>
+  <repository>
+    <id>geeks.org</id>
+    <url>http://repository.geeks.org</url>
+  <repository>
 
 image:illustrations/MangaNicolas.png[float="left"]
 
