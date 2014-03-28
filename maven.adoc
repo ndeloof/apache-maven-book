@@ -1,5 +1,4 @@
-Apache Maven
-============
+= Apache Maven
 Nicolas De loof, Arnaud Héritier
 v3.0, 2014
 :toc:
@@ -7,8 +6,7 @@ v3.0, 2014
 
 
 [preface]
-Préface de la troisième édition
-===============================
+= Préface de la troisième édition
 
 image:illustrations/MangaNicolas.png[float="left"]
 
@@ -50,8 +48,7 @@ image:illustrations/license.png[align="center"]
 _Nicolas de Loof_
 
 [preface]
-Préface de la seconde édition
-=============================
+= Préface de la seconde édition
 
 image:illustrations/MangaNicolas.png[float="left"]
 
@@ -105,8 +102,7 @@ Maven et à en comprendre la richesse et la philosophie, qui en font un
 outil sans équivalent.
 
 [preface]
-Avant-propos
-============
+= Avant-propos
 
 image:illustrations/MangaNicolas.png[float="left"]
 
@@ -210,8 +206,7 @@ cet outil complet afin qu'il ne soit plus jamais complexe à vos yeux.
 
 _Arnaud Héritier_
 
-Contenu
-~~~~~~~
+=== Contenu
 
 Cet ouvrage se compose de quatre parties :
 
@@ -247,18 +242,17 @@ quelques peu abscons utilisés dans cet ouvrage.
 
 
 
-Partie 1 - Premiers pas avec Maven
-================================== 
+= Partie 1
+[partintro]
+.Premiers pas avec Maven
 
-Chapitre 1 : Introduction
-========================= 
+== Chapitre 1 : Introduction
 
 Commençons donc notre récit par l'inévitable mise en garde : toute
 ressemblance avec des personnes ou des situations existantes ou ayant
 existé ne serait que fortuite…
 
-Prologue
-~~~~~~~~
+=== Prologue
 
 image:illustrations/MangaNicolas.png[float="left"] image:illustrations/MangaArnaud.png[float="right"]
 
@@ -289,8 +283,7 @@ lui demande s'il a toujours son programme et s'il peut en faire une
 copie pour satisfaire sa curiosité – la geekitude est dangereusement
 contagieuse !
 
-Partageons !
-~~~~~~~~~~~~
+=== Partageons !
 
 De retour à la maison, Nicolas fouille dans ses archives et en retire
 une vieille disquette (vous savez, ces carrés de plastique qu'on
@@ -374,8 +367,7 @@ utilisateur du système Solaris, s'est souvent trouvé face à ce
 problème ; il lui propose d'utiliser un fichier de commande universel,
 basé sur l'outil Apache Ant.
 
-Les fourmis à la rescousse
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+=== Les fourmis à la rescousse
 
 Qu'est-ce que c'est que ce "Ant" ? Faisons un détour par Wikipédia pour
 nous en faire une idée :
@@ -448,8 +440,7 @@ ensemble le développement de ce projet. Des complications commencent à
 ses habitudes "maison" et ses bonnes pratiques et voudrait les voir
 appliquées.
 
-Et Maven dans tout ça ?
-~~~~~~~~~~~~~~~~~~~~~~~
+=== Et Maven dans tout ça ?
 
 image:illustrations/MangaJason.png[float="left"]
 
@@ -495,8 +486,7 @@ drôle de nom – ne ressemble à rien de connu. Pas de directive de
 compilation, pas d'indication d'ordre dans les tâches, pas de commande
 d'assemblage du JAR. Où est le secret ?
 
-Que fait Maven ?
-~~~~~~~~~~~~~~~~
+=== Que fait Maven ?
 
 Épluchons point par point les consignes de Jason et voyons.
 
@@ -601,8 +591,7 @@ construit un fichier JAR, ce qu'on attendait de lui, mais il a également
 tenté de copier des "ressources" et d'exécuter des tests, ensemble de
 traitements que nous n'avons spécifiés nulle part !
 
-La clé du mystère
-~~~~~~~~~~~~~~~~~
+=== La clé du mystère
 
 Interrogé sur le sujet, Jason nous livre la clé du mystère : Ant, make
 et bon nombre d'outils similaires s’appuient sur une approche
@@ -632,8 +621,7 @@ en quoi un projet est différent de ce "scénario type" que de répéter
 invariablement des commandes très comparables d'un projet à l'autre.
 Maven exploite donc le concept très structurant de conventions.
 
-Convention plutôt que configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== Convention plutôt que configuration
 
 Notre pseudo-exemple réunissant les étapes "initialiser", "compiler",
 "assembler" semble s'appliquer à n'importe quel projet informatique,
@@ -687,8 +675,7 @@ n'avons plus besoin d'indiquer la moindre commande. Il nous suffit de
 décrire en quoi notre projet est différent de ce cas stéréotypé. Nous
 passons d'une approche programmatique à une solution déclarative.
 
-Décrire plutôt que programmer
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== Décrire plutôt que programmer
 
 Notre fichier pom.xml de Maven ne compte aucune commande de compilation
 et, pourtant, il se traduit au final par l'exécution des outils de
@@ -704,8 +691,7 @@ projet, qui pourra être exploitée dans un autre contexte. Elle sera, par
 exemple, utilisée pour s'intégrer dans un IDE (_Integrated Development
 Environment_) comme Eclipse ou par les outils d'analyse de code.
 
-POM
-^^^
+==== POM
 
 Avec ces explications, revenons à présent sur le fichier pom.xml que
 Jason nous a écrit.
@@ -841,8 +827,7 @@ téléchargées est un dépôt d'archives local (_local repository_) et
 respecte une convention. Nous verrons en détail au Chapitre 2 les
 raisons de cette approche et ses avantages.
 
-Pourquoi adopter ces conventions ?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== Pourquoi adopter ces conventions ?
 
 Nous venons de le voir, Maven propose un ensemble de conventions qui
 permettent d'outiller le projet avec peu de configuration. Il ne nous
@@ -903,8 +888,7 @@ La force des conventions de Maven n'est pas dans le nom des répertoires
 qui ont été choisis, mais dans le fait qu'il offre à la communauté des
 développeurs Java tout entière une base commune.
 
-La force de Maven
-~~~~~~~~~~~~~~~~~
+=== La force de Maven
 
 Revenons un peu en arrière : le projet initial, que nous pouvons
 considérer comme un prototype, était difficilement exportable en dehors
@@ -942,13 +926,9 @@ allons voir en quoi cette approche se généralise à toutes les tâches qui
 accompagnent la vie d'un projet.
 
 
-Chapitre 2
+== Chapitre 2 : Au-delà de java.lang
 
-Au-delà de java.lang
---------------------
-
-Des JAR sous CVS
-~~~~~~~~~~~~~~~~
+=== Des JAR sous CVS
 
 Avec une équipe qui se compose désormais de cinq développeurs motivés,
 il n'est plus question de s'envoyer par e-mail des archives du projet
@@ -973,8 +953,7 @@ projet.
 Notre prototype ne déroge pas à cette "bonne idée" et possède comme tant
 d'autres un répertoire lib avec l'ensemble des bibliothèques utilisées.
 
-Quand le répertoire lib explose
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== Quand le répertoire lib explose
 
 La croissance de l'équipe nous permet de rapidement améliorer notre
 prototype. Le nombre de bibliothèques nécessaires au projet augmente.
@@ -1019,8 +998,7 @@ peut être extrêmement complexe, car la remise en cause de la
 bibliothèque sera probablement la toute dernière hypothèse que nous
 évoquerons pour justifier un dysfonctionnement.
 
-Un bogue est détecté
-++++++++++++++++++++
+===== Un bogue est détecté
 
 Après quelques heures de tests et de recherche d'informations sur
 Internet, nous devons nous rendre à l'évidence, nous rencontrons un
@@ -1067,8 +1045,7 @@ particulier sa version précise. Celle-ci est cependant régulièrement non
 documentée lorsque ce fichier MANIFEST n'est pas tout simplement absent
 ou quasiment vide.
 
-lib/*.jar
-+++++++++
+===== lib/*.jar
 
 Pour ne plus rencontrer ce problème, nous décidons "d'assouplir" nos
 scripts de compilation en utilisant l'intégralité du répertoire lib
@@ -1091,8 +1068,7 @@ devoir traiter le problème, nous avons ouvert les portes en grand à tout
 ce qui passe. Difficile de parler de "maîtrise" de nos bibliothèques
 dans de telles conditions.
 
-Identification univoque
-^^^^^^^^^^^^^^^^^^^^^^^
+==== Identification univoque
 
 Maven propose une approche à l'opposé de ces pratiques hasardeuses. Il
 se focalise sur l'identification exacte des bibliothèques utilisées. Des
@@ -1161,8 +1137,7 @@ le nom de package javax.* qui caractérise ces API. Par ailleurs, il
 existe de nombreuses exceptions pour des raisons historiques liées à la
 première mouture de Maven.
 
-Dépôt de bibliothèques
-^^^^^^^^^^^^^^^^^^^^^^
+==== Dépôt de bibliothèques
 
 La configuration par défaut de Maven utilise le dépôt (ou _référentiel_)
 de bibliothèques http://repo1.maven.org/maven2/. Ce site, maintenu par
@@ -1210,8 +1185,7 @@ de Maven.
 ·     Un fichier de métadonnées, propre à Maven comme son nom l'indique
 clairement.
 
-Avis aux amateurs de casse-tête
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=== Avis aux amateurs de casse-tête
 
 Notre projet, issu d'un code antédiluvien auquel chacun est venu
 apporter sa contribution, est constitué de bric et de broc. Le
@@ -1265,8 +1239,7 @@ du projet, en tentant d'identifier les doublons. Même si cela fonctionne
 relativement bien dans de nombreux cas, il est certain qu'on part au
 petit bonheur la chance en espérant ne rien laisser traîner en route.
 
-L'ami de mon ami…
-^^^^^^^^^^^^^^^^^
+==== L'ami de mon ami…
 
 Que propose Maven pour cette situation ? Nous avons vu qu'il demande de
 déclarer les dépendances plutôt que de fournir nous-mêmes les binaires ;
@@ -1356,8 +1329,7 @@ envisagez de convertir un projet existant, car vous devrez probablement
 en repenser l'organisation, et pas juste écrire quelques fichiers POM
 pour déclarer vos dépendances.
 
-Testons un peu
-~~~~~~~~~~~~~~
+=== Testons un peu
 
 image:illustrations/MangaVincentM.png[float="left"]
 
@@ -1401,8 +1373,7 @@ Cela se complique. Peut-être qu'avec un troisième sous-répertoire dans
 /lib… Stop ! Fini de jouer, interrompt Jason, avant de nous expliquer
 comment Maven traite de manière globale ce problème.
 
-Les "scopes"
-^^^^^^^^^^^^
+==== Les "scopes"
 
 Notre problème vient de la nécessité d'associer à chaque dépendance du
 projet le contexte dans lequel elle doit intervenir. S'agit-il d'un
@@ -1434,8 +1405,7 @@ commandes de construction du projet. Avec cette précision, jUnit ne sera
 pas inclus sur la liste des bibliothèques référencées par la commande de
 compilation. Maven aurait ainsi identifié notre bogue immédiatement.
 
-Une arme à double tranchant
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=== Une arme à double tranchant
 
 La facilité avec laquelle Maven permet de marier les bibliothèques,
 gérant dépendances et conflits, nous retire une (autre) sacrée épine du
@@ -1568,8 +1538,7 @@ erreurs. Dans notre cas, nous voulons conserver commons-logging et
 exclure commons-logging-api, mais aucune solution automatique n'est
 possible.
 
-L'analyse des dépendances
-^^^^^^^^^^^^^^^^^^^^^^^^^
+==== L'analyse des dépendances
 
 Avec le nombre de frameworks que nous avons intégrés à l'application, il
 devient difficile de savoir qui introduit quelle dépendance. Même si les
@@ -1630,8 +1599,7 @@ image:illustrations/02-03.png[align="center"]
 
 Plugin Maven pour Eclipse.
 
-Dépôts et dépendances
-^^^^^^^^^^^^^^^^^^^^^
+==== Dépôts et dépendances
 
 MAVEN3
 
@@ -1688,8 +1656,7 @@ veut nous montrer le potentiel est bien dans son dépôt local, pourtant –
 rien à faire – Maven fait la sourde oreille. Il est temps de faire appel
 à nos experts…
 
-LES EXPERTS
-+++++++++++
+===== LES EXPERTS
 
 image:illustrations/MangaArnaud.png[float="left"]
 
@@ -1734,8 +1701,7 @@ l’explication :
 
  
 
-Dépôts et dépendances
-^^^^^^^^^^^^^^^^^^^^^
+==== Dépôts et dépendances
 
 Maven utilise par défaut un dépôt nommé central, qui héberge un vaste
 choix de bibliothèques open-source. Pour une grande majorité de
@@ -1777,8 +1743,7 @@ serait apparu plus tard lorsqu'il aurait partagé son projet avec le
 reste de l'équipe. Maven 3 est globalement plus strict, pour le bien de
 chacun sur le long terme.
 
-Conclusion
-~~~~~~~~~~
+=== Conclusion
 
 La gestion des bibliothèques et de leurs dépendances est une
 fonctionnalité de Maven très régulièrement mise en avant. Manuellement,
@@ -1790,10 +1755,7 @@ heureusement, Maven permet de corriger ces problèmes. La qualité des
 métadonnées est donc primordiale, pensez-y si vous participez à un
 projet qui diffuse ses binaires sur un dépôt Maven.
 
-Chapitre 3
-
-Un peu plus que compiler
-------------------------
+== Chapitre 3 : Un peu plus que compiler
 
 Jusqu'à présent, Maven s'est montré plutôt efficace pour traiter les
 difficultés d'organisation de notre projet, en proposant des conventions
@@ -1802,8 +1764,7 @@ hasardeux. Nous allons voir maintenant comment il poursuit cet effort
 lorsque notre projet "dévie" progressivement de l'exemple si simple que
 nous avons utilisé pour l'instant.
 
-Êtes-vous prêt pour Java 7 ?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=== Êtes-vous prêt pour Java 7 ?
 
 Le prototype à l'origine de notre projet a été écrit il y a belle
 lurette et utilise la syntaxe Java 1.2. Maven n'a pas de grande
@@ -1888,8 +1849,7 @@ machine arrière ? Non, car Maven prévoit également la possibilité de
 reconfigurer ces étapes standard, lorsque leur fonctionnement par défaut
 ne suffit plus.
 
-Plugins
-~~~~~~~
+=== Plugins
 
 Maven confie chaque opération élémentaire de la construction du projet à
 un plugin, un fragment de logiciel qui se spécialise dans une tâche
@@ -1980,8 +1940,7 @@ Attention cependant, car le site web généré correspond généralement à la
 version en cours de développement du plugin, aussi soyez attentif à
 l'indication "@since" ajoutée à certains paramètres.
 
-Propriétés
-~~~~~~~~~~
+=== Propriétés
 
 La modification du fonctionnement du plugin de compilation nous permet
 enfin de valider la syntaxe Java 7 que nous avons introduite dans le
@@ -2046,8 +2005,7 @@ plus d'une bonne pratique que les développeurs de plugins devraient
 connaître pour satisfaire au mieux leurs utilisateurs. Dans le cas
 contraire, seule l'option " lourde " reste envisageable.
 
-Quand Java ne suffit plus
-~~~~~~~~~~~~~~~~~~~~~~~~~
+=== Quand Java ne suffit plus
 
 image:illustrations/MangaArnaud.png[float="left"]
 
@@ -2091,8 +2049,7 @@ suffit d'ajouter au projet le plugin X. L'approche déclarative de Maven
 économise la déclaration des opérations réalisées par le plugin et de la
 façon dont elles s'intègrent dans le projet.
 
-Où placer les sources
-^^^^^^^^^^^^^^^^^^^^^
+==== Où placer les sources
 
 Nous l'avons déjà dit, les conventions de Maven sont un élément décisif
 dans sa capacité à prendre en charge de manière automatisée le projet.
@@ -2131,8 +2088,7 @@ conventions sont alignées sur celles de Maven pour obtenir un ensemble
 cohérent. D'autres plugins qui apportent le support de langages autres
 que Java suivront la même logique.
 
-Ajouter un plugin
-^^^^^^^^^^^^^^^^^
+==== Ajouter un plugin
 
 Ces répertoires créés pour accueillir le code, il nous reste à déclarer
 le plugin Groovy dans notre POM. Sur l'exemple du plugin compiler, nous
@@ -2189,8 +2145,7 @@ Cependant, nos sources Groovy ne sont pas prises en compte, et les
 traces d'exécution de la console ne laissent entendre aucun traitement
 particulier de ce langage. Nous avons dû brûler une étape…
 
-Plugin et tâches
-^^^^^^^^^^^^^^^^
+==== Plugin et tâches
 
 La notion de plugin permet à Maven d'isoler, dans un sous-projet dédié
 la gestion, des opérations élémentaires qui sont utilisées pour
@@ -2248,8 +2203,7 @@ Le cycle de vie du projet et les plugins qui viennent s'y greffer.
 Miracle, nous pouvons compiler notre code source Groovy. Sortez la boule
 à facettes !
 
-Compiler… en JavaScript
-~~~~~~~~~~~~~~~~~~~~~~~
+=== Compiler… en JavaScript
 
 Avec ce putsch de Groovy sur le projet, Arnaud a réussi un tour de
 force. Pour ne pas le laisser s'endormir sur ses lauriers, Nicolas
@@ -2365,8 +2319,7 @@ construction d'un projet. Comment Maven pourrait-il connaître notre
 intention et déterminer les étapes nécessaires à la construction du
 projet ?
 
-Invoquer un plugin
-^^^^^^^^^^^^^^^^^^
+==== Invoquer un plugin
 
 Les commandes que nous avons passées jusqu'ici étaient de la forme mvn
 xxx, avec pour xxx la phase de construction du projet que nous
@@ -2399,8 +2352,7 @@ s'exécute seule par invocation directe, la seconde sait se greffer dans
 le cycle de construction du projet. Mais comment fait Maven pour
 déterminer quand l'exécuter ?
 
-Cycle de vie
-^^^^^^^^^^^^
+==== Cycle de vie
 
 Ce que nous avons jusqu'ici qualifié de "projet type" utilisé par Maven
 pour identifier et enchaîner les tâches de base d'un projet Java est en
@@ -2486,8 +2438,7 @@ image:illustrations/03-05.png[align="center"]
 
 Cycle de vie du projet et plugins exécutés pour chaque phase.
 
-Générer du code
-~~~~~~~~~~~~~~~
+=== Générer du code
 
 Suite aux nombreuses évolutions que nous avons apportées, notre projet
 est aujourd'hui capable d'invoquer des services Web SOAP pour s'intégrer
@@ -2627,8 +2578,7 @@ génération que lorsque c'est réellement nécessaire, soit parce que le
 répertoire de génération n'existe pas, soit parce que le fichier qui
 sert de référence a été modifié.
 
-Produire autre chose qu'un JAR
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=== Produire autre chose qu'un JAR
 
 image:illustrations/MangaFrancois.png[float="left"]
 
@@ -2782,8 +2732,7 @@ l’intégration dans sonar ( que nous vous présenterons au chapitre 12) la
 couverture de services autour des projets flex avec Maven est proche de
 ce que l’on obtient avec du Java traditionnel.
 
-Des plugins pour tout ?
-~~~~~~~~~~~~~~~~~~~~~~~
+=== Des plugins pour tout ?
 
 Dans les exemples que nous venons de voir, nous avons fait appel à
 différents plugins utilisant des identifiants de groupe variés. Le
@@ -2865,8 +2814,7 @@ Sans cette précaution, certains plugins peuvent voir leur liste de
 dépendances modifiées par le projet qui les utilise et se comporter
 bizarrement.
 
-Conclusion
-~~~~~~~~~~
+=== Conclusion
 
 Maven propose un cadre de développement strict qui permet de compléter
 le projet grâce à de nombreux plugins sans interaction néfaste entre
@@ -2884,10 +2832,7 @@ rapidement productif, sans devoir passer par un long "guide de
 démarrage" précisant les bibliothèques à utiliser et le rôle de chaque
 paramètre.
 
-Chapitre 4
-
-Mettre en place des tests unitaires
------------------------------------
+== Chapitre 4 : Mettre en place des tests unitaires
 
 Le petit projet initial est maintenant de l'histoire ancienne. Sous
 l'impulsion de contributeurs enthousiastes, de nombreuses
@@ -2911,8 +2856,7 @@ incompatibilités que nous pourrions introduire involontairement. Nous
 passons donc beaucoup de temps à tester l'application afin de voir si
 elle continue de fonctionner "comme avant".
 
-Tester ? Pour quoi faire ?
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+=== Tester ? Pour quoi faire ?
 
 Tester un logiciel est un travail répétitif, souvent ennuyeux, mais
 pourtant indispensable. Nous devons évidemment vérifier que la toute
@@ -2953,8 +2897,7 @@ apporter sera délicate.
 humain se lasse vite de tâches répétitives et peu porteuses de
 créativité.
 
-Automatisons !
-^^^^^^^^^^^^^^
+==== Automatisons !
 
 Pour limiter ces risques, il existe une pratique simple et
 particulièrement efficace : l'automatisation des tests ! Un mécanisme
@@ -3077,8 +3020,7 @@ plaçons les tests au second plan et que nous nous interdisons d'en faire
 quelque chose d'intelligent et de facile à écrire. De toute évidence, la
 solution de la méthode main pour tester montre de graves limites.
 
-Utiliser un framework de test
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== Utiliser un framework de test
 
 Nous ne sommes pas les premiers à faire ce constat, et la réponse existe
 depuis bien longtemps à travers des outils de test spécialisés pour
@@ -3160,8 +3102,7 @@ avec sa propre version "modernisée" jUnit4. Chacun a ses points forts,
 aussi nous vous laissons choisir l'outil le plus approprié à vos besoins
 et à vos habitudes de travail.
 
-Les tests sous Maven
-~~~~~~~~~~~~~~~~~~~~
+=== Les tests sous Maven
 
 Maven ne fait pas de choix entre ces trois outils de test. Plus
 précisément, il choisit les trois plus tous ceux à venir qui pourraient
@@ -3245,8 +3186,7 @@ File basedir = new File( System.getProperty( "basedir", "" )  )
 
 File monFichier = new File( basedir, "chemin/relatif" ) ;
 
-Le scope "test"
-^^^^^^^^^^^^^^^
+==== Le scope "test"
 
 Nous avons vu que la bibliothèque commons-beanutils nous a joué un
 mauvais tour. Bien pratique pour simplifier l'écriture de notre test,
@@ -3296,8 +3236,7 @@ dépendances transitive de Maven nous ouvre les portes d'outils de test
 et de simulation très avancés, avec une simplicité de mise en œuvre
 déconcertante.
 
-Le développement piloté par les tests
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== Le développement piloté par les tests
 
 Les tests automatisés que nous venons d'ajouter à notre projet nous
 offrent un garde-fou intéressant. À de nombreuses reprises, ils nous
@@ -3410,8 +3349,7 @@ Maven participe à cette démarche par la place qu'il donne au test dans
 le cycle de vie du projet. Les tests vus par Maven sont des éléments de
 premier plan du projet.
 
-Pas de JAR sans tests réussis
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== Pas de JAR sans tests réussis
 
 Le passage des tests par Maven fait partie des phases standard de
 construction du projet. Maven les place au cœur de la gestion de la
@@ -3444,8 +3382,7 @@ auquel cas il pourra la présenter à son client à l'arrivée de son voyage
 d'affaires. C'est une option dangereuse si elle est trop utilisée et que
 nos tests automatisés ne soient plus exécutés.
 
-Réutiliser notre outillage de test
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== Réutiliser notre outillage de test
 
 Au fur et à mesure de l'écriture des tests, nous avons dû développer des
 classes utilitaires qui n'ont de sens que dans le cadre des tests : code
@@ -3603,8 +3540,7 @@ téléphone mobile Androïd
 
 </project>
 
-L'intégration continue
-^^^^^^^^^^^^^^^^^^^^^^
+==== L'intégration continue
 
 Nous l'avons vu, nos tests automatisés prennent toute leur valeur
 lorsqu'ils sont exécutés régulièrement. Chaque développeur peut compter
@@ -3646,8 +3582,7 @@ Le serveur qui va exécuter nos tests peut se baser sur l'un des nombreux
 outils disponibles. Nous citerons Continuum et Hudson, mais cette liste
 est loin d'être exhaustive.
 
-Continuum
-^^^^^^^^^
+==== Continuum
 
 Continuum a été développé par la communauté Maven, avec bien sûr pour
 objectif de prendre en charge de manière aussi intégrée que possible la
@@ -3679,8 +3614,7 @@ image:illustrations/04-02.png[align="center"]
 
 Continuum en train de surveiller les projets de Maven2.
 
-Jenkins
-^^^^^^^
+==== Jenkins
 
 Créé par Kohsuke Kawaguchi, employé de SUN, pendant son temps libre,
 Jenkins est rapidement devenu un outil incontournable. Son cycle de
@@ -3714,8 +3648,7 @@ Jenkins, en train de surveiller sa propre construction, respectant
 l'adage anglo-saxon « eat your own dog food » (« mange ta propre
 nourriture pour chien »)
 
-Hudson
-^^^^^^
+==== Hudson
 
 Hudson est le cousin de Jenkins. Suite au rachat de SUN par Oracle, ce
 dernier a fait valoir ses droits sur le nom « hudson », marque déposée
@@ -3734,8 +3667,7 @@ image:illustrations/04-04.png[align="center"]
 Husdon, lui aussi en train de surveiller la construction de Maven2, dans
 la forge Sonatype, partenaire d'Oracle.
 
-Lequel choisir ?
-^^^^^^^^^^^^^^^^
+==== Lequel choisir ?
 
 Le choix de votre serveur d'intégration continue va dépendre de nombreux
 critères. Techniquement parlant, il faut qu'il soit adapté à vos
@@ -3778,8 +3710,7 @@ votre IDE ?
 d'intégration continue ? Mises à jour régulières, phase de qualification
 et/ou support commercial ?
 
-Conclusion
-~~~~~~~~~~
+==== Conclusion
 
 Les tests unitaires sont des acteurs de premier plan pour introduire la
 qualité logicielle dans le cycle de développement du projet. Maven les
@@ -3795,10 +3726,8 @@ qualité et sa stabilité dans le temps. Livrer un logiciel dont tous les
 tests sont au vert est autrement plus rassurant pour l'équipe que
 d'appliquer les derniers correctifs en espérant ne pas avoir introduit
 d'erreur à quelques heures de la livraison.
-Chapitre 5
 
-Mettre en place des tests d'intégration
----------------------------------------
+== Chapitre 5 : Mettre en place des tests d'intégration
 
 Nous avons vu au fil des pages qui précèdent comment outiller notre
 projet d'un ensemble de tests automatisés qui permettent de valider son
@@ -3812,8 +3741,7 @@ Fort de ce nouveau paradigme, notre équipe développe rapidement une
 réelle addiction aux tests. Nous outillons progressivement notre code
 pour vérifier et valider chaque parcelle de notre application.
 
-Des tests unitaires… de moins en moins unitaires
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=== Des tests unitaires… de moins en moins unitaires
 
 image:illustrations/MangaNicolas.png[float="left"]
 
@@ -3860,8 +3788,7 @@ pratiques à peine acquises sont si rapidement oubliées. Il doit pourtant
 bien reconnaître que l'outillage de test unitaire ne peut être pertinent
 que s'il est rapide à exécuter.
 
-Qu'est-ce qu'un test "unitaire"
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== Qu'est-ce qu'un test "unitaire"
 
 Quand nous parlons de tests unitaires, nous considérons des tests
 simples, ciblés, exécutés dans un environnement léger et totalement sous
@@ -3886,8 +3813,7 @@ conviennent à sa tâche en cours, sans perdre le bénéfice d'avoir toute
 la configuration et tout l'outillage nécessaire (ou du moins le maximum)
 configurés dans le seul fichier POM.
 
-Les profils
-~~~~~~~~~~~
+=== Les profils
 
 La réponse de Maven à ce problème s'appelle un _profil_. Il s'agit tout
 simplement de regrouper tout ce qui implique un pan de construction que
@@ -3983,8 +3909,7 @@ Widgets et autres ClickHandlers. L'option -P suivie des noms des profils
 séparés par une virgule permet d'activer à la demande les profils
 désirés par l'utilisateur.
 
-S'adapter à l'environnement
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== S'adapter à l'environnement
 
 Une autre utilisation des profils consiste à adapter la configuration
 Maven du projet à l'environnement de l'utilisateur. Il est aussi
@@ -4118,8 +4043,7 @@ du système cible comme ici, ou distribuer une version de la même
 bibliothèque avec et sans mécanisme de débogage comme le propose le
 driver Oracle.
 
-Désactiver à la demande
-^^^^^^^^^^^^^^^^^^^^^^^
+==== Désactiver à la demande
 
 Un profil peut aussi être déclaré "actif par défaut", auquel cas on
 considère que le fait de ne pas exécuter les tâches qu'il déclare est
@@ -4212,8 +4136,7 @@ signifie pas que ce profil est toujours actif. Cela peut donc avoir des
 effets indésirables si on introduit un nouveau profil sur un projet, car
 ceux qui étaient jusqu'ici "actifs par défaut" seront alors… désactivés.
 
-Tester l'accès à une base de données
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=== Tester l'accès à une base de données
 
 image:illustrations/MangaHerve.png[float="left"]
 
@@ -4421,8 +4344,7 @@ outillage adapté, tandis que les développeurs web qui n'ont aucune idée
 de ce qu'est un "OUTER LEFT JOIN" peuvent purement et simplement
 continuer à l'ignorer et se focaliser sur leurs propres soucis.
 
-Utiliser des tests fonctionnels
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=== Utiliser des tests fonctionnels
 
 Jusqu'ici, nos tests se sont limités à une approche unitaire, dans
 laquelle nous validons le fonctionnement de composants isolés,
@@ -4518,8 +4440,7 @@ application, cette nouvelle catégorie apporte une réelle plus-value à
 notre travail en étant disponible sur chaque poste de développement
 _via_ une simple commande Maven.
 
-Tester la charge et les performances
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=== Tester la charge et les performances
 
 Tous les tests qui précèdent ont un point commun : ils sont
 mono-utilisateurs. Ils valident le fonctionnement de l'application mais
@@ -4599,8 +4520,7 @@ l'automatisation par Maven pour assembler notre application web,
 configurer un serveur d'application de test et démarrer le tout juste
 avant d'exécuter ce type de test.
 
-Intégration continue
-^^^^^^^^^^^^^^^^^^^^
+==== Intégration continue
 
 Le serveur d'intégration continue est utilisé pour l'instant pour
 valider l'exécution de nos tests unitaires. L'objectif est qu’il
@@ -4632,8 +4552,7 @@ tout l'outillage nécessaire pour identifier de telles âneries. Les
 machines ne dorment pas, ne se plaignent pas, et surtout ne relâchent
 jamais leur attention lorsqu'il s'agit d'épier nos défaillances !
 
-Profils et effets de bords
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+=== Profils et effets de bords
 
 image:illustrations/MangaEmmanuel.png[float="left"]
 
@@ -4735,8 +4654,7 @@ avec son petit frère de production :
 
  
 
-Conclusion
-~~~~~~~~~~
+=== Conclusion
 
 Lorsqu'on pousse la logique d'outiller l'application de tests
 automatisés, on peut aller très loin, et de nombreux outils vont venir
@@ -4769,11 +4687,11 @@ vos scripts de test sous SVN et voyez comment configurer leur exécution
 depuis Maven. Ceux qui vous suivront vous en remercieront pour le temps
 que vous leur ferez gagner.
 
-Partie 2
---------
+= Partie 2
 
-Maven en entreprise
-
+[partintro]
+.Maven en entreprise
+--
 Dans cette deuxième partie, nous allons confronter Maven à des
 contraintes assez particulières, celles du monde de l'entreprise. Ici,
 règnent la loi et l'ordre, mais aussi l'urgence et le manque de moyens.
@@ -4825,11 +4743,9 @@ par Exist Global).
 Le logo de l'entreprise de notre "histoire romancée d'un projet fictif"
 est un clin d'œil à cette aventure humaine qui montre un autre visage du
 développement open-source.
+--
 
-Chapitre 6
-
-Gestion avancée des dépendances
--------------------------------
+== Chapitre 6 : Gestion avancée des dépendances
 
 Notre projet commence à prendre une tournure "intéressante" du point de
 vue de ses fonctionnalités. Sous le capot, par contre, c'est un peu un
@@ -4843,8 +4759,7 @@ Nous lançons donc une analyse un peu plus stricte de nos dépendances.
 Première étape, reconstruction de l'intégralité du projet sur un poste
 de développement fraîchement installé.
 
-Oracle, quand tu nous tiens
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=== Oracle, quand tu nous tiens
 
 La construction du projet échoue dans sa toute première phase. Voilà qui
 n'est pas très encourageant ! Maven signale le problème de dépendance
@@ -4852,6 +4767,7 @@ indiqué au Listing 6.1.
 
 Listing 6.1 : Erreur de résolution des dépendances
 
+----
  [ERROR] BUILD ERROR
 
 [INFO]
@@ -4922,9 +4838,9 @@ fr.noubliepaslalistedescourses:noubliepaslalistedescourses:jar:1.0.0-SNAPSHOT
 from the specified remote repositories:
 
   central (http://repo1.maven.org/maven2),
+----
 
-Un moteur de recherche pour Maven
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== Un moteur de recherche pour Maven
 
 Notre déclaration de dépendance est-elle incorrecte ? Peut-être
 n'utilisons-nous pas le bon identifiant de groupe en spécifiant
@@ -4958,8 +4874,7 @@ proposer un fichier POM et un groupe clairement défini pour ce pilote.
 Il revient donc à chacun d'aller télécharger manuellement le fichier
 indiqué.
 
-Pourquoi publier un POM sans JAR ?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== Pourquoi publier un POM sans JAR ?
 
 Quel intérêt y a-t-il à publier sur _central_ le POM du pilote Oracle si
 la bibliothèque ne l'accompagne pas ? Un élément de réponse figure dans
@@ -5008,8 +4923,7 @@ possible d'automatiser de manière fiable l'analyse des licences sur un
 projet. Ce serait cependant une fonctionnalité très intéressante de
 Maven.
 
-Installer le fichier manquant
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== Installer le fichier manquant
 
 Grâce aux informations du POM, nous sommes enfin en mesure de récupérer
 la bibliothèque du pilote JDBC Oracle en suivant la procédure légale de
@@ -5031,8 +4945,7 @@ pas strictement besoin, mais qui sait ?
 C'est une solution rapide, tout à fait légitime si nous disposons de la
 bibliothèque en question par un autre moyen.
 
-Les dépendances "System"
-^^^^^^^^^^^^^^^^^^^^^^^^
+==== Les dépendances "System"
 
 Nous avons donc une solution pour le pilote Oracle ; cependant, chacun
 de nous doit l'installer dans son dépôt local. Même si nous nous le
@@ -5102,8 +5015,7 @@ peu contre-nature. Par ailleurs, si chaque projet qui utilise une base
 Oracle doit intégrer un répertoire lib, nous allons être témoins de la
 multiplication rapide des fichiers JAR sur nos postes de développement.
 
-Créer son propre dépôt
-~~~~~~~~~~~~~~~~~~~~~~
+=== Créer son propre dépôt
 
 image:illustrations/MangaCarlos.png[float="left"]
 
@@ -5151,8 +5063,7 @@ configuration, nous pouvons les placer dans le fichier settings.xml
 utilisé pour configurer Maven. Le gestionnaire de dépôt Nexus peut même
 générer ce fichier avec les déclarations adéquates.
 
-Contrôle d'identité, vos papiers s'il vous plaît !
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== Contrôle d'identité, vos papiers s'il vous plaît !
 
 Le dépôt de bibliothèques ne contient pas seulement le fichier POM de
 notre pilote JDBC, mais aussi deux fichiers suffixés md5 et sha1
@@ -5183,14 +5094,14 @@ jusqu'à l'origine du problème aurait été bien délicat. Qui aurait l'idée
 de mettre en question le JAR Oracle alors qu'il y a tant de raisons pour
 que notre application ne fonctionne pas ?
 
-Rebelote : mais où est javax.jms ?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== Rebelote : mais où est javax.jms ?
 
 Notre problème de dépendance sur le pilote JDBC Oracle est enfin résolu
 de manière satisfaisante. Mais voilà que nous obtenons à nouveau un
 message d'erreur comparable, concernant cette fois l'API _Java Messaging
 Service_ (JMS pour les intimes).
 
+----
 Missing:
 
 ----------
@@ -5200,6 +5111,7 @@ Missing:
  
 
   Try downloading the file manually from the project website.
+----
 
 La solution est toute trouvée, puisque le problème est équivalent à
 celui que nous avons rencontré avec Oracle. Un rapide coup de fil à
@@ -5256,8 +5168,7 @@ gratuit et librement diffusable. Chaque bibliothèque introduit des
 contraintes d'utilisation, parfois les restrictions d'une licence
 commerciale, parfois les obligations d'une licence libre.
 
-Gérer son dépôt privé
-~~~~~~~~~~~~~~~~~~~~~
+=== Gérer son dépôt privé
 
 Ce qui devait au départ être une tâche de fond pour Carlos se révèle
 rapidement un casse-tête. Dans un premier temps, Carlos a voulu faire
@@ -5316,8 +5227,7 @@ s'agit pas simplement de pallier les manques du dépôt existant, mais
 aussi de s'assurer de l’unité de notre dépôt et de sa cohérence avec ce
 qui est disponible en ligne.
 
-Métadonnées
-~~~~~~~~~~~
+=== Métadonnées
 
 Les choses se compliquent franchement lorsque nous commençons à utiliser
 des composants en version SNAPSHOT.
@@ -5344,8 +5254,7 @@ propre version. Voilà un travail bien passionnant qu'il va en plus
 falloir répéter à chaque correction ! Ici aussi, un outillage adéquat
 s'impose.
 
-Passer à un "véritable" gestionnaire de dépôt
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=== Passer à un "véritable" gestionnaire de dépôt
 
 image:illustrations/MangaCarlos.png[float="left"]
 
@@ -5395,8 +5304,7 @@ naturelle pour les "unixiens" et autres "mac'istes".
 
 <settings>
 
-Un miroir de _central_
-^^^^^^^^^^^^^^^^^^^^^^
+==== Un miroir de _central_
 
 Notre première idée est d'établir un site miroir du dépôt central de
 Maven, ce qui nous permettra de faire abstraction de la connexion
@@ -5432,8 +5340,7 @@ dépôt interne quelques soient les URL déclarées dans les éléments
 
 </mirror>
 
-Un gestionnaire d'artefacts
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== Un gestionnaire d'artefacts
 
 En marge du projet Maven, la communauté des développeurs a créé le
 projet "Maven Repository Manager", devenu par la suite
@@ -5585,8 +5492,7 @@ Page de recherche d'Artifactory.
 
  
 
-Conclusion
-~~~~~~~~~~
+==== Conclusion
 
 Plein de bonne volonté, Carlos a vite compris que la gestion d'un dépôt
 Maven n'est pas aussi simple qu'il y paraît. La gestion purement
@@ -5605,10 +5511,7 @@ Internet et pouvons obtenir en un temps record les dépendances de nos
 projets. Enfin, nous pouvons au besoin publier en interne les artefacts
 qui nous manqueraient.
 
-Chapitre 7
-
-Quand le projet devient trop lourd
-----------------------------------
+== Chapitre 7 : Quand le projet devient trop lourd
 
 Notre application a fait un joli bout de chemin. D'un embryon de projet
 avec trois classes, elle est devenue un vaste logiciel couvrant des
@@ -5620,8 +5523,7 @@ de multiples bibliothèques, sans même parler des nombreux outils de
 test. Il est temps de donner au projet un peu plus de structuration pour
 y voir plus clair.
 
-Un projet – un artefact
-~~~~~~~~~~~~~~~~~~~~~~~
+=== Un projet – un artefact
 
 Une règle de base que nous avons rapidement comprise avec Maven est
 qu'un projet ne peut produire qu'un seul artefact. Inutile donc de
@@ -5664,8 +5566,7 @@ Grosse déception : le schéma XML qui dirige la syntaxe du fichier POM ne
 prévoit aucune balise <import>, <include> ou quoi que ce soit
 d'équivalent.
 
-Héritage
-^^^^^^^^
+==== Héritage
 
 Maven utilise certes un format XML pour l'écriture du POM, format par
 ailleurs étrangement verbeux comparé à d'autres outils, mais il ne faut
@@ -5708,8 +5609,7 @@ groupId et de version que nous partageons avec lui. C'est une pratique
 très courante qui assure par la même occasion l'homogénéité des
 sous-projets avec leur parent commun.
 
-Packaging d'un POM parent
-^^^^^^^^^^^^^^^^^^^^^^^^^
+==== Packaging d'un POM parent
 
 Notre POM parent est donc lui-même un autre projet Maven, mais celui-ci
 ne va pas produire de JAR, de War ou même de binaire exécutable. Il va
@@ -5771,8 +5671,7 @@ image:illustrations/07-01.png[align="center"]
 
 Hiérarchie des POM Apache Maven
 
-Parent "naturel"
-^^^^^^^^^^^^^^^^
+==== Parent "naturel"
 
 L'héritage d'un POM parent simplifie l'existence mais elle nécessite
 cependant que nous disposions dans notre dépôt Maven du POM en question.
@@ -5813,8 +5712,7 @@ chemin qui vous convient. Vous perdrez cependant les avantages des
 conventions : plus de configuration, obligation pour chaque nouvel
 arrivant de s'adapter aux habitudes locales.
 
-Mutualiser
-~~~~~~~~~~
+=== Mutualiser
 
 Nous avons donc un mécanisme de mutualisation en place. Que pouvons-nous
 mutualiser ?
@@ -5836,8 +5734,7 @@ nos différentes bibliothèques étaient utilisées dans des versions
 cohérentes sur nos divers sous-projets. Tâche ingrate et pénible, vu le
 nombre impressionnant de dépendances.
 
-Gestion des dépendances
-^^^^^^^^^^^^^^^^^^^^^^^
+==== Gestion des dépendances
 
 Un élément du fichier POM que nous n'avons pas encore utilisé répond à
 ce besoin, il s'agit du <dependencyManagement>. Cette balise n'est utile
@@ -5906,8 +5803,7 @@ versions compatibles entre Spring, Hibernate, Wicket,
 Hibernate-validator, AspectJ et EH-Cache ne sera pas un luxe pour lancer
 rapidement un projet sans avoir ce problème à gérer !
 
-Gestion des plugins
-^^^^^^^^^^^^^^^^^^^
+==== Gestion des plugins
 
 Au même titre que pour nos dépendances, les versions de nos plugins
 Maven ne doivent pas être négligées. Même en supposant qu'aucune
@@ -6016,8 +5912,7 @@ SNAPSHOT n'est utilisé en dépendance, ou encore interdire l'utilisation
 de certaines dépendances (par exemple, pour éviter des problèmes de
 licence).
 
-Diviser pour régner
-~~~~~~~~~~~~~~~~~~~
+=== Diviser pour régner
 
 image:illustrations/MangaStephane.png[float="left"]
 
@@ -6068,8 +5963,7 @@ imagination. Outils de test spécialisés et gestion fine des dépendances
 sont à sa disposition pour forger son module selon ses habitudes et les
 bonnes pratiques du domaine.
 
-Héritage "naturel"
-^^^^^^^^^^^^^^^^^^
+==== Héritage "naturel"
 
 Les mécanismes de modules et d'héritage ne sont pas nécessairement liés
 l'un à l'autre, cependant ils se complètent de manière naturelle. Il est
@@ -6080,8 +5974,7 @@ particulières. La structure hiérarchique des projets est donc une
 structure très courante pour les projets Maven, généralement reflétée
 par l'organisation physique des répertoires.
 
-Et l'intégration continue ?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== Et l'intégration continue ?
 
 Comment va se comporter notre serveur d'intégration continue face à ce
 nouveau découpage en modules ? Les outils que nous avons retenus
@@ -6110,8 +6003,7 @@ image:illustrations/07-02.png[align="center"]
 
 Réaction du serveur d'intégration continue à une modification.
 
-Un gros projet _vs_ plein de modules
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== Un gros projet _vs_ plein de modules
 
 Certains utilisateurs n'apprécient pas le découpage en nombreux modules
 qu'encourage Maven. Ils ont l'impression que leur projet s'effrite en
@@ -6142,8 +6034,7 @@ Dans les deux cas, les utilisateurs de Maven sont pénalisés, et ceux qui
 ne l'utilisent pas ne sont pas beaucoup plus avancés dans leur gestion
 manuelle des dépendances.
 
-Les modules au service de l'architecture
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== Les modules au service de l'architecture
 
 Le découpage en modules permet aussi de renforcer nos règles
 d'architecture logicielle. Si notre structuration JavaEE impose par
@@ -6157,8 +6048,7 @@ sélection.
 
  
 
-Garder le contrôle
-^^^^^^^^^^^^^^^^^^
+==== Garder le contrôle
 
 image:illustrations/MangaStephane.png[float="left"]
 
@@ -6288,8 +6178,7 @@ en fin stratège, a gardé sa toute dernière réplique pour la fin, et nous
 invite à refaire le monde autour d’une bière. Voilà qui met tout le
 monde d’accord !
 
-Conclusion
-~~~~~~~~~~
+=== Conclusion
 
 Le mécanisme d'héritage est une originalité de Maven par rapport aux
 autres outils orientés script qui utilisent une logique d'inclusion. Il
@@ -6300,10 +6189,8 @@ d'un de ces modules gagne en clarté, focalisé sur un aspect précis de
 l'application, sans pour autant compliquer la construction du projet. Un
 simple mvn install depuis le projet de plus haut niveau enchaîne les
 compilations de tous les modules pour produire un livrable cohérent.
-Chapitre 8
 
-Maven et JavaEE
----------------
+== Chapitre 8 : Maven et JavaEE
 
 Notre application noubliepaslalistedescourses est fin prête pour une
 ouverture au public. Nous ne disposons cependant pas de nos propres
@@ -6320,8 +6207,7 @@ significative dans sa mouture JavaEE6. Maven ne pouvait pas faire
 l'impasse sur ce modèle, sur ses limites et sur les bonnes pratiques de
 développement qui l'accompagnent.
 
-Java Entreprise Edition
-~~~~~~~~~~~~~~~~~~~~~~~
+=== Java Entreprise Edition
 
 Le modèle JavaEE n'a pas très bonne réputation. Il définit (entre
 autres) deux rôles spécialisés : le développeur et l'assembleur de
@@ -6367,8 +6253,7 @@ qui ne correspond à rien. Ceci dit, cela ne change absolument rien et
 tout le monde comprend de quoi on parle, mais c’était l’occasion de
 faire un petit point culturel :)
 
-Construire une archive web WAR
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== Construire une archive web WAR
 
 La première étape consiste à créer l'archive WAR de notre application
 web, en incluant son descripteur de déploiement. En tant que fichier
@@ -6488,8 +6373,7 @@ notre serveur Tomcat.
 
 </dependency>
 
-Construire un EJB
-^^^^^^^^^^^^^^^^^
+==== Construire un EJB
 
 Notre exploration du monde JavaEE se poursuit avec un Entreprise Java
 Bean, c'est-à-dire un macrocomposant métier qui sera potentiellement
@@ -6718,8 +6602,7 @@ http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"_>
 
 </web-app>
 
-Construire une archive d'entreprise EAR
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== Construire une archive d'entreprise EAR
 
 Il ne nous reste plus qu'à prendre nos composants et à les grouper dans
 un joli paquet-cadeau avant de l'envoyer à notre hébergeur. En terme
@@ -6816,8 +6699,7 @@ image:illustrations/08-03.png[align="center"]
 
 Multiprojet JavaEE avec mise en commun des dépendances _via_ l'EAR.
 
-Tester
-~~~~~~
+=== Tester
 
 image:illustrations/MangaVincentS.png[float="left"]
 
@@ -6839,8 +6721,7 @@ navigateur et enchaîner quelques écrans pour constater le rendu HTML
 d'une page particulière. Eh bien réjouissons-nous, cet outil de rêve
 existe !
 
-Selenium
-^^^^^^^^
+==== Selenium
 
 Seleniumlink:#_ftn32[[32]] est un outil qui n'est pas limité au monde
 Java mais s'y intègre très bien. Il s'agit d'un système complet
@@ -7070,8 +6951,7 @@ prédéfini. Reste à le faire pointer vers notre application. Mais au
 fait, où est-elle notre application ? Nous avons bien une archive WAR,
 mais sans serveur où la déployer, elle n’affichera jamais de page HTML !
 
-Cargo
-^^^^^
+==== Cargo
 
 Cargolink:#_ftn33[[33]] est un autre outil majeur pour notre boîte à
 outils de test. Son objectif est de prendre en charge l'installation
@@ -7338,8 +7218,7 @@ jUnit. Le déploiement sur un serveur, même piloté par Cargo, reste une
 opération lourde que nous réservons aux tests fonctionnels ou aux tests
 de charge.
 
-Arquillian
-~~~~~~~~~~
+=== Arquillian
 
 image:illustrations/MangaVincentS.png[float="left"]
 
@@ -7481,8 +7360,7 @@ XML. Ce qui nous amène à réfléchir à notre productivité dans cet
 environnement : faire du développement Java EE signifie t-il forcément
 faire des choses complexes, contraignantes et consommatrices de temps ?
 
-Soyons pragmatiques, soyons productifs
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=== Soyons pragmatiques, soyons productifs
 
 Nous sommes devenus des cadors de JavaEE, avec une automatisation
 complète du processus d'assemblage et de test. Au quotidien, les choses
@@ -7498,8 +7376,7 @@ trouver des outils qui proposent des raccourcis pour plus de
 productivité. Respecter la norme JavaEE pour un serveur ne signifie pas
 se limiter à la norme JavaEE !
 
-Une application web "sur place"
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== Une application web "sur place"
 
 Premier constat, pour tester notre modification de JSP, notre serveur
 Tomcat va décompresser notre archive WAR, retrouvant ainsi exactement la
@@ -7524,8 +7401,7 @@ modification dans une page JSP sera alors appliquée immédiatement, _via_
 le mécanisme de recompilation des JSP qui est intégré à tout serveur
 JavaEE.
 
-Une application web sans assemblage
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== Une application web sans assemblage
 
 Nous faisons de nets progrès, mais nous devons encore invoquer une
 commande Maven à chaque édition d'une classe de l'application ou
@@ -7547,8 +7423,7 @@ de l'environnement de développement est alors excellente : lancement de
 l'application en un minimum de temps et sans aucune préparation, prise
 en compte rapide des modifications.
 
-Ne plus sortir de l'IDE
-^^^^^^^^^^^^^^^^^^^^^^^
+==== Ne plus sortir de l'IDE
 
 Pour ceux qui n'apprécient pas la ligne de commande, les IDE ont
 planché, de leur côté, sur le manque de productivité lié au modèle
@@ -7616,8 +7491,7 @@ technologies utilisées dans le projet (Spring, Wicket, Hibernate, etc).
 En dehors de cela, rien de notable… sauf que l’application prend en
 compte toutes vos modifications de code ou de configuration sans délai !
 
-JavaEE6
-~~~~~~~
+=== JavaEE6
 
 image:illustrations/MangaAntonio.png[float="left"]
 
@@ -7668,8 +7542,7 @@ simple commande Maven pour que le serveur soit téléchargé et qu’il
 démarre en embarquant notre application telle qu'elle est dans notre
 IDE, sans assemblage d'un WAR ou autre perte de temps.
 
-Conclusion
-~~~~~~~~~~
+=== Conclusion
 
 La norme JavaEE peut paraître complexe, encombrée de descripteurs XML et
 d'archives imbriquées. Maven permet d'une part de prendre en charge de
@@ -7681,10 +7554,8 @@ Une fois de plus, Maven ne fait que catalyser, grâce à une série de
 plugins officiels ou externes, les bonnes idées de développeurs du monde
 entier. L'intégration en quelques lignes de XML des meilleurs outils du
 moment est pour l'utilisateur final un confort sans précédent.
-Chapitre 9
 
-Maven et les IDE
-----------------
+== Chapitre 9 : Maven et les IDE
 
 Nous avons jusqu'ici considéré Maven comme un outil en ligne de
 commande. Le développement informatique est cependant depuis longtemps
@@ -7699,8 +7570,7 @@ et de ses messages parfois obscurs. Nous devons donc définir de manière
 plus pragmatique notre environnement de développement pour fournir un
 ensemble intégré et adapté aux attentes des développeurs.
 
-Un plugin Maven pour Eclipse
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+=== Un plugin Maven pour Eclipse
 
 image:illustrations/MangaArnaud.png[float="left"]
 
@@ -7755,8 +7625,7 @@ soit l'ajout de blocs entiers de configuration dans notre POM qui seront
 copiés tels quels dans l'environnement de travail. Solution peu
 satisfaisante !
 
-Maven vu depuis l'IDE
-^^^^^^^^^^^^^^^^^^^^^
+=== Maven vu depuis l'IDE
 
 Loin de se décourager, Arnaud trouve encore du temps libre pour se
 lancer dans l'évaluation de la solution inverse : faire confiance à
@@ -7785,8 +7654,7 @@ l'environnement de développement ;
 
 ·     fonctionnalités bonus.
 
-Eclipse
-~~~~~~~
+=== Eclipse
 
 image:illustrations/MangaNicolas.png[float="left"]
 
@@ -7807,8 +7675,7 @@ concurrent avec une présentation un peu différente. Le seul hic de ces
 plugins est qu'ils alourdissent considérablement l'environnement de
 développement Eclipse…
 
-Installation
-^^^^^^^^^^^^
+==== Installation
 
 Comme tout composant d'Eclipse, le support de Maven passe par
 l'installation de plugins. Le mécanisme de sites d'installation et de
@@ -7816,8 +7683,7 @@ mise à jour permet d'effectuer l'opération en quelques clics à partir
 d'une connexion à Internet. Un redémarrage est préférable pour terminer
 l'installation.
 
-Import d'un projet Maven
-^^^^^^^^^^^^^^^^^^^^^^^^
+==== Import d'un projet Maven
 
 L'import d'un projet Maven commence par un simple clic droit, qui lance
 un assistant. L'utilisateur indique le chemin du projet, et le plugin
@@ -7847,8 +7713,7 @@ l'espace de travail d'Eclipse sont référencées comme projet, et non via
 l'archive JAR, permettant de tester rapidement l'impact d'une
 modification.
 
-Prise en main
-^^^^^^^^^^^^^
+==== Prise en main
 
 Une nouvelle entrée dans le menu contextuel nous permet d'exécuter les
 tâches liées à Maven. Nos projets Maven sont reconnus et décorés d'une
@@ -7877,8 +7742,7 @@ associées aux plugins en complément de la compilation Java par l'IDE.
 Les deux environnements se complètent donc, Eclipse ne conservant à sa
 charge que la compilation des sources Java.
 
-Gestion du POM
-^^^^^^^^^^^^^^
+==== Gestion du POM
 
 Un éditeur graphique est proposé pour le POM. Il permet de saisir les
 métadonnées sans avoir à se soucier de la structure XML sous-jacente. La
@@ -7918,8 +7782,7 @@ image:illustrations/09-03.png[align="center"]
 
 Édition de la configuration des plugins.
 
-Intégration des plugins Maven
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== Intégration des plugins Maven
 
 Lors de l'import du projet, m2eclipse lit la configuration de quelques
 plugins clés pour adapter le paramétrage du projet en conséquence. Le
@@ -7960,8 +7823,7 @@ incrémentale d'Eclipse, en n'exécutant que les tâches spécifiques de
 Maven et en laissant l'IDE prendre en charge toutes les étapes pour
 lesquelles il propose une fonction équivalente.
 
-Et la cerise…
-^^^^^^^^^^^^^
+==== Et la cerise…
 
 Le plugin Maven vient compléter les fonctionnalités de correction rapide
 (Quick Fix) d'Eclipse. Lors de l'utilisation d'une classe non
@@ -7983,8 +7845,7 @@ s'imposent. Ceux d'entre nous qui se sont déjà battus avec la gestion
 des dépendances de Maven, parfois un peu trop généreuse, apprécient ce
 raccourci.
 
-Interrogations
-^^^^^^^^^^^^^^
+==== Interrogations
 
 Les versions successives de m2eclipse apportent corrections et nouvelles
 fonctionnalités et montrent un réel dynamisme pour proposer une
@@ -7995,8 +7856,7 @@ Eclipse. Si quelques points de collaboration sont possibles, une fusion
 pure est simple n'est pas envisageable. Que va-t-il en ressortir, et
 surtout à quelle échéance ?
 
-Intellij Idea
-~~~~~~~~~~~~~
+=== Intellij Idea
 
 image:illustrations/MangaStephane.png[float="left"]
 
@@ -8013,8 +7873,7 @@ l'aventure avec une version d'évaluation. Le prix à débourser pour une
 licence n'excède de toute façon pas quelques centaines d'euros, à
 comparer au prix de la journée d'un consultant.link:#_msocom_2[[A2]] 
 
-Import d'un projet Maven
-^^^^^^^^^^^^^^^^^^^^^^^^
+==== Import d'un projet Maven
 
 Idea étant, comme tous les IDE récents, basé sur des mécanismes
 d'extensions, il nous faut d'abord installer le plugin Maven. Cette
@@ -8046,8 +7905,7 @@ image:illustrations/09-06.png[align="center"]
 
 Le projet Maven après import dans Idea.
 
-Gestion du POM
-^^^^^^^^^^^^^^
+==== Gestion du POM
 
 L'édition du fichier POM se fait _via_ sa représentation XML, avec
 cependant de nombreux assistants. Idea identifie, par exemple, toutes
@@ -8088,8 +7946,7 @@ image:illustrations/09-08.png[align="center"]
 
 Les dépendances Maven vues sous Idea.
 
-Intégration des plugins Maven
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== Intégration des plugins Maven
 
 Les plugins qui génèrent du code lors des premières phases de la
 construction du projet sont invoqués lors de l'import du projet, ce qui
@@ -8117,8 +7974,7 @@ en fonction des directives du POM. Stéphane résume les choses en disant
 qu'il marche, "tout simplement", faisant référence à son rival Eclipse
 dont le building workspace n'amuse plus personne.
 
-Bonus
-^^^^^
+==== Bonus
 
 L'intégration de Maven dans Idea se fait donc sans fioriture visuelle
 qui sorte du lot, mais tout simplement avec une solution totalement
@@ -8161,8 +8017,7 @@ nécessaire pour apprivoiser un nouvel environnement et sur la
 compensation que peut apporter un outil plus efficace, nous décidons de
 passer à notre troisième candidat.
 
-NetBeans
-~~~~~~~~
+=== NetBeans
 
 image:illustrations/MangaRaphael.png[float="left"]
 
@@ -8170,8 +8025,7 @@ Notre dernier candidat est un farouche partisan de NetBeans et compte
 bien nous démontrer sa supériorité pour le mariage de Maven avec un
 environnement de développement intégré.
 
-Prise en main
-^^^^^^^^^^^^^
+==== Prise en main
 
 Le support de Maven est nativement intégré dans NetBeans, nous n'avons
 donc aucun plugin à installer. C'est prometteur : les développeurs de
@@ -8181,8 +8035,7 @@ cette fonctionnalité. Le reste de l'environnement n'a rien de
 fondamentalement déconcertant et la visite guidée proposée par Raphaël
 n'effraie pas grand monde.
 
-Import d'un projet Maven
-^^^^^^^^^^^^^^^^^^^^^^^^
+==== Import d'un projet Maven
 
 Seconde bonne surprise, que Raphaël ne manque pas de souligner, NetBeans
 n'importe pas un projet Maven, il se contente de lire nativement le POM.
@@ -8209,8 +8062,7 @@ d'une construction du projet dans l'IDE exécute tout naturellement Maven
 dans une console, et nous pouvons évidemment exécuter à la demande une
 tâche particulière.
 
-Gestion du POM
-^^^^^^^^^^^^^^
+==== Gestion du POM
 
 L'édition des métadonnées du POM se fait ici aussi selon le formalisme
 XML. À l'intérieur de cet éditeur, NetBeans ne propose pas d'assistance
@@ -8220,8 +8072,7 @@ qui regroupe nos bibliothèques). L'assistant propose alors un outil de
 recherche, basé, comme ses concurrents, sur les index mis à disposition
 par les gestionnaires de dépôts.
 
-Intégration des plugins Maven
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== Intégration des plugins Maven
 
 NetBeans ne propose pas d'intégration particulière des plugins Maven
 pour lesquels il dispose de plugins équivalents. Cette passerelle semble
@@ -8231,8 +8082,7 @@ réellement fonctionnel. Une rapide démonstration de développement suffit
 d'ailleurs à le prouver, et Raphaël rejoint ainsi Stéphane dans son
 combat tout sauf Eclipse.
 
-Bonus
-^^^^^
+==== Bonus
 
 NetBeans prend en charge la gestion des bibliothèques Maven de manière
 particulièrement intégrée dans les rouages de l'IDE. Les assistants de
@@ -8246,8 +8096,7 @@ image:illustrations/09-10.png[align="center"]
 
 Intégration de la gestion des dépendances au plus profond de NetBeans.
 
-Délibération du jury
-~~~~~~~~~~~~~~~~~~~~
+=== Délibération du jury
 
 La délibération du jury est longue et mouvementée. Riche en arguments,
 en comparaisons mais aussi parfois en mauvaise foi, la discussion se
@@ -8280,8 +8129,7 @@ Linux.
 Les choses tournent donc rapidement au consensus et se terminent autour
 du verre de l'amitié (on l'a échappé belle, n'est-ce pas ?).
 
-Conclusion
-~~~~~~~~~~
+=== Conclusion
 
 Un énorme avantage de Maven est qu'il porte intégralement le projet. Que
 l'on travaille dans un environnement graphique ou avec le bloc-notes n'a
@@ -8298,10 +8146,7 @@ Maven nous a libérés des IDE, nous pouvons utiliser celui que nous
 voulons et en changer à tout moment, car aucune de nos tâches
 stratégiques n'y est liée.
 
-Chapitre 10
-
-Le jour J : la livraison
-------------------------
+== Chapitre 10 : Le jour J : la livraison
 
 La vie d'un projet est ponctuée de moments forts, et le jour de la
 livraison en est un particulièrement éprouvant. Après de longues
@@ -8309,11 +8154,9 @@ semaines de développement et de mise au point, notre logiciel est mis à
 la disposition de ses utilisateurs, soumis à leur jugement et à leur
 manque de compassion pour les erreurs que nous aurions pu commettre.
 
-Stratégie de livraison
-~~~~~~~~~~~~~~~~~~~~~~
+=== Stratégie de livraison
 
-Première livraison
-^^^^^^^^^^^^^^^^^^
+==== Première livraison
 
 image:illustrations/MangaEmmanuel.png[float="left"]
 
@@ -8336,8 +8179,7 @@ bouteille pour fêter le succès de notre belle aventure.
 "noubliepaslalistedescourses" est désormais en ligne et attend de pied
 ferme ses utilisateurs.
 
-Deuxième livraison
-^^^^^^^^^^^^^^^^^^
+==== Deuxième livraison
 
 Une mauvaise surprise nous tombe dessus lorsque nous devons en urgence
 appliquer une correction pour un problème de performances. Soumise à un
@@ -8359,8 +8201,7 @@ jamais nous détections un problème de dernière minute, il nous suffirait
 d'apporter les corrections nécessaires, de poser un nouveau tag et de
 reprendre la procédure.
 
-Troisième livraison
-^^^^^^^^^^^^^^^^^^^
+==== Troisième livraison
 
 Les choses semblent enfin maîtrisées, mais nous déchantons vite quand
 d'autres problèmes apparaissent sur la version 1.0.1. Après analyse, on
@@ -8389,8 +8230,7 @@ révision dans le gestionnaire de code source…
 La version 1.0.2 sera donc la bonne, maintenant qu'Emmanuel tient enfin
 une procédure de livraison fiable et… connue de tous ?
 
-Documentation
-^^^^^^^^^^^^^
+==== Documentation
 
 La procédure peut être aussi bétonnée qu'on le voudra, elle n'est fiable
 que si elle est appliquée scrupuleusement. Autrement dit, le facteur
@@ -8445,8 +8285,7 @@ mvn install. La procédure de livraison ne pourrait-elle pas elle aussi
 être homogénéisée ? Emmanuel part donc à la pêche aux bonnes pratiques
 du côté de Maven et de ses plugins…
 
-Le plugin _release_
-~~~~~~~~~~~~~~~~~~~
+=== Le plugin _release_
 
 Le plugin release de Maven a été conçu dans cet esprit. Il regroupe en
 une seule commande toutes les bonnes pratiques de livraison apprises sur
@@ -8458,8 +8297,7 @@ documentation pour indiquer la procédure à suivre.
 Pour vous donner une idée de ce que le plugin propose, voici le
 processus qu'il applique pour produire un livrable.
 
-Étape 1 : préparation
-^^^^^^^^^^^^^^^^^^^^^
+==== Étape 1 : préparation
 
 ·     Il contrôle l'environnement de l'utilisateur qui ne doit présenter
 aucune modification non sauvegardée dans le gestionnaire de code source.
@@ -8499,8 +8337,7 @@ développer. L'état "version livrée" n'est apparu que furtivement dans
 l'historique du gestionnaire de code source, ce qui correspond bien à la
 réalité de cet événement aussi ponctuel que capital.
 
-Étape 2 : livraison
-^^^^^^^^^^^^^^^^^^^
+==== Étape 2 : livraison
 
 La production du logiciel livrable est réalisée à partir du tag placé
 dans le gestionnaire de sources. Nous pourrions effectuer cette manœuvre
@@ -8545,8 +8382,7 @@ blanc, sans qu'aucune modification soit appliquée dans le gestionnaire
 de code source, le temps de bien mettre au point la configuration du
 plugin.
 
-Et si ça foire ?
-^^^^^^^^^^^^^^^^
+==== Et si ça foire ?
 
 La préparation de la livraison comprend de nombreuses étapes et
 contrôles. Si l'une d'elles échoue, le plugin va évidemment
@@ -8576,8 +8412,7 @@ processus : par défaut, lancé une deuxième fois sur le même projet, il
 va reprendre sa tâche là où il en était resté, sauf si on lui indique
 explicitement de tout reprendre de zéro _via_ l'option -Dresume=false.
 
-Qui fait la release ?
-^^^^^^^^^^^^^^^^^^^^^
+==== Qui fait la release ?
 
 Notre processus est désormais bien rôdé. Reste un dernier point à
 régler : sur quel environnement faire la release ? Dans notre build,
@@ -8624,8 +8459,8 @@ exemple nécessaire pour les diffuser sur central.
 Dans ces circonstances, il faudra revenir à une approche plus
 « traditionnelle ».
 
-link:#_msocom_3[[A3]] Notre prochaine version
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== Notre prochaine version
+
 
 La livraison de la version 1.2.0 de "noubliepaslalistedescourses" n'a
 pas été une de ces journées de stress sans fin, qui se terminent bien
@@ -8641,8 +8476,7 @@ fichier, utilisant un formalisme XML certes verbeux mais simple, permet
 de décrire toutes les étapes de construction et toutes les options
 nécessaires pour obtenir un résultat fiable.
 
-Tester des candidats
-~~~~~~~~~~~~~~~~~~~~
+=== Tester des candidats
 
 Jusqu'à présent, nous avons utilisé notre outillage de tests automatisé
 et une série de tests en amont pour valider le fonctionnement de notre
@@ -8720,8 +8554,7 @@ Emmanuel et Carlos nous proposent ainsi, par le biais d’outils propres
 au monde Maven, une procédure complète, fiabilisée et totalement
 automatisée pour produire notre livrable, le tester puis le diffuser.
 
-Urgence !
-~~~~~~~~~
+=== Urgence !
 
 Notre version 1.3.0 n'est pas encore complètement stabilisée que nous
 avons un retour alarmant d'un de nos clients sur la version 1.2.0. Un
@@ -8777,8 +8610,7 @@ traitée manuellement, dans une ambiance de stress et de précipitation
 dont les résultats peuvent être désastreux. Maven propose de les prendre
 en charge de manière totalement structurée et automatisée.
 
-Vis ma vie
-~~~~~~~~~~
+=== Vis ma vie
 
 image:illustrations/MangaEmmanuel.png[float="left"]
 image:illustrations/MangaVincentS.png[float="left"]
@@ -8917,8 +8749,7 @@ manipulations. Accessoirement, il gère un fichier backup des POM
 modifiés, qui permet à tout moment de revenir en arrière en cas de
 fausse manipulation.
 
-Au-delà de l'intégration continue
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=== Au-delà de l'intégration continue
 
 Nous avons déjà mis en œuvre l'automatisation de notre construction de
 projet au sein d'un serveur d'intégration continue. Maintenant que nous
@@ -8976,8 +8807,7 @@ image:illustrations/MangaEmmanuel.png[float="left"]
 Emmanuel est plus que satisfait et raconte avec un sourire nostalgique à
 nos stagiaires les journées rocambolesques des premières versions.
 
-Conclusion
-~~~~~~~~~~
+=== Conclusion
 
 L'automatisation des processus de développement est une tâche qui
 nécessite un gros effort initial, non seulement pour dépasser les
@@ -8999,10 +8829,11 @@ spécificité de votre projet étant automatisée, documentée et historisée
 _via_ votre fichier POM, vous pourrez enfin vous focaliser sur la seule
 chose qui compte vraiment : le fonctionnement de votre application.
 
-Partie 3
+= Partie 3
 
-Encore plus loin avec Maven
-
+[partintro]
+.Encore plus loin avec Maven
+--
 L'informatique d'entreprise ne se limite pas à une utilisation raisonnée
 et flexible des "ressources". Elle doit aussi faire face à des
 contraintes qui viennent d'en haut, et auxquelles le projet doit se
@@ -9017,19 +8848,16 @@ d'enthousiasme et d'anxiété le passage du statut de start-up à celui de
 filiale d'un géant international.
 
 image:illustrations/Geegol-Shopping-List.png[float="left"]
+--
 
-Chapitre 11
-
-Utiliser un outil non supporté
-------------------------------
+== Chapitre 11 : Utiliser un outil non supporté
 
 Jusqu'ici, nous avons toujours trouvé pour chaque problème que nous
 avons rencontré un plugin Maven adapté. Le "mariage" de notre projet
 avec les règles du groupe Geegol va cependant nous obliger à faire
 quelques efforts supplémentaires.
 
-Un outil maison
-~~~~~~~~~~~~~~~
+=== Un outil maison
 
 Le groupe utilise (pour des raisons que nous n’aborderons pas ici) un
 serveur qu'il a développé lui-même, le "_Geegol Execution Architecture_"
@@ -9060,8 +8888,7 @@ Maven tout prêt pour ce besoin spécifique. Nous sommes le premier projet
 du groupe à utiliser Maven, aussi il va falloir nous remonter les
 manches.
 
-Réutiliser l'existant
-^^^^^^^^^^^^^^^^^^^^^
+==== Réutiliser l'existant
 
 image:illustrations/MangaHerve.png[float="left"]
 
@@ -9161,8 +8988,7 @@ nombreux plugins maison, ce mécanisme peut vous aider à alléger votre
 configuration, cependant cela suppose que chaque développeur dispose
 d'un fichier settings.xml correctement configuré.
 
-Retour dans un monde de scripts ?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== Retour dans un monde de scripts ?
 
 Cette solution est très pratique car elle permet de réutiliser en peu de
 temps du code existant. Dans la même veine, nous pourrions exécuter un
@@ -9192,11 +9018,9 @@ immédiatement une nouvelle tâche : l'écriture d'un plugin Maven pour
 notre outil de génération documentaire. C'est donc à cette tâche
 qu'Hervé va s'attaquer à présent.
 
-Créer un plugin
-~~~~~~~~~~~~~~~
+=== Créer un plugin
 
-Pas de panique !
-^^^^^^^^^^^^^^^^
+==== Pas de panique !
 
 Créer de toutes pièces un plugin peut faire peur _a priori_. Nous allons
 voir, pourtant, que cela ne nous dépaysera pas beaucoup de notre
@@ -9280,8 +9104,7 @@ Nous avons donc un projet Maven capable de produire un plugin qui
 exécutera notre code Java lors de la phase process-sources. On vous
 l'avait bien dit que ce n'était pas bien compliqué !
 
-Des paramètres pour le plugin
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== Des paramètres pour le plugin
 
 Le plugin d'Hervé est un peu tout seul dans son coin. On doit encore lui
 associer des paramètres qui permettront d'ajuster son fonctionnement aux
@@ -9333,8 +9156,7 @@ développeurs de plugins, et c'est l'une des raisons pour lesquelles nous
 vous encourageons à utiliser ces conventions même si elles ne vous
 plaisent pas complètement.
 
-Un modèle dynamique
-^^^^^^^^^^^^^^^^^^^
+==== Un modèle dynamique
 
 image:illustrations/MangaHerve.png[float="left"]
 
@@ -9400,8 +9222,7 @@ for (String root : sources)
 
  
 
-Plexus
-^^^^^^
+==== Plexus
 
 image:illustrations/MangaHerve.png[float="left"]
 
@@ -9459,8 +9280,7 @@ grand nombre de tâches. La documentation de ces composants est
 malheureusement souvent un peu minimaliste, et même leur liste complète
 est délicate à obtenir en dehors du code source sous SVN.
 
-Plexus-utils
-++++++++++++
+==== Plexus-utils
 
 En plus des composants Plexus, Hervé a besoin de faire de nombreuses
 manipulations de fichiers, entre autres pour sélectionner la liste des
@@ -9497,8 +9317,7 @@ Nous avons donc une méthode qui retourne la liste complète des fichiers
 sources Java de notre projet, code généré inclus ! Reste à passer
 l'outil de contrôle Geegol dessus.
 
-Des classes et des royaumes…
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== Des classes et des royaumes…
 
 Une difficulté à traiter est que le classpath de notre plugin sera
 constitué en fonction des dépendances qu'il déclare, et non en fonction
@@ -9657,8 +9476,7 @@ génération du rapport", e );
     }
 ------------------------------------------------------------------------------
 
-Bye bye Maven 2
-^^^^^^^^^^^^^^^
+==== Bye bye Maven 2
 
 Maven3
 
@@ -9764,8 +9582,7 @@ class GEACheckMojo extends SisuMavenMojo {
 ----------------------------------------------------------------------
 
 
-Tester notre plugin
-~~~~~~~~~~~~~~~~~~~
+=== Tester notre plugin
 
 image:illustrations/MangaHerve.png[float="left"]
 
@@ -9798,8 +9615,7 @@ lorsque le plugin sert à intégrer un autre outil : nous devons être en
 mesure de valider le fait que l'outil a bien été exécuté avec le bon
 paramétrage et non pas que l'outil lui-même est exempt de bogues.
 
-Plugin testing harness
-^^^^^^^^^^^^^^^^^^^^^^
+==== Plugin testing harness
 
 Maven propose une suite de tests sous forme d'objets simulacres ("mock")
 pour ses API et un mécanisme simple pour configurer une instance du
@@ -9875,8 +9691,7 @@ objets bouchons pour de nombreuses autres classes de l'API Maven, ce qui
 permet de construire des tests unitaires qui nécessitent (par exemple)
 des manipulations d'artefacts.
 
-Plugin _invoker_
-^^^^^^^^^^^^^^^^
+==== Plugin _invoker_
 
 Une seconde option consiste à exécuter la construction d'un projet Maven
 de test, mais dans un mode automatisé. C'est l'option retenue par le
@@ -9950,8 +9765,7 @@ demandes d'évolution ou de nouvelles contraintes. Hervé n’a plus qu'à
 documenter ce plugin et son utilisation… mais pour cela il devra
 attendre le chapitre suivant !
 
-Conclusion
-~~~~~~~~~~
+=== Conclusion
 
 Ce chapitre a démontré que l'écriture d'un plugin Maven n'est pas une
 tâche fondamentalement délicate, même si elle présente quelques
@@ -9965,10 +9779,7 @@ sur le sujet n'est pas irréprochable. Les bons exemples ne manquent
 cependant pas et la communauté des développeurs Maven est prête à
 apporter tout le support nécessaire.
 
-Chapitre 12
-
-L'assurance qualité
--------------------
+== Chapitre 12 : L'assurance qualité
 
 Une application qui fonctionne, c'est bien. Mais du code qui est
 correctement construit, évolutif, lisible, maintenable, c'est mieux.
@@ -9978,8 +9789,7 @@ autant restreindre leur productivité ou leur capacité d'innovation.
 Maîtriser un projet, c'est aussi savoir en extraire les indicateurs de
 qualité adéquats et se donner les moyens d'en suivre l'évolution.
 
-Audit de code
-~~~~~~~~~~~~~
+=== Audit de code
 
 Lors de notre intégration au sein de Geegol, notre projet a subi les
 regards inquisiteurs de ceux qui allaient devenir nos collègues.
@@ -10040,8 +9850,7 @@ prendre de haut pour nous expliquer comment bien travailler. Nous avons
 tout de même notre fierté, et noubliepaslalistedescourses reste notre
 bébé !
 
-Analyse statique
-^^^^^^^^^^^^^^^^
+==== Analyse statique
 
 Une première catégorie d'outillage concerne l'analyse statique du code.
 Il s'agit d'une relecture du code par un outil qui va rechercher des
@@ -10061,8 +9870,7 @@ suite nos décideurs : comment résister à un outil qui, en quelques
 clics, va identifier tous les bogues si coûteux que nous avons
 négligemment laissés traîner ?
 
-Checkstyle
-++++++++++
+===== Checkstyle
 
 image:illustrations/MangaVincentM.png[float="left"]
 
@@ -10187,8 +9995,7 @@ Activer toutes les règles n'apporte rien, l'information étant noyée dans
 la masse. C'est même contre-productif, puisque ça amène à penser que
 l'outillage est inutilisable car trop tatillon.
 
-FindBugs
-++++++++
+===== FindBugs
 
 image:illustrations/MangaVincentM.png[float="left"]
 
@@ -10226,8 +10033,7 @@ chez le même éditeur, excellent ouvrage que je vous recommande ;) – pour
 identifier les problèmes de gestion concurrente en environnement
 multithread.
 
-PMD
-+++
+===== PMD
 
 image:illustrations/MangaVincentM.png[float="left"]
 
@@ -10241,8 +10047,7 @@ l'analyse en proposant un autre regard sur notre code.
 Il nous reste cependant à définir soigneusement ses règles d'analyse
 pour qu'elles soient cohérentes avec nos deux autres outils !
 
-Analyse dynamique
-^^^^^^^^^^^^^^^^^
+==== Analyse dynamique
 
 Les outils d'analyse statique font déjà de grandes choses mais ils ne
 peuvent pas faire de miracle. En particulier, ils ne sont pas en mesure
@@ -10350,8 +10155,7 @@ que si elle vient s'intégrer dans nos outils. Nous avons déjà confié la
 construction de nos binaires à Maven, pouvons-nous également lui passer
 la main sur notre suivi qualité ?
 
-Les rapports Maven
-~~~~~~~~~~~~~~~~~~
+=== Les rapports Maven
 
 Comme toujours, l'intégration de nos outils d'analyse avec notre
 construction de projet Maven passe par des plugins. Nous pouvons, par
@@ -10611,8 +10415,7 @@ sous-composant spécialisé, Doxialink:#_ftn42[[42]]. Cet outil prend en
 charge toutes les conversions nécessaires entre les formats de documents
 supportés et le document à construire.
 
-Autre chose que du HTML
-^^^^^^^^^^^^^^^^^^^^^^^
+==== Autre chose que du HTML
 
 Doxia est donc le moteur qui va formater notre documentation. Utilisé
 par le plugin site, il produit des pages HTML. Utilisé par le plugin
@@ -10632,8 +10435,7 @@ Figure 12-01
 
 Génération de la documentation en différents formats grâce à Doxia.
 
-Exploiter notre gestion documentaire
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=== Exploiter notre gestion documentaire
 
 Nous sommes donc désormais en mesure d'analyser le code de notre projet
 avec l'aide d'une large panoplie d'outils et d'agréger le résultat dans
@@ -10650,8 +10452,7 @@ pouvons identifier les éléments de code qui violent des règles et
 corriger consciencieusement ces défauts, espérant ainsi que les chiffres
 du lendemain seront meilleurs.
 
-68 %, qui dit mieux ?
-^^^^^^^^^^^^^^^^^^^^^
+==== 68 %, qui dit mieux ?
 
 Rapidement, un besoin nouveau s'exprime : lorsque nous constatons qu'un
 élément du projet est sous-documenté, nous ajoutons quelques fichiers
@@ -10683,8 +10484,7 @@ présentant de nombreux cas d'erreurs qui ne donnent pas lieu à un
 traitement précis autre que "erreur interne, merci de réessayer plus
 tard", peuvent légitimement obtenir une couverture moindre.
 
-L'entropie augmente
-^^^^^^^^^^^^^^^^^^^
+==== L'entropie augmente
 
 Il n'existe pas de juste milieu absolu. Néanmoins, on constate
 l'application universelle du second principe de la thermodynamique : le
@@ -10701,8 +10501,9 @@ courbes : on constate un infléchissement de la courbe dans la semaine
 qui précède la livraison et (dans le meilleur des cas) une reprise lente
 dans les semaines qui suivent.
 
-Maîtrise de _S_link:#_ftn43[*[43]*]
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== Maîtrise de _S_
+
+link:#_ftn43[*[43]*]
 
 image:illustrations/MangaVincentM.png[float="left"]
 
@@ -10739,8 +10540,7 @@ exigences.
 
 Ce Google Earth pour code existe, il s'appelle Sonar.
 
-Sonar
-^^^^^
+==== Sonar
 
 Sonarlink:#_ftn44[[44]] est une application web qui va stocker dans une
 base de données tous les indicateurs et statistiques extraits par nos
@@ -10840,8 +10640,7 @@ image:illustrations/12-05.png[align="center"]
 
 Classement des violations les plus souvent identifiées
 
-Conclusion
-~~~~~~~~~~
+=== Conclusion
 
 Accompagner notre projet d'un bon support documentaire et d'un bon suivi
 qualité est une tâche ambitieuse, qui peut s'appuyer sur de très
@@ -10858,10 +10657,7 @@ l'usage, et progressivement à mettre en place une culture du coder
 proprement (livre de Robert C. Martin que je vous recommande chaudement,
 chez le même éditeur).
 
-Chapitre 13
-
-Respecter un format de distribution
------------------------------------
+== Chapitre 13 : Respecter un format de distribution
 
 Nous avons produit avec Maven un ensemble de binaires respectant les
 formats imposés par la plateforme Java et la norme JavaEE. Il nous reste
@@ -10873,8 +10669,7 @@ quoi s'occuper avec ses propres problèmes pour ne pas vouloir se plier à
 nos caprices. À nous de lui fournir un livrable qui colle à ses outils
 et à ses bonnes pratiques pour une mise en production réussie.
 
-D'où vient ce JAR ?
-~~~~~~~~~~~~~~~~~~~
+=== D'où vient ce JAR ?
 
 Depuis que nous avons mis en place un mécanisme d'intégration continue,
 nous en avons tiré de nombreux avantages, parmi lesquels le fait de
@@ -10920,8 +10715,7 @@ par semaine à l'analyse féroce de nos outils de tests de charge et
 d'interopérabilité. Toutes ces versions portent le même numéro
 1.2.0-SNAPSHOT qui reflète bien que le projet n'est pas encore abouti.
 
-Numéro de construction
-^^^^^^^^^^^^^^^^^^^^^^
+==== Numéro de construction
 
 Une solution consiste à produire des binaires dont le numéro de version
 est complété par un compteur de construction, que le serveur
@@ -10958,8 +10752,7 @@ les traces d'une construction dont nous livrons le résultat à l'équipe
 de test et de placer une marque dans le gestionnaire de code source en
 conséquence.
 
-Numéro de révision
-^^^^^^^^^^^^^^^^^^
+==== Numéro de révision
 
 Une solution alternative, liée à l'utilisation du gestionnaire de code
 source Subversion, est la notion de révision. Sur Subversion, à chaque
@@ -11028,8 +10821,7 @@ Listing 13.2 : Obtenir le numéro de révision SVN
 
 </build>
 
-Utiliser le MANIFEST
-^^^^^^^^^^^^^^^^^^^^
+==== Utiliser le MANIFEST
 
 image:illustrations/MangaLukas.png[float="left"]
 
@@ -11180,8 +10972,7 @@ suffira de les exploiter pour retrouver rapidement le code source
 associé, et éventuellement les traces de sa construction dans notre
 serveur d'intégration continue.
 
-La confiance règne…
-~~~~~~~~~~~~~~~~~~~
+=== La confiance règne…
 
 image:illustrations/MangaStephane.png[float="left"]
 
@@ -11311,8 +11102,7 @@ ainsi son nom gravé dans le marbre du MANIFEST et le fichier binaire
 signé numériquement par sa clé GPG. Voilà de quoi donner du répondant à
 Stéphane pour sa prochaine réunion !
 
-L'EAR ne suffit pas
-~~~~~~~~~~~~~~~~~~~
+=== L'EAR ne suffit pas
 
 Notre archive d'entreprise EAR ne se suffit pas. Elle doit être
 complétée par des fichiers de configuration, dans lesquels devront être
@@ -11344,8 +11134,7 @@ Maven, il nous manque une étape, et vous imaginez que nous n'allons pas
 arrêter notre démarche d'automatisation complète du processus si près du
 but !
 
-Assemblage du livrable
-^^^^^^^^^^^^^^^^^^^^^^
+==== Assemblage du livrable
 
 La production réclame une archive Unix tar.gz répondant à une structure
 très précise :
@@ -11498,8 +11287,7 @@ C'est au cours de cette exécution qu’il découvrira les constituants de
 chaque projet et identifiera les répertoires de code source (y compris
 le code généré) et les binaires produits.
 
-L'intégration continue produit notre livrable
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== L'intégration continue produit notre livrable
 
 Notre serveur d'intégration continue produit déjà, à intervalles
 réguliers, nos binaires, prêts à être testés au-delà de ce que nos tests
@@ -11563,8 +11351,7 @@ construction du projet
 Solution miracle ? Eh bien non, échec cuisant. Le plugin assembly plante
 lamentablement en indiquant qu'il ne trouve pas notre EAR :'(.
 
-L'œuf ou la poule ?
-^^^^^^^^^^^^^^^^^^^
+==== L'œuf ou la poule ?
 
 Quel est le problème ? Il nous faut comprendre un peu mieux les rouages
 de Maven pour expliquer cet échec : nous avons mis en place l'héritage
@@ -11646,8 +11433,7 @@ tour, provoquer la phase package sur l'ensemble des modules du projet.
 
 Nous venons de résoudre le problème de l'œuf et de la poule !
 
-Conclusion
-~~~~~~~~~~
+=== Conclusion
 
 Notre software factory (c'est un mot à la mode, mettez-le sur votre CV)
 est désormais bien rodée. Elle construit automatiquement un livrable :
@@ -11688,10 +11474,7 @@ continue à la production continue, évolution de l'industrie logicielle
 qui n'est pas encore dans les mœurs, mais que Maven peut déjà
 supporter !
 
-Chapitre 14
-
-Un nouveau projet démarre
--------------------------
+== Chapitre 14 : Un nouveau projet démarre
 
 Avec tous nos efforts sur notre projet noubliepaslalistedescourses pour
 mettre en œuvre les meilleures pratiques et les outils les plus aboutis,
@@ -11711,8 +11494,7 @@ conduire cette épreuve ne suffira probablement pas à faire des miracles
 Toujours est-il qu'il va falloir mettre les bouchées doubles pour lancer
 ce projet en un temps record.
 
-Mutualiser
-~~~~~~~~~~
+=== Mutualiser
 
 Une solution intelligente consiste à mutualiser nos outils et nos bonnes
 pratiques. _Via_ le mécanisme d'héritage du POM, nous pouvons partager
@@ -11736,8 +11518,7 @@ version d'EHCache est compatible avec hibernate-entitymanager x.y.z.
 
 Il en est de même avec les plugins _via_ l'élément pluginManagement.
 
-Qui paye ?
-^^^^^^^^^^
+==== Qui paye ?
 
 Dans un monde parfait, cette solution serait optimale : une seule
 source, un développement profitant de l'attention de tous pour un
@@ -11757,8 +11538,7 @@ et financée de supporter cette mutualisation, c'est malheureusement une
 voie sans issue qui va surtout épuiser la bonne volonté des premiers
 contributeurs de ces composants communs.
 
-Partager un POM parent
-^^^^^^^^^^^^^^^^^^^^^^
+==== Partager un POM parent
 
 Nous avons déjà évoqué l'utilisation d'un POM d'entreprise, dans lequel
 sont placées toutes les déclarations propres à l'infrastructure et aux
@@ -11849,8 +11629,7 @@ sein de l'entreprise, mais ne fait qu'effleurer la question. Commencer
 un projet sur cette seule base ne va pas aider beaucoup l'équipe de
 développement pour un démarrage sur les chapeaux de roue.
 
-Copier-coller
-^^^^^^^^^^^^^
+==== Copier-coller
 
 Autre option, qui vient à l'esprit de tout le monde : le bon vieux
 copier-coller. La copie est une opération de base en informatique,
@@ -11865,16 +11644,14 @@ adapter ces copies : noms de package, groupId, artifactId et versions ne
 correspondent pas. Le risque d'erreurs est grand, et obtenir un résultat
 stable et complet va prendre du temps !
 
-Copier et mutualiser !
-~~~~~~~~~~~~~~~~~~~~~~
+=== Copier et mutualiser !
 
 Raphaël ne se laisse pas démonter si facilement et propose une autre
 solution : faire un copier-coller dont la phase d'adaptation au nouveau
 projet est automatisée ! Raphaël est en fait tombé sur la description du
 plugin archetype.
 
-Un plugin qui crée des projets
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== Un plugin qui crée des projets
 
 Pour nous convaincre, il nous fait rapidement une démonstration. Il se
 propose ainsi de lancer un projet de plugin Maven, faisant ainsi
@@ -12062,8 +11839,7 @@ C'est sûr que ce plugin n'est pas très impressionnant pour ce qu'il
 fait, mais tout de même il ne nous aura pas coûté beaucoup d'efforts et
 est totalement fonctionnel. Raphaël enchaîne donc avec l'explication.
 
-Un archétype ?
-^^^^^^^^^^^^^^
+==== Un archétype ?
 
 Un archétype est la façon à la Maven de faire de la mutualisation, avec
 un bonus considérable : son utilisateur peut, par la suite, faire
@@ -12082,8 +11858,7 @@ proposer de reporter dans le modèle soit des corrections qu'elles ont
 faites pour éviter à d'autres de tomber dans les mêmes embûches, soit
 des enrichissements pour capitaliser sur le travail réalisé.
 
-Construire ses propres archétypes
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== Construire ses propres archétypes
 
 La structure d'un archétype n'est pas très attirante a priori. Il s'agit
 d'un projet Maven comprenant un nième descripteur XML et une série de
@@ -12122,8 +11897,7 @@ pour être enregistré dans son propre gestionnaire de sources Subversion,
 avec un code fonctionnel qu'il ne restera plus qu'à adapter aux besoins
 spécifiques du nouveau projet.
 
-Gérer un projet de référence
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=== Gérer un projet de référence
 
 Nous avons donc trouvé une solution très élégante pour repartir d'un
 projet existant dont nous apprécions les qualités pour lancer une
@@ -12138,8 +11912,7 @@ est intéressante pour le nouveau développement, les aspects fonctionnels
 utilitaires seront à reprendre, mais certainement pas les centaines de
 classes que nous avons accumulées depuis le début du projet.
 
-Donner le meilleur de nous-mêmes
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== Donner le meilleur de nous-mêmes
 
 Le mécanisme extrêmement simple qui permet de créer un archétype
 encourage une pratique simple : développer un projet de référence, une
@@ -12159,8 +11932,7 @@ connaîtrait mal, afin de le mettre sur la bonne piste. Le développement
 se faisant beaucoup par imitation, les premières lignes de code
 disponibles sur le projet sont capitales.
 
-Démarrer sur les bons rails
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== Démarrer sur les bons rails
 
 Utilisée comme archétype, notre application blanche met à la disposition
 des projets à venir un ensemble cohérent, finement outillé et documenté,
@@ -12195,8 +11967,7 @@ imparfait mais déjà bien plus avancé et intégré que ce qu'il aurait pu
 obtenir en accumulant les conseils et fragments de code piochés à droite
 à gauche.
 
-Un support pour expérimenter
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== Un support pour expérimenter
 
 Dernier élément, un tel projet peut être fédérateur au sein de
 l'entreprise, en démontrant un savoir-faire et en servant de point
@@ -12256,8 +12027,7 @@ métier basée sur Spring ? L'application blanche met dès le début ces
 questions sur le tapis, y répondre au plus tôt permettra d'introduire
 Flex sur un nouveau projet sans buter sur ces problèmes.
 
-Un support de démonstration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== Un support de démonstration
 
 Pour ceux qui n'ont aucune préférence, l'application blanche lancée en
 mode démonstration permet de se faire une idée du résultat obtenu pour
@@ -12323,8 +12093,7 @@ vitrine légère et homogène des bonnes pratiques à suivre.
 Moralité : privilégier les petits exemples (et donc les petits
 archétypes) qui vont démontrer une problématique donnée.
 
-Conclusion
-~~~~~~~~~~
+=== Conclusion
 
 Maven nous avait jusqu'ici aidés à structurer notre projet et à lui
 apporter rapidement de nombreux outils qui en ont amélioré le niveau
@@ -12341,10 +12110,7 @@ l'utilisation intelligente des archétypes est clairement un élément
 décisif. Elle fait de Maven une fois de plus un outil complet, capable
 d'aider le développeur Java pendant toutes les phases de son projet.
 
-Chapitre 15
-
-Avons-nous fait le bon choix ?
-------------------------------
+== Chapitre 15 : Avons-nous fait le bon choix ?
 
 Le service Geegol Shopping List (désormais disponible dans 27 langues,
 dont le breton) est devenu un service phare du groupe. Projet
@@ -12364,8 +12130,7 @@ outils non fiables, mal documentés ou dont l'avenir est incertain.
 
 $$$ commite.png[float="left"] $$$
 
-Les limites
-~~~~~~~~~~~
+=== Les limites
 
 image:illustrations/MangaFabrice.png[float="left"]
 
@@ -12380,8 +12145,7 @@ l'annotation @Abracadabra dans votre code. Comme tout outil, il a ses
 forces mais aussi ses faiblesses et ses limites, et il faut apprendre à
 faire avec et à les contourner intelligemment.
 
-Points faibles
-^^^^^^^^^^^^^^
+==== Points faibles
 
 Il y a une critique, en particulier, qui vous a probablement déjà
 titillé : la syntaxe XML inutilement verbeuse. L'intégration dans les
@@ -12453,8 +12217,7 @@ marcher sur les plates-bandes de la gestion des dépendances, en
 particulier le standard OSGi dont l'ordre de résolution des conflits
 n'est pas exactement équivalent ?
 
-Les plugins
-^^^^^^^^^^^
+==== Les plugins
 
 image:illustrations/MangaOlivier.png[float="left"]
 
@@ -12510,8 +12273,7 @@ C'est en tout cas la politique que nous défendons, même si nous ne
 sommes pas seuls à bord. N'hésitez pas à venir nous parler de vos
 projets et envies sur la liste de diffusion : user@mojo.codehaus.org.
 
-Le support
-^^^^^^^^^^
+==== Le support
 
 image:illustrations/MangaVincentM.png[float="left"]
 
@@ -12566,8 +12328,7 @@ developpez.com héberge un forum francophone consacré à
 Mavenlink:#_ftn51[[51]], ainsi qu'une FAQlink:#_ftn52[[52]] bien
 remplie.
 
-Le coût de Maven
-^^^^^^^^^^^^^^^^
+==== Le coût de Maven
 
 image:illustrations/MangaHerve.png[float="left"]
 
@@ -12592,8 +12353,7 @@ guide_, bible de 500 pages qui présente tous les aspects de Maven, sans
 compter les innombrables blogs, articles, forums et tutoriels qui
 décrivent des points plus spécifiques de son utilisation.
 
-La concurrence
-~~~~~~~~~~~~~~
+=== La concurrence
 
 image:illustrations/MangaVincentS.png[float="left"]
 
@@ -12613,8 +12373,7 @@ l'excellence pour occuper le dessus du panier. Les critiques, plus ou
 moins constructives ou honnêtes, sont inévitables mais doivent toujours
 être considérées avec attention.
 
-Maven bon partout ?
-+++++++++++++++++++
+===== Maven bon partout ?
 
 Nous avons tenté au cours des chapitres précédents de vous démontrer en
 quoi l'approche proposée par Maven est d'un niveau supérieur au simple
@@ -12666,8 +12425,7 @@ artifacts created by the spring build system.
 
 Comme quoi, l'idée fait tout de même son chemin…
 
-Ant et Ivy
-++++++++++
+===== Ant et Ivy
 
 Nous avons déjà parlé d’Apache Ant, qui a été longtemps le standard de
 fait pour la construction de projets en Java. Ivy est un projet qui lui
@@ -12689,8 +12447,7 @@ script pour faire à peu près tout ce qu'on veut. Il ne faudra alors pas
 s'étonner que cette liberté ait un prix en maintenance et en évolutivité
 du projet.
 
-EasyAnt
-+++++++
+===== EasyAnt
 
 EasyAntlink:#_ftn55[[55]], comme son nom le suggère, vise à simplifier
 l'utilisation d’Ant. Il propose une surcouche qui intègre Ivy et un
@@ -12708,8 +12465,7 @@ de script XML, ce qui n'est pas d'une grande lisibilité pour le
 développeur novice. De ce point de vue, Gradle est nettement plus
 innovant.
 
-Gradle
-++++++
+===== Gradle
 
 image:illustrations/MangaGregory.png[float="left"]
 
@@ -12809,8 +12565,7 @@ chose.
 En tant qu'anciens de la communauté Maven, autant EasyAnt que Gradle
 nous rappellent énormément une vieille connaissance : Maven 1.
 
-Maven 1
-+++++++
+===== Maven 1
 
 Maven 1 avait pour objectif de fournir au-dessus d’Ant une gestion de
 dépendances (Ivy n'existant alors pas encore) et une approche par
@@ -12849,8 +12604,7 @@ permettant d’exécuter des tâches Ant ou Groovy, mais ces « astuces » ne
 sont considérées que comme un pis-aller pour faciliter une migration
 rapide vers Maven le temps de trouver une solution plus propre.
 
-Buildr
-++++++
+===== Buildr
 
 Apache aime bien développer des outils de build ! En plus de Maven et
 d'Ant, il existe aussi le projet Buildrlink:#_ftn58[[58]], se
@@ -12868,8 +12622,7 @@ des tâches de construction. Reste comme seul argument la syntaxe XML du
 fichier POM, argument parfaitement recevable mais qui est un peu court
 pour sélectionner un outil aussi important pour un projet.
 
-Un outil reconnu
-~~~~~~~~~~~~~~~~
+=== Un outil reconnu
 
 Il existe donc de nombreux concurrents face à Maven, alors pourquoi le
 choisir a priori plutôt qu'une autre ? Un élément de réponse simple se
@@ -12880,8 +12633,7 @@ rapidement des personnes compétentes sur un outil largement utilisé,
 même s'il est imparfait, que de galérer avec un bijou technologique que
 trois personnes au monde savent faire fonctionner.
 
-La communauté
-^^^^^^^^^^^^^
+==== La communauté
 
 image:illustrations/MangaArnaud.png[float="left"]
 
@@ -12932,8 +12684,7 @@ peut-être tous tort par rapport à une autre solution parfaite ou
 presque, mais au moins nous pouvons nous serrer les coudes et avancer
 ensemble.
 
-L'équipe de développement
-^^^^^^^^^^^^^^^^^^^^^^^^^
+==== L'équipe de développement
 
 Arnaud poursuit en présentant le cœur du projet Apache Maven, ceux qui
 le développement et dont nous dépendons au final.
@@ -12961,8 +12712,7 @@ parce que la qualité de nos livrables est constamment améliorée et
 qu’une politique très scrupuleuse (et très complexe) de compatibilité
 avec l'existant est suivie.
 
-L'adoption en entreprise
-^^^^^^^^^^^^^^^^^^^^^^^^
+==== L'adoption en entreprise
 
 image:illustrations/MangaJerome.png[float="left"]
 
@@ -13003,8 +12753,7 @@ exemple, est en train de mettre en œuvre le même type d'outillage et
 bénéficie des infrastructures que nous avons déjà mises en place :
 gestionnaire du dépôt d'artefacts, serveur d'intégration continue.
 
-L'avenir de Maven
-~~~~~~~~~~~~~~~~~
+=== L'avenir de Maven
 
 image:illustrations/MangaJIM.png[float="left"]
 
@@ -13025,8 +12774,7 @@ Cet encadré s'autodétruira dans dix secondes… PChittttttt !
 
  
 
-Maven 2.x
-^^^^^^^^^
+==== Maven 2.x
 
 Maven 2 ne bénéficiera au mieux que de quelques versions correctrices,
 et encore sous réserver que des développeurs prennent le temps de se
@@ -13041,8 +12789,7 @@ vous pousse à continuer d’utliser Maven 2.x, n'attendez rien de nouveau
 de ce côté. Cependant, pour nos lecteurs qui serait contraint à cette
 version pour une raison qui leur appartient, un rapide état des lieux :
 
-Maven 2.1
-+++++++++
+===== Maven 2.1
 
 Maven 2.1 a été la première version à profiter de cet élan. Les
 nouvelles fonctionnalités qu'il apporte peuvent sembler superficielles
@@ -13075,8 +12822,7 @@ cœur de Maven.
 ·     Sans oublier une nette amélioration des performances sur
 l'initialisation de Maven dans un contexte avec de nombreux modules.
 
-Maven 2.2
-+++++++++
+===== Maven 2.2
 
 Deuxième de la lignée, Maven 2.2 est apte à :
 
@@ -13102,8 +12848,7 @@ disposer d'un JDK 5 pour exécuter Maven lui-même.
  
 +
 
-Maven 3.x
-^^^^^^^^^
+==== Maven 3.x
 
 [MAVEN3]
 
@@ -13147,8 +12892,7 @@ mais on refait tout de la cave au grenier !
 
 image:illustrations/15-05.png[align="center"]
 
-Quoi de neuf ?
-++++++++++++++
+===== Quoi de neuf ?
 
 Le changement le plus notable dans Maven 3 est la possibilité de
 l'intégrer dans un autre outil. Ceci ouvre la voie à de nombreuses
@@ -13222,8 +12966,7 @@ JVM. En leur proposant d’exprimer le POM dans leur langage et avec les
 possibilities d’extension qui lui sont propres, Polyglot essaie de
 couper l’herbe sous le pied des outils alternatifs.
 
-Maven 3.1
-+++++++++
+===== Maven 3.1
 
 [IMF]
 
@@ -13255,8 +12998,7 @@ Apache Maven seront donc issues de ces développements.
 
  
 
-Sonatype Maven
-++++++++++++++
+===== Sonatype Maven
 
 Sonatype a annoncé lors de la conférence EclipseCon 2011, par la voix de
 Jason van Zyl son responsable technique et fondateur, ses projets pour
@@ -13352,8 +13094,7 @@ d’intégration de m2eclipse. Il ne s’agit évidemment que des plans
 annoncés, qui peuvent évoluer et s’enrichir en fonction du contexte et
 des difficultés que rencontreront les équipes de développement.
 
-Maven 4 ?
-+++++++++
+===== Maven 4 ?
 
 image:illustrations/MangaArnaud.png[float="left"]
 
@@ -13370,16 +13111,14 @@ Figure 15-08
 
 Graven, une création originale d’Arnaud visant à marier Maven et Gradle
 
-À qui appartient Maven ?
-~~~~~~~~~~~~~~~~~~~~~~~~
+=== À qui appartient Maven ?
 
 Le comité est presque convaincu mais il a tout de même quelques
 réticences. L'outil semble bon, promis à un bel avenir, mais dans les
 mains de qui mettons-nous l'avenir de ce qui est en train de devenir le
 projet n^o^ 1 de Geegol ?
 
-La fondation Apache
-^^^^^^^^^^^^^^^^^^^
+==== La fondation Apache
 
 image:illustrations/MangaRaphael.png[float="left"]
 
@@ -13420,8 +13159,7 @@ exemplaire. L'ouverture de ce projet reste cependant un petit cran en
 dessous de ce que peut proposer un logiciel hébergé par la fondation
 Apache et soumis à une gestion communautaire multipartite.
 
-Sonatype
-^^^^^^^^
+==== Sonatype
 
 image:illustrations/MangaNicolas.png[float="left"]
 
@@ -13457,8 +13195,7 @@ est bien plus qu’un contributeur de Maven : des composants majeurs de
 Maven 3 ne sont pas développés et hébergés par la fondation Apache, mais
 sous le compte GitHub de Sonatype !
 
-Un peu de stratégie
-^^^^^^^^^^^^^^^^^^^
+==== Un peu de stratégie
 
 Parmi la refonte réalisée pour Maven 3, un élément clé est la réécriture
 complète de la gestion des dépendances. Après deux tentatives
@@ -13491,8 +13228,7 @@ devenu stratégique pour beaucoup d’entreprises est un avantage
 commercial sans équivalent, quitte à se froisser un peu avec les membres
 de la fondation Apache.
 
-Open ? -source
-^^^^^^^^^^^^^^
+==== Open-source
 
 En dehors de cette considération purement stratégique, il ne faut pas
 non plus oublier qui constitue l'équipe de Sonatype. Vous avez affaire à
@@ -13519,8 +13255,7 @@ toutes sortes. Pris individuellement, ils sont peu visibles, mais, comme
 pour tout projet open-source, c'est ensemble qu'ils ont donné vie au
 projet Maven, et en particulier à son large écosystème de plugins.
 
-La garantie par l'open-source
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== La garantie par l'open-source
 
 Si Sonatype se comporte aujourd'hui comme un exemple dans sa démarche de
 contribution à l'open-source, qu'en sera-t-il à l'avenir ? Que
@@ -13574,8 +13309,7 @@ propres idées, certes avec des effets néfastes sur l'image du projet,
 mais démontrant ainsi la force du modèle libre. Jenkins est né de cette
 façon, comme LibreOffice ou ChiliProject …
 
-Conclusion
-~~~~~~~~~~
+=== Conclusion
 
 Le comité nous remercie et s'apprête à délibérer. Nous n'aurons sa
 conclusion qu'après quelques jours (ce sont des gens très occupés) : feu
@@ -13620,10 +13354,7 @@ tâche Ant. Il devient délicat de ne pas proposer également un plugin
 Maven, sous peine de crouler sous les réclamations répétées des
 utilisateurs.
 
-Chapitre 16
-
-Au delà de Maven
-----------------
+== Chapitre 16 : Au delà de Maven
 
 Maven nous a accompagné pendant ces 14 chapitres en répondant à chaque
 fois à nos attentes. Nous avons du parfois faire appel à des plugins
@@ -13631,8 +13362,7 @@ très spécifiques ou introduire de larges portions de XML, mais rien de
 bloquant. Il reste cependant quelques domaines où la place de Maven
 reste contestée.
 
-OSGi
-~~~~
+=== OSGi
 
 OSGi est un monde à lui tout seul. Créé par le microcosme de
 l’informatique embarquée, avec des contraintes très spécifiques, il est
@@ -13688,8 +13418,7 @@ aussi.
 
  
 
-POM d’amour
-^^^^^^^^^^^
+==== POM d’amour
 
 Pascal tente dans un premier temps de monter un projet Maven tout neuf,
 pour construire la structure nécessaire à un bundle OSGi, qu’il puisse
@@ -13774,8 +13503,7 @@ pour gérer finement le MANIFEST, et devoir reporter toutes ces infos
 dans le pom.xml sous peine de voir Maven écraser sauvagement sa
 configuration ne lui plait qu’à moitié.
 
-Retour au PDE
-^^^^^^^^^^^^^
+==== Retour au PDE
 
 Pas vraiment satisfait, Pascal tente une seconde approche. Il part donc
 de son environnement de développement classique pour développer un
@@ -13820,8 +13548,7 @@ Après de longues, trop longues heures de mise au point, Pascal arrive
 enfin à construire son bundle avec Maven. Tout cela lui semble tout de
 même bien compliqué pour un résultat sans grande plus-value.
 
-Tant pis pour Maven !
-^^^^^^^^^^^^^^^^^^^^^
+==== Tant pis pour Maven !
 
 image:illustrations/MangaPascal.jpg[float="left"]
 
@@ -13882,8 +13609,7 @@ tout ce qu’il suffit dans le POM pour gérer ce plugin Eclipse. Le secret
 de Pascal, c’est qu’il n’utilise pas le même Maven que nous : il utilise
 Sonatype Tycho.
 
-Tycho
-^^^^^
+==== Tycho
 
 Maven 3
 
@@ -14124,8 +13850,7 @@ Par l’universelle commande mvn install, Pascal est désormais en mesure
 de produire les versions Linux et Windows de notre client riche. Défis
 relevé avec panache, merci Pascal !
 
-Java Modules
-~~~~~~~~~~~~
+=== Java Modules
 
 Geegol Shopping List a reçu de la part du public un accueil sans
 précédent. Ballayé Facebook, oublié Twitter, tout le monde ne parle plus
@@ -14173,8 +13898,7 @@ l’environnement ? Après tout, c’est ce que fait déjà Maven avec les
 bibliothèques, P2 avec les bundles, et il semble peut probable que Java
 8 incorpore Tycho.
 
-Jigsaw
-^^^^^^
+==== Jigsaw
 
 L’objectif de la JSR 294 est ambitieux, car il amène au sein de la
 plateforme un service qu’on avait jusqu’ici confié à notre outillage.
@@ -14223,8 +13947,7 @@ système à partir d’une bibliothèque Java. Bien qu’imbattable sur le
 terrain technique, nous ne voyons pas bien où Mark tente de nous emmener
 avec son projet.
 
-A quoi ça sert ?
-^^^^^^^^^^^^^^^^
+==== A quoi ça sert ?
 
 L’idée de la modularisation est séduisante. Nous avons en effet
 largement présenté l’intérêt de la gestion de dépendances, où chaque
@@ -14322,8 +14045,7 @@ Un module pourra enfin être lié à une architecture matérielle et se
 substituer au lancement en fonction de l’environnement sur lequel
 s’exécute l’application.
 
-Quel avenir ?
-^^^^^^^^^^^^^
+==== Quel avenir ?
 
 Même notre ami Jim se refuse à faire des prédictions sur ce que donnera
 JigSaw confronté à la réalité que sont OSGi et Maven. JigSaw est prévu
@@ -14368,8 +14090,7 @@ Finalement, laissons à JigSaw le temps d’arriver à maturité. Après tout,
 marier Maven à OSGi semblait bien difficile, et finalement Tycho nous a
 apporté une solution simple et performante.
 
-Conclusion
-~~~~~~~~~~
+=== Conclusion
 
 Confronté à des environnements qui ont leur propre outillage, leurs
 propres règles, Maven peut montrer ses limites et se heurter à des murs
@@ -14384,10 +14105,7 @@ Peut être verrons-nous apparaître un maven-jmod-plugin, ou bien d’ici là
 peut être que d’autres avancées auront bouleversé la donne. Une seule
 chose est sûre, Maven sera de la partie !
 
-Chapitre 17
-
-Nos recommandations
--------------------
+== Chapitre 17 : Nos recommandations
 
 L'activité de noubliepaslalistedescourses ne cessant de croître, nous
 augmentons régulièrement la taille des équipes chargées des
@@ -14404,8 +14122,7 @@ nous souhaitons, c'est que tous soient à l'aise avec son fonctionnement
 et qu'ils suivent nos recommandations afin d'éviter les écueils que nous
 avons déjà pu rencontrer.
 
-Les bonnes bases
-~~~~~~~~~~~~~~~~
+=== Les bonnes bases
 
 image:illustrations/MangaNicolas.png[float="left"]
 
@@ -14431,8 +14148,7 @@ projets.
 
 Voici donc les 10 commandements de l'utilisateur de Maven.
 
-Commandement n^o^ 1 : Les conventions de Maven tu suivras.
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== Commandement n^o^ 1 : Les conventions de Maven tu suivras.
 
 Maven propose ses propres conventions mais ne les impose pas. Un projet
 que nous avons fait migrer sous Maven utilisait comme répertoire de
@@ -14462,8 +14178,7 @@ Le respect des conventions permet :
 ·     d'éviter de tomber dans des problèmes ou des bogues qui font
 perdre un temps précieux.
 
-Commandement n^o^ 2 : Simplicité tu choisiras.
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== Commandement n^o^ 2 : Simplicité tu choisiras.
 
 Notre premier mauvais élève est un projet que nous avons voulu faire
 migrer d’Ant vers Maven. Les technologies en œuvre avaient toutes le
@@ -14521,9 +14236,8 @@ Des projets comme Alfresco ou Liferay ne s'accommodent pas facilement de
 Maven. Il faut prendre le temps d'analyser les besoins et d'organiser au
 mieux le projet pour être efficace.
 
-Commandement n^o^ 3 : Au fur et à mesure de tes besoins, les outils
+==== Commandement n^o^ 3 : Au fur et à mesure de tes besoins, les outils
 nécessaires tu mettras en place.
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 La pléthore de plugins d'analyse de code disponibles nous encourage à
 mettre en place un suivi qualité de haut niveau. Il est si simple de
@@ -14608,8 +14322,7 @@ Il permet de mettre en place différentes stratégies de tests (unitaires,
 d'intégration…) mais il ne le fera jamais à la place de nos équipes.
 Elles seules peuvent s'assurer que les bonnes pratiques sont suivies.
 
-Commandement n^o^ 4 : De la sur-conception point tu ne feras.
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== Commandement n^o^ 4 : De la sur-conception point tu ne feras.
 
 L'application maxiMaousselink:#_ftn69[[69]], elle aussi basée sur Maven,
 comprend 58 modules ! Elle suit une décomposition en couches techniques
@@ -14652,8 +14365,7 @@ Bref, les occasions de justifier le découpage d'un module en plusieurs
 modules sont nombreuses. Alors, n'en faites pas plus que nécessaire.
 Vous testerez le réacteur de Maven bien assez tôt.
 
-Commandement n^o^ 5 : Tes outils et ton build à jour tu maintiendras.
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== Commandement n^o^ 5 : Tes outils et ton build à jour tu maintiendras.
 
 Même si mettre en place l'outillage de développement n'est pas une fin
 en soi, c'est un mal nécessaire, au coût non négligeable, permettant
@@ -14703,9 +14415,8 @@ Les projets durent longtemps et les outils évoluent vite. Les maintenir
 mais qui est finalement vite rentabilisé par les gains de productivité
 de l'équipe.
 
-Commandement n^o^ 6 : Dans un projet, la même version tous les modules
+==== Commandement n^o^ 6 : Dans un projet, la même version tous les modules
 auront.
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Sur un projet de messagerie, nous avons développé une couche complète
 d'abstraction autour de l'envoi/réception de messages, indépendante du
@@ -14746,8 +14457,7 @@ il ne peut plus être considéré comme un élément de notre application,
 même si celle-ci devient un contributeur privilégié de ce composant
 commun.
 
-Commandement n^o^ 7 : La gestion des versions tu centraliseras.
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== Commandement n^o^ 7 : La gestion des versions tu centraliseras.
 
 Dans un projet basé sur de nombreux modules, un travail vite pénible
 consiste à assurer la cohérence de versions des dépendances. Des plugins
@@ -14772,9 +14482,8 @@ général de Maven vis-à-vis de la gestion des versions. L'équipe de
 développement est très réticente à changer cette gestion qui peut avoir
 de lourds impacts sur les projets existants.
 
-Commandement n^o^ 8 : Comme la peste les dépendances optionnelles tu
+==== Commandement n^o^ 8 : Comme la peste les dépendances optionnelles tu
 éviteras.
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Nous avons créé une belle bibliothèque utilitaire commons-geegol dont
 l'objectif est d'apporter à tous nos projets des classes utilitaires,
@@ -14800,8 +14509,7 @@ sur le temps passé par le développeur sur son travail, la seule chose
 qui compte au final. Par contre, nous gagnerons dans la finesse de nos
 métadonnées et dans la bonne décomposition de notre code.
 
-Commandement n^o^ 9 : Les SNAPSHOT tu utiliseras.
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== Commandement n^o^ 9 : Les SNAPSHOT tu utiliseras.
 
 Sur un projet comptant plusieurs (dizaines de) modules et de très
 nombreuses classes, il peut être pénalisant d'avoir tout le code
@@ -14834,8 +14542,7 @@ d'intégration continue a le mérite de ne prendre ni pause ni café. Il
 peut construire pour nous les SNAPSHOT de nos modules au fur et à mesure
 qu'une construction réussie est atteinte.
 
-Commandement n^o^ 10 : L'IDE toujours tu privilégieras.
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== Commandement n^o^ 10 : L'IDE toujours tu privilégieras.
 
 Cela fait très expert de scruter la console et de taper à une vitesse
 folle des commandes incompréhensibles. Si vous envisagez un rôle dans
@@ -14974,8 +14681,7 @@ id='org.maven.ide.eclipse.jdt.javaConfigurator'/>
 
     </profile>
 
-Conclusion
-~~~~~~~~~~
+=== Conclusion
 
 En résumé, une règle simple : n'essayez pas d'aller contre Maven. Les
 conventions ont été choisies pour refléter les bonnes pratiques et des
@@ -14988,10 +14694,7 @@ plus simple, ordonné de manière homogène, et qui se plie mieux au mode
 de pensée de Maven. Au final, vos projets n'en seront que plus clairs et
 plus compréhensibles.
 
-Chapitre 18
-
-Épilogue
---------
+== Chapitre 18 : Épilogue
 
 Le dernier numéro de Fortune vient de paraître. Dans son grand dossier
 central, il présente le projet Geegol Shopping List dont la réussite est
@@ -15011,8 +14714,7 @@ projets dans de bonnes conditions, même ceux qui ne sont pas de
 merveilleuses prouesses technologiques ou le sujet d'enjeux
 stratégiques.
 
-Récapitulons
-~~~~~~~~~~~~
+=== Récapitulons
 
 Bien que quelque peu embellie, l'histoire que nous venons de raconter
 est tirée de situations réelles, que nous avons tous vécues à un moment
@@ -15050,8 +14752,7 @@ aidant, les équipes de développement apprendront à mieux utiliser les
 outils que Maven permet de greffer en quelques lignes de configuration
 sur n'importe quel projet.
 
-Sortez de l'amateurisme
-~~~~~~~~~~~~~~~~~~~~~~~
+=== Sortez de l'amateurisme
 
 Certains parlent d'industrialisation du développement, d'autres
 simplement de renoncer à des pratiques qui tiennent du pur bricolage.
@@ -15087,8 +14788,7 @@ un moment ou à un autre, en général le vendredi soir juste avant votre
 départ en vacances. Maven ne résoudra pas tous vos problèmes, mais il
 vous fournit un socle pour bâtir des solutions.
 
-Le mot de la fin
-~~~~~~~~~~~~~~~~
+=== Le mot de la fin
 
 Pour conclure, sachez que le Definitive Guide, ouvrage communautaire
 traduit dans de nombreuses langues (la version française est en cours de
@@ -15097,14 +14797,12 @@ puis assemblé _via_ Maven. Pour produire les 500 pages du PDF que vous
 pouvez consulter en lignelink:#_ftn71[[71]], il suffit de lancer la
 commande universelle mvn install !
 
-Qui est qui ?
-~~~~~~~~~~~~~
+=== Qui est qui ?
 
 Vous vous demandez qui sont ces personnages qui peuplent les pages de ce
 livre ?
 
-Les membres francophones de l'équipe Maven
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== Les membres francophones de l'équipe Maven
 
 Lorsque nous avons décidé de romancer notre ouvrage, nous nous sommes
 posé la question de savoir qui seraient les personnages qui allaient
@@ -15117,8 +14815,7 @@ pas de jaloux).
 
 image:illustrations/MangaCarlos.png[float="left"]
 
-Carlos Sanchez
-++++++++++++++
+===== Carlos Sanchez
 
 Carlos Sanchez, espagnol, 31 ans.
 
@@ -15140,8 +14837,7 @@ Mais j'ai beaucoup oublié mon français en parlant toujours en anglais
 
 image:illustrations/MangaEmmanuel.png[float="left"]
 
-Emmanuel Venisse
-++++++++++++++++
+===== Emmanuel Venisse
 
 Salut,
 
@@ -15162,8 +14858,7 @@ Paris où j'avais introduit également Maven ;-).
 
 image:illustrations/MangaFabrice.png[float="left"]
 
-Fabrice Bellingard
-++++++++++++++++++
+===== Fabrice Bellingard
 
 Hey !
 
@@ -15191,8 +14886,7 @@ c'est la protection de l'environnement et la solidarité internationale.
 
 image:illustrations/MangaHerve.png[float="left"]
 
-Hervé Boutemy
-+++++++++++++
+===== Hervé Boutemy
 
 Hervé Boutemy, j'ai 39 ans, une femme et une fille, et je vis du côté de
 La Défense en région parisienne.
@@ -15226,8 +14920,7 @@ communauté francophone autour de Maven.
 
 image:illustrations/MangaLukas.png[float="left"]
 
-Lukas Theussl
-+++++++++++++
+===== Lukas Theussl
 
 Salut à tous,
 
@@ -15258,8 +14951,7 @@ maintenant je participe surtout au sous-projet Doxia et particulièrement
 
 image:illustrations/MangaOlivier.png[float="left"]
 
-Olivier Lamy
-++++++++++++
+===== Olivier Lamy
 
 Bonjour,
 
@@ -15287,8 +14979,7 @@ du site plugin)
 
 image:illustrations/MangaRaphael.png[float="left"]
 
-Raphaël Piéroni
-+++++++++++++++
+===== Raphaël Piéroni
 
 J'ai 37 ans. J'ai commencé à utiliser Maven 1 en 2002 ou 2003 (je ne me
 souviens plus), et pour Maven 2 depuis sa bêta 1.
@@ -15302,8 +14993,7 @@ cas de besoin ;).
 
 image:illustrations/MangaStephane.png[float="left"]
 
-Stéphane Nicoll
-+++++++++++++++
+===== Stéphane Nicoll
 
 J'ai 33 ans depuis peu, je vis dans une région magnifique à l'est de la
 Belgique.
@@ -15321,8 +15011,7 @@ depuis 2006, je m'occupe toujours des plugins de packaging, mais
 
 image:illustrations/MangaVincentM.png[float="left"]
 
-Vincent Massol
-++++++++++++++
+===== Vincent Massol
 
 Bon puisqu'on dit notre âge je me lance… 40 ans :) [le premier qui dit
 papy se prend une baffe], amateur de tondeuse robot (choupette va fêter
@@ -15357,8 +15046,7 @@ spécifique au-dessus du projet open-source XWiki.
 
 image:illustrations/MangaVincentS.png[float="left"]
 
-Vincent Siveton
-+++++++++++++++
+===== Vincent Siveton
 
 J'avais passé le cap de l'âge du Christ au début de l'aventure de la
 première édition de ce livre, soit 21 en hexadécimal ; d'accord, c'est
@@ -15385,8 +15073,7 @@ Shindig), etc. Mon intérêt pour Maven se situe principalement dans la
 génération de documentation (Doxia avec Lukas !) et les plugins de
 reporting et de QA.
 
-Les membres de la communauté Java
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== Les membres de la communauté Java
 
 Pour compléter notre fine équipe par quelques profils moins
 "Maven-addicted", nous avons invité quelques-unes de nos connaissances
@@ -15394,8 +15081,7 @@ de la communauté Java francophone.
 
 image:illustrations/MangaAntonio.png[float="left"]
 
-Antonio Goncalves
-+++++++++++++++++
+===== Antonio Goncalves
 
 J'ai le même âge que Vincent M. mais tout le monde me donne l'âge de
 Fabrice. Le secret de cette fontaine de jouvence ? Maven ! Eh oui,
@@ -15428,8 +15114,7 @@ pour de plus amples informations : http://www.antoniogoncalves.org.
 
 image:illustrations/MangaFrancois.png[float="left"]
 
-François Le Droff
-+++++++++++++++++
+===== François Le Droff
 
 Brestois d'origine, parisien d'adoption, j'ai connu le Minitel mais je
 suis plus jeune que Vincent M., j'ai commencé à jouer/coder sur le HP 85
@@ -15449,8 +15134,7 @@ technologies Java et Flex (http://www.droff.com).
 
 image:illustrations/MangaGregory.png[float="left"]
 
-Grégory Boissinot
-+++++++++++++++++
+===== Grégory Boissinot
 
 J’ai 30 ans et je travaille depuis 3 ans chez Zenika en tant que
 consultant et formateur sur les technologies Java/JEE. Spécialiste du
@@ -15483,8 +15167,7 @@ formations sur cet outil et son écosystème.
 
 image:illustrations/MangaGuillaume.png[float="left"]
 
-Guillaume Laforge
-+++++++++++++++++
+===== Guillaume Laforge
 
 Au dernier compte, j'en arrivais à 34 ans, déjà.
 
@@ -15507,8 +15190,7 @@ puissant outil de build !
 
 image:illustrations/MangaJerome.png[float="left"]
 
-Jérôme Van der Linden
-+++++++++++++++++++++
+===== Jérôme Van der Linden
 
 29 ans, architecte JavaEE chez Octo Technology depuis cinq ans, où j'ai
 rencontré Arnaud et découvert Maven (la version 1.0.2 à l'époque).
@@ -15524,8 +15206,7 @@ au développement !
 
 image:illustrations/MangaPascal.jpg[float="left"]
 
-Pascal Leclercq
-+++++++++++++++
+===== Pascal Leclercq
 
 Pascal peut être défini avant tout comme un scientifique passionné
 d'Histoire. En tant que professionnel, il est freelance et fondateur de
@@ -15542,8 +15223,7 @@ Une de ses principales qualités est son insatiable curiosité.
 
 image:illustrations/MangaSebastien.png[float="left"]
 
-Sébastien Le Maréchal
-+++++++++++++++++++++
+===== Sébastien Le Maréchal
 
 Breton d'origine, je vis actuellement à Casablanca avec ma petite tribu
 familiale.
@@ -15574,13 +15254,11 @@ J'aimais bien moi Ant et en plus je comprenais !"
 Par conséquent, pour moi (et donc pour Nico), ce livre est une
 bénédiction :-).
 
-Post-scriptum
-^^^^^^^^^^^^^
+==== Post-scriptum
 
 image:illustrations/MangaNicolas.png[float="left"]
 
-Nicolas de Loof
-+++++++++++++++
+===== Nicolas de Loof
 
 Je ne remercierai jamais assez Arnaud d'avoir accepté de m'accompagner
 dans cette aventure. Écrire un livre sur Maven sans en faire un pavé
@@ -15602,8 +15280,7 @@ ensoleille chaque jour ma vie.
 
 image:illustrations/MangaArnaud.png[float="left"]
 
-Arnaud Héritier
-+++++++++++++++
+===== Arnaud Héritier
 
 Je remercie grandement Nicolas de m'avoir proposé ce challenge. Le
 manque d'une bonne documentation en français sur Maven me titillait
@@ -15632,18 +15309,14 @@ Enfin, je dirai un grand grand grand merci à mon exceptionnelle femme et
 à mes trois enfants qui supportent autant que possible le temps que je
 peux passer sur l'open-source et ces derniers temps sur cet ouvrage.
 
-Chapitre 19
-
-Lexique
--------
+== Chapitre 19 : Lexique
 
 Ami lecteur, tu es arrivé jusqu'ici et notre récit te laisse un goût
 amer de "mais enfin, de quoi parlent-ils ?". Il est vrai que
 l'informatique possède un jargon riche, souvent impénétrable et
 anglophone… Voici donc notre petit dictionnaire Maven – Français.
 
-Le petit monde open-source
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+=== Le petit monde open-source
 
 Apachelink:#_ftn73[*[73]*]
 
@@ -15719,8 +15392,7 @@ définir de manière efficace les orientations du projet. Le PMC a ainsi
 la responsabilité de voter la livraison d'une nouvelle version, ou
 d'inviter de nouveaux membres comme committers.
 
-Les concepts Maven
-~~~~~~~~~~~~~~~~~~
+=== Les concepts Maven
 
 API
 
@@ -15958,8 +15630,7 @@ permettra si besoin d'en intégrer un nouveau dans le support de Maven.
 Le plugin Maven qui exécute nos tests n'est donc pas un
 maven-junit-plugin, mais maven-surefire-plugin.
 
-Ceux qui font tourner Maven
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=== Ceux qui font tourner Maven
 
 ClassWorldslink:#_ftn93[*[93]*]
 
@@ -16015,8 +15686,7 @@ Vous pouvez par exemple utiliser le protocole de partage Windows Samba
 _via_ un module dédiélink:#_ftn99[[99]], qui n'est pas intégré par
 défaut à Maven pour des questions d'incompatibilité de licence.
 
-Et tout ce qui tourne autour…
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=== Et tout ce qui tourne autour…
 
 Aptlink:#_ftn100[**[100]**]
 
@@ -16053,8 +15723,7 @@ du document, un peu comme le ferait HTML si son usage n'avait pas été
 déformé à des fins de mise en page par des années de mauvaises
 pratiques.
 
-Liens utiles
-~~~~~~~~~~~~
+=== Liens utiles
 
 Et pour finir, quelques liens indispensables à ajouter dans vos
 favoris :
