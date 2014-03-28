@@ -3,6 +3,7 @@ Nicolas De loof, Arnaud Héritier
 v3.0, 2014
 :toc:
 :doctype: book
+:icons: font
 :source-highlighter: highlightjs
 
 
@@ -375,8 +376,9 @@ basé sur l'outil Apache Ant.
 Qu'est-ce que c'est que ce "Ant" ? Faisons un détour par Wikipédia pour
 nous en faire une idée :
 
-Infolink:#_ftn5[*[5]*]
-
+[NOTE]
+====
+link:#_ftn5[*[5]*]
 Ant est un projet open-source de la fondation Apache, écrit en Java, qui
 vise le développement d'un logiciel d'automatisation des opérations
 répétitives tout au long du cycle de développement logiciel, à l'instar
@@ -384,6 +386,7 @@ des logiciels Make.
 
 Le nom est un acronyme pour _Another Neat Tool_ (un autre chouette
 outil).
+====
 
 Ant est principalement utilisé pour automatiser la construction de
 projets en langage Java, mais il peut l'être pour tout autre type
@@ -538,13 +541,15 @@ première utilisation, Maven semble télécharger tout Internet, mais il
 nous a promis des explications ! Mise en garde quelque peu surprenante,
 mais laissons-lui le bénéfice du doute.
 
-Info
 
+[NOTE]
+====
 La mise en garde de Jason est judicieuse car de nombreux utilisateurs
 sont surpris par ce comportement de Maven et sa dépendance à une
 connexion Internet. Nous verrons par la suite ce qui impose ce mode de
 fonctionnement et en quoi cela sert les utilisateurs plutôt que de les
 contraindre.
+====
 
 Poursuivons l'analyse des messages que Maven trace dans la console, en
 ignorant les lignes liées à ces téléchargements étranges mais
@@ -1042,13 +1047,14 @@ lorsqu'on doit utiliser une version modifiée d'une bibliothèque, par
 exemple parce qu'on y a intégré un correctif qui n'est pas encore pris
 en compte dans une version officielle.
 
-Info
-
+[NOTE]
+====
 Le format d'archive JAR prévoit un fichier de métadonnées,
 META-INF/MANIFEST.MF, décrivant théoriquement la bibliothèque, et en
 particulier sa version précise. Celle-ci est cependant régulièrement non
 documentée lorsque ce fichier MANIFEST n'est pas tout simplement absent
 ou quasiment vide.
+====
 
 ===== lib/*.jar
 
@@ -1312,8 +1318,8 @@ différentes. Le mécanisme utilisé est cependant limité par la liberté
 laissée aux numéros de version qui rend délicat une comparaison 100 %
 déterministe.
 
-Info
-
+[NOTE]
+====
 L'algorithme de résolution des conflits se fonde sur le principe de
 "proximité" : Maven compte, dans l'arbre des dépendances, combien de
 branches séparent la bibliothèque du projet ; celle qui est déclarée au
@@ -1322,6 +1328,7 @@ détermine le vainqueur : la première déclaration dans l’ordre du POM
 gagne. Ce comportement a été figé avec Maven 2.0.9 (les versions
 précédentes étaient non déterministes sur ce point, si vous les utilisez
 encore, mettez à jour en urgence votre boite à outil !
+====
 
 Cette dernière fonctionnalité finit par nous convaincre définitivement.
 Aussi, nous abandonnons nos différents scripts et adoptons les
@@ -1485,13 +1492,14 @@ nombreux utilisateurs, les développeurs de commons-logging ont cependant
 C'est pour cette raison que nous retrouvons avalon-framework-4.1.3.jar
 dans nos bibliothèques.
 
-Info
-
+[NOTE]
+====
 La qualité des métadonnées a longtemps été un point faible de Maven, qui
 se corrige heureusement avec le temps et les nouvelles versions des
 bibliothèques incriminées. Les projets, même ceux qui n'utilisent pas
 Maven pour leurs propres besoins, sont aujourd'hui sensibilisés à ce
 besoin et prennent plus de soin à définir des dépendances fiables.
+====
 
 Pour les versions anciennes cependant, une mise à jour n'est pas
 possible, car la politique de l'équipe qui gère le dépôt de
@@ -1907,8 +1915,8 @@ quelconque. Dans notre cas, seuls les paramètres source et target sont
 nécessaires pour obtenir le résultat attendu, les autres paramètres
 pouvant conserver leur valeur par défaut.
 
-Info
-
+[NOTE]
+====
 Chaque plugin Maven dispose d'un site de documentation, en particulier
 les plugins standard, sur http://maven.apache.org/plugins/. La
 documentation fournit une description de chaque option, les valeurs par
@@ -1917,6 +1925,7 @@ configuration pour les utilisations les plus fréquentes. Ces sites
 documentaires sont générés à partir du code source du plugin et diffusés
 en même temps que lui. Ils sont donc toujours synchrones avec la version
 courante du plugin.
+====
 
 Attention cependant, car le site web généré correspond généralement à la
 version en cours de développement du plugin, aussi soyez attentif à
@@ -2003,8 +2012,8 @@ qu'il est tout juste 9 heures du matin) et tout à fait sérieux. Il
 d'utiliser le langage Groovy pour coder notre application, ou tout du
 moins certains composants qui s'y prêtent très bien.
 
-Info
-
+[NOTE]
+====
 Groovy est un langage dynamique qui s'exécute sur la machine virtuelle
 Java, au même titre que jRuby ou Jython par exemple. L'environnement
 d'exécution Java actuel ne se limite plus au seul langage de
@@ -2015,6 +2024,7 @@ Java ! Ce qui pourrait sembler _a priori_ un mariage contre nature ouvre
 en réalité des perspectives étonnantes, en fonction des points forts de
 certains langages dans des domaines précis, ou tout simplement des
 développeurs dont vous disposez.
+====
 
 Quelques exemples bien choisis (Arnaud a bien préparé son coup) nous
 convainquent rapidement des améliorations que Groovy apporterait à notre
@@ -2202,8 +2212,8 @@ animer les pages. Avant que la surprise ne laisse la place à une
 réaction épidermique face à l'ampleur de la tâche, Nicolas lâche son
 arme secrète : GWT.
 
-Info
-
+[NOTE]
+====
 Google Web Toolkit (GWT) est un outil développé par Google pour offrir
 aux développeurs Java les portes du Web. Capable de traduire en
 JavaScript du code source Java, il permet à ces derniers de conserver le
@@ -2211,6 +2221,7 @@ confort de leur langage préféré et de leur outillage habituel, tout en
 développant des applications web qui réagissent au moindre mouvement de
 souris. La prouesse technique est impressionnante, et les portes que
 cela ouvre aux développeurs Java ne font encore que s'entrouvrir.
+====
 
 Une petite démonstration sur le PC portable qui traînait comme par
 hasard sur un coin de table fait taire les derniers incrédules.
@@ -3771,8 +3782,8 @@ Listing 5.2 : Activation d'un profil en fonction du système d'exploitation
    </profiles>
 -------------------------------------------------------------------------------
 
-Info
-
+[NOTE]
+====
 Dans l'exemple du Listing 5.2, la dépendance indiquée utilise la notion
 de classifier que nous avons déjà rencontrée au Chapitre 4. Celle-ci
 permet de placer dans un référentiel Maven plusieurs variantes d'un même
@@ -3781,6 +3792,7 @@ méthode recommandée si vous devez dériver un même composant en fonction
 du système cible comme ici, ou distribuer une version de la même
 bibliothèque avec et sans mécanisme de débogage comme le propose le
 driver Oracle.
+====
 
 ==== Désactiver à la demande
 
@@ -3843,13 +3855,14 @@ le comportement de Maven à sa tâche courante. Il ne devra pas perdre un
 temps précieux à chercher de lui-même des moyens de contournement pour
 des traitements qui lui importent peu ou qui ne le concernent pas.
 
-Info
-
+[NOTE]
+====
 Le paramètre d'activation <activeByDefault> ne s'applique que lorsqu'on
 ne précise pas explicitement une liste de profil avec l'option -P. Il ne
 signifie pas que ce profil est toujours actif. Cela peut donc avoir des
 effets indésirables si on introduit un nouveau profil sur un projet, car
 ceux qui étaient jusqu'ici "actifs par défaut" seront alors… désactivés.
+====
 
 === Tester l'accès à une base de données
 
@@ -4191,8 +4204,8 @@ pour nos tests,
 ·     une version de production, ciblant notre cluster MySQL et
 verrouillant tous les accès.
 
-Info
-
+[NOTE]
+====
 La norme JavaEE prévoit comme seule solution de configuration d'une
 application le passage par des références JNDI. En faisant abstraction
 de la relative complexité que cela implique, il est surtout regrettable
@@ -4200,6 +4213,7 @@ qu'il n'existe pas de solution simple et portable pour définir des
 paramètres de configuration à l'extérieur de l'archive WAR ou EAR, et de
 passer ainsi facilement d'une configuration de test à une configuration
 de production.
+====
 
 Pour palier ce problème, chacun invente sa solution :
 
@@ -4470,8 +4484,8 @@ ce qui est fort dommageable. En particulier, l'information de licence
 devrait être plus généralement indiquée car elle peut fortement impacter
 les projets qui utilisent une dépendance.
 
-Info
-
+[NOTE]
+====
 La licence GPL s'applique à des logiciels libres et autorise
 l'utilisation totalement gratuite du logiciel considéré. Elle impose
 cependant que la modification ou l'utilisation du logiciel sous GPL dans
@@ -4490,6 +4504,7 @@ L'information de licence n'étant pas toujours disponible, il n'est pas
 possible d'automatiser de manière fiable l'analyse des licences sur un
 projet. Ce serait cependant une fonctionnalité très intéressante de
 Maven.
+====
 
 ==== Installer le fichier manquant
 
@@ -4834,12 +4849,13 @@ accéder directement à central, mais à utiliser un serveur miroir sous
 notre contrôle et dont nous pourrons maîtriser la disponibilité et le
 contenu.
 
-Info
-
+[NOTE]
+====
 Pour les utilisateurs de Windows, le $HOME est le répertoire
 C:\Documents and Settings\votreNom, et sous Windows 7 sous
 C:\Utilisateurs\votreNom. La notion de HOME est évidemment plus
 naturelle pour les "unixiens" et autres "mac'istes".
+====
 
 [source, xml]
 -------------------------------------------------------------------------------
@@ -5073,13 +5089,14 @@ une hydre à cinq têtes qui serait capable d'un côté de produire
 l'application web et de l'autre le module d'administration, sans revoir
 la structure Maven qui l'accompagne.
 
-Info
-
+[NOTE]
+====
 Cette affirmation n'est pas tout à fait exacte et nous l'avons déjà vu
 au Chapitre 4 : la notion de classifier permet d'attacher plusieurs
 artefacts à un projet, cependant ceux-ci partagent nécessairement le
 même POM et ne peuvent constituer que des variantes ou des artefacts
 secondaires.
+====
 
 Nous avons déjà été confrontés à ce problème lorsque François a proposé
 une version Flex de notre interface Web (voir le Chapitre 3). La
@@ -5624,8 +5641,8 @@ nos modules et nous économiser un temps précieux. La seule limite est la
 dépendance de nos modules entre eux, que Maven doit tout de même
 respecter
 
-Info
-
+[NOTE]
+====
 L’exécution du build en parallèle n’est possible que si les plugins le
 permettent. C’est le cas pour les versions récentes des plugins
 officiels Maven et d’un grand nombre de plugins du projet Mojo. Si ce
@@ -5644,6 +5661,7 @@ plugin n’a pas été testé dans cette configuration :
 [WARNING] * question, not against maven-core                              *
 [WARNING] *****************************************************************
 -------------------------------------------------------------------------------
+====
 
 Bien, mais nous sommes exigeants et en voulons encore plus ! Stéphane,
 en fin stratège, a gardé sa toute dernière réplique pour la fin, et nous
@@ -5707,8 +5725,8 @@ pense, JavaEE est une norme largement implantée et supportée, et il nous
 faut la suivre d'une façon ou d'une autre si nous voulons déployer notre
 belle application sur le serveur d’hébergement.
 
-Info
-
+[NOTE]
+====
 Java EE, J2EE ou JEE ? Pour une raison obscure, java 1.2 a été annoncé
 par SUN sous le nom de « Java 2 ». En ont découlé les versions standard
 J2SE, mobile J2ME et entreprise J2EE. Dans un élan de logique, les
@@ -5724,6 +5742,7 @@ SSII. On voit donc dans de nombreux CV ou offres d’emploi le terme JEE
 qui ne correspond à rien. Ceci dit, cela ne change absolument rien et
 tout le monde comprend de quoi on parle, mais c’était l’occasion de
 faire un petit point culturel :)
+====
 
 ==== Construire une archive web WAR
 
@@ -5810,13 +5829,14 @@ l'application web, et pas le javax.servlet.Servlet commun à tout le
 serveur d'application. D'où cet étrange message d'erreur. Vincent est
 rassuré sur sa santé mentale.
 
-Info
-
+[NOTE]
+====
 Lorsqu'il s'agit du JAR de l'API servlet le constat est rapide, mais il
 peut arriver qu'une bibliothèque ait la mauvaise idée de contenir les
 classes d'une API Java (plutôt que d'en dépendre), comme par exemple le
 JAR gwt-user de GWT. L'identification du coupable est alors nettement
 moins immédiate.
+====
 
 Cette dépendance javax.servlet:servlet-api:2.5 est pourtant
 indispensable à notre application pour qu’elle soit en mesure de
@@ -5850,8 +5870,8 @@ Notre exploration du monde JavaEE se poursuit avec un Entreprise Java
 Bean, c'est-à-dire un macrocomposant métier qui sera potentiellement
 distribuable sur l'ensemble de notre cluster.
 
-Info
-
+[NOTE]
+====
 Quoi, nous n'avons pas de cluster ? Pourquoi avoir choisi un EJB alors ?
 Sans vouloir faire de l'anti-JavaEE, disons que les EJB ont longtemps
 traîné de lourdes casseroles car ils étaient appliqués sans qu’on en
@@ -5859,6 +5879,7 @@ comprenne le rôle dans l'architecture. Jusqu'à l'émergence de JavaEE5 et
 de JavaEE6, qui les dépoussièrent sensiblement, leur utilisation était
 même largement décriée au profit de modèles légers dont SpringFramework
 est le fer de lance.
+====
 
 image:illustrations/MangaVincentS.png[float="left"]
 
@@ -6530,15 +6551,15 @@ permet de composer le contenu de notre jar de test, en y incluant notre
 code et, au besoin, des fichiers de ressources (par exemple un fichier
 beans.xml pour activer l’injection de dépendances CDI).
 
-Info
-
+[NOTE]
+====
 Si vous avez exclu le terme EJB de votre vocabulaire depuis l’époque
 J2EE 1.4,  nous vous recommandons de jeter un œil rapide à la norme Java
 EE 6 et EJB 3.1. Les EJB « nouvelle mode » n’ont même plus besoin de XML
 ou de multiples interfaces pour embarquer du code métier. Pour en savoir
 plus, courrez chez votre libraire pour commander le livre d’Antonio
 Goncalves Java EE 6 et Glassfish 3 chez le même éditeur.
-
+====
 Pour lancer notre test, nous devons fournir à Arquillian les billes
 nécessaires au lancement du serveur JavaEE cible. Si Arquillian est
 développé par JBoss, il n’est pas limité à ce serveur et supporte déjà
@@ -6652,8 +6673,8 @@ contrôler l'impact d'une modification sans intervention manuelle. Il
 suffit de configurer le serveur cible pour qu'Eclipse prenne en charge
 la procédure de redéploiement.
 
-Info
-
+[NOTE]
+====
 Web Tools Platform ne se limite pas à JavaEE et couvre de nombreuses
 technologies liées au Web. Même si vous n'utilisez pas la fonctionnalité
 de déploiement, ce module d'extension d'Eclipse sera rapidement
@@ -6661,6 +6682,7 @@ indispensable pour éditer convenablement les fichiers HTML, JSP, XML,
 XSD, JavaScript, CSS, les contrats WSDL de services web et d’autres
 formats normalisés, sans parler des petits outils bien pratiques comme
 l'espion TCP/IP ou le client graphique de service web.
+===
 
 L'équipe de développement de m2eclipse a eu pitié des développeurs et
 leur évite de devoir configurer chaque projet pour adapter la
@@ -6944,14 +6966,15 @@ image:illustrations/09-01.png[align="center"]
 
 Un projet Maven vu sous Eclipse au travers de m2eclipse.
 
-Info
-
+[NOTE]
+====
 Le plugin peut être configuré pour utiliser votre propre installation de
 Maven pour les tâches courantes, mais dispose par défaut d'une copie
 interne de Maven qu'il utilise pour analyser le fichier POM. Il s'agit
 cependant d'une version de Maven 3.x encore en cours de développement,
 aussi il est préférable pour éviter toute mauvaise surprise de pointer
 sur l'installation locale de Maven 2.
+====
 
 L'utilisation courante de Maven est totalement enrobée dans des
 assistants et la ligne de commande n'est plus du tout nécessaire. Maven
@@ -7032,8 +7055,8 @@ image:illustrations/09-04.png[align="center"]
 
 Veuillez patienter…
 
-Info
-
+[NOTE]
+====
 Même si l'équipe Maven n'a pas les moyens de faire plier
 significativement Eclipse à ses usages, elle essaie de traiter ce
 problème à son niveau. Des évolutions sur quelques plugins clés et le
@@ -7041,6 +7064,7 @@ noyau de Maven permettent de mieux prendre en charge la compilation
 incrémentale d'Eclipse, en n'exécutant que les tâches spécifiques de
 Maven et en laissant l'IDE prendre en charge toutes les étapes pour
 lesquelles il propose une fonction équivalente.
+====
 
 ==== Et la cerise…
 
@@ -7467,8 +7491,8 @@ D'autres préfèrent une approche plus souple et réactive en faisant appel
 à l'auto-organisation, par exemple _via_ une documentation supportée par
 un wiki.
 
-Info
-
+[NOTE]
+====
 Pour ceux qui ne le sauraient pas, un wiki est un site web dont le
 contenu peut être modifié, corrigé ou complété par ses utilisateurs. Il
 est donc très dynamique et peut s'adapter à la réalité des problèmes
@@ -7480,6 +7504,7 @@ la documentation. Si vous n'en avez pas un sur votre projet, faites un
 petit essai avec votre équipe, vous serez surpris du résultat. Les
 solutions ne manquent pas, du wiki PHP de base au très professionnel
 Confluence, en passant par l'incontournable XWiki cher à Vincent.
+====
 
 Emmanuel documente ainsi la procédure de livraison dans notre wiki,
 accessible rapidement et sans les ambiguïtés d'une classification
@@ -7666,8 +7691,8 @@ toutes nos attentes : « Maven Release Plugin », un plugin pour lancer
 une release depuis notre fauteuil par un simple click – sitôt essayé,
 sitôt adopté !
 
-Info
-
+[NOTE]
+====
 On pourra reprocher à cette approce de rendre nos livrables
 « anonymes ». Dans certaines circonstances, nous voudrions concerver la
 traçabilité en signant le binaire avec une clé GPG, ce qui est par
@@ -7675,6 +7700,7 @@ exemple nécessaire pour les diffuser sur central.
 
 Dans ces circonstances, il faudra revenir à une approche plus
 « traditionnelle ».
+====
 
 ==== Notre prochaine version
 
@@ -8162,8 +8188,8 @@ _via_ un bloc <dependency>, appliqué au plugin.
 Cette petite manipulation nous permet donc d'utiliser sans souci les
 outils en place. Fin du Chapitre 11 ? Non, bien sûr.
 
-Info
-
+[NOTE]
+====
 Dans le Listing 11.1, nous n'avons pas indiqué d'identifiant de groupe
 pour déclarer le plugin. Maven utilise en effet une liste de groupes
 pour identifier les plugins lorsque cette information n'est pas fournie.
@@ -8175,6 +8201,7 @@ configuration de Maven : settings.xml. Si votre entreprise utilise de
 nombreux plugins maison, ce mécanisme peut vous aider à alléger votre
 configuration, cependant cela suppose que chaque développeur dispose
 d'un fichier settings.xml correctement configuré.
+====
 
 ==== Retour dans un monde de scripts ?
 
@@ -8335,14 +8362,15 @@ majorité des cas, il s'agira du répertoire target, mais ne présumons pas
 de la façon dont notre plugin sera utilisé et des contraintes que vont
 rencontrer nos projets. Conventions ne signifie pas obligations !
 
-Info
-
+[NOTE]
+====
 Le plus souvent, les plugins Maven utilisent ces expressions pour ne pas
 coder en dur les chemins qui correspondent aux conventions. Ce n'est
 cependant pas garanti et cela dépend du degré de connaissance des
 développeurs de plugins, et c'est l'une des raisons pour lesquelles nous
 vous encourageons à utiliser ces conventions même si elles ne vous
 plaisent pas complètement.
+====
 
 ==== Un modèle dynamique
 
@@ -8521,8 +8549,8 @@ pour autant ses classes internes. Il est intéressant de voir que cette
 même problématique est relevée de manière indépendante par OSGi, sur
 lequel on aurait sans doute bâti Maven s'il avait été créé en 2009 !
 
-Info
-
+[NOTE]
+====
 Si vous n'êtes pas du tout habitué à la notion de ClassLoader, vous
 pouvez considérer que ce sont des boîtes étanches qui disposent chacune
 d'une liste de chemins et de bibliothèques de classes. Plusieurs
@@ -8530,6 +8558,7 @@ ClassLoaders cohabitent dans la JVM et partagent un parent commun
 correspondant au runtime Java standard. Il est possible pour des classes
 issues de deux classloaders de collaborer si elles échangent des classes
 issues d'un même parent.
+====
 
 Vous avez sans doute déjà rencontré des problèmes de ClassLoaders, de
 sombres histoires de classes qui ne sont pas ce qu'elles disent être, ou
@@ -10145,8 +10174,8 @@ malencontreusement égaré, perdu au cours de la réaffectation d'un
 serveur de développement ou de l'archivage un peu rapide de nos supports
 de stockage.
 
-Info
-
+[NOTE]
+====
 De nombreuses entreprises imposent pour la même raison, dans leurs
 règles qualité, de recompiler tout logiciel open-source introduit dans
 une application. Si cette règle est rarement appliquée (hou, les
@@ -10154,6 +10183,7 @@ vilains), vous devinez facilement de quelle expérience catastrophique
 elle peut provenir… binaires non identifiés, sans code source, bugs
 impossibles à reproduire et donc à corriger. Le passé a du laisser à
 certains de cruelles blessures.
+====
 
 Nous ne pouvons donc pas nous contenter de produire notre EAR avec
 Maven, il nous manque une étape, et vous imaginez que nous n'allons pas
@@ -10892,8 +10922,8 @@ Au terme de la formation, lorsqu'ils commenceront à travailler sur le
 projet, nos développeurs tout juste formés ne seront pas déboussolés de
 retrouver la même structure de projet et gagneront ainsi en efficacité.
 
-Info
-
+[NOTE]
+====
 Bien que les archétypes soient un moyen rapide de réutiliser une
 application existante, et donc un encouragement à définir des
 applications blanches, celles-ci présentent quelques écueils :
@@ -10918,6 +10948,7 @@ vitrine légère et homogène des bonnes pratiques à suivre.
 
 Moralité : privilégier les petits exemples (et donc les petits
 archétypes) qui vont démontrer une problématique donnée.
+====
 
 === Conclusion
 
@@ -11091,14 +11122,15 @@ support et méconnues de la communauté ;
 coût de développement et qui ne bénéficiera pas de l'enrichissement
 d'une communauté de centaines d'utilisateurs.
 
-Info
-
+[NOTE]
+====
 Précisons que le projet Mojo est ouvert aux contributions et toujours
 enthousiaste à accueillir des développeurs qui veulent prendre en charge
 un plugin à l'abandon ou proposer leur propre travail à la communauté.
 C'est en tout cas la politique que nous défendons, même si nous ne
 sommes pas seuls à bord. N'hésitez pas à venir nous parler de vos
 projets et envies sur la liste de diffusion : user@mojo.codehaus.org.
+====
 
 ==== Le support
 
@@ -12207,14 +12239,15 @@ Java standard, en déclarant simplement les packages privés et exportés.
 Ce plugin nous propose donc de transcrire le MANIFEST OSGi dans le
 formalisme XML du POM, comme le montre le listing 16.1.
 
-Info
-
+[NOTE]
+====
 Il existe un autre outil développé sur le même principe par
 SpringSource, bundlor
 (http://www.springsource.org/bundlor[http://www.springsource.org/bundlor]).
 Si vous voulez suivre cette piste, jetez y un œil car l’équipe de Spring
 s’en est servi avec succès pour convertir en bundles une large gamme de
 projets, dans le cadre du projet Spring Dynamic Modules.
+====
 
 Listing 16.1 génération du MANIFEST OSGi depuis Maven
 [source, xml]
@@ -12346,8 +12379,8 @@ abandonne donc la gestion de dépendance traditionnelle de Maven pour
 utiliser celle d’OSGi. Les dépendances ne sont donc plus déclarées dans
 le POM mais dans le MANIFEST OGSi.
 
-Info
-
+[NOTE]
+====
 Tycho ne fonctionne donc que avec Maven 3. Le lourd travail de refonte
 technique entre Maven 2 et Maven 3 montre ici ses fruits : la souplesse
 de la plateforme technique de Maven 3 lui permet de s’adapter à des
@@ -12360,6 +12393,7 @@ pertinence de ce type de règles, mais vous devinez ce que j’en pense),
 les approches présentées aux paragraphes ci-dessus restent valides.
 Cependant, vous trouverez bien peu de documentation, et n’attendez pas
 un grand support sur les plugins associés.
+====
 
 Pascal a un peu triché dans sa démonstration, car il a en réalité placé
 la configuration nécessaire dans le projet parent – petit cachotier va.
@@ -12397,8 +12431,9 @@ d’Eclipse Indigo, sur lequel est basé son client Eclipse RCP.
         <url>http://download.eclipse.org/releases/indigo</url>
 </repository>
 -------------------------------------------------------------------------------
-Info
 
+[NOTE]
+====
 Equinox P2 est le mécanisme d’approvisionnement de la plateforme OSGi
 Equinox qu’utilise Eclipse RCP, introduit avec la version 3.4 d’Eclipse
 « Ganymede ». P2 gère de multiples dépôts distants, la sélection de
@@ -12414,6 +12449,7 @@ utilisé pour assurer du déploiement d’application, ce que Sonatype met à
 profit dans son offre « developer onbard » permettant de mettre à
 disposition des environnements de développement prêts à fonctionner en
 un simple clic.
+====
 
 Autre composant du cocktail, le plugin target-platform-configuration se
 charge d’identifier la plateforme OSGi cible. D’une certaine façon, il
@@ -13117,8 +13153,8 @@ Le <pluginManagement> permet de faire la même chose pour les plugins
 avec, en plus, la possibilité de définir une configuration centralisée,
 mais qui ne sera appliquée que sur les modules qui utilisent le plugin.
 
-Info
-
+[NOTE]
+====
 Les plugins déclarés pour le reporting ne profitent cependant pas de
 cette gestion centralisée et doivent donc explicitement contenir un
 numéro de version. Il s'agit en quelque sorte d'un bogue de conception
@@ -13126,6 +13162,7 @@ de Maven, mais le corriger supposerait de modifier le comportement
 général de Maven vis-à-vis de la gestion des versions. L'équipe de
 développement est très réticente à changer cette gestion qui peut avoir
 de lourds impacts sur les projets existants.
+====
 
 ==== Commandement n^o^ 8 : Comme la peste les dépendances optionnelles tu
 éviteras.
