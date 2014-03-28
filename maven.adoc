@@ -461,6 +461,7 @@ soit sa singularité.
 Voici le fichier envoyé par Jason :
 
 Listing 1.2 : pom.xml
+[source, xml]
 -------------------------------------------------------------------------------
 <project>
   <modelVersion>4.0.0</modelVersion>
@@ -511,7 +512,6 @@ Maven se traduit dans la console par une série de messages de
 téléchargements divers :
 
 Listing 1.3 : Première exécution de Maven
-
 -------------------------------------------------------------------------------
 D:\noubliepaslalistedescourses>mvn package
 [INFO] Scanning for projects...
@@ -714,6 +714,7 @@ traitements.
 La première partie du POM permet d'identifier le projet lui-même.
 
 Listing 1.5 : L'en-tête du fichier POM
+[source, xml]
 -------------------------------------------------------------------------------
     <modelVersion>4.0.0</modelVersion>
     <groupId>fr.noubliepaslalistedescourses</groupId>
@@ -782,6 +783,7 @@ projet car dans la comparaison purement alphabétique, "GA" est inférieur
 La deuxième partie du POM concerne la construction du projet :
 
 Listing 1.6 : Le bloc build du fichier POM
+[source, xml]
 -------------------------------------------------------------------------------
     <build>
         <sourceDirectory>src</sourceDirectory>
@@ -797,6 +799,7 @@ La troisième partie de POM concerne les bibliothèques dont dépend le
 projet :
 
 Listing 1.7 : Le bloc dependencies du fichier POM
+[source, xml]
 -------------------------------------------------------------------------------
     <dependencies>
         <dependency>
@@ -1088,6 +1091,7 @@ que nous avons déclaré pour notre projet. Dans le fichier POM de Jason,
 nous référençons l'artefact mail de la bibliothèque standard javaMail
 dans sa version 1.4.
 
+[source, xml]
 -------------------------------------------------------------------------------
     <dependency>
       <groupId>javax.mail</groupId>
@@ -1393,6 +1397,7 @@ Nous pouvons ainsi préciser que la bibliothèque jUnit n'est utilisée que
 durant la phase de test et que l'API servlet ne doit pas être intégrée
 dans notre archive web.
 
+[source, xml]
 -------------------------------------------------------------------------------
     <dependency>
       <groupId>javax.servlet</groupId>
@@ -1455,6 +1460,7 @@ Le fichier POM de commons-logging déclare donc des dépendances vers
 toutes les bibliothèques de log qu'il supporte. La déclaration Maven
 correcte devrait être :
 
+[source, xml]
 -------------------------------------------------------------------------------
     <dependency>
       <groupId>log4j</groupId>
@@ -1503,6 +1509,7 @@ transitivité. Ainsi, si nous voulons empêcher Spring – qui utilise
 commons-logging – d'introduire sur notre projet ce fameux JAR
 avalon-framework, nous pouvons écrire :
 
+[source, xml]
 -------------------------------------------------------------------------------
     <dependency>
       <groupId>org.springframework</groupId>
@@ -1643,9 +1650,8 @@ récit. Maven s’acharne – et échoue – à télécharge la bibliothèque
 jcr-on-cassandra :
 
 -------------------------------------------------------------------------------
-[ERROR] Failed to execute goal on project demo:  +
- Could not resolve dependencies for project demo:demo:jar:1: Could not
-find artifact org.geeks:jcr-on-cassandra:jar:1.8.0.10 in central
+[ERROR] Failed to execute goal on project demo:  
++ Could not resolve dependencies for project demo:demo:jar:1: Could not find artifact org.geeks:jcr-on-cassandra:jar:1.8.0.10 in central
 -------------------------------------------------------------------------------
 
 Emmanuel vérifie trois fois, la bibliothèque jcr-on-cassandra dont il
@@ -1662,6 +1668,7 @@ inspiré Emmanuel pour sa démo. Il en extrait une déclaration de
 dépôthttp://repository.geek.org/[] qu’il place sous scellés pour la
 suite de l’enquête.
 
+[source, xml]
 -------------------------------------------------------------------------------
   <repository>
     <id>geeks.org</id>
@@ -1710,6 +1717,7 @@ Pour accéder à un dépôt de ce type, Maven nous demande de l’ajouter
 explicitement à notre POM, sous forme d’un bloc <repository> comme celui
 qu’Arnaud a identifié dans le projet d’exemple de jcr-on-cassandra :
 
+[source, xml]
 -------------------------------------------------------------------------------
 <repository>
     <id>identifiant unique du dépôt</id>
@@ -1860,6 +1868,7 @@ nous vous encourageons à toujours définir explicitement ces valeurs.
 La modification des options par défaut d'un plugin s'effectue dans le
 fichier POM du projet, au sein de son bloc <build> :
 
+[source, xml]
 -------------------------------------------------------------------------------
 <build>
     <plugins>
@@ -1965,6 +1974,7 @@ encore modifiable _via_ le -D sur la ligne de commande. Cela permet de
 définir en quelque sorte des valeurs par défaut applicables sur le
 projet et sur lui seul :
 
+[source, xml]
 -------------------------------------------------------------------------------
 <properties>
     <maven.compiler.source>7</maven.compiler.source>
@@ -2068,6 +2078,7 @@ Ces répertoires créés pour accueillir le code, il nous reste à déclarer
 le plugin Groovy dans notre POM. Sur l'exemple du plugin compiler, nous
 ajoutons :
 
+[source, xml]
 -------------------------------------------------------------------------------
 <build>
     <plugins>
@@ -2126,6 +2137,7 @@ projet, nous devons également préciser lequel (ou lesquels) de ces
 traitements unitaires nous souhaitons intégrer à la construction du
 projet.
 
+[source, xml]
 -------------------------------------------------------------------------------
 <build>
     <plugins>
@@ -2207,6 +2219,7 @@ que ça. Reste à faire tourner cet ovni issu de la galaxie Google dans un
 projet Maven ! Heureusement pour nous, d'autres ont eu le même souci et
 un plugin est disponible pour marier GWT avec notre projet.
 
+[source, xml]
 -------------------------------------------------------------------------------
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
@@ -2317,8 +2330,7 @@ Tableau 3.1 : Le cycle de vie défini par Maven
 |test-compile |compilation des tests
 |test |exécution des tests
 |package |assemblage du projet sous forme d'archive Java
-|install |mise à disposition de l'archive sur la machine locale pour
-d'autres projets
+|install |mise à disposition de l'archive sur la machine locale pour d'autres projets
 |deploy |mise à disposition publique de l'archive java
 |=======================================================================
 
@@ -2433,6 +2445,7 @@ de plugins. Il prend en paramètre les fichiers WSDL à traiter et les
 options de génération ; aussi plaçons-nous notre fichier WSDL dans un
 répertoire de ressources dédié à ce format : src/main/resources/wsdl.
 
+[source, xml]
 -------------------------------------------------------------------------------
 <plugin>
    <groupId>org.apache.cxf</groupId>
@@ -2544,7 +2557,7 @@ Le Listing 3.1 montre le POM utilisé par François pour son projet qui
 nous fait mettre un pied en dehors du monde Java.link:#_ftn17[[17]]
 
 Listing 3.1 : Production d'un binaire SWF
-
+[source, xml]
 -------------------------------------------------------------------------------
 <project>
    <modelVersion>4.0.0</modelVersion>
@@ -2643,6 +2656,7 @@ qui héberge la documentation et le dépôt Maven du plugin directement
 dans son Subversion. Pour utiliser un dépôt non standard de plugins, il
 nous faut ajouter au projet la déclaration adéquate :
 
+[source, xml]
 -------------------------------------------------------------------------------
    <pluginRepositories>
       <pluginRepository>
@@ -2800,6 +2814,7 @@ fonctionnement de la classe qui la définit, comme dans l'exemple du
 Listing 4.1.
 
 Listing 4.1 : Une méthode main de test
+[source, java]
 -------------------------------------------------------------------------------
 public class ListeDeCoursesReader \{
 
@@ -2845,7 +2860,7 @@ fonctionnalités que possible. Le Listing 4.2 montre cette évolution de
 notre méthode de test.
 
 Listing 4.2 : Utilisation d'une bibliothèque utilitaire dans le test
-
+[source, java]
 -------------------------------------------------------------------------------
     /** Test automatique de la classe ListeDeCoursesReader */
 
@@ -2912,7 +2927,7 @@ testLectureDeuxElements et y transférer notre code de test. Le
 Listing 4.3 montre cette transformation de notre code
 
 Listing 4.3 : Utilisation de jUnit
-
+[source, java]
 -------------------------------------------------------------------------------
 import static org.junit.Assert.*;
 public class ListeDeCoursesReaderTest \{
@@ -3002,6 +3017,7 @@ Ils seront également totalement intégrés au projet et enregistrés dans
 notre gestionnaire de version.
 
 Listing 4.4 : Accès aux fichiers de test en tant que ressources
+[source, java]
 -------------------------------------------------------------------------------
     public void testLectureDeuxElements() \{
         ListeDeCoursesReader reader = new ListeDeCoursesReader();
@@ -3051,6 +3067,7 @@ ou telle bibliothèque doit être utilisée par les outils de compilation.
 Lorsque le scope porte la valeur test, il est exclu de l'application et
 ne sera utilisé que pour la compilation et l'exécution des tests.
 
+[source, xml]
 -------------------------------------------------------------------------------
     <dependency>
       <groupId>junit</groupId>
@@ -3279,7 +3296,7 @@ particulier.
 
 Listing 4.5 : Construction d'un test-jar en même temps que l'archive
 java du projet
-
+[source, xml]
 -------------------------------------------------------------------------------
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -3315,8 +3332,8 @@ référencé comme une dépendance en ajoutant l'information de classifier
 adéquate, comme le montre le Listing 4.6 qui présente le POM du projet
 de Lukas.
 
-Listing 4.6 : Utilisation d'une dépendance exploitant la notion de
-classifier
+Listing 4.6 : Utilisation d'une dépendance exploitant la notion de classifier
+[source, xml]
 -------------------------------------------------------------------------------
 <project>
   <modelVersion>4.0.0</modelVersion>
@@ -3635,7 +3652,7 @@ pénalisé, et un développeur qui travaille dessus n'aura qu'à activer le
 profil associé en ajoutant à sa ligne de commande l'option -Pgwt.
 
 Listing 5.1 : Un profil dédié aux tests GWT
-
+[source, xml]
 -------------------------------------------------------------------------------
 <build>
    <plugins>
@@ -3703,9 +3720,8 @@ système qui exécute Maven est Windows. Cette particularité est exploitée
 pour ajouter une dépendance qui n'aurait aucun sens sur un autre
 système : une bibliothèque native DLL.
 
-Listing 5.2 : Activation d'un profil en fonction du système
-d'exploitation
-
+Listing 5.2 : Activation d'un profil en fonction du système d'exploitation
+[source, xml]
 -------------------------------------------------------------------------------
    <dependencies>
        <dependency>
@@ -3786,7 +3802,7 @@ mvn -P!codestyle install
 -------------------------------------------------------------------------------
 
 Listing 5.3 : Profil contrôlant le respect des règles de codage
-
+[source, xml]
 -------------------------------------------------------------------------------
 <profile>
   <id>codestyle</id>
@@ -3871,8 +3887,8 @@ scripts DDL et enfin l'injection de données de test de référence.
 Il existe également un plugin pour DBUnit qui permet d'utiliser le
 format spécifique de celui-ci dans le même but.
 
-Listing 5.4 : Préparation d'une base de données de test "propre" avec le
-plugin SQL
+Listing 5.4 : Préparation d'une base de données de test "propre" avec le plugin SQL
+[source, xml]
 -------------------------------------------------------------------------------
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
@@ -4000,6 +4016,7 @@ plugin Mavenlink:#_ftn23[[23]] permettant d'exécuter nos tests Fitnesse
 lors de la construction du projet.
 
 Listing 5.5 : Configuration du plugin Fitnesse
+[source, xml]
 -------------------------------------------------------------------------------
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
@@ -4107,7 +4124,7 @@ minimale, il ne nous reste plus qu'à invoquer la commande mvn
 jmeter:jmeter pour envoyer à notre application les 50 requêtes par
 seconde qui vont vérifier sa bonne stabilité sous la charge :
 
-
+[source, xml]
 -------------------------------------------------------------------------------
       <plugin>
         <groupId>org.apache.jmeter</groupId>
@@ -4232,6 +4249,7 @@ mode allégé et facilement testable, d'associer au passage un classifier
 à notre artefact. Le livrable produit ne sera alors jamais en conflit
 avec son petit frère de production :
 
+[source, xml]
 -------------------------------------------------------------------------------
 <profile>
   <id>dev</id>
@@ -4247,6 +4265,7 @@ avec son petit frère de production :
         </plugin>
         ...
 -------------------------------------------------------------------------------
+
 === Conclusion
 
 Lorsqu'on pousse la logique d'outiller l'application de tests
@@ -4363,8 +4382,7 @@ Listing 6.1 : Erreur de résolution des dépendances
 -------------------------------------------------------------------------------
 [ERROR] BUILD ERROR
 [INFO] ------------------------------------------------------------------------
-[INFO] Failed to resolve artifact.
-Missing:
+[INFO] Failed to resolve artifact. Missing:
 ----------
 \1) com.oracle:ojdbc14:jar:10.2.0.2.0
   Try downloading the file manually from the project website.
@@ -4510,6 +4528,7 @@ l'environnement de développement Oracle (client natif et autres outils)
 qui comprendra entre autres le fameux pilote. Dans ce cas bien précis,
 nous pouvons indiquer une dépendance system sous la forme :
 
+[source, xml]
 -------------------------------------------------------------------------------
 <dependency>
     <groupId>com.oracle</groupId>
@@ -4541,6 +4560,7 @@ Nous pourrions aussi être tentés de détourner ce scope et d'intégrer le
 JAR dans le gestionnaire de code, ce qui permettrait à chacun d'en
 disposer d'une manière simple sans se poser plus de questions :
 
+[source, xml]
 -------------------------------------------------------------------------------
 <dependency>
     <groupId>com.oracle</groupId>
@@ -4586,6 +4606,7 @@ approprié. Il reste alors à indiquer à Maven l'emplacement de notre
 dépôt "maison", ce qui se traduit par un élément <repository> dans le
 POM :
 
+[source, xml]
 -------------------------------------------------------------------------------
 <repositories>
    <repository>
@@ -4641,12 +4662,10 @@ message d'erreur comparable, concernant cette fois l'API _Java Messaging
 Service_ (JMS pour les intimes).
 
 -------------------------------------------------------------------------------
-----
 Missing:
 ----------
 \1) javax.jms:jsm:jar:1.0.2b
   Try downloading the file manually from the project website.
-----
 -------------------------------------------------------------------------------
 
 La solution est toute trouvée, puisque le problème est équivalent à
@@ -4822,6 +4841,7 @@ C:\Documents and Settings\votreNom, et sous Windows 7 sous
 C:\Utilisateurs\votreNom. La notion de HOME est évidemment plus
 naturelle pour les "unixiens" et autres "mac'istes".
 
+[source, xml]
 -------------------------------------------------------------------------------
 <settings>
   <mirrors>
@@ -4860,6 +4880,7 @@ définir une configuration de miroir qui force Maven à passer par notre
 dépôt interne quelques soient les URL déclarées dans les éléments
 <repositories> de nos projets.
 
+[source, xml]
 -------------------------------------------------------------------------------
 <mirror>
      <id>corporate-repo</id>
@@ -4942,6 +4963,7 @@ cinq dépôts de bibliothèques, dont nous complétons au besoin le contenu
 _via_ l'interface d'administration. Notre fichier settings.xml évolue
 alors comme suit :
 
+[source, xml]
 -------------------------------------------------------------------------------
 <settings>
   <mirrors>
@@ -5101,6 +5123,7 @@ balise… <parent> ! Ce parent est lui-même considéré comme un artefact
 Maven. Il est donc identifié par le triplet groupId : artifactId :
 version.
 
+[source, xml]
 -------------------------------------------------------------------------------
 <project>
     <modelVersion>4.0.0</modelVersion>
@@ -5133,6 +5156,7 @@ configurer en un seul endroit l'utilisation de Java 5 comme cible de
 compilation.
 
 Listing 7.1 : pom parent du projet
+[source, xml]
 -------------------------------------------------------------------------------
 <project>
     <modelVersion>4.0.0</modelVersion>
@@ -5263,6 +5287,7 @@ tente de l'exclure. Il existe cependant une solution qui ressemble à un
 hack mais qui est très pratique : utiliser une version inexistante de
 cette bibliothèque, déclarée en dependencyManagement.
 
+[source, xml]
 -------------------------------------------------------------------------------
 <dependency>
     <groupId>commons-logging</groupId>
@@ -5354,6 +5379,7 @@ de vérifier que chaque plugin du projet a une version correctement
 définie.
 
 Listing 7.2 : Utilisation du plugin Enforcer
+[source, xml]
 -------------------------------------------------------------------------------
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -5748,9 +5774,7 @@ serveur de test Tomcat, nous avons droit à une erreur qui pourrait faire
 sourire si nous étions un 1^er^ avril, mais qui nous laisse perplexes :
 
 -------------------------------------------------------------------------------
-ClassCastException :
-fr.noubliepaslalistedescourses.servlets.LoginServlet is not a
-javax.servlet.Servlet
+ClassCastException : fr.noubliepaslalistedescourses.servlets.LoginServlet is not a javax.servlet.Servlet
 -------------------------------------------------------------------------------
 
 
@@ -5810,6 +5834,7 @@ La modification suivante sur nos dépendances corrige donc ce problème
 assez déboussolant et nous permet enfin de lancer l'application web sur
 notre serveur Tomcat.
 
+[source, xml]
 -------------------------------------------------------------------------------
 <dependency>
     <groupId>javax.servlet</groupId>
@@ -5849,6 +5874,7 @@ vie et produire un EJB. La seule chose que nous devrons y ajouter est la
 configuration de la version de l'API EJB que nous voulons utiliser, à
 savoir EJB3 ce qui n'est pas la valeur par défaut (2.1).
 
+[source, xml]
 -------------------------------------------------------------------------------
 <plugin>
     <groupId>org.apache.maven.plugins</groupId>
@@ -5880,6 +5906,7 @@ l'archive des classes client qui permettra d'invoquer notre EJB.
 Dans notre application web, il nous suffit donc de déclarer une nouvelle
 dépendance vers ce client pour pouvoir utiliser notre EJB :
 
+[source, xml]
 -------------------------------------------------------------------------------
 <dependency>
       <groupId>fr.noubliepaslalistedescourses</groupId>
@@ -5900,6 +5927,7 @@ référence vers notre EJB, potentiellement installé sur un autre serveur,
 voire distribué sur un cluster.
 
 Listing 8.1 : Descripteur de déploiement de notre EJB
+[source, xml]
 -------------------------------------------------------------------------------
 <?xml version="1.0"?>
 <!DOCTYPE ejb-jar PUBLIC
@@ -5934,7 +5962,7 @@ Listing 8.1 : Descripteur de déploiement de notre EJB
 -------------------------------------------------------------------------------
 
 Listing 8.2 : Descripteur de déploiement de notre application web
-
+[source, xml]
 -------------------------------------------------------------------------------
 <?xml version=_"1.0"_ encoding=_"UTF-8"_?>
 
@@ -6015,6 +6043,7 @@ mutualiser.
 À la première étape, on demande au plugin war de construire, dans les
 métadonnées de l'archive, l'indication de classpath :
 
+[source, xml]
 -------------------------------------------------------------------------------
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -6116,7 +6145,7 @@ de très haut niveau du navigateur sous contrôle, ce qui rend la
 programmation très rapide et agréable.
 
 Listing 8.3 : Test Selenium en syntaxe Java
-
+[source, java]
 -------------------------------------------------------------------------------
 import com.thoughtworks.selenium.*;
 import junit.framework.*;
@@ -6175,6 +6204,7 @@ du Listing 8.4 ; les tests seront alors rejoués à l'identique à chaque
 construction complète du projet.
 
 Listing 8.4 : Configuration du plugin Selenium
+[source, xml]
 -------------------------------------------------------------------------------
 <plugin>
     <groupId>org.codehaus.mojo</groupId>
@@ -6222,8 +6252,8 @@ adéquate. Le Listing 8.5 montre la configuration dans le fichier POM qui
 met en œuvre cette stratégie. Les tests Selenium sont suffixés Selenium
 au lieu de Test pour les différencier.
 
-Listing 8.5 : Configuration du plugin Surefire pour exécuter nos tests
-Selenium
+Listing 8.5 : Configuration du plugin Surefire pour exécuter nos tests Selenium
+[source, xml]
 -------------------------------------------------------------------------------
   <plugin>
     <artifactId>maven-surefire-plugin</artifactId>
@@ -6297,6 +6327,7 @@ JBoss, qui nous permet de définir l'accès à notre base de données de
 test.
 
 Listing 8.6 : Configuration du plugin Cargo
+[source, xml]
 -------------------------------------------------------------------------------
 <plugin>
   <!--
@@ -6412,6 +6443,7 @@ la foulée. Le Listing 8.7 montre, par exemple, le code excessivement
 complexe J qui permet de lancer notre EJB au sein d'un test unitaire.
 
 Listing 8.7 : Lancement d'OpenEJB embarqué dans un test
+[source, java]
 -------------------------------------------------------------------------------
 @Test
 Public void testMonEJB() throws Exception
@@ -6457,6 +6489,7 @@ Reprenons donc notre EJB ListeDeCoursesBean, et faisons appel à
 Arquillian pour le tester sur un serveur JBoss. Du côté de notre bluid
 Maven, l’ajout de la dépendance adéquate s’impose d’elle même :
 
+[source, xml]
 -------------------------------------------------------------------------------
 <dependency>
    <groupId>org.jboss.arquillian</groupId>
@@ -6468,7 +6501,7 @@ Maven, l’ajout de la dépendance adéquate s’impose d’elle même :
 
 Quelques annotations dans une classe de test jUnit suffisent pour
 rédiger notre test d’EJB :
-
+[source, java]
 -------------------------------------------------------------------------------
 @RunWith( Arquillian.class )
 
@@ -6517,6 +6550,7 @@ basant sur les librairies disponibles dans le projet; il nous suffit
 donc d’ajouter les dépendances JBoss adaptées, à savoir le composant
 apportant le support de JBoss 6 en mode embarqué :
 
+[source, xml]
 -------------------------------------------------------------------------------
 <dependency>
     <groupId>org.jboss.arquillian.container</groupId>
@@ -7830,6 +7864,7 @@ En dehors des considérations esthétiques, notre parent n’est plus dans
 le répertoire … parent de chaque module. Maven nous permet de définir un
 chemin relatif pour palier à cela :
 
+[source, xml]
 -------------------------------------------------------------------------------
 <parent>
     <groupId>fr.noubliepaslalistedescourses</groupId>
@@ -9045,6 +9080,7 @@ $$$ deux colonnes côte à côte$$$
 
 $$$ 1ere colonne $$$image:illustrations/MangaVincentS.png[float="left"]
 
+[source, java]
 -------------------------------------------------------------------------------
 public class ListeDesCourses implements Data \{
 
@@ -9061,7 +9097,7 @@ public class ListeDesCourses implements Data \{
 -------------------------------------------------------------------------------
 
 $$$ 2^e^ colonne $$$image:illustrations/MangaHerve.png[float="left"]
-
+[source, java]
 -------------------------------------------------------------------------------
 public class ListeDesCourses
     implements Data
@@ -9405,7 +9441,7 @@ javadoc et le code source du projet, navigable sous forme de pages web
 (« Cross Reference »).
 
 Listing 12.2 : Configuration de nos plugins de production de raports
-
+[source, xml]
 -------------------------------------------------------------------------------
   <build>
     <plugins>
@@ -9442,7 +9478,7 @@ principales pages documentaires. Le Listing 12.3 montre celui mis en
 place par Lukas pour notre projet.
 
 Listing 12.3 : Le descripteur de notre site
-
+[source, xml]
 -------------------------------------------------------------------------------
 <?xml version="1.0" encoding="UTF-8"?>
 
@@ -9670,7 +9706,7 @@ est plus simple de les configurer comme telles et d'invoquer la tâche
 mvn sonar:sonar.
 
 Listing 12.4 : Configuration du plugin _Sonar_
-
+[source, xml]
 -------------------------------------------------------------------------------
  <profile>
       <id>sonar</id>
@@ -9807,6 +9843,7 @@ serveur d'intégration continue, afin de ne pas perturber les autres
 environnements.
 
 Listing 13.1 : Exploiter le numéro de construction de Hudson
+[source, xml]
 -------------------------------------------------------------------------------
 <profile>
   <id>integration-continue</id>
@@ -9850,6 +9887,7 @@ déclenché dans la phase prepare-package disponible dans Maven 2.1 et
 versions ultérieures.
 
 Listing 13.2 : Obtenir le numéro de révision SVN
+[source, xml]
 -------------------------------------------------------------------------------
 <build>
   <plugins>
@@ -9920,6 +9958,7 @@ perturber le fonctionnement de Maven sur les postes de développement (le
 plugin buildnumberlink:#_ftn45[[45]] n'est pas très performant).
 
 Listing 13.3 : Ajout de métadonnées dans le MANIFEST
+[source, xml]
 -------------------------------------------------------------------------------
       <profile>
          <id>integration-continue</id>
@@ -10058,6 +10097,7 @@ Le Listing 13.4 montre la configuration de ce plugin mis en place par
 Olivier et Stéphane.
 
 Listing 13.4 : Mise en place d'une signature GPG
+[source, xml]
 -------------------------------------------------------------------------------
 <project>
   ...
@@ -10157,6 +10197,7 @@ nous fera franchir la dernière ligne droite avant une production 100 %
 automatisée de notre livrable.
 
 Listing 13.5 : Le fichier _assembly_
+[source, xml]
 -------------------------------------------------------------------------------
 <?xml version="1.0" encoding="UTF-8"?>
 <assembly xmlns="http://maven.apache.org/POM/4.0.0"
@@ -10247,8 +10288,8 @@ assembly:single à une phase du projet, et il sera invoqué
 automatiquement lors de sa construction. Le Listing 13.6 indique la
 configuration que nous appliquons.
 
-Listing 13.6 : Invocation du _assembly:single_ au cours de la
-construction du projet
+Listing 13.6 : Invocation du _assembly:single_ au cours de la construction du projet
+[source, xml]
 -------------------------------------------------------------------------------
 <plugins>
   <plugin>
@@ -10303,6 +10344,7 @@ nouveau fichier, particulièrement simple comparé au volume de XML que
 Maven peut parfois nous demander de saisir.
 
 Listing 13.7 : Un POM dédié à l'assembly
+[source, xml]
 -------------------------------------------------------------------------------
 <project>
   <modelVersion>4.0.0</modelVersion>
@@ -10451,6 +10493,7 @@ associés aux règles dont les développeurs ont assimilé l'intérêt. Le
 Listing 14.1 montre le POM parent que nous proposons pour Geegol.
 
 Listing 14.1 : Un POM d'entreprise pour Geegol
+[source, xml]
 -------------------------------------------------------------------------------
 <project xmlns="http://maven.apache.org/POM/4.0.0"
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -10586,6 +10629,7 @@ template = archetype-resources/src/main/java/EchoMojo.java [line
 [INFO] BUILD SUCCESSFUL
 [INFO] ------------------------------------------------------------------------
 -------------------------------------------------------------------------------
+
 Listing 14.3 : Structure de fichiers générée
 -------------------------------------------------------------------------------
 D:\demo-maven-plugin>dir
@@ -10964,6 +11008,7 @@ image:illustrations/MangaEmmanuel.png[float="left"]
 Un autre souci concerne les expressions, qui permettent de mutualiser
 des numéros de version comme dans l'exemple ci-après :
 
+[source, xml]
 -------------------------------------------------------------------------------
 <groupId>org.springframework</groupId>
 <artifactId>spring-jms</artifactId>
@@ -11275,6 +11320,7 @@ Grégory pour la mise en place d’un projet Java. La syntaxe est
 particulièrement compacte.
 
 Listing 15.x : Un script simple de build Gradle
+[source, groovy]
 -------------------------------------------------------------------------------
 usePlugin 'java'
 sourceCompatibility = 1.5
@@ -11683,6 +11729,7 @@ l’outillage avancé permettant d’éditer le POM dans votre IDE n’est pas
 compatible avec cette syntaxe.
 
 Listing 15.1 : Un POM Maven 3 exprimé en Scala
+[source, scala]
 -------------------------------------------------------------------------------
 // pom.scala
 project( "com.macompagnie:monprojet:1.0-SNAPSHOT" \{ proj =>
@@ -12170,6 +12217,7 @@ s’en est servi avec succès pour convertir en bundles une large gamme de
 projets, dans le cadre du projet Spring Dynamic Modules.
 
 Listing 16.1 génération du MANIFEST OSGi depuis Maven
+[source, xml]
 -------------------------------------------------------------------------------
 <plugin>
     <groupId>org.apache.felix</groupId>
@@ -12263,8 +12311,8 @@ Admettons, et alors ? Pascal nous montre alors le fichier POM qu’il a
 utilisé pour construire le prototype de notre client lourd, présenté au
 listing 16.2.
 
-Listing 16.2 : POM suffisant pour construire nos composants Eclipse PDE
-avec Maven
+Listing 16.2 : POM suffisant pour construire nos composants Eclipse PDE avec Maven
+[source, xml]
 -------------------------------------------------------------------------------
 <project>
     <modelVersion>4.0.0</modelVersion>
@@ -12319,6 +12367,8 @@ la configuration nécessaire dans le projet parent – petit cachotier va.
 D’une part, le composant principal de Tycho, tycho-maven-plugin, qui se
 charge d’étendre et de reconfigurer Maven pour utiliser les mécanismes
 OSGi là où ils sont plus judicieux que le build Maven standard :
+
+[source, xml]
 -------------------------------------------------------------------------------
 <plugin>
     <groupId>org.sonatype.tycho</groupId>
@@ -12337,6 +12387,8 @@ dépendance est enrichie d’un nouveau format de dépôt, en plus du default
 et du legacy (dépôts maven1, obsolètes et plus supportés par Maven 3),
 le format p2. C’est ce qui permet à Pascal de référencer les bundles
 d’Eclipse Indigo, sur lequel est basé son client Eclipse RCP.
+
+[source, xml]
 -------------------------------------------------------------------------------
 <repositories>
        <repository>
@@ -12373,6 +12425,7 @@ bien les deux, quand on aime on ne compte pas. C’est ce qui permettra
 par exemple d’accéder aux bundles OSGi de Spring qui sont distribués
 dans un dépôt Maven.
 
+[source, xml]
 -------------------------------------------------------------------------------
 <plugin>
     <groupId>org.sonatype.tycho</groupId>
@@ -12401,6 +12454,7 @@ maven-compiler-plugin, nous pouvons au besoin le déclarer explicitement
 pour enrichir sa configuration, par exemple activer le support Java 7,
 parce que mince, on est plus au moyen âge :
 
+[source, xml]
 -------------------------------------------------------------------------------
 <plugin>
          <groupId>org.sonatype.tycho</groupId>
@@ -12440,6 +12494,7 @@ tycho permettent de limiter cette tâche complexe à quelques déclarations
 simples, comme le montre le listing 16.3.
 
 Listing 16.3 : Gestion du packaging OSGi avec un plugin Tycho dédié
+[source, xml]
 -------------------------------------------------------------------------------
 <plugin>
     <groupId>org.sonatype.tycho</groupId>
@@ -12533,6 +12588,7 @@ Jigsaw vise à faire disparaître la notion de chemin des classes
 (classpath) au profit d’une approche déclarative et totalement
 automatisée. Mark nous présente un exemple de descripteur de
 dépendance :
+
 -------------------------------------------------------------------------------
 module com.myapp @ 1.0.0 \{
     requieres org.foo >= 3.0;
@@ -12847,6 +12903,7 @@ commentaire Javadoc. Issue d'une époque révolue, cette règle part du
 principe que tout code public doit être accompagné d'un commentaire
 explicatif. Elle va nous amener à écrire ce genre de chose :
 
+[source, java]
 -------------------------------------------------------------------------------
 /**
  * affecte le prenom
@@ -12862,12 +12919,16 @@ pertinence du commentaire ou la clarté du nom de la méthode !
 Sincèrement, tout développeur préférera, même sans commentaire Javadoc,
 une méthode nommée :
 
+[source, java]
+-------------------------------------------------------------------------------
 resilierContrat( long idContrat ) throws ImpayesEnCoursException 
+-------------------------------------------------------------------------------
 
 Plutôt qu'une méthode équivalente utilisant un vocabulaire obscur, mais
 largement accompagnée de commentaires et qui satisfait nos outils
 d'analyse :
 
+[source, java]
 -------------------------------------------------------------------------------
 /**
  * Résiliation du contrat
@@ -13157,9 +13218,8 @@ pour désactiver les étapes non indispensables de la construction du
 projet. Le Listing 16.1 montre l'activation d'un profil exclusivement en
 dehors de m2eclipse.
 
-Listing 16.1 un profil pour éviter les plugins trop consommateurs sous
-m2eclipse
-
+Listing 16.1 un profil pour éviter les plugins trop consommateurs sous m2eclipse
+[source, xml]
 -------------------------------------------------------------------------------
 <profile>
   <id>not-m2e</id>
@@ -13182,8 +13242,8 @@ m2eclipse, à utiliser la version SNAPSHOT du plugin de gestion des
 ressources (qui gère ce mode incrémental) et à activer le configurateur
 m2eclipse associé aux projets Java.
 
-Listing 16.2 un profil pour activer le cycles de vie reconfigurable de
-m2eclise 0.9.9
+Listing 16.2 un profil pour activer le cycles de vie reconfigurable de m2eclise 0.9.9
+[source, xml]
 -------------------------------------------------------------------------------
 <profile>
       <id>m2e</id>
