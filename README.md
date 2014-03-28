@@ -19,7 +19,7 @@ Build
 
 Pour produire les chapitres au format html, utilisez la configuration par défaut d'AsciiDoc
 
-  asciidoc maven.adoc
+    asciidoc maven.adoc
   
 Nous étudions la génération d'un PDF et d'un format ePub.
 Un build maven est également à votre disposition si vous y tennez vraiment :)  
@@ -49,10 +49,10 @@ Le projet [asciidoc-dvp-mavenbook](https://github.com/mickaelbaron/asciidoc-dvp-
 
 Executer l'instructions suivante :
 
-    # asciidoc -a revdate=2014-02-20 -d book -f dvp.conf -o book-apachemaven.xml maven.adoc
+    asciidoc -a revdate=2014-02-20 -d book -f dvp.conf -o book-apachemaven.xml maven.adoc
 
 Cela va construire un fichier _book-apachemaven.xml_ à partir du fichier asciidoc _maven.adoc_. L'attribut _revdate_ permet d'indiquer la date de revision.
 
 Le format Developpez.com impose que l'encodage du contenu soit en ISO-8859-1. L'outil _recode_ sera utilisé pour réaliser cet encodage.
 
-    #recode -v -d utf8..latin1 book-apachemaven.xml
+    recode -v -d utf8..latin1 book-apachemaven.xml
