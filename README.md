@@ -38,6 +38,8 @@ Si vous voulez contribuer de manière plus active, nous mettons à disposition u
 
 Ouvrez ensuite votre navigateur préféré avec un plugin LiveReload ou équivalent, et vous aurez en temps réel le rendu de vos modifications.
 
+Une autre solution est d'utiliser l'extension AsciiDoctor.js Live Preview pour [Chrome](https://chrome.google.com/webstore/detail/asciidoctorjs-live-previe/iaalpfgpbocpdfblpnhhgllgbdbchmia) ou [FireFox](https://addons.mozilla.org/en-US/firefox/addon/asciidoctorjs-live-preview/). Une fois l'extension installée vous n'avez plus qu'à ouvrir le fichier .adoc localement dans votre navigateur (pour chrome n'oubliez pas d'autoriser l'extension à fonctionner avec les fichiers locaux dans le gestionnaire d'extensions).
+
 Générer d'autres formats ?
 ==========================
 
