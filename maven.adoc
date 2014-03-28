@@ -1,5 +1,7 @@
 Apache Maven
 ============
+Nicolas De loof
+Arnaud Héritier
 
 Préface de la troisième édition
 -------------------------------
