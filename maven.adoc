@@ -2,12 +2,13 @@ Apache Maven
 ============
 Nicolas De loof, Arnaud Héritier
 v3.0, 2014
+:toc:
 :doctype: book
 
-:toc:
 
+[preface]
 Préface de la troisième édition
--------------------------------
+===============================
 
 image:illustrations/MangaNicolas.png[float="left"]
 
@@ -48,8 +49,9 @@ image:illustrations/license.png[align="center"]
 
 _Nicolas de Loof_
 
+[preface]
 Préface de la seconde édition
------------------------------
+=============================
 
 image:illustrations/MangaNicolas.png[float="left"]
 
@@ -102,8 +104,9 @@ Nous espérons que les pages qui suivent vous aideront à prendre en main
 Maven et à en comprendre la richesse et la philosophie, qui en font un
 outil sans équivalent.
 
+[preface]
 Avant-propos
-------------
+============
 
 image:illustrations/MangaNicolas.png[float="left"]
 
