@@ -766,8 +766,8 @@ faire des comparaisons de versions et de trier celles-ci pour identifier
 automatiquement la plus récente. SNAPSHOT est un mot clé réservé de
 Maven, dont nous décrirons la fonction par la suite.
 
-Astuce
-
+[TIP]
+====
 Le numéro de version est un concept délicat et changeant selon les
 organisations et la sensibilité de chacun. Nous vous recommandons une
 notation purement numérique qui facilite les comparaisons, selon la
@@ -784,6 +784,7 @@ Release Candidate (version quasi finale), "GA" pour General Availability
 pour une version diffusée au public. Cet usage peut porter préjudice au
 projet car dans la comparaison purement alphabétique, "GA" est inférieur
 à "RC" !
+====
 
 La deuxième partie du POM concerne la construction du projet :
 
@@ -1141,8 +1142,8 @@ synchronisation qui en découleraient. Mettre à jour une bibliothèque
 consiste tout simplement à modifier l'information de version qui lui est
 associée.
 
-Astuce
-
+[TIP]
+====
 Les bibliothèques standard de Java sont hébergées par SUN et devraient
 donc être placées sous le groupe com.sun.java. Elles ne peuvent
 cependant pas être considérées comme des fournitures appartenant à cet
@@ -1150,6 +1151,7 @@ cependant pas être considérées comme des fournitures appartenant à cet
 le nom de package javax.* qui caractérise ces API. Par ailleurs, il
 existe de nombreuses exceptions pour des raisons historiques liées à la
 première mouture de Maven.
+====
 
 ==== Dépôt de bibliothèques
 
@@ -2104,8 +2106,8 @@ ajoutons :
 </build>
 -------------------------------------------------------------------------------
 
-Astuce
-
+[TIP]
+====
 Vous constaterez, si vous utilisez un éditeur XML, que l'élément version
 n'est pas obligatoire pour les plugins. Le comportement de Maven se
 traduit alors par prendre la "dernière version stable disponible". C’est
@@ -2117,6 +2119,7 @@ il est fortement recommandé de toujours spécifier la version de vos
 plugins. À partir de Maven 2.0.9, ceux qui sont utilisés par défaut dans
 le build Maven ont une version prédéfinie en interne pour éviter ce
 piège.
+====
 
 Au lancement de Maven, nous constatons avec plaisir le téléchargement de
 fichiers POM et JAR associés au plugin Groovy. Voici une autre
@@ -2424,8 +2427,8 @@ petit guide du développeur de service web qui répond à nos questions (et
 donc pas besoin de le déranger d'urgence durant ses vacances bien
 méritées).
 
-Astuce
-
+[TIP]
+====
 Nous ne doutons pas que, sur vos projets, vous disposiez d'une
 documentation très complète et toujours à jour pour décrire ces
 procédures. Pensez tout de même au temps que nécessite la maintenance de
@@ -2436,6 +2439,7 @@ Cela ne signifie pas pour autant que Maven rende un système documentaire
 inutile. Cependant, autant que possible, automatisez et simplifiez les
 choses et ayez plutôt le réflexe wiki que document de synthèse validé
 par quinze relecteurs.
+====
 
 Maven propose une autre approche à ce problème, une fois de plus _via_
 ses plugins. Rappelons que, pour Maven, le répertoire src ne doit
@@ -3037,8 +3041,8 @@ Listing 4.4 : Accès aux fichiers de test en tant que ressources
         ...
 -------------------------------------------------------------------------------
 
-Astuce
-
+[TIP]
+====
 Ce mécanisme d'accès aux ressources est celui que nous vous recommandons
 d'utiliser autant que possible. Cela s'applique lorsque vous manipulez
 un type abstrait comme java.io.InputStream, java.net.URL, ou encore la
@@ -3054,6 +3058,7 @@ donc :
 File basedir = new File( System.getProperty( "basedir", "" )  ).getAbsoluteFile();
 File monFichier = new File( basedir, "chemin/relatif" ) ;
 -------------------------------------------------------------------------------
+====
 
 ==== Le scope "test"
 
@@ -4631,12 +4636,13 @@ POM :
 </repositories>
 -------------------------------------------------------------------------------
 
-Astuce
-
+[TIP]
+====
 Plutôt que de regrouper nos déclarations de dépôts dans la
 configuration, nous pouvons les placer dans le fichier settings.xml
 utilisé pour configurer Maven. Le gestionnaire de dépôt Nexus peut même
 générer ce fichier avec les déclarations adéquates.
+====
 
 ==== Contrôle d'identité, vos papiers s'il vous plaît !
 
@@ -4888,8 +4894,8 @@ dupliqués en de nombreux endroits, sans qu'aucun outil d'audit nous en
 informe. Bref, cette solution n’apporte rien de plus, il faut un outil
 dédié.
 
-Astuce
-
+[TIP]
+====
 En environnement d’entreprise, on désire souvent éviter de dépendre de
 ressources Internet non maîtrisées. Une solution consiste alors à
 définir une configuration de miroir qui force Maven à passer par notre
@@ -4904,6 +4910,7 @@ dépôt interne quelques soient les URL déclarées dans les éléments
     <mirrorOf>*</mirrorOf>
 </mirror>
 -------------------------------------------------------------------------------
+====
 
 ==== Un gestionnaire d'artefacts
 
@@ -4992,8 +4999,8 @@ alors comme suit :
 <settings>
 -------------------------------------------------------------------------------
 
-Astuce
-
+[TIP]
+====
 La syntaxe <mirrorOf>*</ mirrorOf> permet d'intercepter toute tentative
 de Maven d'accéder à un dépôt quel qu'il soit, et de la rediriger vers
 notre gestionnaire. Nous sommes ainsi assurés qu'aucune bibliothèque ne
@@ -5006,6 +5013,7 @@ mirrorOf> et définissez un second miroir pour chacun des dépôts snapshot
 auxquels vous accédez.
 
 Figure 06-02
+====
 
 Configuration d'un dépôt dans Nexus.
 
@@ -5153,12 +5161,13 @@ version.
 </project>
 -------------------------------------------------------------------------------
 
-Astuce
-
+[TIP]
+====
 Le fait de déclarer un parent permet de supprimer l'information de
 groupId et de version que nous partageons avec lui. C'est une pratique
 très courante qui assure par la même occasion l'homogénéité des
 sous-projets avec leur parent commun.
+====
 
 ==== Packaging d'un POM parent
 
@@ -5239,8 +5248,8 @@ organiser facilement son information en rassemblant tous ses projets
 sous une arborescence commune, dont la racine hébergera un majestueux
 corporate POM.
 
-Astuce
-
+[TIP]
+====
 Cela est particulièrement efficace si vous utilisez un gestionnaire de
 version du code comme Subversion. Celui-ci permet, en effet, de définir
 des alias, permettant de construire une structure virtuelle. Il est
@@ -5253,6 +5262,7 @@ utiliser d'autres conventions et affecter à la balise <relativePath> le
 chemin qui vous convient. Vous perdrez cependant les avantages des
 conventions : plus de configuration, obligation pour chaque nouvel
 arrivant de s'adapter aux habitudes locales.
+====
 
 === Mutualiser
 
@@ -5295,8 +5305,8 @@ la gestion transitive des dépendances, et même si nous ne l'utilisons
 pas explicitement dans nos projets, nous pouvons tout de même imposer
 l’utilisation d’une version précise _via_ le dependencyManagement.
 
-Astuce
-
+[TIP]
+====
 La bibliothèque commons-logging est extrêmement répandue et pourtant
 décriée par certains. Il est donc difficile de l'exclure d'un projet car
 la transitivité des dépendances la fait réapparaître chaque fois qu'on
@@ -5318,6 +5328,7 @@ Cette version "pirate" de commons-logging est disponible dans le
 repository Maven de JBoss. L'utilisation du scope provided nous permet
 d'être sûrs qu'elle ne sera pas ajoutée dans nos livrables de type WAR
 ou EAR.
+====
 
 La gestion centralisée des versions est une pratique simple qui assure
 la cohérence des projets décomposés en modules. Elle n'empêche pas au
@@ -6715,8 +6726,8 @@ bénéficier d'un environnement léger et raisonnablement réactif. Elle
 montre surtout que WTP a raté sa cible en apportant certes le support
 JavaEE sous Eclipse, mais en choisissant la voix la moins productive.
 
-Astuce
-
+[TIP]
+====
 La seule option pour aller encore plus vite est de permettre la
 modification à chaud des classes de l'application web, ce qui économise
 le temps de rechargement de l'application. Le HotSwap de la machine
@@ -6731,6 +6742,7 @@ que JRebel est intégré et les plugins qu’il a activé en fonction des
 technologies utilisées dans le projet (Spring, Wicket, Hibernate, etc).
 En dehors de cela, rien de notable… sauf que l’application prend en
 compte toutes vos modifications de code ou de configuration sans délai !
+====
 
 === JavaEE6
 
@@ -7617,14 +7629,15 @@ image:illustrations/10-01.png[align="center"]
 
 Étapes réalisées par le plugin release_._
 
-Astuce
-
+[TIP]
+====
 Cette procédure est loin d'être élémentaire et il y a donc de nombreuses
 raisons qu'elle plante en cours de route avant d'être complètement au
 point. Le plugin propose un mode dryRun qui permet de l'exécuter à
 blanc, sans qu'aucune modification soit appliquée dans le gestionnaire
 de code source, le temps de bien mettre au point la configuration du
 plugin.
+====
 
 ==== Et si ça foire ?
 
@@ -7937,13 +7950,14 @@ synchrone avec le reste du projet.
 
 link:#_msocom_4[[A4]] 
 
-Astuce
-
+[TIP]
+====
 Si tout cela vous semble encore bien acrobatique, faites comme nous :
 passez à Git ! Subversion est le seul gestionnaire de code à ne pas
 supporter nativement les notions branches et de tag. Ce n’est ni la
 seule, ni la meilleure raison de migrer, mais ça peut en faire une de
 plus.
+====
 
 Le jour de la release d’un des modules, il suffit de le considérer comme
 un module isolé, qui dispose de son propre cycle de vie. Et pour assurer
@@ -7954,8 +7968,8 @@ bien les dernières versions SNAPSHOT, et inversement
 mvn versions:use-releases pour utiliser la dernière release disponible
 d’un module ayant un cycle de vie indépendant.
 
-Astuce
-
+[TIP]
+====
 Le plugin versions
 (http://mojo.codehaus.org/versions-maven-plugin[http://mojo.codehaus.org/versions-maven-plugin])
 devient rapidement indispensable pour gérer de gros projets, incluant un
@@ -7964,6 +7978,7 @@ numéro de version, SNAPSHOT ou non, sans risquer de faire de fausse
 manipulations. Accessoirement, il gère un fichier backup des POM
 modifiés, qui permet à tout moment de revenir en arrière en cas de
 fausse manipulation.
+====
 
 === Au-delà de l'intégration continue
 
@@ -8246,11 +8261,12 @@ La première étape nécessite de créer un projet Maven pour notre plugin.
 Ce projet est tout ce qu'il y a de plus classique, à la seule exception
 de son type d'assemblage, qui est maven-plugin.
 
-Astuce
-
+[TIP]
+====
 Pour créer rapidement un plugin Maven, vous pouvez exploiter un
 archétype, mais nous en reparlerons au Chapitre 14, alors ne brûlons pas
 les étapes…
+====
 
 Listing 11.2 : En-tête POM du plugin documentaire
 
@@ -8635,8 +8651,8 @@ private List<Artifact> pluginArtifacts;
     }
 -------------------------------------------------------------------------------
 
-Astuce
-
+[TIP]
+====
 En étant puristes, nous aurions dû construire notre royaume en n'y
 incluant que gea-check et ses dépendances, alors que nous y plaçons
 toutes les dépendances du plugin. Techniquement parlant, les API de
@@ -8644,6 +8660,7 @@ manipulation d'artefacts et de gestion des dépendances le permettent
 mais c'est inutilement compliqué. Dans notre cas, le plugin est
 totalement fonctionnel et quelques classes en trop ne perturbent pas
 GEACheck.
+====
 
 Il ne reste plus à Hervé qu'à utiliser le ClassLoader que nous venons de
 construire pour charger l'outil GEACheck et à l'invoquer avec la liste
@@ -8894,13 +8911,14 @@ Listing 11.8 : Pseudo-POM chargé lors du test
 </project>
 -------------------------------------------------------------------------------
 
-Astuce
-
+[TIP]
+====
 Dans le Listing 11.7, nous utilisons un bouchon de la classe
 MavenProject. Le plugin plugin-testing-harness propose également des
 objets bouchons pour de nombreuses autres classes de l'API Maven, ce qui
 permet de construire des tests unitaires qui nécessitent (par exemple)
 des manipulations d'artefacts.
+====
 
 ==== Plugin _invoker_
 
@@ -10279,8 +10297,8 @@ Le format de ce fichier utilise un schéma XML qui nous assistera dans sa
 saisie et qui est largement documenté sur le site web du
 pluginlink:#_ftn47[[47]].
 
-Astuce
-
+[TIP]
+====
 Le plugin assembly propose quelques descripteurs types pour des usages
 courants, comme produire, en parallèle du livrable, un ZIP des sources.
 Un autre assembly qui pourra être utile est le jar-with-dependencies qui
@@ -10288,6 +10306,7 @@ construit un gros JAR du projet avec toutes ses dépendances. C'est bien
 pratique si on doit fournir des outils en ligne de commande (traitements
 batch, par exemple), dont le lancement pourra alors se résumer à java
 -jar monJar.
+====
 
 Pour produire notre livrable tant désiré, il nous suffit de lancer la
 commande mvn assembly:assembly. Nous l'avons déjà vu, cette syntaxe
@@ -10475,8 +10494,8 @@ plugins, de versions de dépendances et les autres paramètres applicables
 à nos deux projets. De la même façon, nos classes peuvent être déplacées
 dans un projet indépendant, dont nous partagerons le développement.
 
-Astuce
-
+[TIP]
+====
 L'élément <dependencyManagement> permet de déclarer de manière globale
 les versions utilisées pour les dépendances. Un projet qui hérite de
 dependencyManagement n’est affecté d’aucune dépendance particulière ;
@@ -10489,6 +10508,7 @@ fonctionnement a été validé et pour éviter à chacun de chercher quelle
 version d'EHCache est compatible avec hibernate-entitymanager x.y.z.
 
 Il en est de même avec les plugins _via_ l'élément pluginManagement.
+====
 
 ==== Qui paye ?
 
