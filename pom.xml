@@ -21,12 +21,7 @@
               <goal>copy-resources</goal>
             </goals>
             <configuration>
-              <outputDirectory>${basedir}/target/html/illustrations</outputDirectory>
-              <resources>
-                <resource>
-                  <directory>illustrations</directory>
-                </resource>
-              </resources>
+              <outputDirectory>${project.build.directory}/html/illustrations</outputDirectory>
             </configuration>
           </execution>
           <execution>
@@ -36,16 +31,19 @@
               <goal>copy-resources</goal>
             </goals>
             <configuration>
-              <outputDirectory>${basedir}/target/docbook/illustrations</outputDirectory>
-              <resources>
-                <resource>
-                  <directory>illustrations</directory>
-                </resource>
-              </resources>
+              <outputDirectory>${project.build.directory}/docbook/illustrations</outputDirectory>
             </configuration>
           </execution>
         </executions>
+        <configuration>
+          <resources>
+            <resource>
+              <directory>illustrations</directory>
+            </resource>
+          </resources>
+        </configuration>
       </plugin>
+      <!-- Generation asciidoc -> docbook / HTML -->	  
       <plugin>
         <groupId>org.asciidoctor</groupId>
         <artifactId>asciidoctor-maven-plugin</artifactId>
@@ -82,37 +80,49 @@
           <imagesDir>illustrations</imagesDir>
         </configuration>
       </plugin>
-	  <!-- Generation AsciiDoc PDF - Demande ++ de nettoyage du document (liens ...) -->
+      <!-- Generation docbook -> PDF / ePub -->
       <plugin>
         <groupId>com.agilejava.docbkx</groupId>
         <artifactId>docbkx-maven-plugin</artifactId>
         <version>2.0.14</version>
         <executions>
           <execution>
-            <id>doc</id>
+            <id>pdf</id>
             <phase>package</phase>
             <goals>
               <goal>generate-pdf</goal>
             </goals>
+            <configuration>
+              <targetDirectory>target/pdf</targetDirectory>
+            </configuration>
+          </execution>
+          <execution>
+            <id>epub</id>
+            <phase>package</phase>
+            <goals>
+              <goal>generate-epub</goal>
+            </goals>
+            <configuration>
+              <targetDirectory>target/epub</targetDirectory>
+            </configuration>
           </execution>
         </executions>
         <dependencies>
           <dependency>
             <groupId>net.sf.xslthl</groupId>
             <artifactId>xslthl</artifactId>
-            <version>2.0.2</version>
+            <version>2.1.0</version>
             <scope>runtime</scope>
           </dependency>
           <dependency>
             <groupId>net.sf.offo</groupId>
             <artifactId>fop-hyph</artifactId>
-            <version>1.2</version>
+            <version>2.0</version>
             <scope>runtime</scope>
           </dependency>
         </dependencies>
         <configuration>
           <sourceDirectory>target/docbook</sourceDirectory>
-          <targetDirectory>target/pdf</targetDirectory>
           <xincludeSupported>true</xincludeSupported>
           <useExtensions>1</useExtensions>
           <highlightSource>1</highlightSource>
