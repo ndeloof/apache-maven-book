@@ -186,11 +186,10 @@ français, j'ai commencé par me demander si cela en valait la peine.
 Certes, la documentation du produit est critiquable. Elle est très
 dispersée, et il est souvent difficile de trouver l'information utile
 lorsqu'on ne sait pas où la chercher entre le site web du
-projet link:#_ftn1[[1]], ses nombreux plugins et son
-wiki link:#_ftn2[[2]]. Pourtant, il existe désormais deux ouvrages en
+projet footnote:[http://maven.apache.org], ses nombreux plugins et son
+wiki footnote:[http://docs.codehaus.org/display/MAVENUSER]. Pourtant, il existe désormais deux ouvrages en
 anglais disponibles gratuitement sur la Toile pour combler ces manques :
-_Better Builds with Maven_ link:#_ftn3[[3]], publié en 2006, et _Maven :
-The Definitive Guide_ link:#_ftn4[[4]], publié en 2007 et régulièrement
+_Better Builds with Maven_ footnote:[MaestroDev (http://www.maestrodev.com)], publié en 2006, et _Maven : The Definitive Guide_ footnote:[Sonatype, Inc. (http://www.sonatype.com)], publié en 2007 et régulièrement
 mis à jour. Alors qu'apporter de plus qu'une simple traduction en
 français de ces ouvrages ?
 
@@ -381,8 +380,7 @@ nous en faire une idée :
 
 [NOTE]
 ====
- link:#_ftn5[[5]]
-Ant est un projet open-source de la fondation Apache, écrit en Java, qui
+Ant footnote:[Source : http://fr.wikipedia.org/wiki/Apache_Ant] est un projet open-source de la fondation Apache, écrit en Java, qui
 vise le développement d'un logiciel d'automatisation des opérations
 répétitives tout au long du cycle de développement logiciel, à l'instar
 des logiciels Make.
@@ -1018,7 +1016,7 @@ solution viable : la mise à jour de cette bibliothèque dans une version
 plus récente.
 
 Le téléchargement de la distribution JavaMail depuis le site de
-SUN link:#_ftn6[[6]] donne un fichier ZIP contenant à la fois les
+SUN footnote:[http://java.sun.com/products/javamail/] donne un fichier ZIP contenant à la fois les
 binaires et la documentation de cette API ; les**binaires, car JavaMail
 regroupe en fait plusieurs archives JAR, à savoir mail.jar, mais aussi
 mailapi.jar. La première contient l'ensemble du code public JavaMail
@@ -1367,7 +1365,7 @@ de la classe similaire de Spring
 org.springframework.util.Assert#notNull(). La gestion automatique des
 imports par notre environnement de développement intégré est bien
 pratique mais elle peut parfois avoir des effets
-pervers link:#_ftn7[[7]]. Comment se fait-il que cette erreur
+pervers footnote:[Ne riez pas, il s'agit d'un cas bien réel, identifié lors de la migration du projet sous Maven !]. Comment se fait-il que cette erreur
 d'étourderie soit passée au travers des mailles de notre (excellent)
 suivi qualité ? Ou plutôt, comment se fait-il que notre outillage
 qualité ait pu ajouter des bogues à notre application ?
@@ -1651,7 +1649,7 @@ Downloading: http://repo1.maven.org/maven2/org/geeks/jcr-on-cassandra/1.8.0.10/j
 [INFO] ------------------------------------------------------------------------
 -------------------------------------------------------------------------------
 
-« WTF ? » comme on dit outre-atlantique link:#_ftn8[[8]], ce que nous ne
+« WTF ? » comme on dit outre-atlantique footnote:[Je vous laisse chercher la signification de cet acronyme, couramment employé pour désigner tout ce qui ne marche pas comme prévu, comme en témoigne le site http://thedailywtf.com - notre éditrice nous encourage à traduire ce dernier par « Saperlipopette », « Diantre » ou « Morbleu »], ce que nous ne
 traduirons pas ici par respect pour nos lecteurs et la qualité de ce
 récit. Maven s’acharne – et échoue – à télécharge la bibliothèque
 jcr-on-cassandra :
@@ -1699,18 +1697,13 @@ Au labo, Vincent analyse nos indices. Le fichier__maven.repositories
 attire particulièrement son attention :
 
 -------------------------------------------------------------------------------
-#NOTE: This is an internal implementation file, its format can be
-changed without prior notice.
-
+#NOTE: This is an internal implementation file, its format can be changed without prior notice.
 #Mon Mar 07 16:16:01 CET 2011
-
 jcr-on-cassandra-1.8.0.10.jar>geek.org=
-
 jcr-on-cassandra-1.8.0.10.pom>geek.org=
 -------------------------------------------------------------------------------
 
- link:#_msocom_1[[A1]] Le compte-rendu de nos experts fournit
-l’explication :
+Le compte-rendu de nos experts fournit l’explication.
 
 ==== Dépôts et dépendances
 
@@ -1798,7 +1791,7 @@ désagréable :
 [INFO] 1 error
 -------------------------------------------------------------------------------
 
-Le « diamond operator » link:#_ftn9[[9]], c'est en effet une évolution du
+Le « diamond operator » footnote:[http://download.oracle.com/javase/tutorial/java/generics/gentypes.html#diamond], c'est en effet une évolution du
 langage Java proposée par Java 7. Maven ne serait-il compatible qu'avec
 Java 5 ? Les choses sont même bien pires que cela si on essaie de
 compiler notre projet avec Maven 2 :
@@ -1820,8 +1813,8 @@ que vous puissiez bâtir vos projets sur une base irréprochable.
 Maven a été conçu sur la base de la plateforme Java 1.4, version
 "moderne" de l'époque. Sur ce JDK, les valeurs par défaut des options
 source et target du compilateur sont respectivement 1.3 et
-1.2 link:#_ftn10[[10]]. Par contre, sur le JDK Java 6, cette valeur par
-défaut est "1.6" link:#_ftn11[[11]] pour les deux, et source 1.6, target
+1.2 footnote:[http://java.sun.com/j2se/1.4.2/docs/tooldocs/windows/javac.html]. Par contre, sur le JDK Java 6, cette valeur par
+défaut est "1.6" footnote:[http://java.sun.com/j2se/1.6.0/docs/tooldocs/windows/javac.html] pour les deux, et source 1.6, target
 1.7 pour le JDK 7 ; autant dire que le JDK utilisé peut fortement
 influencer le résultat de notre compilation !
 
@@ -1900,7 +1893,7 @@ de groupe, identifiant d'artefact, version]. Nous indiquons ici le
 plugin de compilation dont nous désirons ajuster le fonctionnement. Le
 bloc <configuration> permet de lui passer des valeurs qui vont remplacer
 celles par défaut. Chaque plugin ayant son propre paramétrage, nous
-devons consulter la documentation du plugin link:#_ftn12[[12]] pour
+devons consulter la documentation du plugin footnote:[http://maven.apache.org/plugins/maven-compiler-plugin/] pour
 connaître toutes les options disponibles (voir Figure 03-01).
 
 Figure 03-01
@@ -2035,7 +2028,7 @@ n'inclut certainement pas l'exécution du compilateur Groovy ! La grande
 majorité des projets Java n'utilisent pas ce langage aujourd'hui. Il n'y
 a donc aucune raison pour que Maven en ait tenu compte nativement.
 
-En consultant la documentation en ligne de Groovy link:#_ftn13[[13]],
+En consultant la documentation en ligne de Groovy footnote:[http://groovy.codehaus.org/GMaven],
 nous constatons cependant qu'un plugin Maven a été développé. Il suffit
 de le déclarer dans le POM du projet pour obtenir cette nouvelle étape
 dans la construction de notre binaire. La notion de plugin (greffon)
@@ -2258,7 +2251,7 @@ Maven qu'à ajouter l'identifiant exact du plugin utilisé, définir une
 pas, et préciser dans une <execution> quelles tâches doivent être
 exécutées lors de la construction du projet.
 
-En consultant la documentation du plugin GWT link:#_ftn14[[14]], nous
+En consultant la documentation du plugin GWT footnote:[http://mojo.codehaus.org/gwt-maven-plugin/], nous
 découvrons quelque chose qui nous intéresse : la tâche eclipse du plugin
 propose de générer automatiquement des scripts de lancement pour
 exécuter directement l'application web depuis notre environnement de
@@ -2349,7 +2342,7 @@ Tableau 3.1 : Le cycle de vie défini par Maven
 
 Il s'agit d'une liste simplifiée : le cycle complet définit de
 nombreuses phases intermédiaires, dont vous trouverez la description
-complète dans la documentation en ligne de Maven link:#_ftn15[[15]].
+complète dans la documentation en ligne de Maven footnote:[http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html].
 
 Quels que soient le projet et ses particularités, tout traitement
 réalisé pour le "construire" viendra naturellement se greffer sur l'une
@@ -2527,7 +2520,7 @@ d'Adobe. Il décide donc de nous développer une interface web faisant
 appel à toute la richesse du plugin Flash.
 
 Comme pour les cas précédents, nous découvrons avec plaisir qu'il existe
-un plugin Maven, le projet Flex-mojos link:#_ftn16[[16]], qui prend en
+un plugin Maven, le projet Flex-mojos footnote:[http://flexmojos.sonatype.org/], qui prend en
 charge la compilation spécifique des sources Flex. Cependant, Flex n'est
 pas Java, et une application Flash s'assemble sous forme d'un fichier
 SWF qui n'a pas grand-chose en commun avec un JAR. Il ne suffira donc
@@ -2565,7 +2558,7 @@ d'une dépendance au plugin permet de spécifier la version qu'il devra
 utiliser.
 
 Le Listing 3.1 montre le POM utilisé par François pour son projet qui
-nous fait mettre un pied en dehors du monde Java. link:#_ftn17[[17]]
+nous fait mettre un pied en dehors du monde Java. footnote:[Si l'utilisation de Flex depuis Maven vous intéresse, retrouvez toutes les informations utiles sur le blog de François ( http://jroller.com/francoisledroff/ ) et aussi dans le projet Cairngorm ( http://sourceforge.net/adobe/cairngorm/wiki/Cairngorm/ ) auquel il participe et où vous trouverez de bons exemples de mise en œuvre de maven en projet Flex et hybride, Java et Flex.]
 
 Listing 3.1 : Production d'un binaire SWF
 [source, xml]
@@ -2644,7 +2637,7 @@ différents plugins utilisant des identifiants de groupe variés. Le
 plugin de compilation est développé dans le cadre de Maven lui-même et
 porte donc l'identifiant de groupe org.apache.maven.plugins. Quelques
 plugins de base sont également dans ce cas, et leur documentation est
-accessible sur le site de Maven link:#_ftn18[[18]].
+accessible sur le site de Maven footnote:[http://maven.apache.org/plugins].
 
 Le plugin GWT est développé dans le cadre du projet Mojo, qui est en
 fait plus une communauté qu'un projet à proprement parler. Elle regroupe
@@ -2860,7 +2853,7 @@ objet ListeDeCourses ttendu et l'objet ListeDeCourses effectivement
 construit lors de l'exécution du test. Pour ne pas devoir écrire la
 comparaison entre ces deux objets (attendu _vs_ effectif), nous faisons
 appel à la classe BeanComparator de la bibliothèque éprouvée
-commons-beanutils link:#_ftn19[[19]] qui fait ce travail pour nous en une
+commons-beanutils footnote:[http://commons.apache.org/beanutils/] qui fait ce travail pour nous en une
 seule ligne de code, ce qui rend le test plus simple et plus lisible.
 Inutile de réinventer la roue et de venir compliquer le code alors que
 cette classe simplifie tellement la tâche et nous permet de nous
@@ -2907,7 +2900,7 @@ solution de la méthode main pour tester montre de graves limites.
 
 Nous ne sommes pas les premiers à faire ce constat, et la réponse existe
 depuis bien longtemps à travers des outils de test spécialisés pour
-Java, dont le plus connu d'entre eux est jUnit link:#_ftn20[[20]].
+Java, dont le plus connu d'entre eux est jUnit footnote:[Il existe deux variantes majeures de jUnit, jUnit3 et jUnit4, la seconde utilisant la syntaxe java5 que nous avons retenu pour notre exemple].
 
 Ces outils reposent sur des principes simples :
 
@@ -3209,7 +3202,7 @@ image:04-01.png[align="center"]
 Développement piloté par les tests.
 
 Le développement piloté par les tests est une pratique préconisée par de
-nombreuses méthodes agiles link:#_ftn21[[21]]. Sa mise en œuvre efficace
+nombreuses méthodes agiles footnote:[On appelle "méthodes agiles" un ensemble de méthodes de travail qui cassent le mythe du projet bien planifié pour préférer une approche réactive. Voir http://fr.wikipedia.org/wiki/Méthode_agile]. Sa mise en œuvre efficace
 nécessite une culture du test automatisé pour être réellement efficace.
 Maven participe à cette démarche par la place qu'il donne au test dans
 le cycle de vie du projet. Les tests vus par Maven sont des éléments de
@@ -4003,7 +3996,7 @@ les cas de test de manière aussi conviviale et "non informatique" que
 possible. Ces tests sont donc lisibles pour un utilisateur final et
 facilement éditables pour coller au mieux aux besoins.
 
-Nous utilisons Fitnesse  link:#_ftn22[[22]] pour définir nos tests
+Nous utilisons Fitnesse footnote:[http://www.fitnesse.org] pour définir nos tests
 fonctionnels. Cet outil se présente à l'utilisateur comme un wiki,
 éditable en ligne _via_ une syntaxe simple ; un outil particulièrement
 convivial qui s'adresse à un public rebuté par les langages de
@@ -4016,7 +4009,7 @@ image:05-02.png[align="center"]
 Un test fonctionnel écrit sous Fitnesse.
 
 Le Listing 5.5 présente la configuration du
-plugin Maven link:#_ftn23[[23]] permettant d'exécuter nos tests Fitnesse
+plugin Maven footnote:[http://mojo.codehaus.org/fitnesse-maven-plugin] permettant d'exécuter nos tests Fitnesse
 lors de la construction du projet.
 
 Listing 5.5 : Configuration du plugin Fitnesse
@@ -4093,7 +4086,7 @@ _via_ une courbe synthétique l'évolution de la capacité de son
 application semaine après semaine, à encaisser une charge de 100, 200 et
 500 utilisateurs simultanés ?
 
-Nous faisons appel à jMeter link:#_ftn24[[24]], outil de la fondation
+Nous faisons appel à jMeter footnote:[http://jakarta.apache.org/jmeter], outil de la fondation
 Apache, pour définir des scénarios de test. Cet outil permet
 d'enregistrer puis de rejouer à volonté des scénarios pour charger une
 application web, un service web SOAP, une base de données JDBC, un
@@ -4113,7 +4106,7 @@ possible de tester le comportement de notre application web sous
 100 requêtes par seconde avec juste ce qu'il faut de délais aléatoires
 pour simuler une charge réaliste.
 
-Une fois encore, nous faisons appel à un plugin Maven link:#_ftn25[[25]]
+Une fois encore, nous faisons appel à un plugin Maven footnote:[http://wiki.apache.org/jakarta-jmeter/JMeterMavenPlugin]
 pour faire le lien entre notre projet et cet outil. Celui-ci est
 cependant moins abouti que ceux que nous avons rencontrés jusqu'ici et
 il nous faudra le compiler par nos propres moyens. Pas de panique, une
@@ -4552,8 +4545,7 @@ très certainement partager entre développeurs d'une même équipe le
 fichier JAR téléchargé une fois pour toutes. Il est très improbable
 qu'Oracle vous envoie ses brigades antipirates pour violation de la
 licence, surtout si vous venez de l'acheter pour installer la base de
-données sur votre serveur bi-processeur quad-core link:#_ftn26[[26]]
-assortie d'un contrat de support ;-).
+données sur votre serveur bi-processeur quad-core footnote:[Le coût d'une licence Oracle est fonction du nombre de cœur. Je vous laisse imaginer ce que cela peut donner…] assortie d'un contrat de support ;-).
 
 Nous pourrions aussi être tentés de détourner ce scope et d'intégrer le
 JAR dans le gestionnaire de code, ce qui permettrait à chacun d'en
@@ -4775,7 +4767,7 @@ De nombreux dépôts de bibliothèque Maven existent en version "Maven1" ou
 Le second présente une structure plus hiérarchisée et des métadonnées
 supplémentaires. Maven2 sait utiliser les deux formats. Le dépôt
 _central_, qui pointe physiquement sur les mêmes fichiers, est
-accessible au format Maven1 link:#_ftn27[[27]].
+accessible au format Maven1 footnote:[http://repo2.maven.org/maven/]
 
 Moralité : la gestion d'un dépôt n'est pas à prendre à la légère. Il ne
 s'agit pas simplement de pallier les manques du dépôt existant, mais
@@ -4895,9 +4887,9 @@ dépôt interne quelques soient les URL déclarées dans les éléments
 
 En marge du projet Maven, la communauté des développeurs a créé le
 projet "Maven Repository Manager", devenu par la suite
-Archiva link:#_ftn28[[28]]. Cet outil n'est pas seul dans cette catégorie
-et doit faire face à la concurrence de Nexus link:#_ftn29[[29]] ainsi que
-d'Artifactory link:#_ftn30[[30]]. Tous sont disponibles en open-source,
+Archiva footnote:[http://archiva.apache.org]. Cet outil n'est pas seul dans cette catégorie
+et doit faire face à la concurrence de Nexus footnote:[http://nexus.sonatype.org] ainsi que
+d'Artifactory footnote:[http://artifactory.jfrog.org]. Tous sont disponibles en open-source,
 les deux derniers proposant une option de support professionnel qui peut
 être indispensable si l'on considère qu'une entreprise confie la
 productivité de ses développements à ces outils. Pour ne pas faire de
@@ -5695,7 +5687,7 @@ composant pour sa parution dans un annuaire JNDI. La Figure 08-01 résume
 cette structure. Si vous n'êtes pas familier avec la norme JavaEE ou si
 vous voulez en avoir une description plus fine et moins biaisée que
 notre résumé de quelques lignes, nous vous recommandons l'introduction
-disponible sur le site de SUN link:#_ftn31[[31]].
+disponible sur le site de SUN footnote:[http://java.sun.com/developer/technicalArticles/J2EE/Intro/].
 
 image:08-01.png[align="center"]
 
@@ -6112,7 +6104,7 @@ existe !
 
 ==== Selenium
 
-Selenium link:#_ftn32[[32]] est un outil qui n'est pas limité au monde
+Selenium footnote:[http://seleniumhq.org/] est un outil qui n'est pas limité au monde
 Java mais s'y intègre très bien. Il s'agit d'un système complet
 d'enregistrement et de pilotage du navigateur web à des fins de test –
 rien que ça.
@@ -6289,7 +6281,7 @@ mais sans serveur où la déployer, elle n’affichera jamais de page HTML !
 
 ==== Cargo
 
-Cargo link:#_ftn33[[33]] est un autre outil majeur pour notre boîte à
+Cargo footnote:[http://cargo.codehaus.org/] est un autre outil majeur pour notre boîte à
 outils de test. Son objectif est de prendre en charge l'installation
 d'un serveur JavaEE, sa configuration, son démarrage et le déploiement
 de composants JavaEE, le tout pour tous les serveurs existants (à
@@ -6674,7 +6666,7 @@ d'être léger et rapide à démarrer et largement suffisant tant qu'on
 n'exploite que les technologies de l'API servlet, ce qui est le cas
 d'une grande majorité des applications web.
 
-Ce plugin pour Eclipse a son pendant pour Maven link:#_ftn34[[34]],
+Ce plugin pour Eclipse a son pendant pour Maven footnote:[http://mojo.codehaus.org/sysdeo-tomcat-maven-plugin],
 lequel va configurer le plugin Eclipse en fonction du projet Maven et
 des multiples modules impliqués. Ce plugin Eclipse a la particularité
 d'exploiter la souplesse de Tomcat pour pointer sur les répertoires de
@@ -6751,7 +6743,7 @@ gestion du cycle de vie, l'enrobage transactionnel ou encore la
 persistance JPA.
 
 Nous pouvons même faire encore mieux en exploitant le plugin Maven pour
-GlassFish link:#_ftn35[[35]], qui propose un mode de fonctionnement
+GlassFish footnote:[https://maven-glassfish-plugin.dev.java.net/], qui propose un mode de fonctionnement
 équivalent à ce que nous avons vu pour Jetty. Il suffit de lancer une
 simple commande Maven pour que le serveur soit téléchargé et qu’il
 démarre en embarquant notre application telle qu'elle est dans notre
@@ -6873,8 +6865,8 @@ Notre premier candidat n'a pas eu la tâche facile, puisque ce n'est pas
 une mais deux solutions qu'il a dû présenter à un jury plutôt
 dubitatif : la fondation Eclipse a accepté deux contributions
 concurrentes visant à fournir une intégration de Maven dans
-l'environnement de développement éponyme : m2eclipse link:#_ftn36[[36]]
-et q4e (rebaptisé pour l'occasion IAM link:#_ftn37[[37]]).
+l'environnement de développement éponyme : m2eclipse footnote:[http://www.eclipse.org/m2e/]
+et q4e (rebaptisé pour l'occasion IAM footnote:[http://www.eclipse.org/iam/].
 
 Ces deux contributions sont cependant relativement comparables et
 destinées à fusionner au sein de l'incubateur de la fondation Eclipse -
@@ -7084,7 +7076,7 @@ reconnus ainsi qu'en lot pour les Java User Group. Il a ainsi pu s'en
 procurer une licence sans trop d'effort, sachant qu'on peut aussi tenter
 l'aventure avec une version d'évaluation. Le prix à débourser pour une
 licence n'excède de toute façon pas quelques centaines d'euros, à
-comparer au prix de la journée d'un consultant. link:#_msocom_2[[A2]] 
+comparer au prix de la journée d'un consultant.
 
 ==== Import d'un projet Maven
 
@@ -7894,8 +7886,6 @@ développement. Il nous suffit alors de configurer l’intégration continue
 sur ce chemin pour vérifier que chaque développement reste bien
 synchrone avec le reste du projet.
 
- link:#_msocom_4[[A4]] 
-
 [TIP]
 ====
 Si tout cela vous semble encore bien acrobatique, faites comme nous :
@@ -8233,7 +8223,7 @@ quoi fouetter un chat !
 La tâche check que nous voulons créer dans notre plugin sera associée à
 une classe spécifique. Ces classes sont appelées dans le vocabulaire
 Maven des mojos (_Maven Old Java Object_), par allusion au concept de
-POJO link:#_ftn38[[38]] qui a fait le succès des bibliothèques Spring et
+POJO footnote:[_Plain Old Java Object_, soit "bon vieil objet Java". Les outils modernes ne demandent plus à notre code d’hériter de telle classe ou d’implémenter telle interface, ce qui lui permet d’être neutre et plus souple. Cette appellation cherche avant tout à se différencier des frameworks contraignants qui imposent la hiérarchie des classes, comme Struts par exemple.] qui a fait le succès des bibliothèques Spring et
 Hibernate. Ce terme a aussi été choisi avec malice pour faire référence
 au nom donné au Cameroun à des amulettes – inutile de chercher un lien
 avec le personnage de super-vilain associé à ce nom dans le comics
@@ -8409,7 +8399,7 @@ l'historique. C'est ici qu'intervient la notion de composant, une brique
 logicielle réutilisable. Les briques en question dépendent de la
 technologie sur laquelle tourne une application.
 
-Maven utilise le conteneur Plexus link:#_ftn39[[39]] pour l'exécution de
+Maven utilise le conteneur Plexus footnote:[http://plexus.codehaus.org/] pour l'exécution de
 ses composants. Vous êtes probablement familiarisé avec l'un de ses
 concurrents qui remporte un grand succès en entreprise :
 SpringFramework. Le fonctionnement de Plexus est relativement
@@ -8424,7 +8414,7 @@ dépendance à son projet Maven la bibliothèque plexus-archiver. Il lui
 reste à présent à y accéder depuis le plugin.
 
 Comme Spring, Plexus met en œuvre le patron d'injection de
-dépendances link:#_ftn40[[40]] (eh oui, bien que méconnu, Plexus était
+dépendances footnote:[Aussi connu sous le nom d’Inversion de Contrôle (http://fr.wikipedia.org/wiki/Inversion_de_contrôle)] (eh oui, bien que méconnu, Plexus était
 très novateur en son temps !). Ce n'est donc pas le plugin qui va aller
 chercher un composant mais le conteneur qui va initialiser le plugin
 avec les composants déclarés comme indispensables. Un composant est
@@ -8503,7 +8493,7 @@ de notre plugin pour exécuter notre outil dans les conditions
 nécessaires à son bon fonctionnement.
 
 Pour gérer la séparation de ses classes internes et de celles de ses
-plugins, Maven repose sur la bibliothèque ClassWorlds link:#_ftn41[[41]].
+plugins, Maven repose sur la bibliothèque ClassWorlds footnote:[http://classworlds.codehaus.org/ (voir, en particulier, http://maven.apache.org/guides/mini/guide-maven-classloading.html)].
 Celle-ci définit la notion de royaumes (_realm_) dans lesquels on vient
 ajouter des éléments de classpath et, éventuellement, exporter des
 packages. Maven met ainsi ses API à disposition des plugins sans exposer
@@ -9515,7 +9505,7 @@ versions, nous obtenons effectivement sous target/site la structure d'un
 site web pour notre projet.
 
 La génération de ce site est déléguée par le plugin site à un
-sous-composant spécialisé, Doxia link:#_ftn42[[42]]. Cet outil prend en
+sous-composant spécialisé, Doxia footnote:[http://maven.apache.org/doxia]. Cet outil prend en
 charge toutes les conversions nécessaires entre les formats de documents
 supportés et le document à construire.
 
@@ -9605,9 +9595,7 @@ courbes : on constate un infléchissement de la courbe dans la semaine
 qui précède la livraison et (dans le meilleur des cas) une reprise lente
 dans les semaines qui suivent.
 
-==== Maîtrise de _S_
-
- link:#_ftn43[[43]]
+==== Maîtrise de _S_ footnote:[Petit rappel de vos lointains cours de physique : S est le symbole utilisé en physique pour l’entropie :)]
 
 image:MangaVincentM.png[float="left"]
 
@@ -9642,7 +9630,7 @@ Ce Google Earth pour code existe, il s'appelle Sonar.
 
 ==== Sonar
 
-Sonar link:#_ftn44[[44]] est une application web qui va stocker dans une
+Sonar footnote:[http://sonar.codehaus.org/] est une application web qui va stocker dans une
 base de données tous les indicateurs et statistiques extraits par nos
 rapports d'analyse de code. En outil convivial et soucieux de sa
 simplicité d'utilisation, il est proposé avec un serveur d'application
@@ -9933,7 +9921,7 @@ et pleinement reproductible. Notez aussi l'utilisation d'un profil dédié
 à l'intégration continue qui permet de compléter ces métadonnées,
 lorsque des informations complémentaires sont disponibles, et de ne pas
 perturber le fonctionnement de Maven sur les postes de développement (le
-plugin buildnumber link:#_ftn45[[45]] n'est pas très performant).
+plugin buildnumber footnote:[http://mojo.codehaus.org/buildnumber-maven-plugin/] n'est pas très performant).
 
 Listing 13.3 : Ajout de métadonnées dans le MANIFEST
 [source, xml]
@@ -10062,7 +10050,7 @@ La réponse lui vient indirectement d'Olivier. Celui-ci a pris l'habitude
 de signer numériquement ses mails, sans doute plus pour le plaisir
 d'installer l'extension nécessaire à son navigateur et d'assumer ainsi
 son appartenance indiscutable au monde des geeks. Cette signature
-utilise l'algorithme GPG link:#_ftn46[[46]], qui a le double avantage
+utilise l'algorithme GPG footnote:[http://fr.wikipedia.org/wiki/GPG], qui a le double avantage
 d'être libre et basé sur un couple de clés. La clé publique permet à
 n'importe qui de valider l'identité de l'auteur, qui conserve
 soigneusement sa clé privée hors de portée de tout intrus.
@@ -10224,7 +10212,7 @@ Listing 13.5 : Le fichier _assembly_
 
 Le format de ce fichier utilise un schéma XML qui nous assistera dans sa
 saisie et qui est largement documenté sur le site web du
-plugin link:#_ftn47[[47]].
+plugin footnote:[http://maven.apache.org/plugins/maven-assembly-plugin/].
 
 [TIP]
 ====
@@ -10402,7 +10390,7 @@ image:MangaRaphael.png[float="left"]
 
 Raphaël se dit qu'on l'a peut-être un peu trompé sur la marchandise,
 lorsqu'il découvre le planning du projet. Les délais de réalisation sont
-plutôt optimistes, et l'adoption de Scrum link:#_ftn48[[48]] pour
+plutôt optimistes, et l'adoption de Scrum footnote:[Vous ne connaissez pas la méthode agile Scrum (http://fr.wikipedia.org/wiki/Scrum) ? Renseignez-vous vite auprès de votre JUG local pour qu’il organise une soirée dédiée :)] pour
 conduire cette épreuve ne suffira probablement pas à faire des miracles
 – si on vous vend les méthodes agiles sur ce seul critère, méfiez-vous !
 Toujours est-il qu'il va falloir mettre les bouchées doubles pour lancer
@@ -11095,7 +11083,7 @@ membres bénévoles.
 
 Si vous faites appel à la communauté, pensez à poser des questions
 précises en détaillant clairement votre besoin, votre environnement
-(vous pouvez toujours lire ce petit guide link:#_ftn49[[49]]), et
+(vous pouvez toujours lire ce petit guide footnote:[http://opensourcestrategies.blogspot.com/2005/09/how-to-get-support-from-open-source.html], et
 n'hésitez pas à répondre aux autres utilisateurs : nous avons tous
 commencé de cette façon et c'est ainsi qu'on apprend le mieux à utiliser
 Maven. La liste des utilisateurs de Maven a dépassé la taille critique
@@ -11105,7 +11093,7 @@ de premier niveau et peut donc se concentrer sur les développements et
 les corrections.
 
 Vous pouvez aussi retrouver une partie des développeurs du projet ainsi
-que des utilisateurs sur l'IRC link:#_ftn50[[50]] (serveur
+que des utilisateurs sur l'IRC footnote:[Accessible sans client IRC par l'interface web http://irc.codehaus.org/] (serveur
 irc.codehaus.org, canal : #maven). Ce média a l'avantage d'être en
 direct et peut donc vous apporter des réponses plus rapidement que la
 liste de diffusion, si vous avez la chance de tomber sur les bons
@@ -11122,7 +11110,7 @@ une syntaxe qui doit désespérer ceux dont c'est la langue maternelle.
 Heureusement, les francophones sont réputés pour leur compétence en
 langues étrangères ;). Si, malgré tout, ce n'est pas votre cas, le site
 developpez.com héberge un forum francophone consacré à
-Maven link:#_ftn51[[51]], ainsi qu'une FAQ link:#_ftn52[[52]] bien
+Maven footnote:[http://www.developpez.net/forums/f319/java/edi-outils-java/maven/], ainsi qu'une FAQ footnote:[http://java.developpez.com/faq/maven/] bien
 remplie.
 
 ==== Le coût de Maven
@@ -11145,7 +11133,7 @@ qu'il induit que par son prix d'achat (qui est particulièrement
 attrayant dans le cas d'un projet libre). Sa documentation en ligne est
 perfectible mais elle est épaulée par de nombreuses autres sources. Ce
 livre fait partie de cet effort et vient compléter les livres _Better
-Builds with Maven_ link:#_ftn53[[53]] et _Maven – the definitive
+Builds with Maven_ footnote:[http://www.maestrodev.com/better-build-maven] et _Maven – the definitive
 guide_, bible de 500 pages qui présente tous les aspects de Maven, sans
 compter les innombrables blogs, articles, forums et tutoriels qui
 décrivent des points plus spécifiques de son utilisation.
@@ -11214,7 +11202,7 @@ aussi particuliers. Cela n'interdit pas de regarder ce qui se fait
 ailleurs pour déterminer si Maven est le meilleur choix. Il est
 intéressant de noter que Spring 3 sépare ses packages principaux en
 modules dédiés et intègre même un fichier POM
-expérimental link:#_ftn54[[54]].
+expérimental footnote:[https://src.springframework.org/svn/spring-framework/trunk/build-spring-framework/pom.xml].
 
 This POM cannot be used to build Spring; it is a work in progress and
 should only be used as part of a Maven repository upload bundle using
@@ -11246,7 +11234,7 @@ du projet.
 
 ==== EasyAnt
 
-EasyAnt link:#_ftn55[[55]], comme son nom le suggère, vise à simplifier
+EasyAnt footnote:[http://www.easyant.org/], comme son nom le suggère, vise à simplifier
 l'utilisation d’Ant. Il propose une surcouche qui intègre Ivy et un
 certain nombre de conventions, permettant de passer des commandes de
 construction sans avoir à établir une configuration répétitive d'un
@@ -11271,7 +11259,7 @@ dénonçant la lourdeur du fichier XML de notre outil de build et son
 manque de flexibilité. Lui voudrait bien imposer Gradle, son outil de
 prédilection.
 
-Gradle link:#_ftn56[[56]] s’appuie lui aussi sur Ant et Ivy, et met en
+Gradle footnote:[http://www.gradle.org/] s’appuie lui aussi sur Ant et Ivy, et met en
 place un esprit de construction par conventions. Basé sur Groovy plutôt
 que XML, un script Gradle manipule des tâches Ant traditionnelles qui
 sont ses briques de base. Groovy est mis à contribution pour créer un
@@ -11318,7 +11306,7 @@ uploadArchives \{
 -------------------------------------------------------------------------------
 
 Nous ne rentrerons pas plus en détail dans Gradle, dont la documentation
-en ligne link:#_ftn57[[57]] est très complète si cette alternative vous
+en ligne footnote:[http://www.gradle.org/userguide.html] est très complète si cette alternative vous
 intéresse. Gradle reprend beaucoup d’éléments de Maven en termes de
 conventions plutôt que configuration, cycle de vie, approvisionnement à
 partir de dépôts, plugins … Par contre, Gradle réhabilite en même temps
@@ -11371,7 +11359,7 @@ rapide vers Maven le temps de trouver une solution plus propre.
 ==== Buildr
 
 Apache aime bien développer des outils de build ! En plus de Maven et
-d'Ant, il existe aussi le projet Buildr link:#_ftn58[[58]], se
+d'Ant, il existe aussi le projet Buildr footnote:[http://buildr.apache.org/], se
 positionnant dans l'organisation des projets comme Maven. Il utilise le
 langage Ruby au lieu du XML, les conventions de Maven et s'intègre avec
 Ant et les dépôts Maven.
@@ -11637,7 +11625,7 @@ développé une couche de traduction entre les API historiques de Maven 2
 et leur équivalent dans le code modernisé de Maven 3.
 
 En résumé, Maven 3 c’est un peu un épisode spécial de Extreme makeover :
-Maven edition link:#_ftn59[[59]].  On prend votre outillage existant,
+Maven edition footnote:[Si vous ne connaissez pas, regardez au moins une fois : Les Maçons du cœur (Extreme Makeover Home Edition en VO), ça vous donnera une idée des travaux en cours.].  On prend votre outillage existant,
 mais on refait tout de la cave au grenier !
 
 image:15-05.png[align="center"]
@@ -11886,7 +11874,7 @@ C'est une distinction notable par rapport à d'autres projets open-source
 dont les décisions ne sont pas si ouvertes. SpringFramework, par
 exemple, est un projet ouvert aux suggestions de ses utilisateurs et
 dont le code est libre, mais dont le développement est géré par la
-société SpringSource link:#_ftn60[[60]]. L'excellente équipe de
+société SpringSource footnote:[Entre la rédaction de ce chapitre et sa relecture, SpringSource a été racheté par VMWare. Les choses vont tellement vite en informatique…]. L'excellente équipe de
 développeurs que SpringSource a réussi à réunir propose un outil de
 grande qualité, tandis que le soin apporté pour répondre aux rapports
 d'anomalies et aux suggestions de la communauté d'utilisateurs est
@@ -11935,9 +11923,9 @@ sous le compte GitHub de Sonatype !
 Parmi la refonte réalisée pour Maven 3, un élément clé est la réécriture
 complète de la gestion des dépendances. Après deux tentatives
 infructueuses, Sonatype a proposé un développement interne,
-Aether link:#_ftn61[[61]], hébergé en open-source dans sa propre forge,
+Aether footnote:[http://aether.sonatype.org], hébergé en open-source dans sa propre forge,
 et contribué à la fondation Eclipse. Il en est de même de
-Sisu link:#_ftn62[[62]], qui permet à Maven3 de fonctionner sur la base
+Sisu footnote:[http://sisu.sonatype.org], qui permet à Maven3 de fonctionner sur la base
 du conteneur Google Guice tout en restant compatible avec Plexus, qui
 jouait ce rôle dans Maven 2 et est encore très présent dans de nombreux
 composants.
@@ -11984,7 +11972,7 @@ l’ouverture propre au développement communautaire n’est pas
 systématique.  
 
 Cependant, l'équipe de développement de Maven ne se résume pas à ces
-quelques personnes. L'équipe complète link:#_ftn63[[63]] compte des
+quelques personnes. L'équipe complète footnote:[http://maven.apache.org/team-list.html] compte des
 individus d'origines très variées et rattachés à des employeurs de
 toutes sortes. Pris individuellement, ils sont peu visibles, mais, comme
 pour tout projet open-source, c'est ensemble qu'ils ont donné vie au
@@ -12166,7 +12154,7 @@ OSGi.
 Les recherches de Pascal pour identifier les plugins Maven adéquats
 l’amènent au projet Apache Felix (une implémentation d’OSGi) et à son
 plugin apache-felix-maven-bundle-plugin-bnd. Celui-ci incorpore l’outil
-bnd link:#_ftn64[[64]], qui génère le MANIFEST OSGi à partir d’un projet
+bnd footnote:[Outil créé par Peter Kriens, http://www.aqute.biz/Bnd/Bnd], qui génère le MANIFEST OSGi à partir d’un projet
 Java standard, en déclarant simplement les packages privés et exportés.
 Ce plugin nous propose donc de transcrire le MANIFEST OSGi dans le
 formalisme XML du POM, comme le montre le listing 16.1.
@@ -12239,7 +12227,7 @@ Eclipse dispose d’un outillage complet pour le packaging des bundles,
 qu’il va falloir intégrer dans notre build Maven. Comme nous l’avons
 fait de nombreuses fois déjà, nous partons en quête du plugin adéquat et
 – bingo – trouvons rapidement le plugin
-pde-maven-plugin link:#_ftn65[[65]] du projet Mojo. Ce plugin lance
+pde-maven-plugin footnote:[http://mojo.codehaus.org/pde-maven-plugin/] du projet Mojo. Ce plugin lance
 Eclipse en mode « headless » (sans interface graphique) et exécute la
 chaîne d’assemblage du bundle.
 
@@ -12503,7 +12491,7 @@ noms du monde Java, des éditeurs, des créateurs de projets open-source,
 et bien sûr des centaines d’anonymes qui viennent s’abreuver de
 connaissance.
 
-Nous faisons ainsi la connaissance de Mark link:#_ftn66[[66]], ingénieur
+Nous faisons ainsi la connaissance de Mark footnote:[Mark Reinhold, qui nous a inspiré ce personnage, est « principal engineer » chez Oracle et responsable du projet OpenJDK. Précisons qu’il n’a pas été consulté pour relire ce chapitre, aussi les propos que nous lui prêtons sont totalement fictifs.], ingénieur
 chez Oracle. Il travaille sur un projet qui vise à modulariser la
 plateforme Java, nom de code jigsaw.
 
@@ -12569,7 +12557,7 @@ effet quelque chose qui est hors de portée de Maven, mais qu’OSGi gère
 de longue date.
 
 Mark nous présente aussi le prototype que constitue
-jigsaw link:#_ftn67[[67]], et la commande jmod destinée à rejoindre le
+jigsaw footnote:[http://openjdk.java.net/projects/jigsaw/], et la commande jmod destinée à rejoindre le
 JDK. Mimant les outils de gestion de paquet qu’on trouve sur les
 systèmes Linux (rpm, deb) ou encore les environnements Ruby (gem), jmod
 permet d’installer un composant et ses dépendances :
@@ -12828,7 +12816,7 @@ Bien que Spring ait récolté un grand succès pour ses qualités
 techniques, les structures de son code source et de son script de
 compilation le rendent inutilement complexe. Après tout, si vous
 travaillez sur Java 5, vous pouvez très bien déclarer une dépendance
-vers spring:2.0.8:tiger link:#_ftn68[[68]] à la place de spring:2.0.8.
+vers spring:2.0.8:tiger footnote:[Tiger est le nom du projet de développement de Java 5, comme Dolphin est le nom de Java 6 et Mustang celui de Java 7. De nombreuses librairies utilisent ce nom pour désigner une version adaptée à Java 5, ce qui sonne mieux que -j5.] à la place de spring:2.0.8.
 Les dépendances transitives feront le reste.
 
 La morale de cette histoire, c'est qu'il ne faut pas chercher à plier
@@ -12929,7 +12917,7 @@ Elles seules peuvent s'assurer que les bonnes pratiques sont suivies.
 
 ==== Commandement n^o^ 4 : De la sur-conception point tu ne feras.
 
-L'application maxiMaousse link:#_ftn69[[69]], elle aussi basée sur Maven,
+L'application maxiMaousse footnote:[Si vous voulez voir à quoi cela peut ressembler, un vrai projet ingérable et interminable à construire est Sakaï (http://sakaiproject.org/portal)], elle aussi basée sur Maven,
 comprend 58 modules ! Elle suit une décomposition en couches techniques
 ainsi qu'un redécoupage en modules fonctionnels. Une modification
 fonctionnelle touche ainsi rarement plus d'un ou deux modules, réduisant
@@ -13153,7 +13141,7 @@ project clean sous Eclipse, et build all, je n'arrive pas à démarrer mon
 serveur Tomcat à cause d'une NoClassDefFoundError."
 
 Le but du développeur n'est pas de passer son temps _devant la_
-Matrice link:#_ftn70[_*[70]*_], surtout en mode crypté (de toute façon,
+Matrice footnote:[http://whatisthematrix.warnerbros.com/], surtout en mode crypté (de toute façon,
 ça fatigue vite les yeux). Il faut toujours privilégier la productivité
 de l'équipe, sans quoi les belles méthodes et les outils préconisés
 seront vite oubliés dans le feu de l'action.
@@ -13346,7 +13334,7 @@ Pour conclure, sachez que le Definitive Guide, ouvrage communautaire
 traduit dans de nombreuses langues (la version française est en cours de
 réalisation à l'heure où nous rédigeons ces lignes), est lui-même rédigé
 puis assemblé _via_ Maven. Pour produire les 500 pages du PDF que vous
-pouvez consulter en ligne link:#_ftn71[[71]], il suffit de lancer la
+pouvez consulter en ligne footnote:[http://www.sonatype.com/products/maven/documentation/book-defguide], il suffit de lancer la
 commande universelle mvn install !
 
 === Qui est qui ?
@@ -13588,7 +13576,7 @@ O'Reilly.
 
 Depuis 2007, j'ai décroché du projet Maven (plus le temps) car je me
 suis donné corps et âme à un nouveau projet open-source:
-XWiki link:#_ftn72[[72]], un wiki d'entreprise de deuxième génération
+XWiki footnote:[http://xwiki.org] un wiki d'entreprise de deuxième génération
 (voire troisième ;)). J'y bosse la nuit (classique), mais aussi le jour
 (moins classique) puisque je suis directeur technique de la société
 XWiki SAS qui offre des services, du support et du développement
@@ -13864,7 +13852,7 @@ anglophone… Voici donc notre petit dictionnaire Maven – Français.
 
 === Le petit monde open-source
 
-Apache link:#_ftn73[[73]]
+Apache footnote:[http://www.apache.org/]
 
 La fondation Apache (ASF, Apache Software Foundation) est un organisme
 américain à but non lucratif qui héberge les infrastructures pour le
@@ -13879,7 +13867,7 @@ diversité de la communauté se verra attribuer plus de responsabilités et
 de titres (Committer PMC), jusqu'au titre suprême de membre de la
 fondation Apache.
 
-Committer link:#_ftn74[[74]]
+Committer footnote:[http://www.apache.org/foundation/how-it-works.html#committers]
 
 Le monde open-source identifie les personnes qui ont un accès libre en
 modification sur un projet comme committer, c'est-à-dire autorisé à
@@ -13888,18 +13876,19 @@ statut est accordé aux membres actifs du projet qui ont démontré en tant
 qu'utilisateurs avertis leur bonne connaissance technique ainsi que leur
 capacité à collaborer dans le respect de leurs pairs.
 
-JIRA link:#_ftn75[[75]] +
- La société Atlassian propose aux fondations qui hébergent des logiciels
+JIRA footnote:[http://www.atlassian.com/software/jira/]
+
+La société Atlassian propose aux fondations qui hébergent des logiciels
 libres une licence gratuite de son outil de gestion de tâches et
 d'anomalies, JIRA. Cet outil est une application web très conviviale qui
 permet de suivre les actions en cours sur le projet et d'interagir avec
 l'équipe de développement. Si vous rencontrez des comportements
 anormaux, faites une recherche préalable sur le projet JIRA de
-Maven link:#_ftn76[[76]] ainsi que sur ceux des
-plugins link:#_ftn77[[77]]. Vous pouvez d'ailleurs contribuer aux
+Maven footnote:[http://jira.codehaus.org/browse/MNG] ainsi que sur ceux des
+plugins footnote:[http://jira.codehaus.org/secure/BrowseProjects.jspa]. Vous pouvez d'ailleurs contribuer aux
 corrections par ce biais, en attachant un mini-projet démontrant le
 problème, et potentiellement un patch qui le corrige. Atlassian offre
-d'autres produits comme Confluence link:#_ftn78[[78]], un Wiki très
+d'autres produits comme Confluence footnote:[http://www.atlassian.com/software/confluence/], un Wiki très
 réputé.
 
 Mailing-list
@@ -13910,9 +13899,9 @@ utilisateurs (users@maven.apache.org dans son cas). Une seconde liste
 dev@maven.apache.org permet de discuter des évolutions de l'outil et de
 ses plugins. La liste announce@maven.apache.org permet de connaitre
 l'ensemble des livraisons. Il existe beaucoup d'autres liste de
-diffusions en fonction des sous projets de Maven link:#_ftn79[[79]].
+diffusions en fonction des sous projets de Maven footnote:[http://maven.apache.org/mail-lists.html].
 Enfin, en cas de besoin urgent, vous pouvez essayer de contacter une
-partie de l'équipe de développement sur irc link:#_ftn80[[80]].
+partie de l'équipe de développement sur irc footnote:[http://irc.codehaus.org/].
 
 Open-source (logiciel libre)
 
@@ -13926,10 +13915,10 @@ des plus souples puisqu'elle vous donne le droit d'utiliser, de
 modifier, de diffuser, voire même de vendre le logiciel comme bon vous
 semble – tant que vous gardez un petit encart rappelant l'origine
 initiale du code. Un des meilleurs exemples de ce cas est le IBM HTTP
-Server link:#_ftn81[[81]], qui est une adaptation du serveur HTTP
+Server footnote:[http://www-01.ibm.com/software/webservers/httpservers/], qui est une adaptation du serveur HTTP
 d'Apache.
 
-PMC link:#_ftn82[[82]]
+PMC footnote:[http://www.apache.org/foundation/how-it-works.html#pmc-members]
 
 La fondation Apache, pour la gestion des projets open-source qu'elle
 héberge, définit un Project Management Commitee, constitué de committers
@@ -14025,7 +14014,7 @@ le pendant côté code d'une tâche Maven invoquée par mvn plugin:tâche.
 Les Mojos se basent sur une API propre à Maven. Voir sur ce sujet
 http://maven.apache.org/guides/introduction/introduction-to-plugins.html.
 
-Mojo est aussi le nom d'un projet link:#_ftn83[[83]] offrant une
+Mojo est aussi le nom d'un projet footnote:[http://mojo.codehaus.org/] offrant une
 collection de plugins surveillés par l'équipe du projet Maven mais en
 dehors de la communauté Apache, ce qui permet plus de flexibilité (sur
 le processus d'entrée des membres, ou sur les licences par exemple).
@@ -14050,7 +14039,7 @@ participent à la construction du projet en prenant en charge une tâche
 particulière (produire des rapports lors de la génération documentaire,
 ou encore s'exécuter de manière isolée).
 
-POM link:#_ftn84[[84]]
+POM footnote:[http://maven.apache.org/pom.html]
 
 Acronyme pour _Project Object Model_, en bon français "modèle du
 projet". Il s'agit du descripteur d'un projet tel que Maven le construit
@@ -14088,8 +14077,8 @@ réseau (URL en file://) ou un serveur HTTP, mais pour une plus grande
 souplesse il est préférable d'installer une véritable application dédiée
 à cette tâche (_Repository Manager_) qui apporte de nombreuses
 fonctionnalités d'administration. Il existe plusieurs serveurs de
-référentiels comme Archiva link:#_ftn85[[85]], Nexus link:#_ftn86[[86]],
-Artifactory link:#_ftn87[[87]]...
+référentiels comme Archiva footnote:[http://archiva.apache.org], Nexus footnote:[http://nexus.sonatype.org],
+Artifactory footnote:[http://www.jfrog.org]...
 
 Sisu
 
@@ -14098,7 +14087,7 @@ Sisu permet d’utiliser des composants conçus pour Plexus (le conteneur
 historique de Maven2) dans un conteneut conforme à la norme JSR330, en
 l’occurrence Google Guice.
 
-SCM link:#_ftn88[[88]]
+SCM footnote:[http://maven.apache.org/scm]
 
 Acronyme de _Source Code Management_ (gestion du code source). Terme
 générique qui recouvre tous les outils permettant de conserver
@@ -14130,7 +14119,7 @@ permet d'ajuster le fonctionnement de Maven aux spécificités de votre
 poste, de votre connexion réseau, ainsi qu'à votre infrastructure. On y
 déclare par exemple des sites miroirs pour les dépôts d'artefacts et les
 identifiants/mot de passe (ce dernier peut être crypté) pour accéder aux
-serveurs. Un schéma XML est disponible link:#_ftn89[[89]] pour vous aider
+serveurs. Un schéma XML est disponible footnote:[http://maven.apache.org/settings.html] pour vous aider
 à saisir ce fichier sans erreur.
 
 Snapshot
@@ -14166,10 +14155,10 @@ suffit de le transférer de cet espace vers l'espace public, sans aucune
 modification interne – le livrable public est donc bien celui qui a été
 testé.
 
-SureFire link:#_ftn90[[90]]
+SureFire footnote:[http://maven.apache.org/surefire]
 
 Maven supporte plusieurs outils de test unitaire :
-jUnit link:#_ftn91[[91]] 3 ou 4 et testNG link:#_ftn92[[92]]. Ce support
+jUnit footnote:[http://www.junit.org] 3 ou 4 et testNG footnote:[http://testng.org]. Ce support
 est orchestré par un outil dédié, SureFire ("infaillible"), sous-projet
 de Maven, qui fournit une vision homogène de ces trois outils, et
 permettra si besoin d'en intégrer un nouveau dans le support de Maven.
@@ -14178,7 +14167,7 @@ maven-junit-plugin, mais maven-surefire-plugin.
 
 === Ceux qui font tourner Maven
 
-ClassWorlds link:#_ftn93[[93]]
+ClassWorlds footnote:[http://classworlds.codehaus.org]
 
 Maven permet à chaque plugin de disposer d'un espace privé d'exécution,
 depuis lequel il peut s'exécuter avec ses dépendances sans être
@@ -14187,7 +14176,7 @@ jeu de ClassLoaders, basés sur l'outil open-source ClassWorlds. D'une
 certaine façon, ClassWorlds peut être comparé à OSGi, même si son cadre
 est moins large et qu'il ne fait l'objet d'aucune normalisation.
 
-Doxia link:#_ftn94[[94]]
+Doxia footnote:[http://maven.apache.org/doxia/]
 
 Sous-projet de Maven, Doxia est le moteur de rendu documentaire de
 Maven. Il sert de point d'articulation entre diverses sources (rapports
@@ -14195,7 +14184,7 @@ d'analyse, format de documents) et le rendu final (site web HTML,
 document PDF). Doxia offre une API permettant de manipuler les
 différents formats d'entrée pour produire différents formats de sortie.
 
-Mercury link:#_ftn95[[95]]
+Mercury footnote:[http://maven.apache.org/mercury/]
 
 Le développement de Maven 3 introduit une refonte de la gestion des
 artefacts, des dépendances, de la résolution des versions, ainsi que de
@@ -14204,8 +14193,9 @@ nom de code de cette nouvelle API, conçue pour plus de clarté et de
 flexibilité – le code actuel de Maven 2 souffrant un peu du poids des
 nombreuses années de corrections diverses.
 
-Modello link:#_ftn96[[96]]  +
- Les divers fichiers XML manipulés par Maven sont définis à partir d'un
+Modello footnote:[http://modello.codehaus.org/]
+
+Les divers fichiers XML manipulés par Maven sont définis à partir d'un
 modèle (décrit dans des fichiers *.mdo), que l'outil open-source Modello
 convertit en classes JavaBean, en schéma XML et en analyseurs XML pour
 passer de l'un à l'autre. Modello peut potentiellement être utilisé dans
@@ -14213,7 +14203,7 @@ un autre cadre mais reste très lié à Maven. Modello peut être comparé à
 JAXB, l'API actuelle qui normalise la passerelle entre les mondes Java
 et XML.
 
-Plexus link:#_ftn97[[97]]
+Plexus footnote:[http://plexus.codehaus.org/]
 
 Plexus est un conteneur IOC (_Inversion Of Control_) qui gère les
 composants de Maven. C'est un projet indépendant de Maven et qui peut
@@ -14221,7 +14211,7 @@ composants de Maven. C'est un projet indépendant de Maven et qui peut
 a toujours été fortement lié à Maven (les développeurs sont d'ailleurs
 en partie les mêmes).
 
-Wagon link:#_ftn98[[98]]
+Wagon footnote:[http://maven.apache.org/wagon]
 
 Lorsque Maven doit accéder à une ressource réseau, il passe par une
 couche dédiée qui gère divers protocoles (HTTP, HTTPS, SCP, WebDAV,
@@ -14229,30 +14219,32 @@ etc.). Cette abstraction au dessus des protocoles de communication est
 définie par l'API Wagon, sous-projet de Maven. Diverses implémentations
 permettent de supporter ces protocoles, voire d'en ajouter de nouveaux.
 Vous pouvez par exemple utiliser le protocole de partage Windows Samba
-_via_ un module dédié link:#_ftn99[[99]], qui n'est pas intégré par
+_via_ un module dédié footnote:[http://svn.codehaus.org/mojo/trunk/mojo/maven-extensions/wagon-cifs], qui n'est pas intégré par
 défaut à Maven pour des questions d'incompatibilité de licence.
 
 === Et tout ce qui tourne autour…
 
-Apt link:#_ftn100[[100]]
+Apt footnote:[http://maven.apache.org/doxia/references/apt-format.html]
 
 Format de documentation utilisé couramment sur les projets Maven.
 Acronyme de _Almost Plain Text_, il s'agit d'un format en texte brut,
 comparable à une syntaxe Wiki.
 
-FML link:#_ftn101[[101]]  +
- Acronyme de _FAQ Markup Language_, il s'agit d'un format documentaire
+FML footnote:[http://maven.apache.org/doxia/references/fml-format.html]
+
+Acronyme de _FAQ Markup Language_, il s'agit d'un format documentaire
 basé sur XML pour produire des Foires Aux Questions sur un site web
 produit par Maven.
 
-OSGi +
- La norme OSGi définit une plateforme de service permettant le
+OSGi
+
+La norme OSGi définit une plateforme de service permettant le
 chargement et le remplacement à chaud de services, tout en gérant leurs
 dépendances et les éventuels conflits associés.
-Eclipse link:#_ftn102[[102]] est l'un des utilisateurs d'OSGi le plus
-connu (basé sur l'implémentation OSGi Equinox link:#_ftn103[_*[103]*_]).
+Eclipse footnote:[http://www.eclipse.org/] est l'un des utilisateurs d'OSGi le plus
+connu (basé sur l'implémentation OSGi Equinox footnote:[http://www.eclipse.org/equinox/].
 Maven entre en concurrence directe avec OSGi pour la déclaration des
-dépendances et la gestion de leurs conflits. Nexus link:#_ftn104[[104]]
+dépendances et la gestion de leurs conflits. Nexus footnote:[http://nexus.sonatype.org/]
 est un des premiers serveurs à gérer à la fois les référentiels au
 format Maven et au format OSGi.
 
@@ -14260,9 +14252,9 @@ Wiki
 
 Système de gestion de contenu web permettant de rendre chaque page
 éditable par des personnes autorisées. Maven utilise
-Confluence link:#_ftn105[[105]] comme Wiki.
+Confluence footnote:[http://docs.codehaus.org/display/MAVEN/] comme Wiki.
 
-Xdoc link:#_ftn106[[106]]
+Xdoc footnote:[http://maven.apache.org/doxia/references/xdoc-format.html]
 
 Format de documentation basé sur XML permettant de définir la structure
 du document, un peu comme le ferait HTML si son usage n'avait pas été
@@ -14274,337 +14266,16 @@ pratiques.
 Et pour finir, quelques liens indispensables à ajouter dans vos
 favoris :
 
-* http://maven.apache.org/. Le site officiel de Maven, avec une
-documentation imparfaite mais tout de même bien utile.
-
-* http://www.maestrodev.com/better-build-maven. Premier livre sur
-Maven disponible en ligne gratuitement.
-
-·    
-http://www.sonatype.com/products/maven/documentation/book-defguide. Le
-fameux definitive guide, en enrichissement permanent par les équipes de
-Sonatype.
-
-·    
-http://www.packtpub.com/apache-maven-2-effective-implementations/book.
-Encore un livre, écrit lui aussi par des membres de l'équipe Maven.
-
+* http://maven.apache.org/. Le site officiel de Maven, avec une documentation imparfaite mais tout de même bien utile.
+* http://www.maestrodev.com/better-build-maven. Premier livre sur Maven disponible en ligne gratuitement.
+* http://www.sonatype.com/products/maven/documentation/book-defguide. Le fameux definitive guide, en enrichissement permanent par les équipes de Sonatype.
+* http://www.packtpub.com/apache-maven-2-effective-implementations/book. Encore un livre, écrit lui aussi par des membres de l'équipe Maven.
 * http://www.sonatype.com/people/. Le blog de Sonatype, sur lequel
 on peut piocher de nombreuses bonnes idées autour de Maven.
+* http://mojo.codehaus.org/. Site communautaire qui héberge de nombreux plugins Maven. Si vous avez développé un plugin intéressant, n'hésitez pas à le proposer comme contribution.
 
-* http://mojo.codehaus.org/. Site communautaire qui héberge de
-nombreux plugins Maven. Si vous avez développé un plugin intéressant,
-n'hésitez pas à le proposer comme contribution.
-
-Sans oublier bien-sûr deux sites absolument indispensables dans la vie
-d'un développeur Java :
+Sans oublier bien-sûr deux sites absolument indispensables dans la vie d'un développeur Java :
 
 * http://blog.aheritier.net/. Le blog d'Arnaud.
-
 * http://blog.loof.fr/. Le blog de Nicolas.
-
- +
-
-'''''
-
- link:#_ftnref1[[1]] http://maven.apache.org.
-
- link:#_ftnref2[[2]] http://docs.codehaus.org/display/MAVENUSER.
-
- link:#_ftnref3[[3]] MaestroDev (http://www.maestrodev.com).
-
- link:#_ftnref4[[4]] Sonatype, Inc. (http://www.sonatype.com).
-
- link:#_ftnref5[[5]] Source : http://fr.wikipedia.org/wiki/Apache_Ant.
-
- link:#_ftnref6[[6]] http://java.sun.com/products/javamail/.
-
- link:#_ftnref7[[7]] Ne riez pas, il s'agit d'un cas bien réel, identifié
-lors de la migration du projet sous Maven !
-
- link:#_ftnref8[[8]] Je vous laisse chercher la signification de cet
-acronyme, couramment employé pour désigner tout ce qui ne marche pas
-comme prévu, comme en témoigne le site
-http://thedailywtf.com[thedailywtf.com] - notre éditrice nous encourage
-à traduire ce dernier par « Saperlipopette », « Diantre » ou « Morbleu »
-
- link:#_ftnref9[[9]]
-http://download.oracle.com/javase/tutorial/java/generics/gentypes.html#diamond
-
- link:#_ftnref10[[10]]          
-http://java.sun.com/j2se/1.4.2/docs/tooldocs/windows/javac.html.
-
- link:#_ftnref11[[11]]          
-http://java.sun.com/j2se/1.6.0/docs/tooldocs/windows/javac.html.
-
- link:#_ftnref12[[12]]          
-http://maven.apache.org/plugins/maven-compiler-plugin/.
-
- link:#_ftnref13[[13]]           http://groovy.codehaus.org/GMaven.
-
- link:#_ftnref14[[14]]          
-http://mojo.codehaus.org/gwt-maven-plugin/.
-
- link:#_ftnref15[[15]]          
-http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html.
-
- link:#_ftnref16[[16]]           http://flexmojos.sonatype.org/
-
- link:#_ftnref17[[17]]           Si l'utilisation de Flex depuis Maven
-vous intéresse, retrouvez toutes les informations utiles sur le blog de
-François ( http://jroller.com/francoisledroff/ ) et aussi dans le projet
-Cairngorm (
-http://sourceforge.net/adobe/cairngorm/wiki/Cairngorm/[http://sourceforge.net/adobe/cairngorm/wiki/Cairngorm/]
-) auquel il participe et où vous trouverez de bons exemples de mise en
-œuvre de maven en projet Flex et hybride, Java et Flex.
-
- link:#_ftnref18[[18]]           http://maven.apache.org/plugins.
-
- link:#_ftnref19[[19]]           http://commons.apache.org/beanutils/.
-
- link:#_ftnref20[[20]]           Il existe deux variantes majeures de
-jUnit, jUnit3 et jUnit4, la seconde utilisant la syntaxe java5 que nous
-avons retenu pour notre exemple
-
- link:#_ftnref21[[21]]           On appelle "méthodes agiles" un ensemble
-de méthodes de travail qui cassent le mythe du projet bien planifié pour
-préférer une approche réactive. Voir
-http://fr.wikipedia.org/wiki/Méthode_agile.
-
- link:#_ftnref22[[22]]           http://www.fitnesse.org.
-
- link:#_ftnref23[[23]]          
-http://mojo.codehaus.org/fitnesse-maven-plugin.
-
- link:#_ftnref24[[24]]           http://jakarta.apache.org/jmeter.
-
- link:#_ftnref25[[25]]          
-http://wiki.apache.org/jakarta-jmeter/JMeterMavenPlugin.
-
- link:#_ftnref26[[26]]           Le coût d'une licence Oracle est
-fonction du nombre de cœur. Je vous laisse imaginer ce que cela peut
-donner…
-
- link:#_ftnref27[[27]]           http://repo2.maven.org/maven/.
-
- link:#_ftnref28[[28]]           *http://archiva.apache.org*.
-
- link:#_ftnref29[[29]]           *http://nexus.sonatype.org*.
-
- link:#_ftnref30[[30]]           *http://artifactory.jfrog.org*.
-
- link:#_ftnref31[[31]]          
-*http://java.sun.com/developer/technicalArticles/J2EE/Intro/*.
-
- link:#_ftnref32[[32]]           http://seleniumhq.org/.
-
- link:#_ftnref33[[33]]           http://cargo.codehaus.org/.
-
- link:#_ftnref34[[34]]          
-http://mojo.codehaus.org/sysdeo-tomcat-maven-plugin.
-
- link:#_ftnref35[[35]]          
-https://maven-glassfish-plugin.dev.java.net/.
-
- link:#_ftnref36[[36]]           http://www.eclipse.org/m2e/.
-
- link:#_ftnref37[[37]]           http://www.eclipse.org/iam/.
-
- link:#_ftnref38[[38]]           _Plain Old Java Object_, soit "bon vieil
-objet Java". Les outils modernes ne demandent plus à notre code
-d’hériter de telle classe ou d’implémenter telle interface, ce qui lui
-permet d’être neutre et plus souple. Cette appellation cherche avant
-tout à se différencier des frameworks contraignants qui imposent la
-hiérarchie des classes, comme Struts par exemple.
-
- link:#_ftnref39[[39]]           http://plexus.codehaus.org/.
-
- link:#_ftnref40[[40]]           Aussi connu sous le nom d’Inversion de
-Contrôle (http://fr.wikipedia.org/wiki/Inversion_de_contrôle).
-
- link:#_ftnref41[[41]]           http://classworlds.codehaus.org/ (voir,
-en particulier,
-http://maven.apache.org/guides/mini/guide-maven-classloading.html).
-
- link:#_ftnref42[[42]]           http://maven.apache.org/doxia.
-
- link:#_ftnref43[[43]]           Petit rappel de vos lointains cours de
-physique : S est le symbole utilisé en physique pour l’entropie :).
-
- link:#_ftnref44[[44]]           http://sonar.codehaus.org/.
-
- link:#_ftnref45[[45]]          
-http://mojo.codehaus.org/buildnumber-maven-plugin/.
-
- link:#_ftnref46[[46]]           http://fr.wikipedia.org/wiki/GPG.
-
- link:#_ftnref47[[47]]          
-http://maven.apache.org/plugins/maven-assembly-plugin/.
-
- link:#_ftnref48[[48]]           Vous ne connaissez pas la méthode agile
-Scrum (http://fr.wikipedia.org/wiki/Scrum) ? Renseignez-vous vite auprès
-de votre JUG local pour qu’il organise une soirée dédiée :).
-
- link:#_ftnref49[[49]]          
-http://opensourcestrategies.blogspot.com/2005/09/how-to-get-support-from-open-source.html.
-
- link:#_ftnref50[[50]]           Accessible sans client IRC par
-l'interface web http://irc.codehaus.org/.
-
- link:#_ftnref51[[51]]          
-http://www.developpez.net/forums/f319/java/edi-outils-java/maven/.
-
- link:#_ftnref52[[52]]           http://java.developpez.com/faq/maven/.
-
- link:#_ftnref53[[53]]          
-http://www.maestrodev.com/better-build-maven.
-
- link:#_ftnref54[[54]]          
-https://src.springframework.org/svn/spring-framework/trunk/build-spring-framework/pom.xml.
-
- link:#_ftnref55[[55]]           http://www.easyant.org/.
-
- link:#_ftnref56[[56]]           http://www.gradle.org/.
-
- link:#_ftnref57[[57]]           http://www.gradle.org/userguide.html.
-
- link:#_ftnref58[[58]]           http://buildr.apache.org/.
-
- link:#_ftnref59[[59]]           Si vous ne connaissez pas, regardez au
-moins une fois : Les Maçons du cœur (Extreme Makeover Home Edition en
-VO), ça vous donnera une idée des travaux en cours.
-
- link:#_ftnref60[[60]]           Entre la rédaction de ce chapitre et sa
-relecture, SpringSource a été racheté par VMWare. Les choses vont
-tellement vite en informatique…
-
- link:#_ftnref61[[61]] http://aether.sonatype.org
-
- link:#_ftnref62[[62]] http://sisu.sonatype.org
-
- link:#_ftnref63[[63]]           http://maven.apache.org/team-list.html.
-
- link:#_ftnref64[[64]] Outil créé par Peter Kriens,
-http://www.aqute.biz/Bnd/Bnd
-
- link:#_ftnref65[[65]] http://mojo.codehaus.org/pde-maven-plugin/
-
- link:#_ftnref66[[66]] Mark Reinhold, qui nous a inspiré ce personnage,
-est « principal engineer » chez Oracle et responsable du projet OpenJDK.
-Précisons qu’il n’a pas été consulté pour relire ce chapitre, aussi les
-propos que nous lui prêtons sont totalement fictifs.
-
- link:#_ftnref67[[67]] http://openjdk.java.net/projects/jigsaw/
-
- link:#_ftnref68[[68]]           Tiger est le nom du projet de
-développement de Java 5, comme Dolphin est le nom de Java 6 et Mustang
-celui de Java 7. De nombreuses librairies utilisent ce nom pour désigner
-une version adaptée à Java 5, ce qui sonne mieux que -j5.
-
- link:#_ftnref69[[69]]           Si vous voulez voir à quoi cela peut
-ressembler, un vrai projet ingérable et interminable à construire est
-Sakaï (http://sakaiproject.org/portal)
-
- link:#_ftnref70[[70]]           http://whatisthematrix.warnerbros.com/.
-
- link:#_ftnref71[[71]]          
-http://www.sonatype.com/products/maven/documentation/book-defguide.
-
- link:#_ftnref72[[72]]           http://xwiki.org.
-
- link:#_ftnref73[[73]]           http://www.apache.org/.
-
- link:#_ftnref74[[74]]          
-http://www.apache.org/foundation/how-it-works.html#committers.
-
- link:#_ftnref75[[75]]           http://www.atlassian.com/software/jira/.
-
- link:#_ftnref76[[76]]           http://jira.codehaus.org/browse/MNG.
-
- link:#_ftnref77[[77]]          
-http://jira.codehaus.org/secure/BrowseProjects.jspa.
-
- link:#_ftnref78[[78]]          
-http://www.atlassian.com/software/confluence/.
-
- link:#_ftnref79[[79]]           http://maven.apache.org/mail-lists.html.
-
- link:#_ftnref80[[80]]           http://irc.codehaus.org/.
-
- link:#_ftnref81[[81]]          
-http://www-01.ibm.com/software/webservers/httpservers/.
-
- link:#_ftnref82[[82]]          
-http://www.apache.org/foundation/how-it-works.html#pmc-members.
-
- link:#_ftnref83[[83]]           http://mojo.codehaus.org/.
-
- link:#_ftnref84[[84]]           http://maven.apache.org/pom.html.
-
- link:#_ftnref85[[85]]           http://archiva.apache.org.
-
- link:#_ftnref86[[86]]           http://nexus.sonatype.org/.
-
- link:#_ftnref87[[87]]           http://www.jfrog.org/.
-
- link:#_ftnref88[[88]]           http://maven.apache.org/scm.
-
- link:#_ftnref89[[89]]           http://maven.apache.org/settings.html.
-
- link:#_ftnref90[[90]]           http://maven.apache.org/surefire.
-
- link:#_ftnref91[[91]]           http://www.junit.org/.
-
- link:#_ftnref92[[92]]           http://testng.org/.
-
- link:#_ftnref93[[93]]           http://classworlds.codehaus.org/.
-
- link:#_ftnref94[[94]]           http://maven.apache.org/doxia/.
-
- link:#_ftnref95[[95]]           http://maven.apache.org/mercury/.
-
- link:#_ftnref96[[96]]           http://modello.codehaus.org/.
-
- link:#_ftnref97[[97]]           http://plexus.codehaus.org/.
-
- link:#_ftnref98[[98]]           http://maven.apache.org/wagon.
-
- link:#_ftnref99[[99]]          
-http://svn.codehaus.org/mojo/trunk/mojo/maven-extensions/wagon-cifs.
-
- link:#_ftnref100[[100]]         
-http://maven.apache.org/doxia/references/apt-format.html.
-
- link:#_ftnref101[[101]]         
-http://maven.apache.org/doxia/references/fml-format.html.
-
- link:#_ftnref102[[102]]          http://www.eclipse.org/.
-
- link:#_ftnref103[[103]]          http://www.eclipse.org/equinox/.
-
- link:#_ftnref104[[104]]          http://nexus.sonatype.org/.
-
- link:#_ftnref105[[105]]         
-http://docs.codehaus.org/display/MAVEN/.
-
- link:#_ftnref106[[106]]         
-http://maven.apache.org/doxia/references/xdoc-format.html.
-
-'''''
-
-  link:#_msoanchor_1[[A1]]Maven.repositories Je ne vois pas d’ou vient ce
-fichier ? C’est fictif ? C’est pas clair …
-
-  link:#_msoanchor_2[[A2]]Il y a désormais la version communautaire !!!
-
-  link:#_msoanchor_3[[A3]]C qui m’ennuie avec cette approche c’st la
-traçabilité des artifacts aujourd’hui. Par exemple comment faire la
-signature GPG ?
-
-  link:#_msoanchor_4[[A4]]Sauf erreur de ma part les svn :externals ne
-fonctionnent que sur des répertoires. Ca ne marche as sur des fichiers J
-Quand je fais cela je place dans trunks un pom uniquement pour faire
-reacteur des autres sous modules. Mais bon ça reste bof …
-
-NDL : Ca marche avec svn 1.6, je l’utilise couremment
 
