@@ -83,7 +83,6 @@
         </configuration>
       </plugin>
 	  <!-- Generation AsciiDoc PDF - Demande ++ de nettoyage du document (liens ...) -->
-	  <!--
       <plugin>
         <groupId>com.agilejava.docbkx</groupId>
         <artifactId>docbkx-maven-plugin</artifactId>
@@ -117,14 +116,12 @@
           <xincludeSupported>true</xincludeSupported>
           <useExtensions>1</useExtensions>
           <highlightSource>1</highlightSource>
-          <highlightDefaultLanguage>java</highlightDefaultLanguage>
           <calloutsExtension>1</calloutsExtension>
           <paperType>A4</paperType>
           <fop1Extensions>1</fop1Extensions>
           <includes>maven.xml</includes>
         </configuration>
       </plugin>
-		  -->
     </plugins>
   </build>
 </project>
