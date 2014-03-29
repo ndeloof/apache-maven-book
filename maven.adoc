@@ -7,6 +7,9 @@ v3.0, 2014
 :source-highlighter: highlightjs
 :imagesdir: illustrations
 :homepage: https://github.com/ndeloof/apache-maven-book/
+:desc: Ce livre est une introduction à Apache Maven. Originalement publié aux +
+       éditions Pearson, ce dernier est désormais disponible gratuitement +
+	   sous license Creative Commons 4.0 BY-NC-SA
 
 [preface]
 = Préface de la troisième édition
