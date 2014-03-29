@@ -5,12 +5,12 @@ v3.0, 2014
 :doctype: book
 :icons: font
 :source-highlighter: highlightjs
-
+:imagesdir: illustrations
 
 [preface]
 = Préface de la troisième édition
 
-image:illustrations/MangaNicolas.png[float="left"]
+image:MangaNicolas.png[float="left"]
 
 Ecrire un bouquin pour un éditeur est un travail épuisant. La rédaction 
 elle même n'est qu'une toute petite partie du travail, déjà prenante, et
@@ -44,7 +44,7 @@ et surtout de _l'open-sourcer_, sous license Creative Commons 4.0 afin que
 tout le monde en profite et que d'éventuels contributeurs puisse nous aider
 à corriger les boulettes inévitables qui s'y sont glissées.
 
-image:illustrations/license.png[align="center"]
+image:license.png[align="center"]
 "_Attribution - Pas d’Utilisation Commerciale - Partage dans les Mêmes Conditions_"
 
 _Nicolas de Loof_
@@ -52,7 +52,7 @@ _Nicolas de Loof_
 [preface]
 = Préface de la seconde édition
 
-image:illustrations/MangaNicolas.png[float="left"]
+image:MangaNicolas.png[float="left"]
 
 La rédaction de la première édition d'Apache Maven a été un exercice
 difficile mais très enrichissant. Avec Arnaud, nous avons trouvé un
@@ -106,7 +106,7 @@ outil sans équivalent.
 [preface]
 = Avant-propos
 
-image:illustrations/MangaNicolas.png[float="left"]
+image:MangaNicolas.png[float="left"]
 
 L'écriture d'un ouvrage technique n'est pas une tâche triviale, car il
 est facile de perdre le lecteur dans une avalanche de concepts
@@ -174,7 +174,7 @@ outil pertinent et productif.
 
 _Nicolas de Loof_
 
-image:illustrations/MangaArnaud.png[float="left"]
+image:MangaArnaud.png[float="left"]
 
 Lorsque Nicolas m'a contacté pour écrire un ouvrage sur Maven en
 français, j'ai commencé par me demander si cela en valait la peine.
@@ -256,7 +256,7 @@ existé ne serait que fortuite…
 
 === Prologue
 
-image:illustrations/MangaNicolas.png[float="left"] image:illustrations/MangaArnaud.png[float="right"]
+image:MangaNicolas.png[float="left"] image:MangaArnaud.png[float="right"]
 
 Nicolas et Arnaud se sont rencontrés au cours d'une conférence organisée
 par un Java User Group (si vous ne participez pas à un JUG ... et bien vous avez tort).
@@ -295,7 +295,7 @@ fassent disparaître). Il envoie donc le trésor tant convoité à Arnaud.
 Pour vous faire une meilleure idée de cette exceptionnelle construction
 logicielle, voici les fichiers qui la constituent :
 
-image:illustrations/01-01.png[Figure 1]
+image:01-01.png[Figure 1]
 
 La structure originale du projet "noubliepaslalistedescourses".
 
@@ -326,7 +326,7 @@ Nicolas et par Arnaud
 
 $$$ 2 colonnes [mangaNicolas] + build.bat   [mangaArnaud] + build.sh $$$
 
-image:illustrations/MangaNicolas.png[float="left"]
+image:MangaNicolas.png[float="left"]
 -------------------------------------------------------------------------------
 @echo off
 set JAVA_HOME=C:\jdk1.3
@@ -339,7 +339,7 @@ jar cf noubliepaslalistedescourses.jar build\*.class
 -------------------------------------------------------------------------------
 
 
-image:illustrations/MangaArnaud.png[float="left"]
+image:MangaArnaud.png[float="left"]
 -------------------------------------------------------------------------------
 #!/bin/bash
 export JAVA_HOME=/opt/jdk1.3
@@ -402,7 +402,7 @@ panoplie de tout développeur. Aucun logiciel dédié à Java ne peut
 aujourd'hui se permettre de ne pas fournir des tâches Ant. Le choix de
 cette solution semble donc la meilleure marche à suivre !
 
-image:illustrations/MangaOlivier.png[float="left"]
+image:MangaOlivier.png[float="left"]
 
 Pour lui faciliter la tâche, Olivier envoie à Arnaud un script Ant,
 appelé avec beaucoup d'originalité build.xml, qu'il utilise lui-même sur
@@ -413,7 +413,7 @@ courants.
 Aurait-on trouvé avec Ant la solution miracle, rassemblant tous les
 suffrages ?
 
-image:illustrations/MangaFabrice.png[float="left"]
+image:MangaFabrice.png[float="left"]
 
 Pas si simple : Nicolas, de son côté, désolé d'avoir causé tant de
 soucis à Arnaud, a reçu le même conseil de Fabrice, qui lui aussi a
@@ -448,7 +448,7 @@ appliquées.
 
 === Et Maven dans tout ça ?
 
-image:illustrations/MangaJason.png[float="left"]
+image:MangaJason.png[float="left"]
 
 Au hasard d'un de ces appels au secours, Jason les prend à contre-pied
 et leur répond : "Et pourquoi ne pas utiliser plutôt Apache Maven ?"
@@ -607,7 +607,7 @@ construire le logiciel ou exécuter des tâches annexes. Cela se traduit
 donc par une suite de commandes, qui prendra d'une façon ou d'une autre
 la forme décrite à la Figure 2.
 
-image:illustrations/01-02.png[Figure 2]
+image:01-02.png[Figure 2]
 
 Les étapes élémentaires de construction d'un projet.
 
@@ -850,7 +850,7 @@ suffit de quelques lignes de déclaration supplémentaires pour "plier"
 Maven à nos habitudes ? Hostiles au changement, comme une grande
 majorité des êtres humains, nous préférons cette option.
 
-image:illustrations/MangaEmmanuel.png[float="left"]
+image:MangaEmmanuel.png[float="left"]
 
 C'est à ce moment qu'Emmanuel se propose de nous rejoindre, lui aussi à
 temps perdu grâce à son boulot en or, pour enrichir notre projet d'un
@@ -1170,7 +1170,7 @@ du sous-répertoire dédié à la bibliothèque indiquée :
 Pour notre dépendance à JavaMail, nous obtenons :
 http://repo1.maven.org/maven2/javax/mail/mail/1.4/.
 
-image:illustrations/02-01.png[align="center"]
+image:02-01.png[align="center"]
 
 Le sous-répertoire dédié à JavaMail 1.4 sur le dépôt de bibliothèques.
 
@@ -1306,7 +1306,7 @@ permet à Maven de construire l'arbre des dépendances du projet, chaque
 nouvelle feuille pouvant, par ses propres métadonnées, introduire de
 nouvelles branches.
 
-image:illustrations/02-02.png[align="center"]
+image:02-02.png[align="center"]
 
 Arbre de dépendances transitives.
 
@@ -1350,7 +1350,7 @@ pour déclarer vos dépendances.
 
 === Testons un peu
 
-image:illustrations/MangaVincentM.png[float="left"]
+image:MangaVincentM.png[float="left"]
 
 Vincent est un fanatique de la qualité logicielle, aussi a-t-il fait un
 gros travail d'évangélisation pour nous convaincre d'outiller notre
@@ -1624,7 +1624,7 @@ la zone de droite, il nous indique tous les chemins de dépendance qui y
 mènent. Un simple clic permet de placer les exclusions qui s'imposent
 sans éditer manuellement le fichier POM.
 
-image:illustrations/02-03.png[align="center"]
+image:02-03.png[align="center"]
 
 Plugin Maven pour Eclipse.
 
@@ -1632,7 +1632,7 @@ Plugin Maven pour Eclipse.
 
 MAVEN3
 
-image:illustrations/MangaEmmanuel.png[float="left"]
+image:MangaEmmanuel.png[float="left"]
 
 En rejoignant le projet, Emmanuel apporte dans sa musette bon nombre
 d’idées innovantes et de petites expériences amusantes à nous présenter.
@@ -1671,7 +1671,7 @@ rien à faire – Maven fait la sourde oreille. Il est temps de faire appel
 
 ===== LES EXPERTS
 
-image:illustrations/MangaArnaud.png[float="left"]
+image:MangaArnaud.png[float="left"]
 
 Arnaud vient faire un prélèvement ADN dans le projet d’exemple qui a
 inspiré Emmanuel pour sa démo. Il en extrait une déclaration de
@@ -1686,7 +1686,7 @@ suite de l’enquête.
   <repository>
 -------------------------------------------------------------------------------
 
-image:illustrations/MangaNicolas.png[float="left"]
+image:MangaNicolas.png[float="left"]
 
 Nicolas fouille le dépôt local d’Emmanuel à la recherche d’indices. Sous
 sa lampe à Ultra-violet, le Luminol met en évidence des traces de
@@ -1696,7 +1696,7 @@ Figure 02-04
 
 Contenu du dépôt local pour la bibliothèque jcr-on-cassandra.
 
-image:illustrations/MangaVincentM.png[float="left"]
+image:MangaVincentM.png[float="left"]
 
 Au labo, Vincent analyse nos indices. Le fichier__maven.repositories
 attire particulièrement son attention :
@@ -2002,7 +2002,7 @@ contraire, seule l'option " lourde " reste envisageable.
 
 === Quand Java ne suffit plus
 
-image:illustrations/MangaArnaud.png[float="left"]
+image:MangaArnaud.png[float="left"]
 
 Bien que nous ayons introduit la syntaxe Java 7 dans notre code, Arnaud
 est loin d'être satisfait par sa lisibilité. Selon lui, de nombreux
@@ -2052,7 +2052,7 @@ dans sa capacité à prendre en charge de manière automatisée le projet.
 En particulier, la structure type d'un projet Maven est la suivante
 (voir Figure 03-02).
 
-image:illustrations/03-02.png[align="center"] 
+image:03-02.png[align="center"] 
 
 La structure de base d'un projet Maven.
 
@@ -2173,7 +2173,7 @@ projet.
 Un élément <execution> permet de définir les tâches définies par le
 plugin considéré que Maven devra exécuter.
 
-image:illustrations/03-03.png[align="center"]
+image:03-03.png[align="center"]
 
 Le cycle de vie du projet et les plugins qui viennent s'y greffer.
 
@@ -2186,7 +2186,7 @@ Avec ce putsch de Groovy sur le projet, Arnaud a réussi un tour de
 force. Pour ne pas le laisser s'endormir sur ses lauriers, Nicolas
 relève le défi de secouer une nouvelle fois nos petites habitudes.
 
-image:illustrations/MangaNicolas.png[float="left"]
+image:MangaNicolas.png[float="left"]
 
 Notre application dispose d'une interface web qui permet de saisir sa
 liste de courses depuis n'importe quel navigateur. C'est le cas de très
@@ -2204,7 +2204,7 @@ blanc que nous utilisons pour griffonner nos dernières idées… et le
 tableau est rapidement noir de petits croquis, de flèches en tout genre
 et de notes sur le comportement idéal de notre site web.
 
-image:illustrations/03-04.png[align="center"]
+image:03-04.png[align="center"]
 
 Notre document officiel de spécifications pour l'application web.
 
@@ -2385,7 +2385,7 @@ vie d'un projet JAR
 Maven fournit un moyen pour venir greffer d'autres plugins à ce cycle,
 en plus de ceux qu'il aura associés par défaut.
 
-image:illustrations/03-05.png[align="center"]
+image:03-05.png[align="center"]
 
 Cycle de vie du projet et plugins exécutés pour chaque phase.
 
@@ -2519,7 +2519,7 @@ sert de référence a été modifié.
 
 === Produire autre chose qu'un JAR
 
-image:illustrations/MangaFrancois.png[float="left"]
+image:MangaFrancois.png[float="left"]
 
 Amusé par notre interface web en GWT, François se joint à notre équipe.
 La particularité de François est qu'il n'est pas seulement un
@@ -3115,7 +3115,7 @@ offrent un garde-fou intéressant. À de nombreuses reprises, ils nous
 signalent qu'une "petite modification" s'avère bien plus significative
 que ce que nous avions pensé.
 
-image:illustrations/MangaVincentM.png[float="left"]
+image:MangaVincentM.png[float="left"]
 
 Au cours d'une discussion sur les nouvelles idées que nous avons eues
 pour notre projet, Vincent propose de changer le format du fichier dans
@@ -3214,7 +3214,7 @@ tous rester au vert. Certaines modifications lourdes et pourtant
 importantes n'auraient jamais été réalisées en confiance sans cette
 garantie.
 
-image:illustrations/04-01.png[align="center"]
+image:04-01.png[align="center"]
 
 Développement piloté par les tests.
 
@@ -3238,7 +3238,7 @@ logicielle mais qui évite d'utiliser par mégarde un JAR fraîchement
 compilé et de découvrir de manière détournée et coûteuse un bogue qui
 est déjà contrôlé par un test unitaire.
 
-image:illustrations/MangaFabrice.png[float="left"]
+image:MangaFabrice.png[float="left"]
 
 Interdire la construction du JAR, n'est-ce pas un peu abrupt comme prise
 de position ? C'est en tout cas l'avis de Fabrice, qui tue le temps dans
@@ -3266,7 +3266,7 @@ bouchon et simulateurs, mécanisme de contrôle et autres constituent un
 outillage complet dédié à notre code afin que nous soyons en mesure de
 le tester convenablement.
 
-image:illustrations/MangaLukas.png[float="left"]
+image:MangaLukas.png[float="left"]
 
 En marge de notre projet, Lukas se lance dans un autre projet
 expérimental pour proposer une version sur téléphone mobile de notre
@@ -3447,7 +3447,7 @@ développement, qui ne propose une nouvelle version qu'après plusieurs
 mois, réduit sa capacité à proposer rapidement des évolutions à ses
 utilisateurs.
 
-image:illustrations/04-02.png[align="center"]
+image:04-02.png[align="center"]
 
 Continuum en train de surveiller les projets de Maven2.
 
@@ -3477,7 +3477,7 @@ réactivité de développement. Avec une nouvelle version chaque semaine et
 une armée de contributeurs sur son écosystème de plugins, Jenkins est un
 logiciel extrêmement réactif et porteur de nombreuses innovations.
 
-image:illustrations/04-03.png[align="center"]
+image:04-03.png[align="center"]
 
 Jenkins, en train de surveiller sa propre construction, respectant
 l'adage anglo-saxon « eat your own dog food » (« mange ta propre
@@ -3497,7 +3497,7 @@ Techniquement parlant, les deux projets sont relativement identiques à
 l'heure ou nous écrivons ces lignes, mais ne suivront pas les mêmes
 choix techniques ou organisationnels à l'avenir.
 
-image:illustrations/04-04.png[align="center"]
+image:04-04.png[align="center"]
 
 Husdon, lui aussi en train de surveiller la construction de Maven2, dans
 la forge Sonatype, partenaire d'Oracle.
@@ -3578,7 +3578,7 @@ pour vérifier et valider chaque parcelle de notre application.
 
 === Des tests unitaires… de moins en moins unitaires
 
-image:illustrations/MangaNicolas.png[float="left"]
+image:MangaNicolas.png[float="left"]
 
 Vous vous rappelez peut-être que nous avons choisi Google Web Toolkit
 pour la réalisation de notre site web. Ce choix nous a donné entière
@@ -3608,11 +3608,11 @@ de temps que l'exécution du test lui-même. Ce problème, multiplié par de
 nombreux tests sur le même modèle, a des conséquences immédiates sur le
 temps de construction de notre projet.
 
-image:illustrations/05-01.png[align="center"]
+image:05-01.png[align="center"]
 
 La séquence d'opération déroulée par un test GWT.
 
-image:illustrations/MangaHerve.png[float="left"]
+image:MangaHerve.png[float="left"]
 
 Impatients d'obtenir le résultat de leur travail, les développeurs
 prennent peu à peu l'habitude d'utiliser l'option skipTests ( mvn
@@ -3721,7 +3721,7 @@ l'option -Dnom=valeur de la ligne de commande) peut aussi servir de
 condition pour activer un profil. Enfin, le profil peut être activé en
 fonction de la présence d'un fichier particulier.
 
-image:illustrations/MangaOlivier.png[float="left"]
+image:MangaOlivier.png[float="left"]
 
 Olivier, qui travaille sous Solaris, se sent un peu exclu lorsqu'il voit
 apparaître dans le projet des dépendances de type DLL pour Windows.
@@ -3871,7 +3871,7 @@ ceux qui étaient jusqu'ici "actifs par défaut" seront alors… désactivés.
 
 === Tester l'accès à une base de données
 
-image:illustrations/MangaHerve.png[float="left"]
+image:MangaHerve.png[float="left"]
 
 Notre application utilise également – comme une très grande majorité des
 applications d'entreprise – une base de données. Une nouvelle fois, nous
@@ -3992,7 +3992,7 @@ Demander à chaque développeur de disposer d'une base de données, de
 fichiers de test ou de simulateurs fonctionnels, alors qu'il
 n'intervient que sur une sous-partie du logiciel est contre-productif.
 
-image:illustrations/MangaHerve.png[float="left"]
+image:MangaHerve.png[float="left"]
 
 Ici aussi, un profil dédié s'impose ! Avant de voir les développeurs web
 se plaindre de devoir installer Oracle Express juste pour les tests,
@@ -4025,7 +4025,7 @@ programmation. La Figure 05-02 montre l'un de nos tests Fitnesse. Ses
 intentions sont compréhensibles par tous, loin de la syntaxe obscure
 d'un bout de code jUnit.
 
-image:illustrations/05-02.png[align="center"]
+image:05-02.png[align="center"]
 
 Un test fonctionnel écrit sous Fitnesse.
 
@@ -4197,7 +4197,7 @@ jamais leur attention lorsqu'il s'agit d'épier nos défaillances !
 
 === Profils et effets de bords
 
-image:illustrations/MangaEmmanuel.png[float="left"]
+image:MangaEmmanuel.png[float="left"]
 
 Emmanuel est confronté à un problème : il dispose de deux versions de
 nos fichiers de configuration
@@ -4303,7 +4303,7 @@ positionnement de chaque outil en fonction du niveau d'abstraction,
 proche du code ou bien du fonctionnel, et de la spécialisation d'un
 outil vis-à-vis d'une technologie donnée.
 
-image:illustrations/05-03.png[align="center"]
+image:05-03.png[align="center"]
 
 Positionnement de nos outils de test.
 
@@ -4443,7 +4443,7 @@ Maven. Nous y faisons une recherche sur le mot "oracle", et nous
 obtenons rapidement la confirmation attendue sur l'identité de notre
 pilote JDBC (voir Figure 06-01).
 
-image:illustrations/06-01.png[align="center"]
+image:06-01.png[align="center"]
 
 Recherche d'un artefact _via_ un moteur de recherche spécialisé.
 
@@ -4599,7 +4599,7 @@ multiplication rapide des fichiers JAR sur nos postes de développement.
 
 === Créer son propre dépôt
 
-image:illustrations/MangaCarlos.png[float="left"]
+image:MangaCarlos.png[float="left"]
 
 Carlos n'apprécie pas de nous voir échanger des JAR par clé USB juste
 pour obtenir notre fameux pilote JDBC. Il aime la gestion transparente
@@ -4751,7 +4751,7 @@ rapidement un casse-tête. Dans un premier temps, Carlos a voulu faire
 plaisir à tout le monde – c'est un peu une deuxième nature chez lui – et
 a donc répondu favorablement à toutes nos demandes :
 
-image:illustrations/MangaCarlos    MangaFabrice  $$$ Cote à cote $$$.png[float="left"]
+image:MangaCarlos    MangaFabrice  $$$ Cote à cote $$$.png[float="left"]
 
 Fabrice : j'ai besoin de trucUtils, peux-tu l'ajouter ?
 
@@ -4765,7 +4765,7 @@ Tout aurait pu se passer dans cette bonne humeur générale jusqu'à ce
 que, d'une part, Carlos croule sous les demandes, mais surtout que les
 choses se compliquent sensiblement :
 
-image:illustrations/MangaCarlos    MangaOlivier  $$$ Cote à cote $$$.png[float="left"]
+image:MangaCarlos    MangaOlivier  $$$ Cote à cote $$$.png[float="left"]
 
 Olivier : Salut Carlos, j'aurais besoin de trucUtils.
 
@@ -4832,7 +4832,7 @@ s'impose.
 
 === Passer à un "véritable" gestionnaire de dépôt
 
-image:illustrations/MangaCarlos.png[float="left"]
+image:MangaCarlos.png[float="left"]
 
 Carlos perd un temps fou dans la gestion de son dépôt privé car les
 "utilisateurs" n'ont pas de moyen simple pour rechercher une
@@ -4958,7 +4958,7 @@ passante de votre accès Internet, ne pas dépendre de la bonne santé
 d'Internet et obtenir des temps de réponse impressionnants pour les
 demandes d'artefacts déjà placés dans le cache.
 
-image:illustrations/MangaCarlos.png[float="left"]
+image:MangaCarlos.png[float="left"]
 
 C'est en effet ce que Carlos met en place : notre dépôt privé sert
 désormais à la fois d'hébergement pour nos bibliothèques non publiques
@@ -5039,7 +5039,7 @@ dépôt sans intervention humaine. La Figure 06-03 montre par exemple le
 rapport d'audit sur un dépôt administré par Archiva, et les différents
 problèmes qu'il a su y détecter.
 
-image:illustrations/06-03.png[align="center"]
+image:06-03.png[align="center"]
 
 Rapports d'audit d'Archiva.
 
@@ -5053,7 +5053,7 @@ environnements de développement (voir le Chapitre 9). Enfin, un espace
 de stockage permet la diffusion des développements au reste de l'équipe,
 servant de dépôt "public-privé".
 
-image:illustrations/06-04.png[align="center"]
+image:06-04.png[align="center"]
 
 Page de recherche d'Artifactory.
 
@@ -5218,7 +5218,7 @@ décomposé en de nombreux modules qui héritent d'un POM parent commun,
 qui lui-même hérite du POM parent Apache, commun à tous les projets de
 la fondation du même nom.
 
-image:illustrations/07-01.png[align="center"]
+image:07-01.png[align="center"]
 
 Hiérarchie des POM Apache Maven
 
@@ -5275,7 +5275,7 @@ donné que ce qui lui est totalement spécifique. Cela allège la
 configuration mais ne résout pas un problème sur lequel Stéphane a dû
 s'acharner pendant de trop longues heures.
 
-image:illustrations/MangaStephane.png[float="left"]
+image:MangaStephane.png[float="left"]
 
 Stéphane a été confronté à une incohérence dans nos dépendances. Notre
 module d'administration utilisait en effet une version d'Hibernate
@@ -5385,7 +5385,7 @@ dans un projet multimodule. Le pluginManagement va permettre de
 centraliser au niveau du projet parent les versions de tous les plugins
 utilisés.
 
-image:illustrations/MangaRaphael.png[float="left"]
+image:MangaRaphael.png[float="left"]
 
 Fort de ces nouveaux concepts, Raphaël reprend les POM du projet pour
 centraliser notre gestion de version. <dependencyManagement> et
@@ -5449,7 +5449,7 @@ licence).
 
 === Diviser pour régner
 
-image:illustrations/MangaStephane.png[float="left"]
+image:MangaStephane.png[float="left"]
 
 Stéphane est très satisfait de la solution du POM parent que nous venons
 de découvrir, lui qui en avait assez de passer en revue un à un nos
@@ -5534,7 +5534,7 @@ impact sur un autre module apparaîtra en quelques instants, alors qu'une
 construction complète aurait pu prendre de longues minutes, impliquant
 de nombreux modules non concernés par la modification.
 
-image:illustrations/07-02.png[align="center"]
+image:07-02.png[align="center"]
 
 Réaction du serveur d'intégration continue à une modification.
 
@@ -5583,7 +5583,7 @@ sélection.
 
 ==== Garder le contrôle
 
-image:illustrations/MangaStephane.png[float="left"]
+image:MangaStephane.png[float="left"]
 
 Stéphane aboutit à une structure de projet claire et bien organisée, où
 chaque composant trouve sa place dans un module : un module pour notre
@@ -5639,7 +5639,7 @@ Nous pouvons ainsi réduire le nombre de modules construits par un mvn
 install aux modules impactés par une modification. Bien, mais nous
 sommes exigeants et en voulons encore plus !
 
-image:illustrations/MangaStephane.png[float="left"]
+image:MangaStephane.png[float="left"]
 
 Stéphane a gardé une carte dans sa manche. Face à un build qui enchaîne
 encore plusieurs modules, il nous propose d’ajouter une dernière option,
@@ -5726,7 +5726,7 @@ vous voulez en avoir une description plus fine et moins biaisée que
 notre résumé de quelques lignes, nous vous recommandons l'introduction
 disponible sur le site de SUNlink:#_ftn31[[31]].
 
-image:illustrations/08-01.png[align="center"]
+image:08-01.png[align="center"]
 
 Structure d'une application selon le modèle JavaEE.
 
@@ -5775,7 +5775,7 @@ Sur un projet utilisant un répertoire lib fourre-tout pour placer ses
 bibliothèques, le troisième point serait traité avant même qu'on ne se
 pose la question, mais sur notre projet Maven ?
 
-image:illustrations/MangaVincentS.png[float="left"]
+image:MangaVincentS.png[float="left"]
 
 Vincent s'attaque à la construction automatisée de notre WAR. Il trouve
 rapidement un allié de choix dans le plugin war de Maven. Celui-ci a été
@@ -5820,7 +5820,7 @@ mesure de manipuler nos servlets parce que nous partageons avec lui les
 classes de cette API. La Figure 08-02 compare cependant ce modèle
 théorique et ce que nous observons.
 
-image:illustrations/08-02.png[align="center"]
+image:08-02.png[align="center"]
 
 Comparaison de la structure des chargeurs de classes : théorie _vs_
 pratique.
@@ -5892,7 +5892,7 @@ même largement décriée au profit de modèles légers dont SpringFramework
 est le fer de lance.
 ====
 
-image:illustrations/MangaVincentS.png[float="left"]
+image:MangaVincentS.png[float="left"]
 
 Nous avons donc isolé notre code métier dans un module (voir le
 Chapitre 7) dédié, chargé de construire un composant réutilisable. Fort
@@ -6035,7 +6035,7 @@ Il ne nous reste plus qu'à prendre nos composants et à les grouper dans
 un joli paquet-cadeau avant de l'envoyer à notre hébergeur. En terme
 JavaEE le paquet-cadeau est une archive d'entreprise EAR.
 
-image:illustrations/MangaVincenTS.png[float="left"]
+image:MangaVincenTS.png[float="left"]
 
 Pour produire ce nouvel artefact, Vincent applique la recette qui lui a
 jusqu'ici réussi et fait mouche une nouvelle fois : un nouveau module,
@@ -6114,13 +6114,13 @@ dépendances, notre projet application web ne contient alors que les
 bibliothèques spécifiquement web qu'il emploie. La Figure 08-03 indique
 la structure finale de notre projet Maven.
 
-image:illustrations/08-03.png[align="center"]
+image:08-03.png[align="center"]
 
 Multiprojet JavaEE avec mise en commun des dépendances _via_ l'EAR.
 
 === Tester
 
-image:illustrations/MangaVincentS.png[float="left"]
+image:MangaVincentS.png[float="left"]
 
 Nous savons désormais construire notre archive d'entreprise en une seule
 ligne de commande, respectant à la lettre la spécification JavaEE. Mais
@@ -6264,7 +6264,7 @@ standard surefire pour l'exécution des tests. Il sera simplement
 configuré de manière spécifique pour s'exécuter lors de la phase
 integration-test.
 
-image:illustrations/MangaVincentS.png[float="left"]
+image:MangaVincentS.png[float="left"]
 
 Magique ! Vincent s'empresse d'ajouter à notre projet le plugin surefire
 – qui prend en charge l'exécution de tests jUnit – et de l'associer à
@@ -6439,7 +6439,7 @@ Listing 8.6 : Configuration du plugin Cargo
 </plugin>
 -------------------------------------------------------------------------------
 
-image:illustrations/MangaVincentS.png[float="left"]
+image:MangaVincentS.png[float="left"]
 
 Après avoir ingurgité la hiérarchie un peu lourde de cette configuration
 XML, Vincent lance la commande magique mvn install et constate avec
@@ -6501,7 +6501,7 @@ de charge.
 
 === Arquillian
 
-image:illustrations/MangaVincentS.png[float="left"]
+image:MangaVincentS.png[float="left"]
 
 Vincent n’est cependant pas totalement satisfait de devoir tester du
 code destiné à JBoss (notre serveur de production) sur OpenEJB. Certes
@@ -6603,7 +6603,7 @@ tester en environnement cible. D’autant que, en utilisant des profils
 adaptés, nous pourrions aussi bien exécuter le même test en déployant
 sur un serveur JBoss externe ou sur un autre environnement.
 
-image:illustrations/MangaVincentS.png[float="left"]
+image:MangaVincentS.png[float="left"]
 
 Vincent n’est pas un peu fier d’avoir réduit la complexité légendaire de
 JavaEE et des tests associés à quelques API simples et cinq lignes de
@@ -6702,7 +6702,7 @@ m2eclipse déclarera automagiquement les modules war comme projets WTP
 avec les chemins et les dépendances extraites de la configuration du
 plugin war. Elle est pas belle la vie ?
 
-image:illustrations/MangaNicolas.png[float="left"]
+image:MangaNicolas.png[float="left"]
 
 Histoire de ne pas faire comme tout le monde, Nicolas n'utilise pas WTP
 sous Eclipse mais un petit plugin _Made in France_ : Sysdeo Tomcat,
@@ -6746,7 +6746,7 @@ compte toutes vos modifications de code ou de configuration sans délai !
 
 === JavaEE6
 
-image:illustrations/MangaAntonio.png[float="left"]
+image:MangaAntonio.png[float="left"]
 
 Venu nous passer un petit bonjour, Antonio s'amuse bien en voyant notre
 configuration Maven pour construire cette belle archive d'entreprise EAR
@@ -6825,7 +6825,7 @@ ensemble intégré et adapté aux attentes des développeurs.
 
 === Un plugin Maven pour Eclipse
 
-image:illustrations/MangaArnaud.png[float="left"]
+image:MangaArnaud.png[float="left"]
 
 Arnaud a dans un premier temps tenté de développer un plugin Maven dédié
 à la configuration d'Eclipse, l'IDE le plus couramment utilisé par les
@@ -6839,7 +6839,7 @@ L'engouement des équipes permet d'améliorer les fonctionnalités à grande
 vitesse, mais rapidement Arnaud croule sous les demandes parfois
 contradictoires.
 
-image:illustrations/MangaNicolas.png[float="left"]
+image:MangaNicolas.png[float="left"]
 
 Nicolas utilise l'environnement de programmation par Aspect AJDT.
 L'intégration d'AspectJ sous Eclipse qu'il propose en fait un outil
@@ -6909,7 +6909,7 @@ l'environnement de développement ;
 
 === Eclipse
 
-image:illustrations/MangaNicolas.png[float="left"]
+image:MangaNicolas.png[float="left"]
 
 Notre premier candidat n'a pas eu la tâche facile, puisque ce n'est pas
 une mais deux solutions qu'il a dû présenter à un jury plutôt
@@ -6974,7 +6974,7 @@ petite icône "M" ; quant à notre POM, il a droit à une icône dédiée qui
 permet de facilement le différencier des autres fichiers du projet (voir
 Figure 09-01).
 
-image:illustrations/09-01.png[align="center"]
+image:09-01.png[align="center"]
 
 Un projet Maven vu sous Eclipse au travers de m2eclipse.
 
@@ -7007,7 +7007,7 @@ onglet dédié permet de consulter les dépendances du projet et
 d'identifier le jeu de transitivité à travers lequel elles apparaissent
 dans le projet (voir Figure 09-02).
 
-image:illustrations/09-02.png[align="center"]
+image:09-02.png[align="center"]
 
 Gestion des dépendances.
 
@@ -7032,7 +7032,7 @@ devoir consulter la documentation et de faire une malheureuse faute de
 frappe dans leur nom. La figure 09-03 montre m2eclipse en action
 proposant cette assistance.
 
-image:illustrations/09-03.png[align="center"]
+image:09-03.png[align="center"]
 
 Édition de la configuration des plugins.
 
@@ -7063,7 +7063,7 @@ celle-ci peut devenir très gênante pour son utilisation quotidienne. Les
 choses devraient aller mieux avec la prochaine version du plugin
 m2eclipse…
 
-image:illustrations/09-04.png[align="center"]
+image:09-04.png[align="center"]
 
 Veuillez patienter…
 
@@ -7087,7 +7087,7 @@ qui définissent la classe considérée (voir Figure 09-05). Il n'est donc
 pas nécessaire de passer par l'édition du POM pour ajouter une
 dépendance suite au copier-coller d'un fragment de code intéressant.
 
-image:illustrations/09-05.png[align="center"]
+image:09-05.png[align="center"]
 
 Correction rapide par ajout d'une dépendance.
 
@@ -7113,7 +7113,7 @@ surtout à quelle échéance ?
 
 === Intellij Idea
 
-image:illustrations/MangaStephane.png[float="left"]
+image:MangaStephane.png[float="left"]
 
 Notre deuxième candidat utilise l'environnement de développement de
 JetBrains, Intellij Idea. Outil mixte propriétaire + opensource, Idea
@@ -7156,7 +7156,7 @@ nous permettra de lancer depuis l'IDE les opérations gérées par Maven,
 par exemple une construction jusqu'à une phase précise du cycle de vie
 ou l'exécution d'un plugin particulier.
 
-image:illustrations/09-06.png[align="center"]
+image:09-06.png[align="center"]
 
 Le projet Maven après import dans Idea.
 
@@ -7185,7 +7185,7 @@ Figure 09-07). On y retrouve tous nos répertoires de code source (et de
 code généré), que nous pouvons au besoin compléter, mais dans ce cas la
 configuration Idea ne sera plus synchrone avec le projet Maven.
 
-image:illustrations/09-07.png[align="center"]
+image:09-07.png[align="center"]
 
 La configuration du module Idea à partir des métadonnées Maven.
 
@@ -7197,7 +7197,7 @@ seront pas visibles depuis un autre projet qui fait référence au module
 considéré. Pas de risque ainsi d'introduire involontairement des imports
 parasites.
 
-image:illustrations/09-08.png[align="center"]
+image:09-08.png[align="center"]
 
 Les dépendances Maven vues sous Idea.
 
@@ -7219,7 +7219,7 @@ par le plugin). Une telle gymnastique n'est pas facile et est
 généralement réservée aux outils majoritaires pour lesquels l'effort en
 vaut la chandelle.
 
-image:illustrations/MangaStephane.png[float="left"]
+image:MangaStephane.png[float="left"]
 
 Ce résultat en demi-teinte est rapidement compensé par la démonstration
 que nous fait Stéphane de l'utilisation courante de l'IDE. Il édite
@@ -7254,7 +7254,7 @@ exécution explicite. L’IDE reste en permanence disponible pour son
 utilisateur, et utilise les ressources de la machine pour offrir de
 meilleures analyses du code en cours de rédaction.
 
-image:illustrations/MangaNicolas.png[float="left"]
+image:MangaNicolas.png[float="left"]
 
 Nicolas grogne un peu dans son coin, se demandant s'il a choisi le bon
 camp, mais il est vite repêché par une question du jury : si les équipes
@@ -7274,7 +7274,7 @@ passer à notre troisième candidat.
 
 === NetBeans
 
-image:illustrations/MangaRaphael.png[float="left"]
+image:MangaRaphael.png[float="left"]
 
 Notre dernier candidat est un farouche partisan de NetBeans et compte
 bien nous démontrer sa supériorité pour le mariage de Maven avec un
@@ -7305,7 +7305,7 @@ Maven, et, comme le souligne avec insistance Raphaël, le POM n'est pas
 dans cet environnement un format annexe, mais bien un descripteur de
 projet à part entière qui se suffit complètement.
 
-image:illustrations/09-09.png[align="center"]
+image:09-09.png[align="center"]
 
 Ouverture native d'un projet Maven.
 
@@ -7347,7 +7347,7 @@ dépôt. Comme l'indique la Figure 09-10, Raphaël ne se prive pas de nous
 montrer cette fonctionnalité comme preuve de la première place qu'occupe
 Maven dans son environnement préféré.
 
-image:illustrations/09-10.png[align="center"]
+image:09-10.png[align="center"]
 
 Intégration de la gestion des dépendances au plus profond de NetBeans.
 
@@ -7361,7 +7361,7 @@ l'autre n'a pas, de ses considérations sur la formation des
 développeurs… La conclusion finit par émerger, avec l'aide d'un regard
 externe au débat.
 
-image:illustrations/MangaSebastien.png[float="left"]
+image:MangaSebastien.png[float="left"]
 
 Venu nous rendre une petite visite de courtoisie, Sébastien s'étonne de
 nous trouver dans cette situation de guerre de chapelles. Pour débloquer
@@ -7413,7 +7413,7 @@ manque de compassion pour les erreurs que nous aurions pu commettre.
 
 ==== Première livraison
 
-image:illustrations/MangaEmmanuel.png[float="left"]
+image:MangaEmmanuel.png[float="left"]
 
 La toute première version publique de "noubliepaslalistedescourses" a
 été particulièrement héroïque. Tout commence par plusieurs semaines de
@@ -7527,7 +7527,7 @@ sur un point pas assez détaillé. Certains seront très à l'aise avec les
 commandes Unix alors que d'autres auront besoin qu'on les prenne par la
 main.
 
-image:illustrations/MangaEmmanuel.png[float="left"]
+image:MangaEmmanuel.png[float="left"]
 
 Est-ce vraiment la panacée ? Pourquoi acceptons-nous que le moment de la
 livraison – le plus crucial de la vie du projet – soit le seul à ne pas
@@ -7625,7 +7625,7 @@ de livraison.doc que vous aviez jusqu'ici et servez-vous-en pour caler
 votre armoire bancale. Et si votre responsable qualité vous réclame un
 document de procédure, faites-lui une photocopie de la Figure 10-01 !
 
-image:illustrations/10-01.png[align="center"]
+image:10-01.png[align="center"]
 
 Étapes réalisées par le plugin release_._
 
@@ -7741,7 +7741,7 @@ coquille de dernière minute qui passerait au travers du processus de
 livraison. Aussi, nous voulons tester une dernière fois avant de mettre
 le coup de tampon "bon pour le service".
 
-image:illustrations/MangaEmmanuel.png[float="left"]
+image:MangaEmmanuel.png[float="left"]
 
 C'est à nouveau Emmanuel qui s'y colle, maintenant qu'il est devenu
 notre gourou de la livraison. Pour notre version 1.3.0, il propose de
@@ -7790,7 +7790,7 @@ logiciel encore pire, nous pourrions toujours, pressés par le temps,
 repartir de ce tag. Celui-ci présente bien la capacité de produire un
 projet en version 1.3.0 !
 
-image:illustrations/MangaCarlos.png[float="left"]
+image:MangaCarlos.png[float="left"]
 
 Carlos est très intrigué par les explications d'Emmanuel sur cette
 procédure de mise sur étagère d'une version candidate. Il propose alors
@@ -7823,7 +7823,7 @@ d'esprit du moment.
 Il nous faut un correctif, une 1.2.1, et le plus vite sera le mieux. Et
 c'est bien sûr sur Emmanuel que ça tombe une fois de plus !
 
-image:illustrations/MangaEmmanuel.png[float="left"]
+image:MangaEmmanuel.png[float="left"]
 
 Mais, cette fois, Emmanuel ne s'est pas laissé prendre de vitesse et a
 prévu le coup. Notre gestionnaire de code source prend ce problème en
@@ -7840,7 +7840,7 @@ utilisée pour des besoins correctifs ou pour expérimenter à l'abri d'un
 petit coin tranquille une évolution complexe, qui impacterait trop le
 reste de l'équipe.
 
-image:illustrations/10-02.png[align="center"]
+image:10-02.png[align="center"]
 
 Utilisation d'une branche de développement parallèle.
 
@@ -7868,8 +7868,8 @@ en charge de manière totalement structurée et automatisée.
 
 === Vis ma vie
 
-image:illustrations/MangaEmmanuel.png[float="left"]
-image:illustrations/MangaVincentS.png[float="left"]
+image:MangaEmmanuel.png[float="left"]
+image:MangaVincentS.png[float="left"]
 
 Emmanuel est confronté à un problème : en tant que responsable du
 développement du portail web, il est soumis aux demandes répétées du
@@ -7994,7 +7994,7 @@ appliquer à leurs développements informatiques pour échapper à un monde
 où règnent le bricolage et les manipulations manuelles hasardeuses. La
 Figure 10-03 présente le principe général de cette approche.
 
-image:illustrations/10-03.png[align="center"]
+image:10-03.png[align="center"]
 
 Production continue.
 
@@ -8031,7 +8031,7 @@ versions, ou bien considérez des sites comme Flickr.com qui font plus de
 10 mises en production par jour – ce qu’ils appellent, eux, un
 « commit », au sens littéral du terme : « engagement ».
 
-image:illustrations/MangaEmmanuel.png[float="left"]
+image:MangaEmmanuel.png[float="left"]
 
 Emmanuel est plus que satisfait et raconte avec un sourire nostalgique à
 nos stagiaires les journées rocambolesques des premières versions.
@@ -8076,7 +8076,7 @@ inespérée pour notre travail, et nous préparons avec un mélange
 d'enthousiasme et d'anxiété le passage du statut de start-up à celui de
 filiale d'un géant international.
 
-image:illustrations/Geegol-Shopping-List.png[float="left"]
+image:Geegol-Shopping-List.png[float="left"]
 --
 
 == Chapitre 11 : Utiliser un outil non supporté
@@ -8098,7 +8098,7 @@ de l'application.
 
 $$$ Centré $$$
 
-image:illustrations/GEA.png[float="center"]
+image:GEA.png[float="center"]
 
 Pour s'assurer que ces contraintes sont respectées, plutôt que
 d'attendre les phases de validation du projet et un éventuel crash, le
@@ -8119,7 +8119,7 @@ manches.
 
 ==== Réutiliser l'existant
 
-image:illustrations/MangaHerve.png[float="left"]
+image:MangaHerve.png[float="left"]
 
 L'outil de Geegol est assez simple d'utilisation. Il est écrit en Java,
 et on l’invoque depuis la ligne de commande en fournissant la liste des
@@ -8225,7 +8225,7 @@ temps du code existant. Dans la même veine, nous pourrions exécuter un
 script Groovy ou BeanShell. Cependant, cette pratique n'est pas tout à
 fait satisfaisante :
 
-image:illustrations/MangaHerve.png[float="left"]
+image:MangaHerve.png[float="left"]
 
 Hervé n'est pas prêt à se contenter de cette solution qui n'est, pour
 lui, qu'un pis-aller : d'une part, nous sacrifions l'idée phare de Maven
@@ -8390,7 +8390,7 @@ plaisent pas complètement.
 
 ==== Un modèle dynamique
 
-image:illustrations/MangaHerve.png[float="left"]
+image:MangaHerve.png[float="left"]
 
 Dans sa première version, le plugin d'Hervé, pour analyser notre code
 source, utilisait un paramètre basé sur l'expression
@@ -8454,7 +8454,7 @@ for (String root : sources)
 
 ==== Plexus
 
-image:illustrations/MangaHerve.png[float="left"]
+image:MangaHerve.png[float="left"]
 
 Pour étoffer son plugin, Hervé veut dans notre cas proposer une archive
 ZIP du rapport (très verbeux) généré par l'outil d'analyse Geegol, pour
@@ -8712,7 +8712,7 @@ génération du rapport", e );
 
 Maven3
 
-image:illustrations/MangaOlivier.png[float="left"]
+image:MangaOlivier.png[float="left"]
 
 Olivier revient tout juste d’une conférence sur l’avenir de Java et les
 plans de développement de JavaEE 7, et nous trouve tous au chevet de
@@ -8812,7 +8812,7 @@ class GEACheckMojo extends SisuMavenMojo {
 
 === Tester notre plugin
 
-image:illustrations/MangaHerve.png[float="left"]
+image:MangaHerve.png[float="left"]
 
 Hervé est fier de nous montrer le fonctionnement de son plugin, qui a
 nécessité quelques acrobaties techniques avec les ClassLoaders mais qui
@@ -8985,7 +8985,7 @@ return true;
 -------------------------------------------------------------------------------
 
 
-image:illustrations/MangaHerve.png[float="left"]
+image:MangaHerve.png[float="left"]
 
 Hervé configure le serveur d'intégration continue pour surveiller, en
 plus de notre projet, la bonne santé de son plugin, lequel, outillé de
@@ -9053,7 +9053,7 @@ peut suivre au cours de la vie du projet dès que du code est écrit,
 signalant ainsi toute dérive malheureuse dans les bonnes pratiques de
 développement.
 
-image:illustrations/MangaVincentM.png[float="left"]
+image:MangaVincentM.png[float="left"]
 
 Vincent s'attaque à outiller notre projet pour répondre au mieux aux
 attentes du groupe. Il épluche la longue liste des outils disponibles
@@ -9101,7 +9101,7 @@ négligemment laissés traîner ?
 
 ===== Checkstyle
 
-image:illustrations/MangaVincentM.png[float="left"]
+image:MangaVincentM.png[float="left"]
 
 Vincent expérimente tout d'abord un outil open-source de cette catégorie
 sur notre code : Checkstyle. L'analyse est de niveau syntaxique et
@@ -9110,7 +9110,7 @@ Une grande partie des règles de Checkstyle concerne le formatage du code
 plus que son fond, l'outil semble donc à la fois tatillon et sans grand
 intérêt.
 
-image:illustrations/MangaVincentS.png[float="left"]
+image:MangaVincentS.png[float="left"]
 
 L'autre Vincent – si vous avez bien suivi les chapitres précédents, vous
 aurez noté que notre équipe compte deux Vincent ;) –, qui suit de loin
@@ -9125,7 +9125,7 @@ Listing 12.1 : Comparaison de nos conventions de formatage du code
 
 $$$ deux colonnes côte à côte$$$
 
-$$$ 1ere colonne $$$image:illustrations/MangaVincentS.png[float="left"]
+$$$ 1ere colonne $$$image:MangaVincentS.png[float="left"]
 
 [source, java]
 -------------------------------------------------------------------------------
@@ -9143,7 +9143,7 @@ public class ListeDesCourses implements Data \{
 …
 -------------------------------------------------------------------------------
 
-$$$ 2^e^ colonne $$$image:illustrations/MangaHerve.png[float="left"]
+$$$ 2^e^ colonne $$$image:MangaHerve.png[float="left"]
 [source, java]
 -------------------------------------------------------------------------------
 public class ListeDesCourses
@@ -9208,7 +9208,7 @@ l'outillage est inutilisable car trop tatillon.
 
 ===== FindBugs
 
-image:illustrations/MangaVincentM.png[float="left"]
+image:MangaVincentM.png[float="left"]
 
 Vincent poursuit son expérimentation sur l'analyse statique du code avec
 FindBugs. Comme son nom l'indique, cet outil se propose de trouver tout
@@ -9246,7 +9246,7 @@ multithread.
 
 ===== PMD
 
-image:illustrations/MangaVincentM.png[float="left"]
+image:MangaVincentM.png[float="left"]
 
 Vincent termine son tour d'horizon en installant un autre outil
 d'analyse statique : PMD. Celui-ci se place à mi-chemin entre Checkstyle
@@ -9279,7 +9279,7 @@ fois au cours d'un test.
 
 Comment exploiter un tel outil ?
 
-image:illustrations/MangaOlivier.png[float="left"]
+image:MangaOlivier.png[float="left"]
 
 Olivier, qui est venu épauler Vincent, évalue avec lui ces outils et
 l'information qu'ils fournissent. L'indication synthétique est un taux
@@ -9319,7 +9319,7 @@ instrumenter ce code, peut-être en le réarrangeant afin qu'il soit plus
 modulaire et plus testable, peut-être en développant des simulateurs
 plus faciles à intégrer dans un test unitaire.
 
-image:illustrations/MangaVincentM.png[float="left"]
+image:MangaVincentM.png[float="left"]
 
 Vincent prend cela en considération et établit notre première règle
 d'or :
@@ -9343,7 +9343,7 @@ de protectionniste :
 Le taux de couverture ne doit pas baisser avec le temps sans
 justification.
 
-image:illustrations/MangaVincentM.png[float="left"]
+image:MangaVincentM.png[float="left"]
 
 Vincent arrive donc rapidement à la conclusion qu'il va devoir trouver
 un moyen pour contrôler l'évolution dans le temps de nos indicateurs.
@@ -9400,7 +9400,7 @@ savoir-faire et gagner leur confiance. Enfin, notre code étant soumis à
 une licence libre, nous voulons qu'il soit aussi facilement consultable
 que possible pour permettre à chacun de proposer des enrichissements.
 
-image:illustrations/MangaLukas.png[float="left"]
+image:MangaLukas.png[float="left"]
 
 Après avoir testé diverses solutions documentaires, Lukas cherche
 toujours un moyen pour synthétiser les diverses sources d'information du
@@ -9460,7 +9460,7 @@ des rapports qu’on indique directement dans sa configuration, comme tout
 autre plugin Maven. Le site de Maven 3 n’est plus un cas à part, mais un
 plugin comme les autres.
 
-image:illustrations/MangaHerve.png[float="left"]
+image:MangaHerve.png[float="left"]
 
 Hervé est ravi d’apprendre que Maven 3 a fait le ménage dans son code,
 mais devoir gérer deux versions du plugin site en fonction de la version
@@ -9674,7 +9674,7 @@ dans les semaines qui suivent.
 
 link:#_ftn43[*[43]*]
 
-image:illustrations/MangaVincentM.png[float="left"]
+image:MangaVincentM.png[float="left"]
 
 Le spécialiste en thermodynamique de l'équipe c'est Vincent, et c'est
 donc lui qui nous propose spontanément un outil pour être en mesure de
@@ -9724,7 +9724,7 @@ Les données de Sonar sont accessibles _via_ un frontal web synthétique,
 qui donne les grandes tendances du projet. C'est notre vue à
 30 000 pieds du projet (voir Figure 12-02).
 
-image:illustrations/12-02.png[align="center"]
+image:12-02.png[align="center"]
 
 Synthèse de nos indicateurs qualité dans Sonar.
 
@@ -9739,7 +9739,7 @@ détails. On va ainsi descendre de lien en lien jusqu'aux classes du
 projet puis ouvrir son code source pour constater la ligne de code qui a
 été identifiée par l'analyse de code (voir Figure 12-03).
 
-image:illustrations/12-03.png[align="center"]
+image:12-03.png[align="center"]
 
 Détail des violations constatées par Sonar dans notre code source.
 
@@ -9784,7 +9784,7 @@ l'équipe, par exemple en lui montrant cette simple courbe, sur
 l'influence que peut avoir un petit effort quotidien de clarification et
 de simplification du code.
 
-image:illustrations/12-04.png[align="center"]
+image:12-04.png[align="center"]
 
 Évolution de nos indicateurs qualité.
 
@@ -9797,7 +9797,7 @@ extrêmement puissant pour accompagner le travail d'une équipe et pointer
 du doigt ses dérives. Le développeur parfait n'existe pas, mais le
 développeur bien outillé peut tenter de s'améliorer.
 
-image:illustrations/12-05.png[align="center"]
+image:12-05.png[align="center"]
 
 Classement des violations les plus souvent identifiées
 
@@ -9853,7 +9853,7 @@ fabrique logicielle. Nous entrons ainsi dans une phase
 d'industrialisation durant laquelle un processus automatisé produit
 notre livrable avec l'outillage qualité adéquat.
 
-image:illustrations/MangaLukas.png[float="left"]
+image:MangaLukas.png[float="left"]
 
 Lukas a cependant fait les frais d'une automatisation maladroite de ce
 processus. L'équipe de test vient de lui remonter une anomalie grave :
@@ -9961,7 +9961,7 @@ Listing 13.2 : Obtenir le numéro de révision SVN
 
 ==== Utiliser le MANIFEST
 
-image:illustrations/MangaLukas.png[float="left"]
+image:MangaLukas.png[float="left"]
 
 Décidé à ne pas se faire avoir deux fois, Lukas met en place cette
 solution et fait produire par notre serveur d'intégration continue des
@@ -10066,7 +10066,7 @@ serveur d'intégration continue.
 
 === La confiance règne…
 
-image:illustrations/MangaStephane.png[float="left"]
+image:MangaStephane.png[float="left"]
 
 Stéphane revient l'air sombre d'une longue réunion avec les responsables
 stratégiques du groupe. Il leur a exposé nos pratiques, nos outils et
@@ -10125,7 +10125,7 @@ anxieux de retourner au casse-pipe avec cette seule réponse à donner à
 notre M. Sécurité. Il cherche donc un moyen pour indiquer de manière
 infalsifiable qui a produit une archive Java.
 
-image:illustrations/MangaOlivier.png[float="left"]
+image:MangaOlivier.png[float="left"]
 
 La réponse lui vient indirectement d'Olivier. Celui-ci a pris l'habitude
 de signer numériquement ses mails, sans doute plus pour le plaisir
@@ -10475,7 +10475,7 @@ l’élaboration d'un nouveau projet dont les concepts sont proches du
 nôtre, malistedecadeauxpournoël. Raphaël se voit offrir la lourde tâche
 d’en mettre en place les briques de base.
 
-image:illustrations/MangaRaphael.png[float="left"]
+image:MangaRaphael.png[float="left"]
 
 Raphaël se dit qu'on l'a peut-être un peu trompé sur la marchandise,
 lorsqu'il découvre le planning du projet. Les délais de réalisation sont
@@ -10823,7 +10823,7 @@ archétype a expérimenté avec succès une nouvelle technologie, il lui
 suffit de proposer l'évolution associée. Notre outillage de contrôle
 qualité faisant le reste pour assurer la cohérence de l'ensemble.
 
-image:illustrations/MangaSebastien.png[float="left"]
+image:MangaSebastien.png[float="left"]
 
 Sébastien passe nous voir, en espérant cette fois ne pas nous trouver au
 milieu d'une bataille de chiffonniers (voir le Chapitre 9). Il vient
@@ -10849,9 +10849,9 @@ Dernier élément, un tel projet peut être fédérateur au sein de
 l'entreprise, en démontrant un savoir-faire et en servant de point
 d'échange sur les technologies.
 
-image:illustrations/MangaNicolas.png[float="left"]
-image:illustrations/MangaCarlos.png[float="left"]
-image:illustrations/MangaVincentM.png[float="left"]
+image:MangaNicolas.png[float="left"]
+image:MangaCarlos.png[float="left"]
+image:MangaVincentM.png[float="left"]
 $$$ côte à cote$$$
 
 Au démarrage de notre projet, s'est posée la question du choix d'un
@@ -10881,7 +10881,7 @@ de positif, nous pourrons ainsi proposer à chaque nouveau projet de
 faire son propre choix, en fonction des personnes disponibles, de leurs
 compétences, des exigences du projet, etc.
 
-image:illustrations/MangaFrancois.png[float="left"]
+image:MangaFrancois.png[float="left"]
 
 Lorsque François revient nous voir pour nous féliciter du succès de
 noubliepaslalistedescourses, il ne peut s'empêcher de nous taquiner en
@@ -10912,7 +10912,7 @@ prendre une décision raisonnée.
 
 Elle peut également servir de support de formation.
 
-image:illustrations/MangaJerome.png[float="left"]
+image:MangaJerome.png[float="left"]
 
 Jérôme veut démarrer un projet fondé sur Struts 2 et Spring, et former
 dans le même temps les développeurs novices à ces technologies. Pour les
@@ -11009,7 +11009,7 @@ $$$ commite.png[float="left"] $$$
 
 === Les limites
 
-image:illustrations/MangaFabrice.png[float="left"]
+image:MangaFabrice.png[float="left"]
 
 Fabrice prend les devants et expose d'office les limites que nous avons
 constatées lors de l'utilisation de Maven. Nous ne sommes pas face à des
@@ -11042,7 +11042,7 @@ projets open-source qui déploient sur central. Leur utilisation ne
 serait alors possible que pour les utilisateurs du nouveau Maven. Une
 prise en otage inacceptable !
 
-image:illustrations/MangaStephane.png[float="left"]
+image:MangaStephane.png[float="left"]
 
 Une deuxième limite de Maven concerne son fonctionnement en mode
 multimodule, en particulier lorsqu'on exploite l'héritage naturel : la
@@ -11054,7 +11054,7 @@ Stéphane l'a rencontré et contourné au Chapitre 13. Il peut sembler
 anecdotique mais sa correction complète nécessite une refonte assez
 profonde de Maven et de sa gestion du cycle de vie.
 
-image:illustrations/MangaEmmanuel.png[float="left"]
+image:MangaEmmanuel.png[float="left"]
 
 Un autre souci concerne les expressions, qui permettent de mutualiser
 des numéros de version comme dans l'exemple ci-après :
@@ -11097,7 +11097,7 @@ n'est pas exactement équivalent ?
 
 ==== Les plugins
 
-image:illustrations/MangaOlivier.png[float="left"]
+image:MangaOlivier.png[float="left"]
 
 Olivier signale également la difficulté pour identifier un plugin qui
 réponde à un besoin précis et pour en qualifier la pérennité. Or, Maven
@@ -11154,7 +11154,7 @@ projets et envies sur la liste de diffusion : user@mojo.codehaus.org.
 
 ==== Le support
 
-image:illustrations/MangaVincentM.png[float="left"]
+image:MangaVincentM.png[float="left"]
 
 L'utilisation de Maven est simple si on suit ses conventions et qu'on
 dispose des bons plugins ; elle peut devenir assez vite délicate, si on
@@ -11209,7 +11209,7 @@ remplie.
 
 ==== Le coût de Maven
 
-image:illustrations/MangaHerve.png[float="left"]
+image:MangaHerve.png[float="left"]
 
 Hervé rebondit sur la question du support en évoquant le prix de revient
 de Maven sur un projet. Maven est un projet libre, téléchargeable et
@@ -11234,7 +11234,7 @@ décrivent des points plus spécifiques de son utilisation.
 
 === La concurrence
 
-image:illustrations/MangaVincentS.png[float="left"]
+image:MangaVincentS.png[float="left"]
 
 Après cette autocritique, Vincent prend en main la contre-attaque :
 quelle autre solution avons-nous pour la gestion de notre projet ? Nous
@@ -11346,7 +11346,7 @@ innovant.
 
 ===== Gradle
 
-image:illustrations/MangaGregory.png[float="left"]
+image:MangaGregory.png[float="left"]
 
 Depuis des mois déjà, Grégory nous interpelle sur notre projet en
 dénonçant la lourdeur du fichier XML de notre outil de build et son
@@ -11481,7 +11481,7 @@ trois personnes au monde savent faire fonctionner.
 
 ==== La communauté
 
-image:illustrations/MangaArnaud.png[float="left"]
+image:MangaArnaud.png[float="left"]
 
 Arnaud poursuit le travail d'évangélisation en démontrant que nous ne
 sommes pas de dangereux geeks qui ont misé sur un outil qui finira aux
@@ -11498,7 +11498,7 @@ que les utilisateurs de tous niveaux formulent, parfois dans un anglais
 assez approximatif (c'est un moyen simple pour reconnaître des collègues
 francophones).
 
-image:illustrations/15-01.png[align="center"]
+image:15-01.png[align="center"]
 
 Trafic de la liste users@maven.apache.org – en rouge le nombre de
 messages et en bleu le nombre d'inscrits.
@@ -11512,15 +11512,15 @@ de téléchargements de Maven au cours de l'année, toutes versions
 confondues. Ici encore, les chiffres démontrent une très large
 communauté.
 
-image:illustrations/15-02.png[align="center"]
+image:15-02.png[align="center"]
 
 Origine géographique des visiteurs de maven.apache.org.
 
-image:illustrations/15-03.png[align="center"]
+image:15-03.png[align="center"]
 
 Trafic sur le site web maven.apache.org.
 
-image:illustrations/15-04.png[align="center"]
+image:15-04.png[align="center"]
 
 Téléchargements mensuels de Maven sur un an, toutes versions confondues.
 
@@ -11560,7 +11560,7 @@ avec l'existant est suivie.
 
 ==== L'adoption en entreprise
 
-image:illustrations/MangaJerome.png[float="left"]
+image:MangaJerome.png[float="left"]
 
 Votre Honneur, j'appelle à la barre notre premier témoin : Jérôme.
 
@@ -11601,7 +11601,7 @@ gestionnaire du dépôt d'artefacts, serveur d'intégration continue.
 
 === L'avenir de Maven
 
-image:illustrations/MangaJIM.png[float="left"]
+image:MangaJIM.png[float="left"]
 
 Mission impossible ?
 
@@ -11726,7 +11726,7 @@ En résumé, Maven 3 c’est un peu un épisode spécial de Extreme makeover :
 Maven editionlink:#_ftn59[[59]].  On prend votre outillage existant,
 mais on refait tout de la cave au grenier !
 
-image:illustrations/15-05.png[align="center"]
+image:15-05.png[align="center"]
 
 ===== Quoi de neuf ?
 
@@ -11750,7 +11750,7 @@ est  possible de laisser l'IDE faire certaines de ces tâches tout en
 exploitant les plugins Maven pour d'autres, comme c'est déjà le cas pour
 la compilation du code source.
 
-[image:illustrations/MangaOlivier].png[float="left"]
+[image:MangaOlivier].png[float="left"]
 
 Olivier nous signale d’ailleurs que notre IDE n’est pas le seul à
 exploiter cette possibilité d’embarquer Maven en interne. Notre serveur
@@ -11767,7 +11767,7 @@ propose une console avec coloration syntaxique, assistance à la saisie
 des mots clés, et maintien en mémoire des POM et des métadonnées de
 votre projet. Il en résulte un Maven plus réactif à vos commandes.
 
-image:illustrations/15-06.png[align="center"]
+image:15-06.png[align="center"]
 
 Sonatype MavenShell.
 
@@ -11917,7 +11917,7 @@ des difficultés que rencontreront les équipes de développement.
 
 ===== Maven 4 ?
 
-image:illustrations/MangaArnaud.png[float="left"]
+image:MangaArnaud.png[float="left"]
 
  [IMF]**
 
@@ -11941,7 +11941,7 @@ projet n^o^ 1 de Geegol ?
 
 ==== La fondation Apache
 
-image:illustrations/MangaRaphael.png[float="left"]
+image:MangaRaphael.png[float="left"]
 
 Raphaël se fait un plaisir en expliquant le monde open-source et les
 garanties intrinsèques qu'apporte ce modèle.
@@ -11982,7 +11982,7 @@ Apache et soumis à une gestion communautaire multipartite.
 
 ==== Sonatype
 
-image:illustrations/MangaNicolas.png[float="left"]
+image:MangaNicolas.png[float="left"]
 
 Nicolas poursuit en constatant une certaine incrédulité de notre
 auditoire. Le monde merveilleux de l'open-source tout gratuit, où des
@@ -12198,7 +12198,7 @@ application OSGi, c’est découvrir un monde très différent de ce que nous
 avons vu jusqu’ici avec Maven, et c’est ce que Pascal s’apprête à
 affronter.
 
-image:illustrations/MangaPascal.jpg[float="left"]
+image:MangaPascal.jpg[float="left"]
 
 Pascal vient de rejoindre notre équipe, car nous ajoutons une nouvelle
 corde à notre arc : le petit projet n’oublie pas la liste des courses a
@@ -12339,7 +12339,7 @@ même bien compliqué pour un résultat sans grande plus-value.
 
 ==== Tant pis pour Maven !
 
-image:illustrations/MangaPascal.jpg[float="left"]
+image:MangaPascal.jpg[float="left"]
 
 La semaine suivante, Pascal prend part à notre stand-up hebdomadaire
 pour nous exposer ses progrès. Il lâche le morceau : la solution qu’il a
@@ -12528,7 +12528,7 @@ maven-osgi-test-plugin, Eclipse PDE nous imposant de séparer
 physiquement les tests dans un bundle dédié pour ne pas polluer le
 MANIFEST du bundle principal.
 
-image:illustrations/MangaPascal.jpg[float="left"]
+image:MangaPascal.jpg[float="left"]
 
 Pascal nous a bluffé, et même si nous avons encore un peu de mal à
 admettre que notre magnifique gestion de dépendance Maven vient de se
@@ -12598,7 +12598,7 @@ Nous faisons ainsi la connaissance de Marklink:#_ftn66[[66]], ingénieur
 chez Oracle. Il travaille sur un projet qui vise à modulariser la
 plateforme Java, nom de code jigsaw.
 
-image:illustrations/MangaMark.jpg[float="left"]
+image:MangaMark.jpg[float="left"]
 
 Depuis des années, Java évolue en ajoutant de nouvelles API,
 alourdissant toujours plus la plateforme. Malgré l’amélioration des
@@ -12617,8 +12617,8 @@ indiquer les briques qui lui sont nécessaires. Ce projet fait l’objet
 d’une spécification au sein du Java Community Process, qui standardisera
 le mécanisme de modularisation.
 
-image:illustrations/MangaPascal.jpg[float="left"]
-image:illustrations/MangaArnaud.png[float="left"]
+image:MangaPascal.jpg[float="left"]
+image:MangaArnaud.png[float="left"]
 
 Pascal, s’étonne de l’enthousiasme de Mark à incorporer ce « nouveau
 concept » dans la plateforme Java. OSGi propose déjà cela depuis plus de
@@ -12710,7 +12710,7 @@ pas possible de les utiliser pour désolidariser l’interface
 java.util.List de ses implémentations concurrentes dédiées à la
 programmation parallèle.
 
-image:illustrations/MangaMark.jpg[float="left"]
+image:MangaMark.jpg[float="left"]
 
 Mark a l’habitude de trouver un accueil un peu frais à ses explications,
 et a donc gardé pour la fin les éléments qui vont peut être nous faire
@@ -12825,7 +12825,7 @@ avons déjà pu rencontrer.
 
 === Les bonnes bases
 
-image:illustrations/MangaNicolas.png[float="left"]
+image:MangaNicolas.png[float="left"]
 
 Bienvenue pour cette session de formation Maven 101 – essentials.
 L'objectif de cette formation n'est pas de vous transformer en gurus de
@@ -13416,7 +13416,7 @@ Certains parlent d'industrialisation du développement, d'autres
 simplement de renoncer à des pratiques qui tiennent du pur bricolage.
 Anecdote :
 
-image:illustrations/MangaNicolas.png[float="left"]
+image:MangaNicolas.png[float="left"]
 
 Nicolas, en tant qu'expert Maven, est consulté pour un projet en tierce
 maintenance. La procédure de compilation est la suivante :
@@ -13471,7 +13471,7 @@ l'équipe de développement du projet Maven ?
 Laissons-les se présenter (par ordre alphabétique du prénom, comme ça,
 pas de jaloux).
 
-image:illustrations/MangaCarlos.png[float="left"]
+image:MangaCarlos.png[float="left"]
 
 ===== Carlos Sanchez
 
@@ -13493,7 +13493,7 @@ allé en France de nombreuses fois : Pyrénées, Alpes, Bretagne, Paris.
 Mais j'ai beaucoup oublié mon français en parlant toujours en anglais
 :(.
 
-image:illustrations/MangaEmmanuel.png[float="left"]
+image:MangaEmmanuel.png[float="left"]
 
 ===== Emmanuel Venisse
 
@@ -13514,7 +13514,7 @@ disponible maintenant :-(.
 Dans le passé, j'ai travaillé dans la même SSII que Nicolas, mais à
 Paris où j'avais introduit également Maven ;-).
 
-image:illustrations/MangaFabrice.png[float="left"]
+image:MangaFabrice.png[float="left"]
 
 ===== Fabrice Bellingard
 
@@ -13542,7 +13542,7 @@ vingt premières années de ma vie à Limoges, c'est pour dire ;-).
 Bénévole WWF et ambassadeur de l'ONG Planète Urgence : ma vraie passion,
 c'est la protection de l'environnement et la solidarité internationale.
 
-image:illustrations/MangaHerve.png[float="left"]
+image:MangaHerve.png[float="left"]
 
 ===== Hervé Boutemy
 
@@ -13576,7 +13576,7 @@ variées.
 Ce livre original est un exemple de plus de toute la richesse de la
 communauté francophone autour de Maven.
 
-image:illustrations/MangaLukas.png[float="left"]
+image:MangaLukas.png[float="left"]
 
 ===== Lukas Theussl
 
@@ -13607,7 +13607,7 @@ c'est l'histoire… J'ai ensuite aidé Arnaud à enterrer Maven 1.1, et
 maintenant je participe surtout au sous-projet Doxia et particulièrement
 à la version du plugin pdf pour Maven 2.
 
-image:illustrations/MangaOlivier.png[float="left"]
+image:MangaOlivier.png[float="left"]
 
 ===== Olivier Lamy
 
@@ -13635,7 +13635,7 @@ du site plugin)
 
 * et puis d'autres trucs :-) (Maven scm, divers mojo chez codehaus)
 
-image:illustrations/MangaRaphael.png[float="left"]
+image:MangaRaphael.png[float="left"]
 
 ===== Raphaël Piéroni
 
@@ -13649,7 +13649,7 @@ Je dispose à la maison du Lexique des règles typographiques en usage à
 l'Imprimerie nationale – 3^e^ édition. Nicolas, je peux te le prêter en
 cas de besoin ;).
 
-image:illustrations/MangaStephane.png[float="left"]
+image:MangaStephane.png[float="left"]
 
 ===== Stéphane Nicoll
 
@@ -13667,7 +13667,7 @@ délivrables J2EE. Je fais partie du Project Management Commitee de Maven
 depuis 2006, je m'occupe toujours des plugins de packaging, mais
 également des aspects de flexibilité et de configurabilité d'un projet.
 
-image:illustrations/MangaVincentM.png[float="left"]
+image:MangaVincentM.png[float="left"]
 
 ===== Vincent Massol
 
@@ -13702,7 +13702,7 @@ XWikilink:#_ftn72[[72]], un wiki d'entreprise de deuxième génération
 XWiki SAS qui offre des services, du support et du développement
 spécifique au-dessus du projet open-source XWiki.
 
-image:illustrations/MangaVincentS.png[float="left"]
+image:MangaVincentS.png[float="left"]
 
 ===== Vincent Siveton
 
@@ -13737,7 +13737,7 @@ Pour compléter notre fine équipe par quelques profils moins
 "Maven-addicted", nous avons invité quelques-unes de nos connaissances
 de la communauté Java francophone.
 
-image:illustrations/MangaAntonio.png[float="left"]
+image:MangaAntonio.png[float="left"]
 
 ===== Antonio Goncalves
 
@@ -13770,7 +13770,7 @@ aussi partie de la bande des Cast Codeurs. Quoi ? Vous ne connaissez pas
 les Cast Codeurs ? Eh bien, retrouvez tout cela sur mon site personnel
 pour de plus amples informations : http://www.antoniogoncalves.org.
 
-image:illustrations/MangaFrancois.png[float="left"]
+image:MangaFrancois.png[float="left"]
 
 ===== François Le Droff
 
@@ -13790,7 +13790,7 @@ leur enthousiasme et leur passion sont en effet contagieux…
 PS : je suis également l'auteur d'un blog technique autour des
 technologies Java et Flex (http://www.droff.com).
 
-image:illustrations/MangaGregory.png[float="left"]
+image:MangaGregory.png[float="left"]
 
 ===== Grégory Boissinot
 
@@ -13821,7 +13821,7 @@ et l’animation de conférences. Cependant, je reste très actif dans la
 communauté Maven en réalisant de nombreuses missions de conseil et des
 formations sur cet outil et son écosystème.
 
-image:illustrations/MangaGuillaume.png[float="left"]
+image:MangaGuillaume.png[float="left"]
 
 ===== Guillaume Laforge
 
@@ -13844,7 +13844,7 @@ rend Maven un peu plus agréable à utiliser à mon goût ! Mais j'espère
 que ce livre rabibochera les développeurs allergiques à Maven avec ce
 puissant outil de build !
 
-image:illustrations/MangaJerome.png[float="left"]
+image:MangaJerome.png[float="left"]
 
 ===== Jérôme Van der Linden
 
@@ -13860,7 +13860,7 @@ version 1 m'avait paru intéressante comparée à Ant mais c'est surtout la
 version 2 et toutes ses conventions qui me semblent apporter énormément
 au développement !
 
-image:illustrations/MangaPascal.jpg[float="left"]
+image:MangaPascal.jpg[float="left"]
 
 ===== Pascal Leclercq
 
@@ -13875,7 +13875,7 @@ présents dans notre galaxie
 
 Une de ses principales qualités est son insatiable curiosité.
 
-image:illustrations/MangaSebastien.png[float="left"]
+image:MangaSebastien.png[float="left"]
 
 ===== Sébastien Le Maréchal
 
@@ -13910,7 +13910,7 @@ bénédiction :-).
 
 ==== Post-scriptum
 
-image:illustrations/MangaNicolas.png[float="left"]
+image:MangaNicolas.png[float="left"]
 
 ===== Nicolas de Loof
 
@@ -13932,7 +13932,7 @@ Merci enfin à mes p'tits loups qui supportent que leur papa passe tant
 d'heures devant son écran, ainsi qu’à l’ange qui m’accompagne et
 ensoleille chaque jour ma vie.
 
-image:illustrations/MangaArnaud.png[float="left"]
+image:MangaArnaud.png[float="left"]
 
 ===== Arnaud Héritier
 
