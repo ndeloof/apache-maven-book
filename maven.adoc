@@ -467,7 +467,7 @@ soit sa singularité.
 
 Voici le fichier envoyé par Jason :
 
-Listing 1.2 : pom.xml
+.Listing 1.2 : pom.xml
 [source, xml]
 -------------------------------------------------------------------------------
 <project>
@@ -518,7 +518,7 @@ réseau les éléments manquants. Effectivement, la première exécution de
 Maven se traduit dans la console par une série de messages de
 téléchargements divers :
 
-Listing 1.3 : Première exécution de Maven
+.Listing 1.3 : Première exécution de Maven
 -------------------------------------------------------------------------------
 D:\noubliepaslalistedescourses>mvn package
 [INFO] Scanning for projects...
@@ -559,7 +559,7 @@ Poursuivons l'analyse des messages que Maven trace dans la console, en
 ignorant les lignes liées à ces téléchargements étranges mais
 apparemment nécessaires :
 
-Listing 1.4 : Seconde exécution de Maven… sans téléchargement cette fois
+.Listing 1.4 : Seconde exécution de Maven… sans téléchargement cette fois
 -------------------------------------------------------------------------------
 D:\noubliepaslalistedescourses>mvn package
 [INFO] Scanning for projects...
@@ -722,7 +722,7 @@ traitements.
 
 La première partie du POM permet d'identifier le projet lui-même.
 
-Listing 1.5 : L'en-tête du fichier POM
+.Listing 1.5 : L'en-tête du fichier POM
 [source, xml]
 -------------------------------------------------------------------------------
     <modelVersion>4.0.0</modelVersion>
@@ -790,7 +790,7 @@ projet car dans la comparaison purement alphabétique, "GA" est inférieur
 
 La deuxième partie du POM concerne la construction du projet :
 
-Listing 1.6 : Le bloc build du fichier POM
+.Listing 1.6 : Le bloc build du fichier POM
 [source, xml]
 -------------------------------------------------------------------------------
     <build>
@@ -806,7 +806,7 @@ sources Java, nous n'aurions même pas eu besoin de ce bloc <build> !
 La troisième partie de POM concerne les bibliothèques dont dépend le
 projet :
 
-Listing 1.7 : Le bloc dependencies du fichier POM
+.Listing 1.7 : Le bloc dependencies du fichier POM
 [source, xml]
 -------------------------------------------------------------------------------
     <dependencies>
@@ -1589,8 +1589,7 @@ dépendances.
 Plus intéressante, mvn dependency:tree trace un arbre, où chaque branche
 est une dépendance qui introduit par transitivité d'autres dépendances.
 
-Listing 2.1 : Exécution de mvn dependency:tree
-
+.Listing 2.1 : Exécution de mvn dependency:tree
 -------------------------------------------------------------------------------
 [INFO] [dependency:tree]
 [INFO] fr.noubliepaslalistedescourses:noubliepaslalistedescourses:war:1.0.0-SNAPSHOT
@@ -2571,7 +2570,7 @@ utiliser.
 Le Listing 3.1 montre le POM utilisé par François pour son projet qui
 nous fait mettre un pied en dehors du monde Java. footnote:[Si l'utilisation de Flex depuis Maven vous intéresse, retrouvez toutes les informations utiles sur le blog de François ( http://jroller.com/francoisledroff/ ) et aussi dans le projet Cairngorm ( http://sourceforge.net/adobe/cairngorm/wiki/Cairngorm/ ) auquel il participe et où vous trouverez de bons exemples de mise en œuvre de maven en projet Flex et hybride, Java et Flex.]
 
-Listing 3.1 : Production d'un binaire SWF
+.Listing 3.1 : Production d'un binaire SWF
 [source, xml]
 -------------------------------------------------------------------------------
 <project>
@@ -2826,8 +2825,8 @@ général sous forme d'une méthode main chargée de vérifier le
 fonctionnement de la classe qui la définit, comme dans l'exemple du
 Listing 4.1.
 
-Listing 4.1 : Une méthode main de test
 [source, java]
+.Listing 4.1 : Une méthode main de test
 -------------------------------------------------------------------------------
 public class ListeDeCoursesReader \{
 
@@ -2872,8 +2871,8 @@ focaliser sur notre objectif : tester de manière automatique autant de
 fonctionnalités que possible. Le Listing 4.2 montre cette évolution de
 notre méthode de test.
 
-Listing 4.2 : Utilisation d'une bibliothèque utilitaire dans le test
 [source, java]
+.Listing 4.2 : Utilisation d'une bibliothèque utilitaire dans le test
 -------------------------------------------------------------------------------
     /** Test automatique de la classe ListeDeCoursesReader */
 
@@ -2935,8 +2934,8 @@ Pour tester notre ListeDeCoursesReader avec jUnit, nous allons donc
 testLectureDeuxElements et y transférer notre code de test. Le
 Listing 4.3 montre cette transformation de notre code
 
-Listing 4.3 : Utilisation de jUnit
 [source, java]
+.Listing 4.3 : Utilisation de jUnit
 -------------------------------------------------------------------------------
 import static org.junit.Assert.*;
 public class ListeDeCoursesReaderTest \{
@@ -3025,8 +3024,8 @@ seront ainsi intégré au ClassPath de test, mais exclus du binaire final.
 Ils seront également totalement intégrés au projet et enregistrés dans
 notre gestionnaire de version.
 
-Listing 4.4 : Accès aux fichiers de test en tant que ressources
 [source, java]
+.Listing 4.4 : Accès aux fichiers de test en tant que ressources
 -------------------------------------------------------------------------------
     public void testLectureDeuxElements() \{
         ListeDeCoursesReader reader = new ListeDeCoursesReader();
@@ -3305,9 +3304,8 @@ ce résultat. Le fonctionnement par défaut suffit à notre besoin, aussi
 l'ajout de ce traitement ne nécessite aucun élément de configuration
 particulier.
 
-Listing 4.5 : Construction d'un test-jar en même temps que l'archive
-java du projet
 [source, xml]
+.Listing 4.5 : Construction d'un test-jar en même temps que l'archive java du projet
 -------------------------------------------------------------------------------
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -3343,8 +3341,8 @@ référencé comme une dépendance en ajoutant l'information de classifier
 adéquate, comme le montre le Listing 4.6 qui présente le POM du projet
 de Lukas.
 
-Listing 4.6 : Utilisation d'une dépendance exploitant la notion de classifier
 [source, xml]
+.Listing 4.6 : Utilisation d'une dépendance exploitant la notion de classifier
 -------------------------------------------------------------------------------
 <project>
   <modelVersion>4.0.0</modelVersion>
@@ -3662,8 +3660,8 @@ développeur qui n'a que faire de l'interface web ne sera donc pas
 pénalisé, et un développeur qui travaille dessus n'aura qu'à activer le
 profil associé en ajoutant à sa ligne de commande l'option -Pgwt.
 
-Listing 5.1 : Un profil dédié aux tests GWT
 [source, xml]
+.Listing 5.1 : Un profil dédié aux tests GWT
 -------------------------------------------------------------------------------
 <build>
    <plugins>
@@ -3731,8 +3729,8 @@ système qui exécute Maven est Windows. Cette particularité est exploitée
 pour ajouter une dépendance qui n'aurait aucun sens sur un autre
 système : une bibliothèque native DLL.
 
-Listing 5.2 : Activation d'un profil en fonction du système d'exploitation
 [source, xml]
+.Listing 5.2 : Activation d'un profil en fonction du système d'exploitation
 -------------------------------------------------------------------------------
    <dependencies>
        <dependency>
@@ -3813,8 +3811,8 @@ cette règle le temps d'une exécution de Maven :
 mvn -P!codestyle install
 -------------------------------------------------------------------------------
 
-Listing 5.3 : Profil contrôlant le respect des règles de codage
 [source, xml]
+.Listing 5.3 : Profil contrôlant le respect des règles de codage
 -------------------------------------------------------------------------------
 <profile>
   <id>codestyle</id>
@@ -3900,8 +3898,8 @@ scripts DDL et enfin l'injection de données de test de référence.
 Il existe également un plugin pour DBUnit qui permet d'utiliser le
 format spécifique de celui-ci dans le même but.
 
-Listing 5.4 : Préparation d'une base de données de test "propre" avec le plugin SQL
 [source, xml]
+.Listing 5.4 : Préparation d'une base de données de test "propre" avec le plugin SQL
 -------------------------------------------------------------------------------
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
@@ -4029,8 +4027,8 @@ Le Listing 5.5 présente la configuration du
 plugin Maven footnote:[http://mojo.codehaus.org/fitnesse-maven-plugin] permettant d'exécuter nos tests Fitnesse
 lors de la construction du projet.
 
-Listing 5.5 : Configuration du plugin Fitnesse
 [source, xml]
+.Listing 5.5 : Configuration du plugin Fitnesse
 -------------------------------------------------------------------------------
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
@@ -4389,8 +4387,7 @@ La construction du projet échoue dans sa toute première phase. Voilà qui
 n'est pas très encourageant ! Maven signale le problème de dépendance
 indiqué au Listing 6.1.
 
-Listing 6.1 : Erreur de résolution des dépendances
-
+.Listing 6.1 : Erreur de résolution des dépendances
 -------------------------------------------------------------------------------
 [ERROR] BUILD ERROR
 [INFO] ------------------------------------------------------------------------
@@ -5165,8 +5162,8 @@ parent sur le projet noubliepaslalistedescourses. Il nous permet de
 configurer en un seul endroit l'utilisation de Java 5 comme cible de
 compilation.
 
-Listing 7.1 : pom parent du projet
 [source, xml]
+.Listing 7.1 : pom parent du projet
 -------------------------------------------------------------------------------
 <project>
     <modelVersion>4.0.0</modelVersion>
@@ -5391,8 +5388,8 @@ vérifier certaines règles. L'une des règles prédéfinies exige justement
 de vérifier que chaque plugin du projet a une version correctement
 définie.
 
-Listing 7.2 : Utilisation du plugin Enforcer
 [source, xml]
+.Listing 7.2 : Utilisation du plugin Enforcer
 -------------------------------------------------------------------------------
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -5945,8 +5942,8 @@ base de données, le second permettant à l'application Web d'obtenir une
 référence vers notre EJB, potentiellement installé sur un autre serveur,
 voire distribué sur un cluster.
 
-Listing 8.1 : Descripteur de déploiement de notre EJB
 [source, xml]
+.Listing 8.1 : Descripteur de déploiement de notre EJB
 -------------------------------------------------------------------------------
 <?xml version="1.0"?>
 <!DOCTYPE ejb-jar PUBLIC
@@ -5980,8 +5977,8 @@ Listing 8.1 : Descripteur de déploiement de notre EJB
 </ejb-jar>
 -------------------------------------------------------------------------------
 
-Listing 8.2 : Descripteur de déploiement de notre application web
 [source, xml]
+.Listing 8.2 : Descripteur de déploiement de notre application web
 -------------------------------------------------------------------------------
 <?xml version=_"1.0"_ encoding=_"UTF-8"_?>
 
@@ -6163,8 +6160,8 @@ Java. Du point de vue du programmeur, l'API de Selenium offre une vision
 de très haut niveau du navigateur sous contrôle, ce qui rend la
 programmation très rapide et agréable.
 
-Listing 8.3 : Test Selenium en syntaxe Java
 [source, java]
+.Listing 8.3 : Test Selenium en syntaxe Java
 -------------------------------------------------------------------------------
 import com.thoughtworks.selenium.*;
 import junit.framework.*;
@@ -6218,8 +6215,8 @@ d'enregistrer des scénarios au format HTML et d'ajouter la configuration
 du Listing 8.4 ; les tests seront alors rejoués à l'identique à chaque
 construction complète du projet.
 
-Listing 8.4 : Configuration du plugin Selenium
 [source, xml]
+.Listing 8.4 : Configuration du plugin Selenium
 -------------------------------------------------------------------------------
 <plugin>
     <groupId>org.codehaus.mojo</groupId>
@@ -6267,8 +6264,8 @@ adéquate. Le Listing 8.5 montre la configuration dans le fichier POM qui
 met en œuvre cette stratégie. Les tests Selenium sont suffixés Selenium
 au lieu de Test pour les différencier.
 
-Listing 8.5 : Configuration du plugin Surefire pour exécuter nos tests Selenium
 [source, xml]
+.Listing 8.5 : Configuration du plugin Surefire pour exécuter nos tests Selenium
 -------------------------------------------------------------------------------
   <plugin>
     <artifactId>maven-surefire-plugin</artifactId>
@@ -6338,8 +6335,8 @@ application web ainsi qu'un fichier XML, dans un format spécifique de
 JBoss, qui nous permet de définir l'accès à notre base de données de
 test.
 
-Listing 8.6 : Configuration du plugin Cargo
 [source, xml]
+.Listing 8.6 : Configuration du plugin Cargo
 -------------------------------------------------------------------------------
 <plugin>
   <!--
@@ -6454,8 +6451,8 @@ lancer l'annuaire JNDI d'OpenEJB, qui se chargera automatiquement dans
 la foulée. Le Listing 8.7 montre, par exemple, le code excessivement
 complexe J qui permet de lancer notre EJB au sein d'un test unitaire.
 
-Listing 8.7 : Lancement d'OpenEJB embarqué dans un test
 [source, java]
+.Listing 8.7 : Lancement d'OpenEJB embarqué dans un test
 -------------------------------------------------------------------------------
 @Test
 Public void testMonEJB() throws Exception
@@ -8127,9 +8124,8 @@ projet par Maven. Voilà qui pourrait bien nous sauver la mise ! Le
 Listing 11.1 montre la configuration que nous avons ajoutée au projet
 pour gérer cette étape.
 
-Listing 11.1 : Utilisation du plugin _AntRun_
-
 [source, xml]
+.Listing 11.1 : Utilisation du plugin _AntRun_
 -------------------------------------------------------------------------------
 <plugin>
     <artifactId>maven-antrun-plugin</artifatcId>
@@ -8243,9 +8239,8 @@ archétype, mais nous en reparlerons au Chapitre 14, alors ne brûlons pas
 les étapes…
 ====
 
-Listing 11.2 : En-tête POM du plugin documentaire
-
 [source, xml]
+.Listing 11.2 : En-tête POM du plugin documentaire
 -------------------------------------------------------------------------------
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.geegol.maven.plugins</groupId>
@@ -8274,9 +8269,8 @@ dont le nôtre –, on se contente d'étendre la classe AbstractMojo. Le
 Listing 11.3 présente la structure générale de notre classe
 GEACheckMojo.
 
-Listing 11.3 : Notre classe _Mojo_ de base
-
 [source, java]
+.Listing 11.3 : Notre classe _Mojo_ de base
 -------------------------------------------------------------------------------
 /**
  * Tâche de génération de la documentation au format Geegol.
@@ -8583,10 +8577,9 @@ le commun des développeurs n'est pas suffisamment à l’aise avec le
 concept de ClassLoader, d'autre part parce que l'API Maven-project
 manque de documentation.
 
-Listing 11.4 : Construction d'un royaume ClassWorlds dédié à l'exécution
-de GEACheck
 
 [source, java]
+.Listing 11.4 : Construction d'un royaume ClassWorlds dédié à l'exécution de GEACheck
 -------------------------------------------------------------------------------
 /**
  * Dépendances du projet Maven qui utilise le plugin
@@ -8640,9 +8633,9 @@ de fichiers sources java que nous avons construite précédemment.
 L'invocation d'une classe depuis un classloader différent du nôtre nous
 oblige à passer par la réflexion Java (voir Listing 11.5).
 
-Listing 11.5 : Invocation par réflexion de l'outil _GEACheck_
 
 [source, java]
+.Listing 11.5 : Invocation par réflexion de l'outil _GEACheck_
 -------------------------------------------------------------------------------
     public void execute()
         throws MojoFailureException
@@ -8730,9 +8723,9 @@ logicielle, aussi à l’heure où la seconde édition sortira des presses,
 nous espérons que ce code sera intégré dans la version courante de Maven
 3.x
 
-Listing 11.6 : Le mojo _GEACheck_ en version Maven3 / JSR-330
 
 [source, java]
+Listing 11.6 : Le mojo _GEACheck_ en version Maven3 / JSR-330
 -------------------------------------------------------------------------------
 /**
  * Tâche de génération de la documentation au format Geegol.
@@ -8831,10 +8824,9 @@ le code de ce test, qui va exécuter le plugin et vérifier son
 fonctionnement. Le Listing 11.8 montre le pseudo-fichier POM qui lui
 sert de base pour construire et configurer le plugin testé.
 
-Listing 11.7 : Test unitaire pour un plugin, basé sur le
-plugin-testing-harness
 
 [source, java]
+.Listing 11.7 : Test unitaire pour un plugin, basé sur le plugin-testing-harness
 -------------------------------------------------------------------------------
 public class GEACheckMojoTestCase
     extends AbstractMojoTestCase
@@ -8864,9 +8856,9 @@ ArrayList() );
 }
 -------------------------------------------------------------------------------
 
-Listing 11.8 : Pseudo-POM chargé lors du test
 
 [source, xml]
+.Listing 11.8 : Pseudo-POM chargé lors du test
 -------------------------------------------------------------------------------
 <project>
   <build>
@@ -8920,9 +8912,9 @@ Listing 11.10, quant à lui, présente le fichier groovy que nous
 utilisons pour vérifier que l'exécution s'est déroulée comme prévu et
 que le fonctionnement du plugin est donc correct.
 
-Listing 11.9 : Configuration du plugin _invoker_
 
 [source, xml]
+.Listing 11.9 : Configuration du plugin _invoker_
 -------------------------------------------------------------------------------
 <plugin>
   <groupId>org.apache.maven.plugins</groupId>
@@ -8946,9 +8938,8 @@ Listing 11.9 : Configuration du plugin _invoker_
 </plugin>
 -------------------------------------------------------------------------------
 
-Listing 11.10 : Script _Groovy_ de contrôle de l'exécution
-
 [source, groovy]
+.Listing 11.10 : Script _Groovy_ de contrôle de l'exécution
 -------------------------------------------------------------------------------
 // GEACheck doit générer son rapport sous target/check
 assert new File( basedir, 'target/check/report.html' ).exists();
@@ -9092,11 +9083,12 @@ simplement parce qu'il utilise des règles de formatage de code
 différentes (voir Listing 12.1).
 
 Listing 12.1 : Comparaison de nos conventions de formatage du code
+[cols="2*"]
+|===
+|image:MangaVincentS.png[float="center"]
+|image:MangaHerve.png[float="center"]
 
-$$$ deux colonnes côte à côte$$$
-
-$$$ 1ere colonne $$$image:MangaVincentS.png[float="left"]
-
+a|
 [source, java]
 -------------------------------------------------------------------------------
 public class ListeDesCourses implements Data \{
@@ -9113,7 +9105,7 @@ public class ListeDesCourses implements Data \{
 …
 -------------------------------------------------------------------------------
 
-$$$ 2^e^ colonne $$$image:MangaHerve.png[float="left"]
+a|
 [source, java]
 -------------------------------------------------------------------------------
 public class ListeDesCourses
@@ -9132,6 +9124,7 @@ public class ListeDesCourses
         return courses;
     }
 -------------------------------------------------------------------------------
+|===
 
 La différence entre ces deux fichiers sources est minime, cependant les
 outils de fusion automatique ne savent pas la gérer et obligent Vincent
@@ -9456,8 +9449,8 @@ configuration de nos rapports s’effectue donc comme l’indique le listing
 javadoc et le code source du projet, navigable sous forme de pages web
 (« Cross Reference »).
 
-Listing 12.2 : Configuration de nos plugins de production de raports
 [source, xml]
+.Listing 12.2 : Configuration de nos plugins de production de raports
 -------------------------------------------------------------------------------
   <build>
     <plugins>
@@ -9493,8 +9486,8 @@ nous permet d'organiser le menu général du site et de pointer vers nos
 principales pages documentaires. Le Listing 12.3 montre celui mis en
 place par Lukas pour notre projet.
 
-Listing 12.3 : Le descripteur de notre site
 [source, xml]
+.Listing 12.3 : Le descripteur de notre site
 -------------------------------------------------------------------------------
 <?xml version="1.0" encoding="UTF-8"?>
 
@@ -9712,8 +9705,8 @@ dans notre POM. Le plugin sonar utilisant de nombreuses propriétés, il
 est plus simple de les configurer comme telles et d'invoquer la tâche
 mvn sonar:sonar.
 
-Listing 12.4 : Configuration du plugin _Sonar_
 [source, xml]
+.Listing 12.4 : Configuration du plugin _Sonar_
 -------------------------------------------------------------------------------
  <profile>
       <id>sonar</id>
@@ -9851,8 +9844,8 @@ conséquence. Nous utilisons un profil qui n'est activé que sur le
 serveur d'intégration continue, afin de ne pas perturber les autres
 environnements.
 
-Listing 13.1 : Exploiter le numéro de construction de Hudson
 [source, xml]
+.Listing 13.1 : Exploiter le numéro de construction de Hudson
 -------------------------------------------------------------------------------
 <profile>
   <id>integration-continue</id>
@@ -9895,8 +9888,8 @@ révision et l'exploiter sous forme de variable Maven. À noter qu'il est
 déclenché dans la phase prepare-package disponible dans Maven 2.1 et
 versions ultérieures.
 
-Listing 13.2 : Obtenir le numéro de révision SVN
 [source, xml]
+.Listing 13.2 : Obtenir le numéro de révision SVN
 -------------------------------------------------------------------------------
 <build>
   <plugins>
@@ -9966,8 +9959,8 @@ lorsque des informations complémentaires sont disponibles, et de ne pas
 perturber le fonctionnement de Maven sur les postes de développement (le
 plugin buildnumber footnote:[http://mojo.codehaus.org/buildnumber-maven-plugin/] n'est pas très performant).
 
-Listing 13.3 : Ajout de métadonnées dans le MANIFEST
 [source, xml]
+.Listing 13.3 : Ajout de métadonnées dans le MANIFEST
 -------------------------------------------------------------------------------
       <profile>
          <id>integration-continue</id>
@@ -10105,8 +10098,8 @@ fichier MANIFEST, est donc facilement contrôlable _via_ sa clé publique.
 Le Listing 13.4 montre la configuration de ce plugin mis en place par
 Olivier et Stéphane.
 
-Listing 13.4 : Mise en place d'une signature GPG
 [source, xml]
+.Listing 13.4 : Mise en place d'une signature GPG
 -------------------------------------------------------------------------------
 <project>
   ...
@@ -10204,8 +10197,8 @@ extraire le code source. Le Listing 13.5 montre ce fichier magique qui
 nous fera franchir la dernière ligne droite avant une production 100 %
 automatisée de notre livrable.
 
-Listing 13.5 : Le fichier _assembly_
 [source, xml]
+.Listing 13.5 : Le fichier _assembly_
 -------------------------------------------------------------------------------
 <?xml version="1.0" encoding="UTF-8"?>
 <assembly xmlns="http://maven.apache.org/POM/4.0.0"
@@ -10297,8 +10290,8 @@ assembly:single à une phase du projet, et il sera invoqué
 automatiquement lors de sa construction. Le Listing 13.6 indique la
 configuration que nous appliquons.
 
-Listing 13.6 : Invocation du _assembly:single_ au cours de la construction du projet
 [source, xml]
+.Listing 13.6 : Invocation du _assembly:single_ au cours de la construction du projet
 -------------------------------------------------------------------------------
 <plugins>
   <plugin>
@@ -10351,8 +10344,8 @@ unique module qui pointe vers le pom initial. Le Listing 13.7 montre ce
 nouveau fichier, particulièrement simple comparé au volume de XML que
 Maven peut parfois nous demander de saisir.
 
-Listing 13.7 : Un POM dédié à l'assembly
 [source, xml]
+.Listing 13.7 : Un POM dédié à l'assembly
 -------------------------------------------------------------------------------
 <project>
   <modelVersion>4.0.0</modelVersion>
@@ -10496,8 +10489,8 @@ contrôle qualité comme Checkstyle, PMD ou FindBugs, peuvent ainsi être
 associés aux règles dont les développeurs ont assimilé l'intérêt. Le
 Listing 14.1 montre le POM parent que nous proposons pour Geegol.
 
-Listing 14.1 : Un POM d'entreprise pour Geegol
 [source, xml]
+.Listing 14.1 : Un POM d'entreprise pour Geegol
 -------------------------------------------------------------------------------
 <project xmlns="http://maven.apache.org/POM/4.0.0"
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -10578,7 +10571,7 @@ limité la liste des archétypes proposée pour ne pas occuper deux pages
 supplémentaires. Le Listing 14.3 montre la structure de fichiers
 régénérée.
 
-Listing 14.2 : Génération d'un nouveau projet à partir d'un archétype
+.Listing 14.2 : Génération d'un nouveau projet à partir d'un archétype
 -------------------------------------------------------------------------------
 D:\>mvn archetype:generate
 [INFO] Scanning for projects...
@@ -10634,7 +10627,7 @@ template = archetype-resources/src/main/java/EchoMojo.java [line
 [INFO] ------------------------------------------------------------------------
 -------------------------------------------------------------------------------
 
-Listing 14.3 : Structure de fichiers générée
+.Listing 14.3 : Structure de fichiers générée
 -------------------------------------------------------------------------------
 D:\demo-maven-plugin>dir
 Répertoire de D:\demo-maven-plugin
@@ -11316,12 +11309,12 @@ avec la signification de ce terme dans Maven. Un plugin Gradle est
 plutôt un ensemble de conventions, tâches et extensions Gradle réunies
 et réutilisables sur plusieurs projets.
 
-Le Listing 15.x donne un exemple de script Gradle que nous présente
+Le Listing 15.1 donne un exemple de script Gradle que nous présente
 Grégory pour la mise en place d’un projet Java. La syntaxe est
 particulièrement compacte.
 
-Listing 15.x : Un script simple de build Gradle
 [source, groovy]
+.Listing 15.1 : Un script simple de build Gradle
 -------------------------------------------------------------------------------
 usePlugin 'java'
 sourceCompatibility = 1.5
@@ -11727,12 +11720,12 @@ alternatif. Nous avons vu que le format XML actuel est particulièrement
 verbeux ; Polyglot Maven est une version dérivée de Maven, développée
 par Sonatype, visant à proposer une syntaxe différente du POM, basée par
 exemple sur Groovy, Clojure, ou Scala – pour exprimer les mêmes
-métadonnées, comme le monte le Listing 15.1. Attention cependant,
+métadonnées, comme le monte le Listing 15.2. Attention cependant,
 l’outillage avancé permettant d’éditer le POM dans votre IDE n’est pas
 compatible avec cette syntaxe.
 
-Listing 15.1 : Un POM Maven 3 exprimé en Scala
 [source, scala]
+.Listing 15.2 : Un POM Maven 3 exprimé en Scala
 -------------------------------------------------------------------------------
 // pom.scala
 project( "com.macompagnie:monprojet:1.0-SNAPSHOT" \{ proj =>
@@ -12218,8 +12211,8 @@ s’en est servi avec succès pour convertir en bundles une large gamme de
 projets, dans le cadre du projet Spring Dynamic Modules.
 ====
 
-Listing 16.1 génération du MANIFEST OSGi depuis Maven
 [source, xml]
+.Listing 16.1 génération du MANIFEST OSGi depuis Maven
 -------------------------------------------------------------------------------
 <plugin>
     <groupId>org.apache.felix</groupId>
@@ -12310,8 +12303,8 @@ Admettons, et alors ? Pascal nous montre alors le fichier POM qu’il a
 utilisé pour construire le prototype de notre client lourd, présenté au
 listing 16.2.
 
-Listing 16.2 : POM suffisant pour construire nos composants Eclipse PDE avec Maven
 [source, xml]
+.Listing 16.2 : POM suffisant pour construire nos composants Eclipse PDE avec Maven
 -------------------------------------------------------------------------------
 <project>
     <modelVersion>4.0.0</modelVersion>
@@ -12495,8 +12488,8 @@ chaque environnement cible. Une fois de plus, les plugins apportés par
 tycho permettent de limiter cette tâche complexe à quelques déclarations
 simples, comme le montre le listing 16.3.
 
-Listing 16.3 : Gestion du packaging OSGi avec un plugin Tycho dédié
 [source, xml]
+.Listing 16.3 : Gestion du packaging OSGi avec un plugin Tycho dédié
 -------------------------------------------------------------------------------
 <plugin>
     <groupId>org.sonatype.tycho</groupId>
@@ -12718,9 +12711,7 @@ nous rassure avec une dernière démonstration. Utilisant jmod, il ajoute
 à son environnement des bibliothèques classiques, et pour cela doit
 indiquer un dépôt qui serve de source, comme le montre le listing 16.4.
 
-Listing 16.4 : Utilisation de jmod pour provisionner l’environnement
-avec des bibliothèques Java
-
+.Listing 16.4 : Utilisation de jmod pour provisionner l’environnement avec des bibliothèques Java
 -------------------------------------------------------------------------------
 $ jmod install fr.noubliepaslalistedecourses-1.0.jar
 Cannot resolve jdom @ 1.0
@@ -13206,8 +13197,8 @@ pour désactiver les étapes non indispensables de la construction du
 projet. Le Listing 16.1 montre l'activation d'un profil exclusivement en
 dehors de m2eclipse.
 
-Listing 16.1 un profil pour éviter les plugins trop consommateurs sous m2eclipse
 [source, xml]
+.Listing 16.1 un profil pour éviter les plugins trop consommateurs sous m2eclipse
 -------------------------------------------------------------------------------
 <profile>
   <id>not-m2e</id>
@@ -13230,8 +13221,8 @@ m2eclipse, à utiliser la version SNAPSHOT du plugin de gestion des
 ressources (qui gère ce mode incrémental) et à activer le configurateur
 m2eclipse associé aux projets Java.
 
-Listing 16.2 un profil pour activer le cycles de vie reconfigurable de m2eclise 0.9.9
 [source, xml]
+.Listing 16.2 un profil pour activer le cycles de vie reconfigurable de m2eclise 0.9.9
 -------------------------------------------------------------------------------
 <profile>
       <id>m2e</id>
