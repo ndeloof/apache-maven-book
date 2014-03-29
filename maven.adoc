@@ -2828,15 +2828,15 @@ Listing 4.1.
 [source, java]
 .Listing 4.1 : Une méthode main de test
 -------------------------------------------------------------------------------
-public class ListeDeCoursesReader \{
+public class ListeDeCoursesReader {
 
-    public ListeDeCourses read( InputStream in ) \{ ... }
+    public ListeDeCourses read( InputStream in ) { ... }
 
     /** Test automatique de la classe ListeDeCoursesReader */
-    public static void main( String args[] ) \{
+    public static void main( String args[] ) {
         ListeDeCoursesReader reader = new ListeDeCourseReader();
         ListeDeCourses lu = reader.read( new FileInputStream("./test.list" ) );
-        if ( lu == null ) \{
+        if ( lu == null ) {
             System.err.println( "FAILED : Erreur de lecture" ) ;
             System.exit( -1 ) ;
         }    
@@ -2876,11 +2876,11 @@ notre méthode de test.
 -------------------------------------------------------------------------------
     /** Test automatique de la classe ListeDeCoursesReader */
 
-    public static void main( String args[] ) \{
+    public static void main( String args[] ) {
         ListeDeCoursesReader reader = new ListeDeCoursesReader();
         ListeDeCourses attendu = new ListeDeCourses( ... );
         ListeDeCourses lu = reader.read( new FileInputStream("./test.list" ) );
-        if ( new BeanComparator().compare( attendu, lu ) != 0 ) \{
+        if ( new BeanComparator().compare( attendu, lu ) != 0 ) {
             System.err.println( "FAILED : Données lues incorrectes" ) ;
             System.exit( -1 ) ;
         }    
@@ -2938,14 +2938,14 @@ Listing 4.3 montre cette transformation de notre code
 .Listing 4.3 : Utilisation de jUnit
 -------------------------------------------------------------------------------
 import static org.junit.Assert.*;
-public class ListeDeCoursesReaderTest \{
+public class ListeDeCoursesReaderTest {
     @Test
-    public void lectureDeDeuxElements() \{
+    public void lectureDeDeuxElements() {
         ListeDeCoursesReader reader = new ListeDeCoursesReader();
         ListeDeCourses attendu = new ListeDeCourses( ... );
         ListeDeCourses lu = reader.read( new FileInputStream("./test.list" ) );
         assertEquals( 2, lu.size(), "liste lue de taille incorrecte" ) ;
-        if ( new BeanComparator().compare( attendu, lu ) != 0 ) \{
+        if ( new BeanComparator().compare( attendu, lu ) != 0 ) {
             fail( "Données lues incorrectes" ) ;
         }    
     }
@@ -3027,7 +3027,7 @@ notre gestionnaire de version.
 [source, java]
 .Listing 4.4 : Accès aux fichiers de test en tant que ressources
 -------------------------------------------------------------------------------
-    public void testLectureDeuxElements() \{
+    public void testLectureDeuxElements() {
         ListeDeCoursesReader reader = new ListeDeCoursesReader();
         InputStream is = getClass().getResourceAsStream ( "test.list" );
         ListeDeCourses lu = reader.read( is );
@@ -3737,7 +3737,7 @@ système : une bibliothèque native DLL.
            <groupId>com.google.gwt</groupId>
            <artifactId>gwt-dev</artifactId>
            <version>1.6.2</version>
-           <classifier>$\{platform}</classifier>
+           <classifier>${platform}</classifier>
        <dependency>
    <dependencies>
    <!--  profiles (activation en fonction de la plateforme) -->
@@ -3953,7 +3953,7 @@ format spécifique de celui-ci dans le même but.
             <configuration>
               <orderFile>ascending</orderFile>
               <fileset>
-                <basedir>$\{basedir}/src/test/sql</basedir>
+                <basedir>${basedir}/src/test/sql</basedir>
                 <includes>
                   <include>*.sql</include>
                 </includes>
@@ -4543,7 +4543,7 @@ nous pouvons indiquer une dépendance system sous la forme :
     <artifactId>ojdbc14</artifactId>
     <version>10.2.0.3.0</version>
     <scope>system</scope>
-    <systemPath>$\{env.ORACLE_HOME}/client/java/ojdbc14.jar</systemPath>
+    <systemPath>${env.ORACLE_HOME}/client/java/ojdbc14.jar</systemPath>
 </dependency>
 -------------------------------------------------------------------------------
 
@@ -4574,7 +4574,7 @@ disposer d'une manière simple sans se poser plus de questions :
     <artifactId>ojdbc14</artifactId>
     <version>10.2.0.3.0</version>
     <scope>system</scope>
-    <systemPath>$\{basedir}/lib/ojdbc14.jar</systemPath>
+    <systemPath>${basedir}/lib/ojdbc14.jar</systemPath>
 </dependency>
 -------------------------------------------------------------------------------
 
@@ -6168,14 +6168,14 @@ import junit.framework.*;
 import java.util.regex.Pattern;
 
 public class SimpleTest extends SeleneseTestCase
-\{
+{
     public void setUp()
-    \{
+    {
         setUp( "http://localhost:8080/", "*iexplore" );
         selenium.open( "noubliepaslalistedescourses.home" );
     }
     public void testLogin()
-    \{
+    {
         selenium.type( "login", "Vincent" );
         selenium.click( "submit" );
         selenium.waitForPageToLoad( "5000" );
@@ -6369,12 +6369,12 @@ test.
       <containerId>jboss42x</containerId>
       <zipUrlInstaller>
         <url>http://downloads.sourceforge.net/jboss/jboss-4.0.2.zip</url>
-        <installDir>$\{java.io.tmpdir}/cargoinstalls</installDir>
+        <installDir>${java.io.tmpdir}/cargoinstalls</installDir>
       </zipUrlInstaller>
       <timeout>600000</timeout>
-      <output>$\{project.build.directory}/jboss42x.log</output>
+      <output>${project.build.directory}/jboss42x.log</output>
       <append>true</append>
-      <log>$\{project.build.directory}/cargo.log</log>
+      <log>${project.build.directory}/cargo.log</log>
       <dependencies>
         <!-- Ajout du driver de la base de données -->
         <dependency>
@@ -6386,7 +6386,7 @@ test.
     <!-- Configuration du déploiement de l'application web -->
     <configuration>
       <type>standalone</type>
-      <home>$\{project.build.directory}/jboss42x</home>
+      <home>${project.build.directory}/jboss42x</home>
       <properties>
         <cargo.logging>high</cargo.logging>
         <cargo.jvmargs>
@@ -6401,7 +6401,7 @@ test.
       <deployables>
         <deployable>
           <!-- Déploiement d'une DataSource JDBC Oracle -->
-         <location>$\{build.testOutputDirectory}/oracle-ds.xml</location>
+         <location>${build.testOutputDirectory}/oracle-ds.xml</location>
           <type>file</type>
         </deployable>
         <deployable>
@@ -6456,7 +6456,7 @@ complexe J qui permet de lancer notre EJB au sein d'un test unitaire.
 -------------------------------------------------------------------------------
 @Test
 Public void testMonEJB() throws Exception
-\{
+{
     Properties p = new Properties();
     p.setProperty( Context.INITIAL_CONTEXT_FACTORY,
         "org.apache.openejb.client.LocalInitialContextFactory" );
@@ -6514,10 +6514,10 @@ rédiger notre test d’EJB :
 -------------------------------------------------------------------------------
 @RunWith( Arquillian.class )
 
-public class ListeDeCoursesBeanTest \{
+public class ListeDeCoursesBeanTest {
 
    @Deployment
-   public static JavaArchive createTestArchive() \{
+   public static JavaArchive createTestArchive() {
       return ShrinkWrap.create( JavaArchive.class,
          "test.jar")
          .addClasses( ListeDeCourses.class );
@@ -6527,7 +6527,7 @@ public class ListeDeCoursesBeanTest \{
    private ListeDeCourses bean;
 
    @Test
-   public void listeVide() throws Exception \{
+   public void listeVide() throws Exception {
       Assert.assertTrue( bean.isEmpty( "user" ) );
    }
 }
@@ -8725,7 +8725,7 @@ nous espérons que ce code sera intégré dans la version courante de Maven
 
 
 [source, java]
-Listing 11.6 : Le mojo _GEACheck_ en version Maven3 / JSR-330
+.Listing 11.6 : Le mojo _GEACheck_ en version Maven3 / JSR-330
 -------------------------------------------------------------------------------
 /**
  * Tâche de génération de la documentation au format Geegol.
@@ -9091,15 +9091,15 @@ Listing 12.1 : Comparaison de nos conventions de formatage du code
 a|
 [source, java]
 -------------------------------------------------------------------------------
-public class ListeDesCourses implements Data \{
+public class ListeDesCourses implements Data {
 
    private Set courses = new HashSet();
 
-   public void addCourse(String course) throws IllegalStateException \{
+   public void addCourse(String course) throws IllegalStateException {
           courses.add(course);
    }
 
-   public Collection getCourses() \{
+   public Collection getCourses() {
           return courses;
    }
 …
@@ -9110,17 +9110,17 @@ a|
 -------------------------------------------------------------------------------
 public class ListeDesCourses
     implements Data
-\{
+{
     private Set courses = new HashSet();
 
     public void addCourse( String course )
         throws IllegalStateException
-    \{
+    {
         courses.add( course );
     }
 
     public Collection getCourses()
-    \{
+    {
         return courses;
     }
 -------------------------------------------------------------------------------
@@ -9850,7 +9850,7 @@ environnements.
 <profile>
   <id>integration-continue</id>
   <build>
-   <finalName>$\{project.artifactId}/$\{project.version}-build-$\{HUDSON_build}</finalName>
+   <finalName>${project.artifactId}/${project.version}-build-${HUDSON_build}</finalName>
   </build>
 </profile>
 -------------------------------------------------------------------------------
@@ -9910,7 +9910,7 @@ versions ultérieures.
         </configuration>
      </plugin>
    </plugins>
-   <finalName>$\{project.artifactId}/$\{project.version}-rev-$\{svnnumber}</finalName>
+   <finalName>${project.artifactId}/${project.version}-rev-${svnnumber}</finalName>
 </build>
 -------------------------------------------------------------------------------
 
@@ -9973,7 +9973,7 @@ plugin buildnumber footnote:[http://mojo.codehaus.org/buildnumber-maven-plugin/]
                      <configuration>
                         <archive>
                            <manifestEntries>
-                              <Build>$\{buildNumber}</Build>
+                              <Build>${buildNumber}</Build>
                            </manifestEntries>
                         </archive>
                      </configuration>
@@ -9984,7 +9984,7 @@ plugin buildnumber footnote:[http://mojo.codehaus.org/buildnumber-maven-plugin/]
                      <configuration>
                         <archive>
                            <manifestEntries>
-                              <Build>$\{buildNumber}</Build>
+                              <Build>${buildNumber}</Build>
                            </manifestEntries>
                         </archive>
                      </configuration>
@@ -10582,7 +10582,7 @@ D:\>mvn archetype:generate
 [INFO] ------------------------------------------------------------------------
 [INFO] Preparing archetype:generate
 [INFO] No goals needed for project - skipping
-[INFO] [archetype:generate \{execution: default-cli}]
+[INFO] [archetype:generate {execution: default-cli}]
 [INFO] Generating project in Interactive mode
 [INFO] No archetype defined. Using maven-archetype-quickstart
 (org.apache.maven.archetypes:maven-archetype-quickstart:1.0)
@@ -10620,7 +10620,7 @@ generated POM
 [WARNING] org.apache.velocity.runtime.exception.ReferenceException:
 reference :
 template = archetype-resources/src/main/java/EchoMojo.java [line
-38,column 31] : $\{project.build.directory} is not a valid reference.
+38,column 31] : ${project.build.directory} is not a valid reference.
 [INFO] OldArchetype created in dir: D:\demo-maven-plugin
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESSFUL
@@ -10653,7 +10653,7 @@ pouvons voir apparaître dans la console le résultat simple mais tout de
 même inespéré :
 
 -------------------------------------------------------------------------------
-[INFO] [demo:echo \{execution: default-cli}]
+[INFO] [demo:echo {execution: default-cli}]
 -------------------------------------------------------------------------------
 
 Hello World from Maven !
@@ -11007,7 +11007,7 @@ des numéros de version comme dans l'exemple ci-après :
 -------------------------------------------------------------------------------
 <groupId>org.springframework</groupId>
 <artifactId>spring-jms</artifactId>
-<version>$\{spring.version}</version>
+<version>${spring.version}</version>
 -------------------------------------------------------------------------------
 
 En utilisant systématiquement cette propriété, nous pouvons être sûrs
@@ -11323,19 +11323,19 @@ manifest.mainAttributes(
     'Implementation-Title': 'Gradle Quickstart',
     'Implementation-Version': version
 )
-repositories \{
+repositories {
     mavenCentral()
 }
-dependencies \{
+dependencies {
     compile group: 'commons-collections', name: 'commons-collections',
 version: '3.2'
     testCompile group: 'junit', name: 'junit', version: '4.+'
 }
-test \{
+test {
     options.systemProperties['property'] = 'value'
 }
-uploadArchives \{
-    repositories \{
+uploadArchives {
+    repositories {
        flatDir(dirs: file('repos'))
     }
 }
@@ -11617,7 +11617,7 @@ l'initialisation de Maven dans un contexte avec de nombreux modules.
 Deuxième de la lignée, Maven 2.2 est apte à :
 
 * Corriger plusieurs bogues, dont un lié à la manipulation des
-$\{variables} lorsque le POM est installé dans le dépôt local ou
+${variables} lorsque le POM est installé dans le dépôt local ou
 déployé. Cette fonctionnalité introduite dans Maven 2.1.0 a entraîné des
 régressions sur certains plugins, notamment celui de signature GPG –
 elle a donc été retirée au profit d'une gestion plus stricte.
@@ -11728,7 +11728,7 @@ compatible avec cette syntaxe.
 .Listing 15.2 : Un POM Maven 3 exprimé en Scala
 -------------------------------------------------------------------------------
 // pom.scala
-project( "com.macompagnie:monprojet:1.0-SNAPSHOT" \{ proj =>
+project( "com.macompagnie:monprojet:1.0-SNAPSHOT" { proj =>
    // ajoute la bibliothèque scala et le plugin scala compiler
    proj includeScalaSources "2.7.7"
    proj dependency "apache-httpclient:commons-httpclient:3.0.1"
@@ -12585,7 +12585,7 @@ automatisée. Mark nous présente un exemple de descripteur de
 dépendance :
 
 -------------------------------------------------------------------------------
-module com.myapp @ 1.0.0 \{
+module com.myapp @ 1.0.0 {
     requieres org.foo >= 3.0;
     requieres net.bar @ 1.1;
 }
@@ -12795,7 +12795,7 @@ sources le chemin src/java et pour les tests test/java. Les POM ont donc
 
 Nous avons perdu un temps précieux à reconfigurer de nombreux plugins,
 qui ont la mauvaise idée d'utiliser le chemin src/main/java en dur et
-pas la variable $\{build.sourceDirectory}. Notre POM ne gagne pas en
+pas la variable ${build.sourceDirectory}. Notre POM ne gagne pas en
 lisibilité, et c'est cher payé pour un petit caprice esthétique.
 
 De la même façon, ne considérez jamais les conventions comme acquises.
@@ -12804,7 +12804,7 @@ compilation du projet, c'est potentiellement s'exposer à un
 dysfonctionnement. Nous en avons fait la mauvaise expérience en
 configurant notre application pour utiliser Sonar (voir le Chapitre 12).
 La convention pour ce chemin est portée par la variable
-$\{project.build.outputDirectory}. C'est un peu plus long à écrire, mais
+${project.build.outputDirectory}. C'est un peu plus long à écrire, mais
 c'est une garantie d'homogénéité des métadonnées du projet.
 
 Le respect des conventions permet :
@@ -12897,7 +12897,7 @@ explicatif. Elle va nous amener à écrire ce genre de chose :
  * affecte le prenom
  * @param prenom le nouveau prenom
  */
-public void setPrenom( String prenom ) \{ ...
+public void setPrenom( String prenom ) { ...
 -------------------------------------------------------------------------------
 
 Voilà un magnifique commentaire dont l'utilité est sans appel ! Soit
@@ -13072,7 +13072,7 @@ toujours partager la même version, sans quoi la gestion manuelle des
 numéros de version devient infernale. Le plus simple pour satisfaire ce
 besoin est de ne définir cette version que dans le POM parent du projet
 et dans les références <parent>. Toutes les autres références se font
-_via_ la variable $\{project.version}. Ainsi, pas de risque de se
+_via_ la variable ${project.version}. Ainsi, pas de risque de se
 tromper.
 
 Pour déclarer du code comme bibliothèque commune, nous devons créer un
