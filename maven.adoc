@@ -6699,7 +6699,7 @@ indispensable pour éditer convenablement les fichiers HTML, JSP, XML,
 XSD, JavaScript, CSS, les contrats WSDL de services web et d’autres
 formats normalisés, sans parler des petits outils bien pratiques comme
 l'espion TCP/IP ou le client graphique de service web.
-===
+====
 
 L'équipe de développement de m2eclipse a eu pitié des développeurs et
 leur évite de devoir configurer chaque projet pour adapter la
