@@ -8982,7 +8982,7 @@ Listing 11.9 : Configuration du plugin _invoker_
 
 Listing 11.10 : Script _Groovy_ de contrôle de l'exécution
 
-[souce, groovy]
+[source, groovy]
 -------------------------------------------------------------------------------
 // GEACheck doit générer son rapport sous target/check
 assert new File( basedir, 'target/check/report.html' ).exists();
