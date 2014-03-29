@@ -325,12 +325,14 @@ reprise manuelle à chaque modification, pouvant introduire des
 disparités, voire des incompatibilités entre les environnements de nos
 deux compères, qui peuvent leur faire perdre un temps précieux.
 
-Listing 1.1 : Les fichiers de compilation utilisés respectivement par
-Nicolas et par Arnaud
+Listing 1.1 : Les fichiers de compilation utilisés respectivement par Nicolas et par Arnaud
+[cols="2*"]
+|===
+|image:MangaNicolas.png[float="center"]
+|image:MangaArnaud.png[float="center"]
 
-$$$ 2 colonnes [mangaNicolas] + build.bat   [mangaArnaud] + build.sh $$$
-
-image:MangaNicolas.png[float="left"]
+a|
+.build.bat
 -------------------------------------------------------------------------------
 @echo off
 set JAVA_HOME=C:\jdk1.3
@@ -341,9 +343,8 @@ mkdir build
 javac -d build src\*.java
 jar cf noubliepaslalistedescourses.jar build\*.class
 -------------------------------------------------------------------------------
-
-
-image:MangaArnaud.png[float="left"]
+a|
+.build.sh
 -------------------------------------------------------------------------------
 #!/bin/bash
 export JAVA_HOME=/opt/jdk1.3
@@ -354,7 +355,7 @@ mkdir build
 javac -d build src/*.java
 jar cf noubliepaslalistedescourses.jar build/*.class
 -------------------------------------------------------------------------------
-
+|===
 
 De nombreux projets industriels ou communautaires sont confrontés à ce
 même problème et sont obligés de maintenir deux versions (ou plus) du
