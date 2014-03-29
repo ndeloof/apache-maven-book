@@ -222,18 +222,15 @@ fondamentaux de Maven et leur mise en œuvre pratique. Nous avons choisi
 de mettre en scène de manière très explicite et souvent exagérée les
 problèmes que Maven tente de prendre en charge, afin que cette première
 partie soit aussi didactique que possible.
-
 * La deuxième, du Chapitre 6 au Chapitre 10, exploite des
 fonctionnalités plus avancées de Maven pour traiter des besoins orientés
 "gros projets d'entreprise" mais tout aussi délicats. Cette partie
 s'adresse typiquement aux développeurs intervenant sur des projets
 JavaEE (_Java Enterprise Edition_) en entreprise.
-
 * La troisième regroupe les Chapitres 11 à 15 et couvre des facettes
 plus spécialisées et moins mises en avant de Maven, mais que nous
 considérons comme tout aussi essentielles. Vous verrez alors que Maven
 ne se résume pas comme on le lit souvent à "un outil de compilation".
-
 * Pour terminer cet ouvrage le Chapitre 16 sera l'occasion de
 résumer les éléments clés présentés, de vous donner nos recommandations,
 bonnes et mauvaises pratiques à connaître pour tirer le meilleur de
@@ -623,7 +620,6 @@ ce qu'on veut, mais elle nécessite :
  * de répéter pour chaque nouveau projet une liste de tâches très
 similaires*, ce qui se traduit souvent par la copie d'un fichier de
 configuration considéré comme "faisant référence" ;
-
  * de gérer une liste de dépendances entre les étapes clés*, comme,
 dans notre exemple, "compiler" lorsqu'on désire assembler le JAR.
 
@@ -746,9 +742,7 @@ fichier. Entre autre, sont envisagés :
 
   * l’import partiel d’autres fichiers POM (« mixins ») permettant de
 construire un projet par agrégation de bonnes pratiques,
-
   * des mécanismes avancés de gestion de dépendance,
-
   * et tout ce qui pourra s’avérer utile pour rendre Maven 3.x plus
 puissant et encore plus universel !
 
@@ -1183,28 +1177,25 @@ Le sous-répertoire dédié à JavaMail 1.4 sur le dépôt de bibliothèques.
 En plus du fichier JAR de la bibliothèque attendue, nous trouvons de
 nombreux autres fichiers dans ce répertoire :
 
-·     Chaque fichier présent est accompagné de deux partenaires, avec
+* Chaque fichier présent est accompagné de deux partenaires, avec
 respectivement l'extension .md5 et .sha. Il s'agit des empreintes de
 contrôle associées au fichier, que Maven exploitera pour s'assurer que
 le fichier n'a subi aucune altération au cours du téléchargement.
-
-·     Un fichier porte le même nom que la bibliothèque avec le suffixe
+* Un fichier porte le même nom que la bibliothèque avec le suffixe
 -sources. Il s'agit, comme on pourrait s'en douter, d'une archive des
 sources Java de la bibliothèque, ce qui pourra se montrer fort utile
 depuis votre environnement de développement intégré préféré pour
 utiliser un débogueur et parcourir le code de cette bibliothèque. Il
 pourrait également y avoir un autre fichier avec le suffixe -javadoc
 contenant la documentation technique de la bibliothèque.
-
-·     Un autre fichier ayant le même nom que la bibliothèque avec
+* Un autre fichier ayant le même nom que la bibliothèque avec
 l'extension .pom. Il s'agit bien de l'acronyme du _Project Object Model_
 que nous connaissons déjà. Chaque bibliothèque dans le dépôt Maven
 possède un fichier de ce type. Soit parce que la bibliothèque a été
 développée en utilisant Maven, soit parce qu'un fichier minimal a été
 écrit pour fournir une description de la bibliothèque aux utilisateurs
 de Maven.
-
-·     Un fichier de métadonnées, propre à Maven comme son nom l'indique
+* Un fichier de métadonnées, propre à Maven comme son nom l'indique
 clairement.
 
 === Avis aux amateurs de casse-tête
@@ -1707,6 +1698,7 @@ image:MangaVincentM.png[float="left"]
 Au labo, Vincent analyse nos indices. Le fichier__maven.repositories
 attire particulièrement son attention :
 
+-------------------------------------------------------------------------------
 #NOTE: This is an internal implementation file, its format can be
 changed without prior notice.
 
@@ -1715,6 +1707,7 @@ changed without prior notice.
 jcr-on-cassandra-1.8.0.10.jar>geek.org=
 
 jcr-on-cassandra-1.8.0.10.pom>geek.org=
+-------------------------------------------------------------------------------
 
 link:#_msocom_1[[A1]] Le compte-rendu de nos experts fournit
 l’explication :
@@ -2558,18 +2551,15 @@ lui-même apporter des extensions : c'est le cas du plugin flex-mojos.
 Le fichier POM du projet proposé par François inclut donc, par rapport à
 un projet Java "classique" :
 
-·     Des déclarations classiques de dépendances vers le SDK Adobe Flex,
+* Des déclarations classiques de dépendances vers le SDK Adobe Flex,
 dont les artefacts sont de type SWC et non JAR.
-
-·     La déclaration de répertoire de sources et de tests, propre au
+* La déclaration de répertoire de sources et de tests, propre au
 langage Flex qu'il utilise.
-
-·     La déclaration du plugin flex-mojos. Le point clé est l'élément
+* La déclaration du plugin flex-mojos. Le point clé est l'élément
 <extension>true</extension> qui signale à Maven que ce plugin propose
 des compléments qu'il faudra prendre en compte avant de déterminer le
 cycle de vie et les tâches à exécuter.
-
-·     La version du compilateur Flex à utiliser par le plugin. Le plugin
+* La version du compilateur Flex à utiliser par le plugin. Le plugin
 n'est pas lié à une version particulière de SDK Flex, aussi l'ajout
 d'une dépendance au plugin permet de spécifier la version qu'il devra
 utiliser.
@@ -2798,14 +2788,12 @@ Cependant, passer des tests a un coût, surtout si l'on accumule les
 tests ajoutés par de nombreuses versions du logiciel. Reposer sur le
 seul humain pour cette tâche, c'est s'exposer à de nombreux risques :
 
-·     Le coût du passage des tests, considérant la main-d'œuvre employée
+* Le coût du passage des tests, considérant la main-d'œuvre employée
 à plein-temps à cette tâche.
-
-·     Le temps de réaction lorsqu'un problème a été introduit par une
+* Le temps de réaction lorsqu'un problème a été introduit par une
 modification. Plus tard on s'en rendra compte, plus la correction à
 apporter sera délicate.
-
-·     La rigueur du passage des tests, si l'on considère que l'être
+* La rigueur du passage des tests, si l'on considère que l'être
 humain se lasse vite de tâches répétitives et peu porteuses de
 créativité.
 
@@ -2923,22 +2911,18 @@ Java, dont le plus connu d'entre eux est jUnitlink:#_ftn20[[20]].
 
 Ces outils reposent sur des principes simples :
 
-·     Le test associé à une classe est écrit dans une classe Java
+* Le test associé à une classe est écrit dans une classe Java
 séparée implantant ce framework, qu'on nomme par convention du nom de la
 classe testée avec le suffixe "Test".
-
-·     Chaque test à réaliser est traduit par une méthode dédiée dans la
+* Chaque test à réaliser est traduit par une méthode dédiée dans la
 classe de test.
-
-·     L'outillage propose des mécanismes d'initialisation et de
+* L'outillage propose des mécanismes d'initialisation et de
 libération qui permettent de préparer les conditions d'exécution du test
 et de fermer proprement les ressources après son exécution, même en cas
 d'erreur.
-
-·     L'outillage fournit des méthodes utilitaires pour les opérations
+* L'outillage fournit des méthodes utilitaires pour les opérations
 courantes de vérification du bon fonctionnement du logiciel.
-
-·     L'outillage de test se charge d'identifier tous les tests à
+* L'outillage de test se charge d'identifier tous les tests à
 exécuter et de les enchaîner, en fournissant au final un rapport complet
 des éventuelles erreurs rencontrées.
 
@@ -3531,23 +3515,19 @@ de fonctionnement très variés.
 
 Quelques pistes pour vous guider :
 
-·      Que devra surveiller l'intégration continue ? Votre gestionnaire
+*  Que devra surveiller l'intégration continue ? Votre gestionnaire
 de code source est-il supporté ?
-
-·      Avez-vous autre chose que des builds Maven à lui faire supporter
+*  Avez-vous autre chose que des builds Maven à lui faire supporter
 ? Avez vous des développements sous Ant, Ruby on Rails, Python, Grails,
 … qui pourraient bénéficier de cette initiative ?
-
-·      Qu'attendez-vous de l'intégration continue ? Quels processus de
+*  Qu'attendez-vous de l'intégration continue ? Quels processus de
 contrôle devra t-elle porter ? Métriques qualité, tests fonctionnels ou
 de performance, déploiement d'une version de démonstration, publication
 des résultats ?
-
-·      Comment doit-elle interagir avec vous ? IHM web seule et
+*  Comment doit-elle interagir avec vous ? IHM web seule et
 diffusion de mails, notification par messagerie instantanée, plugin dans
 votre IDE ?
-
-·      Quel support êtes vous prêt à fournir pour votre service
+*  Quel support êtes vous prêt à fournir pour votre service
 d'intégration continue ? Mises à jour régulières, phase de qualification
 et/ou support commercial ?
 
@@ -4208,11 +4188,10 @@ image:MangaEmmanuel.png[float="left"]
 Emmanuel est confronté à un problème : il dispose de deux versions de
 nos fichiers de configuration
 
-·     une version de développement et de test, utilisant une base de
+* une version de développement et de test, utilisant une base de
 données légère en mémoire et avec une sécurité minimaliste nécessaire
 pour nos tests,
-
-·     une version de production, ciblant notre cluster MySQL et
+* une version de production, ciblant notre cluster MySQL et
 verrouillant tous les accès.
 
 [NOTE]
@@ -4228,14 +4207,11 @@ de production.
 
 Pour palier ce problème, chacun invente sa solution :
 
-·      emplacement des fichiers de configuration passés via le JNDI
-
-·      variable système Java ajouté à la JVM du serveur d'application
-
-·      chemin des fichiers de configuration ajoutés dans le classpath du
+*  emplacement des fichiers de configuration passés via le JNDI
+*  variable système Java ajouté à la JVM du serveur d'application
+*  chemin des fichiers de configuration ajoutés dans le classpath du
 server
-
-·      …
+*  …
 
 Chacune a ses avantages et ses inconvénients.
 
@@ -4477,16 +4453,13 @@ les versions déjà référencées. Cela assure l'homogénéité des projets.
 Ensuite, le fichier POM compte de nombreuses métadonnées qui peuvent
 informer sur la bibliothèque, en particulier :
 
-·     L'organisation qui développe cette bibliothèque.
-
-·     Une description qui peut nous aider à confirmer son identité.
-
-·     La licence sous laquelle elle est distribuée, ce qui peut dans
+* L'organisation qui développe cette bibliothèque.
+* Une description qui peut nous aider à confirmer son identité.
+* La licence sous laquelle elle est distribuée, ce qui peut dans
 certains cas être rédhibitoire (pensez, par exemple, aux conditions
 particulières de certaines licences propriétaires ou à la licence GPL
 qui s'applique par "contamination" au projet dans son ensemble).
-
-·     L'URL où on peut la télécharger. Tout site Internet respectueux de
+* L'URL où on peut la télécharger. Tout site Internet respectueux de
 ses utilisateurs ne changerait jamais une URL de téléchargement,
 n'est-ce pas ?
 
@@ -4934,27 +4907,19 @@ jaloux, nous avons choisi de proposer une capture d'écran pour chacun
 Ces outils sont des applications web dédiées à la gestion de dépôt
 Maven. Ils assurent un grand nombre de fonctionnalités :
 
-·     recherche parmi les artefacts présents dans le dépôt ;
-
-·     identification d'un JAR par recherche de son empreinte MD5 ;
-
-·     miroir d'un autre dépôt, typiquement pour conserver un cache local
+* recherche parmi les artefacts présents dans le dépôt ;
+* identification d'un JAR par recherche de son empreinte MD5 ;
+* miroir d'un autre dépôt, typiquement pour conserver un cache local
 de _central_ et/ou d'autres dépôts ;
-
-·     conversion à la volée d'un dépôt Maven 1 au format Maven 2 ;
-
-·     indexation des dépôts et publication d'un index unifié ;
-
-·     téléchargement (upload) de nouveaux artefacts, l'équivalent de la
+* conversion à la volée d'un dépôt Maven 1 au format Maven 2 ;
+* indexation des dépôts et publication d'un index unifié ;
+* téléchargement (upload) de nouveaux artefacts, l'équivalent de la
 commande mvn install-file ;
-
-·     interface graphique d'administration – plus ou moins sexy selon
+* interface graphique d'administration – plus ou moins sexy selon
 l'outil considéré ;
-
-·     contrôle d'accès – pratique pour autoriser un utilisateur à gérer
+* contrôle d'accès – pratique pour autoriser un utilisateur à gérer
 certaines parties du dépôt sans prendre le risque de tout casser ;
-
-·     mécanismes d'audit, d'indexation et de contrôle d'intégrité en
+* mécanismes d'audit, d'indexation et de contrôle d'intégrité en
 tâche de fond.
 
 La fonctionnalité de miroir est probablement celle qui vous fera
@@ -5563,11 +5528,11 @@ Les utilisateurs de Maven n'ont plus à se préoccuper des problèmes de
 dépendances, et chaque module peut préciser finement ce qui lui est
 nécessaire. Au contraire, un artefact unique devra :
 
-·     soit déclarer trop de dépendances, dont un grand nombre ne sont
+* soit déclarer trop de dépendances, dont un grand nombre ne sont
 nécessaires qu'à des fonctions que certains utilisateurs considéreront
 comme annexes alors qu'elles sont indispensables pour d'autres ;
 
-·     soit déclarer un grand nombre de dépendances optionnelles, auquel
+* soit déclarer un grand nombre de dépendances optionnelles, auquel
 cas les utilisateurs devront eux-mêmes aller à la pêche aux informations
 pour reconstituer la liste de dépendances.
 
@@ -5611,24 +5576,24 @@ défaut consiste à enchaîner tous les modules du projet, Maven propose
 des options avancées pour filtrer quels modules intégrer au build et
 quels modules ignorer.
 
-·     Première option à connaître, -N permet de ne construire que notre
+* Première option à connaître, -N permet de ne construire que notre
 projet POM parent, sans ses modules. Sur de très gros projets, cela peut
 permettre de diffuser le POM parent indépendamment du reste du projet,
 les développeurs n’ayant alors pas besoin de disposer sur leur poste de
 développement de l’intégralité du projet
 
-·     Autre option intéressante, -pl (« project list ») permet de
+* Autre option intéressante, -pl (« project list ») permet de
 définir la liste des modules (chemins relatifs des répertoires ou
 [groupId]:artifactId séparés par des virgules) à intégrer dans le build.
 Si nous n’avons modifié que le module webapp, nous pouvons donc le
 construire de manière isolée en lançant mvn install –pl webapp.
 
-·     Associè à l’option project-list, -am (« also make ») demande à
+* Associè à l’option project-list, -am (« also make ») demande à
 Maven de construire tous les modules dont dépend notre liste, autrement
 dit de s’assurer que notre projet se construit correctement jusqu’aux
 modules indiqués.
 
-·     L’option inverse –amd (« also make dependent »), permet de
+* L’option inverse –amd (« also make dependent »), permet de
 construire les modules indiqués ainsi que tous les modules qui en
 dépendent. Cela permet donc de vérifier que nos modifications n’ont pas
 cassé quelque chose dans un module de plus haut niveau. C’est cette
@@ -5770,12 +5735,12 @@ spécifique, donc rien de bien compliqué. Nous devons cependant suivre la
 structure définie par la norme JavaEE, en particulier le répertoire
 WEB-INF qui doit contenir :
 
-·     le descripteur de déploiement web.xml ;
+* le descripteur de déploiement web.xml ;
 
-·     un sous-répertoire classes avec le code compilé de nos servlets et
+* un sous-répertoire classes avec le code compilé de nos servlets et
 des autres classes nécessaires à notre application ;
 
-·     un sous-répertoire lib avec les bibliothèques utilisées.
+* un sous-répertoire lib avec les bibliothèques utilisées.
 
 Sur un projet utilisant un répertoire lib fourre-tout pour placer ses
 bibliothèques, le troisième point serait traité avant même qu'on ne se
@@ -5935,10 +5900,9 @@ de créer une archive avec ces classes pour nous, en ajoutant simplement
 à sa configuration <generateClient>true</generateClient>. Nous obtenons
 donc au final deux archives Java :
 
-·     noubliepaslalistedescourses-ejb-1.0.0-SNAPSHOT.jar, notre fameux
+* noubliepaslalistedescourses-ejb-1.0.0-SNAPSHOT.jar, notre fameux
 EJB ;
-
-·     noubliepaslalistedescourses-ejb-1.0.0-SNAPSHOT-client.jar,
+* noubliepaslalistedescourses-ejb-1.0.0-SNAPSHOT-client.jar,
 l'archive des classes client qui permettra d'invoquer notre EJB.
 
 Dans notre application web, il nous suffit donc de déclarer une nouvelle
@@ -6155,11 +6119,10 @@ rien que ça.
 
 Il se compose de deux parties :
 
-·     Un enregistreur, qui se base sur le navigateur Firefox et permet
+* Un enregistreur, qui se base sur le navigateur Firefox et permet
 de capturer une séquence d'actions sur ce dernier. Vous enregistrez
 ainsi un scénario d'utilisation type de votre application.
-
-·     Un outil de pilotage, qui va rejouer le scénario enregistré sur un
+* Un outil de pilotage, qui va rejouer le scénario enregistré sur un
 navigateur. Selenium lance et dirige le navigateur de votre
 environnement, remplaçant l'utilisateur humain.
 
@@ -6213,18 +6176,14 @@ machine hôte et d'en piloter le comportement. Nous devons donc intégrer
 le démarrage de ce contrôleur dans notre processus de construction Maven
 si nous voulons en exploiter la puissance :
 
-·     *Démarrer la* partie serveur (le contrôleur) de Selenium. Elle va
+* *Démarrer la* partie serveur (le contrôleur) de Selenium. Elle va
 permettre de faire le lien entre le test et le navigateur.
-
-·     Lancer le navigateur disponible sur la plateforme.
-
-·     *Exécuter le test* sur le navigateur sous le contrôle du serveur.
-
-·     Collecter le résultat du test et le consolider pour l'intégrer
+* Lancer le navigateur disponible sur la plateforme.
+* *Exécuter le test* sur le navigateur sous le contrôle du serveur.
+* Collecter le résultat du test et le consolider pour l'intégrer
 dans les comptes-rendus d'exécution de Maven (et faire échouer le build
 si les tests ne passent pas).
-
-·     *Fermer le navigateur* et arrêter le serveur pour libérer
+* *Fermer le navigateur* et arrêter le serveur pour libérer
 correctement les ressources de la machine hôte.
 
 Le plugin selenium vient à notre secours : il propose deux tâches
@@ -6347,18 +6306,15 @@ c'est tout de même pas mal. Bien sûr, la configuration est un peu moins
 facile que pour un plugin plus "simple" (voir Listing 8.6). Cet extrait
 de notre POM définit les paramètres d'utilisation de Cargo :
 
-·     L'exécution lors des phases pre-integration-test et
+* L'exécution lors des phases pre-integration-test et
 post-integration-test pour installer, configurer et démarrer puis
 arrêter proprement le serveur.
-
-·     L'identification du serveur utilisé, _via_ la clé jboss42x, et des
+* L'identification du serveur utilisé, _via_ la clé jboss42x, et des
 répertoires de travail, de log ainsi que de l'emplacement depuis lequel
 l'archive sera téléchargée.
-
-·     La configuration du serveur et de la machine virtuelle Java qui va
+* La configuration du serveur et de la machine virtuelle Java qui va
 l'exécuter.
-
-·     Les composants JavaEE qui seront déployés sur ce serveur avant de
+* Les composants JavaEE qui seront déployés sur ce serveur avant de
 passer à la phase integration-test. Nous indiquons l'artefact de notre
 application web ainsi qu'un fichier XML, dans un format spécifique de
 JBoss, qui nous permet de définir l'accès à notre base de données de
@@ -6900,18 +6856,14 @@ prêts, cliquez !
 
 Notre concours repose sur quelques critères pour ne pas fausser le jeu :
 
-·     transparence de l'import d'un projet Maven dans l'environnement de
+* transparence de l'import d'un projet Maven dans l'environnement de
 développement ;
-
-·     facilité de prise en main ;
-
-·     gestion des métadonnées du fichier POM en dehors du seul éditeur
+* facilité de prise en main ;
+* gestion des métadonnées du fichier POM en dehors du seul éditeur
 XML ;
-
-·     intégration des plugins Maven dans la construction du projet par
+* intégration des plugins Maven dans la construction du projet par
 l'environnement de développement ;
-
-·     fonctionnalités bonus.
+* fonctionnalités bonus.
 
 === Eclipse
 
@@ -7561,34 +7513,27 @@ processus qu'il applique pour produire un livrable.
 
 ==== Étape 1 : préparation
 
-·     Il contrôle l'environnement de l'utilisateur qui ne doit présenter
+* Il contrôle l'environnement de l'utilisateur qui ne doit présenter
 aucune modification non sauvegardée dans le gestionnaire de code source.
 Optionnellement, un accès exclusif au gestionnaire peut être demandé
 pour les plus paranoïaques d'entre nous.
-
-·     Il contrôle le projet qui ne doit référencer aucune dépendance en
+* Il contrôle le projet qui ne doit référencer aucune dépendance en
 SNAPSHOT, dont l'état serait par nature non reproductible.
-
-·     Il modifie les indications de version dans les fichiers POM des
+* Il modifie les indications de version dans les fichiers POM des
 modules du projet. Le plugin peut être configuré pour affecter la même
 version à toutes les branches d'un projet multimodule, sinon il
 demandera de saisir une version pour chacun d'eux.
-
-·     Il indique dans le POM du projet le tag appliqué à la version à
+* Il indique dans le POM du projet le tag appliqué à la version à
 produire. Le projet comptera donc une référence explicite à
 l'emplacement où son code source est stocké.
-
-·     Il effectue une construction complète du projet pour contrôler les
+* Il effectue une construction complète du projet pour contrôler les
 modifications appliquées automatiquement et s'assurer qu'elles n'ont pas
 un impact négatif.
-
-·     Il sauvegarde les modifications appliquées dans le gestionnaire de
+* Il sauvegarde les modifications appliquées dans le gestionnaire de
 code source.
-
-·     Il pose un tag dans le gestionnaire de code source pour la
+* Il pose un tag dans le gestionnaire de code source pour la
 livraison en cours de préparation.
-
-·     Il modifie à nouveau les indications de version pour pointer vers
+* Il modifie à nouveau les indications de version pour pointer vers
 la version de développement suivante et les sauvegarde.
 
 Comme vous pouvez le constater, la démarche est plus que rigoureuse et
@@ -7605,10 +7550,9 @@ La production du logiciel livrable est réalisée à partir du tag placé
 dans le gestionnaire de sources. Nous pourrions effectuer cette manœuvre
 manuellement, mais ici encore le plugin release simplifie la tâche :
 
-·     extraction du code correspondant au tag dans un répertoire dédié,
+* extraction du code correspondant au tag dans un répertoire dédié,
 vierge de toute modification locale malencontreuse ;
-
-·     construction du projet à partir d'une liste de cibles, d'options
+* construction du projet à partir d'une liste de cibles, d'options
 et de profils indiqués dans le POM.
 
 Le point capital ici est que la description de la configuration et des
@@ -7652,14 +7596,12 @@ contrôles. Si l'une d'elles échoue, le plugin va évidemment
 s'interrompre. Après avoir identifié et corrigé le problème, nous avons
 deux options :
 
-·     Reprendre toute la procédure à son point de départ. Le plugin
+* Reprendre toute la procédure à son point de départ. Le plugin
 release propose alors de faire un retour arrière complet dans l'état
 initial, dans l'esprit de ce que propose une base de données au cours
 d'une transaction :
-
-mvn release:rollback
-
-·     Reprendre la procédure à partir du point où elle s'est arrêtée
+    mvn release:rollback
+* Reprendre la procédure à partir du point où elle s'est arrêtée
 précédemment.
 
 La seconde solution est évidemment moins stricte ; cependant, vous
@@ -7692,15 +7634,13 @@ continue !
 
 Avantages majeurs :
 
-·     le serveur d’intégration continue tourne sur un système Unix
+* le serveur d’intégration continue tourne sur un système Unix
 strictement identique au système cible. Cela nous permet d’identifier
 plus rapidement d’éventuels problèmes sur les accès fichiers ou réseau
 propre au système, autant réutiliser cet avantage ;
-
-·     le serveur d’intégration continue ne développe pas, et ne fait
+* le serveur d’intégration continue ne développe pas, et ne fait
 donc aucune modification que nous risquerions d’incorporer au livrable ;
-
-·     le serveur d’intégration continue ne râle jamais et est toujours
+* le serveur d’intégration continue ne râle jamais et est toujours
 prêt à donner de son temps. Notre processus de release devenant
 relativement ambitieux, le faire tourner sur nos postes c’est
 immobiliser un développeur pendant un temps non négligeable.
@@ -8599,15 +8539,12 @@ Arbre des royaumes ClassWorlds.
 
 Le Listing 11.4 montre le code du plugin pour :
 
-·     construire un nouveau ClassLoader (chargeur de classe) ;
-
-·     lui associer les dépendances et répertoires du projet sur lequel
+* construire un nouveau ClassLoader (chargeur de classe) ;
+* lui associer les dépendances et répertoires du projet sur lequel
 il travaille ;
-
-·     lui associer la bibliothèque de l'outil que nous voulons
+* lui associer la bibliothèque de l'outil que nous voulons
 exécuter ;
-
-·     exécuter l'outil GEACheck à l'intérieur de ce contexte.
+* exécuter l'outil GEACheck à l'intérieur de ce contexte.
 
 Par souci de clarté, nous n’avons pas indiqué dans ce listing les
 diverses gestions d'exception qui sont rendues nécessaires par la
@@ -8729,7 +8666,7 @@ commons-attributes ! Nous avons mis dans notre projet le top du dernier
 buzz en termes de technologies, et nous voilà ramenés une décennie en
 arrière
 
-\[MAVEN 3]
+image:Maven3.png[Maven3,align="center"]
 
 La cause de ce choc technologique, c’est que nous utilisons l’API Maven
 2.0, qui date de la création de l’outil. Pour offrir une compatibilité
@@ -9069,13 +9006,11 @@ avant que la cellule qualité ne rende son verdict après dix jours
 d'audit de notre code. Pour chaque problème identifié, il veut être
 capable de répondre :
 
-·     que nous l'avons également identifié, éventuellement avec un poids
+* que nous l'avons également identifié, éventuellement avec un poids
 différent, et sommes donc tout à fait en mesure de le traiter ;
-
-·     que nous disposons de l'outillage nécessaire pour nous assurer
+* que nous disposons de l'outillage nécessaire pour nous assurer
 qu'il ne se reproduise plus ;
-
-·     que nous sommes en mesure de fournir des indicateurs démontrant
+* que nous sommes en mesure de fournir des indicateurs démontrant
 l'amélioration progressive de notre code sur la base des critères
 identifiés par les responsables qualité.
 
@@ -9092,12 +9027,12 @@ Il s'agit d'une relecture du code par un outil qui va rechercher des
 patrons particuliers et calculer des métriques. En Java, il existe
 plusieurs outils de cette catégorie, lesquels peuvent extraire :
 
-·     une liste d'alertes signalant des mauvaises pratiques connues,
+* une liste d'alertes signalant des mauvaises pratiques connues,
 tournures de code maladroites ou bogues récurrents liés à l'imperfection
 des développeurs qui tombent tous dans les mêmes pièges – et aucun de
 nous ne fait exception à ce constat ;
 
-·     des indicateurs sur la structure du code, jugeant sa modularité,
+* des indicateurs sur la structure du code, jugeant sa modularité,
 sa complexité ou son niveau d'abstraction.
 
 Le premier type d'indication est évidemment celui qui attire tout de
@@ -9299,12 +9234,11 @@ mauvais élèves se contentent de 30 %. Nous tenons nos coupables : deux
 packages pas assez testés, ou mal testés, ou peut-être même du code
 inutile !
 
-·     Le premier, remoting, est celui de nos interfaces de communication
+* Le premier, remoting, est celui de nos interfaces de communication
 avec d'autres systèmes. Pas le plus facile à tester puisqu'il faut
 quelqu'un (un simulateur) en face pour répondre et valider le
 fonctionnement du logiciel.
-
-·     Le second, beans, correspond à des classes de données sans valeur
+* Le second, beans, correspond à des classes de données sans valeur
 ajoutée : juste des beans ayant des accesseurs get/set, mais cela fait
 déjà pas mal de lignes de code, d'où le mauvais résultat de la mesure.
 
@@ -9565,18 +9499,13 @@ vers nos rapports d'analyse du projet.
 
 Les pages de notre site peuvent être écrites au choix :
 
-·     Selon un format APT (_Almost Plain Text_), proche d'une syntaxe
+* Selon un format APT (_Almost Plain Text_), proche d'une syntaxe
 wiki et rapidement assimilé.
-
-·     En exploitant les pages d'un wiki Confluence, ou TWiki.
-
-·     _Via_le format documentaire DocBook (simplifié).
-
-·     _Via_le format documentaire XDoc supporté de manière native.
-
-·     Tout simplement à partir d'un document xHTML.
-
-·     Ou encore, _via_un module d'extension, en exploitant tout autre
+* En exploitant les pages d'un wiki Confluence, ou TWiki.
+* _Via_le format documentaire DocBook (simplifié).
+* _Via_le format documentaire XDoc supporté de manière native.
+* Tout simplement à partir d'un document xHTML.
+* Ou encore, _via_un module d'extension, en exploitant tout autre
 format. Le bac à sable Maven comprend ainsi un module permettant
 d'exploiter la syntaxe XWiki.
 
@@ -9689,25 +9618,21 @@ analyser les nombreux rapports produits par Maven dans notre site et a
 rapidement compris que ce ne sont que des données brutes. Il faut être
 capable de les lire à des altitudes différentes :
 
-·     À 30 000 pieds, on doit avoir en un coup d'œil une vision globale
+* À 30 000 pieds, on doit avoir en un coup d'œil une vision globale
 du projet, très imparfaite mais parlante. Le projet est-il dans le rouge
 ou non ? Quel est le type de violation le plus couramment constaté et
 sur lequel il faudra faire un effort de communication et de formation ?
-
-·     À 3 000 pieds, on doit être en mesure d'identifier les modules et
+* À 3 000 pieds, on doit être en mesure d'identifier les modules et
 de distinguer celui qui joue le mouton noir (espérons qu'il n'y en ait
 qu'un seul), la règle de codage la moins bien respectée.
-
-·     À 300 pieds, on peut pointer du doigt les packages dans lesquels
+* À 300 pieds, on peut pointer du doigt les packages dans lesquels
 il serait bon de passer un peu plus de temps, ou la règle de codage dont
 les développeurs ont sans doute mal compris la portée.
-
-·     À 30 pieds, on accède au Top 10 des classes à problème, et on
+* À 30 pieds, on accède au Top 10 des classes à problème, et on
 commence à regarder les noms des auteurs des dernières modifications
 pour savoir avec qui il faudra discuter de manière aimable et
 constructive lors de la prochaine pause-café.
-
-·     À 1 mètre, on déroule le code source ligne par ligne et on y
+* À 1 mètre, on déroule le code source ligne par ligne et on y
 identifie chaque violation. En binôme avec le développeur qui a eu la
 maladresse d'écrire ce code, on peut discuter du bien-fondé de la règle
 et des façons d'écrire un code plus propre et plus conforme à nos
@@ -10219,13 +10144,11 @@ but !
 La production réclame une archive Unix tar.gz répondant à une structure
 très précise :
 
-·     L'archive EAR doit être placée dans un sous-répertoire
+* L'archive EAR doit être placée dans un sous-répertoire
 application.
-
-·     Nos fichiers de configuration doivent être regroupés dans un
+* Nos fichiers de configuration doivent être regroupés dans un
 sous-répertoire configuration.
-
-·     Le code source doit être placé dans un sous-répertoire sources.
+* Le code source doit être placé dans un sous-répertoire sources.
 
 Nous avons déjà vu un joli panel de plugins qui nous ont bien aidés dans
 notre travail ; nous allons faire appel au plugin assembly, l'un de
@@ -10379,11 +10302,10 @@ déclarer nos modules et de parent commun pour mutualiser la
 configuration et les dépendances. Cette solution, bien pratique, est
 largement appliquée mais pose ici un problème :
 
-·     En tant que support du plugin assembly, notre POM parent doit
+* En tant que support du plugin assembly, notre POM parent doit
 passer en revue les modules du projet. Le plugin pourra ainsi en
 extraire la structure et les binaires produits.
-
-·     En tant que parent, notre POM doit être totalement constitué avant
+* En tant que parent, notre POM doit être totalement constitué avant
 que ses fils puissent être construits. Cela signifie que Maven doit
 exécuter son cycle de vie avant de pouvoir s'attaquer aux modules.
 
@@ -10435,23 +10357,18 @@ Nous venons de résoudre le problème de l'œuf et de la poule !
 Notre software factory (c'est un mot à la mode, mettez-le sur votre CV)
 est désormais bien rodée. Elle construit automatiquement un livrable :
 
-·     Clairement identifié.
-
-·     Testé de manière unitaire, fonctionnelle, mais aussi en charge
+* Clairement identifié.
+* Testé de manière unitaire, fonctionnelle, mais aussi en charge
 et/ou en endurance selon les mécanismes de test et nos contraintes.
 Contrairement à une idée trop répandue, les outils ne sont pas le
 facteur limitant dans ce domaine.
-
-·     Respectant nos critères qualité et règles de codage, dont les
+* Respectant nos critères qualité et règles de codage, dont les
 métriques sont historisées.
-
-·     Fournissant toutes les indications nécessaires pour tracer son
+* Fournissant toutes les indications nécessaires pour tracer son
 origine.
-
-·     Mis à disposition de tous les développeurs qui veulent le tester
+* Mis à disposition de tous les développeurs qui veulent le tester
 ou bénéficier des dernières corrections.
-
-·     Prêt pour une utilisation directe par les équipes de production.
+* Prêt pour une utilisation directe par les équipes de production.
 
 Le chemin a été long depuis notre petit projet rigolo échangé par
 e-mail, et l'outillage a largement progressé. Si la taille de nos
@@ -10954,16 +10871,13 @@ Bien que les archétypes soient un moyen rapide de réutiliser une
 application existante, et donc un encouragement à définir des
 applications blanches, celles-ci présentent quelques écueils :
 
-·      *La maintenance.* Cela revient vite cher à faire vivre.
-
-·      *La cohérence.* Cela devient vite un fourre-tout dans lequel on
+*  *La maintenance.* Cela revient vite cher à faire vivre.
+*  *La cohérence.* Cela devient vite un fourre-tout dans lequel on
 déverse tout ce qui traîne.
-
-·      *L'obésité des applications générées.* Une bonne partie du code
+*  *L'obésité des applications générées.* Une bonne partie du code
 récupéré par les nouveaux projets n'est pas utilisée et reste en place
 comme code mort.
-
-·      *La complexité du modèle.* Trop de technologies sont mélangées et
+*  *La complexité du modèle.* Trop de technologies sont mélangées et
 trop de choses sont à démontrer en même temps.
 
 Même si l'application blanche est utile, il faut que son usage soit
@@ -11136,15 +11050,13 @@ De manière plus générale, l'utilisateur qui ne trouve le plugin adéquat
 pour un besoin donné ni dans ceux de Maven, ni sur la liste des plugins
 stables de Mojo, est confronté à un choix délicat :
 
-·     se laisser tenter par un plugin du bac à sable Mojo, en espérant
+* se laisser tenter par un plugin du bac à sable Mojo, en espérant
 que son développement soit encore actif, et sans aucune garantie de voir
 un jour une version stable en sortir ;
-
-·     chercher en dehors de ces sources officielles un plugin adapté,
+* chercher en dehors de ces sources officielles un plugin adapté,
 mais avec le risque de ne trouver que des solutions partielles sans
 support et méconnues de la communauté ;
-
-·     se lancer dans une solution interne, dont il faudra supporter le
+* se lancer dans une solution interne, dont il faudra supporter le
 coût de développement et qui ne bénéficiera pas de l'enrichissement
 d'une communauté de centaines d'utilisateurs.
 
@@ -11646,7 +11558,7 @@ nouvelles fonctionnalités qu'il apporte peuvent sembler superficielles
 mais l'importance est avant tout le redémarrage de cette branche de
 développement en parallèle de Maven 3. Maven 2.1 introduit :
 
-·     La possibilité de sécuriser les mots de passe définis dans le
+* La possibilité de sécuriser les mots de passe définis dans le
 fichier settings.xml de l'utilisateur, et donc un peu trop ouvertement
 exposés aux regards indiscrets. Ceux-ci peuvent désormais être chiffrés
 et la clé stockée, par exemple, sur une clé USB et donc inexploitable en
@@ -11654,7 +11566,7 @@ l'absence de son utilisateur légitime (pensez au cas de vol de
 l'ordinateur portable d'un développeur Maven, un quidam pourrait venir
 l'enrichir et le corriger à nos dépens J).
 
-·     Le téléchargement des dépendances en parallèle. Cela n'a pas un
+* Le téléchargement des dépendances en parallèle. Cela n'a pas un
 grand intérêt pour le développeur qui ne va télécharger ses dépendances
 qu'une seule fois – quoique, lors de la première utilisation, quand
 Maven "télécharge la moitié d'Internet", cela puisse se sentir. Sur un
@@ -11662,27 +11574,26 @@ serveur d'intégration continue, par contre, si on désire utiliser un
 dépôt local vierge avant chaque construction pour faire les choses bien
 proprement, le gain de temps peut être significatif.
 
-·     La construction multimodule par morceaux. Il est possible de
+* La construction multimodule par morceaux. Il est possible de
 demander à Maven 2.1 de ne construire que certains modules du projet, et
 éventuellement tous les modules dont il dépend ou encore tous les
 modules qui dépendent de lui. Cette fonctionnalité était déjà présente
 sous forme d'un plugin dédié reactor, elle est désormais disponible au
 cœur de Maven.
 
-·     Sans oublier une nette amélioration des performances sur
+* Sans oublier une nette amélioration des performances sur
 l'initialisation de Maven dans un contexte avec de nombreux modules.
 
 ===== Maven 2.2
 
 Deuxième de la lignée, Maven 2.2 est apte à :
 
-·     Corriger plusieurs bogues, dont un lié à la manipulation des
+* Corriger plusieurs bogues, dont un lié à la manipulation des
 $\{variables} lorsque le POM est installé dans le dépôt local ou
 déployé. Cette fonctionnalité introduite dans Maven 2.1.0 a entraîné des
 régressions sur certains plugins, notamment celui de signature GPG –
 elle a donc été retirée au profit d'une gestion plus stricte.
-
-·     Apporter quelques améliorations mineures.
+* Apporter quelques améliorations mineures.
 
 C'est tout ? Ça fait un peu maigre, même pour une version mineure. On
 dirait plutôt une petite version corrective ! La raison principale de ce
@@ -11692,9 +11603,6 @@ déranger les utilisateurs, Java 5 est nécessaire pour corriger certains
 bogues. Cela n'interdit pas de construire des projets pour Java 1.4,
 voire des versions antérieures, mais le poste de développement doit
 disposer d'un JDK 5 pour exécuter Maven lui-même.
-
- 
-+
 
 ==== Maven 3.x
 
@@ -11889,11 +11797,11 @@ sur ce composant :
 
 image:IMF.png
 
-·     Le support des accès concurrents dans le dépôt local. Cela est
+* Le support des accès concurrents dans le dépôt local. Cela est
 nécessaire pour permettre l’exécution parallèle de Maven et des autres
 outils basés sur Aether.
 
-·     L’intégration avec m2eclipse, ce qui signifie le support dans
+* L’intégration avec m2eclipse, ce qui signifie le support dans
 Aether des dépôts OSGi P2 d’Eclipse et le modèle de version associé.
 Cette évolution permettra a termes de créer des passerelles entre les
 deux grands modèles de dépôts d’artefacts et d’approvisionnement de
@@ -11901,14 +11809,14 @@ bibliothèques du monde Java. Avec le projet JigSaw (« java modules »)
 qui vise à intégrer cette fonctionnalité directement dans la plateforme
 Java, ce chantier risque de faire couler beaucoup d’encre.
 
-·     Utiliser un client HTTP asynchrone permettant à Aether de mieux
+* Utiliser un client HTTP asynchrone permettant à Aether de mieux
 communiquer avec les dépôts distants. En parallélisant les requêtes,
 Aether peut répondre plus rapidement aux demandes de résolution des
 dépendances. Plutôt que de démarrer de nombreux processus, les
 entrées/sorties asynchrones permettent d’utiliser juste ce qu’il faut de
 ressources.
 
-·     Une dérivation du client HTTP asynchrone dédiée à Maven, utilisant
+* Une dérivation du client HTTP asynchrone dédiée à Maven, utilisant
 l’API Wagon définie par Maven pour le déploiement d’artefacts dans un
 dépôt. Cette API remonte à Maven2 et a été dérivée pour supporter HTTP,
 SCP, WebDav, FTP, les partages windows SMB et même SVN ! Plutôt que de
@@ -12096,7 +12004,7 @@ d'Oracle ?
 
 Ne perdons pas de vue deux éléments clés :
 
-·     Maven est développé sous licence libre Apache. Quoi qu'il arrive,
+* Maven est développé sous licence libre Apache. Quoi qu'il arrive,
 personne ne pourra vous réclamer de droits si vous prenez ce code pour
 en faire ce que bon vous semble. En particulier, si une société
 investissait massivement dans le développement pour créer un Maven
@@ -12106,8 +12014,7 @@ libre. Si la différence est réellement une plus-value significative, le
 prix qui en serait demandé serait peut-être justifié. Dans le cas
 contraire, la version libre restera libre et pourra tenter de développer
 les mêmes services, voire mieux, ce qui s'est déjà vu.
-
-·     Le développement de Maven est porté par ses développeurs. Le droit
+* Le développement de Maven est porté par ses développeurs. Le droit
 à modifier le code source de Maven est attribué à des personnes
 reconnues pour la qualité de leur contribution à la communauté et pour
 leur capacité à travailler selon un modèle communautaire. En aucun cas,
@@ -12119,8 +12026,7 @@ la clé d'accès au SVN de Maven. Sauf crise grave sur le marché de
 l'emploi en informatique, il restera toujours des développeurs
 indépendants ou raisonnablement liés à leur société pour faire de Maven
 un projet libre.
-
-·     Dans le pire des cas, rien n'interdit un autre groupe de
+* Dans le pire des cas, rien n'interdit un autre groupe de
 développeurs, libres ou liés par une société concurrente, de repartir du
 code existant et de créer un nouveau projet dérivé de Maven, comme IBM
 l'a fait avec IBM HTTP Server en partant de Apache HTTPd. Cette
@@ -12297,11 +12203,10 @@ Ce plugin permet de convertir assez facilement un projet Java classique
 en bundle OSGi, par contre Pascal rencontre encore quelques
 difficultés :
 
-·     D’une part, son application Eclipse RCP n’utilise pas uniquement
+* D’une part, son application Eclipse RCP n’utilise pas uniquement
 des bundles, mais les concepts propres à Eclipse que sont les features,
 update-site et products. L’outillage est donc encore incomplet
-
-·     D’autre part, Pascal est habitué au très bon outillage d’Eclipse
+* D’autre part, Pascal est habitué au très bon outillage d’Eclipse
 pour gérer finement le MANIFEST, et devoir reporter toutes ces infos
 dans le pom.xml sous peine de voir Maven écraser sauvagement sa
 configuration ne lui plait qu’à moitié.
@@ -12314,11 +12219,10 @@ plugin, Eclipse PDE (Platform Development Envionment) et tente d’y
 ajouter nos bibliothèques shoppinglist. Un Bundle OSGi a deux options
 pour intégrer une dépendance :
 
-·     Faire référence à un autre bundle, en supposant donc que la
+* Faire référence à un autre bundle, en supposant donc que la
 bibliothèque cible soit prévue pour une intégration OSGi, ce qui n’est
 pas notre cas
-
-·     Contenir directement le JAR de la bibliothèque
+* Contenir directement le JAR de la bibliothèque
 
 La figure 16-01 montre par exemple le bundle Apache Ant, disponible par
 défaut avec votre installation d’Eclipse. Ce plugin incorpore l’outil
@@ -12355,13 +12259,12 @@ Cependant, le calme qu’il affiche semble montrer qu’il ne craint pas
 pour sa période d’essai et a donc quelque chose à ajouter. Nous
 finissons donc pas l’écouter. Son argumentaire est le suivant :
 
-·     Maven comme OSGi gèrent la résolution de dépendances. Celui d’OSGi
+* Maven comme OSGi gèrent la résolution de dépendances. Celui d’OSGi
 est cependant très spécifique (Pascal hésite à dire « meilleur » mais ne
 veut pas en rajouter pour le moment) et apporte des fonctionnalités
 propres aux besoins du développement Eclipse RCP qui n’ont pas
 d’équivalent avec Maven.
-
-·     Tout l’outillage de développement Eclipse PDE est basé sur
+* Tout l’outillage de développement Eclipse PDE est basé sur
 l’édition du fichier MANIFEST. Même en développant notre propre plugin
 Maven, passer par le POM pour gérer ces informations ferait perdre
 sensiblement en productivité.
@@ -12878,11 +12781,9 @@ c'est une garantie d'homogénéité des métadonnées du projet.
 
 Le respect des conventions permet :
 
-·     de simplifier de l'utilisation de Maven ;
-
-·     de simplifier l'intégration de nouveaux développeurs ;
-
-·     d'éviter de tomber dans des problèmes ou des bogues qui font
+* de simplifier de l'utilisation de Maven ;
+* de simplifier l'intégration de nouveaux développeurs ;
+* d'éviter de tomber dans des problèmes ou des bogues qui font
 perdre un temps précieux.
 
 ==== Commandement n^o^ 2 : Simplicité tu choisiras.
@@ -12893,15 +12794,12 @@ plugin Maven adéquat, mais la structure initiale du projet était
 particulièrement hétéroclite. Notre erreur a été de vouloir la conserver
 telle quelle, ce qui imposait :
 
-·     plusieurs étapes de compilation entre divers répertoires de
+* plusieurs étapes de compilation entre divers répertoires de
 sources interdépendants ;
-
-·     plusieurs phases d'instrumentation du code ;
-
-·     une exécution séparée pour le calcul du taux de couverture des
+* plusieurs phases d'instrumentation du code ;
+* une exécution séparée pour le calcul du taux de couverture des
 tests ;
-
-·     un assemblage de multiples sous-versions du même projet, incluant
+* un assemblage de multiples sous-versions du même projet, incluant
 diverses options et le code optionnel associé.
 
 Inutile de dire que la migration vers Maven a été laborieuse et pas du
@@ -13079,23 +12977,16 @@ en soi, c'est un mal nécessaire, au coût non négligeable, permettant
 d’offrir à l'équipe un environnement aussi agréable que possible et
 optimisé pour travailler. De très nombreux outils peuvent y figurer :
 
-·     Maven, le programme en tant que tel mais aussi tous les plugins
+* Maven, le programme en tant que tel mais aussi tous les plugins
 qu'il utilise ;
-
-·     le gestionnaire de versions de sources (Subversion, Git…) ;
-
-·     le gestionnaire de tâches et de bogues (Jira, Mantis…) ;
-
-·     le repo (nexus, artifactory, archiva) ;
-
-·     le serveur d'intégration continue (Hudson, Continuum, Bamboo…) ;
-
-·     les outils de tests (Selenium, Fitnesse…) ;
-
-·     l'environnement de développement intégré (Eclipse, NetBeans,
+* le gestionnaire de versions de sources (Subversion, Git…) ;
+* le gestionnaire de tâches et de bogues (Jira, Mantis…) ;
+* le repo (nexus, artifactory, archiva) ;
+* le serveur d'intégration continue (Hudson, Continuum, Bamboo…) ;
+* les outils de tests (Selenium, Fitnesse…) ;
+* l'environnement de développement intégré (Eclipse, NetBeans,
 Intellij…) ;
-
-·     et bien d'autres encore.
+* et bien d'autres encore.
 
 Il est important que ces outils soient maîtrisés, mais il est encore
 plus important qu'ils soient mis à jour et que leur intégration soit
@@ -13200,11 +13091,11 @@ nombreuses dépendances, mais seule une sous-partie est utile pour un
 utilisateur, qui ne va exploiter que quelques classes de notre
 bibliothèque. Nous pouvons :
 
-·     Déclarer toutes ces dépendances, auquel cas les utilisateurs vont
+* Déclarer toutes ces dépendances, auquel cas les utilisateurs vont
 nous huer, se plaindre que Maven télécharge des centaines de JAR
 inutiles et perdre des heures à configurer des <exclusions>.
 
-·     Déclarer ces dépendances <optional>, ce qui les rend juste
+* Déclarer ces dépendances <optional>, ce qui les rend juste
 indicatives. Nos utilisateurs ne vont pas nous huer tout de suite, mais
 plus tard quand, lors de l’exécution, ils constateront qu'une dépendance
 manque.
@@ -13228,16 +13119,13 @@ rien et pénalise l'intégration Maven qui va devoir sans cesse
 reconstruire ce code, ou du moins s'assurer qu'il est à jour – perte de
 temps que le développeur ressentira très nettement :
 
-·     Attendre la compilation moins d'une seconde c'est fantastique,
+* Attendre la compilation moins d'une seconde c'est fantastique,
 mais rarissime.
-
-·     Attendre cinq à dix secondes, c'est le temps nécessaire pour voir
+* Attendre cinq à dix secondes, c'est le temps nécessaire pour voir
 qu'il se passe quelque chose et se reposer les poignets.
-
-·     Attendre trente secondes que le projet compile, cela incite à
+* Attendre trente secondes que le projet compile, cela incite à
 affubler son IDE de noms d'oiseaux.
-
-·     Attendre plus d'une minute à chaque construction, c'est s'exposer
+* Attendre plus d'une minute à chaque construction, c'est s'exposer
 à une montée d'énervement, souvent accompagnée d'une augmentation
 alarmante de la consommation de café, qui ne suffit pourtant pas à
 expliquer le premier phénomène. Peut-on alors encore parler de
@@ -13636,9 +13524,7 @@ Maintenant, je me consacre :
 
 * aux plugins Maven (un peu au core pour la 3.x notamment la réécriture
 du site plugin)
-
 * intégration de Maven dans le serveur d'intégration continue Jenkins.
-
 * et puis d'autres trucs :-) (Maven scm, divers mojo chez codehaus)
 
 image:MangaRaphael.png[float="left"]
@@ -14388,10 +14274,10 @@ pratiques.
 Et pour finir, quelques liens indispensables à ajouter dans vos
 favoris :
 
-·     http://maven.apache.org/. Le site officiel de Maven, avec une
+* http://maven.apache.org/. Le site officiel de Maven, avec une
 documentation imparfaite mais tout de même bien utile.
 
-·     http://www.maestrodev.com/better-build-maven. Premier livre sur
+* http://www.maestrodev.com/better-build-maven. Premier livre sur
 Maven disponible en ligne gratuitement.
 
 ·    
@@ -14403,19 +14289,19 @@ Sonatype.
 http://www.packtpub.com/apache-maven-2-effective-implementations/book.
 Encore un livre, écrit lui aussi par des membres de l'équipe Maven.
 
-·     http://www.sonatype.com/people/. Le blog de Sonatype, sur lequel
+* http://www.sonatype.com/people/. Le blog de Sonatype, sur lequel
 on peut piocher de nombreuses bonnes idées autour de Maven.
 
-·     http://mojo.codehaus.org/. Site communautaire qui héberge de
+* http://mojo.codehaus.org/. Site communautaire qui héberge de
 nombreux plugins Maven. Si vous avez développé un plugin intéressant,
 n'hésitez pas à le proposer comme contribution.
 
 Sans oublier bien-sûr deux sites absolument indispensables dans la vie
 d'un développeur Java :
 
-·     http://blog.aheritier.net/. Le blog d'Arnaud.
+* http://blog.aheritier.net/. Le blog d'Arnaud.
 
-·     http://blog.loof.fr/. Le blog de Nicolas.
+* http://blog.loof.fr/. Le blog de Nicolas.
 
  +
 
