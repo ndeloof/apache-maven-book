@@ -86,8 +86,9 @@ lecture : le corps du texte a été revu pour correspondre à l'état de
 l'art, à savoir Maven 3. De nouveaux chapitres viennent en décrire les
 avancées et les outils associés. C'est seulement lorsqu'une rupture
 significative avec les versions précédentes existe que nous ajoutons un
-encart. Ces encarts sont reconnaissables au logo [MAVEN3.png[float="left"]F]. Vous
-constaterez rapidement qu'ils sont assez peu nombreux : Maven 3 est
+encart. Ces encarts sont reconnaissables au logo : image:Maven3.png[Maven3,align="center"] 
+
+Vous constaterez rapidement qu'ils sont assez peu nombreux : Maven 3 est
 avant tout conçu pour remplacer son prédécesseur sans heurts. Même avec
 ces réserves, les grandes idées présentées dans le livre sont
 applicables aux deux versions. Nous espérons donc que vous en tirerez le
@@ -2706,7 +2707,7 @@ proposer votre plugin en contribution au projet Mojo
 (http://mojo.codehaus.org), ce qui lui donnera une bien meilleure
 visibilité, ainsi que l'aide possible des développeurs de la communauté.
 
-[Maven3]
+image:Maven3.png[Maven3,align="center"]
 
 Maven2 ne fait pas de séparation très claire entre les dépôts
 d’artefacts que vous déclarez dans votre POM et vos déclarations dépôts
@@ -5638,7 +5639,7 @@ sur d’autres modules qui n’ont pas de lien de dépendance. Si cette
 hypothèse est respectée, cela permet d’accélérer sensiblement la
 rapidité de l’intégration continue.
 
-[Maven3]
+image:Maven3.png[Maven3,align="center"]
 
 Nous pouvons ainsi réduire le nombre de modules construits par un mvn
 install aux modules impactés par une modification. Bien, mais nous
@@ -8715,7 +8716,7 @@ génération du rapport", e );
 
 ==== Bye bye Maven 2
 
-Maven3
+image:Maven3.png[Maven3,align="center"]
 
 image:MangaOlivier.png[float="left"]
 
@@ -9429,7 +9430,7 @@ plugin, site, mais celui-ci est l'arbre qui cache la forêt : son rôle
 est d'exécuter des rapports et d'en agréger le contenu dans un document
 unifié sous forme de site web.
 
-Maven3
+image:Maven3.png[Maven3,align="center"]
 
 Autant Maven 3 est compatible à 99,99% avec Maven 2 sur de nombreux
 points, autant il y a un domaine qui a été revu de fond en comble, c’est
@@ -12014,7 +12015,7 @@ Maven est cependant un projet de la fondation Apache, dont nous avons vu
 les règles de conduite, et, à ce titre, on peut trouver choquant de le
 voir mêlé de si près au nom d'une seule société.
 
-Maven3
+image:Maven3.png[Maven3,align="center"]
 
 En fait, en creusant un peu, on constate même rapidement que Sonatype
 est bien plus qu’un contributeur de Maven : des composants majeurs de
