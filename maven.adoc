@@ -86,7 +86,9 @@ lecture : le corps du texte a été revu pour correspondre à l'état de
 l'art, à savoir Maven 3. De nouveaux chapitres viennent en décrire les
 avancées et les outils associés. C'est seulement lorsqu'une rupture
 significative avec les versions précédentes existe que nous ajoutons un
-encart. Ces encarts sont reconnaissables au logo : image:Maven3.png[Maven3,align="center"] 
+encart. Ces encarts sont reconnaissables au logo : 
+
+image:Maven3.png[Maven3,align="center"] 
 
 Vous constaterez rapidement qu'ils sont assez peu nombreux : Maven 3 est
 avant tout conçu pour remplacer son prédécesseur sans heurts. Même avec
@@ -296,6 +298,7 @@ fassent disparaître). Il envoie donc le trésor tant convoité à Arnaud.
 Pour vous faire une meilleure idée de cette exceptionnelle construction
 logicielle, voici les fichiers qui la constituent :
 
+.Figure 01-01
 image:01-01.png[Figure 1]
 
 La structure originale du projet "noubliepaslalistedescourses".
@@ -606,8 +609,9 @@ et bon nombre d'outils similaires s’appuient sur une approche
 procédurale, pour laquelle on décrit les opérations à accomplir pour
 construire le logiciel ou exécuter des tâches annexes. Cela se traduit
 donc par une suite de commandes, qui prendra d'une façon ou d'une autre
-la forme décrite à la Figure 2.
+la forme décrite à la Figure 01-02.
 
+.Figure 01-02
 image:01-02.png[Figure 2]
 
 Les étapes élémentaires de construction d'un projet.
@@ -1168,6 +1172,7 @@ du sous-répertoire dédié à la bibliothèque indiquée :
 Pour notre dépendance à JavaMail, nous obtenons :
 http://repo1.maven.org/maven2/javax/mail/mail/1.4/.
 
+.Figure 02-01
 image:02-01.png[align="center"]
 
 Le sous-répertoire dédié à JavaMail 1.4 sur le dépôt de bibliothèques.
@@ -1301,6 +1306,7 @@ permet à Maven de construire l'arbre des dépendances du projet, chaque
 nouvelle feuille pouvant, par ses propres métadonnées, introduire de
 nouvelles branches.
 
+.Figure 02-02
 image:02-02.png[align="center"]
 
 Arbre de dépendances transitives.
@@ -1619,6 +1625,7 @@ la zone de droite, il nous indique tous les chemins de dépendance qui y
 mènent. Un simple clic permet de placer les exclusions qui s'imposent
 sans éditer manuellement le fichier POM.
 
+.Figure 02-03
 image:02-03.png[align="center"]
 
 Plugin Maven pour Eclipse.
@@ -2044,6 +2051,7 @@ dans sa capacité à prendre en charge de manière automatisée le projet.
 En particulier, la structure type d'un projet Maven est la suivante
 (voir Figure 03-02).
 
+.Figure 03-02
 image:03-02.png[align="center"] 
 
 La structure de base d'un projet Maven.
@@ -2165,6 +2173,7 @@ projet.
 Un élément <execution> permet de définir les tâches définies par le
 plugin considéré que Maven devra exécuter.
 
+.Figure 03-03
 image:03-03.png[align="center"]
 
 Le cycle de vie du projet et les plugins qui viennent s'y greffer.
@@ -2196,6 +2205,7 @@ blanc que nous utilisons pour griffonner nos dernières idées… et le
 tableau est rapidement noir de petits croquis, de flèches en tout genre
 et de notes sur le comportement idéal de notre site web.
 
+.Figure 03-04
 image:03-04.png[align="center"]
 
 Notre document officiel de spécifications pour l'application web.
@@ -2377,6 +2387,7 @@ vie d'un projet JAR
 Maven fournit un moyen pour venir greffer d'autres plugins à ce cycle,
 en plus de ceux qu'il aura associés par défaut.
 
+.Figure 03-05
 image:03-05.png[align="center"]
 
 Cycle de vie du projet et plugins exécutés pour chaque phase.
@@ -3197,6 +3208,7 @@ tous rester au vert. Certaines modifications lourdes et pourtant
 importantes n'auraient jamais été réalisées en confiance sans cette
 garantie.
 
+.Figure 04-01
 image:04-01.png[align="center"]
 
 Développement piloté par les tests.
@@ -3430,6 +3442,7 @@ développement, qui ne propose une nouvelle version qu'après plusieurs
 mois, réduit sa capacité à proposer rapidement des évolutions à ses
 utilisateurs.
 
+.Figure 04-02
 image:04-02.png[align="center"]
 
 Continuum en train de surveiller les projets de Maven2.
@@ -3460,6 +3473,7 @@ réactivité de développement. Avec une nouvelle version chaque semaine et
 une armée de contributeurs sur son écosystème de plugins, Jenkins est un
 logiciel extrêmement réactif et porteur de nombreuses innovations.
 
+.Figure 04-03
 image:04-03.png[align="center"]
 
 Jenkins, en train de surveiller sa propre construction, respectant
@@ -3480,6 +3494,7 @@ Techniquement parlant, les deux projets sont relativement identiques à
 l'heure ou nous écrivons ces lignes, mais ne suivront pas les mêmes
 choix techniques ou organisationnels à l'avenir.
 
+.Figure 04-04
 image:04-04.png[align="center"]
 
 Husdon, lui aussi en train de surveiller la construction de Maven2, dans
@@ -3587,6 +3602,7 @@ de temps que l'exécution du test lui-même. Ce problème, multiplié par de
 nombreux tests sur le même modèle, a des conséquences immédiates sur le
 temps de construction de notre projet.
 
+.Figure 05-01
 image:05-01.png[align="center"]
 
 La séquence d'opération déroulée par un test GWT.
@@ -4004,6 +4020,7 @@ programmation. La Figure 05-02 montre l'un de nos tests Fitnesse. Ses
 intentions sont compréhensibles par tous, loin de la syntaxe obscure
 d'un bout de code jUnit.
 
+.Figure 05-02
 image:05-02.png[align="center"]
 
 Un test fonctionnel écrit sous Fitnesse.
@@ -4278,6 +4295,7 @@ positionnement de chaque outil en fonction du niveau d'abstraction,
 proche du code ou bien du fonctionnel, et de la spécialisation d'un
 outil vis-à-vis d'une technologie donnée.
 
+.Figure 05-03
 image:05-03.png[align="center"]
 
 Positionnement de nos outils de test.
@@ -4418,6 +4436,7 @@ Maven. Nous y faisons une recherche sur le mot "oracle", et nous
 obtenons rapidement la confirmation attendue sur l'identité de notre
 pilote JDBC (voir Figure 06-01).
 
+.Figure 06-01
 image:06-01.png[align="center"]
 
 Recherche d'un artefact _via_ un moteur de recherche spécialisé.
@@ -5002,6 +5021,7 @@ dépôt sans intervention humaine. La Figure 06-03 montre par exemple le
 rapport d'audit sur un dépôt administré par Archiva, et les différents
 problèmes qu'il a su y détecter.
 
+.Figure 06-03
 image:06-03.png[align="center"]
 
 Rapports d'audit d'Archiva.
@@ -5016,6 +5036,7 @@ environnements de développement (voir le Chapitre 9). Enfin, un espace
 de stockage permet la diffusion des développements au reste de l'équipe,
 servant de dépôt "public-privé".
 
+.Figure 06-04
 image:06-04.png[align="center"]
 
 Page de recherche d'Artifactory.
@@ -5181,6 +5202,7 @@ décomposé en de nombreux modules qui héritent d'un POM parent commun,
 qui lui-même hérite du POM parent Apache, commun à tous les projets de
 la fondation du même nom.
 
+.Figure 07-01
 image:07-01.png[align="center"]
 
 Hiérarchie des POM Apache Maven
@@ -5497,6 +5519,7 @@ impact sur un autre module apparaîtra en quelques instants, alors qu'une
 construction complète aurait pu prendre de longues minutes, impliquant
 de nombreux modules non concernés par la modification.
 
+.Figure 07-02
 image:07-02.png[align="center"]
 
 Réaction du serveur d'intégration continue à une modification.
@@ -5689,6 +5712,7 @@ vous voulez en avoir une description plus fine et moins biaisée que
 notre résumé de quelques lignes, nous vous recommandons l'introduction
 disponible sur le site de SUN footnote:[http://java.sun.com/developer/technicalArticles/J2EE/Intro/].
 
+.Figure 08-01
 image:08-01.png[align="center"]
 
 Structure d'une application selon le modèle JavaEE.
@@ -5783,6 +5807,7 @@ mesure de manipuler nos servlets parce que nous partageons avec lui les
 classes de cette API. La Figure 08-02 compare cependant ce modèle
 théorique et ce que nous observons.
 
+.Figure 08-02
 image:08-02.png[align="center"]
 
 Comparaison de la structure des chargeurs de classes : théorie _vs_
@@ -6076,6 +6101,7 @@ dépendances, notre projet application web ne contient alors que les
 bibliothèques spécifiquement web qu'il emploie. La Figure 08-03 indique
 la structure finale de notre projet Maven.
 
+.Figure 08-03
 image:08-03.png[align="center"]
 
 Multiprojet JavaEE avec mise en commun des dépendances _via_ l'EAR.
@@ -6924,6 +6950,7 @@ petite icône "M" ; quant à notre POM, il a droit à une icône dédiée qui
 permet de facilement le différencier des autres fichiers du projet (voir
 Figure 09-01).
 
+.Figure 09-01
 image:09-01.png[align="center"]
 
 Un projet Maven vu sous Eclipse au travers de m2eclipse.
@@ -6957,6 +6984,7 @@ onglet dédié permet de consulter les dépendances du projet et
 d'identifier le jeu de transitivité à travers lequel elles apparaissent
 dans le projet (voir Figure 09-02).
 
+.Figure 09-02
 image:09-02.png[align="center"]
 
 Gestion des dépendances.
@@ -6982,6 +7010,7 @@ devoir consulter la documentation et de faire une malheureuse faute de
 frappe dans leur nom. La figure 09-03 montre m2eclipse en action
 proposant cette assistance.
 
+.Figure 09-03
 image:09-03.png[align="center"]
 
 Édition de la configuration des plugins.
@@ -7013,6 +7042,7 @@ celle-ci peut devenir très gênante pour son utilisation quotidienne. Les
 choses devraient aller mieux avec la prochaine version du plugin
 m2eclipse…
 
+.Figure 09-04
 image:09-04.png[align="center"]
 
 Veuillez patienter…
@@ -7037,6 +7067,7 @@ qui définissent la classe considérée (voir Figure 09-05). Il n'est donc
 pas nécessaire de passer par l'édition du POM pour ajouter une
 dépendance suite au copier-coller d'un fragment de code intéressant.
 
+.Figure 09-05
 image:09-05.png[align="center"]
 
 Correction rapide par ajout d'une dépendance.
@@ -7106,6 +7137,7 @@ nous permettra de lancer depuis l'IDE les opérations gérées par Maven,
 par exemple une construction jusqu'à une phase précise du cycle de vie
 ou l'exécution d'un plugin particulier.
 
+.Figure 09-06
 image:09-06.png[align="center"]
 
 Le projet Maven après import dans Idea.
@@ -7135,6 +7167,7 @@ Figure 09-07). On y retrouve tous nos répertoires de code source (et de
 code généré), que nous pouvons au besoin compléter, mais dans ce cas la
 configuration Idea ne sera plus synchrone avec le projet Maven.
 
+.Figure 09-07
 image:09-07.png[align="center"]
 
 La configuration du module Idea à partir des métadonnées Maven.
@@ -7147,6 +7180,7 @@ seront pas visibles depuis un autre projet qui fait référence au module
 considéré. Pas de risque ainsi d'introduire involontairement des imports
 parasites.
 
+.Figure 09-08
 image:09-08.png[align="center"]
 
 Les dépendances Maven vues sous Idea.
@@ -7255,6 +7289,7 @@ Maven, et, comme le souligne avec insistance Raphaël, le POM n'est pas
 dans cet environnement un format annexe, mais bien un descripteur de
 projet à part entière qui se suffit complètement.
 
+.Figure 09-09
 image:09-09.png[align="center"]
 
 Ouverture native d'un projet Maven.
@@ -7297,6 +7332,7 @@ dépôt. Comme l'indique la Figure 09-10, Raphaël ne se prive pas de nous
 montrer cette fonctionnalité comme preuve de la première place qu'occupe
 Maven dans son environnement préféré.
 
+.Figure 09-10
 image:09-10.png[align="center"]
 
 Intégration de la gestion des dépendances au plus profond de NetBeans.
@@ -7567,6 +7603,7 @@ de livraison.doc que vous aviez jusqu'ici et servez-vous-en pour caler
 votre armoire bancale. Et si votre responsable qualité vous réclame un
 document de procédure, faites-lui une photocopie de la Figure 10-01 !
 
+.Figure 10-01
 image:10-01.png[align="center"]
 
 Étapes réalisées par le plugin release_._
@@ -7778,6 +7815,7 @@ utilisée pour des besoins correctifs ou pour expérimenter à l'abri d'un
 petit coin tranquille une évolution complexe, qui impacterait trop le
 reste de l'équipe.
 
+.Figure 10-02
 image:10-02.png[align="center"]
 
 Utilisation d'une branche de développement parallèle.
@@ -7930,6 +7968,7 @@ appliquer à leurs développements informatiques pour échapper à un monde
 où règnent le bricolage et les manipulations manuelles hasardeuses. La
 Figure 10-03 présente le principe général de cette approche.
 
+.Figure 10-03
 image:10-03.png[align="center"]
 
 Production continue.
@@ -9643,6 +9682,7 @@ Les données de Sonar sont accessibles _via_ un frontal web synthétique,
 qui donne les grandes tendances du projet. C'est notre vue à
 30 000 pieds du projet (voir Figure 12-02).
 
+.Figure 12-02
 image:12-02.png[align="center"]
 
 Synthèse de nos indicateurs qualité dans Sonar.
@@ -9658,6 +9698,7 @@ détails. On va ainsi descendre de lien en lien jusqu'aux classes du
 projet puis ouvrir son code source pour constater la ligne de code qui a
 été identifiée par l'analyse de code (voir Figure 12-03).
 
+.Figure 12-03
 image:12-03.png[align="center"]
 
 Détail des violations constatées par Sonar dans notre code source.
@@ -9703,6 +9744,7 @@ l'équipe, par exemple en lui montrant cette simple courbe, sur
 l'influence que peut avoir un petit effort quotidien de clarification et
 de simplification du code.
 
+.Figure 12-04
 image:12-04.png[align="center"]
 
 Évolution de nos indicateurs qualité.
@@ -9716,6 +9758,7 @@ extrêmement puissant pour accompagner le travail d'une équipe et pointer
 du doigt ses dérives. Le développeur parfait n'existe pas, mais le
 développeur bien outillé peut tenter de s'améliorer.
 
+.Figure 12-05
 image:12-05.png[align="center"]
 
 Classement des violations les plus souvent identifiées
@@ -11404,6 +11447,7 @@ que les utilisateurs de tous niveaux formulent, parfois dans un anglais
 assez approximatif (c'est un moyen simple pour reconnaître des collègues
 francophones).
 
+.Figure 15-01
 image:15-01.png[align="center"]
 
 Trafic de la liste users@maven.apache.org – en rouge le nombre de
@@ -11418,14 +11462,17 @@ de téléchargements de Maven au cours de l'année, toutes versions
 confondues. Ici encore, les chiffres démontrent une très large
 communauté.
 
+.Figure 15-02
 image:15-02.png[align="center"]
 
 Origine géographique des visiteurs de maven.apache.org.
 
+.Figure 15-03
 image:15-03.png[align="center"]
 
 Trafic sur le site web maven.apache.org.
 
+.Figure 15-04
 image:15-04.png[align="center"]
 
 Téléchargements mensuels de Maven sur un an, toutes versions confondues.
@@ -11628,6 +11675,7 @@ En résumé, Maven 3 c’est un peu un épisode spécial de Extreme makeover :
 Maven edition footnote:[Si vous ne connaissez pas, regardez au moins une fois : Les Maçons du cœur (Extreme Makeover Home Edition en VO), ça vous donnera une idée des travaux en cours.].  On prend votre outillage existant,
 mais on refait tout de la cave au grenier !
 
+.Figure 15-05
 image:15-05.png[align="center"]
 
 ===== Quoi de neuf ?
@@ -11669,6 +11717,7 @@ propose une console avec coloration syntaxique, assistance à la saisie
 des mots clés, et maintien en mémoire des POM et des métadonnées de
 votre projet. Il en résulte un Maven plus réactif à vos commandes.
 
+.Figure 15-06
 image:15-06.png[align="center"]
 
 Sonatype MavenShell.
