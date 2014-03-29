@@ -11258,7 +11258,7 @@ l'excellence pour occuper le dessus du panier. Les critiques, plus ou
 moins constructives ou honnêtes, sont inévitables mais doivent toujours
 être considérées avec attention.
 
-===== Maven bon partout ?
+==== Maven bon partout ?
 
 Nous avons tenté au cours des chapitres précédents de vous démontrer en
 quoi l'approche proposée par Maven est d'un niveau supérieur au simple
@@ -11310,7 +11310,7 @@ artifacts created by the spring build system.
 
 Comme quoi, l'idée fait tout de même son chemin…
 
-===== Ant et Ivy
+==== Ant et Ivy
 
 Nous avons déjà parlé d’Apache Ant, qui a été longtemps le standard de
 fait pour la construction de projets en Java. Ivy est un projet qui lui
@@ -11332,7 +11332,7 @@ script pour faire à peu près tout ce qu'on veut. Il ne faudra alors pas
 s'étonner que cette liberté ait un prix en maintenance et en évolutivité
 du projet.
 
-===== EasyAnt
+==== EasyAnt
 
 EasyAntlink:#_ftn55[[55]], comme son nom le suggère, vise à simplifier
 l'utilisation d’Ant. Il propose une surcouche qui intègre Ivy et un
@@ -11350,7 +11350,7 @@ de script XML, ce qui n'est pas d'une grande lisibilité pour le
 développeur novice. De ce point de vue, Gradle est nettement plus
 innovant.
 
-===== Gradle
+==== Gradle
 
 image:MangaGregory.png[float="left"]
 
@@ -11419,7 +11419,7 @@ chose.
 En tant qu'anciens de la communauté Maven, autant EasyAnt que Gradle
 nous rappellent énormément une vieille connaissance : Maven 1.
 
-===== Maven 1
+==== Maven 1
 
 Maven 1 avait pour objectif de fournir au-dessus d’Ant une gestion de
 dépendances (Ivy n'existant alors pas encore) et une approche par
@@ -11456,7 +11456,7 @@ permettant d’exécuter des tâches Ant ou Groovy, mais ces « astuces » ne
 sont considérées que comme un pis-aller pour faciliter une migration
 rapide vers Maven le temps de trouver une solution plus propre.
 
-===== Buildr
+==== Buildr
 
 Apache aime bien développer des outils de build ! En plus de Maven et
 d'Ant, il existe aussi le projet Buildrlink:#_ftn58[[58]], se
