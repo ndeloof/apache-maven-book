@@ -738,7 +738,7 @@ de données "modèle de projet" est représentée dans le fichier XML.
 « 4.0.0 » correspond à la version utilisée par Maven 2.x dans toutes ses
 variantes.
 
-MAVEN3
+image:Maven3.png[Maven3,align="center"]
 
 Les futures versions de Maven 3 pourront exploiter des versions
 différentes de modèles et introduire des évolutions dans le format de ce
@@ -1636,7 +1636,7 @@ Plugin Maven pour Eclipse.
 
 ==== Dépôts et dépendances
 
-MAVEN3
+image:Maven3.png[Maven3,align="center"]
 
 image:MangaEmmanuel.png[float="left"]
 
@@ -11698,7 +11698,7 @@ disposer d'un JDK 5 pour exécuter Maven lui-même.
 
 ==== Maven 3.x
 
-[MAVEN3]
+image:Maven3.png[Maven3,align="center"]
 
 Maven 3 a longtemps été connu sous le nom de Maven 2.1. Son
 développement correspond à une refonte profonde du cœur de Maven,
