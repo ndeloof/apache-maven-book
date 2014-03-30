@@ -4353,7 +4353,7 @@ propose de passer du statut d'amateur à celui de professionnels de
 l'informatique en montant une start-up pour porter le projet.
 LesOutilsIndispensablesDeLaMénagère.com est né !
 
-$$$LOGO MENAGERE$$$
+image:MeNAgere.png[align="center"]
 
 Alors que Maven devenait un outil de plus en plus utilisé, quelques
 développeurs du projet ont fondé en 2004 une société dédiée au support
@@ -7995,7 +7995,7 @@ fonctionnel et d'installation sont entièrement automatisées et ne
 dépendent plus que de la décision de l'administrateur de cliquer sur le
 bouton vert, ou plutôt de lancer un mvn –Pproduction monserver:deploy.
 
-$$$ image green-keyboard-button-deploy.jpg $$$
+image:green-keyboard-button-deploy.png[float="center"]
 
 Si pour vous c’est de la science fiction, jetez un œil du côté du projet
 Jenkins qui propose une nouvelle release par semaine depuis plus de 400
@@ -10949,7 +10949,7 @@ d'experts qui ne veut pas laisser un si beau projet reposer sur des
 outils non fiables, mal documentés ou dont l'avenir est incertain.
 À nous de nous montrer convaincants…
 
-$$$ commite.png[float="left"] $$$
+image:commite.png[float="left"]
 
 === Les limites
 
@@ -12078,7 +12078,7 @@ Le comité nous remercie et s'apprête à délibérer. Nous n'aurons sa
 conclusion qu'après quelques jours (ce sont des gens très occupés) : feu
 vert.
 
-$$$ commite-feuvert.png[float="left"] $$$
+image:commite-feuvert.png[float="left"]
 
 Maven ne répond pas à toutes les exigences sans quelques efforts, et il
 ne sait pas non plus faire le café. Son utilisation nécessite un
@@ -12140,7 +12140,7 @@ application OSGi, c’est découvrir un monde très différent de ce que nous
 avons vu jusqu’ici avec Maven, et c’est ce que Pascal s’apprête à
 affronter.
 
-image:MangaPascal.jpg[float="left"]
+image:MangaPascal.png[float="left"]
 
 Pascal vient de rejoindre notre équipe, car nous ajoutons une nouvelle
 corde à notre arc : le petit projet n’oublie pas la liste des courses a
@@ -12279,7 +12279,7 @@ même bien compliqué pour un résultat sans grande plus-value.
 
 ==== Tant pis pour Maven !
 
-image:MangaPascal.jpg[float="left"]
+image:MangaPascal.png[float="left"]
 
 La semaine suivante, Pascal prend part à notre stand-up hebdomadaire
 pour nous exposer ses progrès. Il lâche le morceau : la solution qu’il a
@@ -12467,7 +12467,7 @@ maven-osgi-test-plugin, Eclipse PDE nous imposant de séparer
 physiquement les tests dans un bundle dédié pour ne pas polluer le
 MANIFEST du bundle principal.
 
-image:MangaPascal.jpg[float="left"]
+image:MangaPascal.png[float="left"]
 
 Pascal nous a bluffé, et même si nous avons encore un peu de mal à
 admettre que notre magnifique gestion de dépendance Maven vient de se
@@ -12537,7 +12537,7 @@ Nous faisons ainsi la connaissance de Mark footnote:[Mark Reinhold, qui nous a i
 chez Oracle. Il travaille sur un projet qui vise à modulariser la
 plateforme Java, nom de code jigsaw.
 
-image:MangaMark.jpg[float="left"]
+image:MangaMark.png[float="left"]
 
 Depuis des années, Java évolue en ajoutant de nouvelles API,
 alourdissant toujours plus la plateforme. Malgré l’amélioration des
@@ -12556,7 +12556,7 @@ indiquer les briques qui lui sont nécessaires. Ce projet fait l’objet
 d’une spécification au sein du Java Community Process, qui standardisera
 le mécanisme de modularisation.
 
-image:MangaPascal.jpg[float="left"]
+image:MangaPascal.png[float="left"]
 image:MangaArnaud.png[float="left"]
 
 Pascal, s’étonne de l’enthousiasme de Mark à incorporer ce « nouveau
@@ -12649,7 +12649,7 @@ pas possible de les utiliser pour désolidariser l’interface
 java.util.List de ses implémentations concurrentes dédiées à la
 programmation parallèle.
 
-image:MangaMark.jpg[float="left"]
+image:MangaMark.png[float="left"]
 
 Mark a l’habitude de trouver un accueil un peu frais à ses explications,
 et a donc gardé pour la fin les éléments qui vont peut être nous faire
@@ -13285,7 +13285,7 @@ de la planète. Nous ne comptons plus les offres d'emploi, que nous
 recevons par centaines chaque jour, toutes plus appétissantes les unes
 que les autres.
 
-$$Image the end.jpg alignée au milieu $$
+image:theEnd.png[float="center"]
 
 Dans la vraie vie, les choses sont souvent moins roses. Les contes de
 fées et les histoires fantastiques sont malheureusement réservés à nos
@@ -13780,7 +13780,7 @@ version 1 m'avait paru intéressante comparée à Ant mais c'est surtout la
 version 2 et toutes ses conventions qui me semblent apporter énormément
 au développement !
 
-image:MangaPascal.jpg[float="left"]
+image:MangaPascal.png[float="left"]
 
 ===== Pascal Leclercq
 
