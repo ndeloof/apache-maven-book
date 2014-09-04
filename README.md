@@ -19,7 +19,7 @@ Build
 
 Pour produire les chapitres au format html, utilisez la configuration par défaut d'AsciiDoc
 
-    asciidoc maven.adoc
+    asciidoc -f asciidoc_maven.conf maven.adoc
   
 Nous étudions la génération d'un PDF et d'un format ePub.
 Un build maven est également à votre disposition si vous y tenez vraiment :)  
