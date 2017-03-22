@@ -5,7 +5,7 @@ apache-maven-book
 
 Apache Maven (le livre)
 
-Pearson ayant décidé d'arrêter l'exploitation de ce livre, Arnaud et moi-même avons décidé de récupérer nos droits et de le publier pour qu'il soit accessible gratuitement à tous, et - sait on jamais - vive un second souffle avec l'aide de contributeurs bénévoles.
+Pearson ayant décidé d'arrêter l'exploitation de ce livre, Arnaud et moi-même avons décidé de récupérer nos droits et de le publier pour qu'il soit accessible gratuitement à tous, et - sait-on jamais - vivre un second souffle avec l'aide de contributeurs bénévoles.
 
 ![cover](cover.jpg)
 
@@ -22,12 +22,12 @@ Pour produire les chapitres au format html, utilisez la configuration par défau
     asciidoc maven.adoc
   
 Nous étudions la génération d'un PDF et d'un format ePub.
-Un build maven est également à votre disposition si vous y tennez vraiment :)  
+Un build maven est également à votre disposition si vous y tenez vraiment :)  
 
 Contribuer ?
 ==============
 
-N'hésitez pas à contribuer ! Si en cours de lecture vous voyez un point à corriger / compléter, utiliser le bouton "edit" de giihub pour editer le fichier (format asciidoc) et proposer ainsi directement un changement (une pull-request en vocabulaire github).
+N'hésitez pas à contribuer ! Si en cours de lecture vous voyez un point à corriger / compléter, utiliser le bouton "edit" de github pour editer le fichier (format asciidoc) et proposer ainsi directement un changement (une pull-request en vocabulaire github).
 
 Si vous voulez contribuer de manière plus active, nous mettons à disposition un script pour éditer les fichiers avec un rendu en temps réel. Il vous faudra Ruby d'installé sur votre poste, puis lancez dans le répertoire du projet :
 
