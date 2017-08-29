@@ -1,7 +1,8 @@
 = Apache Maven
 Nicolas De loof, Arnaud Héritier
 v3.0, 2014
-:toc:
+:toc: left
+:toc-title: Table des matières
 :doctype: book
 :icons: font
 :source-highlighter: highlightjs
