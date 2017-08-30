@@ -11,7 +11,7 @@ Pearson ayant décidé d'arrêter l'exploitation de ce livre, Arnaud et moi-mêm
 
 License : [Creative-commons CC BY-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr)
 
-Vous pouvez visualiser le contenu [directement sur GitHub](https://github.com/ndeloof/apache-maven-book/blob/master/maven.adoc), ou consulter la [version HTML](https://apache-maven.ci.cloudbees.com/job/apache-maven-book/HTML/)
+Vous pouvez visualiser le contenu [directement sur GitHub](https://github.com/ndeloof/apache-maven-book/blob/master/maven.adoc), ou consulter la [version HTML](https://ndeloof.github.io/apache-maven-book/)
 
 
 Build

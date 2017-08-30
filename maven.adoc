@@ -1,7 +1,8 @@
 = Apache Maven
 Nicolas De loof, Arnaud Héritier
 v3.0, 2014
-:toc:
+:toc: left
+:toc-title: Table des matières
 :doctype: book
 :icons: font
 :source-highlighter: highlightjs
@@ -16,35 +17,35 @@ v3.0, 2014
 
 image:MangaNicolas.png[float="left"]
 
-Ecrire un bouquin pour un éditeur est un travail épuisant. La rédaction 
+Ecrire un bouquin pour un éditeur est un travail épuisant. La rédaction
 elle même n'est qu'une toute petite partie du travail, déjà prenante, et
 il faut y ajouter les relations éditeur par eMail et la phase de relecture
 puis de mise en page, sans parler des questions des équipes marketing pour
 la promotion du livre.
 
-Pour la première édition de ce livre je découvrais le monde de l'édition et j'étais 
+Pour la première édition de ce livre je découvrais le monde de l'édition et j'étais
 super motivé. Nous avons nous-même choisi nos relecteurs dans la communauté
-Maven francophone et utilisé un DropBox, nettement plus pratique que le 
-process d'envoi des chapitres par eMail proposé par l'éditeur. 
+Maven francophone et utilisé un DropBox, nettement plus pratique que le
+process d'envoi des chapitres par eMail proposé par l'éditeur.
 
 Il a fallu assi s'adapter au template Word de Pearson, qui s'est avéré pas
 si mal fait que ça après avoir été confronté à celui d'autres éditeurs !
-Au final, la masse de travail, toutes les tâches non prévues, pour quelques 
+Au final, la masse de travail, toutes les tâches non prévues, pour quelques
 euros récoltés (8% à se partager) n'est pas du tout rentable. Si cela restait
 du plaisir - après tout, écrire du code OSS n'est pas très rentable non plus -
 la pillule pourrait passer, mais en plus il faut subir les contraintes de la
 chaîne d'édition.
 
-Pearson nous a annoncé début décembre 2013 que le livre serait arrêté, faute de 
-rentabilité. Pas vraiment une surprise, 
-un livre technique, qui plus est en Français, n'a pas un auditoire énorme 
-- ou alors, peut être que tout le monde fait du gradle aujourd'hui - 
+Pearson nous a annoncé début décembre 2013 que le livre serait arrêté, faute de
+rentabilité. Pas vraiment une surprise,
+un livre technique, qui plus est en Français, n'a pas un auditoire énorme
+- ou alors, peut être que tout le monde fait du gradle aujourd'hui -
 en tout cas nous en avons vendu environ 2000 exemplaires, ce qui est un beau
 succès pour un marché aussi limité.
 
 Aussi, après avoir récupéré nos droits sur le texte nous avons décidé de
-le convertir en AsciiDoc pour ne plus subir Word et le template editeur, 
-et surtout de _l'open-sourcer_, sous license Creative Commons 4.0 afin que 
+le convertir en AsciiDoc pour ne plus subir Word et le template editeur,
+et surtout de _l'open-sourcer_, sous license Creative Commons 4.0 afin que
 tout le monde en profite et que d'éventuels contributeurs puisse nous aider
 à corriger les boulettes inévitables qui s'y sont glissées.
 
@@ -86,9 +87,9 @@ lecture : le corps du texte a été revu pour correspondre à l'état de
 l'art, à savoir Maven 3. De nouveaux chapitres viennent en décrire les
 avancées et les outils associés. C'est seulement lorsqu'une rupture
 significative avec les versions précédentes existe que nous ajoutons un
-encart. Ces encarts sont reconnaissables au logo : 
+encart. Ces encarts sont reconnaissables au logo :
 
-image:Maven3.png[Maven3,align="center"] 
+image:Maven3.png[Maven3,align="center"]
 
 Vous constaterez rapidement qu'ils sont assez peu nombreux : Maven 3 est
 avant tout conçu pour remplacer son prédécesseur sans heurts. Même avec
@@ -1661,7 +1662,7 @@ récit. Maven s’acharne – et échoue – à télécharge la bibliothèque
 jcr-on-cassandra :
 
 -------------------------------------------------------------------------------
-[ERROR] Failed to execute goal on project demo:  
+[ERROR] Failed to execute goal on project demo:
 + Could not resolve dependencies for project demo:demo:jar:1: Could not find artifact org.geeks:jcr-on-cassandra:jar:1.8.0.10 in central
 -------------------------------------------------------------------------------
 
@@ -2051,7 +2052,7 @@ En particulier, la structure type d'un projet Maven est la suivante
 (voir Figure 03-02).
 
 .Figure 03-02
-image:03-02.png[align="center"] 
+image:03-02.png[align="center"]
 
 La structure de base d'un projet Maven.
 
@@ -2839,7 +2840,7 @@ public class ListeDeCoursesReader {
         if ( lu == null ) {
             System.err.println( "FAILED : Erreur de lecture" ) ;
             System.exit( -1 ) ;
-        }    
+        }
     }
 }
 -------------------------------------------------------------------------------
@@ -2883,7 +2884,7 @@ notre méthode de test.
         if ( new BeanComparator().compare( attendu, lu ) != 0 ) {
             System.err.println( "FAILED : Données lues incorrectes" ) ;
             System.exit( -1 ) ;
-        }    
+        }
     }
 -------------------------------------------------------------------------------
 
@@ -2947,7 +2948,7 @@ public class ListeDeCoursesReaderTest {
         assertEquals( 2, lu.size(), "liste lue de taille incorrecte" ) ;
         if ( new BeanComparator().compare( attendu, lu ) != 0 ) {
             fail( "Données lues incorrectes" ) ;
-        }    
+        }
     }
 }
 -------------------------------------------------------------------------------
@@ -3318,7 +3319,7 @@ particulier.
             </goals>
             <inherited>false</inherited>
           </execution>
-        </executions>       
+        </executions>
       </plugin>
 -------------------------------------------------------------------------------
 
@@ -3685,7 +3686,7 @@ profil associé en ajoutant à sa ligne de commande l'option -Pgwt.
                <executions>
                   <execution>
                       <goals><goal>test</goal></goals>
-                  <execution> 
+                  <execution>
                <executions>
                <configuration>
                   <includes>**/*GwtTest.java</includes>
@@ -4040,7 +4041,7 @@ lors de la construction du projet.
                 <hostName>myFitnesseServer</hostName>
                 <port>80</port>
                 <pageName>mySuitePage</pageName>
-            </fitnesse>           
+            </fitnesse>
           </fitnesses>
           <failOnError>true</failOnError>
           <classPathProvider>maven</classPathProvider>
@@ -4408,7 +4409,7 @@ there:
 1 required artifact is missing.
 
 for artifact:
- 
+
 fr.noubliepaslalistedescourses:noubliepaslalistedescourses:jar:1.0.0-SNAPSHOT
 
 from the specified remote repositories:
@@ -4738,7 +4739,7 @@ rapidement un casse-tête. Dans un premier temps, Carlos a voulu faire
 plaisir à tout le monde – c'est un peu une deuxième nature chez lui – et
 a donc répondu favorablement à toutes nos demandes :
 
-image:MangaCarlos    MangaFabrice  $$$ Cote à cote $$$.png[float="left"]
+image:MangaCarlos.png[float="left"] image:MangaFabrice.png[float="left"]
 
 Fabrice : j'ai besoin de trucUtils, peux-tu l'ajouter ?
 
@@ -4752,7 +4753,7 @@ Tout aurait pu se passer dans cette bonne humeur générale jusqu'à ce
 que, d'une part, Carlos croule sous les demandes, mais surtout que les
 choses se compliquent sensiblement :
 
-image:MangaCarlos    MangaOlivier  $$$ Cote à cote $$$.png[float="left"]
+image:MangaCarlos.png[float="left"] image:MangaOlivier.png[float="left"]
 
 Olivier : Salut Carlos, j'aurais besoin de trucUtils.
 
@@ -6019,7 +6020,7 @@ Il ne nous reste plus qu'à prendre nos composants et à les grouper dans
 un joli paquet-cadeau avant de l'envoyer à notre hébergeur. En terme
 JavaEE le paquet-cadeau est une archive d'entreprise EAR.
 
-image:MangaVincenTS.png[float="left"]
+image:MangaVincentS.png[float="left"]
 
 Pour produire ce nouvel artefact, Vincent applique la recette qui lui a
 jusqu'ici réussi et fait mouche une nouvelle fois : un nouveau module,
@@ -6395,7 +6396,7 @@ test.
           -XX:+CMSClassUnloadingEnabled
         </cargo.jvmargs>
 <!—
-   Quoi, vous ne connaissiez pas l'option CMSClassUnloadingEnabled ? ;p 
+   Quoi, vous ne connaissiez pas l'option CMSClassUnloadingEnabled ? ;p
 -->
       </properties>
       <deployables>
@@ -7887,7 +7888,7 @@ chemin relatif pour palier à cela :
 <artifactId>portal</artifactId>
 <version>4.2.0-SNAPSHOT</version>
 -------------------------------------------------------------------------------
- 
+
 
 « Bof », c’est tout ce que cela nous inspire spontanément. D’accord, ça
 marche, mais de toute évidence ce n’est pas la panacée. Sans compter
@@ -8146,7 +8147,7 @@ pour gérer cette étape.
                          class="com.geegol.GeegolProjectPlatformCheck"
                          classpathRef="cp"/>
                   <check src="${project.build.sourceDirectory}"
-                         out="${project.build.directory}/check"/> 
+                         out="${project.build.directory}/check"/>
                 </tasks>
             </configuration>
             <dependencies>
@@ -8753,7 +8754,7 @@ class GEACheckMojo extends SisuMavenMojo {
     @Inject @Named( "zip" )
     private Archiver zipArchiver;
 
- 
+
     /**
      * Dépendances du projet Maven qui utilise le plugin
      */
@@ -10211,7 +10212,7 @@ automatisée de notre livrable.
   </formats>
   <includeBaseDirectory>false</includeBaseDirectory>
   <moduleSets>
-    <moduleSet>     
+    <moduleSet>
       <!-- inclusion de l'EAR -->
       <includes>
         <include>com.geegol.shoppinglist:shoppinglist-ear</include>
@@ -10223,7 +10224,7 @@ automatisée de notre livrable.
         <includeDependencies>false</includeDependencies>
       </binaries>
     </moduleSet>
-    <moduleSet>     
+    <moduleSet>
       <!-- inclusion des fichiers sources de chaque module -->
       <sources>
         <includeModuleDirectory>false</includeModuleDirectory>
@@ -10590,7 +10591,7 @@ Choose archetype:
 1: local -> maven-archetype-echo-mojo (Un plugin Maven "hello world")
 (...)
 42: internal -> gmaven-archetype-mojo (Groovy mojo archetype)
-Choose a number: 
+Choose a number:
 (1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26/27/28/29/30/31/32/33/34/35/36/37/38/39/40/41/42) 16: : *1*
  [INFO] artifact org.apache.maven.archetypes:maven-archetype-mojo:
 checking for updates from central
@@ -10949,7 +10950,7 @@ d'experts qui ne veut pas laisser un si beau projet reposer sur des
 outils non fiables, mal documentés ou dont l'avenir est incertain.
 À nous de nous montrer convaincants…
 
-image:commite.png[float="left"]
+image:comite.png[float="left"]
 
 === Les limites
 
@@ -11547,7 +11548,7 @@ gestionnaire du dépôt d'artefacts, serveur d'intégration continue.
 
 === L'avenir de Maven
 
-image:MangaJIM.png[float="left"]
+image:MangaJim.png[float="left"]
 
 Mission impossible ?
 
@@ -12011,7 +12012,7 @@ modèle de développement Apache, basé sur le compromis et le consensus,
 est régulièrement mis à mal par des décisions unilatérales. Autant le
 code reste ouvert et protégé par le mécanisme de licences, autant
 l’ouverture propre au développement communautaire n’est pas
-systématique.  
+systématique.
 
 Cependant, l'équipe de développement de Maven ne se résume pas à ces
 quelques personnes. L'équipe complète footnote:[http://maven.apache.org/team-list.html] compte des
@@ -12078,7 +12079,7 @@ Le comité nous remercie et s'apprête à délibérer. Nous n'aurons sa
 conclusion qu'après quelques jours (ce sont des gens très occupés) : feu
 vert.
 
-image:commite-feuvert.png[float="left"]
+image:comite-feuvert.png[float="left"]
 
 Maven ne répond pas à toutes les exigences sans quelques efforts, et il
 ne sait pas non plus faire le café. Son utilisation nécessite un
@@ -12909,7 +12910,7 @@ une méthode nommée :
 
 [source, java]
 -------------------------------------------------------------------------------
-resilierContrat( long idContrat ) throws ImpayesEnCoursException 
+resilierContrat( long idContrat ) throws ImpayesEnCoursException
 -------------------------------------------------------------------------------
 
 Plutôt qu'une méthode équivalente utilisant un vocabulaire obscur, mais
@@ -12923,7 +12924,7 @@ d'analyse :
  * @param l l'identifiant de contrat
  * ...
  */
-resCtr( long l ) throws ResErrorException 
+resCtr( long l ) throws ResErrorException
 -------------------------------------------------------------------------------
 
 Choisir des règles de développement est une tâche qui nécessite une
