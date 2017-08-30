@@ -1,7 +1,7 @@
 apache-maven-book
 =================
 
-[![Build Status](https://apache-maven.ci.cloudbees.com/buildStatus/icon?job=apache-maven-book)](https://apache-maven.ci.cloudbees.com/job/apache-maven-book/)
+[![Build Status](https://travis-ci.org/ndeloof/apache-maven-book.svg)](https://travis-ci.org/ndeloof/apache-maven-book/)
 
 Apache Maven (le livre)
 
