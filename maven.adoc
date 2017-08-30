@@ -4739,7 +4739,7 @@ rapidement un casse-tête. Dans un premier temps, Carlos a voulu faire
 plaisir à tout le monde – c'est un peu une deuxième nature chez lui – et
 a donc répondu favorablement à toutes nos demandes :
 
-image:MangaCarlos    MangaFabrice  $$$ Cote à cote $$$.png[float="left"]
+image:MangaCarlos.png[float="left"] image:MangaFabrice.png[float="left"]
 
 Fabrice : j'ai besoin de trucUtils, peux-tu l'ajouter ?
 
@@ -4753,7 +4753,7 @@ Tout aurait pu se passer dans cette bonne humeur générale jusqu'à ce
 que, d'une part, Carlos croule sous les demandes, mais surtout que les
 choses se compliquent sensiblement :
 
-image:MangaCarlos    MangaOlivier  $$$ Cote à cote $$$.png[float="left"]
+image:MangaCarlos.png[float="left"] image:MangaOlivier.png[float="left"]
 
 Olivier : Salut Carlos, j'aurais besoin de trucUtils.
 
