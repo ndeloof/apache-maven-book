@@ -28,7 +28,7 @@ super motivé. Nous avons nous-même choisi nos relecteurs dans la communauté
 Maven francophone et utilisé un DropBox, nettement plus pratique que le
 process d'envoi des chapitres par eMail proposé par l'éditeur.
 
-Il a fallu assi s'adapter au template Word de Pearson, qui s'est avéré pas
+Il a fallu aussi s'adapter au template Word de Pearson, qui s'est avéré pas
 si mal fait que ça après avoir été confronté à celui d'autres éditeurs !
 Au final, la masse de travail, toutes les tâches non prévues, pour quelques
 euros récoltés (8% à se partager) n'est pas du tout rentable. Si cela restait
