@@ -1764,13 +1764,14 @@ build, même si elles sont présentes physiquement.
 Après avoir ajouté la déclaration de dépôt manquante, Emmanuel peut
 enfin lancer sa démo et nous présenter toutes ses idées.
 
-Note
-
+[NOTE]
+====
 Maven2 ne comporte pas ce mécanisme et n'aurait pas bronché. Cela aurait
 évité à Emmanuel des soucis pendant sa démonstration, mais le problème
 serait apparu plus tard lorsqu'il aurait partagé son projet avec le
 reste de l'équipe. Maven 3 est globalement plus strict, pour le bien de
 chacun sur le long terme.
+====
 
 === Conclusion
 
@@ -1884,13 +1885,14 @@ utilise les options source et target avec comme valeurs par défaut 1.3
 et 1.2, correspondant à la plateforme Java de référence utilisée par
 Maven.
 
-Note
-
+[NOTE]
+====
 Plus précisément, la version du plugin compiler qui est utilisée par
 Maven sans indication de votre part utilise les options source=1.3 et
 target=1.2 par défaut. A partir de la version 2.3, le plugin compiler
 prend pour valeurs par défaut source=1.5 et target=1.5, ce qui est le
 cas si vous utilisez Maven3.
+====
 
 Cependant, afin que votre IDE détecte correctement cette configuration,
 nous vous encourageons à toujours définir explicitement ces valeurs.
@@ -2630,8 +2632,8 @@ nous fait mettre un pied en dehors du monde Java. footnote:[Si l'utilisation de 
 </project>
 -------------------------------------------------------------------------------
 
-Note
-
+[NOTE]
+====
 Si le numéro de version en -beta du plugin vous inquiète, ne perdez pas
 de vue que ces composants sont développés en open-source, et donc
 proposent à intervalle régulier des versions intermédiaires. « Release
@@ -2646,6 +2648,7 @@ intermédiaires peuvent remettre en question certaines options, même si
 la compatibilité et respect des utilisateurs est la règle généralement
 suivie, aussi vous devrez consulter les release-notes pour adapter votre
 projet le cas échéant.
+====
 
 Ce fichier POM n'a rien de très différent de ce que nous avons utilisé
 jusqu'à présent, et pourtant il s'adresse à une plateforme très
@@ -2713,8 +2716,8 @@ pas d'index officiel ou de catalogue toujours à jour vous permettant de
 trouver la perle rare. Votre moteur de recherche préféré est souvent
 votre meilleur ami, associé au forum des utilisateurs de Maven.
 
-Note
-
+[NOTE]
+====
 Faut-il le préciser, si vous développez votre propre plugin Maven, nous
 vous encourageons à le publier via le dépôt officiel « central ». Au
 prix d'un petit effort initial, vous simplifierez grandement la vie de
@@ -2725,6 +2728,7 @@ Une autre option que nous ne pouvons que vous recommander est de
 proposer votre plugin en contribution au projet Mojo
 (http://mojo.codehaus.org), ce qui lui donnera une bien meilleure
 visibilité, ainsi que l'aide possible des développeurs de la communauté.
+====
 
 image:Maven3.png[Maven3,align="center"]
 
