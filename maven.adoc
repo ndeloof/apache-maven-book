@@ -1927,6 +1927,7 @@ devons consulter la documentation du plugin footnote:[http://maven.apache.org/pl
 connaître toutes les options disponibles (voir Figure 03-01).
 
 Figure 03-01
+image:03-01.png[align="center"]
 
 Le site de documentation du plugin compiler.
 
@@ -8627,6 +8628,7 @@ chemins d'accès au code source. La figure 11-01 montre la structure que
 nous devons mettre en place.
 
 Figure 11-01
+image:11-01.png[align="center"]
 
 Arbre des royaumes ClassWorlds.
 
@@ -9629,6 +9631,7 @@ dans tout un ensemble de formats qu'il reste à imaginer (voir
 Figure 12-01).
 
 Figure 12-01
+image:12-01.png[align="center"]
 
 Génération de la documentation en différents formats grâce à Doxia.
 
@@ -11877,6 +11880,7 @@ propriétaire, une partie sera reversée à la communauté et viendra
 enrichir le socle technique Maven.
 
 Figure 15-07
+image:15-07.png[align="center"]
 
 le positionnement de Sonatype par rapport au projet de la fondation
 Apache
@@ -11963,6 +11967,7 @@ de Graven, l’outil de build ultime. Hum… décidément, tout le monde ne
 peut pas faire partie de l’équipe de Mission Impossible
 
 Figure 15-08
+image:15-08.png[align="center"]
 
 Graven, une création originale d’Arnaud visant à marier Maven et Gradle
 
@@ -12355,6 +12360,7 @@ reproduire cette structure, à l’aide du plugin maven-dependency-plugin
 et de sa tâche copy-dependencies.
 
 Figure 16-01
+image:16-01.png[align="center"]
 
 Le bundle Apache Ant dans une distribution eclipse
 
