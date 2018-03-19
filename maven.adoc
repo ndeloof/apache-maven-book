@@ -11836,7 +11836,7 @@ couper l’herbe sous le pied des outils alternatifs.
 
 ===== Maven 3.1
 
-image:IMF.png
+image:IMF.png[]
 
 Maven 3 permet de désolidariser Maven (l’outil) de la lecture du moèle
 POM : l’élément modelVersion va pouvoir jouer son rôle et permettre
@@ -11902,7 +11902,7 @@ sont Nexus et Hudson. On retrouvera ainsi dans tous nos développements
 la même logique de liaison entre les composants via une simple
 annotation @Inject.
 
-image:IMF.png
+image:IMF.png[]
 
 Autre annonce, un gros effort d’intégration de Maven dans Eclipse à
 travers le projet m2eclipse. En dehors de l’amélioration du plugin, de
@@ -11919,7 +11919,7 @@ licence Eclipse dans les labos Sonatype, celle-ci remplace intégralement
 le code équivalent de Maven 2. De nombreuses évolutions sont attendues
 sur ce composant :
 
-image:IMF.png
+image:IMF.png[]
 
 * Le support des accès concurrents dans le dépôt local. Cela est
 nécessaire pour permettre l’exécution parallèle de Maven et des autres
@@ -11957,7 +11957,7 @@ des difficultés que rencontreront les équipes de développement.
 
 image:MangaArnaud.png[float="left"]
 
-image:IMF.png
+image:IMF.png[]
 
 Arnaud est tout émoustillé par ces nombreuses annonces, et décide de se
 lancer à son tour dans le jeu des prédictions. Il nous annonce alors la
