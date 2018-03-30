@@ -32,7 +32,7 @@ Maven francophone et utilisé un DropBox, nettement plus pratique que le
 process d'envoi des chapitres par email proposé par l'éditeur.
 
 Il a fallu aussi s'adapter au template Word de Pearson, qui s'est avéré pas
-si mal fait que ça après avoir été confronté à celui d'autres éditeurs&nbsp;!
+si mal fait que ça après avoir été confronté à celui d'autres éditeurs !
 Finalement, la masse de travail, toutes les tâches non prévues, pour quelques
 euros récoltés (8% à se partager) n'est pas du tout rentable. Si cela restait
 du plaisir - après tout, écrire du code OSS n'est pas très rentable non plus -
@@ -76,7 +76,7 @@ nouvelles versions de plugins et l'avancement des développements de
 Maven 3 rendaient certaines de nos remarques obsolètes ou moins
 pertinentes. La liste des éléments de notre Erratum, que nous n'avons
 jamais publiée d'ailleurs faute de l'organiser correctement, a commencé à
-s'allonger. Il était hors de question d'en rester là&nbsp;!
+s'allonger. Il était hors de question d'en rester là !
 
 À l'heure où nous reprenons la plume (enfin, le clavier), Maven 3 enfin
 sorti en version 3.0 finale, est pleinement utilisable sur un projet.
@@ -87,15 +87,15 @@ de laisser ces utilisateurs sur le carreau juste parce que la nouvelle
 version de Maven est plus belle, plus grande, plus forte.
 
 Nous avons donc choisi de donner à cette seconde édition une double
-lecture&nbsp;: le corps du texte a été revu pour correspondre à l'état de
+lecture : le corps du texte a été revu pour correspondre à l'état de
 l'art, à savoir Maven 3. De nouveaux chapitres viennent en décrire les
 avancées et les outils associés. C'est seulement lorsqu'une rupture
 significative avec les versions précédentes existe que nous ajoutons un
-encart. Ces encarts sont reconnaissables au logo&nbsp;:
+encart. Ces encarts sont reconnaissables au logo :
 
 image:Maven3.png[Maven3,align="center"]
 
-Vous constaterez rapidement qu'ils sont assez peu nombreux&nbsp;: Maven 3 est
+Vous constaterez rapidement qu'ils sont assez peu nombreux : Maven 3 est
 avant tout conçu pour remplacer son prédécesseur sans heurts. Même avec
 ces réserves, les grandes idées présentées dans le livre sont
 applicables aux deux versions. Nous espérons donc que vous en tirerez le
@@ -104,9 +104,9 @@ meilleur parti.
 Quoi qu’il en soit, nous avons utilisé Maven 3.0 dans ses diverses
 préversions et nous vous encourageons à migrer vers cette nouvelle
 édition de l’outil phare du développement Java. Les prochaines versions
-sont une large promesse de fonctionnalités innovantes, et «&nbsp;au pire&nbsp;»
+sont une large promesse de fonctionnalités innovantes, et « au pire »
 vous bénéficierez d’une amélioration des performances et d’une réduction
-d’occupation mémoire&nbsp;! Si vous utiliser m2eclipse pour intégrer votre
+d’occupation mémoire ! Si vous utiliser m2eclipse pour intégrer votre
 projet Maven dans Eclipse, vous êtes déjà des utilisateurs de Maven 3
 sans même le savoir, alors laissez vos dernières hésitations de côté et
 en avant toute.
@@ -124,7 +124,7 @@ L'écriture d'un ouvrage technique n'est pas une tâche triviale, car il
 est facile de perdre le lecteur dans une avalanche de concepts
 théoriques ou de s'égarer dans des détails non fondamentaux. Décrire un
 outil comme Maven, ou tout simplement le définir clairement, tout en
-restant accessible à tous, est encore plus délicat&nbsp;: soit on reste trop
+restant accessible à tous, est encore plus délicat : soit on reste trop
 vague, et le lecteur n'a plus qu'à attendre le Chapitre 5 pour commencer
 à apprendre quelque chose de concret, soit on s'embarque dans de longues
 explications de principes et de concepts et le lecteur n'attendra jamais
@@ -141,7 +141,7 @@ Mon objectif est de communiquer ma passion autour de ce projet
 open-source qu'est Maven, lequel réunit des développeurs aux parcours
 très différents. Les rencontres que j'ai faites dans cette communauté
 ont forgé mon approche de l'informatique. Avec cette motivation, établir
-un dictionnaire impersonnel Maven-Français était exclu&nbsp;; aussi j'ai
+un dictionnaire impersonnel Maven-Français était exclu ; aussi j'ai
 rapidement choisi, en accord avec Arnaud, de privilégier une approche
 aussi didactique que possible, bâtie sur des exemples concrets issus de
 ma propre expérience du terrain.
@@ -180,7 +180,7 @@ libre, auquel vous pouvez participer en rejoignant le forum pour y
 exposer vos interrogations, apporter de nouvelles idées, proposer des
 contributions de toutes sortes et participer à l'amélioration générale
 de cet outil. Arnaud et moi avons commencé de cette façon avant de
-passer «&nbsp;de l'autre côté du miroir&nbsp;», mais au quotidien nous restons comme
+passer « de l'autre côté du miroir », mais au quotidien nous restons comme
 vous, avant tout, des utilisateurs de Maven, soucieux de disposer d'un
 outil pertinent et productif.
 
@@ -195,10 +195,10 @@ dispersée, et il est souvent difficile de trouver l'information utile
 lorsqu'on ne sait pas où la chercher entre le site web du
 projet footnote:[http://maven.apache.org], ses nombreux plugins et son
 wiki footnote:[http://docs.codehaus.org/display/MAVENUSER]. Pourtant, il existe désormais deux ouvrages en
-anglais disponibles gratuitement sur la Toile pour combler ces manques&nbsp;:
-_Better Builds with Maven_ footnote:[MaestroDev (http://www.maestrodev.com)], publié en 2006, et _Maven&nbsp;: The Definitive Guide_ footnote:[Sonatype, Inc. (http://www.sonatype.com)], publié en 2007 et régulièrement
+anglais disponibles gratuitement sur la Toile pour combler ces manques :
+_Better Builds with Maven_ footnote:[MaestroDev (http://www.maestrodev.com)], publié en 2006, et _Maven : The Definitive Guide_ footnote:[Sonatype, Inc. (http://www.sonatype.com)], publié en 2007 et régulièrement
 mis à jour. Alors qu'apporter de plus qu'une simple traduction en
-français de ces ouvrages&nbsp;?
+français de ces ouvrages ?
 
 Après de nombreuses années à utiliser et à préconiser Maven dans des
 contextes variés, j'avais envie de partager tout ce que j'avais pu
@@ -221,7 +221,7 @@ _Arnaud Héritier_
 
 === Contenu
 
-Cet ouvrage se compose de quatre parties&nbsp;:
+Cet ouvrage se compose de quatre parties :
 
 * La première, du Chapitre 1 au Chapitre 5, aborde les concepts
 fondamentaux de Maven et leur mise en œuvre pratique. Nous avons choisi
@@ -230,13 +230,13 @@ problèmes que Maven tente de prendre en charge, afin que cette première
 partie soit aussi didactique que possible.
 * La deuxième, du Chapitre 6 au Chapitre 10, exploite des
 fonctionnalités plus avancées de Maven pour traiter des besoins orientés
-«&nbsp;gros projets d'entreprise&nbsp;» mais tout aussi délicats. Cette partie
+« gros projets d'entreprise » mais tout aussi délicats. Cette partie
 s'adresse typiquement aux développeurs intervenant sur des projets
 JavaEE (_Java Enterprise Edition_) en entreprise.
 * La troisième regroupe les Chapitres 11 à 15 et couvre des facettes
 plus spécialisées et moins mises en avant de Maven, mais que nous
 considérons comme tout aussi essentielles. Vous verrez alors que Maven
-ne se résume pas comme on le lit souvent à «&nbsp;un outil de compilation&nbsp;».
+ne se résume pas comme on le lit souvent à « un outil de compilation ».
 * Pour terminer cet ouvrage le Chapitre 16 sera l'occasion de
 résumer les éléments clés présentés, de vous donner nos recommandations,
 bonnes et mauvaises pratiques à connaître pour tirer le meilleur de
@@ -258,9 +258,9 @@ quelque peu abscons utilisés dans cet ouvrage.
 Premiers pas avec Maven
 --
 
-== Chapitre 1&nbsp;: Introduction
+== Chapitre 1 : Introduction
 
-Commençons donc notre récit par l'inévitable mise en garde&nbsp;: toute
+Commençons donc notre récit par l'inévitable mise en garde : toute
 ressemblance avec des personnes ou des situations existantes ou ayant
 existé ne serait que fortuite…
 
@@ -273,7 +273,7 @@ par un Java User Group (si vous ne participez pas à un JUG ... et bien vous ave
 Faisant connaissance autour d'un verre, ils
 évoquent les souvenirs de leurs premiers pas avec Java, devenu depuis
 leur plateforme de prédilection. Un Java Development Kit dans une
-version qui fait sourire aujourd'hui, et les bons vieux «&nbsp;Hello World&nbsp;»
+version qui fait sourire aujourd'hui, et les bons vieux « Hello World »
 qui initient tout développeur à un nouveau langage. De nombreux
 souvenirs qui rappellent qu'on a tous débuté un jour, rencontré les
 mêmes problèmes et commis les mêmes erreurs idiotes que l'on dénonce
@@ -293,22 +293,22 @@ respectueusement conservé quelque part.
 Arnaud, confronté au même souci et amusé par cette solution de pur geek,
 lui demande s'il a toujours son programme et s'il peut en faire une
 copie pour satisfaire sa curiosité – la geekitude est dangereusement
-contagieuse&nbsp;!
+contagieuse !
 
-=== Partageons&nbsp;!
+=== Partageons !
 
 De retour à la maison, Nicolas fouille dans ses archives et en retire
 une vieille disquette (vous savez, ces carrés de plastique qu'on
-utilisait «&nbsp;dans le temps&nbsp;», avant que la clé USB et Internet ne les
+utilisait « dans le temps », avant que la clé USB et Internet ne les
 fassent disparaître). Il envoie donc le trésor tant convoité à Arnaud.
 
 Pour vous faire une meilleure idée de cette exceptionnelle construction
-logicielle, voici les fichiers qui la constituent&nbsp;:
+logicielle, voici les fichiers qui la constituent :
 
 .Figure 01-01
 image:01-01.png[Figure 1]
 
-La structure originale du projet «&nbsp;noubliepaslalistedescourses&nbsp;».
+La structure originale du projet « noubliepaslalistedescourses ».
 
 Arnaud, qui, semble-t-il, n'a vraiment que cela à faire de son temps
 libre, se jette sur cette magnifique relique des années Java 1.1 et
@@ -325,14 +325,14 @@ qui utilise les fonctions d'une bibliothèque utilitaire pour lire le
 fichier contenant la liste des courses. Il l'envoie donc à Arnaud, qui
 une nouvelle fois doit écrire son propre fichier de compilation.
 
-Le «&nbsp;projet&nbsp;» étant trivial, la traduction du build.bat en build.sh est
+Le « projet » étant trivial, la traduction du build.bat en build.sh est
 rapide. Voici pour comparaison les deux fichiers utilisés respectivement
-par Nicolas et Arnaud. Les différences sont minimes&nbsp;, mais nécessitent une
+par Nicolas et Arnaud. Les différences sont minimes , mais nécessitent une
 reprise manuelle à chaque modification, pouvant introduire des
 disparités, voire des incompatibilités entre les environnements de nos
 deux compères, qui peuvent leur faire perdre un temps précieux.
 
-Listing 1.1&nbsp;: Les fichiers de compilation utilisés respectivement par Nicolas et par Arnaud
+Listing 1.1 : Les fichiers de compilation utilisés respectivement par Nicolas et par Arnaud
 [cols="2*"]
 |===
 |image:MangaNicolas.png[float="center"]
@@ -380,18 +380,18 @@ Windows, omniprésentes comme postes de développement.
 
 Arnaud raconte ses déboires à son collègue Olivier. Ce dernier,
 utilisateur du système Solaris, s'est souvent trouvé face à ce
-problème&nbsp;; il lui propose d'utiliser un fichier de commande universel,
+problème ; il lui propose d'utiliser un fichier de commande universel,
 basé sur l'outil Apache Ant.
 
 [[Les_fourmis_a_la_rescousse]]
 === Les fourmis à la rescousse
 
-Qu'est-ce que c'est que ce «&nbsp;Ant&nbsp;»&nbsp;? Faisons un détour par Wikipédia pour
-nous en faire une idée&nbsp;:
+Qu'est-ce que c'est que ce « Ant » ? Faisons un détour par Wikipédia pour
+nous en faire une idée :
 
 [NOTE]
 ====
-Ant footnote:[Source&nbsp;: http://fr.wikipedia.org/wiki/Apache_Ant] est un projet open-source de la fondation Apache, écrit en Java, qui
+Ant footnote:[Source : http://fr.wikipedia.org/wiki/Apache_Ant] est un projet open-source de la fondation Apache, écrit en Java, qui
 vise le développement d'un logiciel d'automatisation des opérations
 répétitives tout au long du cycle de développement logiciel, à l'instar
 des logiciels Make.
@@ -412,7 +412,7 @@ l'archivage sous forme distribuable (JAR, etc.).
 Ant a connu un succès exceptionnel et occupe une place de choix dans la
 panoplie de tout développeur. Aucun logiciel dédié à Java ne peut
 aujourd'hui se permettre de ne pas fournir des tâches Ant. Le choix de
-cette solution semble donc la meilleure marche à suivre&nbsp;!
+cette solution semble donc la meilleure marche à suivre !
 
 image:MangaOlivier.png[float="left"]
 
@@ -423,11 +423,11 @@ de paramètres indispensables permettant de le plier à tous les besoins
 courants.
 
 Aurait-on trouvé avec Ant la solution miracle, rassemblant tous les
-suffrages&nbsp;?
+suffrages ?
 
 image:MangaFabrice.png[float="left"]
 
-Pas si simple&nbsp;: Nicolas, de son côté, désolé d'avoir causé tant de
+Pas si simple : Nicolas, de son côté, désolé d'avoir causé tant de
 soucis à Arnaud, a reçu le même conseil de Fabrice, qui lui aussi a
 proposé un script de commandes Ant à tout faire, éprouvé par de
 nombreuses années d'utilisation. Le fichier d'Olivier suppose que les
@@ -441,8 +441,8 @@ quatre compères, qui commencent à se prendre au sérieux avec leur liste
 de courses, font appel à des connaissances spécialistes d'Ant pour les
 assister dans cette lourde tâche.
 
-Ant a donc créé un nouveau métier dans le microcosme informatique&nbsp;:
-expert en script Ant&nbsp;! Certains projets semblent jouer pour le concours
+Ant a donc créé un nouveau métier dans le microcosme informatique :
+expert en script Ant ! Certains projets semblent jouer pour le concours
 du script le plus inutilement tordu, mixant des paramètres à n'en plus
 finir (que personne n'a d'ailleurs jamais eu besoin de modifier) et
 prenant en charge des cas de figure qui tiennent de l'expression
@@ -455,17 +455,17 @@ Pris au jeu, nos quatre amis – qui ont trouvé un boulot en or pour avoir
 autant de temps libre – ne s'avouent pas vaincus et veulent poursuivre
 ensemble le développement de ce projet. Des complications commencent à
 émerger. Notre petite équipe provenant d'horizons différents, chacun a
-ses habitudes «&nbsp;maison&nbsp;» et ses bonnes pratiques et voudrait les voir
+ses habitudes « maison » et ses bonnes pratiques et voudrait les voir
 appliquées.
 
 
 [[Et_Maven_dans_tout_ca]]
-=== Et Maven dans tout ça&nbsp;?
+=== Et Maven dans tout ça ?
 
 image:MangaJason.png[float="left"]
 
 Au hasard d'un de ces appels au secours, Jason les prend à contre-pied
-et leur répond&nbsp;: «&nbsp;Et pourquoi ne pas utiliser plutôt Apache Maven&nbsp;?&nbsp;»
+et leur répond : « Et pourquoi ne pas utiliser plutôt Apache Maven ? »
 Surpris, et quelque peu incrédules devant cette proposition, ils mettent
 Jason au défi de compiler ce fameux logiciel avec son outil miracle, là
 où nos deux scripts Ant, pourtant irréprochables, pris séparément
@@ -475,7 +475,7 @@ instructions de base pour installer Maven. À leur grande surprise,
 chacun arrive à compiler le projet sur son environnement, quelle que
 soit sa singularité.
 
-Voici le fichier envoyé par Jason&nbsp;:
+Voici le fichier envoyé par Jason :
 
 .Listing 1.2 : pom.xml
 [source, xml]
@@ -503,12 +503,12 @@ Voici le fichier envoyé par Jason&nbsp;:
 </project>
 -------------------------------------------------------------------------------
 
-Comparé aux fichiers Ant testés jusqu'ici, ce fichier «&nbsp;pom.xml&nbsp;» – quel
+Comparé aux fichiers Ant testés jusqu'ici, ce fichier « pom.xml » – quel
 drôle de nom – ne ressemble à rien de connu. Pas de directive de
 compilation, pas d'indication d'ordre dans les tâches, pas de commande
-d'assemblage du JAR. Où est le secret&nbsp;?
+d'assemblage du JAR. Où est le secret ?
 
-=== Que fait Maven&nbsp;?
+=== Que fait Maven ?
 
 Épluchons point par point les consignes de Jason et voyons.
 
@@ -526,7 +526,7 @@ Jason nous a indiqué que Maven nécessitait une connexion à Internet.
 L'installation n'est donc pas complète, et Maven va rechercher sur le
 réseau les éléments manquants. Effectivement, la première exécution de
 Maven se traduit dans la console par une série de messages de
-téléchargements divers&nbsp;:
+téléchargements divers :
 
 .Listing 1.3 : Première exécution de Maven
 -------------------------------------------------------------------------------
@@ -550,9 +550,9 @@ Downloading: http://repo1.maven.org/maven2/org/apache/apache/1/apache-1.pom
 
 Cette liste de messages semble même interminable et avoir été conçue
 pour favoriser le développement d'Internet à haut débit. Tout ça pour
-notre projet composé de trois classes&nbsp;? Jason nous a prévenus qu'à la
+notre projet composé de trois classes ? Jason nous a prévenus qu'à la
 première utilisation, Maven semble télécharger tout Internet, mais il
-nous a promis des explications&nbsp;! Mise en garde quelque peu surprenante,
+nous a promis des explications ! Mise en garde quelque peu surprenante,
 mais laissons-lui le bénéfice du doute.
 
 
@@ -567,7 +567,7 @@ contraindre.
 
 Poursuivons l'analyse des messages que Maven trace dans la console, en
 ignorant les lignes liées à ces téléchargements étranges mais
-apparemment nécessaires&nbsp;:
+apparemment nécessaires :
 
 .Listing 1.4 : Seconde exécution de Maven… sans téléchargement cette fois
 -------------------------------------------------------------------------------
@@ -609,13 +609,13 @@ D:\java\workspace\malistedecourses\target\malistedecourses-0.0.1-SNAPSHOT.jar
 
 Nous constatons que Maven a compilé nos trois fichiers sources et
 construit un fichier JAR, ce qu'on attendait de lui, mais il a également
-tenté de copier des «&nbsp;ressources&nbsp;» et d'exécuter des tests, ensemble de
-traitements que nous n'avons spécifiés nulle part&nbsp;!
+tenté de copier des « ressources » et d'exécuter des tests, ensemble de
+traitements que nous n'avons spécifiés nulle part !
 
 [[La_cle_du_mystere]]
 === La clé du mystère
 
-Interrogé sur le sujet, Jason nous livre la clé du mystère&nbsp;: Ant, make
+Interrogé sur le sujet, Jason nous livre la clé du mystère : Ant, make
 et bon nombre d'outils similaires s’appuient sur une approche
 procédurale, pour laquelle on décrit les opérations à accomplir pour
 construire le logiciel ou exécuter des tâches annexes. Cela se traduit
@@ -632,35 +632,35 @@ ce qu'on veut, mais elle nécessite :
 
  * de répéter pour chaque nouveau projet une liste de tâches très
 similaires*, ce qui se traduit souvent par la copie d'un fichier de
-configuration considéré comme «&nbsp;faisant référence&nbsp;»&nbsp;;
+configuration considéré comme « faisant référence » ;
  * de gérer une liste de dépendances entre les étapes clés*, comme,
-dans notre exemple, «&nbsp;compiler&nbsp;» lorsqu'on désire assembler le JAR.
+dans notre exemple, « compiler » lorsqu'on désire assembler le JAR.
 
-Maven choisit une approche différente, fondée sur le constat suivant&nbsp;:
+Maven choisit une approche différente, fondée sur le constat suivant :
 tous les projets Java vont suivre peu ou prou le même schéma. Les
 développeurs de Maven considèrent alors qu'il est plus simple de décrire
-en quoi un projet est différent de ce «&nbsp;scénario type&nbsp;» que de répéter
+en quoi un projet est différent de ce « scénario type » que de répéter
 invariablement des commandes très comparables d'un projet à l'autre.
 Maven exploite donc le concept très structurant de conventions.
 
 [[convention_plutot_que_configuration]]
 ==== Convention plutôt que configuration
 
-Notre pseudoexemple réunissant les étapes «&nbsp;initialiser&nbsp;», «&nbsp;compiler&nbsp;»,
-«&nbsp;assembler&nbsp;» semble s'appliquer à n'importe quel projet informatique,
+Notre pseudoexemple réunissant les étapes « initialiser », « compiler »,
+« assembler » semble s'appliquer à n'importe quel projet informatique,
 alors pourquoi devons-nous répéter cette déclaration pour chaque
-projet&nbsp;? C'est exactement la question que soulève Maven et à laquelle il
-répond simplement&nbsp;: tout projet Java passe par une phase de préparation,
+projet ? C'est exactement la question que soulève Maven et à laquelle il
+répond simplement : tout projet Java passe par une phase de préparation,
 de compilation puis d'assemblage. Ces trois phases ne sont pas propres à
 un projet, mais liées au développement informatique et s'appliquent à
 tous.
 
 Maven définit donc un scénario type de construction d'un projet Java,
-avec des étapes clés prédéfinies et dont l'ordre est immuable. Ce «&nbsp;cycle
-de vie&nbsp;» est suffisamment large et consensuel pour être applicable à
+avec des étapes clés prédéfinies et dont l'ordre est immuable. Ce « cycle
+de vie » est suffisamment large et consensuel pour être applicable à
 quasiment tous les projets. En admettant que le nôtre n'ait rien de
 particulier comparé à tous ceux que pilote Maven, nous comprenons mieux
-comment celui-ci a «&nbsp;deviné&nbsp;» les opérations nécessaires à sa
+comment celui-ci a « deviné » les opérations nécessaires à sa
 construction.
 
 Java Entreprise Edition suit également cette piste en proposant un
@@ -669,7 +669,7 @@ applications, même s'il existe de nombreux serveurs d'applications ayant
 des caractéristiques très variées. Construire une application web Java
 consiste à assembler une archive WAR (_Web Application Archive_), que
 l'on ait choisi JBoss, Webpshere, Tomcat ou Jetty pour l'exécuter. Le
-comportement par «&nbsp;convention&nbsp;» d'une application web est défini par une
+comportement par « convention » d'une application web est défini par une
 norme, chaque serveur proposant des options de configuration pour
 bénéficier d'un comportement personnalisé lorsque c'est nécessaire. Une
 convention a, bien sûr, un statut inférieur à une norme comme JavaEE,
@@ -720,7 +720,7 @@ Environment_) comme Eclipse ou par les outils d'analyse de code.
 Avec ces explications, revenons à présent sur le fichier pom.xml que
 Jason nous a écrit.
 
-Tout d'abord, pourquoi ce nom&nbsp;? Nous avons vu que ce fichier ne décrit
+Tout d'abord, pourquoi ce nom ? Nous avons vu que ce fichier ne décrit
 pas la procédure de construction du projet mais qu'il rassemble des
 éléments descriptifs. Il est donc logique qu'il ne s'appelle pas
 build.xml (en dehors du conflit que cela introduirait avec les
@@ -745,21 +745,21 @@ La première partie du POM permet d'identifier le projet lui-même.
 -------------------------------------------------------------------------------
 
 L'élément modelVersion permet de savoir quelle version de la structure
-de données «&nbsp;modèle de projet&nbsp;» est représentée dans le fichier XML.
-«&nbsp;4.0.0&nbsp;» correspond à la version utilisée par Maven 2.x dans toutes ses
+de données « modèle de projet » est représentée dans le fichier XML.
+« 4.0.0 » correspond à la version utilisée par Maven 2.x dans toutes ses
 variantes.
 
 image:Maven3.png[Maven3,align="center"]
 
 Les futures versions de Maven 3 pourront exploiter des versions
 différentes de modèles et introduire des évolutions dans le format de ce
-fichier. Entre autres, sont envisagés&nbsp;:
+fichier. Entre autres, sont envisagés :
 
-  * l’import partiel d’autres fichiers POM («&nbsp;mixins&nbsp;») permettant de
+  * l’import partiel d’autres fichiers POM (« mixins ») permettant de
 construire un projet par agrégation de bonnes pratiques,
   * des mécanismes avancés de gestion de dépendance,
   * et tout ce qui pourra s’avérer utile pour rendre Maven 3.x plus
-puissant et encore plus universel&nbsp;!
+puissant et encore plus universel !
 
 L'identifiant de groupe (groupId) permet de connaître l'organisation,
 l'entreprise, l'entité ou la communauté qui gère le projet. Par
@@ -789,19 +789,19 @@ notation purement numérique qui facilite les comparaisons, selon la
 logique Majeur.Mineur.Correctif. Seules deux versions majeures peuvent
 ne pas assurer de compatibilité, une nouvelle version mineure peut
 apporter des fonctionnalités inédites, mais s'interdit de ne pas
-respecter le mode de fonctionnement existant&nbsp;; enfin, une version
+respecter le mode de fonctionnement existant ; enfin, une version
 corrective n'apporte aucune fonctionnalité nouvelle mais élimine
 certains problèmes.
 
 Certains enrichissent cette numérotation d'un dernier élément qui
-indique le degré de confiance dans une version donnée&nbsp;: «&nbsp;RC&nbsp;» pour une
-Release Candidate (version quasi finale), «&nbsp;GA&nbsp;» pour General Availability
+indique le degré de confiance dans une version donnée : « RC » pour une
+Release Candidate (version quasi finale), « GA » pour General Availability
 pour une version diffusée au public. Cet usage peut porter préjudice au
-projet car dans la comparaison purement alphabétique, «&nbsp;GA&nbsp;» est inférieur
-à «&nbsp;RC&nbsp;»&nbsp;!
+projet car dans la comparaison purement alphabétique, « GA » est inférieur
+à « RC » !
 ====
 
-La deuxième partie du POM concerne la construction du projet&nbsp;:
+La deuxième partie du POM concerne la construction du projet :
 
 .Listing 1.6 : Le bloc build du fichier POM
 [source, xml]
@@ -814,10 +814,10 @@ L'approche déclarative utilisée par Maven permet de définir
 l'emplacement de nos fichiers sources. Le projet étant à la fois très
 simple et très banal, aucune autre déclaration n'est nécessaire. Si nous
 avions utilisé le répertoire conventionnel de Maven pour les fichiers
-sources Java, nous n'aurions même pas eu besoin de ce bloc <build>&nbsp;!
+sources Java, nous n'aurions même pas eu besoin de ce bloc <build> !
 
 La troisième partie de POM concerne les bibliothèques dont dépend le
-projet&nbsp;:
+projet :
 
 .Listing 1.7 : Le bloc dependencies du fichier POM
 [source, xml]
@@ -836,7 +836,7 @@ projet&nbsp;:
     <dependencies>
 -------------------------------------------------------------------------------
 
-Une nouvelle fois, l'approche déclarative prend le dessus&nbsp;: nous
+Une nouvelle fois, l'approche déclarative prend le dessus : nous
 n'indiquons pas l'emplacement physique de ces bibliothèques, à savoir
 /lib pour notre projet, mais des identifiants groupId + artifactId +
 version. Il s'agit des mêmes identifiants de groupe, de composant et de
@@ -845,7 +845,7 @@ Nous indiquons, par exemple, que nous utilisons l'API standard JavaMail
 en version 1.4.
 
 Nous avons ici une réponse partielle à notre question sur la nécessité
-d'un accès Internet&nbsp;: Maven va télécharger les bibliothèques indiquées,
+d'un accès Internet : Maven va télécharger les bibliothèques indiquées,
 à partir d'une source fiable, plutôt que de se contenter des fichiers
 JAR présents dans le répertoire /lib et dont la version et l'origine
 sont incertaines. L'espace contenant l'ensemble des bibliothèques
@@ -853,7 +853,7 @@ téléchargées est un dépôt d'archives local (_local repository_) et
 respecte une convention. Nous verrons en détail au Chapitre 2 les
 raisons de cette approche et ses avantages.
 
-==== Pourquoi adopter ces conventions&nbsp;?
+==== Pourquoi adopter ces conventions ?
 
 Nous venons de le voir, Maven propose un ensemble de conventions qui
 permettent d'outiller le projet avec peu de configuration. Il ne nous
@@ -861,8 +861,8 @@ interdit cependant pas de choisir nos propres conventions, comme le
 répertoire src pour les sources du logiciel.
 
 Dans ce cas, pourquoi adopter les conventions de Maven, alors qu'il
-suffit de quelques lignes de déclaration supplémentaires pour «&nbsp;plier&nbsp;»
-Maven à nos habitudes&nbsp;? Hostiles au changement, comme une grande
+suffit de quelques lignes de déclaration supplémentaires pour « plier »
+Maven à nos habitudes ? Hostiles au changement, comme une grande
 majorité des êtres humains, nous préférons cette option.
 
 image:MangaEmmanuel.png[float="left"]
@@ -873,7 +873,7 @@ grand nombre de nouvelles fonctionnalités. Emmanuel est déjà habitué à
 Maven et peut donc être rapidement productif et nous aider à le
 configurer correctement. Seulement, les choses ne se passent pas aussi
 simplement que prévu, car malgré son expérience de l'outil, Emmanuel ne
-retrouve pas ses petits&nbsp;: pour ajouter des tests à notre architecture,
+retrouve pas ses petits : pour ajouter des tests à notre architecture,
 il doit créer un nouveau répertoire de sources, indépendant de celles du
 projet. Or notre répertoire src n'a qu'un seul niveau et ne permet pas
 de différencier le livrable des tests. Il est donc obligé de déclarer
@@ -881,7 +881,7 @@ une nouvelle dérogation aux conventions de Maven.
 
 Par ailleurs, même si les différences sont minimes, il est contraint
 d'adapter toutes ses petites habitudes à notre structure de répertoire,
-qui n'est pas «&nbsp;strictement conforme Maven&nbsp;».
+qui n'est pas « strictement conforme Maven ».
 
 Les conventions de Maven ne sont pas obligatoires, cependant
 réfléchissez à deux fois avant de vouloir en imposer d'autres pour votre
@@ -896,13 +896,13 @@ Ensuite, pensez à la gestion de vos équipes et à l'intégration de
 nouveaux développeurs. Maven offre l'occasion de définir une fois pour
 toutes la structure de tous vos projets Java, de manière homogène. Un
 développeur pourra passer d'un projet à un autre sans perdre son temps à
-apprendre les petites habitudes locales&nbsp;: où sont les fichiers de
-configuration&nbsp;? Dans quel répertoire place-t-on les données de test&nbsp;?
+apprendre les petites habitudes locales : où sont les fichiers de
+configuration ? Dans quel répertoire place-t-on les données de test ?
 Tous les projets qui se conforment aux conventions Maven seront
 identiques de ce point de vue, et le développeur sera plus rapidement
 productif.
 
-Enfin, contrairement à une politique «&nbsp;maison&nbsp;» qui aurait pu établir ce
+Enfin, contrairement à une politique « maison » qui aurait pu établir ce
 type de conventions, celles de Maven sont partagées par la majorité des
 développeurs qui ont adopté ce logiciel. Tout nouveau membre de votre
 équipe qui a déjà travaillé sur un projet Maven trouvera rapidement ses
@@ -916,7 +916,7 @@ développeurs Java tout entière une base commune.
 
 === La force de Maven
 
-Revenons un peu en arrière&nbsp;: le projet initial, que nous pouvons
+Revenons un peu en arrière : le projet initial, que nous pouvons
 considérer comme un prototype, était difficilement exportable en dehors
 de l'environnement de son créateur. Il nécessitait un script de
 compilation à la fois indispensable et sans grande valeur ajoutée, étant
@@ -9702,7 +9702,7 @@ qui précède la livraison et (dans le meilleur des cas) une reprise lente
 dans les semaines qui suivent.
 
 [[maitrise_de_s]]
-==== Maîtrise de _S_ footnote:[Petit rappel de vos lointains cours de physique&nbsp;: S est le symbole utilisé en physique pour l’entropie&nbsp;:)]
+==== Maîtrise de _S_ footnote:[Petit rappel de vos lointains cours de physique : S est le symbole utilisé en physique pour l’entropie :)]
 
 image:MangaVincentM.png[float="left"]
 
