@@ -976,7 +976,7 @@ Sauvegarder les bibliothèques Java dans le SCM est donc une garantie de
 retrouver à tout moment la version exacte qui est utilisée par le
 projet.
 
-Notre prototype ne déroge pas à cette "bonne idée" et possède comme tant
+Notre prototype ne déroge pas à cette « bonne idée » et possède comme tant
 d'autres un répertoire lib avec l'ensemble des bibliothèques utilisées.
 
 [[Quand_le_repertoire_lib_explose]]
@@ -991,7 +991,7 @@ Persistence API. Nous développons une interface web sympathique basée
 sur Wicket et, enfin, nous faisons appel à Apache CXF pour exposer nos
 services à d'autres applications sous forme de services web.
 
-Le nombre de bibliothèques croit exponentiellement car, au-delà de la
+Le nombre de bibliothèques croît exponentiellement car, au-delà de la
 gestion de celles que nous utilisons explicitement au sein du projet, il
 faut gérer toutes les bibliothèques qui leur sont nécessaires.
 Rapidement, le répertoire lib se retrouve chargé de dizaines de fichiers
@@ -1011,7 +1011,7 @@ qu'ils soient identiques. Seule une comparaison binaire pourrait nous en
 assurer.
 
 Autant dire qu'avec les dizaines de bibliothèques embarquées dans notre
-projet, plus personne ne fait scrupuleusement cette vérification et nous
+projet, plus personne ne fait scrupuleusement cette vérification, et nous
 nous contentons de lire le nom de l'archive mail-1.2.jar pour identifier
 la bibliothèque JavaMail.
 
@@ -1031,18 +1031,18 @@ bibliothèque sera probablement la toute dernière hypothèse que nous
 Après quelques heures de tests et de recherche d'informations sur
 Internet, nous devons nous rendre à l'évidence, nous rencontrons un
 bogue connu de la bibliothèque JavaMail utilisée sur le projet. Seule
-solution viable : la mise à jour de cette bibliothèque dans une version
+solution viable : la mise à jour de cette bibliothèque dans une version
 plus récente.
 
 Le téléchargement de la distribution JavaMail depuis le site de
 SUN footnote:[http://java.sun.com/products/javamail/] donne un fichier ZIP contenant à la fois les
-binaires et la documentation de cette API ; les**binaires, car JavaMail
+binaires et la documentation de cette API ; les**binaires, car JavaMail
 regroupe en fait plusieurs archives JAR, à savoir mail.jar, mais aussi
 mailapi.jar. La première contient l'ensemble du code public JavaMail
 alors que la seconde ne comprend que les API de programmation, et pas la
 gestion des protocoles de transfert de messages (pop, smtp, imap…) qui
-sont optionnels. Lequel utilisons-nous actuellement ? Par quoi le
-remplacer ?
+sont optionnels. Lequel utilisons-nous actuellement ? Par quoi le
+remplacer ?
 
 En supposant que nous sachions répondre sans ambiguïté à cette question,
 nous devons supprimer le mail-1.2.jar utilisé jusqu'ici et ajouter le
@@ -1076,7 +1076,7 @@ ou quasiment vide.
 
 ===== lib/*.jar
 
-Pour ne plus rencontrer ce problème, nous décidons "d'assouplir" nos
+Pour ne plus rencontrer ce problème, nous décidons « d'assouplir » nos
 scripts de compilation en utilisant l'intégralité du répertoire lib
 comme chemin d'accès aux classes, plutôt qu'une liste explicite de
 bibliothèques. Placer une nouvelle bibliothèque dans ce répertoire ou en
@@ -1084,17 +1084,17 @@ remplacer une par une autre version ne nécessitera alors aucune
 modification des scripts.
 
 Ce qui pourrait ressembler à la solution miracle n'est pas aussi parfait
-qu'il y paraît. D'une part, cela ne résout pas la configuration de notre
+qu'il y paraît. D'abord, cela ne résout pas la configuration de notre
 environnement de développement qui continue de réclamer une liste
 précise de bibliothèques à inclure dans le ClassPath. Ensuite, une
 manipulation malheureuse de nos fichiers JAR ne se verra pas
-immédiatement – un glisser-déposer est si vite arrivé ! Il faudra
+immédiatement – un glisser-déposer est si vite arrivé ! Il faudra
 attendre qu'elle ait un impact visible pour devoir ensuite remonter à
 l'origine du problème.
 
 Enfin, ce n'est pas une solution d'une grande élégance. Pour éviter de
 devoir traiter le problème, nous avons ouvert les portes en grand à tout
-ce qui passe. Difficile de parler de "maîtrise" de nos bibliothèques
+ce qui passe. Difficile de parler de « maîtrise » de nos bibliothèques
 dans de telles conditions.
 
 ==== Identification univoque
@@ -1106,7 +1106,7 @@ de télécharger les bibliothèques précises, utilisées dans le projet,
 sans ambiguïté. Les risques d'erreur de transfert sont éliminés par un
 contrôle automatique basé sur des fonctions de hachage (une sorte
 d'empreinte digitale du binaire, qui sera invalidée au moindre bit
-invalide).
+différent).
 
 L'identification d'une bibliothèque utilisée par un projet s’appuie sur
 un triplet (identifiant de groupe, identifiant d'artefact,
@@ -1136,9 +1136,9 @@ Nicolas ne se souvient pas du tout de l'origine de ce fichier. Les
 équipes de maintenance, confrontées à ce cas de figure, auraient du fil
 à retordre. Comment gérer une mise à niveau ou un bogue rencontré dans
 la bibliothèque considérée si on est incapable de l'identifier avec
-précision ?
+précision ?
 
-Dans le contenu de cette archive java, les packages utilisés,
+Dans le contenu de cette archive Java, les packages utilisés,
 org.apache.commons.io, nous mettent sur la piste, et c'est ce qui a
 inspiré à Jason la déclaration d'une dépendance vers Apache Commons-io.
 Cependant, il pourrait s'agir d'une version modifiée, pour une
@@ -1153,7 +1153,7 @@ utiliser.
 Ajouter une bibliothèque à un projet Maven se traduit simplement par
 l'ajout d'un bloc <dependency> comparable à notre exemple, identifiant
 sans équivoque notre intention. Pas de script à éditer, pas de fichier
-JAR à télécharger et donc pas de validation du fichier téléchargé ; pas
+JAR à télécharger et donc pas de validation du fichier téléchargé ; pas
 de répertoire de bibliothèques à modifier, avec les risques d'erreur de
 synchronisation qui en découleraient. Mettre à jour une bibliothèque
 consiste tout simplement à modifier l'information de version qui lui est
@@ -1176,17 +1176,16 @@ première mouture de Maven.
 La configuration par défaut de Maven utilise le dépôt (ou _référentiel_)
 de bibliothèques http://repo1.maven.org/maven2/. Ce site, maintenu par
 la communauté Maven, compte plusieurs dizaines de gigaoctets de
-bibliothèques libres de diffusion et est mis à jour plusieurs fois par
+bibliothèques libres de diffusion, et il est mis à jour plusieurs fois par
 jour. Nous verrons au fil des prochains chapitres comment utiliser
-d'autres dépôts et en construire un pour ses besoins propres.
+d'autres dépôts et en construire un pour nos besoins propres.
 
 À partir de notre déclaration de dépendance, Maven va construire l'URL
-du sous-répertoire dédié à la bibliothèque indiquée :
+du sous-répertoire dédié à la bibliothèque indiquée :
 
 <URL du dépôt> / <groupId en tant que chemin> / <artifactId> / <version>
 
-Pour notre dépendance à JavaMail, nous obtenons :
-http://repo1.maven.org/maven2/javax/mail/mail/1.4/.
+Pour notre dépendance à JavaMail, nous obtenons : http://repo1.maven.org/maven2/javax/mail/mail/1.4/.
 
 .Figure 02-01
 image:02-01.png[align="center"]
@@ -1194,27 +1193,27 @@ image:02-01.png[align="center"]
 Le sous-répertoire dédié à JavaMail 1.4 sur le dépôt de bibliothèques.
 
 En plus du fichier JAR de la bibliothèque attendue, nous trouvons de
-nombreux autres fichiers dans ce répertoire :
+nombreux autres fichiers dans ce répertoire : 
 
-* Chaque fichier présent est accompagné de deux partenaires, avec
+* chaque fichier présent est accompagné de deux partenaires, avec
 respectivement l'extension .md5 et .sha. Il s'agit des empreintes de
 contrôle associées au fichier, que Maven exploitera pour s'assurer que
-le fichier n'a subi aucune altération au cours du téléchargement.
-* Un fichier porte le même nom que la bibliothèque avec le suffixe
+le fichier n'a subi aucune altération au cours du téléchargement ;
+* un fichier porte le même nom que la bibliothèque avec le suffixe
 -sources. Il s'agit, comme on pourrait s'en douter, d'une archive des
 sources Java de la bibliothèque, ce qui pourra se montrer fort utile
 depuis votre environnement de développement intégré préféré pour
 utiliser un débogueur et parcourir le code de cette bibliothèque. Il
 pourrait également y avoir un autre fichier avec le suffixe -javadoc
-contenant la documentation technique de la bibliothèque.
-* Un autre fichier ayant le même nom que la bibliothèque avec
+contenant la documentation technique de la bibliothèque ;
+* un autre fichier ayant le même nom que la bibliothèque avec
 l'extension .pom. Il s'agit bien de l'acronyme du _Project Object Model_
 que nous connaissons déjà. Chaque bibliothèque dans le dépôt Maven
 possède un fichier de ce type. Soit parce que la bibliothèque a été
 développée en utilisant Maven, soit parce qu'un fichier minimal a été
 écrit pour fournir une description de la bibliothèque aux utilisateurs
-de Maven.
-* Un fichier de métadonnées, propre à Maven comme son nom l'indique
+de Maven ;
+* un fichier de métadonnées, propre à Maven comme son nom l'indique
 clairement.
 
 [[Avis_aux_amateurs_de_casse_tete]]
@@ -1225,13 +1224,13 @@ apporter sa contribution, est constitué de bric et de broc. Le
 répertoire lib devient un sacré fourre-tout, et c'est réellement
 compliqué de savoir pour quelle raison nous avons dû introduire
 commons-net-1.3.jar dans le projet. Aucune de nos classes ne fait
-référence à ce package !
+référence à ce package !
 
 Lorsqu'on fait appel à une bibliothèque pour prendre en charge certaines
 fonctions techniques, il est rare qu'elle se suffise à elle-même. Au
 même titre que notre projet, elle fait appel à d'autres bibliothèques
 spécialisées pour lui fournir des composants de haut niveau qui lui
-facilitent la tâche. Sa documentation précise, bien évidemment, ces
+facilitent la tâche. Sa documentation précise, bien évidemment, les
 prérequis, ce qui nous a permis lors de son introduction dans le projet
 de connaître la liste de bibliothèques à ajouter pour avoir un ensemble
 fonctionnel. Certaines étaient déjà intégrées, et il a fallu nous
@@ -1251,7 +1250,7 @@ Pour nous épargner une migraine, les développeurs de bibliothèques ont
 heureusement pris la bonne habitude de ne jamais briser la compatibilité
 avec les versions précédentes sans un avertissement visible. La pratique
 la plus courante consiste à utiliser le numéro de version et à passer à
-une version "majeure" supérieure. Entre la version 1.4 et la
+une version « majeure » supérieure. Entre la version 1.4 et la
 version 2.0, il est assez probable que des modifications lourdes ont été
 apportées, limitant fortement la compatibilité, ce qui justifie le
 changement de version. Par contre, nous pouvons être plus confiants dans
@@ -1274,15 +1273,15 @@ petit bonheur la chance en espérant ne rien laisser traîner en route.
 
 ==== L'ami de mon ami…
 
-Que propose Maven pour cette situation ? Nous avons vu qu'il demande de
-déclarer les dépendances plutôt que de fournir nous-mêmes les binaires ;
+Que propose Maven pour cette situation ? Nous avons vu qu'il nous demande de
+déclarer les dépendances plutôt que de fournir nous-mêmes les binaires ;
 aussi, notre dernière option – prendre la distribution telle quelle et
 la fusionner avec notre répertoire lib – n'est pas applicable. Maven
 va-t-il nous obliger à éplucher la documentation de chaque bibliothèque
-utilisée ?
+utilisée ?
 
-Maven est autrement plus subtil : jetez un coup d'œil quelques pages en
-arrière, sur le contenu du répertoire lib de notre projet initial :
+Maven est autrement plus subtil : jetez un coup d'œil quelques pages en
+arrière, sur le contenu du répertoire lib de notre projet initial : 
 
 -------------------------------------------------------------------------------
     \lib
@@ -1296,12 +1295,12 @@ deuxième le Bean Activation Framework, nécessaire au bon fonctionnement
 de JavaMail, et enfin le mystérieux util.jar qui s'est avéré être Apache
 commons-io. Le fichier POM.xml ne compte que deux entrées <dependency>,
 là où notre projet nécessite trois bibliothèques. Jason aurait-il été un
-peu trop vite ?
+peu trop vite ?
 
 Si vous jetez à nouveau un œil aux traces de téléchargement dont Maven
-nous a abreuvés au premier lancement, vous constaterez qu'il télécharge
+nous a abreuvé au premier lancement, vous constaterez qu'il télécharge
 à la fois des fichiers POM et des fichiers JAR – comme s'il ne
-téléchargeait pas déjà assez de choses !
+téléchargeait pas déjà assez de choses !
 
 Ces fichiers POM, au même titre que celui de notre projet, décrivent les
 bibliothèques auxquelles ils sont associés. Pour JavaMail, l'archive
@@ -1310,14 +1309,14 @@ d'un fichier Project Object Model, au même format XML que pour notre
 projet et qui comprend des déclarations comparables, en particulier des
 dépendances. C'est ici qu'est indiqué le lien entre JavaMail et le Bean
 Activation Framework. Cela permet à Maven de savoir que tout projet qui
-utilisera l'API JavaMail aura nécessairement besoin du JAR activation.
+utilisera l'API JavaMail aura nécessairement besoin du JAR Activation.
 Si celui-ci a aussi des dépendances, la chaîne se poursuivra, jusqu'à ce
 qu'un graphe complet de bibliothèques interdépendantes soit construit.
 
-On parle pour ces données qui décrivent la bibliothèque de
-"métadonnées". Il s'agit d'une version compacte et normalisée au format
+On parle, pour ces données qui décrivent la bibliothèque, de
+« métadonnées ». Il s'agit d'une version compacte et normalisée au format
 POM des informations que nous aurions pu obtenir en lisant la
-documentation de la bibliothèque : sa licence, le site web qui
+documentation de la bibliothèque : sa licence, le site web qui
 l'héberge, et ses prérequis. L'exploitation automatisée de ces données
 permet à Maven de construire l'arbre des dépendances du projet, chaque
 nouvelle feuille pouvant, par ses propres métadonnées, introduire de
@@ -1330,34 +1329,34 @@ Arbre de dépendances transitives.
 
 Cet arbre, extrêmement difficile à construire à la main et douloureux à
 maintenir, est analysé automatiquement par Maven à chaque exécution. Il
-s'assure que l'ensemble des bibliothèques nécessaires est présent et
+s'assure que l'ensemble des bibliothèques nécessaires est présent et il
 construit ainsi le chemin de classes utilisé par le compilateur. Maven
-va également gérer les problèmes de conflit de version, lorsque l'arbre
+va également gérer les problèmes de conflit de versions, lorsque l'arbre
 fait apparaître plusieurs fois la même bibliothèque dans des versions
 différentes. Le mécanisme utilisé est cependant limité par la liberté
-laissée aux numéros de version qui rend délicat une comparaison 100 %
+laissée aux numéros de versions qui rend délicate une comparaison 100 %
 déterministe.
 
 [NOTE]
 ====
 L'algorithme de résolution des conflits se fonde sur le principe de
-"proximité" : Maven compte, dans l'arbre des dépendances, combien de
-branches séparent la bibliothèque du projet ; celle qui est déclarée au
-plus près gagne, En cas d'égalité, l’ordre de déclaration des dépendance
-détermine le vainqueur : la première déclaration dans l’ordre du POM
+« proximité » : Maven compte, dans l'arbre des dépendances, combien de
+branches séparent la bibliothèque du projet ; celle qui est déclarée au
+plus près gagne. En cas d'égalité, l’ordre de déclaration des dépendances
+détermine le vainqueur : la première déclaration dans l’ordre du POM
 gagne. Ce comportement a été figé avec Maven 2.0.9 (les versions
 précédentes étaient non déterministes sur ce point, si vous les utilisez
-encore, mettez à jour en urgence votre boite à outil !
+encore, mettez à jour en urgence votre boite à outils !
 ====
 
 Cette dernière fonctionnalité finit par nous convaincre définitivement.
 Aussi, nous abandonnons nos différents scripts et adoptons les
 conventions de Maven pour la suite du développement de
-noubliepaslalistedescourses. Les développeurs sont nombreux à choisir
+_noubliepaslalistedescourses_. Les développeurs sont nombreux à choisir
 Maven pour sa gestion des dépendances. N'oubliez pas, cependant, tous
 les points que nous avons déjà vus, et en quoi cela différencie Maven
 d'autres outils de construction de projet. Maven n'est pas juste un
-outil de gestion des dépendances, pour lesquelles il existe d'autres
+outil de gestion des dépendances, pour lequel il existe d'autres
 très bons outils comme Apache Ivy qui sont utilisables depuis un script
 Ant.
 
@@ -1378,7 +1377,7 @@ projet ne sont pas impactées par une modification, ce qui constitue une
 sécurité et un gain de temps appréciables.
 
 Nous étions sur le point de décerner à Vincent le prix très convoité de
-"développeur du mois", quand nous avons rencontré un bogue étrange sur
+« développeur du mois », quand nous avons rencontré un bogue étrange sur
 l'application, signalant l'absence de la classe org.junit.Assert dans
 l'environnement d'exécution. Voilà un problème bien curieux.
 
@@ -1388,38 +1387,38 @@ de la classe similaire de Spring
 org.springframework.util.Assert#notNull(). La gestion automatique des
 imports par notre environnement de développement intégré est bien
 pratique mais elle peut parfois avoir des effets
-pervers footnote:[Ne riez pas, il s'agit d'un cas bien réel, identifié lors de la migration du projet sous Maven !]. Comment se fait-il que cette erreur
+pervers footnote:[Ne riez pas, il s'agit d'un cas bien réel, identifié lors de la migration du projet sous Maven !]. Comment se fait-il que cette erreur
 d'étourderie soit passée au travers des mailles de notre (excellent)
-suivi qualité ? Ou plutôt, comment se fait-il que notre outillage
-qualité ait pu ajouter des bogues à notre application ?
+suivi qualité ? Ou plutôt, comment se fait-il que notre outillage
+qualité ait pu ajouter des bogues à notre application ?
 
-La réponse tient en un mot : dépendances. Notre gestion des dépendances
+La réponse tient en un mot : dépendances. Notre gestion des dépendances
 à la hussarde, avec un répertoire lib dont nous utilisons tous les JAR
 sans distinction, ne sait pas différencier les bibliothèques nécessaires
 à la compilation de celles utilisées par les outils de test.
 
 Nous pourrions fiabiliser les choses en séparant nos bibliothèques en
-/lib/runtime et /lib/test, mais Jason nous arrête net : que penser des
+/lib/runtime et /lib/test, mais Jason nous arrête net : que penser des
 API servlet, que nous utilisons pour compiler notre interface de gestion
 web (l'application a pas mal évolué depuis le prototype en ligne de
-commande !). Ces bibliothèques sont nécessaires pour compiler mais elles
+commande !). Ces bibliothèques sont nécessaires pour compiler, mais elles
 ne doivent pas être intégrées à l'application pour respecter les règles
 JavaEE, car elles sont déjà présentes dans notre serveur d'application.
 
 Cela se complique. Peut-être qu'avec un troisième sous-répertoire dans
-/lib… Stop ! Fini de jouer, interrompt Jason, avant de nous expliquer
+/lib… Stop ! Fini de jouer, interrompt Jason, avant de nous expliquer
 comment Maven traite de manière globale ce problème.
 
-==== Les "scopes"
+==== Les « scopes »
 
 Notre problème vient de la nécessité d'associer à chaque dépendance du
 projet le contexte dans lequel elle doit intervenir. S'agit-il d'un
-élément indispensable à l'exécution du logiciel ? Est-il utilisé
-uniquement à des fins de test ? Doit-il être inclus dans l'application
-ou est-il intégré dans l'environnement d'exécution ?
+élément indispensable à l'exécution du logiciel ? Est-il utilisé
+uniquement à des fins de test ? Doit-il être inclus dans l'application
+ou est-il intégré dans l'environnement d'exécution ?
 
 La déclaration d'une dépendance Maven permet de définir un élément
-supplémentaire, le "scope" dans lequel la dépendance devra s'appliquer.
+supplémentaire, le « scope » dans lequel la dépendance devra s'appliquer.
 Nous pouvons ainsi préciser que la bibliothèque jUnit n'est utilisée que
 durant la phase de test et que l'API servlet ne doit pas être intégrée
 dans notre archive web.
@@ -1451,7 +1450,7 @@ compilation. Maven aurait ainsi identifié notre bogue immédiatement.
 La facilité avec laquelle Maven permet de marier les bibliothèques,
 gérant dépendances et conflits, nous retire une (autre) sacrée épine du
 pied. Nous pouvons ainsi nous focaliser sur le développement du logiciel
-sans être freiné par d'ennuyeux problèmes techniques liés aux
+sans être freinés par d'ennuyeux problèmes techniques liés aux
 bibliothèques.
 
 Notre application de gestion de liste de courses s'étoffe donc
@@ -1462,14 +1461,14 @@ l'archive web WAR de l'application que nous pouvons déployer sur notre
 serveur de test.
 
 Un coup d'œil au répertoire WEB-INF/lib de l'application web nous fait
-cependant déchanter : plus de quarante bibliothèques s'y trouvent (qui a
-demandé tout ça ?). Il y a, par exemple, la bibliothèque avalon, un
+cependant déchanter : plus de quarante bibliothèques s'y trouvent (qui a
+demandé tout ça ?). Il y a, par exemple, la bibliothèque Avalon, un
 framework ancien que plus personne n'utilise. Plus grave, nous trouvons
 dans ce répertoire des bibliothèques redondantes, comme un
 commons-logging-1.0.4 et un commons-logging-api-1.1. Voilà qui est bien
-troublant. Maven se serait-il emmêlé les pinceaux dans ses dépendances ?
+troublant. Maven se serait-il emmêlé les pinceaux dans ses dépendances ?
 
-La réponse à nos interrogations est cependant simple : Maven n'est pas
+La réponse à nos interrogations est cependant simple : Maven n'est pas
 un magicien et il ne peut gérer les dépendances entre bibliothèques que
 grâce aux métadonnées qu'il extrait des fichiers POM de chacune. La
 qualité de ces informations est déterminante pour obtenir une gestion
@@ -1481,12 +1480,12 @@ Maven a bien du mal à s'y retrouver.
 La bibliothèque commons-logging en est une bonne illustration. Il s'agit
 d'une bibliothèque qui sert de façade pour passer de manière
 transparente d'un outil de log à un autre, par exemple de log4j au
-mécanisme intégré dans java à partir de la version 1.4, ou encore à
+mécanisme intégré dans Java à partir de la version 1.4, ou encore à
 logkit, un autre outil comparable.
 
 Le fichier POM de commons-logging déclare donc des dépendances vers
 toutes les bibliothèques de log qu'il supporte. La déclaration Maven
-correcte devrait être :
+correcte devrait être :
 
 [source, xml]
 -------------------------------------------------------------------------------
@@ -1506,10 +1505,10 @@ correcte devrait être :
 -------------------------------------------------------------------------------
 
 L'élément <optional> permet de préciser la version de la bibliothèque
-pour laquelle le projet a été conçu, mais que son utilisation n'est pas
+pour laquelle le projet a été conçu, mais dont l'utilisation n'est pas
 nécessaire et ne correspond qu'à un cas particulier. Pour le malheur de
 nombreux utilisateurs, les développeurs de commons-logging ont cependant
-"oublié" de préciser ce caractère optionnel jusqu'à la version 1.1.1.
+« oublié » de préciser ce caractère optionnel jusqu'à la version 1.1.1.
 C'est pour cette raison que nous retrouvons avalon-framework-4.1.3.jar
 dans nos bibliothèques.
 
@@ -1525,18 +1524,18 @@ besoin et prennent plus de soin à définir des dépendances fiables.
 Pour les versions anciennes cependant, une mise à jour n'est pas
 possible, car la politique de l'équipe qui gère le dépôt de
 bibliothèques de référence est de ne jamais modifier un POM qui a été
-publié, en raison du grand nombre de miroirs et de caches utilisés par
-la communauté : un fichier modifié signifierait qu'un miroir pourrait ne
+publié, en raison du grand nombre de miroirs et de caches utilisé par
+la communauté : un fichier modifié signifierait qu'un miroir pourrait ne
 pas fournir la même version que le dépôt de référence, ce qui pourrait
 introduire des bogues insurmontables dans les projets. Sans compter que
 chaque utilisateur devrait manuellement purger son dépôt local pour
-forcer Maven à récupérer la version corrigée !
+forcer Maven à récupérer la version corrigée !
 
 Maven possède heureusement une solution de contournement. Lorsque nous
 définissons une dépendance, nous pouvons exclure certains éléments de la
 transitivité. Ainsi, si nous voulons empêcher Spring – qui utilise
 commons-logging – d'introduire sur notre projet ce fameux JAR
-avalon-framework, nous pouvons écrire :
+avalon-framework, nous pouvons écrire :
 
 [source, xml]
 -------------------------------------------------------------------------------
@@ -1560,7 +1559,7 @@ de classes qui masquent d'autres outils de log. Leur projet est donc
 séparé en une API et des adaptateurs vers chaque outil supporté. Pour
 éviter à certains d'utiliser par mégarde une classe d'un adaptateur et
 pas seulement celles de l'API, ils ont mis à disposition une archive JAR
-ne contenant que les classes utilisables par les développeurs :
+ne contenant que les classes utilisables par les développeurs :
 commons-logging-api.
 
 Là où les choses se corsent, c'est que ces mêmes classes se retrouvent
@@ -1570,14 +1569,14 @@ indépendantes pour lesquelles aucune règle de conflit ne peut
 s'appliquer.
 
 Il n'existe malheureusement aucune solution miracle pour indiquer qu'une
-bibliothèque donnée est en réalité un sous-ensemble d'une autre et gérer
+bibliothèque donnée est en réalité un sous-ensemble d'une autre, et pour gérer
 des conflits de version entre elles. Une gestion propre du développement
 de la bibliothèque aurait dû aboutir à la séparation de
 commons-logging-api et d'un second artefact complémentaire, mais pas
 redondant. À vouloir répondre aux demandes contradictoires des
 utilisateurs (un seul JAR avec tout le nécessaire, des JAR focalisés sur
 un aspect donné…) le projet perd en cohésion et les utilisateurs
-rencontrent au final des difficultés qu'on aurait dû leur épargner.
+rencontrent finalement des difficultés qu'on aurait dû leur épargner.
 
 Nous avons vu que les <exclusions> permettent de corriger ces erreurs de
 métadonnées. Reste à faire le tri dans nos dépendances pour trouver ces
@@ -1589,7 +1588,7 @@ possible.
 ==== L'analyse des dépendances
 
 Avec le nombre de frameworks que nous avons intégrés à l'application, il
-devient difficile de savoir qui introduit quelle dépendance. Même si les
+devient difficile de savoir lequel introduit quelle dépendance. Même si les
 exclusions peuvent permettre de corriger le tir, encore faut-il savoir
 sur quelles dépendances les déclarer.
 
@@ -1675,10 +1674,10 @@ Downloading: http://repo1.maven.org/maven2/org/geeks/jcr-on-cassandra/1.8.0.10/j
 [INFO] ------------------------------------------------------------------------
 -------------------------------------------------------------------------------
 
-« WTF ? » comme on dit outre-atlantique footnote:[Je vous laisse chercher la signification de cet acronyme, couramment employé pour désigner tout ce qui ne marche pas comme prévu, comme en témoigne le site http://thedailywtf.com - notre éditrice nous encourage à traduire ce dernier par « Saperlipopette », « Diantre » ou « Morbleu »], ce que nous ne
+« WTF ? » comme on dit outre-Atlantique footnote:[Je vous laisse chercher la signification de cet acronyme, couramment employé pour désigner tout ce qui ne marche pas comme prévu, comme en témoigne le site http://thedailywtf.com - notre éditrice nous encourage à traduire ce dernier par « Saperlipopette », « Diantre » ou « Morbleu »], ce que nous ne
 traduirons pas ici par respect pour nos lecteurs et la qualité de ce
 récit. Maven s’acharne – et échoue – à télécharge la bibliothèque
-jcr-on-cassandra :
+jcr-on-cassandra :
 
 -------------------------------------------------------------------------------
 [ERROR] Failed to execute goal on project demo:
@@ -1696,7 +1695,7 @@ image:MangaArnaud.png[float="left"]
 
 Arnaud vient faire un prélèvement ADN dans le projet d’exemple qui a
 inspiré Emmanuel pour sa démo. Il en extrait une déclaration de
-dépôthttp://repository.geek.org/[] qu’il place sous scellés pour la
+dépôt http://repository.geek.org/[] qu’il place sous scellés pour la
 suite de l’enquête.
 
 [source, xml]
@@ -1710,8 +1709,8 @@ suite de l’enquête.
 image:MangaNicolas.png[float="left"]
 
 Nicolas fouille le dépôt local d’Emmanuel à la recherche d’indices. Sous
-sa lampe à Ultra-violet, le Luminol met en évidence des traces de
-méta-données. Un échantillon est prélevé pour analyse.
+sa lampe à ultraviolet, le Luminol met en évidence des traces de
+métadonnées. Un échantillon est prélevé pour analyse.
 
 Figure 02-04
 
@@ -1720,7 +1719,7 @@ Contenu du dépôt local pour la bibliothèque jcr-on-cassandra.
 image:MangaVincentM.png[float="left"]
 
 Au labo, Vincent analyse nos indices. Le fichier__maven.repositories
-attire particulièrement son attention :
+attire particulièrement son attention :
 
 -------------------------------------------------------------------------------
 #NOTE: This is an internal implementation file, its format can be changed without prior notice.
@@ -1734,8 +1733,8 @@ Le compte-rendu de nos experts fournit l’explication.
 [[Depots_et_dependances_2]]
 ==== Dépôts et dépendances
 
-Maven utilise par défaut un dépôt nommé central, qui héberge un vaste
-choix de bibliothèques open-source. Pour une grande majorité de
+Maven utilise par défaut un dépôt nommé _central_, qui héberge un vaste
+choix de bibliothèques Open Source. Pour une grande majorité de
 développements, ce dépôt sera suffisant pour nous fournir toutes les
 dépendances nécessaires. Il arrive cependant régulièrement qu’un projet
 ne contribue pas à ce dépôt et préfère héberger son propre dépôt
@@ -1744,14 +1743,14 @@ une meilleure maîtrise de ses infrastructures.
 
 Pour accéder à un dépôt de ce type, Maven nous demande de l’ajouter
 explicitement à notre POM, sous forme d’un bloc <repository> comme celui
-qu’Arnaud a identifié dans le projet d’exemple de jcr-on-cassandra :
+qu’Arnaud a identifié dans le projet d’exemple de jcr-on-cassandra :
 
 [source, xml]
 -------------------------------------------------------------------------------
 <repository>
     <id>identifiant unique du dépôt</id>
     <url>emplacement du dépôt, en général via http</url>
-    <layout>format du dépôt, « legacy » pour les dépôts maven1 antédiluviens, non supportés par Maven 3</url>
+    <layout>format du dépôt, « legacy » pour les dépôts maven1 antédiluviens, non supportés par Maven 3</url>
 </repository>
 -------------------------------------------------------------------------------
 
