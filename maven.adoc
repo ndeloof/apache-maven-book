@@ -11838,10 +11838,10 @@ couper l’herbe sous le pied des outils alternatifs.
 
 image:IMF.png[]
 
-Maven 3 permet de désolidariser Maven (l’outil) de la lecture du moèle
+Maven 3 permet de désolidariser Maven (l’outil) de la lecture du modèle
 POM : l’élément modelVersion va pouvoir jouer son rôle et permettre
 d’introduire des évolutions dans ce format, sans empêcher les
-tuilisateurs de l’utiliser depuis une autre version de Maven – il
+utilisateurs de l’utiliser depuis une autre version de Maven – il
 suffira d’obtenir depuis le dép*ô*t la version associée du modèle. On
 attend ainsi la simplification de certaines opérations pénibles sur les
 POM, comme l’exclusion globale d’un artefact (plutôt que de devoir
@@ -12622,7 +12622,7 @@ relevé avec panache, merci Pascal !
 === Java Modules
 
 Geegol Shopping List a reçu de la part du public un accueil sans
-précédent. Ballayé Facebook, oublié Twitter, tout le monde ne parle plus
+précédent. Balayé Facebook, oublié Twitter, tout le monde ne parle plus
 que de ShoppingList, Shop comme disent les d’jeuns : « Je vais Shopper
 le dernier album de Riana ». Cette notoriété nous vaut une invitation
 pour présenter notre infrastructure à Devoxx, la grand-messe annuelle de
