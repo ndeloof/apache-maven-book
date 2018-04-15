@@ -2134,8 +2134,8 @@ ajoutons :
 [TIP]
 ====
 Vous constaterez, si vous utilisez un éditeur XML, que l'élément version
-n'est pas obligatoire pour les plugins. Le comportement de Maven se
-traduit alors par prendre la « dernière version stable disponible ». C’est
+n'est pas obligatoire pour les plugins. Le comportement de Maven
+consiste alors à prendre la « dernière version stable disponible ». C’est
 une fausse bonne idée ! En effet, si vous reprenez une version de votre
 projet d'il y a six mois pour une correction urgente, vous risquez de ne
 pas utiliser le même plugin que prévu initialement. Si la compatibilité
@@ -2406,7 +2406,7 @@ vie d'un projet JAR
 |test-compile |maven-compiler-plugin |testCompile
 |test |maven-surefire-plugin |Test
 |package |maven-jar-plugin |Jar
-|intall |maven-install-plugin |Install
+|install |maven-install-plugin |Install
 |deploy |maven-deploy-plugin |Deploy
 |=============================================================
 
