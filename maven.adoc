@@ -2767,21 +2767,21 @@ rapidement productif, sans devoir passer par un long « guide de
 démarrage » précisant les bibliothèques à utiliser et le rôle de chaque
 paramètre.
 
-== Chapitre 4 : Mettre en place des tests unitaires
+== Chapitre 4 : Mettre en place des tests unitaires
 
 Le petit projet initial est maintenant de l'histoire ancienne. Sous
 l'impulsion de contributeurs enthousiastes, de nombreuses
 fonctionnalités sont venues l'enrichir. Il propose aujourd'hui une
 multitude de services tous aussi indispensables les uns que les autres.
 La diversité des contributions introduit cependant une nouvelle
-difficulté : le projet est devenu quelque peu chaotique et relativement
+difficulté : le projet est devenu quelque peu chaotique et relativement
 hétérogène. À tel point qu'il devient délicat d'introduire une nouvelle
-fonction sans risquer de "casser" quelque chose.
+fonction sans risquer de « casser » quelque chose.
 
 La solution, nous la connaissons déjà. Il est nécessaire de passer par
 une phase de réingénierie (_refactoring_) pour mieux structurer notre
 code et le simplifier, l’assouplir, le rendre extensible, adaptable,
-bref : meilleur. Ce travail nécessite cependant de s'assurer que les
+bref : meilleur. Ce travail nécessite cependant de s'assurer que les
 services rendus resteront les mêmes après ces modifications.
 
 Aujourd'hui déjà, quelle que soit l'évolution que l'on désire apporter
@@ -2789,7 +2789,7 @@ au logiciel, fonctionnelle ou purement technique, nous sommes contraints
 d'une façon ou d'une autre de vérifier les éventuelles erreurs et
 incompatibilités que nous pourrions introduire involontairement. Nous
 passons donc beaucoup de temps à tester l'application afin de voir si
-elle continue de fonctionner "comme avant".
+elle continue de fonctionner « comme avant ».
 
 === Tester ? Pour quoi faire ?
 
@@ -2813,27 +2813,27 @@ précédente.
 Une fonctionnalité qui disparaît ou se dégrade dans la version suivante,
 c'est autant d'utilisateurs mécontents. Sans compter les nombreuses
 heures perdues à identifier le problème et à lui trouver une solution
-acceptable dans l'urgence : souvent un simple compromis avec la solution
-"idéale" que l'on aimerait mettre en place mais qui nécessiterait trop
+acceptable dans l'urgence : souvent un simple compromis avec la solution
+« idéale » que l'on aimerait mettre en place, mais qui nécessiterait trop
 de travail ou introduirait de nouveaux risques.
 
 Cependant, passer des tests a un coût, surtout si l'on accumule les
-tests ajoutés par de nombreuses versions du logiciel. Reposer sur le
-seul humain pour cette tâche, c'est s'exposer à de nombreux risques :
+tests ajoutés par de nombreuses versions du logiciel. Se reposer sur le
+seul humain pour cette tâche, c'est s'exposer à de nombreux risques :
 
-* Le coût du passage des tests, considérant la main-d'œuvre employée
-à plein-temps à cette tâche.
-* Le temps de réaction lorsqu'un problème a été introduit par une
+* le coût du passage des tests, considérant la main-d'œuvre employée
+à plein-temps à cette tâche ;
+* le temps de réaction lorsqu'un problème a été introduit par une
 modification. Plus tard on s'en rendra compte, plus la correction à
-apporter sera délicate.
-* La rigueur du passage des tests, si l'on considère que l'être
+apporter sera délicate ;
+* la rigueur du passage des tests, si l'on considère que l'être
 humain se lasse vite de tâches répétitives et peu porteuses de
 créativité.
 
-==== Automatisons !
+==== Automatisons !
 
 Pour limiter ces risques, il existe une pratique simple et
-particulièrement efficace : l'automatisation des tests ! Un mécanisme
+particulièrement efficace : l'automatisation des tests ! Un mécanisme
 automatique ne coûte pas grand-chose à l'exécution. En dehors de la
 machine qu'il monopolise, il ne réclame pas d'augmentation ni de congés.
 Il peut être très rapide et ne se lasse pas de ce qu'on lui demande de
@@ -2841,17 +2841,17 @@ faire. Même après des centaines de répétitions, il sera tout aussi
 regardant sur le résultat qu'il est censé vérifier. Nous devons donc
 voir les tests comme un traitement informatique intégré dans notre
 projet. La création des tests, même si elle a un coût, est avant tout un
-investissement qui nous prémunit des régressions dans le futur et
-améliore l'évolutivité de notre logiciel en levant l'angoisse : "Je ne
-touche pas au cas où je casserais quelque chose." Les tests automatisés
+investissement qui nous prémunit des régressions dans le futur, et qui
+améliore l'évolutivité de notre logiciel en levant l'angoisse : « Je ne
+touche pas au cas où je casserais quelque chose. » Les tests automatisés
 sont un véritable vecteur pour l'amélioration de la productivité des
 équipes puisqu'ils leur permettent de se concentrer sur le logiciel en
 toute quiétude même si une partie importante du code doit être
-_refactorée_.
+_refactorisée_.
 
 La solution la plus élémentaire pour mettre en place des tests
 automatisés consiste à intégrer dans le code des fragments de tests, en
-général sous forme d'une méthode main chargée de vérifier le
+général sous forme d'une méthode _main_ chargée de vérifier le
 fonctionnement de la classe qui la définit, comme dans l'exemple du
 Listing 4.1.
 
@@ -2875,7 +2875,7 @@ public class ListeDeCoursesReader {
 -------------------------------------------------------------------------------
 
 Cette pratique est cependant très discutable. D'une part, elle nécessite
-de passer par un lanceur qui va exécuter toutes les méthodes main des
+de passer par un lanceur qui va exécuter toutes les méthodes _main_ des
 tests, l'automatisation n'est donc pas complète. Ensuite, notre projet
 va embarquer dans son code binaire le code de test, qui n'a pas grand
 intérêt pour les utilisateurs. Si l'augmentation de la taille du fichier
@@ -2889,7 +2889,7 @@ développement Java.
 Pour améliorer la capacité de notre test à identifier un problème, nous
 allons contrôler le contenu de l'objet ListeDeCourses lu lors de
 l'exécution du test. Nous nous basons donc sur une comparaison entre un
-objet ListeDeCourses ttendu et l'objet ListeDeCourses effectivement
+objet ListeDeCourses attendu et l'objet ListeDeCourses effectivement
 construit lors de l'exécution du test. Pour ne pas devoir écrire la
 comparaison entre ces deux objets (attendu _vs_ effectif), nous faisons
 appel à la classe BeanComparator de la bibliothèque éprouvée
@@ -2897,7 +2897,7 @@ commons-beanutils footnote:[http://commons.apache.org/beanutils/] qui fait ce tr
 seule ligne de code, ce qui rend le test plus simple et plus lisible.
 Inutile de réinventer la roue et de venir compliquer le code alors que
 cette classe simplifie tellement la tâche et nous permet de nous
-focaliser sur notre objectif : tester de manière automatique autant de
+focaliser sur notre objectif : tester de manière automatique autant de
 fonctionnalités que possible. Le Listing 4.2 montre cette évolution de
 notre méthode de test.
 
@@ -2919,50 +2919,50 @@ notre méthode de test.
 
 Très fiers de notre mécanisme de test automatisé, nous lançons donc la
 version fraîchement compilée de l'application sur notre serveur de test.
-Et là, c'est la douche froide :
+Et là, c'est la douche froide :
 
 ClassNotFoundException org.apache.commons.beanutils.BeanComparator
 
-Que s'est-il passé ? L'introduction d'une nouvelle bibliothèque pour
+Que s'est-il passé ? L'introduction d'une nouvelle bibliothèque pour
 simplifier l'écriture du test a créé des imports dans le code, imports
-qui ne peuvent être résolus sur le serveur de test car nous n'avons pas
+qui ne peuvent être résolus sur le serveur de test, car nous n'avons pas
 ajouté la bibliothèque commons-beanutils à l'environnement de test. Cela
 n'aurait aucun sens car, en dehors de ce test, elle n'est absolument pas
-nécessaire !
+nécessaire !
 
 Faut-il alors renoncer à utiliser des bibliothèques dans les tests et se
-contenter du seul JDK ? Bien sûr que non ! Cela voudrait dire que nous
+contenter du seul JDK ? Bien sûr que non ! Cela voudrait dire que nous
 plaçons les tests au second plan et que nous nous interdisons d'en faire
 quelque chose d'intelligent et de facile à écrire. De toute évidence, la
-solution de la méthode main pour tester montre de graves limites.
+solution de la méthode _main_ pour tester montre de graves limites.
 
 ==== Utiliser un framework de test
 
 Nous ne sommes pas les premiers à faire ce constat, et la réponse existe
 depuis bien longtemps à travers des outils de test spécialisés pour
-Java, dont le plus connu d'entre eux est jUnit footnote:[Il existe deux variantes majeures de jUnit, jUnit3 et jUnit4, la seconde utilisant la syntaxe java5 que nous avons retenu pour notre exemple].
+Java, dont le plus connu d'entre eux est jUnit footnote:[Il existe deux variantes majeures de jUnit, jUnit3 et jUnit4, la seconde utilisant la syntaxe java5 que nous avons retenue pour notre exemple.].
 
-Ces outils reposent sur des principes simples :
+Ces outils reposent sur des principes simples :
 
-* Le test associé à une classe est écrit dans une classe Java
+* le test associé à une classe est écrit dans une classe Java
 séparée implantant ce framework, qu'on nomme par convention du nom de la
-classe testée avec le suffixe "Test".
-* Chaque test à réaliser est traduit par une méthode dédiée dans la
-classe de test.
-* L'outillage propose des mécanismes d'initialisation et de
+classe testée avec le suffixe « Test » ;
+* chaque test à réaliser est traduit par une méthode dédiée dans la
+classe de test ;
+* l'outillage propose des mécanismes d'initialisation et de
 libération qui permettent de préparer les conditions d'exécution du test
 et de fermer proprement les ressources après son exécution, même en cas
-d'erreur.
-* L'outillage fournit des méthodes utilitaires pour les opérations
-courantes de vérification du bon fonctionnement du logiciel.
-* L'outillage de test se charge d'identifier tous les tests à
-exécuter et de les enchaîner, en fournissant au final un rapport complet
+d'erreur ;
+* l'outillage fournit des méthodes utilitaires pour les opérations
+courantes de vérification du bon fonctionnement du logiciel ;
+* l'outillage de test se charge d'identifier tous les tests à
+exécuter et de les enchaîner, en fournissant finalament un rapport complet
 des éventuelles erreurs rencontrées.
 
 Pour tester notre ListeDeCoursesReader avec jUnit, nous allons donc
 écrire une classe ListeDeCoursesReaderTest, y créer une méthode
-testLectureDeuxElements et y transférer notre code de test. Le
-Listing 4.3 montre cette transformation de notre code
+testLectureDeuxElements, et y transférer notre code de test. Le
+Listing 4.3 montre cette transformation de notre code :
 
 [source, java]
 .Listing 4.3 : Utilisation de jUnit
@@ -2995,9 +2995,9 @@ ou IntelliJ Idea.
 L'objectif de cet ouvrage n'est pas de détailler le fonctionnement de
 jUnit. Nous ne pouvons donc que vous conseiller de consulter le site
 junit.org et les nombreux ouvrages consacrés au sujet. Signalons
-cependant que jUnit n'est pas le seul candidat pour l'écriture de tests
+cependant que jUnit n'est pas le seul candidat pour l'écriture de tests,
 et qu’il partage ce terrain en particulier avec son challenger TestNG et
-avec sa propre version "modernisée" jUnit4. Chacun a ses points forts,
+avec sa propre version « modernisée » jUnit4. Chacun a ses points forts,
 aussi nous vous laissons choisir l'outil le plus approprié à vos besoins
 et à vos habitudes de travail.
 
@@ -3023,7 +3023,7 @@ Maven rejoint totalement cette logique et fait même des tests un élément
 de premier plan du projet, au même niveau que le code de l'application
 lui-même. Pour suivre la logique des outils de test comme jUnit ou
 TestNG, Maven définit deux répertoires dans la structure de fichiers du
-projet : src/main/java pour le livrable, src/test/java pour les tests.
+projet : src/main/java pour le livrable, src/test/java pour les tests.
 La séparation entre classes du projet et classes de test qui l'outillent
 est ainsi directement portée par l'emplacement physique des fichiers
 sources.
@@ -3034,14 +3034,14 @@ mvn test pour constater que Maven prend bien en charge la compilation et
 l'exécution du test.
 
 Cependant, notre ListeDeCoursesReaderTest comprend encore une faiblesse
-notable : il fait appel à un fichier pour alimenter la classe testée.
+notable : il fait appel à un fichier pour alimenter la classe testée.
 Comment obtenir le chemin de ce fichier de manière totalement
-indépendante de l'environnement ? Il est évidemment exclu de donner un
-chemin en dur "C:/Utilisateurs/Nicolas/test/liste.list" qui serait assez
+indépendante de l'environnement ? Il est évidemment exclu de donner un
+chemin en dur « C:/Utilisateurs/Nicolas/test/liste.list » qui serait assez
 désastreux sur une machine non Windows ou sur un autre poste de travail
 qui ne serait pas organisé de la même manière.
 
-Nous avons donc utilisé un chemin relatif "test/liste.list", en
+Nous avons donc utilisé un chemin relatif « test/liste.list », en
 supposant implicitement que le test serait lancé depuis la racine du
 projet où est placé ce fichier. Si cela fonctionne assez souvent, nous
 sommes cependant un peu optimistes. C'est la raison d'être du répertoire
@@ -3050,7 +3050,7 @@ test et d'y avoir accès à l'exécution du test _via_ le ClassPath. Le
 Listing 4.4 montre l'évolution de notre code de test pour accéder à ce
 fichier de cette manière. Tous les fichiers de données que nous
 utiliserons pour nos tests seront placés sous src/test/resources. Ils
-seront ainsi intégré au ClassPath de test, mais exclus du binaire final.
+seront ainsi intégrés au ClassPath de test, mais exclus du binaire final.
 Ils seront également totalement intégrés au projet et enregistrés dans
 notre gestionnaire de version.
 
@@ -3075,7 +3075,7 @@ Si vous devez expressément utiliser un type java.io.File, ne supposez
 pas que le répertoire courant est forcément la racine du projet (nous
 verrons au Chapitre 7 que ce n'est pas toujours le cas). Maven fournit
 la variable système basedir qui pointe à la racine du projet. Utilisez
-donc :
+donc :
 
 -------------------------------------------------------------------------------
 File basedir = new File( System.getProperty( "basedir", "" )  ).getAbsoluteFile();
@@ -3083,27 +3083,27 @@ File monFichier = new File( basedir, "chemin/relatif" ) ;
 -------------------------------------------------------------------------------
 ====
 
-==== Le scope "test"
+==== Le scope « test »
 
 Nous avons vu que la bibliothèque commons-beanutils nous a joué un
 mauvais tour. Bien pratique pour simplifier l'écriture de notre test,
 elle venait perturber notre application. Maintenant que le test possède
 sa propre classe dédiée, ce problème est en principe résolu. Cependant,
-les utilisateurs d'IDE font confiance à leur environnement pour gérer
+les utilisateurs d'EDI font confiance à leur environnement pour gérer
 les imports et peuvent se faire piéger à nouveau. Il est si facile
 d'ajouter un import en saisissant juste le début du nom d'une classe
 qu'il n'est pas rare de terminer son travail avec quelques imports
-inutiles. L'IDE peut également faire le ménage pour nous, mais qu’il
+inutiles. L'EDI peut également faire le ménage pour nous, mais qu’il
 laisse passer une coquille par mégarde n'est pas exclu.
 
-Contrairement à un projet dans les IDE courants, un projet Maven a deux
-visages bien définis : la branche principale (src/main), portant le code
+Contrairement à un projet dans les EDI courants, un projet Maven a deux
+visages bien définis : la branche principale (src/main), portant le code
 de l'application et les dépendances qui lui sont associées dans le POM,
 et la branche test (src/test), portant l'outillage de contrôle ainsi que
 ses dépendances dédiées. En effet, une dépendance déclarée dans le POM
-porte une indication de scope, qui permet à Maven de savoir quand telle
+porte une indication de _scope_, qui permet à Maven de savoir quand telle
 ou telle bibliothèque doit être utilisée par les outils de compilation.
-Lorsque le scope porte la valeur test, il est exclu de l'application et
+Lorsque le _scope_ porte la valeur test, il est exclu de l'application et
 ne sera utilisé que pour la compilation et l'exécution des tests.
 
 [source, xml]
@@ -3116,7 +3116,7 @@ ne sera utilisé que pour la compilation et l'exécution des tests.
     </dependency>
 -------------------------------------------------------------------------------
 
-Si l'assistance de l'IDE nous a fait intégrer par erreur des classes
+Si l'assistance de l'EDI nous a fait intégrer par erreur des classes
 normalement dédiées à notre outillage de test, la compilation par Maven
 échouera en signalant immédiatement le problème. Nous pouvons donc faire
 appel à tous les utilitaires possibles et imaginables qui nous aideront
@@ -3125,9 +3125,9 @@ l'application.
 
 Le choix d'outils de tests est parfois plus délicat que le choix de
 l'infrastructure de notre logiciel. Pour être pertinents et bien couvrir
-les besoins, les tests doivent rester simples et performants et peuvent
+les besoins, les tests doivent rester simples et performants et pouvoir
 utiliser les ressources de nombreuses bibliothèques. La gestion de
-dépendances transitive de Maven nous ouvre les portes d'outils de test
+dépendances transitives de Maven nous ouvre les portes d'outils de test
 et de simulation très avancés, avec une simplicité de mise en œuvre
 déconcertante.
 
@@ -3136,7 +3136,7 @@ déconcertante.
 
 Les tests automatisés que nous venons d'ajouter à notre projet nous
 offrent un garde-fou intéressant. À de nombreuses reprises, ils nous
-signalent qu'une "petite modification" s'avère bien plus significative
+signalent qu'une « petite modification » s'avère bien plus significative
 que ce que nous avions pensé.
 
 image:MangaVincentM.png[float="left"]
@@ -3152,12 +3152,12 @@ perturbe pas le code existant, mais Vincent va plus loin. Avant même que
 nous n’ayons déterminé comment nous allions lire ces nouvelles données
 depuis le fichier, il commence à écrire une nouvelle méthode de test
 vérifiant que les informations supplémentaires ont été correctement
-lues. Aurait-il "oublié" que, pour que le logiciel fonctionne, il faut à
-un moment ou un autre réaliser son code ?
+lues. Aurait-il « oublié » que, pour que le logiciel fonctionne, il faut à
+un moment ou un autre réaliser son code ?
 
 Une fois son test écrit, Vincent le lance et ne semble même pas vexé de
 voir son écran afficher dans un rouge sang le résultat assez
-prévisible :
+prévisible :
 
 -------------------------------------------------------------------------------
 FAILURE
@@ -3173,7 +3173,7 @@ au vert. La différence est étonnamment efficace en termes de
 structuration du logiciel. Plutôt que d'être guidé par des contraintes
 techniques ou par des considérations de pur informaticien, chaque
 élément du logiciel n'existe que parce que la bonne exécution d'un test
-nécessitait son existence. Comme chaque test est guidé par un besoin,
+nécessite son existence. Comme chaque test est guidé par un besoin,
 écrit avant même que l'on n’ait commencé à se torturer l'esprit avec la
 réalisation, le code répond de manière simple et juste aux besoins.
 
@@ -3185,17 +3185,17 @@ purement techniques qui n'apportent rien à l'utilisateur.
 Vincent a donc écrit d'abord une méthode de test simple, focalisée sur
 sa nouvelle idée et uniquement guidée par ce qu'il attend du logiciel et
 non pas par l'idée qu'il a derrière la tête concernant les technologies
-qui vont l'aider ou le code qu'il va mettre en œuvre. Après cette phase
+qui vont l'aider, ou le code qu'il va mettre en œuvre. Après cette phase
 préparatoire qu'on pourrait qualifier dans un vocabulaire plus
 traditionnel d'expression de besoin, Vincent est content de voir son
-test échouer : le test est valide et vérifie bien quelque chose que
+test échouer : le test est valide et vérifie bien quelque chose que
 l'application ne fournit pas encore. Ne riez pas, trop souvent des tests
 ne font qu'effleurer l'application et n'échouent pas si l'on supprime le
-code censé être testé !
+code censé être testé !
 
 Vincent commence ensuite la réalisation. Après quelques lignes de code,
 le test lancé à nouveau échoue encore mais sur un cas d'erreur moins
-abrupt :
+abrupt :
 
 -------------------------------------------------------------------------------
 FAILURE
@@ -3204,7 +3204,7 @@ Assertion Failed : actual 1, expected 2
 -------------------------------------------------------------------------------
 
 Le code commence donc à se mettre en place mais ne répond pas encore aux
-attentes. Quelques minutes plus tard et après que les corrections qui
+attentes. Quelques minutes plus tard et après les corrections qui
 s'imposent ont été apportées, le test passe enfin au vert.
 
 Cette façon de travailler est un moyen très puissant de structurer ses
@@ -3220,8 +3220,8 @@ La réalisation du code qui répond à son test lui a permis d'identifier
 de nouvelles portions de code très proches d'autres déjà existantes. Il
 aimerait bien les regrouper dans des méthodes communes. La duplication
 de code est l'ennemi d'un logiciel évolutif et fiable, aussi Vincent
-applique le second commandement du développement piloté par les tests :
-DRY (Don't Repeat Yourself – "Tu ne te répéteras pas").
+applique le second commandement du développement piloté par les tests :
+DRY (Don't Repeat Yourself – « Tu ne te répéteras pas »).
 
 Armé de ses tests, tous focalisés sur des aspects unitaires ou
 fonctionnels de l'application, il peut faire toutes les opérations de
@@ -3230,10 +3230,10 @@ de structuration. Chaque modification apportée est contrôlée par les
 tests existants qui assurent ainsi que le logiciel reste
 fonctionnellement équivalent. L'outillage de test en place permet à
 présent de se focaliser sur des aspects purement techniques, pour ne pas
-dire esthétiques, concernant l'organisation de notre code. Niveau
+dire esthétiques, concernant l'organisation de notre code : niveau
 d'abstraction, évolutivité, lisibilité. Chaque modification que nous lui
 apporterons afin d'en améliorer la qualité pourra être validée d'un
-point de vue des fonctions rendues par l'application : nos tests doivent
+point de vue des fonctions rendues par l'application : nos tests doivent
 tous rester au vert. Certaines modifications lourdes et pourtant
 importantes n'auraient jamais été réalisées en confiance sans cette
 garantie.
@@ -3244,7 +3244,7 @@ image:04-01.png[align="center"]
 Développement piloté par les tests.
 
 Le développement piloté par les tests est une pratique préconisée par de
-nombreuses méthodes agiles footnote:[On appelle "méthodes agiles" un ensemble de méthodes de travail qui cassent le mythe du projet bien planifié pour préférer une approche réactive. Voir http://fr.wikipedia.org/wiki/Méthode_agile]. Sa mise en œuvre efficace
+nombreuses méthodes agiles footnote:[On appelle « méthodes agiles » un ensemble de méthodes de travail qui cassent le mythe du projet bien planifié pour préférer une approche réactive. Voir http://fr.wikipedia.org/wiki/Méthode_agile]. Sa mise en œuvre efficace
 nécessite une culture du test automatisé pour être réellement efficace.
 Maven participe à cette démarche par la place qu'il donne au test dans
 le cycle de vie du projet. Les tests vus par Maven sont des éléments de
@@ -3256,21 +3256,21 @@ premier plan du projet.
 Le passage des tests par Maven fait partie des phases standard de
 construction du projet. Maven les place au cœur de la gestion de la
 qualité et fait le choix de bloquer la construction du projet si un test
-échoue. Comme ces tests sont exécutés avant que la phase de packaging
+échoue. Comme ces tests sont exécutés avant que la phase de _packaging_
 qui construit le JAR ne soit exécutée, Maven interdit donc de construire
 un livrable qui ne passe pas avec succès tous les tests définis par le
 projet. C'est une interprétation rigoureuse des principes de qualité
-logicielle mais qui évite d'utiliser par mégarde un JAR fraîchement
+logicielle, mais qui évite d'utiliser par mégarde un JAR fraîchement
 compilé et de découvrir de manière détournée et coûteuse un bogue qui
 est déjà contrôlé par un test unitaire.
 
 image:MangaFabrice.png[float="left"]
 
 Interdire la construction du JAR, n'est-ce pas un peu abrupt comme prise
-de position ? C'est en tout cas l'avis de Fabrice, qui tue le temps dans
+de position ? C'est en tout cas l'avis de Fabrice, qui tue le temps dans
 le TGV en testant rapidement quelques nouvelles idées et qui ne parvient
 pas à lancer l'application. Ses modifications, réalisées en mode
-"exploratoire", ne visent qu'à tester un nouveau concept et certainement
+« exploratoire », ne visent qu'à tester un nouveau concept et certainement
 pas à obtenir un résultat stable et irréprochable.
 
 Maven met certes les concepts de qualité logicielle au premier plan mais
@@ -3282,14 +3282,14 @@ tranchant, soyez-en bien conscient. Elle peut être indispensable, comme
 le pense Fabrice qui peut ainsi vérifier la pertinence de son idée,
 auquel cas il pourra la présenter à son client à l'arrivée de son voyage
 d'affaires. C'est une option dangereuse si elle est trop utilisée et que
-nos tests automatisés ne soient plus exécutés.
+nos tests automatisés ne sont plus exécutés.
 
 [[Reutiliser_notre_outillage_de_test]]
 ==== Réutiliser notre outillage de test
 
 Au fur et à mesure de l'écriture des tests, nous avons dû développer des
-classes utilitaires qui n'ont de sens que dans le cadre des tests : code
-bouchon et simulateurs, mécanisme de contrôle et autres constituent un
+classes utilitaires qui n'ont de sens que dans le cadre des tests : code
+bouchon et simulateur, mécanisme de contrôle et autres constituent un
 outillage complet dédié à notre code afin que nous soyons en mesure de
 le tester convenablement.
 
@@ -3297,16 +3297,16 @@ image:MangaLukas.png[float="left"]
 
 En marge de notre projet, Lukas se lance dans un autre projet
 expérimental pour proposer une version sur téléphone mobile de notre
-application – une cible de choix qu'il ne faut pas négliger !
+application – une cible de choix qu'il ne faut pas négliger !
 
-Lukas est rapidement confronté à un problème simple : dans son
+Lukas est rapidement confronté à un problème simple : dans son
 environnement de développement, il dispose des deux projets et peut donc
 coder les tests de son projet noubliepaslalistedescourses-on-android en
 réutilisant nos utilitaires de test. Cet outillage lui simplifie
 grandement la tâche et lui permet d'écrire des tests pertinents et
 lisibles en un temps record. Seulement, lorsqu'il tente de construire
 son projet avec Maven, la compilation de ses tests échoue
-systématiquement : nos utilitaires ne sont pas vus par le compilateur.
+systématiquement : nos utilitaires ne sont pas vus par le compilateur.
 
 Cette situation en apparence paradoxale est simple à expliquer. La
 majorité des environnements de développement intégrés ne différencient
@@ -3323,16 +3323,16 @@ JAR final, et pas la panoplie de tests qui les accompagne.
 Copier-coller ces classes est évidemment hors de question, et nous ne
 pouvons demander à Lukas de réécrire entièrement ses tests sans ce code
 de support qui lui a fait gagner tant de temps. La solution, Maven la
-fournit _via_ le plugin jar, responsable de la construction de notre
+fournit _via_ le plugin JAR, responsable de la construction de notre
 archive.
 
-Comme nous l'avons vu, le plugin jar est attaché par défaut au cycle de
-construction du projet lors de la phase package et sa tâche jar
+Comme nous l'avons vu, le plugin JAR est attaché par défaut au cycle de
+construction du projet lors de la phase de packaging et sa tâche jar
 construit l'archive – rien de très surprenant. Ce plugin définit
-d'autres tâches, en particulier une qui va nous sauver la mise :
+d'autres tâches, en particulier une qui va nous sauver la mise :
 test-jar. Celle-ci permet de construire en parallèle du JAR du projet un
 second JAR, contenant cette fois les classes et ressources de test. Le
-Listing 4.5 montre la configuration associée au plugin jar pour obtenir
+Listing 4.5 montre la configuration associée au plugin JAR pour obtenir
 ce résultat. Le fonctionnement par défaut suffit à notre besoin, aussi
 l'ajout de ce traitement ne nécessite aucun élément de configuration
 particulier.
@@ -3361,16 +3361,16 @@ aspect secondaire de notre unique projet dont Maven se propose de gérer
 la construction. La différenciation entre l'artefact principal du projet
 et des résultats secondaires de ce type s’appuie sur un suffixe ajouté
 au nom de l'artefact, ce que dans le vocabulaire Maven on nomme un
-classifier. La tâche test-jar va construire un artefact nommé
+_classifier_. La tâche test-jar va construire un artefact nommé
 noubliepaslalistedescourses-1.0-SNAPSHOT-tests.jar.
 
 Maven peut être configuré pour produire plus d'un artefact lors de la
-construction du projet et le classifier permet de différencier les
+construction du projet et le _classifier_ permet de différencier les
 artefacts secondaires du principal résultat de la construction. Il est
 ainsi possible de construire non seulement le JAR du projet, mais aussi
 le JAR de ses tests, le JAR de son code source ou le JAR de sa
-documentation JavaDoc. Chacun de ses artefacts secondaires pourra être
-référencé comme une dépendance en ajoutant l'information de classifier
+documentation JavaDoc. Chacun de ces artefacts secondaires pourra être
+référencé comme une dépendance en ajoutant l'information de _classifier_
 adéquate, comme le montre le Listing 4.6 qui présente le POM du projet
 de Lukas.
 
@@ -3443,7 +3443,7 @@ rapidement ses bénéfices et les bonnes pratiques que vous pouvez en
 tirer.
 
 Le serveur qui va exécuter nos tests peut se baser sur l'un des nombreux
-outils disponibles. Nous citerons Continuum et Hudson, mais cette liste
+outils disponibles. Nous citerons Continuum, Jenkins et Hudson, mais cette liste
 est loin d'être exhaustive.
 
 ==== Continuum
@@ -3452,23 +3452,23 @@ Continuum a été développé par la communauté Maven, avec bien sûr pour
 objectif de prendre en charge de manière aussi intégrée que possible la
 structure des projets Maven et les relations de dépendance qu'ils
 peuvent entretenir. Il ne se limite cependant pas à ce type de projets
-et peut tout aussi bien accueillir vos projets Ant ou outillés par des
+et peut tout aussi bien accueillir vos projets Ant ou ceux outillés par des
 scripts.
 
 Son point fort est son excellente intégration des projets Maven. Sur
 détection d'un changement dans le gestionnaire de code source, Continuum
 va ainsi construire uniquement le projet impacté puis enchaîner avec
-tous les autres projets qui l'utilisent et pourraient être impactés de
+tous les autres projets qui l'utilisent et qui pourraient être impactés de
 manière indirecte par ce changement.
 
 Son premier point faible est son interface web qui ne bénéficie pas des
 raffinements auxquels nous ont habitués les applications web modernes.
-Un peu trop de configuration et de changement de page sont nécessaires
+Un peu trop de configuration et de changements de page sont nécessaires
 pour l'exploiter.
 
 Son second et principal point faible est l'absence de mécanismes
 d'extension permettant des contributions et des adaptations de l'outil à
-des contextes projets spécifiques, sans devoir entrer dans les rouages
+des contextes de projets spécifiques, sans devoir entrer dans les rouages
 très techniques de l'outil. Par ailleurs, la lenteur de son cycle de
 développement, qui ne propose une nouvelle version qu'après plusieurs
 mois, réduit sa capacité à proposer rapidement des évolutions à ses
@@ -3477,7 +3477,7 @@ utilisateurs.
 .Figure 04-02
 image:04-02.png[align="center"]
 
-Continuum en train de surveiller les projets de Maven2.
+Continuum en train de surveiller les projets de Maven 2.
 
 ==== Jenkins
 
@@ -3495,8 +3495,7 @@ bien qu'arrivé tardivement et longtemps considéré comme expérimental,
 est cependant d'un bon niveau et parfaitement fonctionnel.
 
 Les points forts de Jenkins sont la qualité de son interface web et
-l'extrême simplicité de son installation. Son principal point faible (en
-progrès constant) est l'intégration en constante amélioration mais
+l'extrême simplicité de son installation. Son principal point faible est l'intégration, en constante amélioration mais
 toujours perfectible des projets Maven, en particulier ceux répartis en
 plusieurs modules (voir Chapitre 6).
 
@@ -3509,21 +3508,21 @@ logiciel extrêmement réactif et porteur de nombreuses innovations.
 image:04-03.png[align="center"]
 
 Jenkins, en train de surveiller sa propre construction, respectant
-l'adage anglo-saxon « eat your own dog food » (« mange ta propre
-nourriture pour chien »)
+l'adage anglo-saxon « eat your own dog food » (« mange toi-même la
+nourriture de ton chien »).
 
 ==== Hudson
 
 Hudson est le cousin de Jenkins. Suite au rachat de SUN par Oracle, ce
-dernier a fait valoir ses droits sur le nom « hudson », marque déposée
+dernier a fait valoir ses droits sur le nom « Hudson », marque déposée
 et nom historique du projet. Voulant imposer ses règles à la communauté
-des développeurs, Oracle a provoqué un divorce,  qualifiée de fork dans
-le vocabulaire de l'open-source. Ainsi est né Jenkins d'une part,
+des développeurs, Oracle a provoqué un divorce, qualifiée de _fork_ dans
+le vocabulaire de l'Open Source. Ainsi est né Jenkins d'une part,
 continuité naturelle du projet, et Oracle Hudson® de l'autre, développé
 et supporté par Oracle et ses partenaires.
 
 Techniquement parlant, les deux projets sont relativement identiques à
-l'heure ou nous écrivons ces lignes, mais ne suivront pas les mêmes
+l'heure ou nous écrivons ces lignes, mais ils ne suivront pas les mêmes
 choix techniques ou organisationnels à l'avenir.
 
 .Figure 04-04
@@ -3532,7 +3531,7 @@ image:04-04.png[align="center"]
 Husdon, lui aussi en train de surveiller la construction de Maven2, dans
 la forge Sonatype, partenaire d'Oracle.
 
-==== Lequel choisir ?
+==== Lequel choisir ?
 
 Le choix de votre serveur d'intégration continue va dépendre de nombreux
 critères. Techniquement parlant, il faut qu'il soit adapté à vos
@@ -3553,34 +3552,32 @@ d'autres, inutiles. Les possibilités d'extension et de configuration de
 ces serveurs sont nombreuses et répondent à des usages et à des règles
 de fonctionnement très variés.
 
-Quelques pistes pour vous guider :
+Quelques pistes pour vous guider :
 
-*  Que devra surveiller l'intégration continue ? Votre gestionnaire
-de code source est-il supporté ?
-*  Avez-vous autre chose que des builds Maven à lui faire supporter
-? Avez vous des développements sous Ant, Ruby on Rails, Python, Grails,
-… qui pourraient bénéficier de cette initiative ?
-*  Qu'attendez-vous de l'intégration continue ? Quels processus de
-contrôle devra t-elle porter ? Métriques qualité, tests fonctionnels ou
+* que devra surveiller l'intégration continue ? Votre gestionnaire
+de code source est-il supporté ?
+* avez-vous autre chose que des _builds_ Maven à lui faire supporter ? Avez-vous des développements sous Ant, Ruby on Rails, Python, Grails… qui pourraient bénéficier de cette initiative ?
+* qu'attendez-vous de l'intégration continue ? Quels processus de
+contrôle devra-t-elle porter ? Métriques qualité, tests fonctionnels ou
 de performance, déploiement d'une version de démonstration, publication
-des résultats ?
-*  Comment doit-elle interagir avec vous ? IHM web seule et
+des résultats ?
+* comment doit-elle interagir avec vous ? IHM web seule et
 diffusion de mails, notification par messagerie instantanée, plugin dans
-votre IDE ?
-*  Quel support êtes vous prêt à fournir pour votre service
-d'intégration continue ? Mises à jour régulières, phase de qualification
-et/ou support commercial ?
+votre EDI ?
+* quel support êtes-vous prêt à fournir pour votre service
+d'intégration continue ? Mises à jour régulières, phase de qualification
+et/ou support commercial ?
 
 ==== Conclusion
 
 Les tests unitaires sont des acteurs de premier plan pour introduire la
 qualité logicielle dans le cycle de développement du projet. Maven les
-considère comme tels et son fonctionnement même participe très
+considère comme tels, et son fonctionnement même participe très
 activement à la promotion de cette pratique.
 
 L'intégration de tests dans un projet nécessite un changement de
 pratiques et l'appropriation de nouveaux outils, elle n'est donc ni
-instantanée, ni totalement gratuite. Le "retour sur investissement" est
+instantanée, ni totalement gratuite. Le « retour sur investissement » est
 cependant sans commune mesure une fois les bonnes habitudes en place. Un
 projet outillé par des tests rassure tout le monde sur son niveau de
 qualité et sa stabilité dans le temps. Livrer un logiciel dont tous les
