@@ -4404,9 +4404,9 @@ développement Open Source.
 --
 
 [[Gestion_avancee_des_dependances]]
-== Chapitre 6 : Gestion avancée des dépendances
+== Chapitre 6 : Gestion avancée des dépendances
 
-Notre projet commence à prendre une tournure "intéressante" du point de
+Notre projet commence à prendre une tournure « intéressante » du point de
 vue de ses fonctionnalités. Sous le capot, par contre, c'est un peu un
 mélange hétéroclite de technologies diverses, chacune ayant apporté sa
 petite touche à l'édifice.
@@ -4421,7 +4421,7 @@ de développement fraîchement installé.
 === Oracle, quand tu nous tiens
 
 La construction du projet échoue dans sa toute première phase. Voilà qui
-n'est pas très encourageant ! Maven signale le problème de dépendance
+n'est pas très encourageant ! Maven signale le problème de dépendance
 indiqué au Listing 6.1.
 
 .Listing 6.1 : Erreur de résolution des dépendances
@@ -4456,17 +4456,17 @@ from the specified remote repositories:
 
 ==== Un moteur de recherche pour Maven
 
-Notre déclaration de dépendance est-elle incorrecte ? Peut-être
+Notre déclaration de dépendance est-elle incorrecte ? Peut-être
 n'utilisons-nous pas le bon identifiant de groupe en spécifiant
 com.oracle, alors qu'il faudrait indiquer com.oracle.jdbc,
-com.oracle.driver ou encore oracle tout court ? Nous pouvons, bien sûr,
+com.oracle.driver ou encore oracle tout court ? Nous pouvons, bien sûr,
 nous lancer dans une recherche manuelle mais cela risque rapidement
 d'être pénible et pas forcément très concluant.
 
 D'autres ont eu ce même problème et ont donc mis en place des moteurs de
 recherche spécialisés pour Maven, par exemple, le site mvnrepository.com
 qui offre une indexation du dépôt _central_ utilisé par défaut par
-Maven. Nous y faisons une recherche sur le mot "oracle", et nous
+Maven. Nous y faisons une recherche sur le mot « oracle », et nous
 obtenons rapidement la confirmation attendue sur l'identité de notre
 pilote JDBC (voir Figure 06-01).
 
@@ -4475,12 +4475,12 @@ image:06-01.png[align="center"]
 
 Recherche d'un artefact _via_ un moteur de recherche spécialisé.
 
-Nous voilà au moins rassurés pour l'identification de notre dépendance :
+Nous voilà au moins rassurés pour l'identification de notre dépendance :
 nous avons spécifié les groupe, artifactId et version corrects. Mais
-alors, pourquoi Maven ne parvient-il pas à télécharger ce pilote JDBC ?
+alors, pourquoi Maven ne parvient-il pas à télécharger ce pilote JDBC ?
 
 La réponse est relativement évidente si vous vous connectez au site
-Oracle : la distribution de cette bibliothèque est soumise à l'accord
+Oracle : la distribution de cette bibliothèque est soumise à l'accord
 d'Oracle, et elle ne peut être téléchargée qu'après enregistrement sur
 le site de l'éditeur. L'équipe Maven qui gère le dépôt ne peut donc pas
 la mettre librement à disposition de chacun, tout juste peut-elle
@@ -4489,29 +4489,29 @@ proposer un fichier POM et un groupe clairement défini pour ce pilote.
 Il revient donc à chacun d'aller télécharger manuellement le fichier
 indiqué.
 
-==== Pourquoi publier un POM sans JAR ?
+==== Pourquoi publier un POM sans JAR ?
 
 Quel intérêt y a-t-il à publier sur _central_ le POM du pilote Oracle si
-la bibliothèque ne l'accompagne pas ? Un élément de réponse figure dans
-le paragraphe qui précède : toute personne utilisant Maven qui recherche
+la bibliothèque ne l'accompagne pas ? Un élément de réponse figure dans
+le paragraphe qui précède : toute personne utilisant Maven qui recherche
 ce pilote va au moins utiliser des identifiants de groupe, d'artefact et
 les versions déjà référencées. Cela assure l'homogénéité des projets.
 Ensuite, le fichier POM compte de nombreuses métadonnées qui peuvent
-informer sur la bibliothèque, en particulier :
+informer sur la bibliothèque, en particulier :
 
-* L'organisation qui développe cette bibliothèque.
-* Une description qui peut nous aider à confirmer son identité.
-* La licence sous laquelle elle est distribuée, ce qui peut dans
+* l'organisation qui développe cette bibliothèque ;
+* une description qui peut nous aider à confirmer son identité ;
+* la licence sous laquelle elle est distribuée, ce qui peut dans
 certains cas être rédhibitoire (pensez, par exemple, aux conditions
 particulières de certaines licences propriétaires ou à la licence GPL
-qui s'applique par "contamination" au projet dans son ensemble).
-* L'URL où on peut la télécharger. Tout site Internet respectueux de
+qui s'applique par « contamination » au projet dans son ensemble) ;
+* l'URL où on peut la télécharger. Tout site Internet respectueux de
 ses utilisateurs ne changerait jamais une URL de téléchargement,
-n'est-ce pas ?
+n'est-ce pas ?
 
 L'intégralité de ces métadonnées n'est cependant pas toujours disponible
 ce qui est fort dommageable. En particulier, l'information de licence
-devrait être plus généralement indiquée car elle peut fortement impacter
+devrait être plus généralement indiquée, car elle peut fortement impacter
 les projets qui utilisent une dépendance.
 
 [NOTE]
@@ -4528,7 +4528,7 @@ que votre projet soit développé sous cette licence. Si votre projet est
 soit sujet à interprétation), mais si vous envisagez de le diffuser,
 l'impact est énorme. Cela étant dit, certaines licences propriétaires
 sont largement aussi contraignantes lorsqu'on lit le détail des petites
-lignes ;).
+lignes ;).
 
 L'information de licence n'étant pas toujours disponible, il n'est pas
 possible d'automatiser de manière fiable l'analyse des licences sur un
@@ -4552,16 +4552,16 @@ soyons parfaitement certains de l'identité du fichier.
 
 Le numéro de version à 5 chiffres utilisé par Oracle n'est pas très
 rassurant de ce point de vue. Il y a de toute évidence de nombreuses
-micro-versions, sans doute des correctifs successifs dont nous n'avons
-pas strictement besoin, mais qui sait ?
+microversions, sans doute des correctifs successifs dont nous n'avons
+pas strictement besoin, mais qui sait ?
 
 C'est une solution rapide, tout à fait légitime si nous disposons de la
 bibliothèque en question par un autre moyen.
 
 [[les_dependances_system]]
-==== Les dépendances "System"
+==== Les dépendances « System »
 
-Nous avons donc une solution pour le pilote Oracle ; cependant, chacun
+Nous avons donc une solution pour le pilote Oracle ; cependant, chacun
 de nous doit l'installer dans son dépôt local. Même si nous nous le
 passons par mail, clé USB ou partage de répertoire interposé (ce qui
 sous-entend que nous n'avons pas très bien lu la longue page de licence
@@ -4572,7 +4572,7 @@ individuellement la licence Oracle pour obtenir le fameux pilote. Une
 façon courante de l'obtenir est donc de télécharger et d'installer
 l'environnement de développement Oracle (client natif et autres outils)
 qui comprendra entre autres le fameux pilote. Dans ce cas bien précis,
-nous pouvons indiquer une dépendance system sous la forme :
+nous pouvons indiquer une dépendance system sous la forme :
 
 [source, xml]
 -------------------------------------------------------------------------------
@@ -4599,11 +4599,11 @@ très certainement partager entre développeurs d'une même équipe le
 fichier JAR téléchargé une fois pour toutes. Il est très improbable
 qu'Oracle vous envoie ses brigades antipirates pour violation de la
 licence, surtout si vous venez de l'acheter pour installer la base de
-données sur votre serveur bi-processeur quad-core footnote:[Le coût d'une licence Oracle est fonction du nombre de cœur. Je vous laisse imaginer ce que cela peut donner…] assortie d'un contrat de support ;-).
+données sur votre serveur bi-processeur quad-core footnote:[Le coût d'une licence Oracle est fonction du nombre de cœurs. Je vous laisse imaginer ce que cela peut donner…] assortie d'un contrat de support ;-).
 
 Nous pourrions aussi être tentés de détourner ce scope et d'intégrer le
 JAR dans le gestionnaire de code, ce qui permettrait à chacun d'en
-disposer d'une manière simple sans se poser plus de questions :
+disposer d'une manière simple sans se poser plus de questions :
 
 [source, xml]
 -------------------------------------------------------------------------------
@@ -4635,9 +4635,9 @@ pourrait manquer sur le dépôt _central_ de Maven. En combinant les deux,
 nous ne devrions plus être gênés par ces histoires de JAR manquant.
 
 Cette solution est la plus couramment retenue et également la plus
-souple. Créer son propre dépôt privé – pour les bibliothèques dont la
+souple. Créer son propre dépôt privé — pour les bibliothèques dont la
 diffusion n'est pas libre ou pour héberger ses propres développements à
-destination d'autres projets internes – permet de gérer de manière
+destination d'autres projets internes — permet de gérer de manière
 centralisée et définitive ces problèmes de dépendances récalcitrantes.
 
 Physiquement parlant, un dépôt n'est rien de plus qu'un système de
@@ -4649,8 +4649,8 @@ http://repository.masociete.com.
 Pour mettre à disposition notre driver Oracle, il nous suffit donc de
 créer l'arborescence adéquate et d'y placer le JAR sous le nom
 approprié. Il reste alors à indiquer à Maven l'emplacement de notre
-dépôt "maison", ce qui se traduit par un élément <repository> dans le
-POM :
+dépôt « maison », ce qui se traduit par un élément <repository> dans le
+POM :
 
 [source, xml]
 -------------------------------------------------------------------------------
@@ -4671,7 +4671,7 @@ générer ce fichier avec les déclarations adéquates.
 ====
 
 [[controle_d_identite_vos_papiers_s_il_vous_plait]]
-==== Contrôle d'identité, vos papiers s'il vous plaît !
+==== Contrôle d'identité, vos papiers s'il vous plaît !
 
 Le dépôt de bibliothèques ne contient pas seulement le fichier POM de
 notre pilote JDBC, mais aussi deux fichiers suffixés md5 et sha1
@@ -4683,27 +4683,27 @@ moyen pour valider un téléchargement, toujours sujet à un risque de
 défaillance du transfert réseau.
 
 Ce contrôle, Maven le fait de manière systématique et totalement
-transparente… du moins tant que le contrôle n'échoue pas ! Dans notre
+transparente… du moins tant que le contrôle n'échoue pas ! Dans notre
 cas, la bibliothèque téléchargée ne correspond pas aux sommes de
 contrôle mises à disposition dans le dépôt Maven.
 
-Ce n'est cependant qu'une alerte car, dans un monde imparfait, certaines
+Ce n'est cependant qu'une alerte, car dans un monde imparfait, certaines
 sommes de contrôle mises à disposition sont malheureusement incorrectes.
 Dans le doute, nous téléchargeons à nouveau le pilote JDBC Oracle. Il
 est vrai que la connexion ADSL n'est pas très en forme aujourd'hui, sans
 parler de ce satané virus qui a infecté notre réseau la semaine
 dernière.
 
-Le résultat est sans appel : le second fichier téléchargé, une fois
+Le résultat est sans appel : le second fichier téléchargé, une fois
 installé dans notre dépôt privé, corrige le problème. Peut-être
 aurions-nous constaté un problème immédiat avec ce pilote, peut-être ne
-serait-il apparu que très tardivement mais, dans tous les cas, remonter
+serait-il apparu que très tardivement, mais dans tous les cas, remonter
 jusqu'à l'origine du problème aurait été bien délicat. Qui aurait l'idée
 de mettre en question le JAR Oracle alors qu'il y a tant de raisons pour
-que notre application ne fonctionne pas ?
+que notre application ne fonctionne pas ?
 
 [[rebelote_mais_ou_est_javax_jms]]
-==== Rebelote : mais où est javax.jms ?
+==== Rebelote : mais où est javax.jms ?
 
 Notre problème de dépendance sur le pilote JDBC Oracle est enfin résolu
 de manière satisfaisante. Mais voilà que nous obtenons à nouveau un
@@ -4724,7 +4724,7 @@ privé.
 
 Cependant, il ne s'agit pas d'un produit propriétaire mais bien d'une
 API standard de Java, et même pas spécialement exotique ou récente.
-Comment est-il possible que Maven ne dispose pas de cette bibliothèque ?
+Comment est-il possible que Maven ne dispose pas de cette bibliothèque ?
 Il doit bien y avoir des millions de développeurs à l'utiliser chaque
 jour sur des projets JavaEE.
 
@@ -4737,26 +4737,26 @@ d'autres utilisateurs, et en particulier _central,_ le dépôt officiel de
 Maven, doit se plier au respect de cette règle.
 
 La licence SBCL impose en fait à chaque utilisateur de cocher la petite
-case "J'accepte la licence d'utilisation" avant de pouvoir obtenir
+case « J'accepte la licence d'utilisation » avant de pouvoir obtenir
 l'archive Java tant convoitée. Ce petit raffinement qui paraît anodin
 est un obstacle incontournable au téléchargement automatisé des
 bibliothèques.
 
-Pourquoi Maven ne propose-t-il pas d'accepter la licence ?
+Pourquoi Maven ne propose-t-il pas d'accepter la licence ?
 
-Au même titre que le site de téléchargement de SUN, Maven pourrait –
-techniquement parlant – proposer d'accepter la licence avant d'effectuer
+Au même titre que le site de téléchargement de SUN, Maven pourrait —
+techniquement parlant — proposer d'accepter la licence avant d'effectuer
 le téléchargement. Cela serait satisfaisant sur le plan légal et
 éviterait ce genre d'aberration pour les utilisateurs. L'équipe du
 projet Maven n'a cependant pas suivi cette option.
 
 D'une part, cela introduit une interaction avec l'utilisateur qui n'est
-pas compatible avec le mode de fonctionnement "batch" prévu par Maven
+pas compatible avec le mode de fonctionnement « batch » prévu par Maven
 (qui peut aussi s'exécuter sur des machines automatisées).
 
 D'autre part, l'équipe étant très attachée aux valeurs du logiciel
 libre, elle a fait front pour faire évoluer l'approche de SUN pour ses
-licences, au point que Java 7 est aujourd'hui totalement libre ! Une
+licences, au point que Java 7 est aujourd'hui totalement libre ! Une
 belle victoire, qui nous permet de télécharger librement la bibliothèque
 JMS 1.1 depuis le dépôt _central_. SUN n'a cependant pas poussé la
 courtoisie jusqu'à changer la licence de ses anciennes bibliothèques,
@@ -4766,7 +4766,7 @@ Ce second exemple montre bien à quel point la problématique des licences
 ne doit pas être négligée. Si, honnêtement, personne ne lit
 attentivement les détails de ces textes plus ou moins abscons, leur
 influence sur un projet peut être énorme. Le téléchargement automatique
-des bibliothèques par Maven est bien pratique mais tend à nous faire
+des bibliothèques par Maven est bien pratique, mais tend à nous faire
 oublier que nous ne vivons pas dans un monde de Bisounours où tout est
 gratuit et librement diffusable. Chaque bibliothèque introduit des
 contraintes d'utilisation, parfois les restrictions d'une licence
@@ -4777,57 +4777,57 @@ commerciale, parfois les obligations d'une licence libre.
 
 Ce qui devait au départ être une tâche de fond pour Carlos se révèle
 rapidement un casse-tête. Dans un premier temps, Carlos a voulu faire
-plaisir à tout le monde – c'est un peu une deuxième nature chez lui – et
-a donc répondu favorablement à toutes nos demandes :
+plaisir à tout le monde — c'est un peu une deuxième nature chez lui — et
+a donc répondu favorablement à toutes nos demandes :
 
 image:MangaCarlos.png[float="left"] image:MangaFabrice.png[float="left"]
 
-Fabrice : j'ai besoin de trucUtils, peux-tu l'ajouter ?
+Fabrice : j'ai besoin de trucUtils, peux-tu l'ajouter ?
 
-Carlos : pas de soucis. D'où ça vient, quelle version ?
+Carlos : pas de soucis. D'où ça vient, quelle version ?
 
-Fabrice : je l'ai trouvé sur sourceforge, et ça doit être la version 1.2
+Fabrice : je l'ai trouvé sur sourceforge, et ça doit être la version 1.2
 
-Carlos : OK, c'est en place.
+Carlos : OK, c'est en place.
 
 Tout aurait pu se passer dans cette bonne humeur générale jusqu'à ce
 que, d'une part, Carlos croule sous les demandes, mais surtout que les
-choses se compliquent sensiblement :
+choses se compliquent sensiblement :
 
 image:MangaCarlos.png[float="left"] image:MangaOlivier.png[float="left"]
 
-Olivier : Salut Carlos, j'aurais besoin de trucUtils.
+Olivier : Salut Carlos, j'aurais besoin de trucUtils.
 
-Carlos : pas de soucis, dès que j'ai deux minutes. D'où ça vient, quelle
-version ?
+Carlos : Pas de soucis, dès que j'ai deux minutes. D'où ça vient, quelle
+version ?
 
-Olivier : de trucUtils.org, et c'est la version 1.2
+Olivier : De trucUtils.org, et c'est la version 1.2
 
-Carlos : Attends, ça me dit quelque chose… ça serait pas le même que
-net.sourceforge:trucUtils ?
+Carlos : Attends, ça me dit quelque chose… ça serait pas le même que
+net.sourceforge:trucUtils ?
 
-Olivier : … hum … non, celui-là ne fait que 18 Ko, ça devait être la
-version bêta. La version finale fait 21 Ko.
+Olivier : … hum … non, celui-là ne fait que 18 Ko, ça devait être la
+version bêta. La version finale fait 21 Ko.
 
-Carlos : OK. Ça t'ennuie si je le renomme "1.2-final" dans le groupe
-net.sourceforge ?
+Carlos : OK. Ça t'ennuie si je le renomme « 1.2-final » dans le groupe
+net.sourceforge ?
 
-Olivier : ben… c'est un peu bête, toute leur doc est sur trucUtils.org !
+Olivier : Ben… c'est un peu bête, toute leur doc est sur trucUtils.org !
 
 Je vous laisse imaginer la suite de la journée de Carlos. Rapidement,
-notre dépôt "maison" compte des doublons, des erreurs de métadonnées ou
+notre dépôt « maison » compte des doublons, des erreurs de métadonnées ou
 des versions farfelues pour compenser les erreurs précédentes.
 
-Maven1 ou Maven2 ?
+Maven1 ou Maven2 ?
 
-De nombreux dépôts de bibliothèque Maven existent en version "Maven1" ou
-"Maven2". Le premier format est conservé pour des raisons historiques.
+De nombreux dépôts de bibliothèque Maven existent en version « Maven1 » ou
+« Maven2 ». Le premier format est conservé pour des raisons historiques.
 Le second présente une structure plus hiérarchisée et des métadonnées
 supplémentaires. Maven2 sait utiliser les deux formats. Le dépôt
 _central_, qui pointe physiquement sur les mêmes fichiers, est
 accessible au format Maven1 footnote:[http://repo2.maven.org/maven/]
 
-Moralité : la gestion d'un dépôt n'est pas à prendre à la légère. Il ne
+Moralité : la gestion d'un dépôt n'est pas à prendre à la légère. Il ne
 s'agit pas simplement de pallier les manques du dépôt existant, mais
 aussi de s'assurer de l’unité de notre dépôt et de sa cohérence avec ce
 qui est disponible en ligne.
@@ -4857,19 +4857,19 @@ de nouveau et ne la prendra pas.
 Carlos doit donc manuellement fusionner le fichier de métadonnées qu'il
 a obtenu du dépôt officiel contenant le plugin avec les données de notre
 propre version. Voilà un travail bien passionnant qu'il va en plus
-falloir répéter à chaque correction ! Ici aussi, un outillage adéquat
+falloir répéter à chaque correction ! Ici aussi, un outillage adéquat
 s'impose.
 
 [[Passer_a_un_veritable_gestionnaire_de_depot]]
-=== Passer à un "véritable" gestionnaire de dépôt
+=== Passer à un « véritable » gestionnaire de dépôt
 
 image:MangaCarlos.png[float="left"]
 
-Carlos perd un temps fou dans la gestion de son dépôt privé car les
-"utilisateurs" n'ont pas de moyen simple pour rechercher une
+Carlos perd un temps fou dans la gestion de son dépôt privé, car les
+« utilisateurs » n'ont pas de moyen simple pour rechercher une
 bibliothèque. Il manque aussi des outils pour vérifier le contenu du
-dépôt : les sommes de contrôle sont-elles présentes et correctes ? Les
-fichiers POM sont-ils valides ? Enfin, et c'est loin d'être négligeable,
+dépôt : les sommes de contrôle sont-elles présentes et correctes ? Les
+fichiers POM sont-ils valides ? Enfin, et c'est loin d'être négligeable,
 nous dépendons d'une connexion à Internet pour tout ce qui n'est pas
 dans notre dépôt privé. Une coupure réseau et c'est l'impasse assurée
 pour ceux qui n'ont pas déjà téléchargé toutes les dépendances
@@ -4879,7 +4879,7 @@ Il est temps de passer à la vitesse supérieure et de faire appel à un
 outil dédié pour la gestion de notre dépôt privé.
 
 Maven utilise un fichier de configuration local, placé sous
-$HOME/.m2/settings.xml. Ce fichier XML (un de plus !) permet de déclarer
+$HOME/.m2/settings.xml. Ce fichier XML (un de plus !) permet de déclarer
 un miroir qui va remplacer les accès à certains dépôts depuis le poste
 de l'utilisateur. Nous pouvons donc facilement forcer Maven à ne plus
 accéder directement à central, mais à utiliser un serveur miroir sous
@@ -4891,7 +4891,7 @@ contenu.
 Pour les utilisateurs de Windows, le $HOME est le répertoire
 C:\Documents and Settings\votreNom, et sous Windows 7 sous
 C:\Utilisateurs\votreNom. La notion de HOME est évidemment plus
-naturelle pour les "unixiens" et autres "mac'istes".
+naturelle pour les « unixiens » et autres « mac'istes ».
 ====
 
 [source, xml]
@@ -4930,7 +4930,7 @@ dédié.
 En environnement d’entreprise, on désire souvent éviter de dépendre de
 ressources Internet non maîtrisées. Une solution consiste alors à
 définir une configuration de miroir qui force Maven à passer par notre
-dépôt interne quelques soient les URL déclarées dans les éléments
+dépôt interne, quelles que soient les URL déclarées dans les éléments
 <repositories> de nos projets.
 
 [source, xml]
@@ -4946,10 +4946,10 @@ dépôt interne quelques soient les URL déclarées dans les éléments
 ==== Un gestionnaire d'artefacts
 
 En marge du projet Maven, la communauté des développeurs a créé le
-projet "Maven Repository Manager", devenu par la suite
+projet « Maven Repository Manager », devenu par la suite
 Archiva footnote:[http://archiva.apache.org]. Cet outil n'est pas seul dans cette catégorie
 et doit faire face à la concurrence de Nexus footnote:[http://nexus.sonatype.org] ainsi que
-d'Artifactory footnote:[http://artifactory.jfrog.org]. Tous sont disponibles en Open Source,
+d'Artifactory footnote:[http://artifactory.jfrog.org]. Tous sont disponibles en open source,
 les deux derniers proposant une option de support professionnel qui peut
 être indispensable si l'on considère qu'une entreprise confie la
 productivité de ses développements à ces outils. Pour ne pas faire de
@@ -4957,20 +4957,20 @@ jaloux, nous avons choisi de proposer une capture d'écran pour chacun
 (voir Figures 06-02 à 06-04).
 
 Ces outils sont des applications web dédiées à la gestion de dépôt
-Maven. Ils assurent un grand nombre de fonctionnalités :
+Maven. Ils assurent un grand nombre de fonctionnalités :
 
-* recherche parmi les artefacts présents dans le dépôt ;
-* identification d'un JAR par recherche de son empreinte MD5 ;
+* recherche parmi les artefacts présents dans le dépôt ;
+* identification d'un JAR par recherche de son empreinte MD5 ;
 * miroir d'un autre dépôt, typiquement pour conserver un cache local
-de _central_ et/ou d'autres dépôts ;
-* conversion à la volée d'un dépôt Maven 1 au format Maven 2 ;
-* indexation des dépôts et publication d'un index unifié ;
+de _central_ et/ou d'autres dépôts ;
+* conversion à la volée d'un dépôt Maven 1 au format Maven 2 ;
+* indexation des dépôts et publication d'un index unifié ;
 * téléchargement (upload) de nouveaux artefacts, l'équivalent de la
-commande mvn install-file ;
+commande mvn install-file ;
 * interface graphique d'administration – plus ou moins sexy selon
-l'outil considéré ;
+l'outil considéré ;
 * contrôle d'accès – pratique pour autoriser un utilisateur à gérer
-certaines parties du dépôt sans prendre le risque de tout casser ;
+certaines parties du dépôt sans prendre le risque de tout casser ;
 * mécanismes d'audit, d'indexation et de contrôle d'intégrité en
 tâche de fond.
 
@@ -4983,10 +4983,10 @@ demandes d'artefacts déjà placés dans le cache.
 
 image:MangaCarlos.png[float="left"]
 
-C'est en effet ce que Carlos met en place : notre dépôt privé sert
+C'est en effet ce que Carlos met en place : notre dépôt privé sert
 désormais à la fois d'hébergement pour nos bibliothèques non publiques
 et de miroir pour les téléchargements depuis central. Le gestionnaire
-fonctionne en mandataire (proxy) : pour chaque demande d'artefact non
+fonctionne en mandataire (proxy) : pour chaque demande d'artefact non
 encore placé dans le miroir, il va consulter les dépôts configurés et
 compléter le cache en conséquence. Ainsi, les demandes suivantes seront
 traitées immédiatement, sans dépendance à Internet. Ce fonctionnement
@@ -4995,19 +4995,19 @@ dont nous n'exploiterons qu'une infime partie des gigaoctets de
 bibliothèques.
 
 En fonction des besoins des projets, Carlos va rapidement ajouter
-d'autres dépôts à la configuration : le dépôt java.net apparaît vite
-indispensable car il contient un certain nombre d'API Java standard ; le
-dépôt de JBoss, qui propose les dernières versions d'Hibernate ; le
+d'autres dépôts à la configuration : le dépôt java.net apparaît vite
+indispensable, car il contient un certain nombre d'API Java standard ; le
+dépôt de JBoss, qui propose les dernières versions d'Hibernate ; le
 dépôt SpringSource, qui offre les dernières versions MileStone du
-framework Spring ; et ainsi de suite…
+framework Spring ; et ainsi de suite…
 
 Plutôt que de nous obliger à déclarer un <mirror> dans notre fichier
 settings.xml à chaque nouvel arrivant dans la configuration du
 gestionnaire de dépôt, Carlos met en place un dépôt virtuel, comme le
-montre la Figure 06-02. Désormais, sous l'appellation public, se cachent
+montre la Figure 06-02. Désormais, sous l'appellation publique, se cachent
 cinq dépôts de bibliothèques, dont nous complétons au besoin le contenu
 _via_ l'interface d'administration. Notre fichier settings.xml évolue
-alors comme suit :
+alors comme suit :
 
 [source, xml]
 -------------------------------------------------------------------------------
@@ -5036,6 +5036,7 @@ mirrorOf> et définissez un second miroir pour chacun des dépôts snapshot
 auxquels vous accédez.
 
 Figure 06-02
+image:06-02.png[align="center"]
 ====
 
 Configuration d'un dépôt dans Nexus.
@@ -5052,7 +5053,7 @@ L'énorme point fort d'un gestionnaire de dépôt sur un simple serveur
 HTTP est qu'il prend en charge les métadonnées Maven, fusionnant
 plusieurs dépôts à la volée. Du point de vue de l'utilisateur, le
 gestionnaire apparaît alors comme un unique dépôt. La gestion manuelle
-des métadonnées est complexe et source d'erreur ; son automatisation est
+des métadonnées est complexe et source d'erreur ; son automatisation est
 un point fort de ces outils.
 
 Les outils d'indexation et d'audit fournissent une synthèse des
@@ -5075,7 +5076,7 @@ un JAR en calculant son empreinte et en la comparant à l'index. Le
 gestionnaire expose également ses index pour une intégration dans les
 environnements de développement (voir le Chapitre 9). Enfin, un espace
 de stockage permet la diffusion des développements au reste de l'équipe,
-servant de dépôt "public-privé".
+servant de dépôt « public-privé ».
 
 .Figure 06-04
 image:06-04.png[align="center"]
