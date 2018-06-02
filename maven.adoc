@@ -518,7 +518,7 @@ le répertoire apache-maven/bin. Il faut aussi s'assurer d'avoir la
 variable d'environnement JAVA_HOME qui indique l'emplacement du JDK
 (_Java Development Kit_), ce qui est généralement le cas sur le poste de
 travail des bons développeurs. La construction du projet s'effectue
-ensuite _via_ la commande mvn package depuis la ligne de commande. Rien
+ensuite _via_ la commande `mvn package` depuis la ligne de commande. Rien
 de bien révolutionnaire donc par rapport au script Ant que nous avions
 envisagé.
 
@@ -1595,7 +1595,7 @@ sur quelles dépendances les déclarer.
 Maven propose un outillage complet pour analyser nos dépendances, _via_
 les plugins dependency et project-info-reports.
 
-La commande mvn dependency:list permet d'établir la liste des
+La commande `mvn dependency:list` permet d'établir la liste des
 dépendances du projet, soit l'équivalent de notre répertoire
 WEB-INF/lib. Elle sera utile pour vérifier l'impact de nos exclusions au
 fur et à mesure que nous les déclarerons.
@@ -1604,7 +1604,7 @@ La commande project-info-reports:dependencies est analogue à la
 précédente mais elle génère un fichier HTML contenant la liste des
 dépendances.
 
-Plus intéressante, mvn dependency:tree trace un arbre, où chaque branche
+Plus intéressante, `mvn dependency:tree` trace un arbre, où chaque branche
 est une dépendance qui introduit par transitivité d'autres dépendances.
 
 .Listing 2.1 : Exécution de mvn dependency:tree
@@ -2294,7 +2294,7 @@ exécuter directement l'application web depuis notre environnement de
 développement – au moins pour ceux d'entre nous qui utilisent Eclipse !
 
 Nous ajoutons cette tâche à notre _execution_, et nous lançons en toute
-confiance un mvn install :
+confiance un `mvn install` :
 
 -------------------------------------------------------------------------------
 ...
@@ -2319,13 +2319,13 @@ désirerions atteindre, par exemple _compile_. Maven permet également
 d'invoquer directement un plugin, et lui seul, _via_ une forme
 différente de la ligne de commande :
 
-mvn gwt:run
+ mvn gwt:run
 
 Ici, nous ne demandons pas la construction du projet, mais l'exécution
 isolée de la tâche _run_ du plugin GWT. Il s'agit d'ailleurs d'une version
 contractée de la commande complète :
 
-mvn org.codehaus.mojo:gwt-maven-plugin:2.2.0:run
+ mvn org.codehaus.mojo:gwt-maven-plugin:2.2.0:run
 
 Le raccourci est appréciable, mais il vaut mieux garder en tête cette
 syntaxe qui pourra parfois se révéler indispensable.
@@ -2390,7 +2390,7 @@ propose des tâches qui correspondent à un traitement unitaire. Maven
 associe un certain nombre de tâches à ces phases du cycle de vie. La
 tâche compile du plugin de compilation, par exemple, est associée à la
 phase _compile_, et la tâche jar du plugin d'archivage à la phase package.
-L'invocation de la commande mvn deploy va alors dérouler une à une les
+L'invocation de la commande `mvn deploy` va alors dérouler une à une les
 étapes du cycle de vie jusqu'à la phase demandée (deploy), et exécuter
 pour chacune d'elles les tâches des plugins qui lui sont associés :
 
@@ -2760,7 +2760,7 @@ seule commande et, surtout, regroupe toutes les infos et tous les
 paramètres de configuration nécessaire en un seul endroit.
 
 Quels que soient le projet Maven auquel vous participez et son langage,
-la commande mvn install sera toujours le seul et unique point d'entrée
+la commande `mvn install` sera toujours le seul et unique point d'entrée
 pour construire le projet, en intégrant toutes les étapes nécessaires.
 La structure du projet sera toujours identique et vous permettra d'être
 rapidement productif, sans devoir passer par un long « guide de
@@ -3030,7 +3030,7 @@ sources.
 
 Notre test jUnit ListeDeCoursesReaderTest est donc placé dans
 l'arborescence src/test/java. Il ne nous reste qu'à lancer la commande
-mvn test pour constater que Maven prend bien en charge la compilation et
+`mvn test` pour constater que Maven prend bien en charge la compilation et
 l'exécution du test.
 
 Cependant, notre ListeDeCoursesReaderTest comprend encore une faiblesse
@@ -4092,7 +4092,7 @@ exécuté par nos tests fonctionnels.
 
 En une simple commande, nous pouvons demander l'exécution de notre
 batterie de tests et valider le fonctionnement de notre application. La
-simple commande mvn fitnesse:run suffit pour nous donner en quelques
+simple commande `mvn fitnesse:run` suffit pour nous donner en quelques
 minutes un rapport complet sur l'état d'avancement de notre
 développement par rapport aux attentes exprimées par nos tests
 fonctionnels.
@@ -4966,7 +4966,7 @@ de _central_ et/ou d'autres dépôts ;
 * conversion à la volée d'un dépôt Maven 1 au format Maven 2 ;
 * indexation des dépôts et publication d'un index unifié ;
 * téléchargement (upload) de nouveaux artefacts, l'équivalent de la
-commande mvn install-file ;
+commande `mvn install-file` ;
 * interface graphique d'administration – plus ou moins sexy selon
 l'outil considéré ;
 * contrôle d'accès – pratique pour autoriser un utilisateur à gérer
@@ -5486,7 +5486,7 @@ de découvrir, lui qui en avait assez de passer en revue un à un nos
 fichiers POM pour mettre en place une configuration cohérente. Il reste
 cependant un peu sur sa faim : pour construire toute l'application et la
 tester dans son ensemble, il doit encore passer de projet en projet pour
-lancer à répétition la commande mvn install. Les choses se compliquent
+lancer à répétition la commande `mvn install`. Les choses se compliquent
 même rapidement lorsqu'il doit tenir compte d'une dépendance entre deux
 sous-projets.
 
@@ -5628,7 +5628,7 @@ autre pour nos batchs de sauvegarde…
 Dans un premier temps, nous trouvons cela d’une grande élégance, surtout
 parce que cela nous permet de ne travailler que dans un module et donc
 d’alléger d’autant notre « vue » de l’application. Par contre, pour
-compiler tout ça il nous faut toujours lancer un gros mvn install, même
+compiler tout ça il nous faut toujours lancer un gros `mvn install`, même
 si un seul module isolé est modifié, ou bien lancer la commande dans le
 répertoire de chaque module impacté en respectant l’ordre de
 construction. C’est tout de même dommage d’avoir un outil qui gère
@@ -5649,7 +5649,7 @@ développement de l’intégralité du projet
 définir la liste des modules (chemins relatifs des répertoires ou
 [groupId]:artifactId séparés par des virgules) à intégrer dans le build.
 Si nous n’avons modifié que le module webapp, nous pouvons donc le
-construire de manière isolée en lançant mvn install –pl webapp.
+construire de manière isolée en lançant `mvn install –pl webapp`.
 
 * Associé à l’option project-list, -am (« also make ») demande à
 Maven de construire tous les modules dont dépend notre liste, autrement
@@ -5722,7 +5722,7 @@ projet en modules. Un projet Maven est ainsi rapidement décomposé en
 modules spécialisés dans un domaine ou une technologie. Le développement
 d'un de ces modules gagne en clarté, focalisé sur un aspect précis de
 l'application, sans pour autant compliquer la construction du projet. Un
-simple mvn install depuis le projet de plus haut niveau enchaîne les
+simple `mvn install` depuis le projet de plus haut niveau enchaîne les
 compilations de tous les modules pour produire un livrable cohérent.
 
 == Chapitre 8 : Maven et JavaEE
@@ -6470,7 +6470,7 @@ test.
 image:MangaVincentS.png[float="left"]
 
 Après avoir ingurgité la hiérarchie un peu lourde de cette configuration
-XML, Vincent lance la commande magique mvn install et constate avec
+XML, Vincent lance la commande magique `mvn install` et constate avec
 plaisir le téléchargement puis le démarrage d'un serveur JBoss sur son
 environnement, et le déploiement de notre application, prête pour les
 tests Selenium qui ont enfin du grain à moudre.
@@ -6620,7 +6620,7 @@ apportant le support de JBoss 6 en mode embarqué :
 -------------------------------------------------------------------------------
 
 Cette configuration étant en place, il ne nous reste plus qu’à invoquer
-le bon vieux mvn install pour que notre code EJB soit compilé et testé,
+le bon vieux `mvn install` pour que notre code EJB soit compilé et testé,
 comme le reste de notre projet. Nous pouvons tout aussi bien le lancer
 dans notre IDE préféré sans la moindre configuration superflue.
 
@@ -6673,7 +6673,7 @@ ces deux répertoires, il n'est pas compliqué de construire ces deux
 répertoires manquants – et c'est d'ailleurs ce que propose le plugin war
 avec sa tâche inplace.
 
-mvn war:inplace va préparer l'application web, prête à être exécutée sur
+`mvn war:inplace` va préparer l'application web, prête à être exécutée sur
 un serveur d'application qui supporte ce mode de fonctionnement. Une
 modification dans une page JSP sera alors appliquée immédiatement, _via_
 le mécanisme de recompilation des JSP qui est intégré à tout serveur
@@ -6691,7 +6691,7 @@ complet) Jetty propose un mode de fonctionnement particulièrement adapté
 Maven sans nécessiter la moindre phase de préparation. Il référence
 directement les bibliothèques de notre dépôt local, pointe sur notre
 répertoire de compilation (target/classes) et démarre l'application web
-en un temps record avec la seule commande mvn jetty:run.
+en un temps record avec la seule commande `mvn jetty:run`.
 
 Jetty va encore plus loin car il peut fonctionner en mode scrutation :
 il va surveiller le répertoire de compilation et identifier une
@@ -7438,7 +7438,7 @@ Maven nous a libérés des IDE, nous pouvons utiliser celui que nous
 voulons et en changer à tout moment, car aucune de nos tâches
 stratégiques n'y est liée.
 
-== Chapitre 10 : Le jour J : la livraison
+== Chapitre 10 : Le jour J : la livraison
 
 La vie d'un projet est ponctuée de moments forts, et le jour de la
 livraison en est un particulièrement éprouvant. Après de longues
@@ -7454,7 +7454,7 @@ manque de compassion pour les erreurs que nous aurions pu commettre.
 
 image:MangaEmmanuel.png[float="left"]
 
-La toute première version publique de "noubliepaslalistedescourses" a
+La toute première version publique de « noubliepaslalistedescourses » a
 été particulièrement héroïque. Tout commence par plusieurs semaines de
 tests intensifs pour identifier tous les bogues qui auraient pu nous
 échapper. Les derniers correctifs sont appliqués, avant de se lancer
@@ -7468,9 +7468,9 @@ pour indiquer comme numéro de version la fameuse valeur 1.0.0. Le
 projet, reconstruit avec cette nouvelle configuration, est testé une
 dernière fois avant d'être rendu public. Emmanuel marque dans notre
 gestionnaire de code source ce moment crucial, ce qui se traduit par la
-pose d'un "tag". La journée se termine donc tard autour d'une bonne
+pose d'un « tag ». La journée se termine donc tard autour d'une bonne
 bouteille pour fêter le succès de notre belle aventure.
-"noubliepaslalistedescourses" est désormais en ligne et attend de pied
+« noubliepaslalistedescourses » est désormais en ligne et attend de pied
 ferme ses utilisateurs.
 
 [[deuxieme_livraison]]
@@ -7502,13 +7502,13 @@ reprendre la procédure.
 Les choses semblent enfin maîtrisées, mais nous déchantons vite quand
 d'autres problèmes apparaissent sur la version 1.0.1. Après analyse, on
 comprend que ces problèmes auraient dû être détectés par notre outillage
-de tests. Alors, que s'est-il passé ?
+de tests. Alors, que s'est-il passé ?
 
 Ces tests sont malheureusement associés à un profil qui doit être activé
 à la demande. Comme ils portent sur les accès à la base de données, et
 pour ne pas pénaliser les autres développeurs, nous les avons isolés
 dans un profil dédié, comme nous l'avons vu au Chapitre 4. Était-ce une
-fausse bonne idée ?
+fausse bonne idée ?
 
 L'équipe de développement, malgré le fiasco de cette version corrective,
 n'en est pas convaincue. Les profils permettent à chacun d'être
@@ -7520,11 +7520,11 @@ Lors de la construction de notre projet avant livraison, nous devons
 tout simplement ne pas négliger d'activer tous les profils adéquats pour
 valider au maximum l'application. Nous pouvons même ajouter, à cette
 phase cruciale, des profils spécifiques pour adjoindre des informations
-dans le livrable : date de livraison, auteur de la livraison, numéro de
+dans le livrable : date de livraison, auteur de la livraison, numéro de
 révision dans le gestionnaire de code source…
 
 La version 1.0.2 sera donc la bonne, maintenant qu'Emmanuel tient enfin
-une procédure de livraison fiable et… connue de tous ?
+une procédure de livraison fiable et… connue de tous ?
 
 ==== Documentation
 
@@ -7537,8 +7537,8 @@ lourdement contrôlée, répondant à des règles très strictes de contrôle
 qualité et à des nomenclatures précises. En supposant que tout le monde
 soit rompu aux pratiques de qualité et vive dans un monde labellisé AFAQ
 et ISO-900x, cela devrait garantir le succès du projet en toute
-circonstance. Seulement, nous ne vivons pas dans ce monde – est-ce
-réellement regrettable ?
+circonstance. Seulement, nous ne vivons pas dans ce monde — est-ce
+réellement regrettable ?
 
 D'autres préfèrent une approche plus souple et réactive en faisant appel
 à l'auto-organisation, par exemple _via_ une documentation supportée par
@@ -7552,7 +7552,7 @@ est donc très dynamique et peut s'adapter à la réalité des problèmes
 rencontrés et s'organiser en fonction des informations réellement
 utiles.
 
-Un wiki n'est pas du tout incompatible avec une gestion "classique" de
+Un wiki n'est pas du tout incompatible avec une gestion « classique » de
 la documentation. Si vous n'en avez pas un sur votre projet, faites un
 petit essai avec votre équipe, vous serez surpris du résultat. Les
 solutions ne manquent pas, du wiki PHP de base au très professionnel
@@ -7570,16 +7570,16 @@ main.
 
 image:MangaEmmanuel.png[float="left"]
 
-Est-ce vraiment la panacée ? Pourquoi acceptons-nous que le moment de la
-livraison – le plus crucial de la vie du projet – soit le seul à ne pas
-bénéficier de l'approche que Maven a apportée au projet :
+Est-ce vraiment la panacée ? Pourquoi acceptons-nous que le moment de la
+livraison — le plus crucial de la vie du projet — soit le seul à ne pas
+bénéficier de l'approche que Maven a apportée au projet :
 l'automatisation aussi complète que possible _via_ une commande unique.
 Emmanuel a pris le soin de documenter dans le détail la procédure, et le
 principe du wiki permet à chacun de la compléter si un point restait
 obscur. Cependant, nous construisons tous nos projets, quelles que
 soient leur complexité ou leur technologie, par la commande universelle
-mvn install. La procédure de livraison ne pourrait-elle pas elle aussi
-être homogénéisée ? Emmanuel part donc à la pêche aux bonnes pratiques
+`mvn install`. La procédure de livraison ne pourrait-elle pas elle aussi
+être homogénéisée ? Emmanuel part donc à la pêche aux bonnes pratiques
 du côté de Maven et de ses plugins…
 
 === Le plugin _release_
@@ -7595,7 +7595,7 @@ Pour vous donner une idée de ce que le plugin propose, voici le
 processus qu'il applique pour produire un livrable.
 
 [[etape_1_preparation]]
-==== Étape 1 : préparation
+==== Étape 1 : préparation
 
 * Il contrôle l'environnement de l'utilisateur qui ne doit présenter
 aucune modification non sauvegardée dans le gestionnaire de code source.
@@ -7621,22 +7621,22 @@ livraison en cours de préparation.
 la version de développement suivante et les sauvegarde.
 
 Comme vous pouvez le constater, la démarche est plus que rigoureuse et
-elle est entièrement automatisée. Au final, le projet dispose, dans son
+elle est entièrement automatisée. Finalement, le projet dispose, dans son
 gestionnaire de versions, d'un tag pour la version à livrer, et la
 version courante (_trunk_) correspond à la prochaine version à
-développer. L'état "version livrée" n'est apparu que furtivement dans
+développer. L'état « version livrée » n'est apparu que furtivement dans
 l'historique du gestionnaire de code source, ce qui correspond bien à la
 réalité de cet événement aussi ponctuel que capital.
 
 [[etape_2_livraison]]
-==== Étape 2 : livraison
+==== Étape 2 : livraison
 
 La production du logiciel livrable est réalisée à partir du tag placé
 dans le gestionnaire de sources. Nous pourrions effectuer cette manœuvre
-manuellement, mais ici encore le plugin release simplifie la tâche :
+manuellement, mais ici encore le plugin release simplifie la tâche :
 
 * extraction du code correspondant au tag dans un répertoire dédié,
-vierge de toute modification locale malencontreuse ;
+vierge de toute modification locale malencontreuse ;
 * construction du projet à partir d'une liste de cibles, d'options
 et de profils indiqués dans le POM.
 
@@ -7648,17 +7648,17 @@ de mettre à jour.
 
 Un projet Maven utilisant le plugin release permet de réaliser une
 livraison totalement maîtrisée, contrôlée et synchronisée avec le
-gestionnaire de code source en une simple commande :
+gestionnaire de code source en une simple commande :
 
-mvn release:prepare release:perform
+ mvn release:prepare release:perform
 
 Emmanuel est plus que satisfait par cette simplicité. Maven prouve ici
-son efficacité : une commande unique pour réaliser un traitement loin
+son efficacité : une commande unique pour réaliser un traitement loin
 d'être simple et applicable sur tous nos projets, toutes complexités et
 technologies confondues. Reprenez le document PROCx589002-02.1-Procédure
 de livraison.doc que vous aviez jusqu'ici et servez-vous-en pour caler
 votre armoire bancale. Et si votre responsable qualité vous réclame un
-document de procédure, faites-lui une photocopie de la Figure 10-01 !
+document de procédure, faites-lui une photocopie de la Figure 10-01 !
 
 .Figure 10-01
 image:10-01.png[align="center"]
@@ -7669,29 +7669,29 @@ image:10-01.png[align="center"]
 ====
 Cette procédure est loin d'être élémentaire et il y a donc de nombreuses
 raisons qu'elle plante en cours de route avant d'être complètement au
-point. Le plugin propose un mode dryRun qui permet de l'exécuter à
+point. Le plugin propose un mode _dryRun_ qui permet de l'exécuter à
 blanc, sans qu'aucune modification soit appliquée dans le gestionnaire
 de code source, le temps de bien mettre au point la configuration du
 plugin.
 ====
 
 [[et_si_ca_foire]]
-==== Et si ça foire ?
+==== Et si ça foire ?
 
 La préparation de la livraison comprend de nombreuses étapes et
 contrôles. Si l'une d'elles échoue, le plugin va évidemment
 s'interrompre. Après avoir identifié et corrigé le problème, nous avons
-deux options :
+deux options :
 
 * Reprendre toute la procédure à son point de départ. Le plugin
 release propose alors de faire un retour arrière complet dans l'état
 initial, dans l'esprit de ce que propose une base de données au cours
-d'une transaction :
-    mvn release:rollback
+d'une transaction : `mvn release:rollback`
+
 * Reprendre la procédure à partir du point où elle s'est arrêtée
 précédemment.
 
-La seconde solution est évidemment moins stricte ; cependant, vous
+La seconde solution est évidemment moins stricte ; cependant, vous
 pouvez parfois être bloqué par un problème purement local et indépendant
 de la stabilité du projet, comme un contrôle de votre environnement par
 le plugin enforcer qui échoue, ou la construction qui n'aboutit pas
@@ -7700,58 +7700,58 @@ de Maven.
 
 Dans les deux cas, la résolution du problème ne nécessite pas de
 modifier le projet lui-même, et le plugin release permet de reprendre le
-processus : par défaut, lancé une deuxième fois sur le même projet, il
+processus : par défaut, lancé une deuxième fois sur le même projet, il
 va reprendre sa tâche là où il en était resté, sauf si on lui indique
 explicitement de tout reprendre de zéro _via_ l'option -Dresume=false.
 
-==== Qui fait la release ?
+==== Qui fait la release ?
 
 Notre processus est désormais bien rôdé. Reste un dernier point à
-régler : sur quel environnement faire la release ? Dans notre build,
+régler : sur quel environnement faire la release ? Dans notre build,
 nous avons tenté de blinder au maximum toute dépendance à
 l’environnement, clarifié tous les prérequis. Mais nous savons bien
 qu’un grain de sable se faufile si vite entre les rouages…
 
-Nous sommes tous d’accord : un poste de développement n’est pas idéal
+Nous sommes tous d’accord : un poste de développement n’est pas idéal
 pour faire la release. Il contient par définition des éléments de test,
 des fichiers modifiés, des simulateurs en tout genre que nous risquons
 d’incorporer sans le savoir dans le livrable. Pourtant, il y a un membre
-de l’équipe qui est irréprochable sur le sujet : notre intégration
-continue !
+de l’équipe qui est irréprochable sur le sujet : notre intégration
+continue !
 
-Avantages majeurs :
+Avantages majeurs :
 
 * le serveur d’intégration continue tourne sur un système Unix
 strictement identique au système cible. Cela nous permet d’identifier
 plus rapidement d’éventuels problèmes sur les accès fichiers ou réseau
-propre au système, autant réutiliser cet avantage ;
+propres au système, autant réutiliser cet avantage ;
 * le serveur d’intégration continue ne développe pas, et ne fait
-donc aucune modification que nous risquerions d’incorporer au livrable ;
+donc aucune modification que nous risquerions d’incorporer au livrable ;
 * le serveur d’intégration continue ne râle jamais et est toujours
 prêt à donner de son temps. Notre processus de release devenant
 relativement ambitieux, le faire tourner sur nos postes c’est
 immobiliser un développeur pendant un temps non négligeable.
 
 Notre serveur Jenkins dispose justement d’un plugin qui correspond à
-toutes nos attentes : « Maven Release Plugin », un plugin pour lancer
-une release depuis notre fauteuil par un simple click – sitôt essayé,
-sitôt adopté !
+toutes nos attentes : « Maven Release Plugin », un plugin pour lancer
+une release depuis notre fauteuil par un simple click — sitôt essayé,
+sitôt adopté !
 
 [NOTE]
 ====
-On pourra reprocher à cette approce de rendre nos livrables
-« anonymes ». Dans certaines circonstances, nous voudrions concerver la
+On pourra reprocher à cette approche de rendre nos livrables
+« anonymes ». Dans certaines circonstances, nous voudrions conserver la
 traçabilité en signant le binaire avec une clé GPG, ce qui est par
 exemple nécessaire pour les diffuser sur central.
 
 Dans ces circonstances, il faudra revenir à une approche plus
-« traditionnelle ».
+« traditionnelle ».
 ====
 
 ==== Notre prochaine version
 
 
-La livraison de la version 1.2.0 de "noubliepaslalistedescourses" n'a
+La livraison de la version 1.2.0 de « noubliepaslalistedescourses » n'a
 pas été une de ces journées de stress sans fin, qui se terminent bien
 après le coucher du soleil. Elle n'a pas non plus été menée par un
 expert rompu à tous nos outils et spécialiste de la procédure. C'est
@@ -7772,7 +7772,7 @@ et une série de tests en amont pour valider le fonctionnement de notre
 logiciel avant livraison. Nous ne sommes cependant jamais à l'abri d'une
 coquille de dernière minute qui passerait au travers du processus de
 livraison. Aussi, nous voulons tester une dernière fois avant de mettre
-le coup de tampon "bon pour le service".
+le coup de tampon « bon pour le service ».
 
 image:MangaEmmanuel.png[float="left"]
 
@@ -7782,7 +7782,7 @@ compléter notre procédure techniquement bien rodée d'une phase
 supplémentaire de tests. La version marquée 1.3.0 sera installée sur
 notre serveur de validation et subira nos tests les plus redoutables.
 Comment gérer cependant les versions dans les essais successifs que nous
-allons probablement enchaîner ? Chaque candidat au titre de livraison
+allons probablement enchaîner ? Chaque candidat au titre de livraison
 officielle a sa propre identité et ne doit pas être confondu avec les
 autres.
 
@@ -7796,16 +7796,16 @@ utilisateurs peuvent cependant être surpris de constater des manques
 dans la série des numéros de version.
 
 Emmanuel n'aime pas trop cette solution et voudrait pouvoir redéfinir la
-version de notre meilleur candidat en "1.3.0". Seulement, le code marqué
+version de notre meilleur candidat en « 1.3.0 ». Seulement, le code marqué
 dans notre gestionnaire de code source ne porterait pas la bonne
 version, et le tag serait inadapté. Une fois de plus, Maven et son
 plugin release viennent à notre secours. Lorsque nous exécutons la
-commande mvn release:perform, nous demandons à Maven de construire le
+commande `mvn release:perform`, nous demandons à Maven de construire le
 livrable et de le diffuser sur notre dépôt public. Une autre commande
-mvn release:stage est très comparable mais remplace automatiquement la
+`mvn release:stage` est très comparable, mais remplace automatiquement la
 phase de déploiement pour pointer sur notre dépôt de validation. Le
 logiciel installé sur celui-ci sera donc strictement identique, au bit
-près, à une livraison classique mais aura juste changé de destination.
+près, à une livraison classique, mais aura juste changé de destination.
 Nous pourrons donc le tester attentivement en toute tranquillité.
 
 La seconde différence qu'introduit stage est qu'il conserve la
@@ -7814,14 +7814,14 @@ en cours de test ne nous satisfait pas, de revenir en arrière sur notre
 gestion de version et de relancer plus tard une nouvelle version avec le
 même numéro de version.
 
-Si effectivement notre premier "release candidate" est insuffisant pour
+Si effectivement notre premier « release candidate » est insuffisant pour
 répondre à nos exigences, il nous suffit de revenir _via_ un
 release:rollback en version 1.3.0-SNAPSHOT. La seule chose qui restera
 du candidat malheureux est le tag, que nous pouvons renommer en
 1.3.0-RC1. Si, par malheur, toutes nos tentatives ne produisaient qu'un
 logiciel encore pire, nous pourrions toujours, pressés par le temps,
 repartir de ce tag. Celui-ci présente bien la capacité de produire un
-projet en version 1.3.0 !
+projet en version 1.3.0 !
 
 image:MangaCarlos.png[float="left"]
 
@@ -7837,13 +7837,13 @@ binaire et le tester en connaissance de cause, alors que les autres
 utilisateurs n'en auront pas connaissance. Une fois cet artefact validé,
 il suffira de demander au gestionnaire de dépôt de le promouvoir dans le
 dépôt public (sous Nexus, dans la version pro, voir la gestion des
-staging repositories).
+_staging repositories_).
 
 Emmanuel et Carlos nous proposent ainsi, par le biais d’outils propres
 au monde Maven, une procédure complète, fiabilisée et totalement
 automatisée pour produire notre livrable, le tester puis le diffuser.
 
-=== Urgence !
+=== Urgence !
 
 Notre version 1.3.0 n'est pas encore complètement stabilisée que nous
 avons un retour alarmant d'un de nos clients sur la version 1.2.0. Un
@@ -7854,7 +7854,7 @@ changements significatifs dont notre client n'a que faire dans son état
 d'esprit du moment.
 
 Il nous faut un correctif, une 1.2.1, et le plus vite sera le mieux. Et
-c'est bien sûr sur Emmanuel que ça tombe une fois de plus !
+c'est bien sûr sur Emmanuel que ça tombe une fois de plus !
 
 image:MangaEmmanuel.png[float="left"]
 
@@ -7905,11 +7905,11 @@ en charge de manière totalement structurée et automatisée.
 image:MangaEmmanuel.png[float="left"]
 image:MangaVincentS.png[float="left"]
 
-Emmanuel est confronté à un problème : en tant que responsable du
+Emmanuel est confronté à un problème : en tant que responsable du
 développement du portail web, il est soumis aux demandes répétées du
 marketing. Tout est toujours urgentissime, et il faudrait pouvoir
 multiplier les versions. Mais Vincent, qui est responsable du back-end
-n’est pas sur la même longueur d’onde : il a des évolutions lourdes à
+n’est pas sur la même longueur d’onde : il a des évolutions lourdes à
 prendre en compte pour gérer la forte montée en puissance de notre
 service. Les deux équipes n’ont pas le même cycle de vie, et continuer à
 gérer cela dans un seul et même projet Maven pose problème.
@@ -7919,7 +7919,7 @@ notre fameux POM parent dont tout le monde hérite. Nous séparons donc en
 trois, chacun avec son propre numéro de version et son propre cycle de
 vie. Pour respecter la structure de Subversion par rapport au cycle de
 vie, nous aboutissons à une structure de fichiers sous Subversion assez
-disgracieuse :
+disgracieuse :
 
 -------------------------------------------------------------------------------
 + /parent/trunk
@@ -7935,7 +7935,7 @@ disgracieuse :
 
 En dehors des considérations esthétiques, notre parent n’est plus dans
 le répertoire … parent de chaque module. Maven nous permet de définir un
-chemin relatif pour palier à cela :
+chemin relatif pour pallier à cela :
 
 [source, xml]
 -------------------------------------------------------------------------------
@@ -7950,25 +7950,25 @@ chemin relatif pour palier à cela :
 -------------------------------------------------------------------------------
 
 
-« Bof », c’est tout ce que cela nous inspire spontanément. D’accord, ça
+« Bof », c’est tout ce que cela nous inspire spontanément. D’accord, ça
 marche, mais de toute évidence ce n’est pas la panacée. Sans compter
 que, pour obtenir les fichiers nécessaires à un build complet, nous
-devons faire un checkout total du projet, tags et branches incluses.
+devons faire un checkout total du projet, tags et branches inclus.
 
-La solution nous vient en regardant comment est géré le code de … Maven
-lui même ! Subversion dispose d’un mécanisme qu’on pourrait comparer aux
-liens symboliques d’Unix : les externals. Il s’agit de répertoires
+La solution nous vient en regardant comment est géré le code de… Maven
+lui-même ! Subversion dispose d’un mécanisme qu’on pourrait comparer aux
+liens symboliques d’Unix : les externals. Il s’agit de répertoires
 fantômes dans la structure de fichiers SVN, sur lesquels on indique via
 une propriété un lien vers un autre emplacement SVN (voir un autre dépôt
-SVN). Dans notre cas, nous créons un répertoire /trunks (avec un « s »)
-vide qui va regrouper toutes les racines de nos différents modules :
+SVN). Dans notre cas, nous créons un répertoire /trunks (avec un « s »)
+vide qui va regrouper toutes les racines de nos différents modules :
 
 -------------------------------------------------------------------------------
 + /parent/trunks
 -------------------------------------------------------------------------------
 
 Ce répertoire ne contient strictement rien, en dehors de la propriété
-svn:externals suivante :
+svn:externals suivante :
 
 -------------------------------------------------------------------------------
 pom.xml      /parent/trunk/pom.xml
@@ -7984,9 +7984,9 @@ synchrone avec le reste du projet.
 
 [TIP]
 ====
-Si tout cela vous semble encore bien acrobatique, faites comme nous :
-passez à Git ! Subversion est le seul gestionnaire de code à ne pas
-supporter nativement les notions branches et de tag. Ce n’est ni la
+Si tout cela vous semble encore bien acrobatique, faites comme nous :
+passez à Git ! Subversion est le seul gestionnaire de code à ne pas
+supporter nativement les notions de branches et de tag. Ce n’est ni la
 seule, ni la meilleure raison de migrer, mais ça peut en faire une de
 plus.
 ====
@@ -7994,10 +7994,10 @@ plus.
 Le jour de la release d’un des modules, il suffit de le considérer comme
 un module isolé, qui dispose de son propre cycle de vie. Et pour assurer
 la mise à jour des diverses versions dans nos différents projets, plutôt
-que de faire ça à la main, nous faisons appel au plugin versions : mvn
-versions:use-latest-snapshots par exemple s’assure que nous utilisons
+que de faire ça à la main, nous faisons appel au plugin versions : `mvn
+versions:use-latest-snapshots` par exemple s’assure que nous utilisons
 bien les dernières versions SNAPSHOT, et inversement
-mvn versions:use-releases pour utiliser la dernière release disponible
+`mvn versions:use-releases` pour utiliser la dernière release disponible
 d’un module ayant un cycle de vie indépendant.
 
 [TIP]
@@ -8006,7 +8006,7 @@ Le plugin versions
 (http://mojo.codehaus.org/versions-maven-plugin[http://mojo.codehaus.org/versions-maven-plugin])
 devient rapidement indispensable pour gérer de gros projets, incluant un
 grand nombre de modules ou de dépendances. Il gère les modifications de
-numéro de version, SNAPSHOT ou non, sans risquer de faire de fausse
+numéro de version, SNAPSHOT ou non, sans risquer de faire de fausses
 manipulations. Accessoirement, il gère un fichier backup des POM
 modifiés, qui permet à tout moment de revenir en arrière en cas de
 fausse manipulation.
@@ -8024,7 +8024,7 @@ On parle parfois de production continue pour décrire cette nouvelle
 étape dans l'automatisation, et c'est une pratique qui s'inscrit dans la
 démarche d'usine logicielle que de nombreuses entreprises cherchent à
 appliquer à leurs développements informatiques pour échapper à un monde
-où règnent le bricolage et les manipulations manuelles hasardeuses. La
+où règnent le bricolage et les manipulations hasardeuses. La
 Figure 10-03 présente le principe général de cette approche.
 
 .Figure 10-03
@@ -8032,13 +8032,13 @@ image:10-03.png[align="center"]
 
 Production continue.
 
-Le concept est au final relativement simple. Nous disposons d'une
+Le concept est finalement relativement simple. Nous disposons d'une
 automatisation capable de construire, tester en profondeur et publier
 les versions stables de notre logiciel, avec toute la rigueur et la
 traçabilité dont peut rêver n'importe quel ingénieur qualité. La seule
 étape qui reste encore plus ou moins aléatoire est l'installation sur
 nos plateformes de recette puis de production. Pourtant, comme nous
-l'avons vu au Chapitre 8, Maven – assisté de Cargo – est tout à fait
+l'avons vu au Chapitre 8, Maven — assisté de Cargo — est tout à fait
 capable de déployer nos applications JavaEE sur un serveur.
 
 En production continue, nous allons ajouter dans la description du
@@ -8055,15 +8055,15 @@ embarquée dans le POM. Les tâches de construction, de test, de
 validation de nos règles de développement, de qualification, de contrôle
 fonctionnel et d'installation sont entièrement automatisées et ne
 dépendent plus que de la décision de l'administrateur de cliquer sur le
-bouton vert, ou plutôt de lancer un mvn –Pproduction monserver:deploy.
+bouton vert, ou plutôt de lancer un `mvn –Pproduction monserver:deploy`.
 
 image:green-keyboard-button-deploy.png[float="center"]
 
-Si pour vous c’est de la science fiction, jetez un œil du côté du projet
+Si pour vous c’est de la science-fiction, jetez un œil du côté du projet
 Jenkins qui propose une nouvelle release par semaine depuis plus de 400
 versions, ou bien considérez des sites comme Flickr.com qui font plus de
-10 mises en production par jour – ce qu’ils appellent, eux, un
-« commit », au sens littéral du terme : « engagement ».
+10 mises en production par jour — ce qu’ils appellent, eux, un
+« commit », au sens littéral du terme : « engagement ».
 
 image:MangaEmmanuel.png[float="left"]
 
@@ -8074,7 +8074,7 @@ nos stagiaires les journées rocambolesques des premières versions.
 
 L'automatisation des processus de développement est une tâche qui
 nécessite un gros effort initial, non seulement pour dépasser les
-contraintes techniques mais surtout pour faire passer les mauvaises
+contraintes techniques, mais surtout pour faire passer les mauvaises
 habitudes et inculquer une nouvelle vision. N'espérez pas créer en
 quelques jours une usine logicielle mettant en œuvre des tests
 unitaires, d'intégration et fonctionnels sur une grille de machines.
@@ -8090,7 +8090,7 @@ structurer votre projet, mais c'est certainement sur un point aussi
 stratégique qu'il s'imposera comme outil incontournable. Chaque
 spécificité de votre projet étant automatisée, documentée et historisée
 _via_ votre fichier POM, vous pourrez enfin vous focaliser sur la seule
-chose qui compte vraiment : le fonctionnement de votre application.
+chose qui compte vraiment : le fonctionnement de votre application.
 
 = Partie 3
 
@@ -8098,13 +8098,13 @@ chose qui compte vraiment : le fonctionnement de votre application.
 .Encore plus loin avec Maven
 --
 L'informatique d'entreprise ne se limite pas à une utilisation raisonnée
-et flexible des "ressources". Elle doit aussi faire face à des
+et flexible des « ressources ». Elle doit aussi faire face à des
 contraintes qui viennent d'en haut, et auxquelles le projet doit se
 plier, quelles que soient ses habitudes.
 
 Après quelque temps de fonctionnement, notre start-up a atteint un joli
 succès. Les promesses de stock-options commencent à nous titiller, quand
-la nouvelle tombe : nous avons été contactés par le groupe Geegol pour
+la nouvelle tombe : nous avons été contactés par le groupe Geegol pour
 venir compléter son offre de services. C'est une reconnaissance
 inespérée pour notre travail, et nous préparons avec un mélange
 d'enthousiasme et d'anxiété le passage du statut de start-up à celui de
@@ -9401,7 +9401,7 @@ la main sur notre suivi qualité ?
 
 Comme toujours, l'intégration de nos outils d'analyse avec notre
 construction de projet Maven passe par des plugins. Nous pouvons, par
-exemple, lancer un mvn checkstyle:check pour vérifier le respect de nos
+exemple, lancer un `mvn checkstyle:check` pour vérifier le respect de nos
 règles de codage, voire le configurer pour qu’il s'exécute durant un
 build normal si nous nous interdisons de ne pas suivre strictement ces
 règles. Évidemment, c'est encore plus efficace si un tel outil d'analyse
@@ -9450,7 +9450,7 @@ Il découvre rapidement que Maven, lui-même confronté à ce problème de
 documentation, offre une solution complète et très riche : la génération
 d'une documentation complète du projet. En parallèle du cycle de vie de
 construction du projet, Maven propose un cycle de vie documentaire
-déclenché par la commande mvn site. Cette commande n'exécute qu'un seul
+déclenché par la commande `mvn site`. Cette commande n'exécute qu'un seul
 plugin, site, mais celui-ci est l'arbre qui cache la forêt : son rôle
 est d'exécuter des rapports et d'en agréger le contenu dans un document
 unifié sous forme de site web.
@@ -9600,7 +9600,7 @@ wiki et rapidement assimilé.
 format. Le bac à sable Maven comprend ainsi un module permettant
 d'exploiter la syntaxe XWiki.
 
-Au premier lancement de la commande mvn site, après l'inévitable
+Au premier lancement de la commande `mvn site`, après l'inévitable
 téléchargement de nombreux plugins et bibliothèques dans diverses
 versions, nous obtenons effectivement sous target/site la structure d'un
 site web pour notre projet.
@@ -9615,7 +9615,7 @@ supportés et le document à construire.
 Doxia est donc le moteur qui va formater notre documentation. Utilisé
 par le plugin site, il produit des pages HTML. Utilisé par le plugin
 pdf, il produit un fichier PDF regroupant toute la documentation du
-projet. La commande mvn pdf:pdf permet ainsi de produire une
+projet. La commande `mvn pdf:pdf` permet ainsi de produire une
 documentation format papier, toujours à jour en fonction des diverses
 sources que nous avons agrégées.
 
@@ -9774,7 +9774,7 @@ serveur exploitera ensuite les données pour fournir une synthèse ainsi
 qu'un historique. Le Listing 12.4 montre la configuration de ce plugin
 dans notre POM. Le plugin sonar utilisant de nombreuses propriétés, il
 est plus simple de les configurer comme telles et d'invoquer la tâche
-mvn sonar:sonar.
+`mvn sonar:sonar`.
 
 [source, xml]
 .Listing 12.4 : Configuration du plugin _Sonar_
@@ -10337,7 +10337,7 @@ batch, par exemple), dont le lancement pourra alors se résumer à java
 ====
 
 Pour produire notre livrable tant désiré, il nous suffit de lancer la
-commande mvn assembly:assembly. Nous l'avons déjà vu, cette syntaxe
+commande `mvn assembly:assembly`. Nous l'avons déjà vu, cette syntaxe
 correspond à l'invocation d'une tâche spécifique d'un plugin et non
 d'une phase de construction du projet. Cependant, ce plugin va provoquer
 l'exécution de la phase package du projet (et de tous ses modules).
@@ -10355,7 +10355,7 @@ de produire aussi notre livrable, ne serait-ce que pour nous donner un
 moyen de vérifier le respect de son format.
 
 L'idée paraît bonne, mais quelle cible Maven invoquer ? Devons-nous
-remplacer le mvn install par le fameux assembly:assembly. Nous voudrions
+remplacer le `mvn install` par le fameux assembly:assembly. Nous voudrions
 que la production de ce tar.gz soit mieux intégrée dans la construction
 du projet, qu'elle soit le résultat de sa construction par défaut.
 
@@ -10638,7 +10638,7 @@ référence au travail que nous avons dû accomplir au Chapitre 11. Nous
 avons tous en mémoire le temps qu'il nous a fallu pour cela. Raphaël
 tape donc une commande dans sa console :
 
-mvn archetype:generate
+ mvn archetype:generate
 
 Maven propose alors une liste impressionnante de composants, parmi
 lesquels Raphaël identifie un archétype mojo-archetype, qu'il
@@ -10725,7 +10725,7 @@ D:.
                         └───plugins
 -------------------------------------------------------------------------------
 Pardon ? Tu rigoles ? Avec un petit sourire, Raphaël propose de compiler
-son plugin et de l'exécuter. Un mvn install dans le répertoire
+son plugin et de l'exécuter. Un `mvn install` dans le répertoire
 nouvellement apparu, puis un mvn
 com.geegol.maven.plugins:demo-maven-plugin:1.0-SNAPSHOT:echo et nous
 pouvons voir apparaître dans la console le résultat simple mais tout de
@@ -10790,7 +10790,7 @@ nom de notre projet.
 L’archétype est prêt en quelques minutes dans le répertoire
 target/generated-sources/archetype (il est sous sa forme de projet
 Maven ; il nous suffit de lancer, depuis cet emplacement, un très
-classique mvn install pour le convertir en binaire utilisable) !
+classique `mvn install` pour le convertir en binaire utilisable) !
 
 Raphaël n'a plus qu'à lancer la commande complémentaire : mvn
 archetype:generate, en précisant l'argument -Dcatalog=local signalant
@@ -12611,7 +12611,7 @@ simples, comme le montre le listing 16.3.
 </plugin>
 -------------------------------------------------------------------------------
 
-Par l’universelle commande mvn install, Pascal est désormais en mesure
+Par l’universelle commande `mvn install`, Pascal est désormais en mesure
 de produire les versions Linux et Windows de notre client riche. Défis
 relevé avec panache, merci Pascal !
 
@@ -13278,7 +13278,7 @@ l'aide du côté de votre environnement de développement.
 
 Trop souvent, nous perdons du temps sur les postes de développement
 suite à un comportement bizarre de Maven. Le cas typique se traduit par
-un appel à l'aide du type : "J'ai beau lancer des mvn clean install,
+un appel à l'aide du type : "J'ai beau lancer des `mvn clean install`,
 project clean sous Eclipse, et build all, je n'arrive pas à démarrer mon
 serveur Tomcat à cause d'une NoClassDefFoundError."
 
@@ -13479,7 +13479,7 @@ traduit dans de nombreuses langues (la version française est en cours de
 réalisation à l'heure où nous rédigeons ces lignes), est lui-même rédigé
 puis assemblé _via_ Maven. Pour produire les 500 pages du PDF que vous
 pouvez consulter en ligne footnote:[http://www.sonatype.com/products/maven/documentation/book-defguide], il suffit de lancer la
-commande universelle mvn install !
+commande universelle `mvn install` !
 
 === Qui est qui ?
 
@@ -13772,7 +13772,7 @@ image:MangaAntonio.png[float="left"]
 
 J'ai le même âge que Vincent M. mais tout le monde me donne l'âge de
 Fabrice. Le secret de cette fontaine de jouvence ? Maven ! Eh oui,
-chaque mvn install vous fait gagner du temps, donc, plus je compile avec
+chaque `mvn install` vous fait gagner du temps, donc, plus je compile avec
 Maven, plus je rajeunis. Vous avez lu le _Portrait de Dorian Gray_ ? Eh
 bien, lisez un de mes livres, voire les deux (_Java EE 5_, aux éditions
 Eyrolles, et _Java EE 6_ chez Apress) et vous paraîtrez plus jeune. Il y
@@ -14164,7 +14164,7 @@ Mojo
 Un plugin Maven est composé de classes Java, et chaque tâche du plugin
 est réalisé par une classe Mojo, acronyme pour _Maven Old Java Object_
 (par allusion au terme POJO, _Plain Old Java Object_). Un Mojo est donc
-le pendant côté code d'une tâche Maven invoquée par mvn plugin:tâche.
+le pendant côté code d'une tâche Maven invoquée par `mvn plugin:tâche`.
 Les Mojos se basent sur une API propre à Maven. Voir sur ce sujet
 http://maven.apache.org/guides/introduction/introduction-to-plugins.html.
 
