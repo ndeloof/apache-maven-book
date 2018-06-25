@@ -8114,17 +8114,17 @@ image:Geegol-Shopping-List.png[float="left"]
 --
 
 [[Utiliser_un_outil_non_supporte]]
-== Chapitre 11 : Utiliser un outil non supporté
+== Chapitre 11 : Utiliser un outil non supporté
 
 Jusqu'ici, nous avons toujours trouvé pour chaque problème que nous
-avons rencontré un plugin Maven adapté. Le "mariage" de notre projet
+avons rencontré un plugin Maven adapté. Le « mariage » de notre projet
 avec les règles du groupe Geegol va cependant nous obliger à faire
 quelques efforts supplémentaires.
 
 === Un outil maison
 
 Le groupe utilise (pour des raisons que nous n’aborderons pas ici) un
-serveur qu'il a développé lui-même, le "_Geegol Execution Architecture_"
+serveur qu'il a développé lui-même, le « _Geegol Execution Architecture_ »
 – GEA pour les intimes. Il ne s'agit pas d'un serveur JavaEE
 traditionnel, bien qu'il y ressemble beaucoup et propose des API de
 programmation compatibles. Il présente cependant quelques restrictions
@@ -8166,7 +8166,7 @@ notre projet, en l'intégrant dans notre processus de construction par
 Maven.
 
 Une étape préalable à toute solution basée sur Maven est de mettre à la
-disposition de celui-cila bibliothèque de notre outil gea-check sous
+disposition de celui-ci la bibliothèque de notre outil gea-check sous
 forme d'artefact Maven. Nous devons donc le placer dans notre dépôt de
 bibliothèques, accompagné d'un fichier POM fournissant les métadonnées
 adéquates, en particulier la liste précise de ses dépendances. Nous
@@ -8182,9 +8182,9 @@ génération documentaire, nous ne partons donc pas de rien.
 La solution la plus rapide consiste à utiliser la tâche Ant telle quelle
 dans notre projet Maven. Hervé pourra ainsi rassurer tout le monde en
 prouvant que le choix de Maven ne met pas des bâtons dans les roues.
-Cela est possible grâce à un plugin standard : antrun, lequel, comme son
+Cela est possible grâce à un plugin standard : AntRun, lequel, comme son
 nom le suggère, va exécuter un script Ant lors de la construction du
-projet par Maven. Voilà qui pourrait bien nous sauver la mise ! Le
+projet par Maven. Voilà qui pourrait bien nous sauver la mise ! Le
 Listing 11.1 montre la configuration que nous avons ajoutée au projet
 pour gérer cette étape.
 
@@ -8236,7 +8236,7 @@ devons y ajouter la bibliothèque maison GEACheck (et ses dépendances)
 _via_ un bloc <dependency>, appliqué au plugin.
 
 Cette petite manipulation nous permet donc d'utiliser sans souci les
-outils en place. Fin du Chapitre 11 ? Non, bien sûr.
+outils en place. Fin du Chapitre 11 ? Non, bien sûr.
 
 [NOTE]
 ====
@@ -8247,31 +8247,31 @@ Par défaut, cette liste inclut org.apache.maven.plugins et
 org.codehaus.mojo, soit les deux sources officielles de plugins de la
 communauté des développeurs Maven. Cette liste peut être enrichie de
 nouvelles entrées (_via_ leur identifiant de groupe) dans le fichier de
-configuration de Maven : settings.xml. Si votre entreprise utilise de
+configuration de Maven : settings.xml. Si votre entreprise utilise de
 nombreux plugins maison, ce mécanisme peut vous aider à alléger votre
 configuration, cependant cela suppose que chaque développeur dispose
 d'un fichier settings.xml correctement configuré.
 ====
 
-==== Retour dans un monde de scripts ?
+==== Retour dans un monde de scripts ?
 
 Cette solution est très pratique car elle permet de réutiliser en peu de
 temps du code existant. Dans la même veine, nous pourrions exécuter un
 script Groovy ou BeanShell. Cependant, cette pratique n'est pas tout à
-fait satisfaisante :
+fait satisfaisante :
 
 image:MangaHerve.png[float="left"]
 
 Hervé n'est pas prêt à se contenter de cette solution qui n'est, pour
-lui, qu'un pis-aller : d'une part, nous sacrifions l'idée phare de Maven
+lui, qu'un pis-aller : d'une part, nous sacrifions l'idée phare de Maven
 de ne pas devenir un nième langage de script. Où est l'approche
-déclarative dans ce que nous venons de faire ? D'autre part,
+déclarative dans ce que nous venons de faire ? D'autre part,
 l'intégration de notre bout de script Ant dans Maven est très
 imparfaite. Nous devons explicitement déclarer les dépendances de
 l'outil de génération dans notre fichier POM – ce qui signifie que nous
 devons les connaître, donc aller consulter sa documentation pour en
-extraire cette information. Cela ne vous rappelle rien ? Alors,
-retournez au Chapitre 2 !
+extraire cette information. Cela ne vous rappelle rien ? Alors,
+retournez au Chapitre 2 !
 
 AntRun a été conçu comme un outil de transition pour faciliter la vie
 des projets basés sur Ant. Les concepteurs de Maven, conscients qu'il
@@ -8279,14 +8279,14 @@ des projets basés sur Ant. Les concepteurs de Maven, conscients qu'il
 existantes, ont introduit ce plugin utilitaire, en insistant bien sur
 son rôle de roue de secours en attendant mieux. Nous l'utilisons donc
 provisoirement pour répondre aux exigences du groupe, mais lançons
-immédiatement une nouvelle tâche : l'écriture d'un plugin Maven pour
+immédiatement une nouvelle tâche : l'écriture d'un plugin Maven pour
 notre outil de génération documentaire. C'est donc à cette tâche
 qu'Hervé va s'attaquer à présent.
 
 [[Creer_un_plugin]]
 === Créer un plugin
 
-==== Pas de panique !
+==== Pas de panique !
 
 Créer de toutes pièces un plugin peut faire peur _a priori_. Nous allons
 voir, pourtant, que cela ne nous dépaysera pas beaucoup de notre
@@ -8317,16 +8317,16 @@ les étapes…
 
 Le reste du projet est tout ce qu'il y a de plus classique. Répertoires
 de sources, de ressources et de tests, dépendances et compagnie. Pas de
-quoi fouetter un chat !
+quoi fouetter un chat !
 
 La tâche check que nous voulons créer dans notre plugin sera associée à
 une classe spécifique. Ces classes sont appelées dans le vocabulaire
 Maven des mojos (_Maven Old Java Object_), par allusion au concept de
-POJO footnote:[_Plain Old Java Object_, soit "bon vieil objet Java". Les outils modernes ne demandent plus à notre code d’hériter de telle classe ou d’implémenter telle interface, ce qui lui permet d’être neutre et plus souple. Cette appellation cherche avant tout à se différencier des frameworks contraignants qui imposent la hiérarchie des classes, comme Struts par exemple.] qui a fait le succès des bibliothèques Spring et
+POJO footnote:[_Plain Old Java Object_, soit « bon vieil objet Java ». Les outils modernes ne demandent plus à notre code d’hériter de telle classe ou d’implémenter telle interface, ce qui lui permet d’être neutre et plus souple. Cette appellation cherche avant tout à se différencier des frameworks contraignants qui imposent la hiérarchie des classes, comme Struts par exemple.] qui a fait le succès des bibliothèques Spring et
 Hibernate. Ce terme a aussi été choisi avec malice pour faire référence
 au nom donné au Cameroun à des amulettes – inutile de chercher un lien
 avec le personnage de super-vilain associé à ce nom dans le comics
-_X-Men_ ;-).
+_X-Men_ ;-).
 
 En fait, ce sont de simples classes qui implémentent l'interface
 org.apache.maven.plugin.Mojo, et, dans la très grande majorité des cas –
@@ -8367,7 +8367,7 @@ des sources, qui a lieu avant la compilation.
 
 Nous avons donc un projet Maven capable de produire un plugin qui
 exécutera notre code Java lors de la phase process-sources. On vous
-l'avait bien dit que ce n'était pas bien compliqué !
+l'avait bien dit que ce n'était pas bien compliqué !
 
 [[des_parametres_pour_le_plugin]]
 ==== Des paramètres pour le plugin
@@ -8392,7 +8392,7 @@ private File output;
 -------------------------------------------------------------------------------
 
 Comme la configuration générale du Mojo, les paramètres sont déclarés
-_via_ des annotations "à l'ancienne" dans le Javadoc (aussi connu sous
+_via_ des annotations « à l'ancienne » dans le Javadoc (aussi connu sous
 le nom de doclets). Chaque paramètre peut définir une valeur par défaut,
 qui servira donc de convention pour l'utilisation du plugin. Cette
 valeur par défaut peut être une expression faisant référence à un
@@ -8402,8 +8402,8 @@ Les utilisateurs de notre plugin pourront modifier ce paramètre dans
 leur fichier POM en ajoutant dans la configuration un élément <output>
 avec le chemin de leur choix.
 
-L'expression délimitée par "${" et "}" permet d'identifier des nœuds du
-modèle objet du projet ; rappelez-vous que Maven charge les données XML
+L'expression délimitée par « ${ » et « } » permet d'identifier des nœuds du
+modèle objet du projet ; rappelez-vous que Maven charge les données XML
 de notre POM en mémoire sous forme d'un arbre d'objets, après fusion
 avec les parents dont il peut hériter et activation des profils.
 project.build.directory équivaut ainsi à l'élément
@@ -8411,7 +8411,7 @@ project.build.directory équivaut ainsi à l'élément
 ou de la valeur par défaut de cette propriété. Dans la très grande
 majorité des cas, il s'agira du répertoire target, mais ne présumons pas
 de la façon dont notre plugin sera utilisé et des contraintes que vont
-rencontrer nos projets. Conventions ne signifie pas obligations !
+rencontrer nos projets. Conventions ne signifie pas obligations !
 
 [NOTE]
 ====
@@ -8430,12 +8430,12 @@ image:MangaHerve.png[float="left"]
 
 Dans sa première version, le plugin d'Hervé, pour analyser notre code
 source, utilisait un paramètre basé sur l'expression
-project.build.sourceDirectory, qui renvoit pour un projet standard le
+project.build.sourceDirectory, qui renvoie pour un projet standard le
 chemin src/main/java. Hervé lance donc son plugin sur le projet devant
 nos yeux pleins d'impatience et il est fier de nous présenter le rapport
 généré quelques secondes plus tard dans le répertoire target.
-Applaudissements, puis désillusion : le code analysé est bien celui de
-notre projet, mais il en manque toute une partie !
+Applaudissements, puis désillusion : le code analysé est bien celui de
+notre projet, mais il en manque toute une partie !
 
 Notre projet utilise un plugin générateur de code, transformant un
 modèle UML en code source Java. Ce code est créé sous
@@ -8453,7 +8453,7 @@ liste dynamique de répertoires.
 Pour accéder au modèle objet du projet et consulter le moment voulu
 cette liste de répertoires, nous devons manipuler directement l'objet
 MavenProject que Maven met à notre disposition. Nous définissons donc un
-nouveau paramètre au plugin, bien que celui-ci soit un peu particulier :
+nouveau paramètre au plugin, bien que celui-ci soit un peu particulier :
 
 [source, java]
 -------------------------------------------------------------------------------
@@ -8501,9 +8501,9 @@ technologie sur laquelle tourne une application.
 
 Maven utilise le conteneur Plexus footnote:[http://plexus.codehaus.org/] pour l'exécution de
 ses composants. Vous êtes probablement familiarisé avec l'un de ses
-concurrents qui remporte un grand succès en entreprise :
+concurrents qui remporte un grand succès en entreprise :
 SpringFramework. Le fonctionnement de Plexus est relativement
-comparable, en dehors du mécanisme d'annotations qui jusqu'à peu de
+comparable, en dehors du mécanisme d'annotations qui jusqu'il y a peu de
 temps ne s’appuyait que sur des balises Javadoc à la place des
 annotations de Java 5.
 
@@ -8515,7 +8515,7 @@ reste à présent à y accéder depuis le plugin.
 
 Comme Spring, Plexus met en œuvre le patron d'injection de
 dépendances footnote:[Aussi connu sous le nom d’Inversion de Contrôle (http://fr.wikipedia.org/wiki/Inversion_de_contrôle)] (eh oui, bien que méconnu, Plexus était
-très novateur en son temps !). Ce n'est donc pas le plugin qui va aller
+très novateur en son temps !). Ce n'est donc pas le plugin qui va aller
 chercher un composant mais le conteneur qui va initialiser le plugin
 avec les composants déclarés comme indispensables. Un composant est
 référencé _via_ l'annotation @component et sera injecté lors de
@@ -8523,10 +8523,10 @@ l'exécution de Maven directement au niveau de l'attribut. Le composant
 est identifié par une chaîne de caractères qui est, par convention, le
 nom complet de l'interface qu’il réalise. Lorsque plusieurs variantes
 sont disponibles, Plexus propose soit de compléter l'identificateur par
-un qualificateur complémentaire identifié par le caractère "#", soit de
+un qualificateur complémentaire identifié par le caractère « # », soit de
 préciser plus explicitement un attribut hint (voir l'exemple suivant).
 Pour faire appel à un composant de décompression d'archive ZIP par
-exemple, on ajoutera l'attribut suivant dans notre plugin :
+exemple, on ajoutera l'attribut suivant dans notre plugin :
 
 
 [source, java]
@@ -8580,7 +8580,7 @@ private List<File> getJavaSources( File root )
 -------------------------------------------------------------------------------
 
 Nous avons donc une méthode qui retourne la liste complète des fichiers
-sources Java de notre projet, code généré inclus ! Reste à passer
+sources Java de notre projet, code généré inclus ! Reste à passer
 l'outil de contrôle Geegol dessus.
 
 ==== Des classes et des royaumes…
@@ -8599,7 +8599,7 @@ ajouter des éléments de classpath et, éventuellement, exporter des
 packages. Maven met ainsi ses API à disposition des plugins sans exposer
 pour autant ses classes internes. Il est intéressant de voir que cette
 même problématique est relevée de manière indépendante par OSGi, sur
-lequel on aurait sans doute bâti Maven s'il avait été créé en 2009 !
+lequel on aurait sans doute bâti Maven s'il avait été créé en 2009 !
 
 [NOTE]
 ====
@@ -8616,7 +8616,7 @@ Vous avez sans doute déjà rencontré des problèmes de ClassLoaders, de
 sombres histoires de classes qui ne sont pas ce qu'elles disent être, ou
 encore des problèmes pour la configuration de la bibliothèque
 commons-logging. C'est un sujet complexe, aussi nous ne nous attarderons
-pas ;).
+pas ;).
 
 Pour notre plugin, nous allons construire un realm dédié à l'exécution
 de GEACheck, incluant ce dernier et ses dépendances ainsi que les
@@ -8628,13 +8628,13 @@ image:11-01.png[align="center"]
 
 Arbre des royaumes ClassWorlds.
 
-Le Listing 11.4 montre le code du plugin pour :
+Le Listing 11.4 montre le code du plugin pour :
 
-* construire un nouveau ClassLoader (chargeur de classe) ;
+* construire un nouveau ClassLoader (chargeur de classe) ;
 * lui associer les dépendances et répertoires du projet sur lequel
-il travaille ;
+il travaille ;
 * lui associer la bibliothèque de l'outil que nous voulons
-exécuter ;
+exécuter ;
 * exécuter l'outil GEACheck à l'intérieur de ce contexte.
 
 Par souci de clarté, nous n’avons pas indiqué dans ce listing les
@@ -8749,25 +8749,25 @@ image:MangaOlivier.png[float="left"]
 
 Olivier revient tout juste d’une conférence sur l’avenir de Java et les
 plans de développement de JavaEE 7, et nous trouve tous au chevet de
-notre plugin. Sa première réaction est la stupeur : nous sommes en train
+notre plugin. Sa première réaction est la stupeur : nous sommes en train
 de développer du code en injectant des dépendances via des annotations
 dans du JavaDoc, le genre de choses qu’on faisait … en 2004 avec Apache
-commons-attributes ! Nous avons mis dans notre projet le top du dernier
+commons-attributes ! Nous avons mis dans notre projet le top du dernier
 buzz en termes de technologies, et nous voilà ramenés une décennie en
-arrière
+arrière.
 
 image:Maven3.png[Maven3,align="center"]
 
 La cause de ce choc technologique, c’est que nous utilisons l’API Maven
 2.0, qui date de la création de l’outil. Pour offrir une compatibilité
 sans faille à ses utilisateurs, Maven 3 reste 100% compatible avec cette
-API historique, alors qu’en interne les choses ont beaucoup changées.
+API historique, alors qu’en interne les choses ont beaucoup changé.
 
 Dans l’équipe, nous utilisons tous Maven3, Java7, JavaEE 6, pourquoi
-s’encombrer de ce passé obsolète ?
+s’encombrer de ce passé obsolète ?
 
 Olivier s’attaque donc à moderniser notre socle technique. Bye Bye
-Maven2, ce qui se traduit dans note POM par un prérequis sans appel :
+Maven2, ce qui se traduit dans note POM par un prérequis sans appel :
 
 [source, xml]
 -------------------------------------------------------------------------------
@@ -8785,7 +8785,7 @@ maven-plugin-toolss-java5 et de l’injection de dépendances @JSR-330.
 Attention
 
 Olivier se base sur du code qui n’est pas encore disponible en version
-finale. Sonatype est très actif sur ce chantier (projet Sisu :
+finale. Sonatype est très actif sur ce chantier (projet Sisu :
 https://github.com/sonatype/sisu) qui vise à homogénéiser son offre
 logicielle, aussi à l’heure où la seconde édition sortira des presses,
 nous espérons que ce code sera intégré dans la version courante de Maven
@@ -8853,7 +8853,7 @@ n'était finalement pas si compliqué que ça à développer, une fois ces
 bases acquises. Par contre, il garde un mauvais souvenir de sa première
 démo pour laquelle le résultat était incomplet. Il voudrait que son
 projet de plugin puisse être équipé de tests, comme tout bon projet
-Maven !
+Maven !
 
 Un moyen simple de tester le plugin est de l'assembler sous forme de JAR
 et de l'invoquer manuellement depuis l'un de nos projets. Nous avons
@@ -8872,13 +8872,13 @@ n'est pas le cas de nombreux autres plugins indépendants.
 
 La plus grande difficulté pour tester un plugin Maven réside dans
 l’identification correcte de ce qu'on désire valider, en particulier
-lorsque le plugin sert à intégrer un autre outil : nous devons être en
+lorsque le plugin sert à intégrer un autre outil : nous devons être en
 mesure de valider le fait que l'outil a bien été exécuté avec le bon
 paramétrage et non pas que l'outil lui-même est exempt de bogues.
 
 ==== Plugin testing harness
 
-Maven propose une suite de tests sous forme d'objets simulacres ("mock")
+Maven propose une suite de tests sous forme d'objets simulacres (« mock »)
 pour ses API et un mécanisme simple pour configurer une instance du
 plugin à tester. Un extrait de fichier POM est utilisé pour définir la
 configuration de test du plugin, et l'environnement de test se charge
@@ -8887,9 +8887,9 @@ d'exécuter le plugin.
 La mise en œuvre est simple, puisqu'il s'agit d'écrire une classe de
 test jUnit très classique et de faire appel au plugin-testing-harness
 pour configurer le plugin que nous désirons tester à partir d'un
-pseudo-POM, limité à sa seule section <plugin>. Le Listing 11.7 montre
+pseudo POM, limité à sa seule section <plugin>. Le Listing 11.7 montre
 le code de ce test, qui va exécuter le plugin et vérifier son
-fonctionnement. Le Listing 11.8 montre le pseudo-fichier POM qui lui
+fonctionnement. Le Listing 11.8 montre le pseudo fichier POM qui lui
 sert de base pour construire et configurer le plugin testé.
 
 
@@ -8959,7 +8959,7 @@ de test, mais dans un mode automatisé. C'est l'option retenue par le
 plugin invoker, qui va enchaîner un build Maven parallèle lors de la
 phase de test d'intégration de notre projet de plugin. Contrairement au
 plugin plugin-testing-harness, il ne s'agit pas d'exécuter le plugin
-dans un environnement de test "unitaire", mais de lancer une
+dans un environnement de test « unitaire », mais de lancer une
 construction Maven complète, indépendante et d'en valider _a posteriori_
 la bonne exécution.
 
@@ -9023,7 +9023,7 @@ plus de notre projet, la bonne santé de son plugin, lequel, outillé de
 tests, est maintenant prêt pour vivre sa vie et répondre au besoin à des
 demandes d'évolution ou de nouvelles contraintes. Hervé n’a plus qu'à
 documenter ce plugin et son utilisation… mais pour cela il devra
-attendre le chapitre suivant !
+attendre le chapitre suivant !
 
 === Conclusion
 
@@ -9040,7 +9040,7 @@ cependant pas et la communauté des développeurs Maven est prête à
 apporter tout le support nécessaire.
 
 [[L_assurance_qualite]]
-== Chapitre 12 : L'assurance qualité
+== Chapitre 12 : L'assurance qualité
 
 Une application qui fonctionne, c'est bien. Mais du code qui est
 correctement construit, évolutif, lisible, maintenable, c'est mieux.
@@ -9059,7 +9059,7 @@ collaient pas avec la culture locale. Si la qualité d'un projet était
 évaluée sur des critères purement subjectifs de ce niveau, nous serions
 bons pour une réécriture complète, coûteuse et probablement inutile. Par
 contre, certains aspects de notre projet mériteraient peut-être une
-analyse plus minutieuse – nous ne pouvons pas être experts en tout !
+analyse plus minutieuse — nous ne pouvons pas être experts en tout !
 
 Les outils d'audit de code ont l'intérêt d'être objectifs. Bien sûr, les
 règles qu'on leur demande de vérifier ont été choisies et pondérées
@@ -9073,7 +9073,7 @@ travailler.
 
 Les outils d'audit sont légion, et ils produisent des rapports plus ou
 moins complexes à analyser (du moins pour un développeur lambda). Le
-monde open-source en fournit une jolie panoplie, dont le seul défaut est
+monde open source en fournit une jolie panoplie, dont le seul défaut est
 de ne pas être intégrée. Chaque outil va produire un rapport, dans un
 format propre, qu'il nous faudra éplucher.
 
@@ -9093,12 +9093,12 @@ pour en tirer le meilleur et proposer une boîte à outils conviviale et
 pertinente. Son objectif est de démontrer notre capacité de réaction,
 avant que la cellule qualité ne rende son verdict après dix jours
 d'audit de notre code. Pour chaque problème identifié, il veut être
-capable de répondre :
+capable de répondre :
 
 * que nous l'avons également identifié, éventuellement avec un poids
-différent, et sommes donc tout à fait en mesure de le traiter ;
+différent, et sommes donc tout à fait en mesure de le traiter ;
 * que nous disposons de l'outillage nécessaire pour nous assurer
-qu'il ne se reproduise plus ;
+qu'il ne se reproduise plus ;
 * que nous sommes en mesure de fournir des indicateurs démontrant
 l'amélioration progressive de notre code sur la base des critères
 identifiés par les responsables qualité.
@@ -9106,35 +9106,35 @@ identifiés par les responsables qualité.
 Avec un dossier de défense aussi bien ficelé, nous devrions en principe
 éviter de voir trop de monde fourrer son nez dans notre code et nous
 prendre de haut pour nous expliquer comment bien travailler. Nous avons
-tout de même notre fierté, et noubliepaslalistedescourses reste notre
-bébé !
+tout de même notre fierté, et _noubliepaslalistedescourses_ reste notre
+bébé !
 
 ==== Analyse statique
 
 Une première catégorie d'outillage concerne l'analyse statique du code.
 Il s'agit d'une relecture du code par un outil qui va rechercher des
 patrons particuliers et calculer des métriques. En Java, il existe
-plusieurs outils de cette catégorie, lesquels peuvent extraire :
+plusieurs outils de cette catégorie, lesquels peuvent extraire :
 
 * une liste d'alertes signalant des mauvaises pratiques connues,
 tournures de code maladroites ou bogues récurrents liés à l'imperfection
-des développeurs qui tombent tous dans les mêmes pièges – et aucun de
-nous ne fait exception à ce constat ;
+des développeurs qui tombent tous dans les mêmes pièges — et aucun de
+nous ne fait exception à ce constat ;
 
 * des indicateurs sur la structure du code, jugeant sa modularité,
 sa complexité ou son niveau d'abstraction.
 
 Le premier type d'indication est évidemment celui qui attire tout de
-suite nos décideurs : comment résister à un outil qui, en quelques
+suite nos décideurs : comment résister à un outil qui, en quelques
 clics, va identifier tous les bogues si coûteux que nous avons
-négligemment laissés traîner ?
+négligemment laissés traîner ?
 
 ===== Checkstyle
 
 image:MangaVincentM.png[float="left"]
 
-Vincent expérimente tout d'abord un outil open-source de cette catégorie
-sur notre code : Checkstyle. L'analyse est de niveau syntaxique et
+Vincent expérimente tout d'abord un outil open source de cette catégorie
+sur notre code : Checkstyle. L'analyse est de niveau syntaxique et
 signale les incohérences qui existent dans notre façon de travailler.
 Une grande partie des règles de Checkstyle concerne le formatage du code
 plus que son fond, l'outil semble donc à la fois tatillon et sans grand
@@ -9142,16 +9142,16 @@ intérêt.
 
 image:MangaVincentS.png[float="left"]
 
-L'autre Vincent – si vous avez bien suivi les chapitres précédents, vous
-aurez noté que notre équipe compte deux Vincent ;) –, qui suit de loin
+L'autre Vincent — si vous avez bien suivi les chapitres précédents, vous
+aurez noté que notre équipe compte deux Vincent ;) —, qui suit de loin
 le travail de son collègue par pauses-café interposées, n'est pas de cet
 avis. Il a passé deux heures à fusionner ses dernières modifications
 avec celles d'Hervé, non pas parce que ce dernier travaille comme un
-cochon (sans quoi, il ne serait pas dans l'équipe !), mais tout
+cochon (sans quoi, il ne serait pas dans l'équipe !), mais tout
 simplement parce qu'il utilise des règles de formatage de code
-différentes (voir Listing 12.1).
+différentes (voir Listing 12.1).
 
-Listing 12.1 : Comparaison de nos conventions de formatage du code
+Listing 12.1 : Comparaison de nos conventions de formatage du code
 [cols="2*"]
 |===
 |image:MangaVincentS.png[float="center"]
@@ -9206,15 +9206,15 @@ les développeurs. Vouloir que tout le monde travaille strictement de la
 même façon c'est, en effet, faire de nous de simples machines à coder
 sans liberté individuelle. Par contre, laisser chacun faire ce qu'il
 veut à sa sauce n'est pertinent que si cela ne vient pas perturber les
-autres. Pour faire intellectuel, disons que "la liberté des uns s'arrête
-là où commence celle des autres".
+autres. Pour faire intellectuel, disons que « la liberté des uns s'arrête
+là où commence celle des autres ».
 
 Même si cela va nécessiter de se poser pendant une heure et obliger
 certains d'entre nous à accepter un formalisme qu'ils n'apprécient pas
 forcément, se mettre d'accord sur des règles de ce type économisera à
 chacun de longues heures d'un travail inutile, rébarbatif et source
 d'erreurs. Sans compter que notre IDE préféré sait nous aider à formater
-le code à la volée !
+le code à la volée !
 
 Les règles, même les plus superficielles, de Checkstyle ont donc leur
 rôle. L'analyse du code signalera directement que le petit dernier
@@ -9222,7 +9222,7 @@ arrivé dans l'équipe ne respecte pas nos règles communes et va à un
 moment ou un autre provoquer le problème rencontré par Vincent et Hervé.
 
 Checkstyle compte également de nombreuses règles qui valident le niveau
-de documentation technique du code. Ici aussi, pas de règle générale :
+de documentation technique du code. Ici aussi, pas de règle générale :
 du code peut être lourdement commenté et totalement incompréhensible, le
 commentaire peut d'ailleurs être totalement obsolète, et du code sans
 commentaires est parfois extrêmement limpide et ne nécessite aucune
@@ -9259,20 +9259,20 @@ Une fois de plus, activer toutes ses règles sans se soucier du contexte
 risque surtout de produire un rapport de milliers de lignes à peine
 exploitable. C'est à nous de comprendre chacune de ses règles, de voir
 si elle s'applique à notre projet et l’importance que nous lui donnons.
-La simple lecture de ces règles est d'ailleurs très formatrice !
+La simple lecture de ces règles est d'ailleurs très formatrice !
 
 Nous pouvons également assister FindBugs dans son travail d'analyse pour
 le rendre plus pertinent. Des annotations comme @NonNull peuvent être
 ajoutées dans le code pour préciser, par exemple, qu'une méthode
 n'accepte pas un appel sans un paramètre correctement renseigné
-(fonctionnalité qui est d'ailleurs proposée pour Java 7). La présence de
+(fonctionnalité qui est d'ailleurs proposée pour Java 7). La présence de
 cette annotation permet à l'outil de contrôler tous les endroits où elle
 est invoquée et, en même temps, complète la documentation de notre code
 en précisant nos intentions.
 
 De la même façon, FindBugs peut exploiter les annotations définies en
-marge du livre _Programmation concurrente en Java_, de Brian Goetz –
-chez le même éditeur, excellent ouvrage que je vous recommande ;) – pour
+marge du livre _Programmation concurrente en Java_, de Brian Goetz —
+chez le même éditeur, excellent ouvrage que je vous recommande ;) — pour
 identifier les problèmes de gestion concurrente en environnement
 multithread.
 
@@ -9281,26 +9281,26 @@ multithread.
 image:MangaVincentM.png[float="left"]
 
 Vincent termine son tour d'horizon en installant un autre outil
-d'analyse statique : PMD. Celui-ci se place à mi-chemin entre Checkstyle
+d'analyse statique : PMD. Celui-ci se place à mi-chemin entre Checkstyle
 et FindBugs. Moins formel que Checkstyle, il ne propose pas des règles
 aussi poussées que FindBugs (aidé par des annotations). Cela ne signifie
 pas pour autant qu'il soit inutile. Il vient renforcer la pertinence de
 l'analyse en proposant un autre regard sur notre code.
 
 Il nous reste cependant à définir soigneusement ses règles d'analyse
-pour qu'elles soient cohérentes avec nos deux autres outils !
+pour qu'elles soient cohérentes avec nos deux autres outils !
 
 ==== Analyse dynamique
 
-Les outils d'analyse statique font déjà de grandes choses mais ils ne
+Les outils d'analyse statique font déjà de grandes choses, mais ils ne
 peuvent pas faire de miracle. En particulier, ils ne sont pas en mesure
 de deviner comment est utilisée réellement l'application. Pour cela, il
 faut la faire tourner dans un environnement et une utilisation
-réalistes. Or, nous avons déjà, depuis le Chapitre 4, une belle panoplie
+réalistes. Or, nous avons déjà, depuis le Chapitre 4, une belle panoplie
 de tests qui exécutent notre application, par petits morceaux, en se
 focalisant sur des scénarios d'utilisation issus de nos besoins
 fonctionnels (rappelez-vous les règles du développement dirigé par les
-tests !).
+tests !).
 
 Cobertura, Clover ou Emma sont des outils d'analyse dynamique qui visent
 à déterminer quelle portion de notre code est exécutée au cours de nos
@@ -9309,41 +9309,41 @@ rapports indiquent le taux de couverture du code et remontent jusqu'au
 code source pour nous indiquer quelle ligne a été exécutée au moins une
 fois au cours d'un test.
 
-Comment exploiter un tel outil ?
+Comment exploiter un tel outil ?
 
 image:MangaOlivier.png[float="left"]
 
 Olivier, qui est venu épauler Vincent, évalue avec lui ces outils et
 l'information qu'ils fournissent. L'indication synthétique est un taux
-de couverture de notre code par des tests : 65 %. Est-ce bien ou pas ?
+de couverture de notre code par des tests : 65 %. Est-ce bien ou pas ?
 
 Brute, cette information n'a aucune utilité ou presque. Son intérêt est
-plus de voir comment ces 65 % se répartissent sur notre code. En
+plus de voir comment ces 65 % se répartissent sur notre code. En
 descendant à un niveau de détail plus fin, on découvre dans le rapport
-qu’une majorité de nos packages sont couverts à environ 70 % et que deux
-mauvais élèves se contentent de 30 %. Nous tenons nos coupables : deux
+qu’une majorité de nos packages sont couverts à environ 70 % et que deux
+mauvais élèves se contentent de 30 %. Nous tenons nos coupables : deux
 packages pas assez testés, ou mal testés, ou peut-être même du code
-inutile !
+inutile !
 
 * Le premier, remoting, est celui de nos interfaces de communication
 avec d'autres systèmes. Pas le plus facile à tester puisqu'il faut
 quelqu'un (un simulateur) en face pour répondre et valider le
 fonctionnement du logiciel.
 * Le second, beans, correspond à des classes de données sans valeur
-ajoutée : juste des beans ayant des accesseurs get/set, mais cela fait
+ajoutée : juste des beans ayant des accesseurs get/set, mais cela fait
 déjà pas mal de lignes de code, d'où le mauvais résultat de la mesure.
 
-Sur ce constat, reposons donc la question : comment exploiter un tel
-outil ?
+Sur ce constat, reposons donc la question : comment exploiter un tel
+outil ?
 
 Si nous établissons comme règle d'or le taux de couverture des tests
-doit dépasser 75 %, que va-t-il très probablement se passer ? Vous
+doit dépasser 75 %, que va-t-il très probablement se passer ? Vous
 pouvez parier que le package beans va rapidement être testé à 100 % afin
-d'atteindre ce taux de 75 %. Le développeur étant par nature faignant,
+d'atteindre ce taux de 75 %. Le développeur étant par nature feignant,
 il choisira la solution de facilité, surtout si son chef l'assomme de
-reproches sur le non-respect de la règle d'or !
+reproches sur le non-respect de la règle d'or !
 
-L'outil fournissait pourtant une information capitale : remoting, couche
+L'outil fournissait pourtant une information capitale : remoting, couche
 critique de notre application, est celle qui est la moins bien testée.
 Il nous encourage effectivement à retrousser nos manches pour mieux
 instrumenter ce code, peut-être en le réarrangeant afin qu'il soit plus
@@ -9353,23 +9353,23 @@ plus faciles à intégrer dans un test unitaire.
 image:MangaVincentM.png[float="left"]
 
 Vincent prend cela en considération et établit notre première règle
-d'or :
+d'or :
 
 Un taux de couverture inférieur à la moyenne doit être justifié. Pas de
-taux absolu et inexplicable à atteindre mais, par contre, interdiction
+taux absolu et inexplicable à atteindre, mais, par contre, interdiction
 de délaisser une partie de l'application sans bonne raison.
 
-Il considère ensuite le reste de l'application : la couverture de code
-est homogène, mais est-elle suffisante ? Comment va-t-elle évoluer ?
-Comment doit-elle évoluer ? Si nos classes de JavaBeans gonflent suite à
-l'ajout de méthodes get/set, notre taux va irrémédiablement baisser mais
+Il considère ensuite le reste de l'application : la couverture de code
+est homogène, mais est-elle suffisante ? Comment va-t-elle évoluer ?
+Comment doit-elle évoluer ? Si nos classes de JavaBeans gonflent suite à
+l'ajout de méthodes get/set, notre taux va irrémédiablement baisser, mais
 ce ne sera pas significatif. Par contre, si l'ajout de nouvelles
 fonctionnalités dégrade le taux de couverture, c'est que ces nouvelles
 fonctionnalités ne sont pas au moins aussi bien testées que le code en
 place.
 
 Cela inspire donc une seconde règle d'or, que nous pourrions qualifier
-de protectionniste :
+de protectionniste :
 
 Le taux de couverture ne doit pas baisser avec le temps sans
 justification.
@@ -9395,7 +9395,7 @@ Vincent pourrait continuer ainsi son tour de table des outils d'analyse
 de code, mais toute cette instrumentation ne sera vraiment productive
 que si elle vient s'intégrer dans nos outils. Nous avons déjà confié la
 construction de nos binaires à Maven, pouvons-nous également lui passer
-la main sur notre suivi qualité ?
+la main sur notre suivi qualité ?
 
 === Les rapports Maven
 
@@ -9406,10 +9406,10 @@ règles de codage, voire le configurer pour qu’il s'exécute durant un
 build normal si nous nous interdisons de ne pas suivre strictement ces
 règles. Évidemment, c'est encore plus efficace si un tel outil d'analyse
 peut être intégré dans l'IDE et fournir au développeur une alerte dès
-que la ligne de code est saisie !
+que la ligne de code est saisie !
 
 Maven propose cependant une autre forme d'intégration pour les outils
-qui visent à compléter la documentation sur le projet : les rapports.
+qui visent à compléter la documentation sur le projet : les rapports.
 
 Notre projet est accompagné d'une large documentation, expliquant son
 utilisation, ses règles de développement et l'explication de nos choix
@@ -9423,9 +9423,9 @@ approche tout-en-un est pratique pour l'utilisateur qui a téléchargé
 notre logiciel, mais pas pour celui qui vient juste de le découvrir et
 voudrait en savoir plus avant de poursuivre. Un site web serait alors
 une meilleure solution. Comment concilier ces deux formes de
-documentation ?
+documentation ?
 
-Par ailleurs, nous sommes fiers de notre système qualité ; aussi
+Par ailleurs, nous sommes fiers de notre système qualité ; aussi
 voudrions-nous l'exposer plus à nos utilisateurs pour démontrer notre
 savoir-faire et gagner leur confiance. Enfin, notre code étant soumis à
 une licence libre, nous voulons qu'il soit aussi facilement consultable
@@ -9439,7 +9439,7 @@ projet. D'une part, notre wiki, dont la syntaxe simple permet de
 construire rapidement une documentation par enrichissement successif.
 D'autre part, nos outils d'analyse qualité, dont les rapports sont
 instructifs sur nos méthodes de travail. Ensuite, des indications
-techniques sur notre projet : licence, prérequis, dépendances. Enfin,
+techniques sur notre projet : licence, prérequis, dépendances. Enfin,
 une série de liens sur les aspects communautaires de notre projet :
 équipe de développement, liste de diffusion, système de suivi des
 anomalies, etc. Agréger toutes ces informations sous un point d'entrée
@@ -9447,19 +9447,19 @@ unique, toujours à jour et homogène, voilà une tâche ambitieuse qui
 n'effraie pas Lukas.
 
 Il découvre rapidement que Maven, lui-même confronté à ce problème de
-documentation, offre une solution complète et très riche : la génération
+documentation, offre une solution complète et très riche : la génération
 d'une documentation complète du projet. En parallèle du cycle de vie de
 construction du projet, Maven propose un cycle de vie documentaire
 déclenché par la commande `mvn site`. Cette commande n'exécute qu'un seul
-plugin, site, mais celui-ci est l'arbre qui cache la forêt : son rôle
+plugin, site, mais celui-ci est l'arbre qui cache la forêt : son rôle
 est d'exécuter des rapports et d'en agréger le contenu dans un document
 unifié sous forme de site web.
 
 image:Maven3.png[Maven3,align="center"]
 
-Autant Maven 3 est compatible à 99,99% avec Maven 2 sur de nombreux
+Autant Maven 3 est compatible à 99,99 % avec Maven 2 sur de nombreux
 points, autant il y a un domaine qui a été revu de fond en comble, c’est
-la gestion du site ! Dans Maven 2, Nos rapports sont eux-mêmes déclarés
+la gestion du site ! Dans Maven 2, nos rapports sont eux-mêmes déclarés
 dans notre POM, sous un élément dédié <reporting>. Ils ressemblent à s'y
 méprendre à des déclarations de plugins et sont d'ailleurs le plus
 souvent couplés avec un plugin Maven classique. Ils n'ont cependant pas
@@ -9486,7 +9486,7 @@ Bref, deux poids, deux mesures. Sans compter que, techniquement, cette
 gestion des plugins de rapports est une véritable verrue dans le code de
 Maven 2. Pour la nouvelle génération de Maven, tout ceci est donc passé
 à la trappe, et un nouveau plugin site a dû être développé. La version
-3.x de ce plugin utilise donc non pas le bloc <reporting> du POM mais
+3.x de ce plugin utilise donc non pas le bloc <reporting> du POM, mais
 des rapports qu’on indique directement dans sa configuration, comme tout
 autre plugin Maven. Le site de Maven 3 n’est plus un cas à part, mais un
 plugin comme les autres.
@@ -9499,27 +9499,26 @@ de Maven qui construit le projet, sans parler de la déclaration des
 rapports, ça l’amuse modérément.
 
 Heureusement, l’équipe de développement Maven a pensé à lui et aux
-nombreux utilisateurs dans son cas : le plugin site 3.x est capable de
+nombreux utilisateurs dans son cas : le plugin site 3.x est capable de
 détecter l’utilisation de rapports à l’ancienne, déclarés dans le bloc
 <reporting>, et les interprète comme s’il était placé dans sa
 configuration. Il se contente d’un WARNING pour nous rappeler que ce
-n’est pas son mode de fonctionnement nominal, et que – si nous désirons
-utiliser officiellement Maven 3 – il serait préférable de nous mettre à
+n’est pas son mode de fonctionnement nominal, et que — si nous désirons
+utiliser officiellement Maven 3 — il serait préférable de nous mettre à
 la page.
 
 [WARNING] The <reporting> section is deprecated, please move the reports
 to the <configuration> section of the new Maven Site Plugin.
 
-Par ailleurs, depuis la version 3.0-beta-4, le plugin site gère lui même
+Par ailleurs, depuis la version 3.0-beta-4, le plugin site gère lui-même
 la distinction entre Maven 2 et Maven 3, il est donc capable de basculer
-d’une version à l’autre sans douleur. Joli tour de force ! Au final, la
-configuration de nos rapports s’effectue donc comme l’indique le listing
-12.2, et nous permet d’associer au site web du projet la documentation
+d’une version à l’autre sans douleur. Joli tour de force ! Finalement, la
+configuration de nos rapports s’effectue donc comme l’indique le listing 12.2, et nous permet d’associer au site web du projet la documentation
 javadoc et le code source du projet, navigable sous forme de pages web
 (« Cross Reference »).
 
 [source, xml]
-.Listing 12.2 : Configuration de nos plugins de production de raports
+.Listing 12.2 : Configuration de nos plugins de production de rapports
 -------------------------------------------------------------------------------
   <build>
     <plugins>
@@ -9588,15 +9587,15 @@ point à souligner est la présence de la macrocommande <menu
 ref="reports"/> qui indique au plugin l'emplacement où insérer les liens
 vers nos rapports d'analyse du projet.
 
-Les pages de notre site peuvent être écrites au choix :
+Les pages de notre site peuvent être écrites au choix :
 
-* Selon un format APT (_Almost Plain Text_), proche d'une syntaxe
-wiki et rapidement assimilé.
-* En exploitant les pages d'un wiki Confluence, ou TWiki.
-* _Via_le format documentaire DocBook (simplifié).
-* _Via_le format documentaire XDoc supporté de manière native.
-* Tout simplement à partir d'un document xHTML.
-* Ou encore, _via_un module d'extension, en exploitant tout autre
+* selon un format APT (_Almost Plain Text_), proche d'une syntaxe
+wiki et rapidement assimilé ;
+* en exploitant les pages d'un wiki Confluence, ou TWiki ;
+* via le format documentaire DocBook (simplifié) ;
+* via le format documentaire XDoc supporté de manière native ;
+* tout simplement à partir d'un document xHTML ;
+* ou encore, via un module d'extension, en exploitant tout autre
 format. Le bac à sable Maven comprend ainsi un module permettant
 d'exploiter la syntaxe XWiki.
 
@@ -9623,10 +9622,9 @@ Comme le plugin site et son fichier site.xml, le plugin pdf s’appuie sur
 un descripteur pdf.xml qui lui indique comment assembler les éléments
 documentaires pour produire le résultat. De la même façon, et avec les
 moteurs de rendu adéquats, Doxia pourrait produire notre documentation
-dans tout un ensemble de formats qu'il reste à imaginer (voir
-Figure 12-01).
+dans tout un ensemble de formats qu'il reste à imaginer (voir Figure 12-01).
 
-Figure 12-01
+Figure 12-01
 image:12-01.png[align="center"]
 
 Génération de la documentation en différents formats grâce à Doxia.
@@ -9648,23 +9646,23 @@ pouvons identifier les éléments de code qui violent des règles et
 corriger consciencieusement ces défauts, espérant ainsi que les chiffres
 du lendemain seront meilleurs.
 
-==== 68 %, qui dit mieux ?
+==== 68 %, qui dit mieux ?
 
-Rapidement, un besoin nouveau s'exprime : lorsque nous constatons qu'un
+Rapidement, un besoin nouveau s'exprime : lorsque nous constatons qu'un
 élément du projet est sous-documenté, nous ajoutons quelques fichiers
 APT pour combler le manque. La perception de ce défaut de documentation
-est totalement subjective mais nous arrivons rapidement à un consensus
+est totalement subjective, mais nous arrivons rapidement à un consensus
 sur le niveau obtenu. Par contre, le rapport indiquant le taux de
 couverture de nos tests est plus délicat à interpréter. 68 %, est-ce
-bien ? Est-il utile de vouloir pousser ce taux au-delà, ce qui pourrait
+bien ? Est-il utile de vouloir pousser ce taux au-delà, ce qui pourrait
 rapidement nous amener à écrire des tests sans intérêt juste pour
 approcher des 100 %. Pire, nous pourrions être tentés d'écrire de
 nombreux tests faciles pour obtenir un bon chiffre en délaissant des
 parties de code moins évidentes à tester.
 
 68 %, ça ne veut rien dire. Ce qui est intéressant, c'est de voir que le
-mois dernier, nous étions pour le même package à 82 % ! Il semble que
-nous avons laissé cette partie du projet se dégrader ! À moins que nous
+mois dernier, nous étions pour le même package à 82 % ! Il semble que
+nous avons laissé cette partie du projet se dégrader ! À moins que nous
 n’ayons une bonne explication pour cette baisse, une action doit être
 entreprise pour corriger le tir.
 
@@ -9677,23 +9675,23 @@ tests et qu'une modification dans notre modèle ne serait pas détectée.
 De même, tous les aspects fonctionnels (le code métier utile) doivent
 être largement couverts. En revanche, d'autres parties de notre code,
 présentant de nombreux cas d'erreurs qui ne donnent pas lieu à un
-traitement précis autre que "erreur interne, merci de réessayer plus
-tard", peuvent légitimement obtenir une couverture moindre.
+traitement précis autre que « erreur interne, merci de réessayer plus
+tard », peuvent légitimement obtenir une couverture moindre.
 
 ==== L'entropie augmente
 
 Il n'existe pas de juste milieu absolu. Néanmoins, on constate
-l'application universelle du second principe de la thermodynamique : le
+l'application universelle du second principe de la thermodynamique : le
 code tend toujours à se dégrader pour devenir moins organisé et moins
 bien testé. Des tests obsolètes sont supprimés, le nouveau code écrit
 dans la chaleur d'un coup de bourre est peu ou pas instrumenté… Juste
 maintenir le code au même niveau demande une débauche d'énergie, de
-temps et donc de budget !
+temps et donc de budget !
 
 Pour détecter rapidement une telle dérive, rien ne vaut un bon graphe
 synthétique historisant l'évolution du projet. De manière assez
 amusante, on peut souvent deviner les dates de livraison sur de telles
-courbes : on constate un infléchissement de la courbe dans la semaine
+courbes : on constate un infléchissement de la courbe dans la semaine
 qui précède la livraison et (dans le meilleur des cas) une reprise lente
 dans les semaines qui suivent.
 
@@ -9707,19 +9705,19 @@ donc lui qui nous propose spontanément un outil pour être en mesure de
 mesurer l'entropie de notre projet. Il a déjà passé de longues heures à
 analyser les nombreux rapports produits par Maven dans notre site et a
 rapidement compris que ce ne sont que des données brutes. Il faut être
-capable de les lire à des altitudes différentes :
+capable de les lire à des altitudes différentes :
 
-* À 30 000 pieds, on doit avoir en un coup d'œil une vision globale
-du projet, très imparfaite mais parlante. Le projet est-il dans le rouge
+* À 30 000 pieds, on doit avoir en un coup d'œil une vision globale
+du projet, très imparfaite, mais parlante. Le projet est-il dans le rouge
 ou non ? Quel est le type de violation le plus couramment constaté et
-sur lequel il faudra faire un effort de communication et de formation ?
-* À 3 000 pieds, on doit être en mesure d'identifier les modules et
+sur lequel il faudra faire un effort de communication et de formation ?
+* À 3 000 pieds, on doit être en mesure d'identifier les modules et
 de distinguer celui qui joue le mouton noir (espérons qu'il n'y en ait
 qu'un seul), la règle de codage la moins bien respectée.
 * À 300 pieds, on peut pointer du doigt les packages dans lesquels
 il serait bon de passer un peu plus de temps, ou la règle de codage dont
 les développeurs ont sans doute mal compris la portée.
-* À 30 pieds, on accède au Top 10 des classes à problème, et on
+* À 30 pieds, on accède au Top 10 des classes à problème, et on
 commence à regarder les noms des auteurs des dernières modifications
 pour savoir avec qui il faudra discuter de manière aimable et
 constructive lors de la prochaine pause-café.
@@ -9744,7 +9742,7 @@ et le configurer pour utiliser une base de données dédiée.
 
 Les données de Sonar sont accessibles _via_ un frontal web synthétique,
 qui donne les grandes tendances du projet. C'est notre vue à
-30 000 pieds du projet (voir Figure 12-02).
+30 000 pieds du projet (voir Figure 12-02).
 
 .Figure 12-02
 image:12-02.png[align="center"]
@@ -9815,7 +9813,7 @@ image:12-04.png[align="center"]
 
 La Figure 12-05 indique également le Top 10 des violations constatées,
 ce qui nous dira immédiatement sur quoi nous devons mettre l'accent.
-Notre session mensuelle de débriefing est déjà toute tracée !
+Notre session mensuelle de débriefing est déjà toute tracée !
 
 Sonar n'est définitivement pas un outil de flicage, c'est un assistant
 extrêmement puissant pour accompagner le travail d'une équipe et pointer
