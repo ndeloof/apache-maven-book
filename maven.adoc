@@ -9842,7 +9842,7 @@ l'usage, et progressivement à mettre en place une culture du coder
 proprement (livre de Robert C. Martin que je vous recommande chaudement,
 chez le même éditeur).
 
-== Chapitre 13 : Respecter un format de distribution
+== Chapitre 13 : Respecter un format de distribution
 
 Nous avons produit avec Maven un ensemble de binaires respectant les
 formats imposés par la plateforme Java et la norme JavaEE. Il nous reste
@@ -9855,7 +9855,7 @@ nos caprices. À nous de lui fournir un livrable qui colle à ses outils
 et à ses bonnes pratiques pour une mise en production réussie.
 
 [[D_ou_vient_ce_jar]]
-=== D'où vient ce JAR ?
+=== D'où vient ce JAR ?
 
 Depuis que nous avons mis en place un mécanisme d'intégration continue,
 nous en avons tiré de nombreux avantages, parmi lesquels le fait de
@@ -9863,7 +9863,7 @@ disposer en permanence de la dernière version stable et testée de nos
 binaires, ce qui nous évite de construire l'intégralité du projet sur
 nos postes de développement. Le projet commençant à prendre de
 l'embonpoint à force d'explorer de multiples directions, c'est un
-avantage important en termes de productivité – à tel point que nous
+avantage important en termes de productivité — à tel point que nous
 avons rapidement pris l'habitude d'utiliser ces binaires issus de
 l'intégration continue comme fourniture à notre équipe de test pour
 valider la bonne communication avec les systèmes partenaires et la tenue
@@ -9871,8 +9871,8 @@ des performances.
 
 Le gain de temps et de stabilité est significatif. Plutôt que de perdre
 des heures à préparer une version dédiée aux tests, nous avons toujours
-à notre disposition un livrable prêt à être testé – pas forcément
-complet mais fonctionnel. Par ailleurs, nous sommes sûrs que cette
+à notre disposition un livrable prêt à être testé — pas forcément
+complet, mais fonctionnel. Par ailleurs, nous sommes sûrs que cette
 fourniture respecte nos critères qualité puisqu'elle est issue de notre
 fabrique logicielle. Nous entrons ainsi dans une phase
 d'industrialisation durant laquelle un processus automatisé produit
@@ -9881,7 +9881,7 @@ notre livrable avec l'outillage qualité adéquat.
 image:MangaLukas.png[float="left"]
 
 Lukas a cependant fait les frais d'une automatisation maladroite de ce
-processus. L'équipe de test vient de lui remonter une anomalie grave :
+processus. L'équipe de test vient de lui remonter une anomalie grave :
 au-delà de cinquante requêtes par seconde, l'application semble se figer
 et voit ses performances se dégrader à vue d'œil. La version précédente
 n'avait rencontré aucun souci de ce type, et il est donc urgent
@@ -9945,7 +9945,7 @@ incrémenté, et pas juste le fichier modifié. On arrive ainsi rapidement
 à des numéros de révision à cinq ou six chiffres.
 
 Si cela n'a aucune influence sur le développeur, cela fournit un moyen
-de lier un livrable à son code source de manière extrêmement précise :
+de lier un livrable à son code source de manière extrêmement précise :
 si le binaire a été construit à partir de la révision 4704, il suffit
 d'extraire de SVN l'état du code source associé. Nous pouvons d'ailleurs
 demander a posteriori à Subversion de poser une marque pour le code
@@ -9954,7 +9954,7 @@ associé à cette révision particulière.
 Avantage par rapport au numéro de construction, ce numéro de révision
 n'est pas lié au serveur d'intégration continue et peut être obtenu sur
 n'importe quel poste de développement. La même construction donnera donc
-le même résultat, ce qui est la moindre des choses ! Le Listing 13.2
+le même résultat, ce qui est la moindre des choses ! Le Listing 13.2
 montre l'utilisation du plugin buildnumber pour obtenir ce numéro de
 révision et l'exploiter sous forme de variable Maven. À noter qu'il est
 déclenché dans la phase prepare-package disponible dans Maven 2.1 et
@@ -9996,14 +9996,14 @@ binaires portant systématiquement l'indication de révision SVN dans le
 nom du fichier. Il est cependant rapidement ramené à la dure réalité
 lorsqu'il constate que la dernière version disponible de l'EAR dans
 notre gestionnaire de bibliothèque s'appelle…
-noubliepaslalistedescourses-1.2.0-SNAPSHOT.ear – oups !
+noubliepaslalistedescourses-1.2.0-SNAPSHOT.ear – oups !
 
 Nous avons jusqu'ici cherché à modifier le nom du fichier produit par
 Maven. C'est oublier que la phase de déploiement dans notre dépôt de
-bibliothèques n'en tient pas compte : le binaire qui est déployé
-respecte scrupuleusement les indications d'artifactId et de version !
-Malgré nos efforts, et même si le répertoire target contient bien au
-final un fichier
+bibliothèques n'en tient pas compte : le binaire qui est déployé
+respecte scrupuleusement les indications d'artifactId et de version !
+Malgré nos efforts, et même si le répertoire target contient bien finalement
+ un fichier
 noubliepaslalistedescourses-1.2.0-SNAPSHOT-rev-4704.ear, le fichier que
 nous retrouvons dans notre dépôt ne possède plus ce complément
 d'information.
@@ -10015,12 +10015,12 @@ de métadonnées _via_ le répertoire spécialisé META-INF, et en
 particulier le descripteur MANIFEST.MF.
 
 Ce fichier n'est rien d'autre qu'un fichier texte, dont le formalisme
-est un peu déroutant parfois mais qui ressemble globalement aux fichiers
+est un peu déroutant parfois, mais qui ressemble globalement aux fichiers
 de propriétés que vous manipulez déjà certainement. Pour une clé donnée,
 on associera une valeur, par exemple pour la clé build le numéro de
 construction de notre serveur d'intégration continue.
 
-Comment compléter ce fichier MANIFEST ? La construction de nos projets
+Comment compléter ce fichier MANIFEST ? La construction de nos projets
 par Maven en produit naturellement un, avec des informations
 minimalistes. Il suffit de demander aux plugins jar, war ou ear
 d'ajouter d'autres informations. Le Listing 13.3 montre la configuration
@@ -10102,38 +10102,38 @@ les avantages en termes de productivité et de stabilité que nous tirons
 du couple intégration continue/gestionnaire de dépôt. Il s'est alors
 cassé les dents sur un expert en sécurité, certifié CISSP-ISSMP, CISA,
 etc., un adepte du chiffrage des clés asymétriques et autres mécanismes
-que nous utilisons tous les jours sans nous en rendre compte mais que
+que nous utilisons tous les jours sans nous en rendre compte, mais que
 peu de monde est capable d'expliquer.
 
 Notre M. Sécurité a juste tiqué lorsque Stéphane a expliqué que chaque
 poste de développement récupère depuis un serveur les bibliothèques dans
 leur dernière version stable.
 
-"Qui valide cette stabilité ?
+« Qui valide cette stabilité ?
 
 – Le serveur d'intégration continue, avec son armada de tests, de
 métriques et de règles qualité.
 
-– Est-il le seul à pouvoir publier des binaires sur ce serveur ?
+– Est-il le seul à pouvoir publier des binaires sur ce serveur ?
 
 – En principe, tout développeur peut également publier les binaires du
 projet sur lequel il travaille, ça peut parfois être utile d'ailleurs
 pour propager rapidement une correction, mais en pratique…
 
 – Mais alors, il n'est pas possible de s'assurer de qui a produit le
-binaire ?
+binaire ?
 
 – Eh bien, nous pourrions l'ajouter dans le MANIFEST, justement
 récemment nous l'avons complété du numéro de révision…
 
-– Mais comment être sûr que cette information est fiable ?
+– Mais comment être sûr que cette information est fiable ?
 
-– Euh… vous voulez dire que quelqu'un se ferait passer pour un autre ?
+– Euh… vous voulez dire que quelqu'un se ferait passer pour un autre ?
 
-– Oui : un employé ayant un compte à régler, ou pire, un pirate
-informatique !
+– Oui : un employé ayant un compte à régler, ou pire, un pirate
+informatique !
 
-– Eh bien…"
+– Eh bien… »
 
 Faut-il préciser que Stéphane s'attendait à de nombreuses questions,
 mais certainement pas à celles-là. Sa présentation était orientée
@@ -10201,7 +10201,7 @@ Olivier et Stéphane.
 Chaque développeur qui désire diffuser un binaire sur le dépôt verra
 ainsi son nom gravé dans le marbre du MANIFEST et le fichier binaire
 signé numériquement par sa clé GPG. Voilà de quoi donner du répondant à
-Stéphane pour sa prochaine réunion !
+Stéphane pour sa prochaine réunion !
 
 === L'EAR ne suffit pas
 
@@ -10209,7 +10209,7 @@ Notre archive d'entreprise EAR ne se suffit pas. Elle doit être
 complétée par des fichiers de configuration, dans lesquels devront être
 indiqués des paramètres techniques dépendant de l'environnement réseau,
 du système hôte, ou des ajustements liés à la charge constatée sur le
-serveur : nombre de threads alloués à nos tâches de fond, _time-out_ de
+serveur : nombre de threads alloués à nos tâches de fond, _time-out_ de
 connexion à nos serveurs partenaires…
 
 Pour des raisons d'assurance qualité, nous devons également accompagner
@@ -10227,19 +10227,19 @@ règles qualité, de recompiler tout logiciel open-source introduit dans
 une application. Si cette règle est rarement appliquée (hou, les
 vilains), vous devinez facilement de quelle expérience catastrophique
 elle peut provenir… binaires non identifiés, sans code source, bugs
-impossibles à reproduire et donc à corriger. Le passé a du laisser à
+impossibles à reproduire et donc à corriger. Le passé a dû laisser à
 certains de cruelles blessures.
 ====
 
 Nous ne pouvons donc pas nous contenter de produire notre EAR avec
 Maven, il nous manque une étape, et vous imaginez que nous n'allons pas
 arrêter notre démarche d'automatisation complète du processus si près du
-but !
+but !
 
 ==== Assemblage du livrable
 
 La production réclame une archive Unix tar.gz répondant à une structure
-très précise :
+très précise :
 
 * L'archive EAR doit être placée dans un sous-répertoire
 application.
@@ -10248,7 +10248,7 @@ sous-répertoire configuration.
 * Le code source doit être placé dans un sous-répertoire sources.
 
 Nous avons déjà vu un joli panel de plugins qui nous ont bien aidés dans
-notre travail ; nous allons faire appel au plugin assembly, l'un de
+notre travail ; nous allons faire appel au plugin assembly, l'un de
 leurs petits frères. Ce plugin va exploiter un fichier XML qui décrit le
 livrable à assembler. Dans ce fichier, nous indiquerons les constituants
 de notre archive.
@@ -10256,7 +10256,7 @@ de notre archive.
 Le fichier _assembly_ comptera trois parties, correspondant aux trois
 constituants clés de notre archive cible. Ce fichier est structuré par
 un schéma XML qui nous aidera à éviter les erreurs de syntaxe. L'en-tête
-du fichier indique le format d'archive à produire : une archive TAR
+du fichier indique le format d'archive à produire : une archive TAR
 compressée GZip. Nous pourrions aussi bien produire une archive ZIP ou
 un TAR non compressé.
 
@@ -10267,7 +10267,7 @@ pourrions le désarchiver ou le faire accompagner de ses dépendances. La
 deuxième va inclure une liste de fichiers identifiés dans un répertoire
 prédéfini. La dernière va parcourir tous les modules du projet et en
 extraire le code source. Le Listing 13.5 montre ce fichier magique qui
-nous fera franchir la dernière ligne droite avant une production 100 %
+nous fera franchir la dernière ligne droite avant une production 100 %
 automatisée de notre livrable.
 
 [source, xml]
@@ -10352,7 +10352,7 @@ automatisés savent contrôler. Il serait dommage de ne pas lui demander
 de produire aussi notre livrable, ne serait-ce que pour nous donner un
 moyen de vérifier le respect de son format.
 
-L'idée paraît bonne, mais quelle cible Maven invoquer ? Devons-nous
+L'idée paraît bonne, mais quelle cible Maven invoquer ? Devons-nous
 remplacer le `mvn install` par le fameux assembly:assembly. Nous voudrions
 que la production de ce tar.gz soit mieux intégrée dans la construction
 du projet, qu'elle soit le résultat de sa construction par défaut.
@@ -10388,18 +10388,18 @@ configuration que nous appliquons.
   </plugin>
 -------------------------------------------------------------------------------
 
-Solution miracle ? Eh bien non, échec cuisant. Le plugin assembly plante
-lamentablement en indiquant qu'il ne trouve pas notre EAR :'(.
+Solution miracle ? Eh bien non, échec cuisant. Le plugin assembly plante
+lamentablement en indiquant qu'il ne trouve pas notre EAR :'(.
 
 [[l_oeuf_ou_la_poule]]
-==== L'œuf ou la poule ?
+==== L'œuf ou la poule ?
 
-Quel est le problème ? Il nous faut comprendre un peu mieux les rouages
-de Maven pour expliquer cet échec : nous avons mis en place l'héritage
+Quel est le problème ? Il nous faut comprendre un peu mieux les rouages
+de Maven pour expliquer cet échec : nous avons mis en place l'héritage
 naturel sur le projet, c'est-à-dire que le même fichier POM sert à
 déclarer nos modules et de parent commun pour mutualiser la
 configuration et les dépendances. Cette solution, bien pratique, est
-largement appliquée mais pose ici un problème :
+largement appliquée, mais pose ici un problème :
 
 * En tant que support du plugin assembly, notre POM parent doit
 passer en revue les modules du projet. Le plugin pourra ainsi en
@@ -10413,7 +10413,7 @@ contourner cette impasse, nous utilisons une astuce qui ressemble plus à
 un hack qu'à une vraie solution, mais qui va bien nous dépanner.
 
 Nous créons à côté de notre fichier racine pom.xml un second fichier
-POM : pom-assembly.xml. Dans ce nouveau descripteur Maven, nous plaçons
+POM : pom-assembly.xml. Dans ce nouveau descripteur Maven, nous plaçons
 la configuration du plugin assembly, ainsi que la déclaration d'un
 unique module qui pointe vers le pom initial. Le Listing 13.7 montre ce
 nouveau fichier, particulièrement simple comparé au volume de XML que
@@ -10449,25 +10449,25 @@ assembly:assembly -f pom-assembly.xml va donc provoquer la construction
 de ce POM minimaliste, l'exécution du plugin assembly, qui va, à son
 tour, provoquer la phase package sur l'ensemble des modules du projet.
 
-Nous venons de résoudre le problème de l'œuf et de la poule !
+Nous venons de résoudre le problème de l'œuf et de la poule !
 
 === Conclusion
 
 Notre software factory (c'est un mot à la mode, mettez-le sur votre CV)
-est désormais bien rodée. Elle construit automatiquement un livrable :
+est désormais bien rodée. Elle construit automatiquement un livrable :
 
-* Clairement identifié.
-* Testé de manière unitaire, fonctionnelle, mais aussi en charge
+* clairement identifié ;
+* testé de manière unitaire, fonctionnelle, mais aussi en charge
 et/ou en endurance selon les mécanismes de test et nos contraintes.
 Contrairement à une idée trop répandue, les outils ne sont pas le
-facteur limitant dans ce domaine.
-* Respectant nos critères qualité et règles de codage, dont les
-métriques sont historisées.
+facteur limitant dans ce domaine ;
+* respectant nos critères qualité et règles de codage, dont les
+métriques sont historisées ;
 * Fournissant toutes les indications nécessaires pour tracer son
 origine.
-* Mis à disposition de tous les développeurs qui veulent le tester
-ou bénéficier des dernières corrections.
-* Prêt pour une utilisation directe par les équipes de production.
+* mis à disposition de tous les développeurs qui veulent le tester
+ou bénéficier des dernières corrections ;
+* prêt pour une utilisation directe par les équipes de production.
 
 Le chemin a été long depuis notre petit projet rigolo échangé par
 e-mail, et l'outillage a largement progressé. Si la taille de nos
@@ -10485,7 +10485,7 @@ gain de fiabilité que l'intégration continue, bien instrumentée, peut
 nous apporter. Sans ce dernier rempart, nous passerions de l'intégration
 continue à la production continue, évolution de l'industrie logicielle
 qui n'est pas encore dans les mœurs, mais que Maven peut déjà
-supporter !
+supporter !
 
 [[Un_nouveau_projet_demarre]]
 == Chapitre 14 : Un nouveau projet démarre
