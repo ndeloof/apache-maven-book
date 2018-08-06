@@ -10488,23 +10488,23 @@ qui n'est pas encore dans les mœurs, mais que Maven peut déjà
 supporter !
 
 [[Un_nouveau_projet_demarre]]
-== Chapitre 14 : Un nouveau projet démarre
+== Chapitre 14 : Un nouveau projet démarre
 
-Avec tous nos efforts sur notre projet noubliepaslalistedescourses pour
+Avec tous nos efforts sur notre projet _noubliepaslalistedescourses_ pour
 mettre en œuvre les meilleures pratiques et les outils les plus aboutis,
 dans un souci constant d'intégration et d'automatisation, nous
 commençons à faire parler de nous. À tel point que nous est confiée
 l’élaboration d'un nouveau projet dont les concepts sont proches du
-nôtre, malistedecadeauxpournoël. Raphaël se voit offrir la lourde tâche
+nôtre, _malistedecadeauxpournoël_. Raphaël se voit offrir la lourde tâche
 d’en mettre en place les briques de base.
 
 image:MangaRaphael.png[float="left"]
 
 Raphaël se dit qu'on l'a peut-être un peu trompé sur la marchandise,
 lorsqu'il découvre le planning du projet. Les délais de réalisation sont
-plutôt optimistes, et l'adoption de Scrum footnote:[Vous ne connaissez pas la méthode agile Scrum (http://fr.wikipedia.org/wiki/Scrum) ? Renseignez-vous vite auprès de votre JUG local pour qu’il organise une soirée dédiée :)] pour
+plutôt optimistes, et l'adoption de Scrum footnote:[Vous ne connaissez pas la méthode agile Scrum (http://fr.wikipedia.org/wiki/Scrum) ? Renseignez-vous vite auprès de votre JUG local pour qu’il organise une soirée dédiée :)] pour
 conduire cette épreuve ne suffira probablement pas à faire des miracles
-– si on vous vend les méthodes agiles sur ce seul critère, méfiez-vous !
+– si on vous vend les méthodes agiles sur ce seul critère, méfiez-vous !
 Toujours est-il qu'il va falloir mettre les bouchées doubles pour lancer
 ce projet en un temps record.
 
@@ -10521,7 +10521,7 @@ dans un projet indépendant, dont nous partagerons le développement.
 ====
 L'élément <dependencyManagement> permet de déclarer de manière globale
 les versions utilisées pour les dépendances. Un projet qui hérite de
-dependencyManagement n’est affecté d’aucune dépendance particulière ;
+dependencyManagement n’est affecté d’aucune dépendance particulière ;
 par contre, s'il déclare une dépendance sur cette liste sans préciser de
 version ou en utilisant une autre version, celle du dependencyManagement
 prédomine.
@@ -10533,9 +10533,9 @@ version d'EHCache est compatible avec hibernate-entitymanager x.y.z.
 Il en est de même avec les plugins _via_ l'élément pluginManagement.
 ====
 
-==== Qui paye ?
+==== Qui paye ?
 
-Dans un monde parfait, cette solution serait optimale : une seule
+Dans un monde parfait, cette solution serait optimale : une seule
 source, un développement profitant de l'attention de tous pour un
 meilleur résultat. C'est ce qu'essaie de faire la fondation Apache pour
 ses propres projets en partageant un POM parent (relativement simple)
@@ -10544,11 +10544,11 @@ de discussion. Elle fait de même pour le code à travers le projet
 commons.apache.org. Le résultat est encourageant sans être prodigieux.
 
 Dans un monde d'entreprise, cette solution est surtout source de
-conflits : qui assure la maintenance des composants communs ? Qui décide
-des évolutions de ce composant ? Sur quel budget ? Qui supporte les
+conflits : qui assure la maintenance des composants communs ? Qui décide
+des évolutions de ce composant ? Sur quel budget ? Qui supporte les
 tests de non-régression lorsqu'un composant mutualisé évolue, alors que
 le projet qui l'utilise n'a aucune évolution en cours qui pourrait
-(discrètement) en absorber le coût ? Sauf à avoir une volonté officielle
+(discrètement) en absorber le coût ? Sauf à avoir une volonté officielle
 et financée de supporter cette mutualisation, c'est malheureusement une
 voie sans issue qui va surtout épuiser la bonne volonté des premiers
 contributeurs de ces composants communs.
@@ -10607,24 +10607,24 @@ développement pour un démarrage sur les chapeaux de roue.
 
 ==== Copier-coller
 
-Autre option, qui vient à l'esprit de tout le monde : le bon vieux
+Autre option, qui vient à l'esprit de tout le monde : le bon vieux
 copier-coller. La copie est une opération de base en informatique,
 peut-être la plus utilisée mais aussi la plus dénigrée par les
-architectes : dans une copie, il y a toujours un élément de trop !
+architectes : dans une copie, il y a toujours un élément de trop !
 
 Selon cette approche, Raphaël commence par reproduire la structure de
 base de notre projet et par copier nos fichiers POM ainsi que nos
 classes techniques, qui pourront donner de bonnes pistes pour la
 réalisation. Rapidement, le travail devient titanesque car il faut
-adapter ces copies : noms de package, groupId, artifactId et versions ne
+adapter ces copies : noms de package, groupId, artifactId et versions ne
 correspondent pas. Le risque d'erreurs est grand, et obtenir un résultat
-stable et complet va prendre du temps !
+stable et complet va prendre du temps !
 
-=== Copier et mutualiser !
+=== Copier et mutualiser !
 
 Raphaël ne se laisse pas démonter si facilement et propose une autre
-solution : faire un copier-coller dont la phase d'adaptation au nouveau
-projet est automatisée ! Raphaël est en fait tombé sur la description du
+solution : faire un copier-coller dont la phase d'adaptation au nouveau
+projet est automatisée ! Raphaël est en fait tombé sur la description du
 plugin archetype.
 
 [[un_plugin_qui_cree_des_projets]]
@@ -10634,7 +10634,7 @@ Pour nous convaincre, il nous fait rapidement une démonstration. Il se
 propose ainsi de lancer un projet de plugin Maven, faisant ainsi
 référence au travail que nous avons dû accomplir au Chapitre 11. Nous
 avons tous en mémoire le temps qu'il nous a fallu pour cela. Raphaël
-tape donc une commande dans sa console :
+tape donc une commande dans sa console :
 
  mvn archetype:generate
 
@@ -10642,8 +10642,8 @@ Maven propose alors une liste impressionnante de composants, parmi
 lesquels Raphaël identifie un archétype mojo-archetype, qu'il
 sélectionne. Maven lui demande de choisir pour son nouveau projet un
 groupId, un artifactId et une version. Après quelques traces peu
-compréhensibles dans la console, Raphaël nous lâche un majestueux "et
-voilà". Le Listing 14.2 montre l'exécution de cette commande. Nous avons
+compréhensibles dans la console, Raphaël nous lâche un majestueux « et
+voilà ». Le Listing 14.2 montre l'exécution de cette commande. Nous avons
 limité la liste des archétypes proposée pour ne pas occuper deux pages
 supplémentaires. Le Listing 14.3 montre la structure de fichiers
 régénérée.
@@ -10722,28 +10722,28 @@ D:.
                     └───maven
                         └───plugins
 -------------------------------------------------------------------------------
-Pardon ? Tu rigoles ? Avec un petit sourire, Raphaël propose de compiler
+Pardon ? Tu rigoles ? Avec un petit sourire, Raphaël propose de compiler
 son plugin et de l'exécuter. Un `mvn install` dans le répertoire
 nouvellement apparu, puis un mvn
 com.geegol.maven.plugins:demo-maven-plugin:1.0-SNAPSHOT:echo et nous
 pouvons voir apparaître dans la console le résultat simple mais tout de
-même inespéré :
+même inespéré :
 
 -------------------------------------------------------------------------------
 [INFO] [demo:echo {execution: default-cli}]
 -------------------------------------------------------------------------------
 
-Hello World from Maven !
+Hello World from Maven !
 
 C'est sûr que ce plugin n'est pas très impressionnant pour ce qu'il
 fait, mais tout de même il ne nous aura pas coûté beaucoup d'efforts et
 est totalement fonctionnel. Raphaël enchaîne donc avec l'explication.
 
 [[un_archetype]]
-==== Un archétype ?
+==== Un archétype ?
 
 Un archétype est la façon à la Maven de faire de la mutualisation, avec
-un bonus considérable : son utilisateur peut, par la suite, faire
+un bonus considérable : son utilisateur peut, par la suite, faire
 évoluer le code comme bon lui semble, voire ne toucher à rien pendant
 des années s'il n'en voit pas l'intérêt. Il peut proposer des évolutions
 de l'archétype s'il a de bonnes idées ou des corrections à apporter,
@@ -10775,7 +10775,7 @@ pas nécessairement conçu pour servir d'archétype. En quelque sorte, il
 s'agit d'une rétro-ingénierie qui va extraire un modèle à partir d'une
 implémentation concrète.
 
-La version 1.2.6 de noubliepaslalistedescourses est particulièrement
+La version 1.2.6 de « noubliepaslalistedescourses » est particulièrement
 réussie. Après cinq versions correctives, le code est très stable, et
 nous sommes très confiants sur la bonne intégration de tous les outils
 mis en œuvre. Pour construire un archétype sur cette base, il nous
@@ -10787,14 +10787,14 @@ nom de notre projet.
 
 L’archétype est prêt en quelques minutes dans le répertoire
 target/generated-sources/archetype (il est sous sa forme de projet
-Maven ; il nous suffit de lancer, depuis cet emplacement, un très
-classique `mvn install` pour le convertir en binaire utilisable) !
+Maven ; il nous suffit de lancer, depuis cet emplacement, un très
+classique `mvn install` pour le convertir en binaire utilisable) !
 
-Raphaël n'a plus qu'à lancer la commande complémentaire : mvn
-archetype:generate, en précisant l'argument -Dcatalog=local signalant
+Raphaël n'a plus qu'à lancer la commande complémentaire : `mvn
+archetype:generate`, en précisant l'argument `-Dcatalog=local` signalant
 qu'il veut utiliser ses propres archétypes, présents sur son poste de
 développement, et pas ceux mis à disposition par la communauté Maven.
-Quelques instants plus tard, le projet malistedecadeauxpournoel est prêt
+Quelques instants plus tard, le projet « malistedecadeauxpournoel » est prêt
 pour être enregistré dans son propre gestionnaire de sources Subversion,
 avec un code fonctionnel qu'il ne restera plus qu'à adapter aux besoins
 spécifiques du nouveau projet.
@@ -10804,7 +10804,7 @@ spécifiques du nouveau projet.
 
 Nous avons donc trouvé une solution très élégante pour repartir d'un
 projet existant dont nous apprécions les qualités pour lancer une
-nouvelle production. malistedecadeauxpournoël profitera ainsi des
+nouvelle production. « malistedecadeauxpournoël » profitera ainsi des
 longues heures de mise au point et de l'expérience acquise sur le projet
 qui l'a précédé.
 
@@ -10819,7 +10819,7 @@ classes que nous avons accumulées depuis le début du projet.
 ==== Donner le meilleur de nous-mêmes
 
 Le mécanisme extrêmement simple qui permet de créer un archétype
-encourage une pratique simple : développer un projet de référence, une
+encourage une pratique simple : développer un projet de référence, une
 application blanche, dans laquelle nous mettrons en place toute notre
 expertise. Cette application utilisera une sélection de frameworks
 correspondant à l'état de l'art, avec une préconfiguration claire et
@@ -10857,18 +10857,18 @@ image:MangaSebastien.png[float="left"]
 Sébastien passe nous voir, en espérant cette fois ne pas nous trouver au
 milieu d'une bataille de chiffonniers (voir le Chapitre 9). Il vient
 nous demander conseil pour lancer une petite application expérimentale.
-Il ne veut pas s'embarquer dans une étude d'architecture pour si peu
+Il ne veut pas s'embarquer dans une étude d'architecture pour si peu,
 mais simplement partir sur les bons outils du moment, si possible avec
 quelques pistes pour ne pas perdre de temps. Voilà qui ne pouvait pas
-mieux tomber ! Notre application blanche est encore à l'état d'ébauche,
+mieux tomber ! Notre application blanche est encore à l'état d'ébauche,
 et nous y avons transféré quelques morceaux choisis de
-noubliepaslalistedescourses, en constatant au passage que nous aurions
+« noubliepaslalistedescourses », en constatant au passage que nous aurions
 pu faire un petit effort en termes de commentaires pour rendre ses
 aspects techniques plus compréhensibles.
 
 Un rapide archetype:create-from-projet suivi de son petit frère
 archetype:generate et Sébastien peut repartir avec un socle encore très
-imparfait mais déjà bien plus avancé et intégré que ce qu'il aurait pu
+imparfait, mais déjà bien plus avancé et intégré que ce qu'il aurait pu
 obtenir en accumulant les conseils et fragments de code piochés à droite
 à gauche.
 
@@ -10888,18 +10888,18 @@ Au démarrage de notre projet, s'est posée la question du choix d'un
 framework web. Dans cette situation, chacun tente d'imposer son
 champion, d'abord en mettant en avant ses points forts, puis en
 dénigrant les concurrents lorsque les arguments commencent à manquer, et
-au final par une petite guerre d'influence et de désinformation :
+finalement par une petite guerre d'influence et de désinformation :
 
 _JSF c'est naze,_
 
 _GWT c'est super lourd,_
 
-_Struts 2 c'est_has been_._
+_Struts 2 c'est _has been_.
 
 Bref, rien de vraiment constructif.
 
 Pourquoi ne pas proposer dans l'application blanche trois versions de la
-couche web (sous forme de modules Maven dédiés) ? Sur un exemple de
+couche web (sous forme de modules Maven dédiés) ? Sur un exemple de
 base, nous pouvons demander à chaque framework de démontrer sa
 plus-value et sa force.
 
@@ -10914,7 +10914,7 @@ compétences, des exigences du projet, etc.
 image:MangaFrancois.png[float="left"]
 
 Lorsque François revient nous voir pour nous féliciter du succès de
-noubliepaslalistedescourses, il ne peut s'empêcher de nous taquiner en
+« noubliepaslalistedescourses », il ne peut s'empêcher de nous taquiner en
 ayant l'air surpris de notre réussite alors que nous n'avons pas
 expérimenté plus avant la solution Flex, dont il est convaincu de la
 supériorité. Si nous n'avons pas choisi cette voie aujourd'hui, d'autres
@@ -10928,8 +10928,8 @@ Faire fonctionner une application Flex, c'est très bien et sans doute
 facile avec le bon outillage. Réussir à en développer une en bonne
 entente avec le reste de nos outils est une autre paire de manches.
 Comment construire l'application avec le même outillage et les mêmes
-commandes ? Comment intégrer cette technologie avec notre infrastructure
-métier basée sur Spring ? L'application blanche met dès le début ces
+commandes ? Comment intégrer cette technologie avec notre infrastructure
+métier basée sur Spring ? L'application blanche met dès le début ces
 questions sur le tapis, y répondre au plus tôt permettra d'introduire
 Flex sur un nouveau projet sans buter sur ces problèmes.
 
@@ -10977,7 +10977,7 @@ retrouver la même structure de projet et gagneront ainsi en efficacité.
 ====
 Bien que les archétypes soient un moyen rapide de réutiliser une
 application existante, et donc un encouragement à définir des
-applications blanches, celles-ci présentent quelques écueils :
+applications blanches, celles-ci présentent quelques écueils :
 
 *  *La maintenance.* Cela revient vite cher à faire vivre.
 *  *La cohérence.* Cela devient vite un fourre-tout dans lequel on
@@ -10994,7 +10994,7 @@ crée _véritablement_ des projets similaires. Il faut faire très
 attention à son développement et à sa maintenance pour qu'elle reste une
 vitrine légère et homogène des bonnes pratiques à suivre.
 
-Moralité : privilégier les petits exemples (et donc les petits
+Moralité : privilégier les petits exemples (et donc les petits
 archétypes) qui vont démontrer une problématique donnée.
 ====
 
