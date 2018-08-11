@@ -93,7 +93,7 @@ avancées et les outils associés. C'est seulement lorsqu'une rupture
 significative avec les versions précédentes existe que nous ajoutons un
 encart. Ces encarts sont reconnaissables au logo :
 
-image:Maven3.png[Maven3,align="center"]
+image:Maven3.png[Maven 3,align="center"]
 
 Vous constaterez rapidement qu'ils sont assez peu nombreux : Maven 3 est
 avant tout conçu pour remplacer son prédécesseur sans heurts. Même avec
@@ -749,7 +749,7 @@ de données « modèle de projet » est représentée dans le fichier XML.
 « 4.0.0 » correspond à la version utilisée par Maven 2.x dans toutes ses
 variantes.
 
-image:Maven3.png[Maven3,align="center"]
+image:Maven3.png[Maven 3,align="center"]
 
 Les futures versions de Maven 3 pourront exploiter des versions
 différentes de modèles et introduire des évolutions dans le format de ce
@@ -1650,7 +1650,7 @@ Plugin Maven pour Eclipse.
 [[Depots_et_dependances]]
 ==== Dépôts et dépendances
 
-image:Maven3.png[Maven3,align="center"]
+image:Maven3.png[Maven 3,align="center"]
 
 image:MangaEmmanuel.png[float="left"]
 
@@ -1750,7 +1750,7 @@ qu’Arnaud a identifié dans le projet d’exemple de jcr-on-cassandra :
 <repository>
     <id>identifiant unique du dépôt</id>
     <url>emplacement du dépôt, en général via http</url>
-    <layout>format du dépôt, « legacy » pour les dépôts maven1 antédiluviens, non supportés par Maven 3</url>
+    <layout>format du dépôt, « legacy » pour les dépôts Maven 1 antédiluviens, non supportés par Maven 3</url>
 </repository>
 -------------------------------------------------------------------------------
 
@@ -1765,7 +1765,7 @@ enfin lancer sa démo et nous présenter toutes ses idées.
 
 [NOTE]
 ====
-Maven2 ne comporte pas ce mécanisme et n'aurait pas bronché. Cela aurait
+Maven 2 ne comporte pas ce mécanisme et n'aurait pas bronché. Cela aurait
 évité à Emmanuel des soucis pendant sa démonstration, mais le problème
 serait apparu plus tard lorsqu'il aurait partagé son projet avec le
 reste de l'équipe. Maven 3 est globalement plus strict, pour le bien de
@@ -1829,7 +1829,7 @@ compiler notre projet avec Maven 2 :
 D:\noubliepaslalistedescources\src\main\java\org\noubliepaslalistedescources\model\MesCourses.java:[57,5] annotations are not supported in -source 1.3 (use -source 5 or higher to enable annotations)
 -------------------------------------------------------------------------------
 
-Pardon ? Maven2 est compatible uniquement avec Java 1.3 ? Pas de
+Pardon ? Maven 2 est compatible uniquement avec Java 1.3 ? Pas de
 panique, les choses sont plus subtiles que cela et, heureusement pour
 nous, moins définitives. Gardez à l'esprit que Maven est un projet qui a
 déjà de nombreuses années et une très large base d'utilisateurs. L'une
@@ -1848,8 +1848,8 @@ influencer le résultat de notre compilation !
 
 Plutôt que de laisser cette option sans valeur déterministe, ce qui
 aurait rendu la construction du projet dépendante de l'environnement
-utilisé par un développeur, le compilateur utilisé par Maven2 est
-configuré, par défaut, pour cette valeur 1.3, et pour Maven3 par défaut à
+utilisé par un développeur, le compilateur utilisé par Maven 2 est
+configuré, par défaut, pour cette valeur 1.3, et pour Maven 3 par défaut à
 1.5 (voir notre note un peu plus loin).
 
 Notre code Java 7 n'a donc aucune chance d'être accepté par le
@@ -1890,7 +1890,7 @@ Plus précisément, la version du plugin _compiler_ qui est utilisée par
 Maven sans indication de votre part utilise les options source=1.3 et
 target=1.2 par défaut. À partir de la version 2.3, le plugin _compiler_
 prend pour valeurs par défaut source=1.5 et target=1.5, ce qui est le
-cas si vous utilisez Maven3.
+cas si vous utilisez Maven 3.
 ====
 
 Cependant, afin que votre EDI détecte correctement cette configuration,
@@ -2730,9 +2730,9 @@ proposer votre plugin en contribution au projet Mojo
 visibilité, ainsi que l'aide possible des développeurs de la communauté.
 ====
 
-image:Maven3.png[Maven3,align="center"]
+image:Maven3.png[Maven 3,align="center"]
 
-Maven2 ne fait pas de séparation très claire entre les dépôts
+Maven 2 ne fait pas de séparation très claire entre les dépôts
 d’artefacts que vous déclarez dans votre POM et vos déclarations de dépôts
 de plugins – un dépôt de plugin étant en général aussi un dépôt
 d’artefacts.
@@ -2940,7 +2940,7 @@ solution de la méthode _main_ pour tester montre de graves limites.
 
 Nous ne sommes pas les premiers à faire ce constat, et la réponse existe
 depuis bien longtemps à travers des outils de test spécialisés pour
-Java, dont le plus connu d'entre eux est jUnit footnote:[Il existe deux variantes majeures de jUnit, jUnit3 et jUnit4, la seconde utilisant la syntaxe java5 que nous avons retenue pour notre exemple.].
+Java, dont le plus connu d'entre eux est jUnit footnote:[Il existe deux variantes majeures de jUnit, jUnit3 et jUnit4, la seconde utilisant la syntaxe Java 5 que nous avons retenue pour notre exemple.].
 
 Ces outils reposent sur des principes simples :
 
@@ -3069,7 +3069,7 @@ notre gestionnaire de version.
 Ce mécanisme d'accès aux ressources est celui que nous vous recommandons
 d'utiliser autant que possible. Cela s'applique lorsque vous manipulez
 un type abstrait comme java.io.InputStream, java.net.URL, ou encore la
-nouvelle API java.nio.file de Java7.
+nouvelle API java.nio.file de Java 7.
 
 Si vous devez expressément utiliser un type java.io.File, ne supposez
 pas que le répertoire courant est forcément la racine du projet (nous
@@ -3528,7 +3528,7 @@ choix techniques ou organisationnels à l'avenir.
 .Figure 04-04
 image:04-04.png[align="center"]
 
-Husdon, lui aussi en train de surveiller la construction de Maven2, dans
+Husdon, lui aussi en train de surveiller la construction de Maven 2, dans
 la forge Sonatype, partenaire d'Oracle.
 
 ==== Lequel choisir ?
@@ -4818,14 +4818,14 @@ Je vous laisse imaginer la suite de la journée de Carlos. Rapidement,
 notre dépôt « maison » compte des doublons, des erreurs de métadonnées ou
 des versions farfelues pour compenser les erreurs précédentes.
 
-Maven1 ou Maven2 ?
+Maven 1 ou Maven 2 ?
 
-De nombreux dépôts de bibliothèque Maven existent en version « Maven1 » ou
-« Maven2 ». Le premier format est conservé pour des raisons historiques.
+De nombreux dépôts de bibliothèque Maven existent en version « Maven 1 » ou
+« Maven 2 ». Le premier format est conservé pour des raisons historiques.
 Le second présente une structure plus hiérarchisée et des métadonnées
-supplémentaires. Maven2 sait utiliser les deux formats. Le dépôt
+supplémentaires. Maven 2 sait utiliser les deux formats. Le dépôt
 _central_, qui pointe physiquement sur les mêmes fichiers, est
-accessible au format Maven1 footnote:[http://repo2.maven.org/maven/]
+accessible au format Maven 1 footnote:[http://repo2.maven.org/maven/]
 
 Moralité : la gestion d'un dépôt n'est pas à prendre à la légère. Il ne
 s'agit pas simplement de pallier les manques du dépôt existant, mais
@@ -5667,7 +5667,7 @@ sur d’autres modules qui n’ont pas de lien de dépendance. Si cette
 hypothèse est respectée, cela permet d’accélérer sensiblement la
 rapidité de l’intégration continue.
 
-image:Maven3.png[Maven3,align="center"]
+image:Maven3.png[Maven 3,align="center"]
 
 Nous pouvons ainsi réduire le nombre de modules construits par un mvn
 install aux modules impactés par une modification. Bien, mais nous
@@ -5738,7 +5738,7 @@ Le monde de Java côté serveur est un monde en « AR » : JAR, WAR, RAR, EAR
 se côtoient dans un ballet un peu déconcertant d'archives Java et de
 descripteurs de déploiement. Souvent décrié, le modèle JavaEE est
 pourtant solidement implanté et continue de progresser avec une refonte
-significative dans sa mouture JavaEE6. Maven ne pouvait pas faire
+significative dans sa mouture JavaEE 6. Maven ne pouvait pas faire
 l'impasse sur ce modèle, sur ses limites et sur les bonnes pratiques de
 développement qui l'accompagnent.
 
@@ -5922,8 +5922,8 @@ distribuable sur l'ensemble de notre cluster.
 Quoi, nous n'avons pas de cluster ? Pourquoi avoir choisi un EJB alors ?
 Sans vouloir faire de l'anti-JavaEE, disons que les EJB ont longtemps
 traîné de lourdes casseroles, car ils étaient appliqués sans qu’on en
-comprenne le rôle dans l'architecture. Jusqu'à l'émergence de JavaEE5 et
-de JavaEE6, qui les dépoussièrent sensiblement, leur utilisation était
+comprenne le rôle dans l'architecture. Jusqu'à l'émergence de JavaEE 5 et
+de JavaEE 6, qui les dépoussièrent sensiblement, leur utilisation était
 même largement décriée au profit de modèles légers dont SpringFramework
 est le fer de lance.
 ====
@@ -6771,14 +6771,14 @@ En dehors de cela, rien de notable… sauf que l’application prend en
 compte toutes vos modifications de code ou de configuration sans délai !
 ====
 
-=== JavaEE6
+=== JavaEE 6
 
 image:MangaAntonio.png[float="left"]
 
 Venu nous passer un petit bonjour, Antonio s'amuse bien en voyant notre
 configuration Maven pour construire cette belle archive d'entreprise EAR
 qui nous a coûté tant d'efforts. Pourquoi ce sourire moqueur ? Antonio
-travaille de son côté sur une application JavaEE6, et les évolutions
+travaille de son côté sur une application JavaEE 6, et les évolutions
 liées à cette version de la norme font de notre construction à trois
 modules (EJB + WAR + EAR) un amusant pachyderme en voie de disparition.
 
@@ -6802,14 +6802,14 @@ définir le comportement vis-à-vis du conteneur. Le descripteur de
 déploiement ejb-jar.xml, devenu optionnel, peut être placé directement
 sous WEB-INF.
 
-Les nouveautés de JavaEE6 vont bien au-delà de ces quelques
+Les nouveautés de JavaEE 6 vont bien au-delà de ces quelques
 assouplissements d'assemblage, mais, au niveau de la construction du
 projet, c'est ce qui a le plus d'impact. Nous pouvons conserver notre
 code métier dans un module séparé par souci de clarification du projet,
 mais nous n'avons plus besoin de définir un module juste pour construire
 une archive EAR. Nous pouvons aussi déployer notre application sur un
 serveur GlassFish (qui est l'implémentation de référence de la norme
-JavaEE6) sans avoir besoin d'assembler notre WAR : il nous suffit de
+JavaEE 6) sans avoir besoin d'assembler notre WAR : il nous suffit de
 configurer le mode inplace sur notre application web et de lancer le
 serveur. Notre EJB bénéficie d'un serveur JavaEE complet, y compris la
 gestion du cycle de vie, l'enrobage transactionnel ou encore la
@@ -8743,7 +8743,7 @@ génération du rapport", e );
 
 ==== Bye bye Maven 2
 
-image:Maven3.png[Maven3,align="center"]
+image:Maven3.png[Maven 3,align="center"]
 
 image:MangaOlivier.png[float="left"]
 
@@ -8756,18 +8756,18 @@ commons-attributes ! Nous avons mis dans notre projet le top du dernier
 buzz en termes de technologies, et nous voilà ramenés une décennie en
 arrière.
 
-image:Maven3.png[Maven3,align="center"]
+image:Maven3.png[Maven 3,align="center"]
 
 La cause de ce choc technologique, c’est que nous utilisons l’API Maven
 2.0, qui date de la création de l’outil. Pour offrir une compatibilité
 sans faille à ses utilisateurs, Maven 3 reste 100% compatible avec cette
 API historique, alors qu’en interne les choses ont beaucoup changé.
 
-Dans l’équipe, nous utilisons tous Maven3, Java7, JavaEE 6, pourquoi
+Dans l’équipe, nous utilisons tous Maven 3, Java 7, JavaEE 6, pourquoi
 s’encombrer de ce passé obsolète ?
 
 Olivier s’attaque donc à moderniser notre socle technique. Bye Bye
-Maven2, ce qui se traduit dans note POM par un prérequis sans appel :
+Maven 2, ce qui se traduit dans note POM par un prérequis sans appel :
 
 [source, xml]
 -------------------------------------------------------------------------------
@@ -8793,7 +8793,7 @@ nous espérons que ce code sera intégré dans la version courante de Maven
 
 
 [source, java]
-.Listing 11.6 : Le mojo _GEACheck_ en version Maven3 / JSR-330
+.Listing 11.6 : Le mojo _GEACheck_ en version Maven 3 / JSR-330
 -------------------------------------------------------------------------------
 /**
  * Tâche de génération de la documentation au format Geegol.
@@ -9455,7 +9455,7 @@ plugin, site, mais celui-ci est l'arbre qui cache la forêt : son rôle
 est d'exécuter des rapports et d'en agréger le contenu dans un document
 unifié sous forme de site web.
 
-image:Maven3.png[Maven3,align="center"]
+image:Maven3.png[Maven 3,align="center"]
 
 Autant Maven 3 est compatible à 99,99 % avec Maven 2 sur de nombreux
 points, autant il y a un domaine qui a été revu de fond en comble, c’est
@@ -10223,7 +10223,7 @@ de stockage.
 [NOTE]
 ====
 De nombreuses entreprises imposent pour la même raison, dans leurs
-règles qualité, de recompiler tout logiciel open-source introduit dans
+règles qualité, de recompiler tout logiciel open source introduit dans
 une application. Si cette règle est rarement appliquée (hou, les
 vilains), vous devinez facilement de quelle expérience catastrophique
 elle peut provenir… binaires non identifiés, sans code source, bugs
@@ -11015,7 +11015,7 @@ l'utilisation intelligente des archétypes est clairement un élément
 décisif. Elle fait de Maven une fois de plus un outil complet, capable
 d'aider le développeur Java pendant toutes les phases de son projet.
 
-== Chapitre 15 : Avons-nous fait le bon choix ?
+== Chapitre 15 : Avons-nous fait le bon choix ?
 
 Le service Geegol Shopping List (désormais disponible dans 27 langues,
 dont le breton) est devenu un service phare du groupe. Projet
@@ -11025,7 +11025,7 @@ travail et notre outillage.
 
 Maven a répondu présent pour chaque problème que nous avons rencontré.
 Si nous sommes contents de notre choix, qu'en sera-t-il dans six mois,
-un an, puis dans cinq ? Maven est un bon outil, mais n'est pas pour
+un an, puis dans cinq ? Maven est un bon outil, mais n'est pas pour
 autant le Saint-Graal et n'est pas exempt de défauts.
 
 Toute l'équipe est donc réunie pour défendre ce choix face à un comité
@@ -11047,45 +11047,45 @@ franc-jeu pour désamorcer ce sujet dès le début.
 Maven n'est pas l'outil magique qui va traiter tous nos problèmes avant
 même qu'ils n’arrivent – si vous cherchez ce genre de solution, essayez
 l'annotation @Abracadabra dans votre code. Comme tout outil, il a ses
-forces mais aussi ses faiblesses et ses limites, et il faut apprendre à
+forces, mais aussi ses faiblesses et ses limites, et il faut apprendre à
 faire avec et à les contourner intelligemment.
 
 ==== Points faibles
 
 Il y a une critique, en particulier, qui vous a probablement déjà
-titillé : la syntaxe XML inutilement verbeuse. L'intégration dans les
+titillé : la syntaxe XML inutilement verbeuse. L'intégration dans les
 IDE tend à gommer ce détail, mais il est néanmoins bien présent dès
 qu'on s'attaque à configurer un gros plugin comme Cargo (voir
 Chapitre 8).
 
 Qu'est-ce qui empêche de modifier ce format POM pour le rendre plus
-compact, ou lui ajouter des fonctionnalités ? Le code qui analyse ces
+compact, ou lui ajouter des fonctionnalités ? Le code qui analyse ces
 fichiers XML est actuellement lié à une version de Maven. Si un nouveau
 Maven sortait avec un format POM plus souple ou intégrant une nouvelle
 fonctionnalité, il ne serait exploitable que par les utilisateurs de
 cette nouvelle version de Maven. Au sein d'une équipe de développement,
-cela ne serait pas un gros problème ; la difficulté concerne les POM
+cela ne serait pas un gros problème ; la difficulté concerne les POM
 déployés par des projets dans un dépôt d'artefacts, en particulier les
-projets open-source qui déploient sur central. Leur utilisation ne
+projets open source qui déploient sur central. Leur utilisation ne
 serait alors possible que pour les utilisateurs du nouveau Maven. Une
-prise en otage inacceptable !
+prise en otage inacceptable !
 
 image:MangaStephane.png[float="left"]
 
 Une deuxième limite de Maven concerne son fonctionnement en mode
-multimodule, en particulier lorsqu'on exploite l'héritage naturel : la
+multimodule, en particulier lorsqu'on exploite l'héritage naturel : la
 construction du projet POM parent doit se terminer avant que celle de
 ses modules ne commence, afin qu'ils puissent y faire référence. Il
 n'est donc pas possible d'intégrer dans notre projet parent un plugin
-qui s'exécuterait _après_la construction des modules. Ce problème,
+qui s'exécuterait _après_ la construction des modules. Ce problème,
 Stéphane l'a rencontré et contourné au Chapitre 13. Il peut sembler
-anecdotique mais sa correction complète nécessite une refonte assez
+anecdotique, mais sa correction complète nécessite une refonte assez
 profonde de Maven et de sa gestion du cycle de vie.
 
 image:MangaEmmanuel.png[float="left"]
 
 Un autre souci concerne les expressions, qui permettent de mutualiser
-des numéros de version comme dans l'exemple ci-après :
+des numéros de version comme dans l'exemple ci-après :
 
 [source, xml]
 -------------------------------------------------------------------------------
@@ -11101,7 +11101,7 @@ propriété spring.version peut être déclarée ailleurs dans le POM, mais
 aussi dans son parent, dans un profil, dans le fichier settings de
 l'utilisateur ou _via_ la ligne de commande. Si elle est déployée telle
 quelle, comment pouvons-nous être sûrs qu'elle sera interprétée à
-l'identique dans un contexte très différent ? En tant que responsable de
+l'identique dans un contexte très différent ? En tant que responsable de
 notre livrable, Emmanuel a dû se battre contre les comportements qui
 dépendent de l'environnement. Une construction de projet fiable doit
 être totalement reproductible.
@@ -11116,12 +11116,12 @@ métadonnées dans un format propre, mais qui ressemblent beaucoup aux
 concepts de dépendances de Maven.
 
 Comment éviter de dupliquer l'information ou, du moins, comment assurer
-la cohérence entre ces deux mondes ? Même constat pour la norme Java
-modules qui fait l'objet d'une JSR et devrait être intégrée à Java 7
+la cohérence entre ces deux mondes ? Même constat pour la norme Java
+modules qui fait l'objet d'une JSR et devrait être intégrée à Java 7
 (JSR-277). Comment Maven gérera-t-il ces nouveaux formats qui viennent
 marcher sur les plates-bandes de la gestion des dépendances, en
 particulier le standard OSGi dont l'ordre de résolution des conflits
-n'est pas exactement équivalent ?
+n'est pas exactement équivalent ?
 
 ==== Les plugins
 
@@ -11150,20 +11150,20 @@ donnerait une plus grande crédibilité.
 Par ailleurs, de nombreux développeurs peuvent être tentés de créer leur
 propre plugin en dehors de la communauté officielle Maven, et les
 héberger sur SourceForge, GoogleCode ou en interne dans leur entreprise.
-Ces efforts non coordonnés peuvent encourager une certaine créativité
+Ces efforts non coordonnés peuvent encourager une certaine créativité,
 mais laissent surtout passer l'occasion de construire une solution plus
 viable avec un accueil plus large par la communauté des utilisateurs.
 
 De manière plus générale, l'utilisateur qui ne trouve le plugin adéquat
 pour un besoin donné ni dans ceux de Maven, ni sur la liste des plugins
-stables de Mojo, est confronté à un choix délicat :
+stables de Mojo, est confronté à un choix délicat :
 
 * se laisser tenter par un plugin du bac à sable Mojo, en espérant
 que son développement soit encore actif, et sans aucune garantie de voir
-un jour une version stable en sortir ;
+un jour une version stable en sortir ;
 * chercher en dehors de ces sources officielles un plugin adapté,
 mais avec le risque de ne trouver que des solutions partielles sans
-support et méconnues de la communauté ;
+support et méconnues de la communauté ;
 * se lancer dans une solution interne, dont il faudra supporter le
 coût de développement et qui ne bénéficiera pas de l'enrichissement
 d'une communauté de centaines d'utilisateurs.
@@ -11175,7 +11175,7 @@ enthousiaste à accueillir des développeurs qui veulent prendre en charge
 un plugin à l'abandon ou proposer leur propre travail à la communauté.
 C'est en tout cas la politique que nous défendons, même si nous ne
 sommes pas seuls à bord. N'hésitez pas à venir nous parler de vos
-projets et envies sur la liste de diffusion : user@mojo.codehaus.org.
+projets et envies sur la liste de diffusion : user@mojo.codehaus.org.
 ====
 
 ==== Le support
@@ -11183,7 +11183,7 @@ projets et envies sur la liste de diffusion : user@mojo.codehaus.org.
 image:MangaVincentM.png[float="left"]
 
 L'utilisation de Maven est simple si on suit ses conventions et qu'on
-dispose des bons plugins ; elle peut devenir assez vite délicate, si on
+dispose des bons plugins ; elle peut devenir assez vite délicate, si on
 n'a pas les bons réflexes, voire totalement insurmontable, si on tente
 de plier Maven à des utilisations pour lesquelles il n'a pas été prévu.
 Le support est donc un élément clé de son utilisation, et Vincent ne
@@ -11204,17 +11204,17 @@ membres bénévoles.
 Si vous faites appel à la communauté, pensez à poser des questions
 précises en détaillant clairement votre besoin, votre environnement
 (vous pouvez toujours lire ce petit guide footnote:[http://opensourcestrategies.blogspot.com/2005/09/how-to-get-support-from-open-source.html], et
-n'hésitez pas à répondre aux autres utilisateurs : nous avons tous
+n'hésitez pas à répondre aux autres utilisateurs : nous avons tous
 commencé de cette façon et c'est ainsi qu'on apprend le mieux à utiliser
 Maven. La liste des utilisateurs de Maven a dépassé la taille critique
-et s'autoalimente : les utilisateurs avertis aident les novices.
+et s'autoalimente : les utilisateurs avertis aident les novices.
 L'équipe des développeurs n'a plus besoin d'assurer elle-même le support
 de premier niveau et peut donc se concentrer sur les développements et
 les corrections.
 
 Vous pouvez aussi retrouver une partie des développeurs du projet ainsi
 que des utilisateurs sur l'IRC footnote:[Accessible sans client IRC par l'interface web http://irc.codehaus.org/] (serveur
-irc.codehaus.org, canal : #maven). Ce média a l'avantage d'être en
+irc.codehaus.org, canal : #maven). Ce média a l'avantage d'être en
 direct et peut donc vous apporter des réponses plus rapidement que la
 liste de diffusion, si vous avez la chance de tomber sur les bons
 interlocuteurs. Par contre, contrairement à cette dernière, comme il
@@ -11225,10 +11225,10 @@ qu'il y a beaucoup de personnes dans l'équipe Maven qui ne sont pas sur
 le même fuseau horaire que nous. N'espérez pas contacter les membres
 outre-Atlantique le matin heure française.
 
-Seule contrainte : tous ces échanges se font en anglais, parfois avec
+Seule contrainte : tous ces échanges se font en anglais, parfois avec
 une syntaxe qui doit désespérer ceux dont c'est la langue maternelle.
 Heureusement, les francophones sont réputés pour leur compétence en
-langues étrangères ;). Si, malgré tout, ce n'est pas votre cas, le site
+langues étrangères ;). Si, malgré tout, ce n'est pas votre cas, le site
 developpez.com héberge un forum francophone consacré à
 Maven footnote:[http://www.developpez.net/forums/f319/java/edi-outils-java/maven/], ainsi qu'une FAQ footnote:[http://java.developpez.com/faq/maven/] bien
 remplie.
@@ -11241,8 +11241,8 @@ image:MangaHerve.png[float="left"]
 Hervé rebondit sur la question du support en évoquant le prix de revient
 de Maven sur un projet. Maven est un projet libre, téléchargeable et
 utilisable gratuitement. Son coût d'utilisation n'est cependant pas nul,
-comme tout projet open-source. Le simple fait que vous ayez ce livre
-entre les mains est déjà un élément de réponse : il n'est pas si facile
+comme tout projet open source. Le simple fait que vous ayez ce livre
+entre les mains est déjà un élément de réponse : il n'est pas si facile
 à utiliser et nécessite un certain apprentissage. Il ne s'applique pas à
 n'importe quel projet et sans un certain effort d'organisation. Il
 nécessite donc un minimum d'expérience. Les sociétés de services ne s'y
@@ -11252,7 +11252,7 @@ de ce sujet.
 Comme de nombreux outils, Maven coûte bien plus cher par la formation
 qu'il induit que par son prix d'achat (qui est particulièrement
 attrayant dans le cas d'un projet libre). Sa documentation en ligne est
-perfectible mais elle est épaulée par de nombreuses autres sources. Ce
+perfectible, mais elle est épaulée par de nombreuses autres sources. Ce
 livre fait partie de cet effort et vient compléter les livres _Better
 Builds with Maven_ footnote:[http://www.maestrodev.com/better-build-maven] et _Maven – the definitive
 guide_, bible de 500 pages qui présente tous les aspects de Maven, sans
@@ -11263,8 +11263,8 @@ décrivent des points plus spécifiques de son utilisation.
 
 image:MangaVincentS.png[float="left"]
 
-Après cette autocritique, Vincent prend en main la contre-attaque :
-quelle autre solution avons-nous pour la gestion de notre projet ? Nous
+Après cette autocritique, Vincent prend en main la contre-attaque :
+quelle autre solution avons-nous pour la gestion de notre projet ? Nous
 avons évoqué Ant au Chapitre 1, mais la concurrence à laquelle Maven
 s'expose ne s'arrête pas là. Certains outils ont d'ailleurs capitalisé
 sur les bonnes pratiques reconnues de Maven et ont tenté de créer une
@@ -11273,61 +11273,61 @@ nouvelle solution plus productive sur cette base.
 Cette émancipation, bénéfique à tous, est encouragée par les
 développeurs de Maven, même s'ils acceptent forcément assez mal les
 critiques si elles ne sont pas enrobées par la politesse et les
-justifications nécessaires. Un outil, en particulier open-source, ne
+justifications nécessaires. Un outil, en particulier open source, ne
 peut pas tenir ses utilisateurs en otage. Il est contraint à
 l'excellence pour occuper le dessus du panier. Les critiques, plus ou
-moins constructives ou honnêtes, sont inévitables mais doivent toujours
+moins constructives ou honnêtes, sont inévitables, mais doivent toujours
 être considérées avec attention.
 
-==== Maven bon partout ?
+==== Maven bon partout ?
 
 Nous avons tenté au cours des chapitres précédents de vous démontrer en
 quoi l'approche proposée par Maven est d'un niveau supérieur au simple
 script de construction de projet. Il faut cependant admettre que Maven
 n'est pas bon partout et mal adapté à certains projets.
 
-Maven part du principe que 99 % des projets ont des besoins comparables
+Maven part du principe que 99 % des projets ont des besoins comparables
 et peuvent s’appuyer sur les mêmes outils et bonnes pratiques s'ils
-acceptent des conventions communes. Il reste cependant 1 % de projets
+acceptent des conventions communes. Il reste cependant 1 % de projets
 qui ont des besoins vraiment très spécifiques – tout le monde dira que
 son projet est différent des autres, mais soyons honnêtes, à part
 quelques cas extrêmes, nous faisons tous plus ou moins la même chose.
 Nous pourrions comparer la standardisation de la construction à celle du
-démarrage : qui de nous a besoin d'une JVM customisée avec 12 paramètres
-en "-XX:" pour lancer son application ?
+démarrage : qui de nous a besoin d'une JVM customisée avec 12 paramètres
+en "-XX:" pour lancer son application ?
 
-Google Web Toolkit rentre dans les projets "spécifiques". La compilation
-des sources doit marier du code natif pour Windows, Linux et Mac OS,
+Google Web Toolkit rentre dans les projets « spécifiques ». La compilation
+des sources doit marier du code natif pour Windows, Linux et mac OS,
 l'inclusion de code source Java dans l'archive JAR, et bien d'autres
 subtilités. Construire un tel projet avec Maven serait possible, mais il
 faudrait alors considérer la plus-value qu'il apporterait aux
-développeurs. Le mécanisme de test de ce projet est ultra-spécifique,
-les artefacts construits – si, au final, ils sont des archives JAR –
+développeurs. Le mécanisme de test de ce projet est ultraspécifique,
+les artefacts construits – si, finalement, ils sont des archives JAR –
 sont composés d'éléments peu courants. La configuration nécessaire dans
 Maven pour obtenir un résultat convaincant serait significative. Ce
-projet ne rentre pas dans le cadre des 99 %.
+projet ne rentre pas dans le cadre des 99 %.
 
-Spring 2 a lui aussi choisi de ne pas utiliser Maven pour sa
+Spring 2 a lui aussi choisi de ne pas utiliser Maven pour sa
 construction. Pour ce projet devant mixer la compilation de classes
-destinées à Java 1.4 et Java 5, en plus de divers raffinements dont la
+destinées à Java 1.4 et Java 5, en plus de divers raffinements dont la
 compatibilité OSGi, il faut bien reconnaître que Maven se serait assez
 mal prêté au jeu.
 
 Enfin, d'autres projets de développement basés sur des outils
 propriétaires ou non (pensons à Liferay ou Alfresco) imposent
 généralement leurs propres scripts de compilation et donc ces types de
-projets rentrent, là encore, dans le 1 %.
+projets rentrent, là encore, dans le 1 %.
 
 Maintenant, nous ne sommes pas nombreux à travailler sur des projets
 aussi particuliers. Cela n'interdit pas de regarder ce qui se fait
 ailleurs pour déterminer si Maven est le meilleur choix. Il est
-intéressant de noter que Spring 3 sépare ses packages principaux en
+intéressant de noter que Spring 3 sépare ses packages principaux en
 modules dédiés et intègre même un fichier POM
 expérimental footnote:[https://src.springframework.org/svn/spring-framework/trunk/build-spring-framework/pom.xml].
 
-This POM cannot be used to build Spring; it is a work in progress and
+_This POM cannot be used to build Spring; it is a work in progress and
 should only be used as part of a Maven repository upload bundle using
-artifacts created by the spring build system.
+artifacts created by the spring build system._
 
 Comme quoi, l'idée fait tout de même son chemin…
 
@@ -11342,7 +11342,7 @@ même chose que Maven pour ce qui est de la gestion des bibliothèques.
 
 Par contre, cela n'apporte rien en termes d'homogénéité des projets, de
 conventions d'organisation du code ou de réutilisation des scripts Ant.
-Ivy apporte à Ant une fonctionnalité clé de Maven mais ne change en rien
+Ivy apporte à Ant une fonctionnalité clé de Maven, mais ne change en rien
 sa philosophie générale. La comparaison entre Ant et Maven ne doit pas
 se faire en comptant le nombre de lignes de XML nécessaires pour
 compiler des classes, mais en fonction de l'esprit général de l'outil et
@@ -11363,9 +11363,9 @@ projet à l'autre. Un mécanisme de plugins permet de préparer des
 fragments de script Ant pour être partagés entre projets.
 
 L'approche est intéressante dans le sens où elle rejoint le constat qui
-est à l'origine de Maven : des projets comparables doivent sans cesse
+est à l'origine de Maven : des projets comparables doivent sans cesse
 réécrire la même configuration, alors qu'ils vont dérouler globalement
-les mêmes procédures. EasyAnt n'est cependant pas aussi easy qu'il le
+les mêmes procédures. EasyAnt n'est cependant pas aussi _easy_ qu'il le
 prétend si l'on considère qu'il exploite les namespace dans un langage
 de script XML, ce qui n'est pas d'une grande lisibilité pour le
 développeur novice. De ce point de vue, Gradle est nettement plus
@@ -11384,8 +11384,8 @@ Gradle footnote:[http://www.gradle.org/] s’appuie lui aussi sur Ant et Ivy, et
 place un esprit de construction par conventions. Basé sur Groovy plutôt
 que XML, un script Gradle manipule des tâches Ant traditionnelles qui
 sont ses briques de base. Groovy est mis à contribution pour créer un
-Domain Specific Language (DSL), un langage de programmation dédié à une
-tâche particulière : la construction de projet. L'intégration d'Ivy dans
+_Domain Specific Language_ (DSL), un langage de programmation dédié à une
+tâche particulière : la construction de projet. L'intégration d'Ivy dans
 Gradle se fait _via_ ce DSL plutôt que par les tâches Ant Ivy, ce qui
 simplifie sa manipulation.
 
@@ -11430,36 +11430,36 @@ Nous ne rentrerons pas plus en détail dans Gradle, dont la documentation
 en ligne footnote:[http://www.gradle.org/userguide.html] est très complète si cette alternative vous
 intéresse. Gradle reprend beaucoup d’éléments de Maven en termes de
 conventions plutôt que configuration, cycle de vie, approvisionnement à
-partir de dépôts, plugins … Par contre, Gradle réhabilite en même temps
+partir de dépôts, plugins… Par contre, Gradle réhabilite en même temps
 le concept de scripting, permettant d’embarquer des tâches spécifiques
-dans le build. Par ailleur, Gradle est un outil encore très jeune et
+dans le build. Par ailleurs, Gradle est un outil encore très jeune et
 disposant de peu de plugins (comparé à l’écosystème Maven ou Ant), aussi
 l’écriture de scripts est quasiment nécessaire pour en tirer quelque
 chose.
 
 En tant qu'anciens de la communauté Maven, autant EasyAnt que Gradle
-nous rappellent énormément une vieille connaissance : Maven 1.
+nous rappellent énormément une vieille connaissance : Maven 1.
 
-==== Maven 1
+==== Maven 1
 
-Maven 1 avait pour objectif de fournir au-dessus d’Ant une gestion de
+Maven 1 avait pour objectif de fournir au-dessus d’Ant une gestion de
 dépendances (Ivy n'existant alors pas encore) et une approche par
 conventions. Il utilisait des fichiers de script XML basés sur Ant et
 sur un langage de programmation XML (jelly). Les tâches les plus
 courantes étaient regroupées dans des plugins, qu'on pouvait importer et
 invoquer dans les projets.
 
-Maven 1 a eu ses heures de succès en démontrant les apports de la
+Maven 1 a eu ses heures de succès en démontrant les apports de la
 standardisation, puis a montré ses limites quand les scripts des plugins
 ont commencé à se complexifier pour éviter des effets de bord et des
-interactions mutuelles. Ce demi-échec a été à l'origine de Maven 2,
+interactions mutuelles. Ce demi-échec a été à l'origine de Maven 2,
 construit sur un modèle nettement plus robuste.
 
 Le concept mis en œuvre dans EasyAnt nous semble ainsi obsolète, car
 nous avons déjà exploré cette voie et rencontré des obstacles bien
 délicats à franchir.
 
-Notre avis concernant Gradle est plus ambigu ; construit sur des outils
+Notre avis concernant Gradle est plus ambigu ; construit sur des outils
 modernes, avec une syntaxe claire et compacte, il partage avec Maven
 certains concepts forts. La syntaxe de Gradle est compacte, claire et
 très spécialisée grâce à Groovy et à sa capacité naturelle à construire
@@ -11469,17 +11469,17 @@ choisis, pour lesquels l’outil est effectivement nettement moins verbeux
 que Maven, mais n’arrive pas à nous convaincre.
 
 En ouvrant la boite de pandore du langage de script, même avec un
-fonctionnement « par défaut » proche de ce que propose Maven, Gradle
-vous tend la perche pour accumuler les astuces et autres bizareries qui
+fonctionnement « par défaut » proche de ce que propose Maven, Gradle
+vous tend la perche pour accumuler les astuces et autres bizarreries qui
 font de votre projet une usine à gaz, rien que pour produire le
 livrable. Dans le même esprit, Maven propose depuis ses début un plugin
-permettant d’exécuter des tâches Ant ou Groovy, mais ces « astuces » ne
+permettant d’exécuter des tâches Ant ou Groovy, mais ces « astuces » ne
 sont considérées que comme un pis-aller pour faciliter une migration
 rapide vers Maven le temps de trouver une solution plus propre.
 
 ==== Buildr
 
-Apache aime bien développer des outils de build ! En plus de Maven et
+Apache aime bien développer des outils de build ! En plus de Maven et
 d'Ant, il existe aussi le projet Buildr footnote:[http://buildr.apache.org/], se
 positionnant dans l'organisation des projets comme Maven. Il utilise le
 langage Ruby au lieu du XML, les conventions de Maven et s'intègre avec
@@ -11488,20 +11488,20 @@ Ant et les dépôts Maven.
 Nous ne détaillerons pas ce dernier candidat, sachant que nous en avons
 laissé d’autres en retrait, nombreux, qui se proclament tous aussi
 révolutionnaires et intuitifs les uns que les autres. Rappelons
-simplement l'un des reproches le plus souvent faits à Maven : l'absence
+simplement l'un des reproches le plus souvent faits à Maven : l'absence
 d'une bonne intégration sous Eclipse. Si on considère les autres
 solutions, l'intégration est quasi inexistante ou limitée au lancement
 des tâches de construction. Reste comme seul argument la syntaxe XML du
-fichier POM, argument parfaitement recevable mais qui est un peu court
+fichier POM, argument parfaitement recevable, mais qui est un peu court
 pour sélectionner un outil aussi important pour un projet.
 
 === Un outil reconnu
 
 Il existe donc de nombreux concurrents face à Maven, alors pourquoi le
-choisir a priori plutôt qu'une autre ? Un élément de réponse simple se
+choisir a priori plutôt qu'une autre ? Un élément de réponse simple se
 trouve dans la maturité de l'outil et la taille de sa communauté, ou
 plutôt dans son niveau de pénétration en entreprise, comme toute
-évaluation de projet open-source. Il sera plus facile de trouver
+évaluation de projet open source. Il sera plus facile de trouver
 rapidement des personnes compétentes sur un outil largement utilisé,
 même s'il est imparfait, que de galérer avec un bijou technologique que
 trois personnes au monde savent faire fonctionner.
@@ -11566,7 +11566,7 @@ ensemble.
 ==== L'équipe de développement
 
 Arnaud poursuit en présentant le cœur du projet Apache Maven, ceux qui
-le développement et dont nous dépendons au final.
+le développent et dont nous dépendons finalement.
 
 Maven, c'est aujourd'hui 55 développeurs, dont une bonne vingtaine très
 actifs en 2009, et une très longue liste de contributeurs qui rapportent
@@ -11575,9 +11575,9 @@ c'est surtout un très large choix de plugins qui impliquent tout autant
 de développeurs de toutes origines.
 
 Cette équipe motivée est à l'origine de plusieurs ouvrages, dont celui
-que vous tenez entre les mains, auquel vous pouvez ajouter le Definitive
-Guide et Better Build with Maven, tous deux disponibles en ligne
-gratuitement, et Apache Maven 2 Effective Implementations, proposé en
+que vous tenez entre les mains, auquel vous pouvez ajouter le _Definitive
+Guide_ et _Better Build with Maven_, tous deux disponibles en ligne
+gratuitement, et _Apache Maven 2 Effective Implementations_, proposé en
 ligne, chapitre par chapitre, au fur et à mesure de sa rédaction.
 
 Limité au monde francophone, Maven c'est encore dix membres bien de chez
@@ -11595,20 +11595,20 @@ avec l'existant est suivie.
 
 image:MangaJerome.png[float="left"]
 
-Votre Honneur, j'appelle à la barre notre premier témoin : Jérôme.
+Votre Honneur, j'appelle à la barre notre premier témoin : Jérôme.
 
 Jérôme a testé Maven suite à nos recommandations pour lancer une
 nouvelle application et former son équipe. Il est en quelque sorte notre
 cobaye pour valider l'adoption de Maven sur d'autres projets.
 
-Pourquoi Maven réussit-il une percée en entreprise ? Nous l'avons vu au
+Pourquoi Maven réussit-il une percée en entreprise ? Nous l'avons vu au
 cours des chapitres qui ont précédé, Maven est un fédérateur d'outils.
 La même ligne de commande permet de construire n'importe quel projet
 Maven bien configuré.
 
 Quel chef de projet ne rêve pas de pouvoir affecter un nouveau
 développeur dans l'urgence sans devoir perdre dans le même temps une
-ressource, le temps de lui expliquer toutes les ficelles du projet ?
+ressource, le temps de lui expliquer toutes les ficelles du projet ?
 Avec des projets correctement construits avec Maven, le passage d'un
 projet à un autre se résume à un checkout depuis le gestionnaire de code
 source. Jérôme abonde dans ce sens en expliquant comment nous avons pu
@@ -11616,7 +11616,7 @@ lui apporter une aide rapide en jetant juste un rapide coup d'œil sur
 son projet. _Via_ une structure comparable, il est plus facile de
 s'approprier en peu de temps un projet développé ailleurs.
 
-Jérôme souligne ensuite les bonnes pratiques que véhicule Maven : une
+Jérôme souligne ensuite les bonnes pratiques que véhicule Maven : une
 gestion stricte des dépendances, des tests qui font corps avec le
 développement et non comme tâche à part, l'intégration des outils de
 qualité logicielle, le support de l'intégration continue, etc. Pour
@@ -11625,53 +11625,53 @@ filet, reposant sur les épaules de quelques personnes, il apprécie
 d'avoir enfin un cadre solide et homogène.
 
 En entreprise, Maven est un élément clé de ce socle qu'on appelle
-software factory, qui vise à proposer une solution industrialisée,
+_software factory_, qui vise à proposer une solution industrialisée,
 reproductible et stabilisée pour les développements logiciels, sortant
 de plusieurs décennies de bricolage. Jérôme, en s'inspirant de notre
 exemple, est en train de mettre en œuvre le même type d'outillage et
-bénéficie des infrastructures que nous avons déjà mises en place :
+bénéficie des infrastructures que nous avons déjà mises en place :
 gestionnaire du dépôt d'artefacts, serveur d'intégration continue.
 
 === L'avenir de Maven
 
 image:MangaJim.png[float="left"]
 
-Mission impossible ?
+Mission impossible ?
 
 Bonjour, Monsieur Phelps. Votre mission, si vous l'acceptez, est de
 présenter à nos lecteurs l'avenir de Maven. Comme tout projet
-open-source, son développement n'est guidé par aucun plan gravé dans le
+open source, son développement n'est guidé par aucun plan gravé dans le
 marbre et toute annonce préliminaire peut être contredite par les faits.
 Pour éviter à nos lecteurs de se bâtir une opinion sur des informations
 erronées, prenez soin d'annoter les données les plus spéculatives de
-votre logo Impossible Mission Force.
+votre logo _Impossible Mission Force_.
 
 Si vous ou l'un de vos agents était capturé ou tué, les auteurs
 nieraient avoir eu connaissance de vos agissements. Bonne chance, Jim…
 
-Cet encadré s'autodétruira dans dix secondes… PChittttttt !
+Cet encadré s'autodétruira dans dix secondes… PChittttttt !
 
-==== Maven 2.x
+==== Maven 2.x
 
-Maven 2 ne bénéficiera au mieux que de quelques versions correctrices,
-et encore sous réserver que des développeurs prennent le temps de se
-pencher à son chevêt ! Maven 3.x est la branche active qui bénéficie de
+Maven 2 ne bénéficiera au mieux que de quelques versions correctrices,
+et encore sous réserve que des développeurs prennent le temps de se
+pencher à son chevet ! Maven 3.x est la branche active qui bénéficie de
 toute l’attention de l’équipe.
 
-Les équipes qui utilisent Maven 2.x seront encore nombreuses, soit pour
+Les équipes qui utilisent Maven 2.x seront encore nombreuses, soit pour
 des raisons d’incompatibilité sur un projet ancien, soit par
 méconnaissance de la compatibilité des versions successives de Maven (ou
 par manque de temps pour s’en assurer). Quelle que soit la raison qui
-vous pousse à continuer d’utliser Maven 2.x, n'attendez rien de nouveau
-de ce côté. Cependant, pour nos lecteurs qui serait contraint à cette
-version pour une raison qui leur appartient, un rapide état des lieux :
+vous pousse à continuer d’utiliser Maven 2.x, n'attendez rien de nouveau
+de ce côté. Cependant, pour nos lecteurs qui seraient contraints à cette
+version pour une raison qui leur appartient, un rapide état des lieux :
 
-===== Maven 2.1
+===== Maven 2.1
 
-Maven 2.1 a été la première version à profiter de cet élan. Les
-nouvelles fonctionnalités qu'il apporte peuvent sembler superficielles
+Maven 2.1 a été la première version à profiter de cet élan. Les
+nouvelles fonctionnalités qu'il apporte peuvent sembler superficielles,
 mais l'importance est avant tout le redémarrage de cette branche de
-développement en parallèle de Maven 3. Maven 2.1 introduit :
+développement en parallèle de Maven 3. Maven 2.1 introduit :
 
 * La possibilité de sécuriser les mots de passe définis dans le
 fichier settings.xml de l'utilisateur, et donc un peu trop ouvertement
@@ -11679,18 +11679,18 @@ exposés aux regards indiscrets. Ceux-ci peuvent désormais être chiffrés
 et la clé stockée, par exemple, sur une clé USB et donc inexploitable en
 l'absence de son utilisateur légitime (pensez au cas de vol de
 l'ordinateur portable d'un développeur Maven, un quidam pourrait venir
-l'enrichir et le corriger à nos dépens J).
+l'enrichir et le corriger à nos dépens).
 
 * Le téléchargement des dépendances en parallèle. Cela n'a pas un
 grand intérêt pour le développeur qui ne va télécharger ses dépendances
 qu'une seule fois – quoique, lors de la première utilisation, quand
-Maven "télécharge la moitié d'Internet", cela puisse se sentir. Sur un
+Maven « télécharge la moitié d'Internet », cela puisse se sentir. Sur un
 serveur d'intégration continue, par contre, si on désire utiliser un
 dépôt local vierge avant chaque construction pour faire les choses bien
 proprement, le gain de temps peut être significatif.
 
 * La construction multimodule par morceaux. Il est possible de
-demander à Maven 2.1 de ne construire que certains modules du projet, et
+demander à Maven 2.1 de ne construire que certains modules du projet, et
 éventuellement tous les modules dont il dépend ou encore tous les
 modules qui dépendent de lui. Cette fonctionnalité était déjà présente
 sous forme d'un plugin dédié reactor, elle est désormais disponible au
@@ -11699,77 +11699,77 @@ cœur de Maven.
 * Sans oublier une nette amélioration des performances sur
 l'initialisation de Maven dans un contexte avec de nombreux modules.
 
-===== Maven 2.2
+===== Maven 2.2
 
-Deuxième de la lignée, Maven 2.2 est apte à :
+Deuxième de la lignée, Maven 2.2 est apte à :
 
 * Corriger plusieurs bogues, dont un lié à la manipulation des
 ${variables} lorsque le POM est installé dans le dépôt local ou
-déployé. Cette fonctionnalité introduite dans Maven 2.1.0 a entraîné des
+déployé. Cette fonctionnalité introduite dans Maven 2.1.0 a entraîné des
 régressions sur certains plugins, notamment celui de signature GPG –
 elle a donc été retirée au profit d'une gestion plus stricte.
 * Apporter quelques améliorations mineures.
 
-C'est tout ? Ça fait un peu maigre, même pour une version mineure. On
-dirait plutôt une petite version corrective ! La raison principale de ce
-changement de version est que Maven 2.2 nécessite désormais Java 5. La
-compatibilité avec Java 1.4 a été longtemps conservée pour ne pas
-déranger les utilisateurs, Java 5 est nécessaire pour corriger certains
-bogues. Cela n'interdit pas de construire des projets pour Java 1.4,
+C'est tout ? Ça fait un peu maigre, même pour une version mineure. On
+dirait plutôt une petite version corrective ! La raison principale de ce
+changement de version est que Maven 2.2 nécessite désormais Java 5. La
+compatibilité avec Java 1.4 a été longtemps conservée pour ne pas
+déranger les utilisateurs, Java 5 est nécessaire pour corriger certains
+bogues. Cela n'interdit pas de construire des projets pour Java 1.4,
 voire des versions antérieures, mais le poste de développement doit
-disposer d'un JDK 5 pour exécuter Maven lui-même.
+disposer d'un JDK 5 pour exécuter Maven lui-même.
 
-==== Maven 3.x
+==== Maven 3.x
 
-image:Maven3.png[Maven3,align="center"]
+image:Maven3.png[Maven 3,align="center"]
 
-Maven 3 a longtemps été connu sous le nom de Maven 2.1. Son
+Maven 3 a longtemps été connu sous le nom de Maven 2.1. Son
 développement correspond à une refonte profonde du cœur de Maven,
 travaux importants menés de manière très active par l'équipe de
 Sonatype, société fondée par Jason Van Zyl, développeur initial de
 Maven. Cette reprise lourde du code a, dans un premier temps, paralysé
-les évolutions sur Maven 2.0 car tout le monde attendait plus ou moins
+les évolutions sur Maven 2.0 car tout le monde attendait plus ou moins
 la suite. Les choses ne vont cependant jamais assez vite et
-l'ex-Maven 2.1 a été renommé Maven 3.x pour bien indiquer la rupture et
-laisser de la place pour de nouvelles versions de Maven 2.
+l'ex-Maven 2.1 a été renommé Maven 3.x pour bien indiquer la rupture et
+laisser de la place pour de nouvelles versions de Maven 2.
 
-L'un des plus gros chantier de Maven 3, et qui explique en grande partie
+L'un des plus gros chantiers de Maven 3, et qui explique en grande partie
 son retard, est la compatibilité avec l'existant. Un ensemble de tests
 d'intégration a été écrit pour mettre en scène Maven confronté à la
-plupart de ses cas d'utilisation. Projets simples, multi-modules,
+plupart de ses cas d'utilisation. Projets simples, multimodules,
 plugins plus ou moins complexes, sont ainsi exécutés en boucle par un
-harnais de sécurité anti-régression de plus de 450 tests. Ce n'est pas
+harnais de sécurité antirégression de plus de 450 tests. Ce n'est pas
 une garantie absolue, mais c'est une sécurité que peu de projets peuvent
 proposer.
 
-La seconde difficulté dans le développement de Maven 3 touche à la
+La seconde difficulté dans le développement de Maven 3 touche à la
 pérennité des API internes de Maven, utilisées par certains plugins, et
 que l'équipe de développement voudrait pouvoir retravailler. La limite
-entre public et interne dans Maven 2 est en effet assez floue, et pour
+entre public et interne dans Maven 2 est en effet assez floue, et pour
 traiter certains besoins particuliers, les développeurs de plugins ont
-parfois fait appel à du code assez profond de Maven 2. Sonatype a donc
-développé une couche de traduction entre les API historiques de Maven 2
-et leur équivalent dans le code modernisé de Maven 3.
+parfois fait appel à du code assez profond de Maven 2. Sonatype a donc
+développé une couche de traduction entre les API historiques de Maven 2
+et leur équivalent dans le code modernisé de Maven 3.
 
-En résumé, Maven 3 c’est un peu un épisode spécial de Extreme makeover :
-Maven edition footnote:[Si vous ne connaissez pas, regardez au moins une fois : Les Maçons du cœur (Extreme Makeover Home Edition en VO), ça vous donnera une idée des travaux en cours.].  On prend votre outillage existant,
-mais on refait tout de la cave au grenier !
+En résumé, Maven 3 c’est un peu un épisode spécial de Extreme makeover :
+Maven edition footnote:[Si vous ne connaissez pas, regardez au moins une fois : Les Maçons du cœur (Extreme Makeover Home Edition en VO), ça vous donnera une idée des travaux en cours.]. On prend votre outillage existant,
+mais on refait tout de la cave au grenier !
 
 .Figure 15-05
 image:15-05.png[align="center"]
 
-===== Quoi de neuf ?
+===== Quoi de neuf ?
 
-Le changement le plus notable dans Maven 3 est la possibilité de
+Le changement le plus notable dans Maven 3 est la possibilité de
 l'intégrer dans un autre outil. Ceci ouvre la voie à de nombreuses
 utilisations en dehors de la ligne de commande classique que nous avons
-rencontré jusqu’ici.
+rencontrée jusqu’ici.
 
-Maven 3 peut être intégré au sein d’un autre outil, et c’est ce que font
-nos IDE. Disposer d’un Maven « embarqué » leur permet de manipuler le
-POM, le cycle de vie, les plugins, et l’arbre de dépendance.  Maven 3
+Maven 3 peut être intégré au sein d’un autre outil, et c’est ce que font
+nos IDE. Disposer d’un Maven « embarqué » leur permet de manipuler le
+POM, le cycle de vie, les plugins, et l’arbre de dépendance. Maven 3
 peut ainsi se greffer à la construction incrémentale d’un projet
-Eclipse, c’est à dire ne procéder  à la reconsturction du projet que
+Eclipse, c’est-à-dire ne procéder à la reconstruction du projet que
 pour les parties impactées par la dernière modification pour plus de
 réactivité. Lorsque vous éditez un fichier source, l’IDE ne va pas
 reconstruire tout l'espace de travail en effaçant tout l'existant, mais
@@ -11784,7 +11784,7 @@ image:MangaOlivier.png[float="left"]
 
 Olivier nous signale d’ailleurs que notre IDE n’est pas le seul à
 exploiter cette possibilité d’embarquer Maven en interne. Notre serveur
-d’intégration continue fait de même ! En pouvant manipuler Maven comme
+d’intégration continue fait de même ! En pouvant manipuler Maven comme
 un composant interne, Hudson peut lui greffer ses propres extensions et
 proposer une intégration fine. Les builds Maven qu’il exécute sont alors
 mis sous surveillance et Hudson peut nous indiquer l’avancement de
@@ -11802,9 +11802,9 @@ image:15-06.png[align="center"]
 
 Sonatype MavenShell.
 
-Maven 3 offre la possibilité pour le POM d'utiliser un format
+Maven 3 offre la possibilité pour le POM d'utiliser un format
 alternatif. Nous avons vu que le format XML actuel est particulièrement
-verbeux ; Polyglot Maven est une version dérivée de Maven, développée
+verbeux ; Polyglot Maven est une version dérivée de Maven, développée
 par Sonatype, visant à proposer une syntaxe différente du POM, basée par
 exemple sur Groovy, Clojure, ou Scala – pour exprimer les mêmes
 métadonnées, comme le monte le Listing 15.2. Attention cependant,
@@ -11822,33 +11822,33 @@ project( "com.macompagnie:monprojet:1.0-SNAPSHOT" { proj =>
 }
 -------------------------------------------------------------------------------
 
-Cette écolution vise un public très précis: ceux qui n’utilisent pas
-Maven mais travaillent dans un langage de développement tournant sur la
+Cette évolution vise un public très précis : ceux qui n’utilisent pas
+Maven, mais travaillent dans un langage de développement tournant sur la
 JVM. En leur proposant d’exprimer le POM dans leur langage et avec les
-possibilities d’extension qui lui sont propres, Polyglot essaie de
+possibilités d’extension qui lui sont propres, Polyglot essaie de
 couper l’herbe sous le pied des outils alternatifs.
 
 ===== Maven 3.1
 
 image:IMF.png[]
 
-Maven 3 permet de désolidariser Maven (l’outil) de la lecture du modèle
-POM : l’élément modelVersion va pouvoir jouer son rôle et permettre
+Maven 3 permet de désolidariser Maven (l’outil) de la lecture du modèle
+POM : l’élément modelVersion va pouvoir jouer son rôle et permettre
 d’introduire des évolutions dans ce format, sans empêcher les
 utilisateurs de l’utiliser depuis une autre version de Maven – il
-suffira d’obtenir depuis le dép*ô*t la version associée du modèle. On
+suffira d’obtenir depuis le dépôt la version associée du modèle. On
 attend ainsi la simplification de certaines opérations pénibles sur les
 POM, comme l’exclusion globale d’un artefact (plutôt que de devoir
 répéter des dizaines de fois le même bloc exclusions.
 
-Autre évolution prévue de longue date : les mixins. Ils vont permettre
+Autre évolution prévue de longue date : les mixins. Ils vont permettre
 de récupérer une configuration maven depuis un fichier POM sans passer
 par un héritage. La composition d’un POM se fera alors par composition
-de mixins ; un mixin pour la gestion de la persistence Hibernate, un
+de mixins ; un mixin pour la gestion de la persistance Hibernate, un
 mixin pour la gestion de l’application web, un mixin pour notre
 outillage Q&A, etc.
 
-En parallèle du développement de Maven 3.x, Sonatype développe une offre
+En parallèle du développement de Maven 3.x, Sonatype développe une offre
 globale de forge logicielle, incluant le build, l’intégration continue,
 l’hébergement des binaires, l’approvisionnement des plateformes de
 développement et la mise en production. De nombreuses évolutions dans
@@ -11862,14 +11862,14 @@ le développement de son offre autour de Maven, Eclipse et Hudson. La
 diapo présentée en figure 15-06, extraite de cette présentation, définit
 la position de Sonatype par rapport au projet Apache Maven. La fondation
 Apache utilise un gestionnaire de code source Subversion, qui est
-intégré en mirroir sur un compte GitHub. Sonatype utilise
+intégré en miroir sur un compte GitHub. Sonatype utilise
 l’impressionnante puissance de Git pour assurer la synchronisation de
-ses développements internes avec la version open-source Apache. Cela va
+ses développements internes avec la version open source Apache. Cela va
 permettre à Sonatype de poursuivre ses objectifs d’innovation et
 d’avancer au rythme qu’il désire imposer au projet, tout en conservant
 le lien avec le projet et le mode de fonctionnement de la fondation
-Apache. Aisni, si ces annonces concernent avant tout les outils de
-Sonatype, dont certains sont disponibles en double licence open-source /
+Apache. Ainsi, si ces annonces concernent avant tout les outils de
+Sonatype, dont certains sont disponibles en double licence open source /
 propriétaire, une partie sera reversée à la communauté et viendra
 enrichir le socle technique Maven.
 
@@ -11879,17 +11879,17 @@ image:15-07.png[align="center"]
 le positionnement de Sonatype par rapport au projet de la fondation
 Apache
 
-Pour ce qui concerne Maven, l’éditeur affiche ses ambitions :
+Pour ce qui concerne Maven, l’éditeur affiche ses ambitions :
 
-D’une part, la généralisation de l’utilisation des annotations Java5 et
+D’une part, la généralisation de l’utilisation des annotations Java 5 et
 de l’injection de dépendance JSR-330. Nous l’avons déjà croisé au
 chapitre 11 lorsqu’Olivier est venu dépoussiérer le code de notre
 plugin.
 
-La norme JSR-330 est intégrée à JavaEE 6 et apporte à la pile Java
+La norme JSR-330 est intégrée à JavaEE 6 et apporte à la pile Java
 d’entreprise l’injection de dépendance démocratisée par le succès de
 SpringFramework. Cette norme va rapidement devenir la référence sur le
-sujet, déjà supportée par Spring 3 et Google Guice même en dehors du
+sujet, déjà supportée par Spring 3 et Google Guice même en dehors du
 contexte JavaEE. L’idée de Sonatype est de capitaliser sur ce succès en
 appliquant ce modèle aux plugins Maven, ainsi qu’à ses autres outils que
 sont Nexus et Hudson. On retrouvera ainsi dans tous nos développements
@@ -11902,16 +11902,16 @@ Autre annonce, un gros effort d’intégration de Maven dans Eclipse à
 travers le projet m2eclipse. En dehors de l’amélioration du plugin, de
 son ergonomie et de ses fonctionnalités, Maven peut évoluer pour mieux
 supporter le mode incrémental d’Eclipse, à savoir ne plus partir de zéro
-à chaque nouveau build. L’IDE pourrait tirer partie de ces évolutions,
+à chaque nouveau build. L’IDE pourrait tirer parti de ces évolutions,
 mais aussi tout l’écosystème Maven. L’intégration continue pourrait par
 exemple elle aussi utiliser un build incrémental pour plus de
 réactivité.
 
 Sur la gestion des dépendances et l’accès aux dépôts, Sonatype a déjà
-pris la main en intégrant dans Maven 3 sa brique Aether. Développée sous
+pris la main en intégrant dans Maven 3 sa brique Aether. Développée sous
 licence Eclipse dans les labos Sonatype, celle-ci remplace intégralement
-le code équivalent de Maven 2. De nombreuses évolutions sont attendues
-sur ce composant :
+le code équivalent de Maven 2. De nombreuses évolutions sont attendues
+sur ce composant :
 
 image:IMF.png[]
 
@@ -11921,9 +11921,9 @@ outils basés sur Aether.
 
 * L’intégration avec m2eclipse, ce qui signifie le support dans
 Aether des dépôts OSGi P2 d’Eclipse et le modèle de version associé.
-Cette évolution permettra a termes de créer des passerelles entre les
+Cette évolution permettra à terme de créer des passerelles entre les
 deux grands modèles de dépôts d’artefacts et d’approvisionnement de
-bibliothèques du monde Java. Avec le projet JigSaw (« java modules »)
+bibliothèques du monde Java. Avec le projet JigSaw (« java modules »)
 qui vise à intégrer cette fonctionnalité directement dans la plateforme
 Java, ce chantier risque de faire couler beaucoup d’encre.
 
@@ -11936,10 +11936,10 @@ ressources.
 
 * Une dérivation du client HTTP asynchrone dédiée à Maven, utilisant
 l’API Wagon définie par Maven pour le déploiement d’artefacts dans un
-dépôt. Cette API remonte à Maven2 et a été dérivée pour supporter HTTP,
-SCP, WebDav, FTP, les partages windows SMB et même SVN ! Plutôt que de
+dépôt. Cette API remonte à Maven 2 et a été dérivée pour supporter HTTP,
+SCP, WebDav, FTP, les partages windows SMB et même SVN ! Plutôt que de
 réinventer une nouvelle API, Sonatype préfère conserver cette façade et
-travailler sous le capôt pour en améliorer les performances.
+travailler sous le capot pour en améliorer les performances.
 
 Sonatype prévoit aussi d’autres évolutions, sous forme de points
 d’extension et de modèle événementiel, inspiré par les besoins
@@ -11947,7 +11947,7 @@ d’intégration de m2eclipse. Il ne s’agit évidemment que des plans
 annoncés, qui peuvent évoluer et s’enrichir en fonction du contexte et
 des difficultés que rencontreront les équipes de développement.
 
-===== Maven 4 ?
+===== Maven 4 ?
 
 image:MangaArnaud.png[float="left"]
 
@@ -11958,7 +11958,7 @@ lancer à son tour dans le jeu des prédictions. Il nous annonce alors la
 fusion des projets Apache Maven et Gradle, prenant la rigueur du premier
 et la syntaxe moderne du second, et nous présente le tout premier écran
 de Graven, l’outil de build ultime. Hum… décidément, tout le monde ne
-peut pas faire partie de l’équipe de Mission Impossible
+peut pas faire partie de l’équipe de Mission Impossible.
 
 Figure 15-08
 image:15-08.png[align="center"]
@@ -11966,18 +11966,19 @@ image:15-08.png[align="center"]
 Graven, une création originale d’Arnaud visant à marier Maven et Gradle
 
 [[a_qui_appartient_maven]]
-=== À qui appartient Maven ?
 
-Le comité est presque convaincu mais il a tout de même quelques
+=== À qui appartient Maven ?
+
+Le comité est presque convaincu, mais il a tout de même quelques
 réticences. L'outil semble bon, promis à un bel avenir, mais dans les
 mains de qui mettons-nous l'avenir de ce qui est en train de devenir le
-projet n^o^ 1 de Geegol ?
+projet n° 1 de Geegol ?
 
 ==== La fondation Apache
 
 image:MangaRaphael.png[float="left"]
 
-Raphaël se fait un plaisir en expliquant le monde open-source et les
+Raphaël se fait un plaisir en expliquant le monde open source et les
 garanties intrinsèques qu'apporte ce modèle.
 
 Maven est l'un des nombreux projets hébergés par la fondation Apache,
@@ -12002,7 +12003,7 @@ communs. Au sein de la fondation Apache, il n'y a donc pas de
 propriétaire du projet, en dehors du comité dont les membres ont des
 attaches très variées.
 
-C'est une distinction notable par rapport à d'autres projets open-source
+C'est une distinction notable par rapport à d'autres projets open source
 dont les décisions ne sont pas si ouvertes. SpringFramework, par
 exemple, est un projet ouvert aux suggestions de ses utilisateurs et
 dont le code est libre, mais dont le développement est géré par la
@@ -12019,7 +12020,7 @@ Apache et soumis à une gestion communautaire multipartite.
 image:MangaNicolas.png[float="left"]
 
 Nicolas poursuit en constatant une certaine incrédulité de notre
-auditoire. Le monde merveilleux de l'open-source tout gratuit, où des
+auditoire. Le monde merveilleux de l'open source tout gratuit, où des
 développeurs-bisounours-bénévoles offrent leur temps et leur code à la
 communauté, les laisse perplexes. Derrière Maven, comme partout, il y a
 des gens à payer et des machines qui tournent.
@@ -12035,7 +12036,7 @@ Parce que Sonatype met des développeurs de talent à temps plein sur le
 développement de Maven, le prix à payer pour suivre les développements
 en tant que simple contributeur est démesuré. Les technologies engagées
 sont nombreuses et nécessitent un gros investissement en temps.
-L'évolution du développement est rapide et peu documenté, il est donc
+L'évolution du développement est rapide et peu documentée, il est donc
 difficile de se faire en peu de temps une idée précise des tâches en
 cours et de leur avancement.
 
@@ -12043,39 +12044,39 @@ Maven est cependant un projet de la fondation Apache, dont nous avons vu
 les règles de conduite, et, à ce titre, on peut trouver choquant de le
 voir mêlé de si près au nom d'une seule société.
 
-image:Maven3.png[Maven3,align="center"]
+image:Maven3.png[Maven 3,align="center"]
 
 En fait, en creusant un peu, on constate même rapidement que Sonatype
-est bien plus qu’un contributeur de Maven : des composants majeurs de
-Maven 3 ne sont pas développés et hébergés par la fondation Apache, mais
-sous le compte GitHub de Sonatype !
+est bien plus qu’un contributeur de Maven : des composants majeurs de
+Maven 3 ne sont pas développés et hébergés par la fondation Apache, mais
+sous le compte GitHub de Sonatype !
 
 [[un_peu_de_strategie]]
 ==== Un peu de stratégie
 
-Parmi la refonte réalisée pour Maven 3, un élément clé est la réécriture
+Parmi la refonte réalisée pour Maven 3, un élément clé est la réécriture
 complète de la gestion des dépendances. Après deux tentatives
 infructueuses, Sonatype a proposé un développement interne,
-Aether footnote:[http://aether.sonatype.org], hébergé en open-source dans sa propre forge,
+Aether footnote:[http://aether.sonatype.org], hébergé en open source dans sa propre forge,
 et contribué à la fondation Eclipse. Il en est de même de
-Sisu footnote:[http://sisu.sonatype.org], qui permet à Maven3 de fonctionner sur la base
+Sisu footnote:[http://sisu.sonatype.org], qui permet à Maven 3 de fonctionner sur la base
 du conteneur Google Guice tout en restant compatible avec Plexus, qui
-jouait ce rôle dans Maven 2 et est encore très présent dans de nombreux
+jouait ce rôle dans Maven 2 et est encore très présent dans de nombreux
 composants.
 
 Sonatype, qui pilote donc seul ces projets cruciaux pour Maven, a choisi
-d'en faire une solution open-source. Bien sûr, Sonatype prend une
+d'en faire une solution open source. Bien sûr, Sonatype prend une
 longueur d'avance sur tout concurrent qui voudrait occuper ce terrain,
 et s’ouvre les portes de la fondation Eclipse et la reconnaissance
 associée, mais la démarche doit tout de même être soulignée. De
-nombreuses autres sociétés, moins imprégnées par le modèle open-source,
+nombreuses autres sociétés, moins imprégnées par le modèle open source,
 n'auraient pas suivi cette voie et auraient tenté de monnayer leur
 compétence.
 
 Verrouiller l’accès à Maven serait contre-productif. Une majorité des
 utilisateurs – et donc des clients potentiels – se tournerait vers des
 solutions libres, éventuellement moins bien intégrées. Le monde Java est
-particulièrement marqué par le modèle open-source, et le seul argument
+particulièrement marqué par le modèle open source, et le seul argument
 financier ne suffit pas à expliquer cet engouement. Aller contre les
 attentes du public pour une société comme Sonatype serait comme couper
 la branche sur laquelle on est assis. Par contre, une fois devenu le
@@ -12084,14 +12085,14 @@ devenu stratégique pour beaucoup d’entreprises est un avantage
 commercial sans équivalent, quitte à se froisser un peu avec les membres
 de la fondation Apache.
 
-==== Open-source
+==== Open source
 
 En dehors de cette considération purement stratégique, il ne faut pas
 non plus oublier qui constitue l'équipe de Sonatype. Vous avez affaire à
 des gens techno-addicts, pas à des financiers. Des gens qui se
 passionnent pour le code et les nouveautés technologiques, et qui ne
 laisseraient à personne le soin de coder à leur place. Ces gens sont
-imprégnés par le modèle open-source et n'auraient pas l'idée de lancer
+imprégnés par le modèle open source et n'auraient pas l'idée de lancer
 un nouvel outil en dehors de cet esprit. Ils sont au cœur du projet
 qu'ils ont construit et vu s'imposer, rien ne leur ferait plus mal que
 de voir leur bébé devenir une marchandise de plus.
@@ -12108,22 +12109,22 @@ Cependant, l'équipe de développement de Maven ne se résume pas à ces
 quelques personnes. L'équipe complète footnote:[http://maven.apache.org/team-list.html] compte des
 individus d'origines très variées et rattachés à des employeurs de
 toutes sortes. Pris individuellement, ils sont peu visibles, mais, comme
-pour tout projet open-source, c'est ensemble qu'ils ont donné vie au
+pour tout projet open source, c'est ensemble qu'ils ont donné vie au
 projet Maven, et en particulier à son large écosystème de plugins.
 
-==== La garantie par l'open-source
+==== La garantie par l'open source
 
 Si Sonatype se comporte aujourd'hui comme un exemple dans sa démarche de
-contribution à l'open-source, qu'en sera-t-il à l'avenir ? Que
+contribution à l'open source, qu'en sera-t-il à l'avenir ? Que
 deviendrait Maven si cette société venait à être rachetée par un groupe
-aux intentions plus lucratives ? Après tout, en moins d'un an, nous
+aux intentions plus lucratives ? Après tout, en moins d'un an, nous
 avons vu Oracle racheter Bea puis SUN pendant que VMware rachetait
 SpringSource qui venait d’absorber G2One. Qu'en pensent ceux qui ont
 misé sur la machine virtuelle Java alternative JRockit et qui ne peuvent
 même plus la télécharger sans passer par le service de support
-d'Oracle ?
+d'Oracle ?
 
-Ne perdons pas de vue deux éléments clés :
+Ne perdons pas de vue deux éléments clés :
 
 * Maven est développé sous licence libre Apache. Quoi qu'il arrive,
 personne ne pourra vous réclamer de droits si vous prenez ce code pour
@@ -12141,7 +12142,7 @@ reconnues pour la qualité de leur contribution à la communauté et pour
 leur capacité à travailler selon un modèle communautaire. En aucun cas,
 une société ne peut prétendre posséder Maven ou son équipe de
 développement (à moins de tous les embaucher). Des développeurs
-open-source qui verraient leur société prendre une position trop
+open source qui verraient leur société prendre une position trop
 lucrative ne manqueraient pas d'aller voir ailleurs, emportant avec eux
 la clé d'accès au SVN de Maven. Sauf crise grave sur le marché de
 l'emploi en informatique, il restera toujours des développeurs
@@ -12151,22 +12152,22 @@ un projet libre.
 développeurs, libres ou liés par une société concurrente, de repartir du
 code existant et de créer un nouveau projet dérivé de Maven, comme IBM
 l'a fait avec IBM HTTP Server en partant de Apache HTTPd. Cette
-situation extrême a déjà été rencontrée dans le monde open-source et est
+situation extrême a déjà été rencontrée dans le monde open source et est
 qualifiée de fork. Il s'agit cependant d'une situation rare, une sorte
 de solution de la dernière chance lorsque des conflits internes ne
 peuvent être réglés à l'amiable, mais ce n’est pas une porte de sortie
-théorique : elle a déjà été employée à de nombreuses reprises. Cela
-reste une sécurité non négligeable que tout projet open-source offre :
+théorique : elle a déjà été employée à de nombreuses reprises. Cela
+reste une sécurité non négligeable que tout projet open source offre :
 si le développement commence à prendre une voie qui déplaît à une partie
 de l'équipe, ils peuvent faire le choix de mettre en pratique leurs
 propres idées, certes avec des effets néfastes sur l'image du projet,
 mais démontrant ainsi la force du modèle libre. Jenkins est né de cette
-façon, comme LibreOffice ou ChiliProject …
+façon, comme LibreOffice ou ChiliProject…
 
 === Conclusion
 
 Le comité nous remercie et s'apprête à délibérer. Nous n'aurons sa
-conclusion qu'après quelques jours (ce sont des gens très occupés) : feu
+conclusion qu'après quelques jours (ce sont des gens très occupés) : feu
 vert.
 
 image:comite-feuvert.png[float="left"]
@@ -12187,9 +12188,8 @@ près de s'arrêter en si bon chemin. La communauté ne cesse de croître,
 supportée par de nouvelles sociétés dont il est le cœur de métier. Son
 succès en entreprise démontre un réel besoin d'homogénéité des outils de
 développement, et de ce fait sa logique interne fait mouche. Le modèle
-open-source ne fait plus peur comme il y a quelques années, et ceux qui
-sont à sa base ne sont plus des idéalistes barbus en sandales +
-chaussettes mais des professionnels pragmatiques.
+open source ne fait plus peur comme il y a quelques années, et ceux qui
+sont à sa base ne sont plus des idéalistes barbus en sandales-chaussettes, mais des professionnels pragmatiques.
 
 Là où les outils basés sur des scripts donnent de la flexibilité, Maven
 oppose une logique de maîtrise du processus et de ses étapes clés. Le
@@ -12199,7 +12199,7 @@ concurrence commence à suivre également cette piste, apportant des idées
 nouvelles qui pourront tout autant profiter à Maven.
 
 Nous sommes convaincus que Maven a encore de très beaux jours devant
-lui. Maven 3 promet des évolutions importantes qui feront sauter de
+lui. Maven 3 promet des évolutions importantes qui feront sauter de
 nombreux verrous, comme en témoigne son intégration dans nos IDE. Quant
 à l'armada de plugins qui gravitent autour, elle ne fait qu’augmenter et
 prend une place croissante dans les développements de nouveaux outils.
@@ -12470,7 +12470,7 @@ eclipse-repository. C’est globalement le même principe que nous avait
 montré François au chapitre 3 pour intégrer un développement Flex. Entre
 autres compléments au build que ce plugin incorpore, la gestion de
 dépendance est enrichie d’un nouveau format de dépôt, en plus du default
-et du legacy (dépôts maven1, obsolètes et plus supportés par Maven 3),
+et du legacy (dépôts Maven 1, obsolètes et plus supportés par Maven 3),
 le format p2. C’est ce qui permet à Pascal de référencer les bundles
 d’Eclipse Indigo, sur lequel est basé son client Eclipse RCP.
 
@@ -12622,7 +12622,7 @@ le dernier album de Riana ». Cette notoriété nous vaut une invitation
 pour présenter notre infrastructure à Devoxx, la grand-messe annuelle de
 la communauté Java, organisée avec brio sur une semaine complète par le
 Java User Group Belge. Lors de cette conférence, nous croisons de grands
-noms du monde Java, des éditeurs, des créateurs de projets open-source,
+noms du monde Java, des éditeurs, des créateurs de projets open source,
 et bien sûr des centaines d’anonymes qui viennent s’abreuver de
 connaissance.
 
@@ -12792,7 +12792,7 @@ s’exécute l’application.
 
 Même notre ami Jim se refuse à faire des prédictions sur ce que donnera
 JigSaw confronté à la réalité que sont OSGi et Maven. JigSaw est prévu
-pour s’intégrer dans Java 8, planifié pour fin 2012 – mais bon, un
+pour s’intégrer dans Java 8, planifié pour fin 2012 – mais bon, un
 projet informatique qui se termine dans les temps, ça ne s’est jamais
 vu.  Ami lecteur, si tu lis ces lignes à cette date, envoie nous un
 petit message pour nous dire si Mark a tenu sa promesse.
@@ -13414,7 +13414,7 @@ La communauté francophone y est largement représentée avec Arnaud,
 Carlos, Emmanuel, Fabrice, Hervé, Lukas, Nicolas, Olivier, Raphaël,
 Stéphane et les deux Vincent. Tous, à leur niveau et à des moments
 différents de leur parcours professionnel, ont mis un doigt dans le
-monde open-source et en sont maintenant imprégnés. Maven ne serait pas
+monde open source et en sont maintenant imprégnés. Maven ne serait pas
 ce qu'il est non plus sans Antonio, François, Guillaume, Sébastien,
 Jérôme et les millions d'autres personnes qui chaque jour l'utilisent,
 participent à son support, débattent de son avenir, rapportent des
@@ -13508,7 +13508,7 @@ Maven/Continuum/Archiva. J'ai encore pour nos clients beaucoup de
 travail avec ces produits. J'ai commencé avec le projet Maven en 2004,
 en participant au développement des plugins, du noyau et en gérant le
 repository central. Après, j'ai contribué aux autres projets
-open-source, Apache Archiva, Continuum et Felix, Spring Security,
+open source, Apache Archiva, Continuum et Felix, Spring Security,
 Eclipse IAM… Maintenant, je travaille sur des projets liés au cloud
 computing et DevOps, et en tirant le plus grand avantage de celui-ci
 pour le développement logiciel, les tests et les bonnes pratiques.
@@ -13546,7 +13546,7 @@ image:MangaFabrice.png[float="left"]
 Hey !
 
 Fabrice Bellingard, la trentaine, Hyérois depuis peu... Je suis tombé
-dans l'open-source quand j'ai bossé chez OTI (maintenant IBM Ottawa Lab)
+dans l'open source quand j'ai bossé chez OTI (maintenant IBM Ottawa Lab)
 en 2001, dans l'équipe Eclipse Core où j'ai fait la première version du
 plugin Ant. J'ai ensuite fait beaucoup "mumuse" en développant tout
 plein de plugins (notamment créateur du plugin C# et committer du plugin
@@ -13555,7 +13555,7 @@ Checkstyle), mais pas forcément tous utiles ;-).
 Utilisateur Maven depuis 2003, j'ai choisi Maven en 2004 pour créer la
 plateforme d'intégration d'un grand groupe français, et je suis
 finalement devenu committer en 2005. Puis vint Archiva en 2008
-(committer et PMC). Tech lead du projet open-source Squale à partir de
+(committer et PMC). Tech lead du projet open source Squale à partir de
 2008, j'ai décidé fin 2010 de continuer toujours plus dans le domaine
 OSS et qualité logicielle en intégrant la société Sonar Source en tant
 que VP Project Manager. Aventure qui m'emmène bien plus loin que prévu :
@@ -13583,7 +13583,7 @@ l'international, des accès mainframe, du couplage téléphonie
 informatique, des progiciels et autres subtilités de la réalité d'un SI
 bancaire.
 
-Si Maven 1 est resté au stade de test sur un projet open-source perso,
+Si Maven 1 est resté au stade de test sur un projet open source perso,
 j'ai eu suffisamment confiance en Maven 2 pour vouloir l'intégrer en
 entreprise. Disposant d'un build Ant existant standardisé et très
 diffusé, mon choix s'est porté sur les Maven Ant Tasks. Elles étaient
@@ -13703,7 +13703,7 @@ ses 5 ans), boit maintenant de d'alcool (et oui tout chose arrive !),
 vit à la campagne et travaille depuis la maison, du côté de Chantilly
 avec femme et trois enfants…
 
-Onze ans d'open-source déjà : Maven, Cactus, Cargo, MockObjects, XWiki
+Onze ans d'open source déjà : Maven, Cactus, Cargo, MockObjects, XWiki
 et autres.
 
 Côté Maven, j'ai rejoint le projet vers 2001-2002 alors qu'il n'existait
@@ -13713,7 +13713,7 @@ dizaines de fichiers Ant de mille lignes de long chacun !), puis en tant
 que committer plus tard afin de rendre l'utilisation de Maven plus
 solide et d’ajouter des fonctionnalités manquantes, notamment au travers
 du développement de plugins (plus de détails sur http://massol.net).
-Plus tard, j'ai participé aux longues discussions de design sur Maven2…
+Plus tard, j'ai participé aux longues discussions de design sur Maven 2…
 
 J'ai (co-)écrit trois livres dont deux sur Maven : _JUnit in Action_,
 aux éditions Manning, _Better Builds with Maven_ publié par l'ex-Mergere
@@ -13721,12 +13721,12 @@ aux éditions Manning, _Better Builds with Maven_ publié par l'ex-Mergere
 O'Reilly.
 
 Depuis 2007, j'ai décroché du projet Maven (plus le temps) car je me
-suis donné corps et âme à un nouveau projet open-source:
+suis donné corps et âme à un nouveau projet open source :
 XWiki footnote:[http://xwiki.org] un wiki d'entreprise de deuxième génération
 (voire troisième ;)). J'y bosse la nuit (classique), mais aussi le jour
 (moins classique) puisque je suis directeur technique de la société
 XWiki SAS qui offre des services, du support et du développement
-spécifique au-dessus du projet open-source XWiki.
+spécifique au-dessus du projet open source XWiki.
 
 image:MangaVincentS.png[float="left"]
 
@@ -13746,7 +13746,7 @@ Avec presque dix ans d'expérience en entreprise, je travaille
 actuellement dans un centre de recherche et ma mission se résume à aider
 les entreprises dans les méthodologies agiles, la gestion de projet,
 l'assurance qualité, les nouvelles technologies et, bien sûr,
-l'open-source.
+l'open source.
 
 Concernant Maven, j'ai commencé à utiliser la version 1 vers le milieu
 2003, lors d'un mandat dans une entreprise de bioinformatique, après une
@@ -13856,7 +13856,7 @@ image:MangaGuillaume.png[float="left"]
 
 Au dernier compte, j'en arrivais à 34 ans, déjà.
 
-Je fais de l'open-source depuis 2003, en travaillant puis en dirigeant
+Je fais de l'open source depuis 2003, en travaillant puis en dirigeant
 le projet Groovy, le langage dynamique pour la JVM le plus populaire
 actuellement auprès des développeurs Java, et également en lançant le
 framework web Grails.
@@ -13993,7 +13993,7 @@ pour faire de cet ouvrage une œuvre de qualité.
 
 Enfin, je dirai un grand grand grand merci à mon exceptionnelle femme et
 à mes trois enfants qui supportent autant que possible le temps que je
-peux passer sur l'open-source et ces derniers temps sur cet ouvrage.
+peux passer sur l'open source et ces derniers temps sur cet ouvrage.
 
 == Chapitre 19 : Lexique
 
@@ -14002,7 +14002,7 @@ amer de "mais enfin, de quoi parlent-ils ?". Il est vrai que
 l'informatique possède un jargon riche, souvent impénétrable et
 anglophone… Voici donc notre petit dictionnaire Maven – Français.
 
-=== Le petit monde open-source
+=== Le petit monde open source
 
 Apache footnote:[http://www.apache.org/]
 
@@ -14021,7 +14021,7 @@ fondation Apache.
 
 Committer footnote:[http://www.apache.org/foundation/how-it-works.html#committers]
 
-Le monde open-source identifie les personnes qui ont un accès libre en
+Le monde open source identifie les personnes qui ont un accès libre en
 modification sur un projet comme committer, c'est-à-dire autorisé à
 effectuer un commit sur le gestionnaire de code source du projet. Ce
 statut est accordé aux membres actifs du projet qui ont démontré en tant
@@ -14045,7 +14045,7 @@ réputé.
 
 Mailing-list
 
-Le support de Maven (comme beaucoup d'autres projets open-source) passe
+Le support de Maven (comme beaucoup d'autres projets open source) passe
 principalement par une liste de diffusion (Mailing-list) des
 utilisateurs (users@maven.apache.org dans son cas). Une seconde liste
 dev@maven.apache.org permet de discuter des évolutions de l'outil et de
@@ -14055,11 +14055,11 @@ diffusions en fonction des sous projets de Maven footnote:[http://maven.apache.o
 Enfin, en cas de besoin urgent, vous pouvez essayer de contacter une
 partie de l'équipe de développement sur irc footnote:[http://irc.codehaus.org/].
 
-Open-source (logiciel libre)
+Open source (logiciel libre)
 
 Logiciel dont le code source est accessible. Vous pouvez, si besoin est,
 y jeter un œil pour comprendre comment il marche. Les logiciels
-open-source sont aussi qualifiés de logiciels libres. Mais cela ne
+open source sont aussi qualifiés de logiciels libres. Mais cela ne
 signifie pas pour autant que vous pouvez faire absolument tout ce que
 vous voulez avec : il existe de nombreuses licences avec des contraintes
 très variées. La licence Apache (ASL v2) utilisée par Maven est l'une
@@ -14072,7 +14072,7 @@ d'Apache.
 
 PMC footnote:[http://www.apache.org/foundation/how-it-works.html#pmc-members]
 
-La fondation Apache, pour la gestion des projets open-source qu'elle
+La fondation Apache, pour la gestion des projets open source qu'elle
 héberge, définit un Project Management Commitee, constitué de committers
 plus expérimentés ou plus actifs que les autres et qui peuvent ainsi
 définir de manière efficace les orientations du projet. Le PMC a ainsi
@@ -14173,11 +14173,11 @@ le processus d'entrée des membres, ou sur les licences par exemple).
 
 Plexus
 
-Conteneur historique de Maven2, implémentant l’injection de dépendance
+Conteneur historique de Maven 2, implémentant l’injection de dépendance
 comme son concurrent Spring, mais n’ayant pas connu le succès de ce
 dernier, sans doute en raison d’une documentation innexistante et d’un
 manque de communication. Techniquement dépassé, il est remplacé dans
-Maven3 par Google Guice.
+Maven 3 par Google Guice.
 
 Plugin
 
@@ -14236,7 +14236,7 @@ Sisu
 
 Développé par Sonatype pour les besoins du gestionnaire de dépôt Nexus,
 Sisu permet d’utiliser des composants conçus pour Plexus (le conteneur
-historique de Maven2) dans un conteneut conforme à la norme JSR330, en
+historique de Maven 2) dans un conteneut conforme à la norme JSR330, en
 l’occurrence Google Guice.
 
 SCM footnote:[http://maven.apache.org/scm]
@@ -14324,7 +14324,7 @@ ClassWorlds footnote:[http://classworlds.codehaus.org]
 Maven permet à chaque plugin de disposer d'un espace privé d'exécution,
 depuis lequel il peut s'exécuter avec ses dépendances sans être
 influencé par les autres plugins. Ce cloisonnement est réalisé par un
-jeu de ClassLoaders, basés sur l'outil open-source ClassWorlds. D'une
+jeu de ClassLoaders, basés sur l'outil open source ClassWorlds. D'une
 certaine façon, ClassWorlds peut être comparé à OSGi, même si son cadre
 est moins large et qu'il ne fait l'objet d'aucune normalisation.
 
@@ -14348,7 +14348,7 @@ nombreuses années de corrections diverses.
 Modello footnote:[http://modello.codehaus.org/]
 
 Les divers fichiers XML manipulés par Maven sont définis à partir d'un
-modèle (décrit dans des fichiers *.mdo), que l'outil open-source Modello
+modèle (décrit dans des fichiers *.mdo), que l'outil open source Modello
 convertit en classes JavaBean, en schéma XML et en analyseurs XML pour
 passer de l'un à l'autre. Modello peut potentiellement être utilisé dans
 un autre cadre mais reste très lié à Maven. Modello peut être comparé à
