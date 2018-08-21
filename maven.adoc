@@ -12209,10 +12209,10 @@ Maven, sous peine de crouler sous les réclamations répétées des
 utilisateurs.
 
 [[Au_dela_de_Maven]]
-== Chapitre 16 : Au delà de Maven
+== Chapitre 16 : Au-delà de Maven
 
-Maven nous a accompagné pendant ces 14 chapitres en répondant à chaque
-fois à nos attentes. Nous avons du parfois faire appel à des plugins
+Maven nous a accompagnés pendant ces 14 chapitres en répondant à chaque
+fois à nos attentes. Nous avons dû parfois faire appel à des plugins
 très spécifiques ou introduire de larges portions de XML, mais rien de
 bloquant. Il reste cependant quelques domaines où la place de Maven
 reste contestée.
@@ -12223,7 +12223,7 @@ OSGi est un monde à lui tout seul. Créé par le microcosme de
 l’informatique embarquée, avec des contraintes très spécifiques, il est
 devenu omniprésent en devenant la base technique de l’IDE Eclipse.
 SpringSource a choisi de l’accompagner en OSGi-fiant son framework et en
-lui développement une plateforme serveur dédiée.
+lui développant une plateforme serveur dédiée.
 
 OSGi a la particularité de prendre en charge la notion de dépendances,
 de versions, les conflits qui vont avec, et l’approvisionnement de la
@@ -12235,19 +12235,19 @@ affronter.
 image:MangaPascal.png[float="left"]
 
 Pascal vient de rejoindre notre équipe, car nous ajoutons une nouvelle
-corde à notre arc : le petit projet n’oublie pas la liste des courses a
+corde à notre arc : le petit projet _n’oublie pas la liste des courses_ a
 bien évolué, et nous sommes maintenant connectés aux systèmes
 d’information des boutiques partenaires qui préparent les courses de nos
 utilisateurs à l’avance (et en profitent pour glisser quelques pubs et
 coupons de réduction bien ciblés). Toute cette gestion suppose cependant
 un outillage riche et nous explorons une nouvelle piste, celle du client
-lourd ; Eclipse Rich Client Platform sera donc notre nouveau terrain de
-jeu !
+lourd ; Eclipse Rich Client Platform sera donc notre nouveau terrain de
+jeu !
 
 Eclipse est basé sur la norme OSGi, qui définit un socle pour
 l’exécution de composants, la gestion de leur cycle de vie, l’injection
 de leurs dépendances, l’exposition de service, etc. OSGi a été conçu
-avec comme objectif de redéployer à chaud des modules (« bundle » dans
+avec comme objectif de redéployer à chaud des modules (« bundle » dans
 le vocabulaire OSGi) en prenant en charge la reconfiguration de la
 plateforme et sans nécessiter de redémarrage. Le cahier des charges est
 ambitieux, mais a fait ses preuves depuis plus de 10 ans. Eclipse est
@@ -12256,12 +12256,12 @@ ainsi se combiner pour enrichir toujours plus l’environnement.
 
 Mais Eclipse ce n’est pas qu’un IDE, c’est avant tout une plateforme
 d’exécution et un moteur graphique, ce qui permet de développer des
-application de gestion ou de modélisation sur un socle reconnu et avec
+applications de gestion ou de modélisation sur un socle reconnu et avec
 un outillage conséquent. Pascal, très à l’aise dans cet écosystème,
-vient de « subir » notre formation interne à Maven et s’attaque donc à
+vient de « subir » notre formation interne à Maven et s’attaque donc à
 appliquer nos principes et notre outil à son environnement. Il part
 confiant, car de nombreux points que nous avons abordés lui sont
-familiers : déclaration des dépendances, identification des versions,
+familiers : déclaration des dépendances, identification des versions,
 gestion de conflits, packaging… toutes ces notions qu’OSGi propose lui
 aussi.
 
@@ -12270,13 +12270,13 @@ aussi.
 Pascal tente dans un premier temps de monter un projet Maven tout neuf,
 pour construire la structure nécessaire à un bundle OSGi, qu’il puisse
 ensuite intégrer avec son environnement de développement habituel. Cette
-approche « POM-first » l’oblige à trouver un équivalent en termes
+approche « POM-first » l’oblige à trouver un équivalent en termes
 d’outillage Maven pour gérer plugins, fragments, features, update-sites,
 et toutes ces subtilités qui font la particularité du développement
 Eclipse RCP.
 
 OSGi utilise également le fichier MANIFEST, rappelez-vous, celui que
-nous avons rencontré au chapitre 2 et qui permet à un JAR d’indiquer des
+nous avons rencontré au chapitre 2 et qui permet à un JAR d’indiquer des
 métadonnées sur son contenu, comme sa version. OSGi enrichit ce fichier
 pour ajouter les informations d’identification du bundle, de version, de
 dépendances entre bundles, de services exposés ou consommés. Une partie
@@ -12291,14 +12291,14 @@ plugin apache-felix-maven-bundle-plugin-bnd. Celui-ci incorpore l’outil
 bnd footnote:[Outil créé par Peter Kriens, http://www.aqute.biz/Bnd/Bnd], qui génère le MANIFEST OSGi à partir d’un projet
 Java standard, en déclarant simplement les packages privés et exportés.
 Ce plugin nous propose donc de transcrire le MANIFEST OSGi dans le
-formalisme XML du POM, comme le montre le listing 16.1.
+formalisme XML du POM, comme le montre le listing 16.1.
 
 [NOTE]
 ====
 Il existe un autre outil développé sur le même principe par
 SpringSource, bundlor
 (http://www.springsource.org/bundlor[http://www.springsource.org/bundlor]).
-Si vous voulez suivre cette piste, jetez y un œil car l’équipe de Spring
+Si vous voulez suivre cette piste, jetez y un œil, car l’équipe de Spring
 s’en est servi avec succès pour convertir en bundles une large gamme de
 projets, dans le cadre du projet Spring Dynamic Modules.
 ====
@@ -12323,11 +12323,11 @@ projets, dans le cadre du projet Spring Dynamic Modules.
 
 Ce plugin permet de convertir assez facilement un projet Java classique
 en bundle OSGi, par contre Pascal rencontre encore quelques
-difficultés :
+difficultés.
 
 * D’une part, son application Eclipse RCP n’utilise pas uniquement
 des bundles, mais les concepts propres à Eclipse que sont les features,
-update-site et products. L’outillage est donc encore incomplet
+update-site et products. L’outillage est donc encore incomplet.
 * D’autre part, Pascal est habitué au très bon outillage d’Eclipse
 pour gérer finement le MANIFEST, et devoir reporter toutes ces infos
 dans le pom.xml sous peine de voir Maven écraser sauvagement sa
@@ -12337,53 +12337,53 @@ configuration ne lui plait qu’à moitié.
 
 Pas vraiment satisfait, Pascal tente une seconde approche. Il part donc
 de son environnement de développement classique pour développer un
-plugin, Eclipse PDE (Platform Development Envionment) et tente d’y
+plugin, Eclipse PDE (Platform Development Environment) et tente d’y
 ajouter nos bibliothèques shoppinglist. Un Bundle OSGi a deux options
-pour intégrer une dépendance :
+pour intégrer une dépendance :
 
-* Faire référence à un autre bundle, en supposant donc que la
+* faire référence à un autre bundle, en supposant donc que la
 bibliothèque cible soit prévue pour une intégration OSGi, ce qui n’est
-pas notre cas
-* Contenir directement le JAR de la bibliothèque
+pas notre cas ;
+* contenir directement le JAR de la bibliothèque.
 
-La figure 16-01 montre par exemple le bundle Apache Ant, disponible par
+La figure 16-01 montre par exemple le bundle Apache Ant, disponible par
 défaut avec votre installation d’Eclipse. Ce plugin incorpore l’outil
 Ant et ses dépendances dans son répertoire /lib. Pour être en mesure de
 construire un bundle, Pascal va donc devoir configurer Maven pour
 reproduire cette structure, à l’aide du plugin maven-dependency-plugin
 et de sa tâche copy-dependencies.
 
-Figure 16-01
+Figure 16-01
 image:16-01.png[align="center"]
 
-Le bundle Apache Ant dans une distribution eclipse
+Le bundle Apache Ant dans une distribution Eclipse
 
 Eclipse dispose d’un outillage complet pour le packaging des bundles,
 qu’il va falloir intégrer dans notre build Maven. Comme nous l’avons
 fait de nombreuses fois déjà, nous partons en quête du plugin adéquat et
 – bingo – trouvons rapidement le plugin
 pde-maven-plugin footnote:[http://mojo.codehaus.org/pde-maven-plugin/] du projet Mojo. Ce plugin lance
-Eclipse en mode « headless » (sans interface graphique) et exécute la
+Eclipse en mode « headless » (sans interface graphique) et exécute la
 chaîne d’assemblage du bundle.
 
 Après de longues, trop longues heures de mise au point, Pascal arrive
 enfin à construire son bundle avec Maven. Tout cela lui semble tout de
 même bien compliqué pour un résultat sans grande plus-value.
 
-==== Tant pis pour Maven !
+==== Tant pis pour Maven !
 
 image:MangaPascal.png[float="left"]
 
 La semaine suivante, Pascal prend part à notre stand-up hebdomadaire
-pour nous exposer ses progrès. Il lâche le morceau : la solution qu’il a
-retenu, c’est de ne pas utiliser Maven… Indignation, hurlements, la
+pour nous exposer ses progrès. Il lâche le morceau : la solution qu’il a
+retenue, c’est de ne pas utiliser Maven… Indignation, hurlements, la
 cacophonie qui s’en suit ne permet pas à Pascal de terminer sa phrase.
 Cependant, le calme qu’il affiche semble montrer qu’il ne craint pas
 pour sa période d’essai et a donc quelque chose à ajouter. Nous
-finissons donc pas l’écouter. Son argumentaire est le suivant :
+finissons donc par l’écouter. Son argumentaire est le suivant :
 
 * Maven comme OSGi gèrent la résolution de dépendances. Celui d’OSGi
-est cependant très spécifique (Pascal hésite à dire « meilleur » mais ne
+est cependant très spécifique (Pascal hésite à dire « meilleur », mais ne
 veut pas en rajouter pour le moment) et apporte des fonctionnalités
 propres aux besoins du développement Eclipse RCP qui n’ont pas
 d’équivalent avec Maven.
@@ -12392,9 +12392,9 @@ l’édition du fichier MANIFEST. Même en développant notre propre plugin
 Maven, passer par le POM pour gérer ces informations ferait perdre
 sensiblement en productivité.
 
-Admettons, et alors ? Pascal nous montre alors le fichier POM qu’il a
+Admettons, et alors ? Pascal nous montre alors le fichier POM qu’il a
 utilisé pour construire le prototype de notre client lourd, présenté au
-listing 16.2.
+listing 16.2.
 
 [source, xml]
 .Listing 16.2 : POM suffisant pour construire nos composants Eclipse PDE avec Maven
@@ -12413,18 +12413,18 @@ listing 16.2.
 
 Non, ne cherchez pas, il ne manque pas une page à ce livre, c’est bien
 tout ce qu’il suffit dans le POM pour gérer ce plugin Eclipse. Le secret
-de Pascal, c’est qu’il n’utilise pas le même Maven que nous : il utilise
+de Pascal, c’est qu’il n’utilise pas le même Maven que nous : il utilise
 Sonatype Tycho.
 
 ==== Tycho
 
-Maven 3
+Maven 3
 
-Tycho est un des nombreux projets satellite de Maven, sur lequel
-Sonatype a énormément investit. L’idée de Tycho est de couper la poire
-en deux : laisser Maven faire ce qu’il sait bien faire, et laisser
+Tycho est un des nombreux projets satellites de Maven, sur lequel
+Sonatype a énormément investi. L’idée de Tycho est de couper la poire
+en deux : laisser Maven faire ce qu’il sait bien faire, et laisser
 Eclipse PDE gérer les aspects d’OSGi pour lequel il est imbattable.
-Cette hybridation est rendue possible par le socle technique Maven 3,
+Cette hybridation est rendue possible par le socle technique Maven 3,
 qui isole beaucoup mieux que son prédécesseur chaque composant de Maven
 et permet donc de les remplacer par une version alternative. Tycho
 abandonne donc la gestion de dépendance traditionnelle de Maven pour
@@ -12433,13 +12433,13 @@ le POM mais dans le MANIFEST OGSi.
 
 [NOTE]
 ====
-Tycho ne fonctionne donc que avec Maven 3. Le lourd travail de refonte
-technique entre Maven 2 et Maven 3 montre ici ses fruits : la souplesse
-de la plateforme technique de Maven 3 lui permet de s’adapter à des
+Tycho ne fonctionne donc qu'avec Maven 3. Le lourd travail de refonte
+technique entre Maven 2 et Maven 3 montre ici ses fruits : la souplesse
+de la plateforme technique de Maven 3 lui permet de s’adapter à des
 environnements très spécifiques et de s’enrichir de fonctionnalités
 puissantes.
 
-Si vous êtes contraint d’utiliser Maven 2, par exemple pou respecter des
+Si vous êtes contraint d’utiliser Maven 2, par exemple pour respecter des
 recommandations corporate (je vous laisse libre de juger de la
 pertinence de ce type de règles, mais vous devinez ce que j’en pense),
 les approches présentées aux paragraphes ci-dessus restent valides.
@@ -12452,7 +12452,7 @@ la configuration nécessaire dans le projet parent – petit cachotier va.
 
 D’une part, le composant principal de Tycho, tycho-maven-plugin, qui se
 charge d’étendre et de reconfigurer Maven pour utiliser les mécanismes
-OSGi là où ils sont plus judicieux que le build Maven standard :
+OSGi là où ils sont plus judicieux que le build Maven standard :
 
 [source, xml]
 -------------------------------------------------------------------------------
@@ -12467,7 +12467,7 @@ OSGi là où ils sont plus judicieux que le build Maven standard :
 Cette simple déclaration, déclarée comme extension, ajoute à Maven la
 gestion des cycles de vie eclipse-plugin, eclipse-feature et
 eclipse-repository. C’est globalement le même principe que nous avait
-montré François au chapitre 3 pour intégrer un développement Flex. Entre
+montré François au chapitre 3 pour intégrer un développement Flex. Entre
 autres compléments au build que ce plugin incorpore, la gestion de
 dépendance est enrichie d’un nouveau format de dépôt, en plus du default
 et du legacy (dépôts Maven 1, obsolètes et plus supportés par Maven 3),
@@ -12487,18 +12487,18 @@ d’Eclipse Indigo, sur lequel est basé son client Eclipse RCP.
 [NOTE]
 ====
 Equinox P2 est le mécanisme d’approvisionnement de la plateforme OSGi
-Equinox qu’utilise Eclipse RCP, introduit avec la version 3.4 d’Eclipse
-« Ganymede ». P2 gère de multiples dépôts distants, la sélection de
+Equinox qu’utilise Eclipse RCP, introduit avec la version 3.4 d’Eclipse
+« Ganymede ». P2 gère de multiples dépôts distants, la sélection de
 miroirs, le téléchargement en parallèle, la validation et gestion de
-conflits de versions, … autrement dit, c’est un concurrent farouche pour
-la résolution de dépendances de Maven !
+conflits de versions… Autrement dit, c’est un concurrent farouche pour
+la résolution de dépendances de Maven !
 
 http://wiki.eclipse.org/Equinox_p2
 
 P2 permet également de gérer des installations complètes, incluant les
 exécutables, et non seulement les bundles OSGi. P2 peut donc être
 utilisé pour assurer du déploiement d’application, ce que Sonatype met à
-profit dans son offre « developer onbard » permettant de mettre à
+profit dans son offre « developer onbard » permettant de mettre à
 disposition des environnements de développement prêts à fonctionner en
 un simple clic.
 ====
@@ -12528,19 +12528,19 @@ dans un dépôt Maven.
 
 Tycho identifie la version et la constitution de la plateforme
 OSGi/Eclipse sur la base des fichiers MANIFEST et feature.xml présents
-dans le projet de plugin. A partir de cela, il constitue le classpath et
+dans le projet de plugin. À partir de cela, il constitue le classpath et
 la configuration nécessaires à l’exécution de l’outillage.
 
 Cet outillage est implicitement apporté par le packaging eclipse-plugin
 que Pascal a utilisé. Il associe au projet un cycle de vie particulier
 qui remplace celui que nous avons jusqu’ici toujours utilisé, et donc
-les plugins habituels du build Maven. La compilation du code java est
+les plugins habituels du build Maven. La compilation du code Java est
 par exemple confiée à un plugin spécialisé, maven-osgi-compiler-plugin,
 qui tient compte des spécificités de la plateforme en termes de
 visibilité des classes déclarées dans les bundles. Comme le plugin
 maven-compiler-plugin, nous pouvons au besoin le déclarer explicitement
-pour enrichir sa configuration, par exemple activer le support Java 7,
-parce que mince, on est plus au moyen âge :
+pour enrichir sa configuration, par exemple activer le support Java 7,
+parce que mince, on est plus au Moyen Âge :
 
 [source, xml]
 -------------------------------------------------------------------------------
@@ -12562,24 +12562,24 @@ MANIFEST du bundle principal.
 
 image:MangaPascal.png[float="left"]
 
-Pascal nous a bluffé, et même si nous avons encore un peu de mal à
+Pascal nous a bluffés, et même si nous avons encore un peu de mal à
 admettre que notre magnifique gestion de dépendance Maven vient de se
 faire moucher, son build Eclipse RCP est propre, simple, fonctionnel, et
 lui permet de développer confortablement le client riche que notre
 marketing nous réclame avec insistance. Nous donnons rendez-vous à
-Pascal pour le prochain stand-up, et courons emprunter « Eclipse -
-Principe, patterns et plug-in » (chez le même éditeur) à la
-bibliothèques technique de Geegol pour une rapide mise à niveau histoire
-d’avoir l’air moins bête la semaine prochaine.
+Pascal pour le prochain stand-up, et courons emprunter « Eclipse -
+Principe, patterns et plug-in » (chez le même éditeur) à la
+bibliothèque technique de Geegol pour une rapide mise à niveau histoire
+d’avoir l’air moins bêtes la semaine prochaine.
 
 Quelques semaines plus tard, le travail de Pascal a bien avancé, et il
-nous présente maintenant son build complet, qui inclue désormais la
+nous présente maintenant son build complet, qui inclut désormais la
 production complète de l’application RCP, incluant de nombreux plugins,
 bundles et features pour répondre au moindre désir de nos clients. La
 petite nouveauté du jour, c’est le packaging de l’application pour
 chaque environnement cible. Une fois de plus, les plugins apportés par
-tycho permettent de limiter cette tâche complexe à quelques déclarations
-simples, comme le montre le listing 16.3.
+Tycho permettent de limiter cette tâche complexe à quelques déclarations
+simples, comme le montre le listing 16.3.
 
 [source, xml]
 .Listing 16.3 : Gestion du packaging OSGi avec un plugin Tycho dédié
@@ -12611,14 +12611,14 @@ simples, comme le montre le listing 16.3.
 
 Par l’universelle commande `mvn install`, Pascal est désormais en mesure
 de produire les versions Linux et Windows de notre client riche. Défis
-relevé avec panache, merci Pascal !
+relevés avec panache, merci Pascal !
 
 === Java Modules
 
 Geegol Shopping List a reçu de la part du public un accueil sans
 précédent. Balayé Facebook, oublié Twitter, tout le monde ne parle plus
-que de ShoppingList, Shop comme disent les d’jeuns : « Je vais Shopper
-le dernier album de Riana ». Cette notoriété nous vaut une invitation
+que de ShoppingList, Shop comme disent les d’jeuns : « Je vais Shopper
+le dernier album de Riana ». Cette notoriété nous vaut une invitation
 pour présenter notre infrastructure à Devoxx, la grand-messe annuelle de
 la communauté Java, organisée avec brio sur une semaine complète par le
 Java User Group Belge. Lors de cette conférence, nous croisons de grands
@@ -12626,7 +12626,7 @@ noms du monde Java, des éditeurs, des créateurs de projets open source,
 et bien sûr des centaines d’anonymes qui viennent s’abreuver de
 connaissance.
 
-Nous faisons ainsi la connaissance de Mark footnote:[Mark Reinhold, qui nous a inspiré ce personnage, est « principal engineer » chez Oracle et responsable du projet OpenJDK. Précisons qu’il n’a pas été consulté pour relire ce chapitre, aussi les propos que nous lui prêtons sont totalement fictifs.], ingénieur
+Nous faisons ainsi la connaissance de Mark footnote:[Mark Reinhold, qui nous a inspiré ce personnage, est « principal engineer » chez Oracle et responsable du projet OpenJDK. Précisons qu’il n’a pas été consulté pour relire ce chapitre, aussi les propos que nous lui prêtons sont totalement fictifs.], ingénieur
 chez Oracle. Il travaille sur un projet qui vise à modulariser la
 plateforme Java, nom de code jigsaw.
 
@@ -12634,12 +12634,12 @@ image:MangaMark.png[float="left"]
 
 Depuis des années, Java évolue en ajoutant de nouvelles API,
 alourdissant toujours plus la plateforme. Malgré l’amélioration des
-techniques de compression, le runtime Java 6 pèse 14 Méga-octets (sans
-parler du JDK qui dépasse les 60 Mo). Il en résulte que Java est lent à
+techniques de compression, le runtime Java 6 pèse 14 Mégaoctets (sans
+parler du JDK qui dépasse les 60 Mo). Il en résulte que Java est lent à
 démarrer, car il doit charger un volume conséquent de classes, alors que
 très peu d’entre elles sont nécessaires pour la plupart des tâches. Un
 outil en ligne de commande Java n’a par exemple pas besoin de la couche
-graphique Swing !
+graphique Swing !
 
 Il en résulte également que les éléments de Java sont de plus en plus
 interconnectés, augmentant sa complexité et les difficultés de
@@ -12652,30 +12652,29 @@ le mécanisme de modularisation.
 image:MangaPascal.png[float="left"]
 image:MangaArnaud.png[float="left"]
 
-Pascal, s’étonne de l’enthousiasme de Mark à incorporer ce « nouveau
-concept » dans la plateforme Java. OSGi propose déjà cela depuis plus de
-10 ans ! Quand à Arnaud, il s’interroge sur le fameux « mécanisme » que
+Pascal, s’étonne de l’enthousiasme de Mark à incorporer ce « nouveau
+concept » dans la plateforme Java. OSGi propose déjà cela depuis plus de
+10 ans ! Quant à Arnaud, il s’interroge sur le fameux « mécanisme » que
 la spécification va normaliser. Modulariser c’est bien, mais comment va
 faire JigSaw pour identifier les modules et approvisionner
-l’environnement ? Après tout, c’est ce que fait déjà Maven avec les
-bibliothèques, P2 avec les bundles, et il semble peut probable que Java
-8 incorpore Tycho.
+l’environnement ? Après tout, c’est ce que fait déjà Maven avec les
+bibliothèques, P2 avec les bundles, et il semble peu probable que Java 8 incorpore Tycho.
 
 ==== Jigsaw
 
-L’objectif de la JSR 294 est ambitieux, car il amène au sein de la
+L’objectif de la JSR 294 est ambitieux, car il amène au sein de la
 plateforme un service qu’on avait jusqu’ici confié à notre outillage.
-Dans un premier temps, les travaux ont amenés à envisager un nouveau
-système de packaging, les Java Modules (JSR 294). Les utilisateurs
+Dans un premier temps, les travaux ont amené à envisager un nouveau
+système de packaging, les Java Modules (JSR 294). Les utilisateurs
 d’OSGi n’ont pas tardé à se faire entendre en moquant cette norme qui
 arrivait péniblement à la cheville de leur outillage déjà éprouvé. Cette
-piste a été gelée, et la JSR 294 a été revue pour élargir les
+piste a été gelée, et la JSR 294 a été revue pour élargir les
 participants et trouver une solution plus consensuelle.
 
 Jigsaw vise à faire disparaître la notion de chemin des classes
 (classpath) au profit d’une approche déclarative et totalement
 automatisée. Mark nous présente un exemple de descripteur de
-dépendance :
+dépendance :
 
 -------------------------------------------------------------------------------
 module com.myapp @ 1.0.0 {
@@ -12685,7 +12684,7 @@ module com.myapp @ 1.0.0 {
 -------------------------------------------------------------------------------
 
 Ce n’est certes pas un fichier POM, mais à la syntaxe près, ça y
-ressemble tout de même fortement ! Mark nous indique que plusieurs
+ressemble tout de même fortement ! Mark nous indique que plusieurs
 versions d’un même module pourront coexister en mémoire, pour répondre
 aux contraintes de dépendances définies par chaque module. C’est en
 effet quelque chose qui est hors de portée de Maven, mais qu’OSGi gère
@@ -12695,7 +12694,7 @@ Mark nous présente aussi le prototype que constitue
 jigsaw footnote:[http://openjdk.java.net/projects/jigsaw/], et la commande jmod destinée à rejoindre le
 JDK. Mimant les outils de gestion de paquet qu’on trouve sur les
 systèmes Linux (rpm, deb) ou encore les environnements Ruby (gem), jmod
-permet d’installer un composant et ses dépendances :
+permet d’installer un composant et ses dépendances :
 
 jmod install org.openjdk.aggregator-1.0.jar
 
@@ -12706,7 +12705,7 @@ terrain technique, nous ne voyons pas bien où Mark tente de nous emmener
 avec son projet.
 
 [[a_quoi_ca_sert]]
-==== A quoi ça sert ?
+==== À quoi ça sert ?
 
 L’idée de la modularisation est séduisante. Nous avons en effet
 largement présenté l’intérêt de la gestion de dépendances, où chaque
@@ -12716,15 +12715,15 @@ sont nécessaires à son fonctionnement.
 Si on regarde le fonctionnement de Java, de nombreuses API sont
 présentes de longue date, et bien que dépréciées elles ne peuvent
 disparaître avec la version suivante de Java, car Java nous assure la
-compatibilité ascendante : notre runtime Java 7 est en mesure d’exécuter
-du code de 1999 écrit en Java 1.1, comme ce fameux projet retrouvé sur
+compatibilité ascendante : notre runtime Java 7 est en mesure d’exécuter
+du code de 1999 écrit en Java 1.1, comme ce fameux projet retrouvé sur
 une disquette au début de ce livre.
 
-En tant qu’utilisateur de Maven, nous pouvons dire que notre code
-utilise Spring 3 ou plus. Nous n’avons pas à nous soucier de
+En tant qu’utilisateurs de Maven, nous pouvons dire que notre code
+utilise Spring 3 ou plus. Nous n’avons pas à nous soucier de
 compatibilité avec des versions précédentes de Spring, car toute
 application qui fait référence à notre POM devra implicitement utiliser
-au moins Spring 3, point barre.
+au moins Spring 3, point barre.
 
 La modularisation permet ainsi d’alléger chaque partie du runtime Java
 en éliminant un lourd héritage, et à chaque application de cibler
@@ -12734,7 +12733,7 @@ les performances de notre application qui embarquerait moins de code
 inutile.
 
 JigSaw ne répond pas au besoin de Monsieur tout-le-mode, mais à celui
-très spécifique des mainteneurs de Java. Avec 8 versions de la
+très spécifique des mainteneurs de Java. Avec huit versions de la
 plateforme empilées, la prochaine release de la plateforme va encore
 ajouter de la complexité, il est donc largement temps de trouver une
 solution pour faire le ménage. Les outils de modularisation que sont
@@ -12746,21 +12745,20 @@ programmation parallèle.
 image:MangaMark.png[float="left"]
 
 Mark a l’habitude de trouver un accueil un peu frais à ses explications,
-et a donc gardé pour la fin les éléments qui vont peut être nous faire
+et a donc gardé pour la fin les éléments qui vont peut-être nous faire
 comprendre l’intérêt de la modularisation au sein même de la plateforme
 Java.
 
 D’une part, la vérification des dépendances se fait au runtime, et non à
-la compilation. Plus de NoClassDefFoundException parce qu’il manque un
-JAR dans votre application web ! Sur ce terrain, Maven ne peut pas grand
-chose pour nous, à part espérer que les métadonnées qu’il exploite
+la compilation. Plus de `NoClassDefFoundException` parce qu’il manque un
+JAR dans votre application web ! Sur ce terrain, Maven ne peut pas grand-chose pour nous, à part espérer que les métadonnées qu’il exploite
 soient correctes.
 
 Le format de fichier .class va d’ailleurs évoluer. La notion d’archive
 JAR n’étant pas adaptée à la modularisation, c’est directement le format
 des classes qui va permettre la modularisation et l’accélération du
 chargement du code Java compilé. C’est également le choix fait par
-Google pour la plateforme Androïd, afin de ne pas surconsommer les
+Google pour la plateforme Android, afin de ne pas surconsommer les
 ressources des appareils mobiles.
 
 Le contexte d’exécution étant plus prédictible que dans le cas du
@@ -12768,15 +12766,15 @@ classpath, où l’emplacement physique d’une classe ne peut être connu à
 l’avance, la résolution statique va pouvoir être utilisée et
 significativement améliorer les performances. C’est déjà ce qui a été
 employé dans le cadre de Java Card pour améliorer les performances dans
-un environnement très limité en resources.
+un environnement très limité en ressources.
 
 La vérification des classes, étape que nous ne voyons pas, mais qui
 consiste pour la JVM à valider la cohérence de chaque fichier .class
 qu’elle charge en mémoire, sera effectuée à l’installation du module,
-une fois pour toute. Ici encore, la vitesse de démarrage de Java pourra
+une fois pour toutes. Ici encore, la vitesse de démarrage de Java pourra
 ainsi être améliorée. Cumulée avec les autres techniques qu’il nous a
-indiqué, Mark nous annonce un gain sur le temps de chargement pouvant
-atteindre 70% !
+indiquées, Mark nous annonce un gain sur le temps de chargement pouvant
+atteindre 70 % !
 
 Ensuite, le chargement des modules peut être incrémental. L’application
 peut donc être disponible à son utilisateur en un temps record et
@@ -12788,22 +12786,22 @@ Un module pourra enfin être lié à une architecture matérielle et se
 substituer au lancement en fonction de l’environnement sur lequel
 s’exécute l’application.
 
-==== Quel avenir ?
+==== Quel avenir ?
 
 Même notre ami Jim se refuse à faire des prédictions sur ce que donnera
 JigSaw confronté à la réalité que sont OSGi et Maven. JigSaw est prévu
 pour s’intégrer dans Java 8, planifié pour fin 2012 – mais bon, un
 projet informatique qui se termine dans les temps, ça ne s’est jamais
-vu.  Ami lecteur, si tu lis ces lignes à cette date, envoie nous un
+vu.  Ami lecteur, si tu lis ces lignes à cette date, envoie-nous un
 petit message pour nous dire si Mark a tenu sa promesse.
 
-Nous sommes tous très dubitatif sur ce que JigSaw va donner sur notre
+Nous sommes tous très dubitatifs sur ce que JigSaw va donner sur notre
 écosystème et notre outillage. Il faudra déjà attendre une forte
-adoption de Java8, puis la mise à jour des frameworks majeurs que sont
+adoption de Java 8, puis la mise à jour des frameworks majeurs que sont
 Spring, Hibernate et consorts, avant de pouvoir estimer son impact. Mark
 nous rassure avec une dernière démonstration. Utilisant jmod, il ajoute
 à son environnement des bibliothèques classiques, et pour cela doit
-indiquer un dépôt qui serve de source, comme le montre le listing 16.4.
+indiquer un dépôt qui serve de source, comme le montre le listing 16.4.
 
 .Listing 16.4 : Utilisation de jmod pour provisionner l’environnement avec des bibliothèques Java
 -------------------------------------------------------------------------------
@@ -12816,8 +12814,8 @@ Fetching jdom @ 1.0 …. 150KB
 Fetching joda-time @ 1.6 …. 150KB
 http://repo1.maven.org/maven2[http://repo1.maven.org/maven2]
 -------------------------------------------------------------------------------
-, voici une
-URL que nous connaissons bien, celle du dépôt Maven central !
+
+Voici une URL que nous connaissons bien, celle du dépôt Maven central !
 Finalement, laissons à JigSaw le temps d’arriver à maturité. Après tout,
 marier Maven à OSGi semblait bien difficile, et finalement Tycho nous a
 apporté une solution simple et performante.
@@ -12828,14 +12826,14 @@ Confronté à des environnements qui ont leur propre outillage, leurs
 propres règles, Maven peut montrer ses limites et se heurter à des murs
 en apparence infranchissables. L’expérience montre cependant que ces
 problèmes se résolvent progressivement, pas forcément de la manière dont
-on les avait approché initialement, et aboutissent à des solutions
+on les avait approchés initialement, et aboutissent à des solutions
 opérationnelles. Développer des plugins Eclipse et utiliser Maven n’est
 plus aujourd’hui un art de haut vol, mais une réalité.
 
 L’impact de jigSaw sur notre environnement n’est pas facile à anticiper.
-Peut être verrons-nous apparaître un maven-jmod-plugin, ou bien d’ici là
+Peut-être verrons-nous apparaître un maven-jmod-plugin, ou bien d’ici là
 peut être que d’autres avancées auront bouleversé la donne. Une seule
-chose est sûre, Maven sera de la partie !
+chose est sûre, Maven sera de la partie !
 
 == Chapitre 17 : Nos recommandations
 
