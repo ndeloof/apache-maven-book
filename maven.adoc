@@ -12835,12 +12835,12 @@ Peut-être verrons-nous apparaître un maven-jmod-plugin, ou bien d’ici là
 peut être que d’autres avancées auront bouleversé la donne. Une seule
 chose est sûre, Maven sera de la partie !
 
-== Chapitre 17 : Nos recommandations
+== Chapitre 17 : Nos recommandations
 
-L'activité de noubliepaslalistedescourses ne cessant de croître, nous
+L'activité de _noubliepaslalistedescourses_ ne cessant de croître, nous
 augmentons régulièrement la taille des équipes chargées des
 développements, de la maintenance de notre application et de ses dérivés
-(voir le Chapitre 14). Avec une dizaine de nouvelles recrues lors du
+(voir le Chapitre 14). Avec une dizaine de nouvelles recrues lors du
 dernier trimestre, il devient nécessaire d'organiser et d'accélérer le
 passage de connaissances. C'est Nicolas qui prend désormais en charge
 l'accueil des nouveaux et organise régulièrement des formations pour que
@@ -12862,7 +12862,7 @@ Maven, connaissant la moindre de ses ficelles. Honnêtement, ça ne vous
 apporterait pas grand-chose. Ce que nous voulons, c'est faire de vous
 des développeurs efficaces, à l'aise avec cet outil que vous allez
 utiliser au quotidien. Nous voulons surtout vous empêcher de partir sur
-de mauvaises pistes et de finir, dans quelque temps, par regretter
+de mauvaises pistes et de finir, dans quelque temps, par regretter
 d'avoir choisi Maven. Au contraire, nous allons vous donner les clés
 pour en faire un allié de poids dans vos développements et dans
 l'industrialisation de votre travail d'ingénierie.
@@ -12878,7 +12878,7 @@ projets.
 
 Voici donc les 10 commandements de l'utilisateur de Maven.
 
-==== Commandement n^o^ 1 : Les conventions de Maven tu suivras.
+==== Commandement n° 1 : Les conventions de Maven tu suivras.
 
 Maven propose ses propres conventions mais ne les impose pas. Un projet
 que nous avons fait migrer sous Maven utilisait comme répertoire de
@@ -12894,66 +12894,67 @@ De la même façon, ne considérez jamais les conventions comme acquises.
 Utiliser le chemin /target/classes pour indiquer le répertoire de
 compilation du projet, c'est potentiellement s'exposer à un
 dysfonctionnement. Nous en avons fait la mauvaise expérience en
-configurant notre application pour utiliser Sonar (voir le Chapitre 12).
+configurant notre application pour utiliser Sonar (voir le Chapitre 12).
 La convention pour ce chemin est portée par la variable
 ${project.build.outputDirectory}. C'est un peu plus long à écrire, mais
 c'est une garantie d'homogénéité des métadonnées du projet.
 
-Le respect des conventions permet :
+Le respect des conventions permet :
 
-* de simplifier de l'utilisation de Maven ;
-* de simplifier l'intégration de nouveaux développeurs ;
+* de simplifier l'utilisation de Maven ;
+* de simplifier l'intégration de nouveaux développeurs ;
 * d'éviter de tomber dans des problèmes ou des bogues qui font
 perdre un temps précieux.
 
 [[commandement_no_2_simplicite_tu_choisiras]]
-==== Commandement n^o^ 2 : Simplicité tu choisiras.
+
+==== Commandement n° 2 : Simplicité tu choisiras.
 
 Notre premier mauvais élève est un projet que nous avons voulu faire
 migrer d’Ant vers Maven. Les technologies en œuvre avaient toutes le
 plugin Maven adéquat, mais la structure initiale du projet était
 particulièrement hétéroclite. Notre erreur a été de vouloir la conserver
-telle quelle, ce qui imposait :
+telle quelle, ce qui imposait :
 
 * plusieurs étapes de compilation entre divers répertoires de
-sources interdépendants ;
-* plusieurs phases d'instrumentation du code ;
+sources interdépendants ;
+* plusieurs phases d'instrumentation du code ;
 * une exécution séparée pour le calcul du taux de couverture des
-tests ;
+tests ;
 * un assemblage de multiples sous-versions du même projet, incluant
 diverses options et le code optionnel associé.
 
 Inutile de dire que la migration vers Maven a été laborieuse et pas du
 tout convaincante, tant que nous n'avons pas pris la décision de revoir
-fondamentalement la structure du projet : des modules simples, ciblés
+fondamentalement la structure du projet : des modules simples, ciblés
 sur une technologie ou sur un domaine fonctionnel précis, et répondant à
 une logique de construction standard.
 
 Il existe quelques projets qui refusent d'utiliser Maven, sous prétexte
 qu'ils nécessitent d'innombrables lignes XML pour obtenir le résultat
-attendu, lorsque c'est possible. Spring 2 en est un exemple, le
+attendu, lorsque c'est possible. Spring 2 en est un exemple, le
 framework étant toujours construit avec le bon vieux Ant. Ce n'est
-pourtant pas une fatalité, et cela a été démontré dans Better Builds
-With Maven (disponible librement en ligne), qui propose un POM
+pourtant pas une fatalité, et cela a été démontré dans _Better Builds
+With Maven_ (disponible librement en ligne), qui propose un POM
 permettant de construire Spring sans acrobaties particulières.
 
-Les développeurs de Spring sont-ils tordus ? Non ! Par contre, ils ont
+Les développeurs de Spring sont-ils tordus ? Non ! Par contre, ils ont
 fait des choix qui vont à contresens des préconisations de Maven. Par
 exemple, Spring est disponible à la fois comme un unique JAR et comme un
 ensemble de sous-bibliothèques spécialisées. Ensuite, le cœur de
-Spring 2 est compatible à la fois Java 1.3 et Java 5, ce qui nécessite
+Spring 2 est compatible à la fois Java 1.3 et Java 5, ce qui nécessite
 une double compilation puis le regroupement du résultat dans une unique
 archive JAR.
 
 Bien que Spring ait récolté un grand succès pour ses qualités
 techniques, les structures de son code source et de son script de
 compilation le rendent inutilement complexe. Après tout, si vous
-travaillez sur Java 5, vous pouvez très bien déclarer une dépendance
+travaillez sur Java 5, vous pouvez très bien déclarer une dépendance
 vers spring:2.0.8:tiger footnote:[Tiger est le nom du projet de développement de Java 5, comme Dolphin est le nom de Java 6 et Mustang celui de Java 7. De nombreuses librairies utilisent ce nom pour désigner une version adaptée à Java 5, ce qui sonne mieux que -j5.] à la place de spring:2.0.8.
 Les dépendances transitives feront le reste.
 
 La morale de cette histoire, c'est qu'il ne faut pas chercher à plier
-Maven à des besoins complexes mais plutôt essayer de comprendre comment
+Maven à des besoins complexes, mais plutôt essayer de comprendre comment
 traiter nos besoins selon la philosophie de Maven. Autant Ant permet de
 faire à peu près tout et n'importe quoi, autant Maven suppose qu'on
 adhère à sa logique pour en tirer tout le bénéfice.
@@ -12963,27 +12964,26 @@ Maven. Il faut prendre le temps d'analyser les besoins et d'organiser au
 mieux le projet pour être efficace.
 
 [[commandement_no_3_au_fur_et_a_mesure_de_tes_besion_les_outils_necessaires_tu_mettras_en_place]]
-==== Commandement n^o^ 3 : Au fur et à mesure de tes besoins, les outils
-nécessaires tu mettras en place.
+==== Commandement n° 3 : Au fur et à mesure de tes besoins, les outils nécessaires tu mettras en place.
 
 La pléthore de plugins d'analyse de code disponibles nous encourage à
 mettre en place un suivi qualité de haut niveau. Il est si simple de
 lancer l'un de ces nombreux outils pour analyser le code et identifier
 des problèmes automatiquement – il est juste dommage qu'il ne les
-corrige pas aussi automatiquement !
+corrige pas aussi automatiquement !
 
 Nous avons ainsi pris un projet récemment adapté à Maven et produit
 quelques mégaoctets de rapports variés. Mais que faire de ces pages et
-des indicateurs en tout genre que nous obtenons ? Comment traiter des
+des indicateurs en tout genre que nous obtenons ? Comment traiter des
 règles parfois incompatibles ou, en tout cas, dont nous ne voyons pas
-forcément l'intérêt ?
+forcément l'intérêt ?
 
 Si nous utilisons les règles par défaut de Checkstyle, établies sur les
 recommandations de codage SUN – qui datent des débuts de Java –,
 celui-ci nous insultera pour chaque méthode qui ne dispose pas de
 commentaire Javadoc. Issue d'une époque révolue, cette règle part du
 principe que tout code public doit être accompagné d'un commentaire
-explicatif. Elle va nous amener à écrire ce genre de chose :
+explicatif. Elle va nous amener à écrire ce genre de chose :
 
 [source, java]
 -------------------------------------------------------------------------------
@@ -12994,12 +12994,12 @@ explicatif. Elle va nous amener à écrire ce genre de chose :
 public void setPrenom( String prenom ) { ...
 -------------------------------------------------------------------------------
 
-Voilà un magnifique commentaire dont l'utilité est sans appel ! Soit
+Voilà un magnifique commentaire dont l'utilité est sans appel ! Soit
 vous générez l'ensemble des commentaires pour satisfaire Checkstyle,
 soit vous définissez une règle qui préconise la forme plutôt que la
-pertinence du commentaire ou la clarté du nom de la méthode !
+pertinence du commentaire ou la clarté du nom de la méthode !
 Sincèrement, tout développeur préférera, même sans commentaire Javadoc,
-une méthode nommée :
+une méthode nommée :
 
 [source, java]
 -------------------------------------------------------------------------------
@@ -13008,7 +13008,7 @@ resilierContrat( long idContrat ) throws ImpayesEnCoursException
 
 Plutôt qu'une méthode équivalente utilisant un vocabulaire obscur, mais
 largement accompagnée de commentaires et qui satisfait nos outils
-d'analyse :
+d'analyse :
 
 [source, java]
 -------------------------------------------------------------------------------
@@ -13024,7 +13024,7 @@ Choisir des règles de développement est une tâche qui nécessite une
 culture et un historique de mise en œuvre du langage. La tendance est
 aux noms de méthodes et de variables clairs, explicites, quitte à faire
 long – les écrans 16:9 ont probablement aidé à cette évolution. Fini le
-code sur 80 colonnes ou l'utilisation des tabulations !
+code sur 80 colonnes ou l'utilisation des tabulations !
 
 Utiliser l'outillage que Maven met à notre disposition n'est pas une fin
 en soi. Ce doit être l'aboutissement d'une démarche qui définit les
@@ -13049,10 +13049,10 @@ Il permet de mettre en place différentes stratégies de tests (unitaires,
 d'intégration…) mais il ne le fera jamais à la place de nos équipes.
 Elles seules peuvent s'assurer que les bonnes pratiques sont suivies.
 
-==== Commandement n^o^ 4 : De la sur-conception point tu ne feras.
+==== Commandement n° 4 : De la sur-conception point tu ne feras.
 
 L'application maxiMaousse footnote:[Si vous voulez voir à quoi cela peut ressembler, un vrai projet ingérable et interminable à construire est Sakaï (http://sakaiproject.org/portal)], elle aussi basée sur Maven,
-comprend 58 modules ! Elle suit une décomposition en couches techniques
+comprend 58 modules ! Elle suit une décomposition en couches techniques
 ainsi qu'un redécoupage en modules fonctionnels. Une modification
 fonctionnelle touche ainsi rarement plus d'un ou deux modules, réduisant
 – théoriquement – le travail de non-régression.
@@ -13063,13 +13063,13 @@ et les interdépendances sont nombreuses. La construction du projet sur
 un poste de développement incluant les tests unitaires et de qualité
 devient un vrai cauchemar, elle est surtout contre-productive et
 l'identification du code un vrai casse-tête. Certains modules ne
-comptent que quelques classes ! Ici, on a visiblement confondu la notion
+comptent que quelques classes ! Ici, on a visiblement confondu la notion
 de package et de module Maven.
 
 La gestion multimodule de Maven est puissante, ce n'est pas une raison
 pour l'appliquer juste parce qu'elle existe. Nous ne créons un nouveau
 module que lorsqu'un nouveau besoin apparaît. Cela arrive déjà
-suffisamment assez vite : par exemple, pour répondre à une contrainte
+suffisamment assez vite : par exemple, pour répondre à une contrainte
 technique ou pour différencier deux modules qui travaillent sur des
 technologies différentes et dont nous voulons clairement scinder la
 gestion. Si la décomposition en modules fins peut avoir du sens pour une
@@ -13077,8 +13077,8 @@ bibliothèque utilitaire, elle apporte rarement de la simplicité sur une
 application. Au mieux, on pourra découper celle-ci en fonction de ses
 couches techniques afin de permettre à des équipes de compétences
 différentes d'intervenir de manière plus isolée. Cependant, les modules
-resteront fortement dépendants ; aussi, pourquoi ne pas simplement
-utiliser des packages dédiés dans le même projet ?
+resteront fortement dépendants ; aussi, pourquoi ne pas simplement
+utiliser des packages dédiés dans le même projet ?
 
 Le seul cas pratique où la décomposition en modules peut apporter une
 certaine plus-value concerne la génération de code. Lorsqu'un projet est
@@ -13086,29 +13086,29 @@ basé sur de nombreux services web, l'analyse des WSDL et la génération
 de code prennent du temps, même pour constater que le code généré est à
 jour. Pour ne pas pénaliser les développeurs sur leur poste, isoler ce
 code dans un sous-module peut être une bonne idée. Après tout, on ne
-change pas de WSDL tous les matins !
+change pas de WSDL tous les matins !
 
 Bref, les occasions de justifier le découpage d'un module en plusieurs
 modules sont nombreuses. Alors, n'en faites pas plus que nécessaire.
 Vous testerez le réacteur de Maven bien assez tôt.
 
 [[commandement_no_5_tes_outils_et_ton_build_a_jour_tu_maintiendras]]
-==== Commandement n^o^ 5 : Tes outils et ton build à jour tu maintiendras.
+==== Commandement n° 5 : Tes outils et ton build à jour tu maintiendras.
 
 Même si mettre en place l'outillage de développement n'est pas une fin
 en soi, c'est un mal nécessaire, au coût non négligeable, permettant
 d’offrir à l'équipe un environnement aussi agréable que possible et
-optimisé pour travailler. De très nombreux outils peuvent y figurer :
+optimisé pour travailler. De très nombreux outils peuvent y figurer :
 
-* Maven, le programme en tant que tel mais aussi tous les plugins
-qu'il utilise ;
-* le gestionnaire de versions de sources (Subversion, Git…) ;
-* le gestionnaire de tâches et de bogues (Jira, Mantis…) ;
-* le repo (nexus, artifactory, archiva) ;
-* le serveur d'intégration continue (Hudson, Continuum, Bamboo…) ;
-* les outils de tests (Selenium, Fitnesse…) ;
+* Maven, le programme en tant que tel, mais aussi tous les plugins
+qu'il utilise ;
+* le gestionnaire de versions de sources (Subversion, Git…) ;
+* le gestionnaire de tâches et de bogues (Jira, Mantis…) ;
+* le repo (nexus, artifactory, archiva) ;
+* le serveur d'intégration continue (Hudson, Continuum, Bamboo…) ;
+* les outils de tests (Selenium, Fitnesse…) ;
 * l'environnement de développement intégré (Eclipse, NetBeans,
-Intellij…) ;
+Intellij…) ;
 * et bien d'autres encore.
 
 Il est important que ces outils soient maîtrisés, mais il est encore
@@ -13124,21 +13124,20 @@ le plus la productivité.
 
 Les mises à jour de chaque outil sont importantes. Prenez l'exemple de
 Maven. Sur un projet multimodule monstrueux provenant tout droit de
-l'ère jurassique (plus de 150 modules), Maven 2.0.10 mettait près de
+l'ère jurassique (plus de 150 modules), Maven 2.0.10 mettait près de
 huit minutes rien que pour s'initialiser et générer l'ordre de
-construction des modules. Avec Maven 2.1.0 et supérieur, cela prend
+construction des modules. Avec Maven 2.1.0 et supérieur, cela prend
 moins d'une minute. Même si ce cas est extrême (mais bien réel), il est
 représentatif des gains que l'on peut obtenir en faisant l'effort de
 maintenir à jour ses outils.
 
 Les projets durent longtemps et les outils évoluent vite. Les maintenir
-à jour permet d'en obtenir le meilleur. Cela entraîne un coût récurrent
+à jour permet d'en obtenir le meilleur. Cela entraîne un coût récurrent,
 mais qui est finalement vite rentabilisé par les gains de productivité
 de l'équipe.
 
 [[commandement_no_6_dans_un_projet_la_meme_version_tous_les_modules_auront]]
-==== Commandement n^o^ 6 : Dans un projet, la même version tous les modules
-auront.
+==== Commandement n° 6 : Dans un projet, la même version tous les modules auront.
 
 Sur un projet de messagerie, nous avons développé une couche complète
 d'abstraction autour de l'envoi/réception de messages, indépendante du
@@ -13150,18 +13149,18 @@ heures de mise au point.
 La réutilisation est un rêve de tout chef de projet. Seulement,
 lorsqu'une application nous a demandé d'utiliser ce module, s'est posé
 le problème de la gestion de sa version. Notre demandeur ne voulait pas
-utiliser un SNAPSHOT ; sa livraison étant prévue sous peu, il lui
+utiliser un SNAPSHOT ; sa livraison étant prévue sous peu, il lui
 fallait un code stable. Notre code répondait à cette attente, mais étant
 lié à notre application, il partageait son numéro de version. Nous
 pouvions faire une livraison isolée de ce module, mais alors celui-ci
-référençait un parent encore en SNAPSHOT !
+référençait un parent encore en SNAPSHOT !
 
-Nous avons donc dû figer notre POM parent dans une version 1, livrer le
+Nous avons donc dû figer notre POM parent dans une version 1, livrer le
 fameux module mutualisé en version 1.0.0 et continuer notre application
 en version 1.0.0-SNAPSHOT. À ce petit jeu, nous nous sommes rapidement
 retrouvés avec des versions dans tous les sens dans les POM des
 différents modules et l'impossibilité d'utiliser le processus de
-livraison détaillé au Chapitre 11.
+livraison détaillé au Chapitre 11.
 
 La morale de cette histoire, c'est que les modules d'un projet devraient
 toujours partager la même version, sans quoi la gestion manuelle des
@@ -13172,19 +13171,19 @@ _via_ la variable ${project.version}. Ainsi, pas de risque de se
 tromper.
 
 Pour déclarer du code comme bibliothèque commune, nous devons créer un
-nouveau projet Maven indépendant : POM dédié, gestion de version dédiée,
+nouveau projet Maven indépendant : POM dédié, gestion de version dédiée,
 gestionnaire de code dédié, etc. Une fois notre code utilitaire préparé
 pour être réutilisable ailleurs, sous forme d'un projet à part entière,
 il ne peut plus être considéré comme un élément de notre application,
 même si celle-ci devient un contributeur privilégié de ce composant
 commun.
 
-==== Commandement n^o^ 7 : La gestion des versions tu centraliseras.
+==== Commandement n° 7 : La gestion des versions tu centraliseras.
 
 Dans un projet basé sur de nombreux modules, un travail vite pénible
 consiste à assurer la cohérence de versions des dépendances. Des plugins
 peuvent nous aider dans cette tâche, mais il existe une solution bien
-plus simple : le <dependencyManagement>. Cet élément, que nous allons
+plus simple : le <dependencyManagement>. Cet élément, que nous allons
 ajouter dans le POM parent du projet, déclare pour chaque dépendance la
 version de référence à utiliser sur le projet. Dans les modules, nous
 déclarons alors les dépendances sans préciser de version, éliminant
@@ -13206,15 +13205,15 @@ de lourds impacts sur les projets existants.
 ====
 
 [[commandement_no_8_comme_la_peste_les_dependances_optionnelles_tu_eviteras]]
-==== Commandement n^o^ 8 : Comme la peste les dépendances optionnelles tu
-éviteras.
+
+==== Commandement n° 8 : Comme la peste les dépendances optionnelles tu éviteras.
 
 Nous avons créé une belle bibliothèque utilitaire commons-geegol dont
 l'objectif est d'apporter à tous nos projets des classes utilitaires,
 facilitant l'accès à de nombreux outils. Ce code dépend donc de très
 nombreuses dépendances, mais seule une sous-partie est utile pour un
 utilisateur, qui ne va exploiter que quelques classes de notre
-bibliothèque. Nous pouvons :
+bibliothèque. Nous pouvons :
 
 * Déclarer toutes ces dépendances, auquel cas les utilisateurs vont
 nous huer, se plaindre que Maven télécharge des centaines de JAR
@@ -13230,10 +13229,10 @@ chaque technologie ou outil que nous voulons supporter. Si cela veut
 dire avoir dix modules, ce n'est pas un problème. La gestion des
 dépendances et de la livraison étant automatisée, cela n'a aucun impact
 sur le temps passé par le développeur sur son travail, la seule chose
-qui compte au final. Par contre, nous gagnerons dans la finesse de nos
+qui compte finalement. Par contre, nous gagnerons dans la finesse de nos
 métadonnées et dans la bonne décomposition de notre code.
 
-==== Commandement n^o^ 9 : Les SNAPSHOT tu utiliseras.
+==== Commandement n° 9 : Les SNAPSHOT tu utiliseras.
 
 Sur un projet comptant plusieurs (dizaines de) modules et de très
 nombreuses classes, il peut être pénalisant d'avoir tout le code
@@ -13242,7 +13241,7 @@ exploiter certains modules sous forme de SNAPSHOT, comme celui contenant
 le code généré de nos schémas XSD. Le conserver dans notre IDE n'apporte
 rien et pénalise l'intégration Maven qui va devoir sans cesse
 reconstruire ce code, ou du moins s'assurer qu'il est à jour – perte de
-temps que le développeur ressentira très nettement :
+temps que le développeur ressentira très nettement :
 
 * Attendre la compilation moins d'une seconde c'est fantastique,
 mais rarissime.
@@ -13254,7 +13253,7 @@ affubler son IDE de noms d'oiseaux.
 à une montée d'énervement, souvent accompagnée d'une augmentation
 alarmante de la consommation de café, qui ne suffit pourtant pas à
 expliquer le premier phénomène. Peut-on alors encore parler de
-productivité ?
+productivité ?
 
 En reposant sur les SNAPSHOT pour tous les modules dans lesquels nous ne
 faisons aucune modification et qui correspondent à du code évoluant très
@@ -13264,19 +13263,20 @@ peut construire pour nous les SNAPSHOT de nos modules au fur et à mesure
 qu'une construction réussie est atteinte.
 
 [[commandement_no_10_l_ide_toujours_tu_privilegieras]]
-==== Commandement n^o^ 10 : L'IDE toujours tu privilégieras.
+
+==== Commandement n° 10 : L'IDE toujours tu privilégieras.
 
 Cela fait très expert de scruter la console et de taper à une vitesse
 folle des commandes incompréhensibles. Si vous envisagez un rôle dans
-une série américaine, pourquoi pas ? mais si vous voulez travailler
+une série américaine, pourquoi pas ? Mais si vous voulez travailler
 confortablement et former rapidement vos équipes, cherchez plutôt de
 l'aide du côté de votre environnement de développement.
 
 Trop souvent, nous perdons du temps sur les postes de développement
 suite à un comportement bizarre de Maven. Le cas typique se traduit par
-un appel à l'aide du type : "J'ai beau lancer des `mvn clean install`,
+un appel à l'aide du type : « J'ai beau lancer des `mvn clean install`,
 project clean sous Eclipse, et build all, je n'arrive pas à démarrer mon
-serveur Tomcat à cause d'une NoClassDefFoundError."
+serveur Tomcat à cause d'une NoClassDefFoundError. »
 
 Le but du développeur n'est pas de passer son temps _devant la_
 Matrice footnote:[http://whatisthematrix.warnerbros.com/], surtout en mode crypté (de toute façon,
@@ -13284,7 +13284,7 @@ Matrice footnote:[http://whatisthematrix.warnerbros.com/], surtout en mode crypt
 de l'équipe, sans quoi les belles méthodes et les outils préconisés
 seront vite oubliés dans le feu de l'action.
 
-Nous avons vu au Chapitre 9 que cette intégration est déjà très correcte
+Nous avons vu au Chapitre 9 que cette intégration est déjà très correcte
 et progresse même rapidement sous Eclipse, qui est trop longtemps resté
 à la traîne. Apprenez à bien utiliser le support de Maven dans les IDE
 pour fournir à l'équipe un outil aussi transparent que possible. Les
@@ -13320,7 +13320,7 @@ ressources (qui gère ce mode incrémental) et à activer le configurateur
 m2eclipse associé aux projets Java.
 
 [source, xml]
-.Listing 16.2 un profil pour activer le cycles de vie reconfigurable de m2eclise 0.9.9
+.Listing 16.2 un profil pour activer le cycle de vie reconfigurable de m2eclise 0.9.9
 -------------------------------------------------------------------------------
 <profile>
       <id>m2e</id>
@@ -13361,15 +13361,15 @@ m2eclipse associé aux projets Java.
 
 === Conclusion
 
-En résumé, une règle simple : n'essayez pas d'aller contre Maven. Les
+En résumé, une règle simple : n'essayez pas d'aller contre Maven. Les
 conventions ont été choisies pour refléter les bonnes pratiques et des
 règles simples d'organisation. S'il suit une logique qui va contre vos
 objectifs, c'est que vous n'avez pas saisi son mode de fonctionnement.
 Soyez critiques sur l'organisation de votre projet et de votre code.
-Pourquoi Maven veut-il vous imposer tel mode de fonctionnement ? Vous
+Pourquoi Maven veut-il vous imposer tel mode de fonctionnement ? Vous
 arriverez sans doute à repenser votre structure pour quelque chose de
 plus simple, ordonné de manière homogène, et qui se plie mieux au mode
-de pensée de Maven. Au final, vos projets n'en seront que plus clairs et
+de pensée de Maven. Finalement, vos projets n'en seront que plus clairs et
 plus compréhensibles.
 
 [[Epilogue]]
