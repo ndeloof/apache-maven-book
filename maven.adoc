@@ -13373,10 +13373,10 @@ de pensée de Maven. Finalement, vos projets n'en seront que plus clairs et
 plus compréhensibles.
 
 [[Epilogue]]
-== Chapitre 18 : Épilogue
+== Chapitre 18 : Épilogue
 
 Le dernier numéro de Fortune vient de paraître. Dans son grand dossier
-central, il présente le projet Geegol Shopping List dont la réussite est
+central, il présente le projet _Geegol Shopping List_ dont la réussite est
 inversement proportionnelle à l'effort de développement qui lui a été
 consacré. L'article met en avant les qualités hors du commun de l'équipe
 de développement, de quoi faire baver tous les directeurs informatique
@@ -13436,20 +13436,20 @@ sur n'importe quel projet.
 
 Certains parlent d'industrialisation du développement, d'autres
 simplement de renoncer à des pratiques qui tiennent du pur bricolage.
-Anecdote :
+Anecdote :
 
 image:MangaNicolas.png[float="left"]
 
 Nicolas, en tant qu'expert Maven, est consulté pour un projet en tierce
-maintenance. La procédure de compilation est la suivante :
+maintenance. La procédure de compilation est la suivante :
 
-"Lancer la commande ant jar. La construction échoue, c'est normal.
+« Lancer la commande ant jar. La construction échoue, c'est normal.
 Démarrer Eclipse, attendre un certain temps puis quitter Eclipse. Lancer
-alors à nouveau ant jar."
+alors à nouveau ant jar. »
 
 Cela semble complètement délirant, mais c'est écrit noir sur blanc dans
 un document officiel – document qui est parfaitement conforme à toutes
-les normes qualité ISO 9001, AFAQ et compagnie ;).
+les normes qualité ISO 9001, AFAQ et compagnie ;).
 
 Pour la petite histoire, le projet comprend une classe qui ne compile
 pas (elle fait référence à des classes inconnues). Le compilateur
@@ -13457,10 +13457,10 @@ exécuté par ant échoue, alors qu'Eclipse produit tout de même un fichier
 .class (incomplet). Le compilateur ne cherchant pas à recompiler une
 classe déjà compilée, le deuxième passage de ant produit le résultat
 désiré. Heureusement, cette classe est du code mort non utilisé, mais
-tout de même !
+tout de même !
 
 Que retenir de ce cas extrême, mais qui vous rappelle peut-être des
-situations qui ne vous font pas honneur ? Simplement que le processus de
+situations qui ne vous font pas honneur ? Simplement que le processus de
 construction du projet est un élément majeur de l'organisation de votre
 travail. Utiliser un mécanisme instable, dépendant de l'environnement ou
 de manipulations manuelles, c'est forcément s'exposer à des problèmes à
@@ -13470,17 +13470,17 @@ vous fournit un socle pour bâtir des solutions.
 
 === Le mot de la fin
 
-Pour conclure, sachez que le Definitive Guide, ouvrage communautaire
+Pour conclure, sachez que le _Definitive Guide_, ouvrage communautaire
 traduit dans de nombreuses langues (la version française est en cours de
 réalisation à l'heure où nous rédigeons ces lignes), est lui-même rédigé
 puis assemblé _via_ Maven. Pour produire les 500 pages du PDF que vous
 pouvez consulter en ligne footnote:[http://www.sonatype.com/products/maven/documentation/book-defguide], il suffit de lancer la
-commande universelle `mvn install` !
+commande universelle `mvn install` !
 
-=== Qui est qui ?
+=== Qui est qui ?
 
 Vous vous demandez qui sont ces personnages qui peuplent les pages de ce
-livre ?
+livre ?
 
 [[les_membres_francophones_de_l_equipe_maven]]
 ==== Les membres francophones de l'équipe Maven
@@ -13489,7 +13489,7 @@ Lorsque nous avons décidé de romancer notre ouvrage, nous nous sommes
 posé la question de savoir qui seraient les personnages qui allaient
 nous entourer dans notre aventure. La réponse fut vite trouvée. Quoi de
 mieux que de rendre hommage à notre façon aux membres francophones de
-l'équipe de développement du projet Maven ?
+l'équipe de développement du projet Maven ?
 
 Laissons-les se présenter (par ordre alphabétique du prénom, comme ça,
 pas de jaloux).
@@ -13512,9 +13512,8 @@ computing et DevOps, et en tirant le plus grand avantage de celui-ci
 pour le développement logiciel, les tests et les bonnes pratiques.
 
 J'habite à La Corogne, Espagne où j'ai étudié le français, et je suis
-allé en France de nombreuses fois : Pyrénées, Alpes, Bretagne, Paris.
-Mais j'ai beaucoup oublié mon français en parlant toujours en anglais
-:(.
+allé en France de nombreuses fois : Pyrénées, Alpes, Bretagne, Paris.
+Mais j'ai beaucoup oublié mon français en parlant toujours en anglais :(.
 
 image:MangaEmmanuel.png[float="left"]
 
@@ -13532,23 +13531,23 @@ divers clients avec notamment la mise en place d'environnement de build
 Je suis committer sur Maven depuis les premières bêta en 2002 (merci à
 Vincent Massol de m'avoir présenté Maven à cette époque), mais également
 Continuum et Archiva. Malheureusement avec de moins en moins de temps
-disponible maintenant :-(.
+disponible maintenant :-(.
 
 Dans le passé, j'ai travaillé dans la même SSII que Nicolas, mais à
-Paris où j'avais introduit également Maven ;-).
+Paris où j'avais introduit également Maven ;-).
 
 image:MangaFabrice.png[float="left"]
 
 ===== Fabrice Bellingard
 
-Hey !
+Hey !
 
 Fabrice Bellingard, la trentaine, Hyérois depuis peu... Je suis tombé
 dans l'open source quand j'ai bossé chez OTI (maintenant IBM Ottawa Lab)
 en 2001, dans l'équipe Eclipse Core où j'ai fait la première version du
-plugin Ant. J'ai ensuite fait beaucoup "mumuse" en développant tout
+plugin Ant. J'ai ensuite fait beaucoup « mumuse » en développant tout
 plein de plugins (notamment créateur du plugin C# et committer du plugin
-Checkstyle), mais pas forcément tous utiles ;-).
+Checkstyle), mais pas forcément tous utiles ;-).
 
 Utilisateur Maven depuis 2003, j'ai choisi Maven en 2004 pour créer la
 plateforme d'intégration d'un grand groupe français, et je suis
@@ -13556,13 +13555,13 @@ finalement devenu committer en 2005. Puis vint Archiva en 2008
 (committer et PMC). Tech lead du projet open source Squale à partir de
 2008, j'ai décidé fin 2010 de continuer toujours plus dans le domaine
 OSS et qualité logicielle en intégrant la société Sonar Source en tant
-que VP Project Manager. Aventure qui m'emmène bien plus loin que prévu :
-je bosse sur le coeur de Sonar, mais aussi sur les plugins C#, voire...
-Cobol ! Si on m'avait dit un jour que l'OSS m'amènerait à Cobol... ;-)
+que VP Project Manager. Aventure qui m'emmène bien plus loin que prévu :
+je bosse sur le cœur de Sonar, mais aussi sur les plugins C#, voire...
+Cobol ! Si on m'avait dit un jour que l'OSS m'amènerait à Cobol... ;-)
 
-Côté personnel : passionné avant tout par la nature, j'ai passé les
-vingt premières années de ma vie à Limoges, c'est pour dire ;-).
-Bénévole WWF et ambassadeur de l'ONG Planète Urgence : ma vraie passion,
+Côté personnel : passionné avant tout par la nature, j'ai passé les
+vingt premières années de ma vie à Limoges, c'est pour dire ;-).
+Bénévole WWF et ambassadeur de l'ONG Planète Urgence : ma vraie passion,
 c'est la protection de l'environnement et la solidarité internationale.
 
 image:MangaHerve.png[float="left"]
@@ -13581,19 +13580,19 @@ l'international, des accès mainframe, du couplage téléphonie
 informatique, des progiciels et autres subtilités de la réalité d'un SI
 bancaire.
 
-Si Maven 1 est resté au stade de test sur un projet open source perso,
-j'ai eu suffisamment confiance en Maven 2 pour vouloir l'intégrer en
+Si Maven 1 est resté au stade de test sur un projet open source perso,
+j'ai eu suffisamment confiance en Maven 2 pour vouloir l'intégrer en
 entreprise. Disposant d'un build Ant existant standardisé et très
 diffusé, mon choix s'est porté sur les Maven Ant Tasks. Elles étaient
 plutôt boguées, et cela a donc été l'occasion de proposer des patchs et
-de découvrir l'envers du décor : beaucoup de code, beaucoup de gens
+de découvrir l'envers du décor : beaucoup de code, beaucoup de gens
 intéressants et pointus. Mais finalement beaucoup d'endroits aussi où il
 reste des choses à faire. Je suis donc devenu committer en 2007 puis
 j'ai été intégré dans le PMC en 2008.
 
 Après les Maven Ant Tasks, je me suis concentré sur la gestion de
 l'encoding (pour ne plus avoir mon prénom mutilé par Maven), puis
-Modello. Un petit passage par Doxia pour aider Vincent S. et Lukas :
+Modello. Un petit passage par Doxia pour aider Vincent S. et Lukas :
 l'expérience technique s'accompagne de rencontres humaines des plus
 variées.
 
@@ -13614,22 +13613,22 @@ Côté boulot, je crois que je suis le seul membre non informaticien parmi
 tous les committers de Maven et je me suis toujours considéré comme un
 outsider. Après une thèse en physique théorique (spécialité physique
 nucléaire et particules élémentaires), j'ai passé plusieurs années dans
-des équipes de recherche, en France, en Espagne, au Danmark et au
+des équipes de recherche, en France, en Espagne, au Danemark et au
 Canada. Actuellement, je ne fais plus la recherche moi-même, je suis
-dans l'administration de l'Academie des Sciences Slovaque à Bratislava
+dans l'administration de l'Académie des Sciences Slovaque à Bratislava
 et je m'occupe de la gestion des divers projets de recherche (européens
 et internationaux).
 
 Comment un physicien est arrivé à s'implanter parmi les développeurs de
-Maven ? À l'époque, on écrivait un programme d'application en physique
+Maven ? À l'époque, on écrivait un programme d'application en physique
 des particules, et on a décidé d'utiliser Maven qui était assez nouveau
 à ce moment-là. J'ai été surtout attiré par la possibilité de gérer le
 programme et la documentation (site web, pdf) en même temps, mais très
 vite les divers bogues m'ont amené à corriger Maven lui-même et à
 soumettre ces patchs, qu’Arnaud avait la volonté d'appliquer. Le reste,
-c'est l'histoire… J'ai ensuite aidé Arnaud à enterrer Maven 1.1, et
+c'est l'histoire… J'ai ensuite aidé Arnaud à enterrer Maven 1.1, et
 maintenant je participe surtout au sous-projet Doxia et particulièrement
-à la version du plugin pdf pour Maven 2.
+à la version du plugin pdf pour Maven 2.
 
 image:MangaOlivier.png[float="left"]
 
@@ -13639,38 +13638,38 @@ Bonjour,
 
 Olivier Lamy, bientôt 38 ans (une femme et trois enfants).
 
-Amateur de bons plats et de bons vins :-). Je suis employé par Talend
-(depuis le 1er Août) dans l'Apache Team. J'ai introduit Maven (en
+Amateur de bons plats et de bons vins :-). Je suis employé par Talend
+(depuis le 1er août) dans l'Apache Team. J'ai introduit Maven (en
 version 0.7 bêta pour ce que je me souviens) fin 2002 dans mon ancien
 emploi (groupe hôtelier Accor).
 
-Au début, dans les projets dont j'avais la charge mais après je fus en
-quelque sorte "support" Maven dans le groupe. J'ai commencé par
+Au début, dans les projets dont j'avais la charge, mais après je fus en
+quelque sorte « support » Maven dans le groupe. J'ai commencé par
 Continuum (à l'époque où c'était un sous-projet de Maven) et un jour
 Emmanuel en a eu marre de committer mes patchs et m'a donc proposé de
 rejoindre l'équipe.
 
-Maintenant, je me consacre :
+Maintenant, je me consacre :
 
-* aux plugins Maven (un peu au core pour la 3.x notamment la réécriture
-du site plugin)
-* intégration de Maven dans le serveur d'intégration continue Jenkins.
-* et puis d'autres trucs :-) (Maven scm, divers mojo chez codehaus)
+* aux plugins Maven (un peu au core pour la 3.x, notamment la réécriture
+du site plugin) ;
+* intégration de Maven dans le serveur d'intégration continue Jenkins ;
+* et puis d'autres trucs :-) (Maven scm, divers mojo chez codehaus).
 
 image:MangaRaphael.png[float="left"]
 
 [[raphael_pieroni]]
 ===== Raphaël Piéroni
 
-J'ai 37 ans. J'ai commencé à utiliser Maven 1 en 2002 ou 2003 (je ne me
-souviens plus), et pour Maven 2 depuis sa bêta 1.
+J'ai 37 ans. J'ai commencé à utiliser Maven 1 en 2002 ou 2003 (je ne me
+souviens plus), et pour Maven 2 depuis sa bêta 1.
 
 Voilà. Je suis très pénible pour la typographie bien que je fasse un bon
 tas de fautes d'orthographe.
 
 Je dispose à la maison du Lexique des règles typographiques en usage à
 l'Imprimerie nationale – 3^e^ édition. Nicolas, je peux te le prêter en
-cas de besoin ;).
+cas de besoin ;).
 
 image:MangaStephane.png[float="left"]
 
@@ -13683,10 +13682,10 @@ Belgique.
 Je travaille comme expert technique chez un grand éditeur de progiciels
 financiers, où je suis responsable de l'évolution des frameworks et de
 l'infrastructure logicielle. Je m'intéresse aussi fortement aux
-techniques et outils de développement, ainsi qu'à la qualité logicielle
+techniques et outils de développement, ainsi qu'à la qualité logicielle.
 
 Mon premier contact avec Maven date de 2003, j'ai commencé à contribuer
-au développement de Maven 1 en travaillant sur les plugins liés aux
+au développement de Maven 1 en travaillant sur les plugins liés aux
 délivrables J2EE. Je fais partie du Project Management Commitee de Maven
 depuis 2006, je m'occupe toujours des plugins de packaging, mais
 également des aspects de flexibilité et de configurabilité d'un projet.
@@ -13695,33 +13694,33 @@ image:MangaVincentM.png[float="left"]
 
 ===== Vincent Massol
 
-Bon puisqu'on dit notre âge je me lance… 40 ans :) [le premier qui dit
+Bon puisqu'on dit notre âge je me lance… 40 ans :) [le premier qui dit
 papy se prend une baffe], amateur de tondeuse robot (choupette va fêter
-ses 5 ans), boit maintenant de d'alcool (et oui tout chose arrive !),
+ses 5 ans), boit maintenant de l'alcool (Eh oui, tout chose arrive !),
 vit à la campagne et travaille depuis la maison, du côté de Chantilly
 avec femme et trois enfants…
 
-Onze ans d'open source déjà : Maven, Cactus, Cargo, MockObjects, XWiki
+Onze ans d'open source déjà : Maven, Cactus, Cargo, MockObjects, XWiki
 et autres.
 
 Côté Maven, j'ai rejoint le projet vers 2001-2002 alors qu'il n'existait
 que sous la forme d'un sous-projet de build du projet Jakarta Turbine.
 D'abord en tant qu'utilisateur (j'en avais marre de maintenir des
-dizaines de fichiers Ant de mille lignes de long chacun !), puis en tant
+dizaines de fichiers Ant de mille lignes de long chacun !), puis en tant
 que committer plus tard afin de rendre l'utilisation de Maven plus
 solide et d’ajouter des fonctionnalités manquantes, notamment au travers
 du développement de plugins (plus de détails sur http://massol.net).
 Plus tard, j'ai participé aux longues discussions de design sur Maven 2…
 
-J'ai (co-)écrit trois livres dont deux sur Maven : _JUnit in Action_,
+J'ai (co-)écrit trois livres dont deux sur Maven : _JUnit in Action_,
 aux éditions Manning, _Better Builds with Maven_ publié par l'ex-Mergere
-(maintenant Exist) et _Maven : A Developer's Notebook_, publié par
+(maintenant Exist) et _Maven : A Developer's Notebook_, publié par
 O'Reilly.
 
 Depuis 2007, j'ai décroché du projet Maven (plus le temps) car je me
 suis donné corps et âme à un nouveau projet open source :
 XWiki footnote:[http://xwiki.org] un wiki d'entreprise de deuxième génération
-(voire troisième ;)). J'y bosse la nuit (classique), mais aussi le jour
+(voire troisième ;)). J'y bosse la nuit (classique), mais aussi le jour
 (moins classique) puisque je suis directeur technique de la société
 XWiki SAS qui offre des services, du support et du développement
 spécifique au-dessus du projet open source XWiki.
@@ -13731,14 +13730,14 @@ image:MangaVincentS.png[float="left"]
 ===== Vincent Siveton
 
 J'avais passé le cap de l'âge du Christ au début de l'aventure de la
-première édition de ce livre, soit 21 en hexadécimal ; d'accord, c'est
-très geek, mais avouez que ça rajeunit :). Pour la deuxième édition j’ai
-arrété de compter.
+première édition de ce livre, soit 21 en hexadécimal ; d'accord, c'est
+très geek, mais avouez que ça rajeunit :). Pour la deuxième édition, j’ai
+arrêté de compter.
 
 Français d'origine, je vis actuellement à Montréal au Canada avec une
 fabuleuse femme. Sans enfant au début de la rédaction du premier opus,
-je me suis retrouvé père d'un petit garçon (le plus beau, bien sûr !) à
-sa sortie. Aujourd’hui il a 20 mois… et c’est toujours le plus beau !
+je me suis retrouvé père d'un petit garçon (le plus beau, bien sûr !) à
+sa sortie. Aujourd’hui il a 20 mois… et c’est toujours le plus beau !
 
 Avec presque dix ans d'expérience en entreprise, je travaille
 actuellement dans un centre de recherche et ma mission se résume à aider
@@ -13746,33 +13745,33 @@ les entreprises dans les méthodologies agiles, la gestion de projet,
 l'assurance qualité, les nouvelles technologies et, bien sûr,
 l'open source.
 
-Concernant Maven, j'ai commencé à utiliser la version 1 vers le milieu
+Concernant Maven, j'ai commencé à utiliser la version 1 vers le milieu
 2003, lors d'un mandat dans une entreprise de bioinformatique, après une
 implémentation fastidieuse de la fourmi. Ensuite, parcours classique
-chez ASF : patchs acceptés (merci Arnaud !), committer, PMC (merci
-Brett !), utilisation de Maven dans d'autres projets d'ASF (PMC
+chez ASF : patchs acceptés (merci Arnaud !), committer, PMC (merci
+Brett !), utilisation de Maven dans d'autres projets d'ASF (PMC
 Shindig), etc. Mon intérêt pour Maven se situe principalement dans la
-génération de documentation (Doxia avec Lukas !) et les plugins de
+génération de documentation (Doxia avec Lukas !) et les plugins de
 reporting et de QA.
 
 [[les_membres_de_la_communaute_Java]]
 ==== Les membres de la communauté Java
 
 Pour compléter notre fine équipe par quelques profils moins
-"Maven-addicted", nous avons invité quelques-unes de nos connaissances
+« Maven-addicted », nous avons invité quelques-unes de nos connaissances
 de la communauté Java francophone.
 
 image:MangaAntonio.png[float="left"]
 
 ===== Antonio Goncalves
 
-J'ai le même âge que Vincent M. mais tout le monde me donne l'âge de
-Fabrice. Le secret de cette fontaine de jouvence ? Maven ! Eh oui,
+J'ai le même âge que Vincent M., mais tout le monde me donne l'âge de
+Fabrice. Le secret de cette fontaine de Jouvence ? Maven ! Eh oui,
 chaque `mvn install` vous fait gagner du temps, donc, plus je compile avec
-Maven, plus je rajeunis. Vous avez lu le _Portrait de Dorian Gray_ ? Eh
+Maven, plus je rajeunis. Vous avez lu le _Portrait de Dorian Gray_ ? Eh
 bien, lisez un de mes livres, voire les deux (_Java EE 5_, aux éditions
-Eyrolles, et _Java EE 6_ chez Apress) et vous paraîtrez plus jeune. Il y
-a aussi ma fille de six ans qui adore Maven… en effet, puisque je gagne
+Eyrolles, et _Java EE 6_ chez Apress) et vous paraîtrez plus jeune. Il y
+a aussi ma fille de six ans qui adore Maven… En effet, puisque je gagne
 du temps avec Maven, eh bien j'en passe plus à jouer avec elle. Vous
 voyez, Maven, on l'aime de 7 (6 pour ma fille) à 77 ans (si vous
 connaissez quelqu'un qui a 77 ans, proposez-lui de découvrir Maven, il
@@ -13783,24 +13782,24 @@ développeur, chez mes clients (de la startup à la grande entreprise).
 Non, non, je ne suis pas chef de projet. J'ai découvert Java en 1998,
 puis J2EE en 1999 lorsque je travaillais pour BEA Systems, et j'ai
 continué dans la lancée de l'Enterprise Edition (ou Java EE) jusqu'à
-intégrer le JCP en travaillant sur la spécification Java EE 6 et
-aujourd’hui Java EE 7. Après avoir travaillé partout dans le monde
+intégrer le JCP en travaillant sur la spécification Java EE 6 et
+aujourd’hui Java EE 7. Après avoir travaillé partout dans le monde
 (enfin, trois ou quatre pays), je suis revenu à Paris
-(_intra-muros_,__bien sûr), où j'ai commencé à enseigner au Cnam puis
+(_intra-muros_, bien sûr), où j'ai commencé à enseigner au Cnam puis
 créé le Paris Java User Group. J'ai écrit plusieurs articles, deux
 livres (je l'ai déjà dit, mais c'est pour que vous vous souveniez de les
 acheter), je parle pas mal aux conférences (je parle beaucoup de manière
 générale) et j'adore Maven (ça, c'est pour Nicolas et Arnaud). Je fais
-aussi partie de la bande des Cast Codeurs. Quoi ? Vous ne connaissez pas
-les Cast Codeurs ? Eh bien, retrouvez tout cela sur mon site personnel
-pour de plus amples informations : http://www.antoniogoncalves.org.
+aussi partie de la bande des Cast Codeurs. Quoi ? Vous ne connaissez pas
+les Cast Codeurs ? Eh bien, retrouvez tout cela sur mon site personnel
+pour de plus amples informations : http://www.antoniogoncalves.org.
 
 image:MangaFrancois.png[float="left"]
 
 [[francois_le_droff]]
 ===== François Le Droff
 
-Brestois d'origine, parisien d'adoption, j'ai connu le Minitel mais je
+Brestois d'origine, parisien d'adoption, j'ai connu le Minitel, mais je
 suis plus jeune que Vincent M., j'ai commencé à jouer/coder sur le HP 85
 de Papa dans les années 80. Depuis 2007, je suis ingénieur logiciel chez
 Adobe, après neuf ans d'expérience dans le développement d'application
@@ -13810,10 +13809,10 @@ Center.
 Si, depuis plusieurs années, j'utilise Maven sur la plupart de mes
 projets (y compris mes projets hybrides, Flex et Java), c'est à cause de
 Vincent M., d’Arnaud et des autres contributeurs que j'ai eu la chance
-de rencontrer (à JavaPolis, à l'OSSGTP, au ParisJUG, ou à un comptoir) :
+de rencontrer (à JavaPolis, à l'OSSGTP, au ParisJUG, ou à un comptoir) :
 leur enthousiasme et leur passion sont en effet contagieux…
 
-PS : je suis également l'auteur d'un blog technique autour des
+PS : je suis également l'auteur d'un blog technique autour des
 technologies Java et Flex (http://www.droff.com).
 
 image:MangaGregory.png[float="left"]
@@ -13821,7 +13820,7 @@ image:MangaGregory.png[float="left"]
 [[gregory_boissinot]]
 ===== Grégory Boissinot
 
-J’ai 30 ans et je travaille depuis 3 ans chez Zenika en tant que
+J’ai 30 ans et je travaille depuis trois ans chez Zenika en tant que
 consultant et formateur sur les technologies Java/JEE. Spécialiste du
 build, je suis aussi en charge du pôle Intégration continue et
 j’interviens chez de nombreux clients pour la mise en place en place de
@@ -13830,9 +13829,9 @@ professionnel et personnel à contribuer au serveur d’intégration
 continue Jenkins.
 
 Concernant les outils de build, j’ai débuté avec Ant dans les années
-2000 et mon aventure Maven en 2005 comme utilisateur de Maven 1. En
-2006, j’ai mis en place Maven 2 pour l’ensemble des projets au sein
-d’une grande banque Française. Couplé à Continuum, cela convenait à
+2000 et mon aventure Maven en 2005 comme utilisateur de Maven 1. En
+2006, j’ai mis en place Maven 2 pour l’ensemble des projets au sein
+d’une grande banque française. Couplé à Continuum, cela convenait à
 l’époque parfaitement aux différents besoins.
 
 Mais c’est en 2008 avec mon nouveau client industriel qu’il a été mis en
@@ -13863,13 +13862,13 @@ Après quelques années chez des éditeurs logiciels et des sociétés de
 services, je me suis lancé, j'ai créé ma boîte, G2One, autour des
 technologies Groovy et Grails, qui a ensuite été rachetée par
 SpringSource, et ce dernier par VMWare – un bel exemple de chaîne
-alimentaire ou des poupées russes !
+alimentaire ou des poupées russes !
 
-J'ai beaucoup souffert avec Maven 1, mais je n'ai pas eu beaucoup
-l'occasion de jouer avec Maven 2, seulement avec le plugin GMaven qui
-rend Maven un peu plus agréable à utiliser à mon goût ! Mais j'espère
+J'ai beaucoup souffert avec Maven 1, mais je n'ai pas eu beaucoup
+l'occasion de jouer avec Maven 2, seulement avec le plugin GMaven qui
+rend Maven un peu plus agréable à utiliser à mon goût ! Mais j'espère
 que ce livre rabibochera les développeurs allergiques à Maven avec ce
-puissant outil de build !
+puissant outil de build !
 
 image:MangaJerome.png[float="left"]
 
@@ -13879,14 +13878,14 @@ image:MangaJerome.png[float="left"]
 29 ans, architecte JavaEE chez Octo Technology depuis cinq ans, où j'ai
 rencontré Arnaud et découvert Maven (la version 1.0.2 à l'époque).
 
-Ni commiter, ni PMC, je suis un simple utilisateur mais fervent
-défenseur de l'outil. J'ai mis en place plusieurs "usines de
-développement" (intégration continue, tests et bonnes pratiques autour
+Ni commiter, ni PMC, je suis un simple utilisateur, mais fervent
+défenseur de l'outil. J'ai mis en place plusieurs « usines de
+développement » (intégration continue, tests et bonnes pratiques autour
 de tout ça), dispensé des formations chez divers clients, écrit quelques
-articles sur le sujet et surtout j'utilise Maven au quotidien ! La
-version 1 m'avait paru intéressante comparée à Ant mais c'est surtout la
-version 2 et toutes ses conventions qui me semblent apporter énormément
-au développement !
+articles sur le sujet et surtout j'utilise Maven au quotidien ! La
+version 1 m'avait paru intéressante comparée à Ant, mais c'est surtout la
+version 2 et toutes ses conventions qui me semblent apporter énormément
+au développement !
 
 image:MangaPascal.png[float="left"]
 
@@ -13894,12 +13893,12 @@ image:MangaPascal.png[float="left"]
 
 Pascal peut être défini avant tout comme un scientifique passionné
 d'Histoire. En tant que professionnel, il est freelance et fondateur de
-opensagres (en mémoire de la « Fort de Sagres », l'un des premiers
+opensagres (en mémoire de la « Fort de Sagres », l'un des premiers
 centres de recherche de l'humanité).
 
-Ses principaux centre d'intérêts et compétences sont Maven, Eclipse RCP,
-Spring et OSGi. Il essaie de OSGi-fier tous les modules java utiles
-présents dans notre galaxie
+Ses principaux centres d'intérêts et compétences sont Maven, Eclipse RCP,
+Spring et OSGi. Il essaie de OSGi-fier tous les modules Java utiles
+présents dans notre galaxie.
 
 Une de ses principales qualités est son insatiable curiosité.
 
@@ -13913,29 +13912,29 @@ familiale.
 
 Après douze ans d'expérience en entreprise dans des domaines
 fonctionnels et techniques variés, je travaille actuellement sur un
-projet Java/J2E où Maven est largement mis en œuvre (merci Nico ;-)).
+projet Java/J2E où Maven est largement mis en œuvre (merci Nico ;-)).
 
-Quand j'ai installé mon environnement, la consternation :
+Quand j'ai installé mon environnement, la consternation :
 
-<mode panique : on>
+<mode panique : on>
 
-– "Hou là là ! Mais j'ai plein de téléchargements étranges quand je
-lance une commande Maven !"
+– « Hou là là ! Mais j'ai plein de téléchargements étranges quand je
+lance une commande Maven ! »
 
-– "Mais c'est quoi ces fichiers pom.xml partout dans mon workspace ? En
-plus, j'y comprends rien, moi, à ces fichiers."
+– « Mais c'est quoi ces fichiers pom.xml partout dans mon workspace ? En
+plus, j'y comprends rien, moi, à ces fichiers. »
 
-– "Argh ! Mais ils sont passés où les fichiers build ?"
+– « Argh ! Mais ils sont passés où les fichiers build ? »
 
-– "Comment ça, on a abandonné Ant ? Mais pourquoi on a abandonné Ant ?
-J'aimais bien moi Ant et en plus je comprenais !"
+– « Comment ça, on a abandonné Ant ? Mais pourquoi on a abandonné Ant ?
+J'aimais bien moi Ant et en plus je comprenais ! »
 
-– "Au secours Nico !!!!"
+– « Au secours Nico !!!! »
 
-<mode panique : off>
+<mode panique : off>
 
 Par conséquent, pour moi (et donc pour Nico), ce livre est une
-bénédiction :-).
+bénédiction :-).
 
 ==== Post-scriptum
 
@@ -13980,8 +13979,8 @@ nous en avons eu à l'écrire.
 Merci à notre éditeur Pearson, et à son équipe, Patricia, Amandine,
 Laurence, Jennifer et tous ceux qui nous ont accompagnés dans cette
 première expérience en tant qu'auteurs. Il faut avouer que, pour des
-geeks comme nous, sortir [line-through]*la plume* $$$ "la plume" en
-texte barré, SVP$$$ le traitement de texte (en plus celui de Bilou !) et
+geeks comme nous, sortir [line-through]*la plume* $$$ « la plume » en
+texte barré, SVP$$$ le traitement de texte (en plus celui de Bilou !) et
 en faire l'ouvrage que vous tenez dans les mains est un véritable
 exploit.
 
@@ -13993,10 +13992,10 @@ Enfin, je dirai un grand grand grand merci à mon exceptionnelle femme et
 à mes trois enfants qui supportent autant que possible le temps que je
 peux passer sur l'open source et ces derniers temps sur cet ouvrage.
 
-== Chapitre 19 : Lexique
+== Chapitre 19 : Lexique
 
 Ami lecteur, tu es arrivé jusqu'ici et notre récit te laisse un goût
-amer de "mais enfin, de quoi parlent-ils ?". Il est vrai que
+amer de « mais enfin, de quoi parlent-ils ? ». Il est vrai que
 l'informatique possède un jargon riche, souvent impénétrable et
 anglophone… Voici donc notre petit dictionnaire Maven – Français.
 
@@ -14010,9 +14009,9 @@ développement de nombreux logiciels libres, dont le très célèbre serveur
 HTTP Apache. La fondation encourage la constitution d'une communauté
 pour soutenir un projet donné plutôt que les pures qualités techniques
 de celui-ci, même si elles font rarement défaut - des centaines d'yeux
-braqués sur le code sont une bonne garantie de qualité ! Les
+braqués sur le code sont une bonne garantie de qualité ! Les
 responsabilités dans un projet Apache sont basées sur le concept de
-méritocratie : un membre actif, talentueux et respectueux de la
+méritocratie : un membre actif, talentueux et respectueux de la
 diversité de la communauté se verra attribuer plus de responsabilités et
 de titres (Committer PMC), jusqu'au titre suprême de membre de la
 fondation Apache.
@@ -14048,9 +14047,8 @@ principalement par une liste de diffusion (Mailing-list) des
 utilisateurs (users@maven.apache.org dans son cas). Une seconde liste
 dev@maven.apache.org permet de discuter des évolutions de l'outil et de
 ses plugins. La liste announce@maven.apache.org permet de connaitre
-l'ensemble des livraisons. Il existe beaucoup d'autres liste de
-diffusions en fonction des sous projets de Maven footnote:[http://maven.apache.org/mail-lists.html].
-Enfin, en cas de besoin urgent, vous pouvez essayer de contacter une
+l'ensemble des livraisons. Il existe beaucoup d'autres listes de
+diffusions en fonction des sous-projets de Maven footnote:[http://maven.apache.org/mail-lists.html]. Enfin, en cas de besoin urgent, vous pouvez essayer de contacter une
 partie de l'équipe de développement sur irc footnote:[http://irc.codehaus.org/].
 
 Open source (logiciel libre)
@@ -14059,10 +14057,10 @@ Logiciel dont le code source est accessible. Vous pouvez, si besoin est,
 y jeter un œil pour comprendre comment il marche. Les logiciels
 open source sont aussi qualifiés de logiciels libres. Mais cela ne
 signifie pas pour autant que vous pouvez faire absolument tout ce que
-vous voulez avec : il existe de nombreuses licences avec des contraintes
+vous voulez avec : il existe de nombreuses licences avec des contraintes
 très variées. La licence Apache (ASL v2) utilisée par Maven est l'une
 des plus souples puisqu'elle vous donne le droit d'utiliser, de
-modifier, de diffuser, voire même de vendre le logiciel comme bon vous
+modifier, de diffuser, et même de vendre le logiciel comme bon vous
 semble – tant que vous gardez un petit encart rappelant l'origine
 initiale du code. Un des meilleurs exemples de ce cas est le IBM HTTP
 Server footnote:[http://www-01.ibm.com/software/webservers/httpservers/], qui est une adaptation du serveur HTTP
@@ -14082,7 +14080,7 @@ d'inviter de nouveaux membres comme committers.
 API
 
 Acronyme de _Application Programming Interface_, il s'agit de l'ensemble
-des classes qui définit comment manipuler un programme ; elles sont donc
+des classes qui définit comment manipuler un programme ; elles sont donc
 documentées et stables dans le temps (les classes internes pouvant
 évoluer sans prévenir). Maven propose ses propres API, en particulier
 pour l'écriture de plugins, les fameux Mojos, mais aussi pour la
@@ -14090,11 +14088,11 @@ manipulation des Artefacts et des Repository.
 
 Aether
 
-Développé par sonatype, en opensource mais en dehors de la fondation
+Développé par Sonatype, en open source mais en dehors de la fondation
 Apache, Aether encapsule la gestion de dépendance et la gestion des
-dépôts d’artefact, indépendemment de leur implémentation. Maven propose
+dépôts d’artefact, indépendamment de leur implémentation. Maven propose
 ainsi une implémentation de dépôt conforme à l’API Aether, qui pourrait
-aussi bien être utilisée sur des dépôts Eclipse P2 ou autre.
+aussi bien être utilisée sur des dépôts Eclipse P2 ou autre.
 
 Archetype
 
@@ -14145,7 +14143,7 @@ MAVEN_OPTS
 
 La JVM qui exécute Maven peut être ajustée en définissant des options
 dans cette variable système. Sur un projet un peu trop généreux, vous
-pouvez par exemple rencontrer des OutOfMemoryError : vous pouvez alors
+pouvez par exemple rencontrer des OutOfMemoryError : vous pouvez alors
 définir quelque chose comme "-Xmx512M -XX:PermSize=128M
 -XX:MaxPermSize=256M" dans la variable d'environnement MAVEN_OPTS.
 
@@ -14158,14 +14156,14 @@ chemins en dur et donc de changer plus facilement de version de Maven.
 Mojo
 
 Un plugin Maven est composé de classes Java, et chaque tâche du plugin
-est réalisé par une classe Mojo, acronyme pour _Maven Old Java Object_
+est réalisée par une classe Mojo, acronyme pour _Maven Old Java Object_
 (par allusion au terme POJO, _Plain Old Java Object_). Un Mojo est donc
 le pendant côté code d'une tâche Maven invoquée par `mvn plugin:tâche`.
 Les Mojos se basent sur une API propre à Maven. Voir sur ce sujet
 http://maven.apache.org/guides/introduction/introduction-to-plugins.html.
 
 Mojo est aussi le nom d'un projet footnote:[http://mojo.codehaus.org/] offrant une
-collection de plugins surveillés par l'équipe du projet Maven mais en
+collection de plugins surveillés par l'équipe du projet Maven, mais en
 dehors de la communauté Apache, ce qui permet plus de flexibilité (sur
 le processus d'entrée des membres, ou sur les licences par exemple).
 
@@ -14173,7 +14171,7 @@ Plexus
 
 Conteneur historique de Maven 2, implémentant l’injection de dépendance
 comme son concurrent Spring, mais n’ayant pas connu le succès de ce
-dernier, sans doute en raison d’une documentation innexistante et d’un
+dernier, sans doute en raison d’une documentation inexistante et d’un
 manque de communication. Techniquement dépassé, il est remplacé dans
 Maven 3 par Google Guice.
 
@@ -14191,13 +14189,13 @@ ou encore s'exécuter de manière isolée).
 
 POM footnote:[http://maven.apache.org/pom.html]
 
-Acronyme pour _Project Object Model_, en bon français "modèle du
-projet". Il s'agit du descripteur d'un projet tel que Maven le construit
+Acronyme pour _Project Object Model_, en bon français « modèle du
+projet ». Il s'agit du descripteur d'un projet tel que Maven le construit
 en mémoire _via_ un modèle objet interne. Ce modèle est construit à
-partir de fichiers XML, qui peuvent s'enrichir mutuellement _via_un
+partir de fichiers XML, qui peuvent s'enrichir mutuellement via un
 mécanisme d'héritage et de profils. Autrement dit, le POM n'est pas
 juste l'équivalent mémoire du fichier pom.xml. Les versions à venir de
-Maven supporteront d'ailleurs des formats alternatifs -– moins verbeux
+Maven supporteront d'ailleurs des formats alternatifs, moins verbeux
 par exemple.
 
 Profile
@@ -14207,13 +14205,13 @@ l'activer / désactiver à la demande ou en fonction de conditions locales
 (version de JDK, système d'exploitation, propriété système, etc.).
 L'utilisation la plus courante est de désactiver certaines fonctions
 annexes du build qui seraient pénalisantes (trop lentes, ou basées sur
-des pré-requis).
+des prérequis).
 
 Release
 
 Le processus qui permet de passer d'un projet en cours de développement
 à un livrable qualifié, tracé et mis à disposition des utilisateurs est
-qualifié de release, ce que nous avons traduit par livraison. De
+qualifié de _release_, ce que nous avons traduit par livraison. De
 nombreux écueils se dressent sur votre parcours pour que toutes les
 tâches impliquées soient réalisées sans oubli, maladresse ou autre
 loupé. Le Chapitre 10 vous explique en quoi Maven peut vous aider sur
@@ -14234,7 +14232,7 @@ Sisu
 
 Développé par Sonatype pour les besoins du gestionnaire de dépôt Nexus,
 Sisu permet d’utiliser des composants conçus pour Plexus (le conteneur
-historique de Maven 2) dans un conteneut conforme à la norme JSR330, en
+historique de Maven 2) dans un conteneur conforme à la norme JSR330, en
 l’occurrence Google Guice.
 
 SCM footnote:[http://maven.apache.org/scm]
@@ -14252,12 +14250,12 @@ Scope
 
 Le scope permet de préciser dans quel contexte une dépendance est
 nécessaire au projet. Par défaut, compile correspond à une dépendance
-utilisée explicitement dans le code source ; runtime réduit ce besoin à
-l'exécution, mais pas à la compilation (par exemple : pilote JDBC) ;
+utilisée explicitement dans le code source ; runtime réduit ce besoin à
+l'exécution, mais pas à la compilation (par exemple : pilote JDBC) ;
 test permet d'isoler les outils de test et de ne pas risquer de les
-référencer dans le code source ; provided permet de référencer une
+référencer dans le code source ; provided permet de référencer une
 dépendance qui fait partie de l'environnement cible (API JavaEE par
-exemple) ; enfin, import permet de réutiliser le <dependencyManagement>
+exemple) ; enfin, import permet de réutiliser le <dependencyManagement>
 d'un autre POM sans passer par l'héritage.
 
 Settings
@@ -14279,11 +14277,11 @@ Snapshot peut donc être mise à jour à tout moment. Maven vérifie une
 fois par jour (par défaut) que ses Snapshots sont à jour, afin d'éviter
 un accès systématique aux dépôts. L'option -U permet de forcer cette
 vérification, par exemple sur le serveur d'intégration continue. Maven
-propose deux modes de gestion des Snapshots : soit la nouvelle version
+propose deux modes de gestion des Snapshots : soit la nouvelle version
 écrase simplement la précédente, soit Maven déploie une version dédiée
 pour chaque Snapshot en ajoutant une indication de date (à la
 milliseconde) plus un numéro de diffusion, incrémenté à chaque nouveau
-Snapshot. Cette option consomme évidement plus d'espace disque sur le
+Snapshot. Cette option consomme évidemment plus d'espace disque sur le
 dépôt, mais elle permet de figer l'utilisation d'un Snapshot
 particulier. Il faut prendre de grandes précautions lors que l'on
 utilise des artefacts en version Snapshot car ces derniers ont tout
@@ -14307,9 +14305,9 @@ testé.
 
 SureFire footnote:[http://maven.apache.org/surefire]
 
-Maven supporte plusieurs outils de test unitaire :
+Maven supporte plusieurs outils de test unitaire :
 jUnit footnote:[http://www.junit.org] 3 ou 4 et testNG footnote:[http://testng.org]. Ce support
-est orchestré par un outil dédié, SureFire ("infaillible"), sous-projet
+est orchestré par un outil dédié, SureFire (« infaillible »), sous-projet
 de Maven, qui fournit une vision homogène de ces trois outils, et
 permettra si besoin d'en intégrer un nouveau dans le support de Maven.
 Le plugin Maven qui exécute nos tests n'est donc pas un
@@ -14340,7 +14338,7 @@ Le développement de Maven 3 introduit une refonte de la gestion des
 artefacts, des dépendances, de la résolution des versions, ainsi que de
 l'accès aux dépôts (voir Wagon). Mercury, sous-projet de Maven, est le
 nom de code de cette nouvelle API, conçue pour plus de clarté et de
-flexibilité – le code actuel de Maven 2 souffrant un peu du poids des
+flexibilité – le code actuel de Maven 2 souffrant un peu du poids des
 nombreuses années de corrections diverses.
 
 Modello footnote:[http://modello.codehaus.org/]
@@ -14349,7 +14347,7 @@ Les divers fichiers XML manipulés par Maven sont définis à partir d'un
 modèle (décrit dans des fichiers *.mdo), que l'outil open source Modello
 convertit en classes JavaBean, en schéma XML et en analyseurs XML pour
 passer de l'un à l'autre. Modello peut potentiellement être utilisé dans
-un autre cadre mais reste très lié à Maven. Modello peut être comparé à
+un autre cadre, mais reste très lié à Maven. Modello peut être comparé à
 JAXB, l'API actuelle qui normalise la passerelle entre les mondes Java
 et XML.
 
@@ -14365,7 +14363,7 @@ Wagon footnote:[http://maven.apache.org/wagon]
 
 Lorsque Maven doit accéder à une ressource réseau, il passe par une
 couche dédiée qui gère divers protocoles (HTTP, HTTPS, SCP, WebDAV,
-etc.). Cette abstraction au dessus des protocoles de communication est
+etc.). Cette abstraction au-dessus des protocoles de communication est
 définie par l'API Wagon, sous-projet de Maven. Diverses implémentations
 permettent de supporter ces protocoles, voire d'en ajouter de nouveaux.
 Vous pouvez par exemple utiliser le protocole de partage Windows Samba
@@ -14414,17 +14412,17 @@ pratiques.
 === Liens utiles
 
 Et pour finir, quelques liens indispensables à ajouter dans vos
-favoris :
+favoris :
 
-* http://maven.apache.org/. Le site officiel de Maven, avec une documentation imparfaite mais tout de même bien utile.
+* http://maven.apache.org/. Le site officiel de Maven, avec une documentation imparfaite, mais tout de même bien utile.
 * http://www.maestrodev.com/better-build-maven. Premier livre sur Maven disponible en ligne gratuitement.
-* http://www.sonatype.com/products/maven/documentation/book-defguide. Le fameux definitive guide, en enrichissement permanent par les équipes de Sonatype.
+* http://www.sonatype.com/products/maven/documentation/book-defguide. Le fameux _definitive guide_, en enrichissement permanent par les équipes de Sonatype.
 * http://www.packtpub.com/apache-maven-2-effective-implementations/book. Encore un livre, écrit lui aussi par des membres de l'équipe Maven.
 * http://www.sonatype.com/people/. Le blog de Sonatype, sur lequel
 on peut piocher de nombreuses bonnes idées autour de Maven.
 * http://mojo.codehaus.org/. Site communautaire qui héberge de nombreux plugins Maven. Si vous avez développé un plugin intéressant, n'hésitez pas à le proposer comme contribution.
 
-Sans oublier bien-sûr deux sites absolument indispensables dans la vie d'un développeur Java :
+Sans oublier bien sûr deux sites absolument indispensables dans la vie d'un développeur Java :
 
 * http://blog.aheritier.net/. Le blog d'Arnaud.
 * http://blog.loof.fr/. Le blog de Nicolas.
