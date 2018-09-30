@@ -1712,13 +1712,14 @@ Nicolas fouille le dépôt local d’Emmanuel à la recherche d’indices. Sous
 sa lampe à ultraviolet, le Luminol met en évidence des traces de
 métadonnées. Un échantillon est prélevé pour analyse.
 
-Figure 02-04
+.Figure 02-04
+image:02-04.png[align="center"]
 
 Contenu du dépôt local pour la bibliothèque jcr-on-cassandra.
 
 image:MangaVincentM.png[float="left"]
 
-Au labo, Vincent analyse nos indices. Le fichier__maven.repositories
+Au labo, Vincent analyse nos indices. Le fichier _maven.repositories_
 attire particulièrement son attention :
 
 -------------------------------------------------------------------------------
@@ -2516,7 +2517,9 @@ target/generated-sources/cxf. Il s'agit également d'une convention de
 Maven, qui permet à chaque plugin générateur de code d'avoir son propre
 répertoire de génération tout en conservant une certaine cohérence :
 
+-------------------------------------------------------------------------------
 <répertoire de build "target">/generated-(re)sources/<nom du plugin>
+-------------------------------------------------------------------------------
 
 Ces répertoires sont automatiquement ajoutés dans le chemin de
 compilation du projet et seront donc pris en considération lors de la
@@ -2921,7 +2924,9 @@ Très fiers de notre mécanisme de test automatisé, nous lançons donc la
 version fraîchement compilée de l'application sur notre serveur de test.
 Et là, c'est la douche froide :
 
+-------------------------------------------------------------------------------
 ClassNotFoundException org.apache.commons.beanutils.BeanComparator
+-------------------------------------------------------------------------------
 
 Que s'est-il passé ? L'introduction d'une nouvelle bibliothèque pour
 simplifier l'écriture du test a créé des imports dans le code, imports
@@ -3068,15 +3073,16 @@ notre gestionnaire de version.
 ====
 Ce mécanisme d'accès aux ressources est celui que nous vous recommandons
 d'utiliser autant que possible. Cela s'applique lorsque vous manipulez
-un type abstrait comme java.io.InputStream, java.net.URL, ou encore la
-nouvelle API java.nio.file de Java 7.
+un type abstrait comme `java.io.InputStream`, `java.net.URL`, ou encore la
+nouvelle API `java.nio.file` de Java 7.
 
-Si vous devez expressément utiliser un type java.io.File, ne supposez
+Si vous devez expressément utiliser un type `java.io.File`, ne supposez
 pas que le répertoire courant est forcément la racine du projet (nous
 verrons au Chapitre 7 que ce n'est pas toujours le cas). Maven fournit
 la variable système basedir qui pointe à la racine du projet. Utilisez
 donc :
 
+[source, java]
 -------------------------------------------------------------------------------
 File basedir = new File( System.getProperty( "basedir", "" )  ).getAbsoluteFile();
 File monFichier = new File( basedir, "chemin/relatif" ) ;
@@ -4376,8 +4382,6 @@ devancé les attentes du monde de l'informatique professionnelle, en
 proposant, _via_ son outil, une gestion de projets, d'une part, très
 propre et disciplinée et, d'autre part, très simple et accessible à
 tous.
-
-$$$ SEPARATEUR
 
 Nos compères prennent bien du plaisir sur leur projet de gestion de
 liste de courses. De nombreuses fonctionnalités et technologies de
@@ -5842,7 +5846,6 @@ sourire si nous étions un 1^er^ avril, mais qui nous laisse perplexes :
 ClassCastException : fr.noubliepaslalistedescourses.servlets.LoginServlet is not a javax.servlet.Servlet
 -------------------------------------------------------------------------------
 
-
 Nous devons explorer un peu plus la logique de JavaEE pour comprendre.
 Un serveur JavaEE isole chacun des composants qu'on y déploie afin
 qu'ils ne se perturbent pas mutuellement. Cette isolation se fait _via_
@@ -6031,14 +6034,14 @@ voire distribué sur un cluster.
 [source, xml]
 .Listing 8.2 : Descripteur de déploiement de notre application web
 -------------------------------------------------------------------------------
-<?xml version=_"1.0"_ encoding=_"UTF-8"_?>
+<?xml version="1.0" encoding="UTF-8"?>
 
-<web-app version=_"2.4"_
-    xmlns=_"http://java.sun.com/xml/ns/j2ee"_
-    xmlns:xsi=_"http://www.w3.org/2001/XMLSchema-instance"_
-    xsi:schemaLocation=_"http://java.sun.com/xml/ns/j2ee_
-	_http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"_>
-  < !-- Servlet GWT-RPC de l'application web -->
+<web-app version="2.4"
+    xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
+	  http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+  <!-- Servlet GWT-RPC de l'application web -->
   <servlet>
     <servlet-name>gwt-rpc</servlet-name>
     <servlet-class>
@@ -6050,7 +6053,7 @@ voire distribué sur un cluster.
     <servlet-name>gwt-rpc</servlet-name>
     <url-pattern>*.rpc</url-pattern>
   </servlet-mapping>
-  < !—Référence vers notre EJB -->
+  <!—- Référence vers notre EJB -->
   <ejb-ref>
     <ejb-ref-name>ejb/ListeDeCourses</ejb-ref-name>
     <ejb-ref-type>Session</ejb-ref-type>
@@ -6445,7 +6448,7 @@ test.
           -XX:+CMSPermGenSweepingEnabled
           -XX:+CMSClassUnloadingEnabled
         </cargo.jvmargs>
-<!—
+<!—-
    Quoi, vous ne connaissiez pas l'option CMSClassUnloadingEnabled ? ;p
 -->
       </properties>
@@ -6506,7 +6509,7 @@ complexe J qui permet de lancer notre EJB au sein d'un test unitaire.
 .Listing 8.7 : Lancement d'OpenEJB embarqué dans un test
 -------------------------------------------------------------------------------
 @Test
-Public void testMonEJB() throws Exception
+public void testMonEJB() throws Exception
 {
     Properties p = new Properties();
     p.setProperty( Context.INITIAL_CONTEXT_FACTORY,
@@ -6877,8 +6880,10 @@ aspectjrt.jar, qui est intégrée dans AJDT. L'import des projets Maven se
 passe bien, et Nicolas est satisfait… jusqu'à ce qu'il tente de démarrer
 son serveur Web Tomcat.
 
+-------------------------------------------------------------------------------
 java.lang.NoClassDefFoundError:
 org/aspectj/weaver/reflect/ReflectionWorld$ReflectionWorldException
+-------------------------------------------------------------------------------
 
 Ce n'était pas, semble-t-il, une si bonne idée de tout miser sur AJDT.
 Un magnifique hack permet de contourner le problème en paramétrant le
@@ -8130,8 +8135,6 @@ traditionnel, bien qu'il y ressemble beaucoup et propose des API de
 programmation compatibles. Il présente cependant quelques restrictions
 spécifiques qu'il est nécessaire de respecter pour le bon fonctionnement
 de l'application.
-
-$$$ Centré $$$
 
 image:GEA.png[float="center"]
 
@@ -9507,8 +9510,10 @@ n’est pas son mode de fonctionnement nominal, et que — si nous désirons
 utiliser officiellement Maven 3 — il serait préférable de nous mettre à
 la page.
 
+-------------------------------------------------------------------------------
 [WARNING] The <reporting> section is deprecated, please move the reports
 to the <configuration> section of the new Maven Site Plugin.
+-------------------------------------------------------------------------------
 
 Par ailleurs, depuis la version 3.0-beta-4, le plugin site gère lui-même
 la distinction entre Maven 2 et Maven 3, il est donc capable de basculer
@@ -10882,7 +10887,6 @@ d'échange sur les technologies.
 image:MangaNicolas.png[float="left"]
 image:MangaCarlos.png[float="left"]
 image:MangaVincentM.png[float="left"]
-$$$ côte à cote$$$
 
 Au démarrage de notre projet, s'est posée la question du choix d'un
 framework web. Dans cette situation, chacun tente d'imposer son
@@ -13979,8 +13983,7 @@ nous en avons eu à l'écrire.
 Merci à notre éditeur Pearson, et à son équipe, Patricia, Amandine,
 Laurence, Jennifer et tous ceux qui nous ont accompagnés dans cette
 première expérience en tant qu'auteurs. Il faut avouer que, pour des
-geeks comme nous, sortir [line-through]*la plume* $$$ « la plume » en
-texte barré, SVP$$$ le traitement de texte (en plus celui de Bilou !) et
+geeks comme nous, sortir [line-through]*la plume*, le traitement de texte (en plus celui de Bilou !) et
 en faire l'ouvrage que vous tenez dans les mains est un véritable
 exploit.
 
