@@ -13498,9 +13498,9 @@ l'équipe de développement du projet Maven ?
 Laissons-les se présenter (par ordre alphabétique du prénom, comme ça,
 pas de jaloux).
 
-image:MangaCarlos.png[float="left"]
-
 ===== Carlos Sanchez
+
+image:MangaCarlos.png[float="left"]
 
 Carlos Sanchez, espagnol, 31 ans.
 
@@ -13519,9 +13519,9 @@ J'habite à La Corogne, Espagne où j'ai étudié le français, et je suis
 allé en France de nombreuses fois : Pyrénées, Alpes, Bretagne, Paris.
 Mais j'ai beaucoup oublié mon français en parlant toujours en anglais :(.
 
-image:MangaEmmanuel.png[float="left"]
-
 ===== Emmanuel Venisse
+
+image:MangaEmmanuel.png[float="left"]
 
 Salut,
 
@@ -13540,9 +13540,9 @@ disponible maintenant :-(.
 Dans le passé, j'ai travaillé dans la même SSII que Nicolas, mais à
 Paris où j'avais introduit également Maven ;-).
 
-image:MangaFabrice.png[float="left"]
-
 ===== Fabrice Bellingard
+
+image:MangaFabrice.png[float="left"]
 
 Hey !
 
@@ -13568,10 +13568,10 @@ vingt premières années de ma vie à Limoges, c'est pour dire ;-).
 Bénévole WWF et ambassadeur de l'ONG Planète Urgence : ma vraie passion,
 c'est la protection de l'environnement et la solidarité internationale.
 
-image:MangaHerve.png[float="left"]
-
 [[herve_boutemy]]
 ===== Hervé Boutemy
+
+image:MangaHerve.png[float="left"]
 
 Hervé Boutemy, j'ai 39 ans, une femme et une fille, et je vis du côté de
 La Défense en région parisienne.
@@ -13603,9 +13603,9 @@ variées.
 Ce livre original est un exemple de plus de toute la richesse de la
 communauté francophone autour de Maven.
 
-image:MangaLukas.png[float="left"]
-
 ===== Lukas Theussl
+
+image:MangaLukas.png[float="left"]
 
 Salut à tous,
 
@@ -13634,9 +13634,9 @@ c'est l'histoire… J'ai ensuite aidé Arnaud à enterrer Maven 1.1, et
 maintenant je participe surtout au sous-projet Doxia et particulièrement
 à la version du plugin pdf pour Maven 2.
 
-image:MangaOlivier.png[float="left"]
-
 ===== Olivier Lamy
+
+image:MangaOlivier.png[float="left"]
 
 Bonjour,
 
@@ -13660,10 +13660,10 @@ du site plugin) ;
 * intégration de Maven dans le serveur d'intégration continue Jenkins ;
 * et puis d'autres trucs :-) (Maven scm, divers mojo chez codehaus).
 
-image:MangaRaphael.png[float="left"]
-
 [[raphael_pieroni]]
 ===== Raphaël Piéroni
+
+image:MangaRaphael.png[float="left"]
 
 J'ai 37 ans. J'ai commencé à utiliser Maven 1 en 2002 ou 2003 (je ne me
 souviens plus), et pour Maven 2 depuis sa bêta 1.
@@ -13675,10 +13675,10 @@ Je dispose à la maison du Lexique des règles typographiques en usage à
 l'Imprimerie nationale – 3^e^ édition. Nicolas, je peux te le prêter en
 cas de besoin ;).
 
-image:MangaStephane.png[float="left"]
-
 [[stephane_nicoll]]
 ===== Stéphane Nicoll
+
+image:MangaStephane.png[float="left"]
 
 J'ai 33 ans depuis peu, je vis dans une région magnifique à l'est de la
 Belgique.
@@ -13694,9 +13694,9 @@ délivrables J2EE. Je fais partie du Project Management Commitee de Maven
 depuis 2006, je m'occupe toujours des plugins de packaging, mais
 également des aspects de flexibilité et de configurabilité d'un projet.
 
-image:MangaVincentM.png[float="left"]
-
 ===== Vincent Massol
+
+image:MangaVincentM.png[float="left"]
 
 Bon puisqu'on dit notre âge je me lance… 40 ans :) [le premier qui dit
 papy se prend une baffe], amateur de tondeuse robot (choupette va fêter
@@ -13729,9 +13729,9 @@ XWiki footnote:[http://xwiki.org] un wiki d'entreprise de deuxième génération
 XWiki SAS qui offre des services, du support et du développement
 spécifique au-dessus du projet open source XWiki.
 
-image:MangaVincentS.png[float="left"]
-
 ===== Vincent Siveton
+
+image:MangaVincentS.png[float="left"]
 
 J'avais passé le cap de l'âge du Christ au début de l'aventure de la
 première édition de ce livre, soit 21 en hexadécimal ; d'accord, c'est
@@ -13765,9 +13765,9 @@ Pour compléter notre fine équipe par quelques profils moins
 « Maven-addicted », nous avons invité quelques-unes de nos connaissances
 de la communauté Java francophone.
 
-image:MangaAntonio.png[float="left"]
-
 ===== Antonio Goncalves
+
+image:MangaAntonio.png[float="left"]
 
 J'ai le même âge que Vincent M., mais tout le monde me donne l'âge de
 Fabrice. Le secret de cette fontaine de Jouvence ? Maven ! Eh oui,
@@ -13798,10 +13798,10 @@ aussi partie de la bande des Cast Codeurs. Quoi ? Vous ne connaissez pas
 les Cast Codeurs ? Eh bien, retrouvez tout cela sur mon site personnel
 pour de plus amples informations : http://www.antoniogoncalves.org.
 
-image:MangaFrancois.png[float="left"]
-
 [[francois_le_droff]]
 ===== François Le Droff
+
+image:MangaFrancois.png[float="left"]
 
 Brestois d'origine, parisien d'adoption, j'ai connu le Minitel, mais je
 suis plus jeune que Vincent M., j'ai commencé à jouer/coder sur le HP 85
@@ -13819,10 +13819,11 @@ leur enthousiasme et leur passion sont en effet contagieux…
 PS : je suis également l'auteur d'un blog technique autour des
 technologies Java et Flex (http://www.droff.com).
 
+===== Grégory Boissinot
+
 image:MangaGregory.png[float="left"]
 
 [[gregory_boissinot]]
-===== Grégory Boissinot
 
 J’ai 30 ans et je travaille depuis trois ans chez Zenika en tant que
 consultant et formateur sur les technologies Java/JEE. Spécialiste du
@@ -13851,9 +13852,9 @@ et l’animation de conférences. Cependant, je reste très actif dans la
 communauté Maven en réalisant de nombreuses missions de conseil et des
 formations sur cet outil et son écosystème.
 
-image:MangaGuillaume.png[float="left"]
-
 ===== Guillaume Laforge
+
+image:MangaGuillaume.png[float="left"]
 
 Au dernier compte, j'en arrivais à 34 ans, déjà.
 
@@ -13874,10 +13875,10 @@ rend Maven un peu plus agréable à utiliser à mon goût ! Mais j'espère
 que ce livre rabibochera les développeurs allergiques à Maven avec ce
 puissant outil de build !
 
-image:MangaJerome.png[float="left"]
-
 [[jerome_van_der_linden]]
 ===== Jérôme Van der Linden
+
+image:MangaJerome.png[float="left"]
 
 29 ans, architecte JavaEE chez Octo Technology depuis cinq ans, où j'ai
 rencontré Arnaud et découvert Maven (la version 1.0.2 à l'époque).
@@ -13891,9 +13892,9 @@ version 1 m'avait paru intéressante comparée à Ant, mais c'est surtout la
 version 2 et toutes ses conventions qui me semblent apporter énormément
 au développement !
 
-image:MangaPascal.png[float="left"]
-
 ===== Pascal Leclercq
+
+image:MangaPascal.png[float="left"]
 
 Pascal peut être défini avant tout comme un scientifique passionné
 d'Histoire. En tant que professionnel, il est freelance et fondateur de
@@ -13906,10 +13907,10 @@ présents dans notre galaxie.
 
 Une de ses principales qualités est son insatiable curiosité.
 
-image:MangaSebastien.png[float="left"]
-
 [[sebastien_le_marechal]]
 ===== Sébastien Le Maréchal
+
+image:MangaSebastien.png[float="left"]
 
 Breton d'origine, je vis actuellement à Casablanca avec ma petite tribu
 familiale.
@@ -13942,9 +13943,9 @@ bénédiction :-).
 
 ==== Post-scriptum
 
-image:MangaNicolas.png[float="left"]
-
 ===== Nicolas de Loof
+
+image:MangaNicolas.png[float="left"]
 
 Je ne remercierai jamais assez Arnaud d'avoir accepté de m'accompagner
 dans cette aventure. Écrire un livre sur Maven sans en faire un pavé
@@ -13964,10 +13965,10 @@ Merci enfin à mes p'tits loups qui supportent que leur papa passe tant
 d'heures devant son écran, ainsi qu’à l’ange qui m’accompagne et
 ensoleille chaque jour ma vie.
 
-image:MangaArnaud.png[float="left"]
-
 [[arnaud_heritier]]
 ===== Arnaud Héritier
+
+image:MangaArnaud.png[float="left"]
 
 Je remercie grandement Nicolas de m'avoir proposé ce challenge. Le
 manque d'une bonne documentation en français sur Maven me titillait
